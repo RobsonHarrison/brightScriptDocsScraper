@@ -24,7 +24,8 @@ DowngradeCancel | A successful downgrade transaction's cancellation of the outgo
 DowngradeSale | A successful downgrade transaction's sale of a new (downgraded) subscription, to replace the outgoing (base) plan.
 UpgradeCancel | A successful upgrade transaction's cancellation of the outgoing (base) subscription.
 UpgradeSale | A successful upgrade transaction's sale of a new (upgraded) subscription, replacing the outgoing (base) subscription.
-CancellationOfferInitiated | An offer was successfully sent to a customer trying to cancel their subscription.
+CancellationOfferInitiated | The customer accepted a [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) and its specified pricing and billing terms for the subscription go into effect.
+CancellationOfferEnded | The pricing and billing terms specified in the cancellation offer elapse.
 Charge | A successful purchase transaction (historically used to indicate purchases under Roku as Payment Method: RPM).
 Refund | A successful refund transaction (historically used to indicate refunds under Roku as Payment Method: RPM).
 Reversal | A successful refund transaction (historically used to indicate refunds under Roku Standard Billing: RSB).

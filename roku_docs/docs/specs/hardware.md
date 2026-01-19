@@ -12,36 +12,35 @@ The spec then further classifies the hardware products based on their code names
 The following models are currently being manufactured and are supported:
 Device Name | Code Name | roDeviceInfo.GetModel() | CPU | Accelerated Graphics API | RAM | Max UI Resolution | Max Playback Resolution | HDR Support | Year Released
 ---|---|---|---|---|---|---|---|---|---
-Roku Express | Lakeport | 3840X | ARM Cortex A55 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2025
-Roku Express+ | Nemo | 3931X | ARM Cortex A53 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2019
-Roku Express 4K/4K+ | Bayside | 3830X | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG | 2025
+Roku Streaming Stick | Lakeport | 3840X | ARM Cortex A55 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2025
+Roku Streaming Stick Plus | Bayside | 3830X | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG | 2025
 Roku Streaming Stick 4K | Logan | 3820X2 | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR10/10+, HLG, and DolbyVision | 2022
 Roku Streaming Stick 4K+ | Logan | 3821X2 | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR10/10+, HLG, and DolbyVision | 2022
-Roku Ultra LT | Benjamin-W | 4800X | ARM Cortex A55 | OpenGL ES 2.0 | 2 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG, and DolbyVision | 2021
-Roku Ultra | Benjamin | 4800X | ARM Cortex A55 | OpenGL ES 2.0 | 2 GB | 1080p/60fps | 4K60fps, HDR | HDR10, Dolby Vision, and HLG | 2021
+Roku Express | Rockett | 3960X | ARM Cortex A55 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2022
 Roku Ultra | Brewster | 4850X | ARM Cortex A55 | OpenGL ES 2.0 | 2 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG, and DolbyVision | 2024
+Roku Streambar SE | Lockhart | 9104X | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10, HDR10+, and HLG | 2024
+Projector | Avery | K8PXX | ARM Cortex A35 | OpenGL ES 2.0 | 512 MB | 720p | 1080p/60fps | No | 2024
 4K Roku TV | Trinidad | J000X | ARM quad core CA73 1 GHz | OpenGL ES 2.0 | 2 GB | 1080p/60fps | 4K144fps, HDR | HDR10, HDR10+, HLG, and Dolby Vision | 2021
 4K Roku TV | Longview | 7000X | ARM dual core 1.2 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3840x2160 | HDR10 and/or Dolby Vision supported, varies by model | 2019
 Roku TV | Midland | 8000X | ARM | OpenGL ES 2.0 | 512 MB | 720p | 1280X720 | No | 2019
-Roku TV | Roxton | K000X | ARM Cortex A35 | OpenGL ES 2.0 | 512 MB | 720p | 1080p/60fps | No | 2024
 Roku TV (Brazil) | El Paso | 8000X | ARM | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2020
-Roku Smart Soundbar | Fruitland | 9100X | ARM Cortex A53 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR10 | 2019
-Roku Streambar | Chico | 9102X | ARM Cortex A53 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10 and HLG | 2020
-Roku Streambar | Lockhart | 9104X | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10, HDR10+, and HLG | 2024
-Projector | Avery | K8PXX | ARM Cortex A35 | OpenGL ES 2.0 | 512 MB | 720p | 1080p/60fps | No | 2024
 2K Roku TV | Miami | H000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 512MB | 720p | 1080p/60fps | No | 2022
 4K Roku TV | Reno | A000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 1.5 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2019
 4K Roku TV | Malone | C000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2019
 4K Roku TV | Athens | G000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2021
-4K Roku TV (EU) | Camden | C000GB | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2019
 4k Roku TV | Sandia | L000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3,840 x 2,160 | HDR10, HDR10+, Dolby Vision, HLG supported, varies by model | 2024
 4k Roku TV | Shiner | M000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 2 GB | 1920X1080 | 3,840 x 2,160 | HDR10, HDR10+ Adaptive, Dolby Vision IQ, HLG supported, varies by model | 2024
 4k Roku TV | Damon | P000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2024
+Roku TV | Alpine | T100X | ARM Cortex A35 | OpenGL ES 2.0 | 512 MB | 720p | 1080p/60fps | No | 2025
 ## Updatable Roku models
 The following models are no longer manufactured, but can run the latest Roku OS:
 Device Name | Code Name | roDeviceInfo.GetModel() | CPU | Accelerated Graphics API | RAM | Max UI Resolution | Max Playback Resolution | HDR Support | Year Released
 ---|---|---|---|---|---|---|---|---|---
-Roku Express | Rockett | 3960X | ARM Cortex A55 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2022
+Roku Smart Soundbar | Fruitland | 9100X | ARM Cortex A53 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR10 | 2019
+Roku Streambar | Chico | 9102X | ARM Cortex A53 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10 and HLG | 2020
+Roku Ultra LT | Benjamin-W | 4800X | ARM Cortex A55 | OpenGL ES 2.0 | 2 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG, and DolbyVision | 2021
+Roku Ultra | Benjamin | 4800X | ARM Cortex A55 | OpenGL ES 2.0 | 2 GB | 1080p/60fps | 4K60fps, HDR | HDR10, Dolby Vision, and HLG | 2021
+Roku Express+ | Nemo | 3931X | ARM Cortex A53 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2019
 Roku Express 4K+ | Bailey | 3940X2 | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG | 2022
 Roku Express 4K+ | Bailey | 3941X2 | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG | 2022
 Roku Express 4K+ | Bailey | 3942X2 | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG | 2022
@@ -71,7 +70,9 @@ Roku 2 | Mustang | 4210X | ARM Cortex A9 dual core 1 GHz | OpenGL ES 2.0 | 512 M
 Roku 3 | Mustang | 4230X | ARM Cortex A9 dual core 1 GHz | OpenGL ES 2.0 | 512 MB | 1280X720 | 1920x1080, 60fps*** | n/a | 2014
 Roku TV | Liberty | 5000X | MIPS 1 GHz | n/a | 512 MB | 1280X720 | 1920x1080, 60fps** | n/a | 2016
 4K Roku TV | Ft. Worth | 6000X | ARM quad core | OpenGL ES 2.0 | 1.5 GB | 1920X1080 | 3840X2160 | N/a | 2016
+4K Roku TV (EU) | Camden | C000GB | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2019
 Roku TV | Roma | D000X | ARM Cortex A55 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2020
+Roku TV | Roxton | K000X | ARM Cortex A35 | OpenGL ES 2.0 | 512 MB | 720p | 1080p/60fps | No | 2024
 ** Supports 720@60fps with some frame drops when video is not scaled to 1080. Should set ContentMetaData.maxFrameRate to 60 so that player doesn't scale the video to 1080.
 *** Supports 60fps at 720p. Supports 30fps at 1080p.
 ## Legacy models

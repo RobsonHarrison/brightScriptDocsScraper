@@ -28,6 +28,7 @@ EMEA & LATAM | Zaheen Somani | [FOX NOW](https://go.roku.com/foxnow) | [Visit](h
 ![Maz](https://image.roku.com/ZHZscHItMTc2/maz.png) | Global | Sales | [Outside TV](https://channelstore.roku.com/details/1e731702e7d9401eb1e7c0124ea8fa45/outside-tv) | [Visit](http://www.mazsystems.com/ott/)
 ![OTTera](https://image.roku.com/ZHZscHItMTc2/OTTera-Logo.png) | Global | James Cahall | [Toon Goggles](https://channelstore.roku.com/details/27021/toon-goggles) | [Visit](http://ottera.tv/)
 ![RedSpace](https://image.roku.com/ZHZscHItMTc2/redspace.png) | Global | Ben Oakley | [Paramount+](https://channelstore.roku.com/details/32b338eebb16d1de34870b6b1d674911/paramount-plus) | [Visit](https://www.redspace.com/)
+![SoftwareMind](https://image.roku.com/ZHZscHItMTc2/softwaremind.png) | Global | Laurence Mifsud |  | [Visit](https://tinyurl.com/4b9tke7r)
 ![Stormcast Cinema](https://image.roku.com/ZHZscHItMTc2/stormcast.png) | Europe & North America | Kevin Morris | [Western Mania](https://channelstore.roku.com/details/90343) | [Visit](http://www.stormcastcinema.com/)
 ![The Endless](https://image.roku.com/ZHZscHItMTc2/TheEndless.png) | North America | Steven Kean | [BYUtv](https://go.roku.com/ByDjsp37g) | [Visit](http://roku.permanence.com/)
 ![To The New](https://image.roku.com/ZHZscHItMTc2/to-the-new-logo.png) | Global | Ankur Tripathi | Stretch (US), Stadium (US), Birde (AU), Intelivideo (US) | [Visit](https://www.tothenew.com/)

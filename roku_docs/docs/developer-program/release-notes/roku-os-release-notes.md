@@ -1,16 +1,16 @@
 # Roku OS developer release notes
 > [Join the Roku beta program](https://rokutestingportal.centercode.com/key/rdbp) to implement new features in the latest Roku OS before the general release.
-## Roku OS 15.1 Beta
-Roku OS 15.1, which is being shared with developer beta partners under non-disclosure agreements (NDAs), includes support for app tracing with Perfetto, new media playback and content metadata features, and a deprecated API.
+## Roku OS 15.1
+Roku OS 15.1 includes support for app tracing with Perfetto, new media playback and content metadata features, and a deprecated API.
 Here is the list of key developer-facing Roku OS 15.1 updates:
 #### Media playback and content metadata
 ##### New seek mode based on HLS Manifest
-The **Video.seekMode** field supports a new “manifest” mode that seeks to the start offset time specified in the EXT-X-START tag of the HLS manifest.
+The [**Video.seekMode** field](https://developer.roku.com/docs/references/scenegraph/media-playback-nodes/video.md#trickplay-fields) supports a new “manifest” mode that seeks to the start offset time specified in the EXT-X-START tag of the HLS manifest.
 #### Developer and debugging tools
 ##### Perfetto app tracing
 You can use [Perfetto](https://perfetto.dev/docs/) to record, analyze, and visualize traces of your Roku apps to pinpoint where you can reduce resource consumption and optimize performance. Tracing captures and visualizes the events in your app on a timeline, which provides you with a detailed graphical view of what your app is doing over time.
 With Roku ECP and a Websocket client, you can launch your app, record and save a trace, and then open it in Perfetto. You can then explore the trace in Perfetto by using the WASD keys on your keyboard to zoom and pan, and your mouse to expand process tracks (rows) into their constituent thread tracks. You can also execute SQL-based queries in Perfetto.
-For more information on using Perfetto to trace your Roku apps, click [here](https://developer.roku.com/docs/developer-program/release-notes/app-tracing.md).
+For more information on using Perfetto to trace your Roku apps, click [here](https://developer.roku.com/docs/developer-program/dev-tools/app-tracing.md).
 #### Deprecations
 ###### roString.AppendString(s as String, len as Integer) as Void
 This function has been deprecated. Use the [SetString() function](https://developer.roku.com/docs/references/brightscript/interfaces/ifstringops.md#setstrings-as-string-len-as-integer-as-void) instead.

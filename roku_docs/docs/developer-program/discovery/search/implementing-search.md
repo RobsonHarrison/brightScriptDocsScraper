@@ -12,7 +12,7 @@ After completing a search, users can add the results to My Feed, which provides 
 Integrating Roku Search in your app entails the following steps:
   1. Create a search feed (create and validate a test feed first, and then provide the full feed).
      * Test feed: Create a test feed with just a few entries (one per each type of content in your catalog). This makes it easier to verify and troubleshoot your search integration before submitting the whole feed.
-     * Full feed: Once the test feed has successfully been validated, submitted, and verified with your beta app following steps 1–5, add all the entries in your catalog to your feed and then repeat steps 2–5.
+     * Full feed: Once the test feed has successfully been validated, submitted, and verified with your Search beta app following steps 1–5, add all the entries in your catalog to your feed and then repeat steps 2–5.
 
   2. Validate the search feed:
 a. Use an [online JSON format validator](https://jsonlint.com/) to verify that your feed is using properly formatted JSON.
@@ -22,6 +22,8 @@ b. Use an [online JSON schema validator](https://go.roku.com/json-schema-validat
   4. Test the app with your validated search feed.
      * Verify that the content in your feed appears in Roku Search queries.
      * Verify that selecting content from Roku Search deep links to your app with the proper playback experience.
+     * Add deep linking parameters.
+     * Submit your search feed to Roku for review.
 
   5. Send [authentication events](https://developer.roku.com/docs/developer-program/discovery/search/prioritizing-authenticated-channels-in-roku-search.md) (for SVOD and TVE apps).
 
@@ -59,26 +61,11 @@ e. Click the percentage to view the errors and warnings in your feed to open the
 Once you have validated your search feed, you can submit your feed following these steps:
   1. Go to the [Developer Dashboard](https://developer.roku.com/dev/dashboard), and then click **Search feeds** under **Channel**.
 
-  2. The **Search feeds** page opens. It lists the status of all your Search 2.0 and legacy search feeds (to edit a legacy feed, [contact Partner Success](https://developer.roku.com/contact)). Click **New search feed**.
-![roku600px - roku-search-feed-validation-errors](https://image.roku.com/ZHZscHItMTc2/search-feeds-index-page-v3.png)
-
-  3. In the **New search feed** page, enter the following information:
-![roku600px - roku-search-feed-validation-ui-v2](https://image.roku.com/ZHZscHItMTc2/roku-search-feed-validation-ui-v3a.png)
-Item | Description
----|---
-Channel | Select the app to be linked to your search feed. Only public apps that have been published can be selected.To publish your search feed at the same time you publish your app, contact [Partner Success](https://developer.roku.com/contact).
-Feed URL | Enter the URL where your search feed is hosted. The search feed is a JSON file with content metadata from one or more sources. See the [**Roku Search Feed 2.0**](https://developer.roku.com/docs/specs/search/search-feed.md) specification for how to create your feed.
-
-Optionally, you can protect your search feed with basic HTTP authentication and provide the username and password credentials. If your search feed uses basic HTTP authentication, select **Basic Authentication** from the **Feed Authentication Type** field, and then enter the **Username** and **Password** for the feed.
-Provider list logo | Upload a 143X113 PNG of your app logo with rounded corners.
-Teaser logo | Upload a 165X60 PNG of your app logo with rounded corners.
-Email | Enter the email address to receive the search feed validation results.
-
-  4. Click **Submit**. The **Search feeds** page displays the status of the feed submission. To process changes to your search feed (for example, adding new content), you need to resubmit your feed.
-![roku600px - search-status](https://image.roku.com/ZHZscHItMTc2/search-status-validated-100-v3.png)
+  2. The **Search feeds** page opens. It lists the following information for all of your search feeds.
+![roku600px - search-status](https://image.roku.com/ZHZscHItMTc2/search-status-validated-v4.png)
 Field | Description
 ---|---
-Channel | The app associated with the search feed.
+App | The app associated with the search feed.
 Validated content | The percentage of the feed that has been successfully indexed without error. This number is updated approximately every 4 hours. You can click this field to view the current **Feed ingestion report**.
 Last feed ingestion | A UTC timestamp indicating when the feed was last ingested.
 Status | The current state of the feed ingestion, which may be one of the following values:
@@ -89,41 +76,101 @@ Status | The current state of the feed ingestion, which may be one of the follow
      * **Expired** : The feed has no ingestion results available from the past week or longer. This typically occurs for feeds that have never been published to production and have been pending for some time. However, it may also occur when a previously-published feed has become unreachable and therefore has failed validation for over a week. In either scenario, you must manually re-submit the app to ingest the feed again.
      * **Rejected** : The feed failed validation during the initial setup.
      * **Error** : A previously published feed is now failing validation. Existing content in the feed may still be available in production, but any updates to the feed are not being successfully ingested and are therefore not available in production (new content items do not appear in search).
+Refresh icon | Re-validate your feed.
+Next (rIght-arrow) icon | Vew the details of your search feed, including validation results, vanity code for installing the search beta version of your app, and UI for [adding deep linking parameters for testing your app's search integration](https://developer.roku.com/en-gb/docs/developer-program/discovery/search/implementing-search.md#testingandsubmittingtheapp), click the right arrow icon.
+  3. Click **New search feed**. In the **New search feed** page, enter the following information:
 
-  5. To open the **Feed ingestion report** , click the percentage under the **Validated content** column. This report lists the number of entries in the feed that has passed/failed validation, lists the errors and warnings in your feed, and provides a link to download the report.
+![roku600px - roku-search-feed-validation-ui-v2](https://image.roku.com/ZHZscHItMTc2/roku-search-feed-validation-ui-v3a.png)
+Item | Description
+---|---
+Channel | Select the app to be linked to your search feed. Only public apps that have been published can be selected.To publish your search feed at the same time you publish your app, contact [Partner Success](https://developer.roku.com/contact).
+Feed URL | Enter the URL where your search feed is hosted. The search feed is a JSON file with content metadata from one or more sources. See the [**Roku Search feed**](https://developer.roku.com/docs/specs/search/search-feed.md) specification for how to create your feed.
+
+Optionally, you can protect your search feed with basic HTTP authentication and provide the username and password credentials. If your search feed uses basic HTTP authentication, select **Basic Authentication** from the **Feed Authentication Type** field, and then enter the **Username** and **Password** for the feed.
+Provider list logo | Upload a 143X113 PNG of your app logo with rounded corners.
+Teaser logo | Upload a 165X60 PNG of your app logo with rounded corners.
+Email | Enter the email address to receive the search feed validation results.
+  4. Click **Submit**. The **Search feeds** page displays the status of the feed submission.
+![roku600px - roku-search-feed-validation-ui-v2](https://image.roku.com/ZHZscHItMTc2/feed-validation-row.png)
+
+> To process changes to your search feed (for example, adding new content), you need to resubmit your feed.
+  5. To open the **Feed ingestion report** , click the percentage under the **Validated content** column.
+![roku600px - roku-search-feed-validation-ui-v2](https://image.roku.com/ZHZscHItMTc2/feed-validation-row-validation.png)
+This report lists the number of entries in the feed that has passed/failed validation, lists the errors and warnings in your feed, and provides a link to download the report.
+![roku600px - feed-ingestion-report](https://image.roku.com/ZHZscHItMTc2/feed-ingestion-report-error-table-v3.png)
+
 The **Errors and Warnings** table in the report groups and counts any issues in your feed by the error type. You can then click an error type to get all the entries with that specific error or warning. The error types with the highest number of entries with that issue are listed first. You can also search for a specific content ID in your feed to check whether that entry has any errors.
 You can click **Edit search feed** to update the URL, logos, and validation email for your feed. You can click **Revalidate feed** once you have fixed the errors in your feed to ingest additional content. You may submit a feed a maximum of 20 times per week.
-![roku600px - feed-ingestion-report](https://image.roku.com/ZHZscHItMTc2/feed-ingestion-report-error-table-v2.png)
-
-  6. Download the error report, which is provided in JSON format. Warnings indicate issues that do not prevent an entry from being successfully indexed but could be improved if additional metadata fields were provided. Errors indicate individual entries that failed to be indexed and must be fixed. Use the error report to correct these entries and re-submit your feed until it is validated.
+  6. Click **Download (.json)** to get the error report, which is provided in JSON format. Warnings indicate issues that do not prevent an entry from being successfully indexed but could be improved if additional metadata fields were provided. Errors indicate individual entries that failed to be indexed and must be fixed. Use the error report to correct these entries and re-submit your feed until it is validated.
 ![roku600px - downloaded-error-report](https://image.roku.com/ZHZscHItMTc2/search-error-report.png)
 
-  7. Once your search feed has been validated, the self-serve phase of the integration is complete. In the next phase, which is testing, you will work with Roku Partner Success to verify that deep linking has been integrated into your app per the [implementation guide](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md).
+  7. Once you have fixed the errors and warnings, you can click the refresh icon in the **Search feeds** page to revalidate your feed.
+![roku600px - roku-search-feed-validation-ui-v2](https://image.roku.com/ZHZscHItMTc2/feed-validation-row-revalidate.png)
+  8. Once your search feed has been validated, [test your search feed integration](https://developer.roku.com/en-gb/docs/developer-program/discovery/search/implementing-search.md#testingandsubmittingtheapp).
 
-  8. To update the feed URL, logos, validation email, click the feed under **Search feed status** , edit the properties, and then click **Submit**.
+### Testing and submitting the app
+Before submitting your search feed for review, you need to test your app's [deep linking implementation](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) in order to verify that the app is successfully integrated with Roku Search following these steps:
+  1. In the **Search feeds page** , find your feed and click the next (right arrow) icon.
+![roku600px - roku-search-feed-validation-ui-v2](https://image.roku.com/ZHZscHItMTc2/feed-validation-row-arrow.png)
+  2. The **Test & Submit** page opens. You can use this page to manage, update, and submit your unpublished feed (referred to as a "Beta search feed" in the UI).
+![roku600px - roku-search-feed-validation-ui-v2](https://image.roku.com/ZHZscHItMTc2/search-feed-details.png)
+  3. In the **Beta feed validation report** section, you can view the percentage and number of entries in your unpublished feed that passed or failed validation. Click **Download (.json)** to review a JSON file with the errors and warning in your feed. Click **View beta feed report** to review the feed's ingestion report.
+  4. The **Search beta app** section provides details about the beta version of your app that was automatically created in your developer account when you initially submitted your feed. The app is named "`<appName>` SearchBeta", and it is listed in the **Search testing channels** section on the **Beta channels** page. You use this beta app specifically to test your search feed integration.
+The following information is listed for your search beta app:
+     * Channel ID: The unique ID generated for your app.
+     * Access code: A six-character alphanumeric code for installing your search beta app.
+     * Type: The type of app (SDK or SDK (Beta).
+     * Created: The date the app was created.
+     * Last published: The date the app was last published.
 
-### Testing the app
-When you initially submit a search feed, [a beta version of your app](https://developer.roku.com/docs/developer-program/publishing/channel-publishing-guide.md#beta-channel-guidelines) is automatically created in your developer account. The app is named "`<channelName>` SearchBeta", and it is listed in the **Search testing channels** section on the **Beta channels** page. You can use this beta app to test your app's [deep linking implementation](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) in order to verify that the app is successfully integrated with Roku Search.
-![roku600px - search-beta-channel](https://image.roku.com/ZHZscHItMTc2/search-beta-channel.png)
-To test your app's search integration, follow these steps:
-  1. Install the beta app that was automatically created in your developer account using the app's access code.
-
-> The beta app is only created for new feeds upon their initial submission. Resubmitting an existing feed does not generate a beta app (for existing feeds submitted before January 31, 2024, contact contact Roku Partner Success to get the beta app).
-  2. Search for content items in your feed and verify that they are included in the search results. This process confirms that your feed has been ingested into Roku Search. If results do not appear in Roku Search, confirm that the feed follows the [schema](https://developer.roku.com/docs/specs/search/search-feed.md#schema) and it includes all the required metadata. If you need further help with this step, contact Roku Partner Success.
-a. Search for each type of content (movie, series, tvSpecial, and shortform) in your feed in Roku Search.
-b. Click on search results and verify expected [deep linking behavior](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md#mediatype-behavior) for each applicable mediatype. For series/episodic content, test both series and episode level watch options in Roku search to complete testing.
-     * **Series:** Clicking the series level watch option triggers a deep link command to app with and episode contentId and mediatype series. See the [deep linking documentation](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md#mediatype-behavior) for more information on the required launch behavior.
-     * **Episode:** Clicking "Episodes" on the series search result screen leads to a season/episodic menu. Selecting an episode and clicking a watch option triggers a deep link command with the associated episode content ID and mediaType episode. See the [deep linking documentation](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md#mediatype-behavior) for more information on the required launch behavior.
-  3. Resubmit your updated beta app in the Developer Dashboard. Keep the beta app synchronized with the production app by continually updating the beta package with a copy of the latest version of the production package. This is required to pass deep linking certification.
-
-  4. Once you have verified that the search integration is working correctly, contact Roku Partner Success Roku will use the auto-created beta app to test your app's [deep linking implementation](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) and verify that the app is successfully integrated with Roku Search.
-
-> **Information about auto-created beta apps**
->   * The auto-created beta apps do count towards the limit of 10 beta apps per developer account.
+> **Information about auto-created Search beta apps**
+>   * The auto-created Search beta apps do count towards the limit of 10 beta apps per developer account.
 >   * A developer account may have a maximum of four auto-created beta apps.
 >   * The auto-created beta apps cannot be deleted (they are automatically removed 120 days after being created).
 >   * If a user on your team cannot access to the auto-created beta app, manually grant them access via the [User Management page in the Developer Dashboard](https://developer.roku.com/user/access).
 >
+
+> **Keeping the Search beta app synced with the production app**
+> Keep the Search beta app synchronized with the production app by continually updating the beta package with a copy of the latest version of the production package. To do this, resubmit your updated Search beta app in the Developer Dashboard. This is required to pass deep linking certification.
+  5. Click the vanity code link to install the Search beta app on your Roku device.
+
+> The Search beta app is only created for new feeds upon their initial submission. Resubmitting an existing feed does not generate a beta app (for existing feeds submitted before January 31, 2024, contact Roku Partner Success to get the beta app).
+  6. Search for content items in your feed and verify that they are included in the search results. This process confirms that your feed has been ingested into Roku Search. If results do not appear in Roku Search, confirm that the feed follows the [schema](https://developer.roku.com/docs/specs/search/search-feed.md#schema) and it includes all the required metadata. If you need further help with this step, contact Roku Partner Success.
+
+> Search for each type of content (movie, series, tvSpecial, and shortform) in your feed in Roku Search.
+  7. Verify the expected [deep linking behavior](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md#mediatype-behavior) for each applicable mediatype by clicking on search results. For series/episodic content, test both series and episode level watch options in Roku search to complete testing.
+     * **Series:** Clicking the series level watch option triggers a deep link command to app with an episode contentId and mediatype series. See the [deep linking documentation](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md#mediatype-behavior) for more information on the required launch behavior.
+     * **Episode:** Clicking "Episodes" on the series search result screen leads to a season/episodic menu. Selecting an episode and clicking a watch option triggers a deep link command with the associated episode content ID and mediaType episode. See the [deep linking documentation](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md#mediatype-behavior) for more information on the required launch behavior.
+  8. Test with unauthenticated accounts.
+  9. In the **Deep Linking** section, add deep linking parameters for each different media type in your app. Roku Partner Success will use these to verify that deep linking has been integrated into your app per the [implementation guide](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md). To do this, follow these steps:
+a. Click **Add deep link** (or **Add** if at least one deep link is already listed).
+![roku600px - feed-submission-add-deep-link](https://image.roku.com/ZHZscHItMTc2/feed-submission-add-deep-link.png)
+
+b. Enter the following information in the **Add new deep link parameter** dialog, and then click **Save**.
+![roku600px - add-deep-link-dialog](https://image.roku.com/ZHZscHItMTc2/add-deep-link-dialog.png)
+Field | Description
+---|---
+Media type | Select the media type of the content item from the list of choices (for example, movie, television episode, or television series). Custom types are not available.
+Content ID | Enter the [content ID](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) of the item (this should be the same as the **PlayId** in the app's [search feed](https://developer.roku.com/docs/specs/search/search-feed.md#playoptions)).
+Content title | Enter a descriptive name that makes it easy to identify the content associated with the deep link parameters.
+Asset ID | Enter the ID specified for the content item in the **assets.Id** field of the app's [search feed](https://developer.roku.com/docs/specs/search/search-feed.md#playoptions).
+Valid until | Once an ID is created for a content item in Roku Search, it may not be changed.Enter the last date when the deep linking parameters will be used in your app. Notice that, for a new parameter set, this field is pre-populated with a date that is one year in the future. You can change this date as needed. If the deep linking parameters do not expire, you can select the **Valid indefinitely** check box.
+c. The deep linking parameters are added to the list. You can edit and delete deep linking parameters in the list.
+  10. Once you have verified that the search integration is working correctly, submit your unpublished feed for review following these steps:
+a. Click **Submit for Review**.
+![roku600px - add-deep-link-dialog](https://image.roku.com/ZHZscHItMTc2/search-feed-submit-review.png)
+b. In the **Feed submission checklist** , select the check boxes to confirm that you have completed all the prerequisites for submitting a search feed.
+![roku600px - feed-submission-checklist](https://image.roku.com/ZHZscHItMTc2/feed-submission-checklist.png)
+c. Click **Continue**.
+d. In the **Submit for review dialog** , enter any notes for the Roku Partner Success team and your preferred publication time (in PST). You will receive an email from the team confirming the receipt of your feed and outlining the next steps.
+
+```
+ ![roku600px - add-deep-link-dialog](https://image.roku.com/ZHZscHItMTc2/search-feed-submit-review-final.png)
+
+```
+
+​
+  11. Roku will use the auto-created beta app to test your app's [deep linking implementation](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) and verify that the app is successfully integrated with Roku Search.
 
 ### Troubleshooting with a sideloaded app
 You can sideload an app and use it to troubleshoot the search integration following these steps:
@@ -135,6 +182,10 @@ If the Deep Linking Tester launches content into the correct playback experience
 ### Sending authentication events
 SVOD and TVE apps must [send authentication events](https://developer.roku.com/docs/developer-program/discovery/search/prioritizing-authenticated-channels-in-roku-search.md) to Roku to communicate the authentication status of customers when their app is launched. This is a [certification requirement](https://developer.roku.com/docs/developer-program/certification/certification.md#4-channel-operation), and it drives engagement because it ensures that your SVOD or TVE app is listed above non-authenticated apps in the Roku Search content providers list.
 ### Updating search feeds
+#### Metadata updates
+If you need to update the the URL, logos, or validation email for your feed, click the more (...) icon in the upper right-hand corner of the **Test & Submit** page and make changes.
+![roku600px - feed-submission-checklist](https://image.roku.com/ZHZscHItMTc2/edit-feed-option.png)
+#### Feed updates
 You can upload changes to your search feed and resubmit your feed to update Roku Search with your current content (changes are not processed unless you resubmit your feed in the Developer Dashboard). Search feed updates may take up to 24 hours to be propagated to Roku Search.
 ## Participating in additional discovery programs
 By participating in Roku Search, your app is eligible for three more discovery programs that provide additional exposure: [Visual Search Results for Roku Voice](https://developer.roku.com/en-gb/docs/developer-program/discovery/search/implementing-search.md#visual-search-results-for-roku-voice), [Roku Zones](https://developer.roku.com/en-gb/docs/developer-program/discovery/search/implementing-search.md#roku-zones) and [Save List](https://developer.roku.com/en-gb/docs/developer-program/discovery/search/implementing-search.md#save-list).

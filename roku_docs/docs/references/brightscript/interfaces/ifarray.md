@@ -40,6 +40,9 @@ tvalue | Dynamic | The value to be added to the beginning of the array.
 #### Description
 Deletes the indicated array entry, and shifts all entries up. This decreases the array length by one.
 #### Parameters
+Name | Type | Description
+---|---|---
+index | Integer | The entry to be removed from the array.
 #### Return Value
 A flag indicating whether the specified array entry has been removed. If the entry was successfully deleted, returns true. If index is out of range, returns false and does not change the array.
 ### Count() As Integer

@@ -35,7 +35,7 @@ To sideload the updated Hello World sample app, follow these steps:
 ## Using the debug console
 You can use the [Roku debug console](https://developer.roku.com/docs/developer-program/debugging/debugging-channels.md) to view the output of a Roku app during runtime. If the app fails during runtime, the debug console displays the line number of the error, as well as the contents of variables at the time of the failure. If the app has compilation errors, the debug console displays them as well. It is recommended to have the debug console open whenever you are running a sideloaded app.
 To open the debug console, follow these steps:
-  1. Using a shell application such as [PuTTY](http://www.putty.org/) for Windows or terminal on Mac and Linux, enter the following telnet command:
+  1. Using a shell application such as [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/) for Windows or terminal on Mac and Linux, enter the following telnet command:
 ```
 telnet roku-ip-address 8085
 

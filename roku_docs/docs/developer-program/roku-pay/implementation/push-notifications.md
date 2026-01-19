@@ -61,13 +61,14 @@ Transaction Type | Description | Action Required by Publisher
   * Update billing system with the new billing period.
   * Update entitlement system to denote that access to content should be granted.
 
-[CancellationOfferIntiated](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellationoffers) | A [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) is sent to a customer. If the customer accepts the offer, a [Sale notification](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#sale) with the offer price is sent. |
+[CancellationOfferIntiated](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellationoffers) | The customer accepts a [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) and its specified pricing and billing terms for the subscription go into effect. |
   * New purchase: Create account (if not already created) and add entitlement.
   * Renewal: Check entitlement and verify subscription is not marked for cancellation.
 
-[CancellationOfferEnded](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellationoffers) | The [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) sent to a customer expires. If the customer accepts after the offer expires, a [Sale notification](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#sale) with the full price is sent. |
-  * New purchase: Create account (if not already created) and add entitlement.
-  * Renewal: Check entitlement and verify subscription is not marked for cancellation.
+[CancellationOfferEnded](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellationoffers) | The pricing and billing terms specified in the [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) elapse. |
+  * expirationDate is a future date: no action is required until the expiration date.
+  * expirationDate is today's date: remove the entitlement (the customer actively canceled the subscription and today is the last day of the billing cycle).
+  * expirationDate is a past date: remove entitlement (passive cancellation; subscription could not be recovered).
 
 [Cancellation](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellation) | A subscription is canceled by the customer, deactivated becuase the customer opted out of automatic renewal, or is passively canceled because payment could not be recovered.
 
@@ -250,7 +251,7 @@ See [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-p
 ```
 
 ### CancellationOffers
-A **CancellationOfferInitated** event is fired when a [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) is sent to a customer. When that offer expires, a **CancellationOfferEnded** event is sent.
+A **CancellationOfferInitated** event is fired when the customer accepts a [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) and its specified pricing and billing terms for the subscription go into effect. A **CancellationOfferEnded** event is sent when the pricing and billing terms specified in the cancellation offer elapse.
 #### CancellationOfferInitated
 ```
 {
