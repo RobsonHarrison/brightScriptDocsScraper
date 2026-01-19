@@ -1,6 +1,30 @@
 # brightScriptDocsScraper
 
-A Python scraper that recursively downloads Roku/BrightScript documentation from [developer.roku.com](https://developer.roku.com) and stores it as clean markdown files. Runs automatically via GitHub Actions on a weekly schedule.
+A Python scraper that recursively downloads Roku/BrightScript documentation from [developer.roku.com](https://developer.roku.com) and stores it as clean markdown files. Updated automatically every week via GitHub Actions.
+
+## 🤖 Use with AI Assistants (MCP)
+
+The documentation in this repository is available as an MCP (Model Context Protocol) server via [Context7](https://context7.com):
+
+```
+https://context7.com/robsonharrison/brightscriptdocsscraper
+```
+
+This allows AI coding assistants that support MCP (like Cursor, Windsurf, Claude Desktop, etc.) to access up-to-date Roku/BrightScript documentation directly.
+
+### Setup for MCP-compatible tools
+
+Add to your MCP configuration:
+```json
+{
+  "mcpServers": {
+    "brightscript-docs": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-client", "https://context7.com/robsonharrison/brightscriptdocsscraper"]
+    }
+  }
+}
+```
 
 ## 📁 Project Structure
 
@@ -12,7 +36,7 @@ brightScriptDocsScraper/
 ├── roku_docs/              # 📚 Scraped documentation
 │   ├── docs/               #    Developer guides & API references
 │   ├── trc-docs/           #    TRC documentation
-│   └── results.json        #    Scrape results & broken link report
+│   └── results.json        #    Scrape results summary
 ├── .gitignore
 ├── requirements.txt
 └── README.md
@@ -20,16 +44,15 @@ brightScriptDocsScraper/
 
 ## ✨ Features
 
-- **Automated weekly updates** via GitHub Actions
+- **Weekly automated updates** via GitHub Actions
+- **MCP-compatible** for AI assistant integration
 - Deep crawls the Roku developer documentation
 - Converts pages to clean markdown files
+- Compares content to detect actual changes (not just file existence)
 - Tracks broken links and their source pages
-- Handles malformed URLs and retries with corrections
-- Duplicate protection (skips already-saved files)
+- Handles malformed URLs with automatic retry
 
-## 🚀 Quick Start
-
-### Local Usage
+## 🚀 Running Locally
 
 ```bash
 # Install dependencies
@@ -40,10 +63,7 @@ crawl4ai-setup
 python scraper/WebScraper.py
 
 # Custom options
-python scraper/WebScraper.py --output-dir ./roku_docs --max-depth 5 --max-pages 500
-
-# Verbose mode
-python scraper/WebScraper.py --verbose
+python scraper/WebScraper.py --output-dir ./roku_docs --max-depth 5 --max-pages 500 --verbose
 ```
 
 ### Options
@@ -55,18 +75,29 @@ python scraper/WebScraper.py --verbose
 | `--max-pages` | `2000` | Maximum number of pages to crawl |
 | `--verbose`, `-v` | `false` | Show detailed crawl4ai logging |
 
-## 🤖 GitHub Actions
+## 🔄 GitHub Actions
 
-The scraper runs automatically every **Sunday at 2:00 AM UTC**. New/updated documentation is committed directly to the repository.
+The scraper runs automatically every **Sunday at 2:00 AM UTC**.
 
-To run manually: **Actions** → **Scrape Roku Documentation** → **Run workflow**
+- New and updated documentation is committed directly to the repository
+- Commit messages include a summary of what changed
+- Manual trigger available: **Actions** → **Scrape Roku Documentation** → **Run workflow**
 
 ## 📄 Output
 
 The `roku_docs/` folder contains:
 - Markdown files preserving the original URL path structure
 - `results.json` with scrape summary:
-  - `saved` - Successfully saved pages with source URLs
-  - `skipped` - Count of already-existing files
-  - `failed` - Failed pages with error reasons (useful for finding broken links on Roku's site)
+  - `new` - Newly added pages
+  - `updated` - Pages with content changes
+  - `unchanged` - Pages with no changes
+  - `failed` - Failed pages with error reasons
+
+## 📜 License
+
+This project scrapes publicly available documentation from [developer.roku.com](https://developer.roku.com). The scraped content remains the property of Roku, Inc. This tool is provided for convenience and offline access.
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
