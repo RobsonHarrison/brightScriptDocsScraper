@@ -34,7 +34,7 @@ jobs:
 
       - name: Run scraper
         run: |
-          python scraper/WebScraper.py --output-dir ./roku_docs --max-depth 10 --max-pages 2000
+          python scraper/scraper.py --output-dir ./docs --max-depth 10 --max-pages 2000
         continue-on-error: true  # Don't fail workflow if some pages fail
 
       - name: Check for changes
@@ -56,7 +56,7 @@ jobs:
           import json
           from pathlib import Path
 
-          results_file = Path("roku_docs/results.json")
+          results_file = Path("docs/results.json")
           if not results_file.exists():
               print("No results.json found")
               exit(0)
@@ -74,7 +74,7 @@ jobs:
               lines.append("")
               lines.append("### New pages:")
               for p in new_pages[:20]:  # Limit to 20
-                  path = p["path"].replace("roku_docs/", "")
+                  path = p["path"].replace("docs/", "")
                   lines.append(f"- {path}")
               if len(new_pages) > 20:
                   lines.append(f"- ... and {len(new_pages) - 20} more")
@@ -83,7 +83,7 @@ jobs:
               lines.append("")
               lines.append("### Updated pages:")
               for p in updated_pages[:20]:  # Limit to 20
-                  path = p["path"].replace("roku_docs/", "")
+                  path = p["path"].replace("docs/", "")
                   lines.append(f"- {path}")
               if len(updated_pages) > 20:
                   lines.append(f"- ... and {len(updated_pages) - 20} more")

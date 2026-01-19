@@ -32,12 +32,12 @@ Add to your MCP configuration:
 brightScriptDocsScraper/
 ├── .github/workflows/      # GitHub Actions (weekly auto-scrape)
 ├── scraper/                # Scraper source code
-│   └── WebScraper.py
-├── roku_docs/              # 📚 Scraped documentation
+│   └── scraper.py
+├── docs/                   # 📚 Scraped documentation
 │   ├── docs/               #    Developer guides & API references
 │   ├── trc-docs/           #    TRC documentation
 │   └── results.json        #    Scrape results summary
-├── .gitignore
+├── pyproject.toml          # Python package configuration
 ├── requirements.txt
 └── README.md
 ```
@@ -55,22 +55,25 @@ brightScriptDocsScraper/
 ## 🚀 Running Locally
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+# Install as a package (recommended)
+pip install -e .
 crawl4ai-setup
 
 # Run the scraper
-python scraper/WebScraper.py
+roku-docs-scraper
+
+# Or run directly
+python scraper/scraper.py
 
 # Custom options
-python scraper/WebScraper.py --output-dir ./roku_docs --max-depth 5 --max-pages 500 --verbose
+roku-docs-scraper --output-dir ./docs --max-depth 5 --max-pages 500 --verbose
 ```
 
 ### Options
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--output-dir` | `./roku_docs` | Directory to save markdown files |
+| `--output-dir` | `./docs` | Directory to save markdown files |
 | `--max-depth` | `10` | Maximum link depth to crawl |
 | `--max-pages` | `2000` | Maximum number of pages to crawl |
 | `--verbose`, `-v` | `false` | Show detailed crawl4ai logging |
@@ -85,7 +88,7 @@ The scraper runs automatically every **Sunday at 2:00 AM UTC**.
 
 ## 📄 Output
 
-The `roku_docs/` folder contains:
+The `docs/` folder contains:
 - Markdown files preserving the original URL path structure
 - `results.json` with scrape summary:
   - `new` - Newly added pages
