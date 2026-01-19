@@ -76,7 +76,7 @@ def clean_markdown(text: str) -> str:
 async def run_scraper(output_dir: Path, max_depth: int, max_pages: int, verbose: bool) -> dict:
     """Run the deep crawl scraper."""
     output_dir.mkdir(parents=True, exist_ok=True)
-    saved, skipped, failed = [], 0, []
+    new_pages, updated_pages, unchanged, failed = [], [], 0, []
 
     print("=" * 50)
     print("Roku Documentation Scraper (crawl4ai)")
@@ -133,12 +133,6 @@ async def run_scraper(output_dir: Path, max_depth: int, max_pages: int, verbose:
 
             output_path = url_to_path(result.url, output_dir)
 
-            # Duplicate protection
-            if output_path.exists():
-                skipped += 1
-                print(f"  ⏭ Skipped (already exists): {output_path}")
-                continue
-
             # Get markdown from crawl4ai (already focused on target_elements)
             md_content = result.markdown.raw_markdown if hasattr(result.markdown, 'raw_markdown') else str(result.markdown)
             content = clean_markdown(md_content)
@@ -149,12 +143,28 @@ async def run_scraper(output_dir: Path, max_depth: int, max_pages: int, verbose:
                 print(f"  ✗ Document not found (likely broken link on source page): {result.url}")
                 if parent_url:
                     print(f"      ↳ Broken link found on: {parent_url}")
+                continue
+
+            depth = result.metadata.get("depth", 0) if result.metadata else 0
+
+            # Check if file exists and compare content
+            if output_path.exists():
+                existing_content = output_path.read_text(encoding="utf-8")
+                if existing_content == content:
+                    unchanged += 1
+                    print(f"  ⏭ [{depth}] Unchanged: {output_path}")
+                    continue
+                else:
+                    # Content changed - update the file
+                    output_path.write_text(content, encoding="utf-8")
+                    updated_pages.append({"path": str(output_path), "url": result.url, "found_on": parent_url})
+                    print(f"  ✏ [{depth}] Updated: {output_path}")
             else:
+                # New file
                 output_path.parent.mkdir(parents=True, exist_ok=True)
                 output_path.write_text(content, encoding="utf-8")
-                depth = result.metadata.get("depth", 0) if result.metadata else 0
-                saved.append({"path": str(output_path), "url": result.url, "found_on": parent_url})
-                print(f"  ✓ [{depth}] Saved: {output_path}")
+                new_pages.append({"path": str(output_path), "url": result.url, "found_on": parent_url})
+                print(f"  ✓ [{depth}] New: {output_path}")
 
         # Retry corrected URLs
         if corrected_urls:
@@ -170,10 +180,6 @@ async def run_scraper(output_dir: Path, max_depth: int, max_pages: int, verbose:
             )
             for url in corrected_urls:
                 output_path = url_to_path(url, output_dir)
-                if output_path.exists():
-                    skipped += 1
-                    print(f"  ⏭ Skipped (already exists): {output_path}")
-                    continue
                 result = await crawler.arun(url, config=retry_config)
                 if result.success:
                     md_content = result.markdown.raw_markdown if hasattr(result.markdown, 'raw_markdown') else str(result.markdown)
@@ -181,16 +187,25 @@ async def run_scraper(output_dir: Path, max_depth: int, max_pages: int, verbose:
                     if not content or content.strip().lower() in ["document not found.", "document not found"]:
                         failed.append({"url": url, "reason": "Document not found - likely broken link", "found_on": "retry"})
                         print(f"  ✗ [retry] Document not found (likely broken link): {url}")
+                    elif output_path.exists():
+                        existing_content = output_path.read_text(encoding="utf-8")
+                        if existing_content == content:
+                            unchanged += 1
+                            print(f"  ⏭ [retry] Unchanged: {output_path}")
+                        else:
+                            output_path.write_text(content, encoding="utf-8")
+                            updated_pages.append({"path": str(output_path), "url": url, "found_on": "retry"})
+                            print(f"  ✏ [retry] Updated: {output_path}")
                     else:
                         output_path.parent.mkdir(parents=True, exist_ok=True)
                         output_path.write_text(content, encoding="utf-8")
-                        saved.append({"path": str(output_path), "url": url, "found_on": "retry"})
-                        print(f"  ✓ [retry] Saved: {output_path}")
+                        new_pages.append({"path": str(output_path), "url": url, "found_on": "retry"})
+                        print(f"  ✓ [retry] New: {output_path}")
                 else:
                     failed.append({"url": url, "reason": result.error_message, "found_on": "retry"})
                     print(f"  ✗ Retry failed: {url}")
 
-    return {"saved": saved, "skipped": skipped, "failed": failed}
+    return {"new": new_pages, "updated": updated_pages, "unchanged": unchanged, "failed": failed}
 
 
 def main() -> int:
@@ -219,7 +234,7 @@ def main() -> int:
 
         print("\n" + "=" * 50)
         print("COMPLETE")
-        print(f"Saved: {len(stats['saved'])} | Skipped: {stats['skipped']} | Failed: {len(stats['failed'])}")
+        print(f"New: {len(stats['new'])} | Updated: {len(stats['updated'])} | Unchanged: {stats['unchanged']} | Failed: {len(stats['failed'])}")
         print(f"Duration: {duration_str}")
         print("=" * 50)
 

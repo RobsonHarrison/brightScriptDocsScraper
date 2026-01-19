@@ -46,6 +46,51 @@ jobs:
             echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
 
+      - name: Generate commit message
+        if: steps.changes.outputs.has_changes == 'true'
+        id: commit_msg
+        run: |
+          # Read results.json and generate commit message
+          python3 << 'EOF'
+          import json
+          from pathlib import Path
+
+          results_file = Path("roku_docs/results.json")
+          if not results_file.exists():
+              print("No results.json found")
+              exit(0)
+
+          stats = json.loads(results_file.read_text())
+          new_pages = stats.get("new", [])
+          updated_pages = stats.get("updated", [])
+
+          # Build commit message
+          lines = [f"docs: update Roku documentation"]
+          lines.append("")
+          lines.append(f"New: {len(new_pages)} | Updated: {len(updated_pages)} | Unchanged: {stats.get('unchanged', 0)} | Failed: {len(stats.get('failed', []))}")
+
+          if new_pages:
+              lines.append("")
+              lines.append("### New pages:")
+              for p in new_pages[:20]:  # Limit to 20
+                  path = p["path"].replace("roku_docs/", "")
+                  lines.append(f"- {path}")
+              if len(new_pages) > 20:
+                  lines.append(f"- ... and {len(new_pages) - 20} more")
+
+          if updated_pages:
+              lines.append("")
+              lines.append("### Updated pages:")
+              for p in updated_pages[:20]:  # Limit to 20
+                  path = p["path"].replace("roku_docs/", "")
+                  lines.append(f"- {path}")
+              if len(updated_pages) > 20:
+                  lines.append(f"- ... and {len(updated_pages) - 20} more")
+
+          # Write to file for use in commit
+          Path("commit_message.txt").write_text("\n".join(lines))
+          EOF
+
       - name: Commit and push changes
         if: steps.changes.outputs.has_changes == 'true'
         env:
@@ -53,6 +98,11 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "docs: update Roku documentation $(date +'%Y-%m-%d')"
+          if [ -f commit_message.txt ]; then
+            git commit -F commit_message.txt
+            rm commit_message.txt
+          else
+            git commit -m "docs: update Roku documentation $(date +'%Y-%m-%d')"
+          fi
           git push
 
