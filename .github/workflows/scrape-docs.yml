@@ -3,7 +3,7 @@ name: Scrape Roku Documentation
 on:
   # Run weekly on Sundays at 2:00 AM UTC
   schedule:
-    - cron: '0 2 * * 0'
+    - cron: '0 0 * * *'
   # Allow manual trigger
   workflow_dispatch:
 
