@@ -16,7 +16,6 @@ Roku Streaming Stick | Lakeport | 3840X | ARM Cortex A55 | OpenGL ES 2.0 | 512 M
 Roku Streaming Stick Plus | Bayside | 3830X | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG | 2025
 Roku Streaming Stick 4K | Logan | 3820X2 | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR10/10+, HLG, and DolbyVision | 2022
 Roku Streaming Stick 4K+ | Logan | 3821X2 | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR10/10+, HLG, and DolbyVision | 2022
-Roku Express | Rockett | 3960X | ARM Cortex A55 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2022
 Roku Ultra | Brewster | 4850X | ARM Cortex A55 | OpenGL ES 2.0 | 2 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG, and DolbyVision | 2024
 Roku Streambar SE | Lockhart | 9104X | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10, HDR10+, and HLG | 2024
 Projector | Avery | K8PXX | ARM Cortex A35 | OpenGL ES 2.0 | 512 MB | 720p | 1080p/60fps | No | 2024
@@ -40,6 +39,7 @@ Roku Smart Soundbar | Fruitland | 9100X | ARM Cortex A53 | OpenGL ES 2.0 | 1 GB 
 Roku Streambar | Chico | 9102X | ARM Cortex A53 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10 and HLG | 2020
 Roku Ultra LT | Benjamin-W | 4800X | ARM Cortex A55 | OpenGL ES 2.0 | 2 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG, and DolbyVision | 2021
 Roku Ultra | Benjamin | 4800X | ARM Cortex A55 | OpenGL ES 2.0 | 2 GB | 1080p/60fps | 4K60fps, HDR | HDR10, Dolby Vision, and HLG | 2021
+Roku Express | Rockett | 3960X | ARM Cortex A55 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2022
 Roku Express+ | Nemo | 3931X | ARM Cortex A53 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2019
 Roku Express 4K+ | Bailey | 3940X2 | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG | 2022
 Roku Express 4K+ | Bailey | 3941X2 | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p/60fps | 4K60fps, HDR | HDR10/10+, HLG | 2022
