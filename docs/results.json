@@ -1,7 +1,119 @@
 {
-  "new": [],
-  "updated": [],
-  "unchanged": 1015,
+  "new": [
+    {
+      "path": "docs/fr-fr/docs/references/brightscript/interfaces/time-zones.md",
+      "url": "https://developer.roku.com/fr-fr/docs/references/brightscript/interfaces/time-zones.md",
+      "found_on": "https://developer.roku.com/docs/references/brightscript/interfaces/time-zones.md"
+    },
+    {
+      "path": "docs/fr-fr/docs/developer-program/roku-pay/roku-pay-reports.md",
+      "url": "https://developer.roku.com/fr-fr/docs/developer-program/roku-pay/roku-pay-reports.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/roku-pay-reports.md"
+    },
+    {
+      "path": "docs/fr-fr/docs/references/brightscript/components/rocompositor.md",
+      "url": "https://developer.roku.com/fr-fr/docs/references/brightscript/components/rocompositor.md",
+      "found_on": "https://developer.roku.com/docs/references/brightscript/components/roCompositor.md"
+    },
+    {
+      "path": "docs/docs/specs/direct-publisher-feed-specs/json-dp-spec.md",
+      "url": "https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md",
+      "found_on": "https://developer.roku.com/trc-docs/live-linear/ovp-linear-ingest-spec.md"
+    },
+    {
+      "path": "docs/docs/trc/video-on-demand/title-avail-specifications.md",
+      "url": "https://developer.roku.com/docs/trc/video-on-demand/title-avail-specifications.md",
+      "found_on": "https://developer.roku.com/trc-docs/faqs.md"
+    },
+    {
+      "path": "docs/fr-fr/trc-docs/video-on-demand/roku-originals/post-branded-specs.md",
+      "url": "https://developer.roku.com/fr-fr/trc-docs/video-on-demand/roku-originals/post-branded-specs.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/roku-originals/post-branded-specs.md"
+    },
+    {
+      "path": "docs/fr-fr/trc-docs/video-on-demand/roku-originals/post-scripted-specs.md",
+      "url": "https://developer.roku.com/fr-fr/trc-docs/video-on-demand/roku-originals/post-scripted-specs.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/roku-originals/post-scripted-specs.md"
+    },
+    {
+      "path": "docs/fr-fr/trc-docs/video-on-demand/roku-originals/post-live-event-specs.md",
+      "url": "https://developer.roku.com/fr-fr/trc-docs/video-on-demand/roku-originals/post-live-event-specs.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/roku-originals/post-live-event-specs.md"
+    },
+    {
+      "path": "docs/fr-fr/trc-docs/video-on-demand/roku-originals/post-spanish-specs.md",
+      "url": "https://developer.roku.com/fr-fr/trc-docs/video-on-demand/roku-originals/post-spanish-specs.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/roku-originals/post-spanish-specs.md"
+    },
+    {
+      "path": "docs/fr-fr/trc-docs/video-on-demand/roku-originals/scr-prod-legal-guidelines.md",
+      "url": "https://developer.roku.com/fr-fr/trc-docs/video-on-demand/roku-originals/scr-prod-legal-guidelines.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/roku-originals/scr-prod-legal-guidelines.md"
+    },
+    {
+      "path": "docs/fr-fr/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md",
+      "url": "https://developer.roku.com/fr-fr/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md"
+    },
+    {
+      "path": "docs/trc-docs/video-on-demand/title-avail-specifications.md",
+      "url": "https://developer.roku.com/trc-docs/video-on-demand/title-avail-specifications.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ad-supported/getting-started.md"
+    },
+    {
+      "path": "docs/trc-docs/video-on-demand/content-tags-and-metadata.md",
+      "url": "https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/avail/title-avail-specifications.md"
+    },
+    {
+      "path": "docs/trc-docs/video-on-demand/ingest-specifications.md",
+      "url": "https://developer.roku.com/trc-docs/video-on-demand/ingest-specifications.md",
+      "found_on": "https://developer.roku.com/trc-docs/faqs.md"
+    },
+    {
+      "path": "docs/trc-docs/live-linear/live-feed-specifications.md",
+      "url": "https://developer.roku.com/trc-docs/live-linear/live-feed-specifications.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ad-supported/getting-started.md"
+    },
+    {
+      "path": "docs/fr-fr/docs/specs/direct-publisher-feed-specs/json-dp-spec.md",
+      "url": "https://developer.roku.com/fr-fr/docs/specs/direct-publisher-feed-specs/json-dp-spec.md",
+      "found_on": "https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md"
+    },
+    {
+      "path": "docs/fr-fr/trc-docs/video-on-demand/title-avail-specifications.md",
+      "url": "https://developer.roku.com/fr-fr/trc-docs/video-on-demand/title-avail-specifications.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/title-avail-specifications.md"
+    },
+    {
+      "path": "docs/fr-fr/trc-docs/video-on-demand/ingest-specifications.md",
+      "url": "https://developer.roku.com/fr-fr/trc-docs/video-on-demand/ingest-specifications.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ingest-specifications.md"
+    },
+    {
+      "path": "docs/fr-fr/docs/trc/video-on-demand/title-avail-specifications.md",
+      "url": "https://developer.roku.com/fr-fr/docs/trc/video-on-demand/title-avail-specifications.md",
+      "found_on": "https://developer.roku.com/docs/trc/video-on-demand/title-avail-specifications.md"
+    },
+    {
+      "path": "docs/fr-fr/trc-docs/live-linear/live-feed-specifications.md",
+      "url": "https://developer.roku.com/fr-fr/trc-docs/live-linear/live-feed-specifications.md",
+      "found_on": "https://developer.roku.com/trc-docs/live-linear/live-feed-specifications.md"
+    },
+    {
+      "path": "docs/fr-fr/trc-docs/video-on-demand/content-tags-and-metadata.md",
+      "url": "https://developer.roku.com/fr-fr/trc-docs/video-on-demand/content-tags-and-metadata.md",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md"
+    }
+  ],
+  "updated": [
+    {
+      "path": "docs/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md",
+      "url": "https://developer.roku.com/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md",
+      "found_on": "https://developer.roku.com/trc-docs/overview.md"
+    }
+  ],
+  "unchanged": 1006,
   "failed": [
     {
       "url": "https://developer.roku.com/docs/developer-program/release-notes/eclipse-plugin-release-notes.md",
@@ -14,14 +126,14 @@
       "found_on": "https://developer.roku.com/docs/developer-program/dev-tools/rale-tutorial.md"
     },
     {
-      "url": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/monetization-method.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/getting-started.md"
-    },
-    {
       "url": "https://developer.roku.com/docs/developer-program/roku-pay/roku-web-service.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md"
+    },
+    {
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/monetization-method.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/getting-started.md"
     },
     {
       "url": "https://developer.roku.com/docs/references/brightscript/components/roslideshow.md",
@@ -54,12 +166,12 @@
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
     {
-      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/targetset.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/markuplist.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
     {
-      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/markuplist.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/targetset.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
@@ -79,11 +191,6 @@
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
     {
-      "url": "https://developer.roku.com/en-gb/docs/developer-program/roku-pay/roku-web-service.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/roku-web-service.md"
-    },
-    {
       "url": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/ide-support.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/getting-started/ide-support.md"
@@ -92,6 +199,11 @@
       "url": "https://developer.roku.com/en-gb/docs/developer-program/roku-pay/quickstart/monetization-method.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/monetization-method.md"
+    },
+    {
+      "url": "https://developer.roku.com/en-gb/docs/developer-program/roku-pay/roku-web-service.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/roku-web-service.md"
     },
     {
       "url": "https://developer.roku.com/en-gb/docs/references/brightscript/components/roslideshow.md",
@@ -134,69 +246,9 @@
       "found_on": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/targetset.md"
     },
     {
-      "url": "https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/live-linear/ovp-linear-ingest-spec.md"
-    },
-    {
-      "url": "https://developer.roku.com/docs/trc/video-on-demand/title-avail-specifications.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/faqs.md"
-    },
-    {
-      "url": "https://developer.roku.com/trc-docs/video-on-demand/ingest-specifications.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/recs/content-tags-and-metadata.md"
-    },
-    {
-      "url": "https://developer.roku.com/trc-docs/live-linear/live-feed-specifications.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ad-supported/getting-started.md"
-    },
-    {
-      "url": "https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/avail/title-avail-specifications.md"
-    },
-    {
-      "url": "https://developer.roku.com/trc-docs/video-on-demand/title-avail-specifications.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ad-supported/getting-started.md"
-    },
-    {
       "url": "https://developer.roku.com/en-ot/trc-docs/live-linear/epg-on-trc.md",
       "reason": "Unexpected error in _crawl_web at line 940 in _crawl_web (../../../../../opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages/crawl4ai/async_crawler_strategy.py):\nError: Wait condition failed: Timeout after 15000ms waiting for selector '.markdown-body'\n\nCode context:\n 935                       timeout = config.wait_for_timeout if config.wait_for_timeout is not None else config.page_timeout\n 936                       await self.smart_wait(\n 937                           page, config.wait_for, timeout=timeout\n 938                       )\n 939                   except Exception as e:\n 940 \u2192                     raise RuntimeError(f\"Wait condition failed: {str(e)}\")\n 941   \n 942               # Update image dimensions if needed\n 943               if not self.browser_config.text_mode:\n 944                   update_image_dimensions_js = load_js_script(\"update_image_dimensions\")\n 945                   try:",
       "found_on": "https://developer.roku.com/trc-docs/live-linear/ovp-linear-ingest-spec.md"
-    },
-    {
-      "url": "https://developer.roku.com/en-gb/docs/specs/direct-publisher-feed-specs/json-dp-spec.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md"
-    },
-    {
-      "url": "https://developer.roku.com/en-gb/docs/trc/video-on-demand/title-avail-specifications.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/trc/video-on-demand/title-avail-specifications.md"
-    },
-    {
-      "url": "https://developer.roku.com/en-gb/trc-docs/video-on-demand/title-avail-specifications.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/title-avail-specifications.md"
-    },
-    {
-      "url": "https://developer.roku.com/en-gb/trc-docs/video-on-demand/ingest-specifications.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ingest-specifications.md"
-    },
-    {
-      "url": "https://developer.roku.com/en-gb/trc-docs/video-on-demand/content-tags-and-metadata.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md"
-    },
-    {
-      "url": "https://developer.roku.com/en-gb/trc-docs/live-linear/live-feed-specifications.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/live-linear/live-feed-specifications.md"
     }
   ]
 }
