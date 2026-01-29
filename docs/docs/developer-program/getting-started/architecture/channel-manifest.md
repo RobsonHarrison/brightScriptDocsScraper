@@ -7,6 +7,7 @@ The root level of all Roku apps must contain a `manifest` file (`pkg:/manifest`)
 
 ## Manifest guidelines
   * Each attribute is on a separate line, and has the form `name=value`
+  * Attributes are case-sensitive and must match exactly
   * Each `name=value` pair must end with a newline character, or it may not be parsed by the Roku OS
   * The last line must end with a newline character
   * Empty lines are ignored
