@@ -10,7 +10,7 @@ Using deprecated APIs may cause your app to fail certification testing. See the 
 #### Test apps before submission
 Use the certification criteria and the [list of pre-certification tests](https://developer.roku.com/docs/developer-program/certification/cert-tests/certification-testing.md) as tools to guide certification-compliance testing. Roku also provides a suite of tools to help developers verify that their apps comply with Roku's certification criteria before being submitting them for certification:
   * [Static Analysis tool](https://developer.roku.com/docs/developer-program/dev-tools/static-analysis-tool/static-analysis-tool.md): Checks the app's code for certification-related errors.
-  * [Channel Behavior Analysis tool](https://developer.roku.com/docs/developer-program/publishing/channel-publishing-guide.md#channel-behavior-analysis-window): For SVOD, AVOD, and free apps, verifies whether app performance and deep linking meet applicable certification requirements.
+  * [Channel Behavior Analysis tool](https://developer.roku.com/docs/developer-program/publishing/channel-publishing-guide.md#channel-behavior-analysis): For SVOD, AVOD, and free apps, verifies whether app performance and deep linking meet applicable certification requirements.
   * [Test automation software](https://developer.roku.com/docs/developer-program/dev-tools/automated-channel-testing/automated-testing-overview.md): Enables developers to write and execute automated test cases, including app purchasing, performance, deep linking, and other certification criteria.
 
 #### Test using beta apps

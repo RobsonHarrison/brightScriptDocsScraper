@@ -67,7 +67,7 @@ To run Channel Behavior Analysis testing on an authenticated app, follow these s
   1. Verify that all the [prerequisites](https://developer.roku.com/en-gb/docs/developer-program/certification/cert-tests/authenticated-cert-testing.md#prerequisites) have been completed.
 
   2. In the "text" steps within your sign-in script, verify that you have replaced the user name and password with the "script-login" and "script-password" template variables, respectively. The Channel Behavior Analysis tool will replace the template variables with the actual credentials entered in the [Test Credentials page](https://developer.roku.com/docs/developer-program/publishing/channel-publishing-guide.md#certification-testing-window). Channel Behavior Analysis testing will fail if the actual credentials are in the script.
-  3. Navigate to the [Channel Behavior Analysis page in the Developer Dashboard](https://developer.roku.com/developer-program/publishing/channel-publishing-guide.md#channel-behavior-analysis-window).
+  3. Navigate to the [Channel Behavior Analysis page in the Developer Dashboard](https://developer.roku.com/developer-program/publishing/channel-publishing-guide.md#channel-behavior-analysis).
 
   4. In the **Sign In/Out Scripts** , click **Edit**.
 If you can't find the Sign In/Out Scripts button shown below for your Public app, make sure your app Customer Account Requirement field is accurate. For more information, follow the steps below:

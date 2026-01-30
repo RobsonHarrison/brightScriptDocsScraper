@@ -123,6 +123,8 @@ When the attribute is set to `1`, the play event strictly indicates play-mode (n
 `run_as_process` | Integer | Required for integrating [Instant Resume](https://developer.roku.com/docs/developer-program/media-playback/instant-resume.md#updating-the-channel-manifest) and using the [chanperf debug command](https://developer.roku.com/docs/developer-program/debugging/debugging-channels.md#scenegraph-debug-server-port-8080-commands), [Roku Resource Monitor](https://developer.roku.com/docs/developer-program/dev-tools/resource-monitor.md), and [Perfetto](https://developer.roku.com/docs/developer-program/release-notes/app-tracing.md). | `run_as_process=1`
 `rsg_version` | value | Sets the SceneGraph [observer callback model](https://developer.roku.com/docs/developer-program/core-concepts/handling-application-events.md).
 
+You must set this parameter to `rsg_version=1.3` by October 1, 2026, to continue passing [certification testing](https://developer.roku.com/docs/developer-program/dev-tools/static-analysis-tool/static-analysis-tool.md) . This version includes the [APIs for transferring node data that improve app performance](https://developer.roku.com/docs/developer-program/performance-guide/data-transfer-apis.md)
+
 If using Roku OS 9.0 or above, use `rsg_version=1.2`. This enables a new internal mechanism for processing component <script> tags that optimizes the resulting compiled script code resulting in a reduced initial startup time and lesser memory usage while preserving compatibility.
 
 If using a [Roku component library node](https://developer.roku.com/docs/references/scenegraph/control-nodes/componentlibrary.md), the `rsg_version` flag needs to be declared in the component library's manifest as well.
@@ -131,7 +133,7 @@ If using a [Roku component library node](https://developer.roku.com/docs/referen
 
 The manifest entry defaults to 1.2 as of Roku OS 9.3 if it's not specified in the manifest.
 
-Note that support for the “rsg_version=1.0” manifest flag is deprecated as of Roku OS 8. | `rsg_version=1.2`
+Note that support for the “rsg_version=1.0” manifest flag is deprecated as of Roku OS 8. | `rsg_version=1.3`
 `automatic_audio_guide_disabled` | integer | Set to 1 to disable screen reader within an app. | `automatic_audio_guide_disabled=1`
 `disable_audio_guide_shortcut` | integer | Disables the shortcut for activating the screen reader (pressing the options key [*] four times ). |  ``disable_audio_guide_shortcut=1`
 `bs_prof_enabled` | boolean | Enable [BrightScript profiling](https://developer.roku.com/docs/developer-program/dev-tools/brightscript-profiler.md) | `bs_prof_enabled=true`
