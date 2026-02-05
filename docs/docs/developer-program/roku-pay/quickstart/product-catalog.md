@@ -282,7 +282,7 @@ To schedule a price change for a purchase option, follow these steps:
   5. If you are increasing the price, do the following:
 a. Schedule the effective date of the price increase for new customers. The price change will be applied for new subscribers the next day, at the earliest.
 ![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/catalog-2-price-change-new-customers.png)
-b. To apply the price change to current subscribers, select the **Apply price increase to current customer** check box, and then schedule the effective date of the price increase. The selected date must be 30 days in advance of the listed date. You must give current subscribers 15-days notice per Roku's certification requirements.
+b. To apply the price change to current subscribers, select the **Apply price increase to current customer** check box, and then schedule the effective date of the price increase. The selected date must be 15 days in advance of the listed date. You must give current subscribers 15-days notice per Roku's certification requirements.
 ![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/catalog-2-price-change-existing-customers.png)
   6. Click **Review and publish** to review the price change before publishing it.
 ![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change.png)

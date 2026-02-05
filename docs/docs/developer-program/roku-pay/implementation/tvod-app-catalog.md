@@ -234,7 +234,6 @@ orderItems | roArray of roAssociativeArray | The list of purchase options the cu
   * **orderType** (string): Must be set to "TVOD".
   * **price** (string): The final price of the product, including any discounts. Do not include a currency symbol (for example, set this to "2.99" instead of "$2.99").
   * **originalPrice** (string): The final original price of the product, including any discounts. Do not include a currency symbol (for example, set this to "3.99" instead of "$3.99"). This field is optional.
-  * **total** (string): Localized total of the item purchased (including tax if applicable; with local currency symbol).
   * **title** (string): A description of the TVOD order items (for example, the name of a rental movie).
   * **contentKey** (string): The publisher-specific SKU (or other unique identifier) for the TVOD order items.
   * **couponCode** (string): An alphanumeric string entered by the customer to receive a discounted price on the TVOD order items.
