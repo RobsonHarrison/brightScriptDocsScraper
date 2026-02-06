@@ -45,7 +45,7 @@ Limited-time offers (active or scheduled) created in Catalog 1.0 cannot be updat
 **Price changes to existing customers in Catalog 1.0 are applied to both new and existing customers in Catalog 2.0**
 In Catalog 2.0, when you schedule a price change for a purchase option, it is always applied to new subscribers (you can apply price changes to new subscribers only or both new and existing subscribers). As a result, price changes applied to only existing customers in Catalog 1.0 are applied to both existing and new customers after you upgrade to Catalog 2.0.
 To maintain separate pricing for new and existing customers, schedule a price change for new customers at the new price (the earliest price changes can go into effect is the next calendar day after you upgrade to Catalog 2.0).
-**30-day notice required for price increases to existing subscribers**
+**15-day notice required for price increases to existing subscribers**
 If you increase the price of a purchase option for existing subscribers, you must give them a 30-day notice.
 **Purchase options for deleted products are in the Purchases >Ended tab**
 The purchase options for products that were deleted before the migration are listed in the **Purchase Options >Ended** tab. Existing subscriptions associated with this purchase options will continue to renew. if you no longer want any subscribers to access the product via the given purchase option, you need to [archive the purchase option](https://roku.atlassian.net/wiki/spaces/DR/pages/148500544/Creating+the+product+catalog#Creatingtheproductcatalog-archive).

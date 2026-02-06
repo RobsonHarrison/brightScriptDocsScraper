@@ -81,7 +81,7 @@ If you are creating a [TVOD-exclusive app](https://developer.roku.com/docs/devel
        * See the [Price tier reference guide](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/price-tiers.md) for the complete list of price tiers for each Roku Streaming Store.
 If you are creating a [TVOD-exclusive app](https://developer.roku.com/docs/developer-program/roku-pay/implementation/tvod-channel.md), select any price tier. The price passed in the [ChannelStore APIs](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md) overrides the price corresponding to the selected price tier.
 
-> Certification requirement: SVOD apps must provide 30-days notice to existing customers before changing the price of their service.
+> Certification requirement: SVOD apps must provide 15-days notice to existing customers before changing the price of their service.
   * A chart under the **Price tier** field displays the price, in appropriate local currency, for each Streaming Store where the product will be available.
     * The **Purchase price** reflects the amount to be paid by the customer. The purchase price for EU Streaming Store countries include VAT. Proceeds are based on pre-tax (net) prices.
     * The **Your proceeds** field displays the amount that you receive from Roku for the sale of the product. Based on exchange rate fluctuations, the proceeds in one Streaming Store may not equal the amount to be received in another.
