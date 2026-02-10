@@ -106,7 +106,7 @@ exit_code | String | The exit code, which denotes the cause of the app terminati
   * **EXIT_OUT_OF_MEMORY** : The device was running under low-memory conditions.
   * **EXIT_AM_LOWRESOURCE** : System resources were low.
   * **EXIT_SYSTEM_KILL** : The app was preemptively closed by the Roku OS.
-  * **EXIT_UNKNOWN:** The device was rebooted because of low memory, or 10 or more apps had run before the launch of your app.
+  * **EXIT_UNKNOWN:** This is the default exit code if there was no prior exit (for example, the inital app launch after system boot) or no unusual exit reason noted (for example, a scenario other than a BrightScript crash or system resources issue).
 
 mem_limit | Integer | The applicable per-app memory limit that was exceeded (in Mb). This attribute is only included If the **exitCode** is EXIT_CHANNEL_MEM_LIMIT_FG or EXIT_CHANNEL_MEM_LIMIT_BG.
 app_state | String | The state of the app when it was terminated:

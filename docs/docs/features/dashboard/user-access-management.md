@@ -40,6 +40,7 @@ Select apps from the drop-down list. You can filter the list of apps as you ente
 Products |
      * Enable the developer to create and manage in-app products (for example, subscriptions, movie rentals, special events).
      * Add, view, edit, and delete test users.
+     * View and void test transactions.
 | Account
 Financial Reports | Grant the developer access to the Roku Pay transaction, sales activity, and payout reports for one or more apps.
 

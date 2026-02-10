@@ -4,8 +4,7 @@ When an app enabled for "billing testing" is sideloaded, calls to the ChannelSto
 > Sideloaded "billing testing" apps make live calls to the ChannelStore node and thus generate actual billing transactions. Developers must therefore add themselves as Test Users to the "billing testing" app to avoid incurring any billing charges while testing the app.
 > To use an app for billing testing:
 >   * The app must be the only one in the developer's account designated for billing testing.
->   * The "billing testing" app may only be used by the [root account user](https://developer.roku.com/docs/features/dashboard/user-access-management.md).
->   * The [root account user](https://developer.roku.com/docs/features/dashboard/user-access-management.md) must be designated as a Test User.
+>   * The developer account making purchases on the sideloaded app must be designated as a Test User.
 >   * The Test User's Roku account must be linked to the Roku device on which the app is sideloaded.
 >   * The app must be sideloaded on the Roku device.
 >

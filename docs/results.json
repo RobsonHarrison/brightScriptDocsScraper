@@ -1,7 +1,23 @@
 {
   "new": [],
-  "updated": [],
-  "unchanged": 1014,
+  "updated": [
+    {
+      "path": "docs/docs/developer-program/roku-pay/testing/billing-testing.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/testing/billing-testing.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/features/dashboard/user-access-management.md",
+      "url": "https://developer.roku.com/docs/features/dashboard/user-access-management.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/publishing/channel-publishing-guide.md"
+    },
+    {
+      "path": "docs/docs/references/brightscript/interfaces/ifappmanager.md",
+      "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifappmanager.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/media-playback/voice-controls/voice-profile-selector.md"
+    }
+  ],
+  "unchanged": 1012,
   "failed": [
     {
       "url": "https://developer.roku.com/docs/developer-program/release-notes/eclipse-plugin-release-notes.md",
@@ -34,14 +50,14 @@
       "found_on": "https://developer.roku.com/docs/developer-program/advertising/raf-api.md"
     },
     {
-      "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifcaptionrenderer.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
-    },
-    {
       "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifchannelinfo.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/certification/cert-tests/certification-testing.md"
+    },
+    {
+      "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifcaptionrenderer.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
     {
       "url": "https://developer.roku.com/docs/references/brightscript/interfaces/iftuner.md",
@@ -54,12 +70,12 @@
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
     {
-      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/targetset.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/markuplist.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
     {
-      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/markuplist.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/targetset.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
@@ -69,14 +85,14 @@
       "found_on": "https://developer.roku.com/docs/developer-program/media-playback/voice-controls/transport-controls.md"
     },
     {
-      "url": "https://developer.roku.com/en-gb/docs/developer-program/release-notes/eclipse-plugin-release-notes.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/developer-program/release-notes/eclipse-plugin-release-notes.md"
-    },
-    {
       "url": "https://developer.roku.com/en-gb/docs/developer-program/release-notes/docs/references/scenegraph/widget-nodes/texteditbox.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
+    },
+    {
+      "url": "https://developer.roku.com/en-gb/docs/developer-program/release-notes/eclipse-plugin-release-notes.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/docs/developer-program/release-notes/eclipse-plugin-release-notes.md"
     },
     {
       "url": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/ide-support.md",
@@ -84,14 +100,14 @@
       "found_on": "https://developer.roku.com/docs/developer-program/getting-started/ide-support.md"
     },
     {
-      "url": "https://developer.roku.com/en-gb/docs/developer-program/roku-pay/quickstart/monetization-method.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/monetization-method.md"
-    },
-    {
       "url": "https://developer.roku.com/en-gb/docs/developer-program/roku-pay/roku-web-service.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/roku-web-service.md"
+    },
+    {
+      "url": "https://developer.roku.com/en-gb/docs/developer-program/roku-pay/quickstart/monetization-method.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/monetization-method.md"
     },
     {
       "url": "https://developer.roku.com/en-gb/docs/references/brightscript/components/roslideshow.md",
@@ -104,19 +120,14 @@
       "found_on": "https://developer.roku.com/docs/references/brightscript/components/rovideoscreen.md"
     },
     {
-      "url": "https://developer.roku.com/en-gb/docs/references/brightscript/components/roscreen.md",
-      "reason": "Unexpected error in _crawl_web at line 940 in _crawl_web (../../../../../opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages/crawl4ai/async_crawler_strategy.py):\nError: Wait condition failed: Timeout after 15000ms waiting for selector '.markdown-body'\n\nCode context:\n 935                       timeout = config.wait_for_timeout if config.wait_for_timeout is not None else config.page_timeout\n 936                       await self.smart_wait(\n 937                           page, config.wait_for, timeout=timeout\n 938                       )\n 939                   except Exception as e:\n 940 \u2192                     raise RuntimeError(f\"Wait condition failed: {str(e)}\")\n 941   \n 942               # Update image dimensions if needed\n 943               if not self.browser_config.text_mode:\n 944                   update_image_dimensions_js = load_js_script(\"update_image_dimensions\")\n 945                   try:",
-      "found_on": "https://developer.roku.com/docs/references/brightscript/components/roscreen.md"
+      "url": "https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifcaptionrenderer.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/docs/references/brightscript/interfaces/ifcaptionrenderer.md"
     },
     {
       "url": "https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifchannelinfo.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/references/brightscript/interfaces/ifchannelinfo.md"
-    },
-    {
-      "url": "https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifcaptionrenderer.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/references/brightscript/interfaces/ifcaptionrenderer.md"
     },
     {
       "url": "https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/iftuner.md",
@@ -149,29 +160,29 @@
       "found_on": "https://developer.roku.com/trc-docs/faqs.md"
     },
     {
+      "url": "https://developer.roku.com/trc-docs/video-on-demand/title-avail-specifications.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ad-supported/getting-started.md"
+    },
+    {
       "url": "https://developer.roku.com/trc-docs/live-linear/live-feed-specifications.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ad-supported/getting-started.md"
     },
     {
-      "url": "https://developer.roku.com/en-ot/trc-docs/live-linear/epg-on-trc.md",
-      "reason": "Unexpected error in _crawl_web at line 940 in _crawl_web (../../../../../opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages/crawl4ai/async_crawler_strategy.py):\nError: Wait condition failed: Timeout after 15000ms waiting for selector '.markdown-body'\n\nCode context:\n 935                       timeout = config.wait_for_timeout if config.wait_for_timeout is not None else config.page_timeout\n 936                       await self.smart_wait(\n 937                           page, config.wait_for, timeout=timeout\n 938                       )\n 939                   except Exception as e:\n 940 \u2192                     raise RuntimeError(f\"Wait condition failed: {str(e)}\")\n 941   \n 942               # Update image dimensions if needed\n 943               if not self.browser_config.text_mode:\n 944                   update_image_dimensions_js = load_js_script(\"update_image_dimensions\")\n 945                   try:",
-      "found_on": "https://developer.roku.com/trc-docs/live-linear/ovp-linear-ingest-spec.md"
-    },
-    {
-      "url": "https://developer.roku.com/trc-docs/video-on-demand/title-avail-specifications.md",
-      "reason": "Unexpected error in _crawl_web at line 940 in _crawl_web (../../../../../opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages/crawl4ai/async_crawler_strategy.py):\nError: Wait condition failed: Timeout after 15000ms waiting for selector '.markdown-body'\n\nCode context:\n 935                       timeout = config.wait_for_timeout if config.wait_for_timeout is not None else config.page_timeout\n 936                       await self.smart_wait(\n 937                           page, config.wait_for, timeout=timeout\n 938                       )\n 939                   except Exception as e:\n 940 \u2192                     raise RuntimeError(f\"Wait condition failed: {str(e)}\")\n 941   \n 942               # Update image dimensions if needed\n 943               if not self.browser_config.text_mode:\n 944                   update_image_dimensions_js = load_js_script(\"update_image_dimensions\")\n 945                   try:",
-      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ad-supported/getting-started.md"
-    },
-    {
       "url": "https://developer.roku.com/trc-docs/video-on-demand/ingest-specifications.md",
-      "reason": "Unexpected error in _crawl_web at line 940 in _crawl_web (../../../../../opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages/crawl4ai/async_crawler_strategy.py):\nError: Wait condition failed: Timeout after 15000ms waiting for selector '.markdown-body'\n\nCode context:\n 935                       timeout = config.wait_for_timeout if config.wait_for_timeout is not None else config.page_timeout\n 936                       await self.smart_wait(\n 937                           page, config.wait_for, timeout=timeout\n 938                       )\n 939                   except Exception as e:\n 940 \u2192                     raise RuntimeError(f\"Wait condition failed: {str(e)}\")\n 941   \n 942               # Update image dimensions if needed\n 943               if not self.browser_config.text_mode:\n 944                   update_image_dimensions_js = load_js_script(\"update_image_dimensions\")\n 945                   try:",
-      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ad-supported/getting-started.md"
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/trc-docs/faqs.md"
     },
     {
       "url": "https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md",
-      "reason": "Unexpected error in _crawl_web at line 940 in _crawl_web (../../../../../opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages/crawl4ai/async_crawler_strategy.py):\nError: Wait condition failed: Timeout after 15000ms waiting for selector '.markdown-body'\n\nCode context:\n 935                       timeout = config.wait_for_timeout if config.wait_for_timeout is not None else config.page_timeout\n 936                       await self.smart_wait(\n 937                           page, config.wait_for, timeout=timeout\n 938                       )\n 939                   except Exception as e:\n 940 \u2192                     raise RuntimeError(f\"Wait condition failed: {str(e)}\")\n 941   \n 942               # Update image dimensions if needed\n 943               if not self.browser_config.text_mode:\n 944                   update_image_dimensions_js = load_js_script(\"update_image_dimensions\")\n 945                   try:",
+      "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/trc-docs/video-on-demand/avail/title-avail-specifications.md"
+    },
+    {
+      "url": "https://developer.roku.com/en-ot/trc-docs/live-linear/epg-on-trc.md",
+      "reason": "Unexpected error in _crawl_web at line 940 in _crawl_web (../../../../../opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages/crawl4ai/async_crawler_strategy.py):\nError: Wait condition failed: Timeout after 15000ms waiting for selector '.markdown-body'\n\nCode context:\n 935                       timeout = config.wait_for_timeout if config.wait_for_timeout is not None else config.page_timeout\n 936                       await self.smart_wait(\n 937                           page, config.wait_for, timeout=timeout\n 938                       )\n 939                   except Exception as e:\n 940 \u2192                     raise RuntimeError(f\"Wait condition failed: {str(e)}\")\n 941   \n 942               # Update image dimensions if needed\n 943               if not self.browser_config.text_mode:\n 944                   update_image_dimensions_js = load_js_script(\"update_image_dimensions\")\n 945                   try:",
+      "found_on": "https://developer.roku.com/trc-docs/live-linear/ovp-linear-ingest-spec.md"
     },
     {
       "url": "https://developer.roku.com/en-gb/docs/specs/direct-publisher-feed-specs/json-dp-spec.md",
@@ -184,9 +195,24 @@
       "found_on": "https://developer.roku.com/docs/trc/video-on-demand/title-avail-specifications.md"
     },
     {
+      "url": "https://developer.roku.com/en-gb/trc-docs/video-on-demand/title-avail-specifications.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/title-avail-specifications.md"
+    },
+    {
+      "url": "https://developer.roku.com/en-gb/trc-docs/video-on-demand/content-tags-and-metadata.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md"
+    },
+    {
       "url": "https://developer.roku.com/en-gb/trc-docs/live-linear/live-feed-specifications.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/trc-docs/live-linear/live-feed-specifications.md"
+    },
+    {
+      "url": "https://developer.roku.com/en-gb/trc-docs/video-on-demand/ingest-specifications.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/ingest-specifications.md"
     }
   ]
 }
