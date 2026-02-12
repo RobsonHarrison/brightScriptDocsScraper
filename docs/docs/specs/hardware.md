@@ -27,6 +27,7 @@ Roku TV (Brazil) | El Paso | 8000X | ARM | OpenGL ES 2.0 | 512 MB | 720p | 1080p
 4K Roku TV | Reno | A000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 1.5 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2019
 4K Roku TV | Malone | C000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2019
 4K Roku TV | Athens | G000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2021
+Roku TV | Roxton | K000X | ARM Cortex A35 | OpenGL ES 2.0 | 512 MB | 720p | 1080p/60fps | No | 2024
 4k Roku TV | Sandia | L000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3,840 x 2,160 | HDR10, HDR10+, Dolby Vision, HLG supported, varies by model | 2024
 4k Roku TV | Shiner | M000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 2 GB | 1920X1080 | 3,840 x 2,160 | HDR10, HDR10+ Adaptive, Dolby Vision IQ, HLG supported, varies by model | 2024
 4k Roku TV | Damon | P000X | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2024
@@ -72,7 +73,6 @@ Roku TV | Liberty | 5000X | MIPS 1 GHz | n/a | 512 MB | 1280X720 | 1920x1080, 60
 4K Roku TV | Ft. Worth | 6000X | ARM quad core | OpenGL ES 2.0 | 1.5 GB | 1920X1080 | 3840X2160 | N/a | 2016
 4K Roku TV (EU) | Camden | C000GB | ARM quad core 1 GHz | OpenGL ES 2.0 | 1 GB | 1920X1080 | 3840x2160 | HDR10, Dolby Vision, and HLG supported, varies by model | 2019
 Roku TV | Roma | D000X | ARM Cortex A55 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | No | 2020
-Roku TV | Roxton | K000X | ARM Cortex A35 | OpenGL ES 2.0 | 512 MB | 720p | 1080p/60fps | No | 2024
 ** Supports 720@60fps with some frame drops when video is not scaled to 1080. Should set ContentMetaData.maxFrameRate to 60 so that player doesn't scale the video to 1080.
 *** Supports 60fps at 720p. Supports 30fps at 1080p.
 ## Legacy models
