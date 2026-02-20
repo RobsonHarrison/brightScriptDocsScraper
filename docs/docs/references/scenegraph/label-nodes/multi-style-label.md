@@ -1,7 +1,7 @@
 # MultiStyleLabel
 Extends [**LabelBase**](https://developer.roku.com/docs/references/scenegraph/label-nodes/label-base.md)
 The MultiStyleLabel node class is used to create labels with mixed styles. For example, this node can be used to create a single label with plain and bold text, different fonts, and/or multiple colors.
-![roku815px - img](https://image.roku.com/ZHZscHItMTc2/emoji-multistylelabel.jpg)
+![roku815px - img](https://image.roku.com/ZHZscHItMTc2/emoji-multistylelabel-v3.jpg)
 ## Fields
 Fields derived from the [Group](https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/group.md#fields "Fields") and [LabelBase](https://developer.roku.com/docs/references/scenegraph/label-nodes/label-base.md#fields) classes can be used.
 Field | Type | Description
