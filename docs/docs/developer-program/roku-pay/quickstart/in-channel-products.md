@@ -57,11 +57,7 @@ UTF-8 characters are not supported in this version of the product name. You can 
 ![roku815px - inCP-SpanishProductName](https://image.roku.com/ZHZscHItMTc2/inCP-SpanishProductName.jpg)
 
 > You may want certain products to only be available in specific countries. In the app, you can call the [**getUserRegionData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getuserregiondata) command to determine the country associated with the user's Roku account. You can then implement business logic to filter the results of the ChannelStore [**getCatalog** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) to only display products that should be available for that country.
-> If you want to offer a specific in-app product in multiple countries, currency conversion can be handled by Roku or the publisher:
->   * **Roku handles currency conversion** : Create a single in-app product for all countries.
->   * **Publisher handles currency conversion** : Create in-app products for each country and filter out the product by the country in the app business logic.
->
-
+> If you want to offer a specific in-app product in multiple countries, the publisher must handle currency conversions. To do this, create in-app products for each country and filter out the product by the country in the app business logic.
   5. In the **Product identifier** field, enter the internal code for your app. This identifier is used as the `code` field for retrieving catalog items, creating orders, and getting previous purchases with the [SceneGraph ChannelStore node](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md).
 
 ### Product pricing
