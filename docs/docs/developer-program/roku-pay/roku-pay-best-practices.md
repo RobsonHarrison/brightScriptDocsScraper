@@ -6,7 +6,7 @@ Tip | Explanation | Documentation
 ---|---|---
 Use the **getUserRegionData** command to implement country-specific or multicountry products | You may want certain products to only be available in specific countries. In the app, you can call the [**getUserRegionData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getuserregiondata) command to determine the country associated with the user's Roku account. You can then implement business logic to filter the results of the ChannelStore [**getCatalog** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) to only display products that should be available for that country.
 
-If you want to offer a specific in-app product in multiple countries, currency conversion can be handled by Roku or the publisher:
+If you want to offer a specific in-app product in multiple countries, currency conversion must be handled by the publisher:
   * **Publisher handles currency conversion** : Create in-app products for each country and filter out the product by the country in the app using the [**ifDeviceInfo.GetCountryCode()**](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getcountrycode-as-string) method.
 
 | [ChannelStore](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getuserregionaldata)
