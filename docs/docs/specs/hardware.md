@@ -51,8 +51,8 @@ Roku Express+ | Littlefield | 3710X | MIPS 900 MHz | n/a | 512 MB | 1280X720 | 1
 Roku Streaming Stick | Amarillo 1080 | 3800X | ARM Cortex A53 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | n/a | 2017
 Roku Streaming Stick+ | Amarillo-2019 | 3810X | ARM Cortex A53 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR 10 | 2019
 Roku Streaming Stick+ | Amarillo 2019-HP | 3811X | ARM Cortex A53 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR 10 | 2019
-Roku Streaming Stick 4K | Madison | 3820X | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR10/10+, HLG | 2021
-Roku Streaming Stick 4K+ | Madison | 3821X | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR10/10+, HLG | 2021
+Roku Streaming Stick 4K | Madison | 3820X | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR10/10+, Dolby Vision, HLG | 2021
+Roku Streaming Stick 4K+ | Madison | 3821X | ARM Cortex A55 | OpenGL ES 2.0 | 1 GB | 1080p | 4K60fps, HDR | HDR10/10+, Dolby Vision, HLG | 2021
 Roku Express | Gilbert | 3900X | ARM Cortex A53 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | n/a | 2019
 Roku Express+ | Gilbert | 3910X | ARM Cortex A53 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | n/a | 2019
 Roku Express | Nemo | 3930X, 3930EU | ARM Cortex A53 | OpenGL ES 2.0 | 512 MB | 720p | 1080p | n/a | 2019
