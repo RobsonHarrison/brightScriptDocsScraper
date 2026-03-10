@@ -10,7 +10,7 @@ The Roku Channel is looking for ad-supported content that is appropriate for our
   * Roku must be made aware of the intent to submit or distribute Kids-Directed content via submission of the avails and Committed Title List document populating the columns outlined below:
     * Kids-Directed column must be populated with the value "true"
     * The Rating Source column must be populated with a valid Rating Source
-    * The Rating Value column must be populated with a valid parental [Rating](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#ratings) from that Rating Source
+    * The Rating Value column must be populated with a valid parental [Rating](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#ratings) from that Rating Source
     * “UNRATED” and “Not Rated” are not acceptable ratings for kids directed content
 
 ##### Optional age demographics tags
@@ -89,7 +89,7 @@ Excluded Rights | Distribution exclusions for the content. Multiple exclusions m
 | enum | AVOD, SVOD, FVOD, Linear OTT | optional
 Start Date | Start of availability in YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS format. If the content has no set Start Date, “open” is an acceptable value. Start Dates without time values will assume a relative start time of 12:00:00 am on the Start Date listed | date string | YYYY-MM-DD, YYYY-MM-DDTHH:MM:SS, or open | required
 End Date | End of availability in YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS format. If the content has no set End Date, “open” or “end of term” are acceptable values. End Dates without time values will assume relative end times of 11:59:59 pm on the End Date listed | date string | YYYY-MM-DD, YYYY-MM-DDTHH:MM:SS, open, or end of term | required
-Language | The language(s) that will be made available to users of The Roku Channel. Language values must conform to one of the enumerated [supported language codes](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#language-codes). Multiple language/localizationType combinations may be provided on the same row so long as all availability attributes are identical across the languages listed. When multiple languages are provided, the localization type related to that language must be included by appending a colon (":") and the localization type as defined below.
+Language | The language(s) that will be made available to users of The Roku Channel. Language values must conform to one of the enumerated [supported language codes](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#language-codes). Multiple language/localizationType combinations may be provided on the same row so long as all availability attributes are identical across the languages listed. When multiple languages are provided, the localization type related to that language must be included by appending a colon (":") and the localization type as defined below.
 
   * **dub** – indicates the language property refers to an audio track. Applicable to original voice audio
   * **sub** – indicates the language property refers to subtitle
@@ -106,7 +106,7 @@ Localization Type | Applies to the Language column when only a single language c
   * **any** – includes any combination of subtitles or dubbed audio (whatever is available)
 
 | enum | sub, dub, subdub, any | required when providing a single language in the Language column
-Excluded Languages | The language(s) that must not be made available to users of The Roku Channel. Language values must conform to one of the enumerated [supported language codes](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#language-codes). Multiple language combinations may be provided on the same row so long as all availability attributes are identical across the languages listed. | enum | Example:
+Excluded Languages | The language(s) that must not be made available to users of The Roku Channel. Language values must conform to one of the enumerated [supported language codes](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#language-codes). Multiple language combinations may be provided on the same row so long as all availability attributes are identical across the languages listed. | enum | Example:
 en, de | optional
 Territory |  [ISO 3166-1 alpha-2](https://www.iso.org/obp/ui/#search) country code for the country or territory in which the content may be made available. Multiple territories may be submitted on the same row so long as all availability attributes are identical across the territories listed. | enum | Example:
 US, CA, GB, MX, LATAM, WW | required
@@ -144,7 +144,7 @@ Do not use production numbers (e.g. 201 for season 2 episode 1) | integer | #, #
 Country of Origin | Defines the primary country where the film was produced and where the main creators, crew, and producers are established. Value must conform to one of the supported country codes as defined in the [ISO 3166-1 alpha 2](https://www.iso.org/iso-3166-country-codes.html) list of 2-character country codes. Please include 1 country only | enum | Example:
 US, CA, DE | required
 1 country only
-Original Spoken Language | Language in which the content was produced. This is usually the primary language of the country of origin and the language that synchronizes exactly with the movements of the performers mouths as they speak. Must conform to one of the enumerated [supported language codes](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#language-codes). May include multiple languages separated by commas. | enum | Example:
+Original Spoken Language | Language in which the content was produced. This is usually the primary language of the country of origin and the language that synchronizes exactly with the movements of the performers mouths as they speak. Must conform to one of the enumerated [supported language codes](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#language-codes). May include multiple languages separated by commas. | enum | Example:
 en-us, fr-ca
 | required
 Run Time | Runtime of the content in whole minutes. Minimum runtime is 1 | integer | Example:
@@ -167,11 +167,11 @@ Audio Description** (see note below) | Communicating if an audio description tra
 false | optional
 Audio Description Exemption** (see note below) | Exemption reason for not providing audio description track where required. | string |  | optional
 Original Release Date | Original date content was first made available in any presentation. Must include year of release at a minimum | date string | YYYY-MM-DD or YYYY | required
-Genre | Genre classification of the content. May provide multiple genres separated by comma | enum | See [Genres](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#genres) for allowed values | required
+Genre | Genre classification of the content. May provide multiple genres separated by comma | enum | See [Genres](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#genres) for allowed values | required
 Tags | Free form field to provide keywords, tags, categories, or keywords to be used to surface content on The Roku Channel UI. Please see our [Best Practices](https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md) page on how best to provide tags to The Roku Channel | string | exciting, timely, political | optional
-Rating Source | Rating system applied to the edit of title within territory of avail. Rating systems should be formatted and paired with Rating Value as per [Ratings](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#ratings) | enum | See [Ratings](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#ratings) for allowed values | optional
-Rating Value | Value representing the rating within the specified Rating Source. Ratings should be formatted and paired with Rating Source as per [Ratings](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#ratings) | enum | See [Ratings](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#ratings) for allowed values | optional
-Kids-Directed | Indicator that the content is intended for young audiences/family audiences. Must adhere to guidelines defined in [Kids Directed Content Policy](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#kids-directed-content-policy) | Boolean | true, false | optional
+Rating Source | Rating system applied to the edit of title within territory of avail. Rating systems should be formatted and paired with Rating Value as per [Ratings](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#ratings) | enum | See [Ratings](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#ratings) for allowed values | optional
+Rating Value | Value representing the rating within the specified Rating Source. Ratings should be formatted and paired with Rating Source as per [Ratings](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#ratings) | enum | See [Ratings](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#ratings) for allowed values | optional
+Kids-Directed | Indicator that the content is intended for young audiences/family audiences. Must adhere to guidelines defined in [Kids Directed Content Policy](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#kids-directed-content-policy) | Boolean | true, false | optional
 Recommended Age Group | When Kids Directed is True, a recommended age range for the content can be supplied. Only one Recommended Age Group allowed. Allowable values:
 
   * **ages_1-3** - For viewers 1 to 3 years of age
@@ -219,7 +219,7 @@ PG
 12A | 12-A
 12
 15 | 18
-NR[*](https://developer.roku.com/en-ca/trc-docs/video-on-demand/avail/title-avail-specifications.md#unrated-vs-not-rated)
+NR[*](https://developer.roku.com/en-gb/trc-docs/video-on-demand/avail/title-avail-specifications.md#unrated-vs-not-rated)
 R18
 R-1
 Canadian Home Video Rating System

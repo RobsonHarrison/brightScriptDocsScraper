@@ -5,18 +5,18 @@ This page provides an overview of how your brand with appear within The Roku Cha
 There are a total of **15 assets** we will need from you:
 Deliverables | Examples
 ---|---
-[Partner Tile](https://developer.roku.com/en-ca/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#partner-tile-43) | ![roku400px - premium-asset-1](https://image.roku.com/ZHZscHItMTc2/premium-asset-1.jpg)
-[Logo (2 colors)](https://developer.roku.com/en-ca/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#logo) |  ![roku400px - premium-asset-2](https://image.roku.com/ZHZscHItMTc2/premium-asset-2.jpg) ![roku400px - premium-asset-3](https://image.roku.com/ZHZscHItMTc2/premium-asset-3.jpg)
-[CTA (Call to Action) Banner](https://developer.roku.com/en-ca/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#cta-call-to-action-banner) | ![roku400px - premium-asset-4](https://image.roku.com/ZHZscHItMTc2/premium-asset-4.jpg)
-[Side Card (2 sizes)](https://developer.roku.com/en-ca/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#side-card) | ![roku400px - premium-asset-5](https://image.roku.com/ZHZscHItMTc2/premium-asset-5.jpg)
-[Shortcut Tile (2 sizes)](https://developer.roku.com/en-ca/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#channel-tile) | ![roku400px - premium-asset-6](https://image.roku.com/ZHZscHItMTc2/premium-asset-6.jpg)
-[On-Device Banner](https://developer.roku.com/en-ca/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#on-device-banner--screensaver) | ![roku400px - premium-asset-7](https://image.roku.com/ZHZscHItMTc2/premium-asset-7.jpg)
-[On-Device Screensaver (2 sizes)](https://developer.roku.com/en-ca/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#on-device-banner--screensaver) |  ![roku400px - premium-asset-9](https://image.roku.com/ZHZscHItMTc2/premium-asset-9.jpg)
+[Partner Tile](https://developer.roku.com/en-gb/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#partner-tile-43) | ![roku400px - premium-asset-1](https://image.roku.com/ZHZscHItMTc2/premium-asset-1.jpg)
+[Logo (2 colors)](https://developer.roku.com/en-gb/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#logo) |  ![roku400px - premium-asset-2](https://image.roku.com/ZHZscHItMTc2/premium-asset-2.jpg) ![roku400px - premium-asset-3](https://image.roku.com/ZHZscHItMTc2/premium-asset-3.jpg)
+[CTA (Call to Action) Banner](https://developer.roku.com/en-gb/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#cta-call-to-action-banner) | ![roku400px - premium-asset-4](https://image.roku.com/ZHZscHItMTc2/premium-asset-4.jpg)
+[Side Card (2 sizes)](https://developer.roku.com/en-gb/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#side-card) | ![roku400px - premium-asset-5](https://image.roku.com/ZHZscHItMTc2/premium-asset-5.jpg)
+[Shortcut Tile (2 sizes)](https://developer.roku.com/en-gb/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#channel-tile) | ![roku400px - premium-asset-6](https://image.roku.com/ZHZscHItMTc2/premium-asset-6.jpg)
+[On-Device Banner](https://developer.roku.com/en-gb/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#on-device-banner--screensaver) | ![roku400px - premium-asset-7](https://image.roku.com/ZHZscHItMTc2/premium-asset-7.jpg)
+[On-Device Screensaver (2 sizes)](https://developer.roku.com/en-gb/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#on-device-banner--screensaver) |  ![roku400px - premium-asset-9](https://image.roku.com/ZHZscHItMTc2/premium-asset-9.jpg)
 
 ![roku400px - premium-asset-8](https://image.roku.com/ZHZscHItMTc2/premium-asset-8.jpg)
-[:30 Promo Video](https://developer.roku.com/en-ca/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#30-promotional-video) | ![roku400px - premium-asset-10](https://image.roku.com/ZHZscHItMTc2/premium-asset-10-v3.jpg)
-[Subscriptions Details Copy](https://developer.roku.com/en-ca/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#subscriptions-details-copy) | ![roku600px - premium-asset-11](https://image.roku.com/ZHZscHItMTc2/premium-asset-11-v2.jpg)
-[Back of Back Copy](https://developer.roku.com/en-ca/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#back-of-box-copy) | ![roku600px - premium-asset-12](https://image.roku.com/ZHZscHItMTc2/premium-asset-12-v2.jpg)
+[:30 Promo Video](https://developer.roku.com/en-gb/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#30-promotional-video) | ![roku400px - premium-asset-10](https://image.roku.com/ZHZscHItMTc2/premium-asset-10-v3.jpg)
+[Subscriptions Details Copy](https://developer.roku.com/en-gb/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#subscriptions-details-copy) | ![roku600px - premium-asset-11](https://image.roku.com/ZHZscHItMTc2/premium-asset-11-v2.jpg)
+[Back of Back Copy](https://developer.roku.com/en-gb/trc-docs/video-on-demand/premium-subscriptions/assets-and-branding.md#back-of-box-copy) | ![roku600px - premium-asset-12](https://image.roku.com/ZHZscHItMTc2/premium-asset-12-v2.jpg)
 ## Asset details
 Below is a list of details, best practices, and dimensions sizes for each partner asset/deliverable that are required for content distribution.
 ### Partner tile (4:3)
