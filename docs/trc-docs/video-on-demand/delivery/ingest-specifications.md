@@ -167,6 +167,37 @@ stereoOnly | 2 channel stereo audio only. Can be delivered on a single track or 
 surroundOnly | 6 channel 5.1 surround audio only. Can be delivered on a single track or on 6 discrete tracks
 stereoPlusSurround | 8 channel audio with stereo on channels 1 and 2 followed by 5.1 surround on channels 3 through 8
 surroundPlusStereo | 8 channel audio with 5.1 on channels 1 through 6 followed by stereo on channels 7 and 8
+### Closed captions and subtitles
+Closed captions (also known as subtitles for the deaf or hard of hearing or SDH subtitles) and subtitles, while similar, serve separate distinct functions:
+**Closed captions/SDH subtitles/subtitles for the deaf or hard of hearing**
+  * Transcribes the spoken dialogue and the sounds heard in an audio track
+  * Intended as an accessibility device for the deaf or hard of hearing
+  * Can be enabled/disabled (toggled on/off) by the viewer during playback
+  * Includes text that describes sound effects and/or music cues and lyrics
+  * Must include a full transcription of all spoken dialogue and narrative text that needs to be understood by the viewer, including forced narratives as the Roku player will only display a single text track at a time
+  * Are companions to an audio track and must be provided in the same language and locale as that audio track
+  * Will not be made available to the viewer if a companion audio track in the same language is not provided
+  * May be required per regulatory agencies in certain territories
+
+**Full subtitles**
+  * Translates all narratively important spoken dialogue and on-screen text from one language to another
+  * Intended as a localization device when an audio track is in a language that the viewer does not understand
+  * Must include a full translation of all spoken dialogue and narrative text that needs to be understood by the viewer, including forced narratives as the Roku player will only display a single text track at a time
+  * Can be enabled/disabled (toggled on/off) by the viewer during playback
+  * Does not include text that describes sound effects or music cues, but may translate song lyrics if narratively important to the viewer or as a creative choice
+  * Can be made available to the viewer regardless of the audio track language(s) delivered
+
+**Forced narrative subtitles**
+  * Translates narratively important spoken dialogue and/or on-screen text for the purpose of conveying information that may not be understood by the viewer. This information could include:
+    * Spoken dialogue in a language different from the audio track language selected by the viewer
+    * On-screen text in a language different from the audio track selected by the viewer
+    * Inaudible or difficult to hear audio (such as an overly noisy scene or poor-quality audio recordings)
+  * Intended as a localization device when a portion of a program is presented in a language different from the main audio track language selected by the viewer or is otherwise unintelligible
+  * Can NOT be enabled/disabled (toggled on/off) by the viewer during playback
+    * _Forced narrative playback WILL be disabled when the viewer enables a CC/SDH/Subtitle track as the Roku player will only display a single text track at a time. For this reason, it is required that CC/SDH and full subtitles contain all forced narrative elements_
+  * Are companions to an audio track and must be provided in the same language and locale as that audio track
+  * Will automatically display based on the audio language track selected by the viewer
+
 ### Closed captions
 Roku prefers to receive closed captioning for all content to provide the best user experience possible.
 For content intended for the US, Roku adheres to FCC closed captioning rules regarding Internet Video Programming. Those rules can be found at the below link:
