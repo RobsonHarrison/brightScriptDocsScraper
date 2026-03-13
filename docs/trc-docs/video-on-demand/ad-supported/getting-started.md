@@ -24,7 +24,6 @@ In order to enroll in the Roku Partner Payout Program, you will need to provide 
   * Contact information
   * Bank information
   * Tax forms (W9, W8-BEN, or W8-BEN-E)
-  * You can come back and edit this information at any time.
 
 #### The Roku Channel partner payouts & revenue reports
 Partners can select between three payout methods when enrolling in the Roku Partner Payouts Program:

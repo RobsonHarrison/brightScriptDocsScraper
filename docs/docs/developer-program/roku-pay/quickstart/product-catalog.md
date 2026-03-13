@@ -274,23 +274,20 @@ To schedule a price change for a purchase option, follow these steps:
 ![img -  roku815px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-shortcut.png)
 
   2. The **Schedule a** **price change** dialog opens. For the purchase options, the dialog lists the names of the associated product and apps, the SKU, billing cycle (type), regular price, and base offer of the purchase option.
-![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-dialog.png)
+![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-dialog-v2.png)
 
-  3. In the **New regular price** field, select the updated price tier for the purchase option.
-![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-dialog-select-new-price.png)
+  3. Select whether the price change is for **New subscribers** or **Existing subscribers**.
+  4. In the **New regular price** field, select the updated price tier for the purchase option.
+![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-dialog-v2.png)
+  5. In the **Effective date** field, select when the price change will occur.
+a. For new subscribers, the earliest that a price change can go into effect is midnight the next day.
+b. For existing subscribers, the selected date must be 15 days in advance of the listed date. You must give current subscribers 15-days notice per Roku's certification requirements.
 
-  4. If you are decreasing the price, schedule the effective date of the price change for all customers.
-
-  5. If you are increasing the price, do the following:
-a. Schedule the effective date of the price increase for new customers. The price change will be applied for new subscribers the next day, at the earliest.
-![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/catalog-2-price-change-new-customers.png)
-b. To apply the price change to current subscribers, select the **Apply price increase to current customer** check box, and then schedule the effective date of the price increase. The selected date must be 15 days in advance of the listed date. You must give current subscribers 15-days notice per Roku's certification requirements.
-![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/catalog-2-price-change-existing-customers.png)
   6. Click **Review and publish** to review the price change before publishing it.
-![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change.png)
 
+![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-v2.png)
   7. Review and select the acknowledge check box and then click **Confirm** to schedule the price change.
-![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-dialog-confirm.png)
+![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-dialog-confirm-v2.png)
 
 ## Managing product groups
 You can use the **Product groups** tab to manage the product groups in your catalog. The tab lists the name and associated products for each purchase group. You can filter the product groups by entering a name in the search box. By default, the product groups are listed by name in alphabetical order, and you can sort the product groups by clicking the headers. You can click anywhere in a row to view the details of a product group and edit it.

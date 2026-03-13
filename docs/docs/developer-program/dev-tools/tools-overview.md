@@ -5,7 +5,7 @@ Tracks and visualizes several key metrics, including system and graphics memory 
 The Roku Resource Monitor is intended to be used in conjunction with the [BrightScript Profiler](https://developer.roku.com/docs/developer-program/dev-tools/brightscript-profiler.md) to improve app performance. For example, if the Roku Resource Monitor consistently shows increased consumption with a specific action on a screen, developers can use the [BrightScript Profiler](https://developer.roku.com/docs/developer-program/dev-tools/brightscript-profiler.md) to further drill down into the app and pinpoint where to optimize the code.
 For more information, see the [Roku Resource Monitor guide](https://developer.roku.com/docs/developer-program/dev-tools/resource-monitor.md).
 ## BrightScript Profiler
-Indicates where performance improvements and efficiencies can be made in your Roku app. The tool enables you to collect and analyze CPU usage, wall-clock time, function call counts, and memory usgae, including memory leak detection).
+Indicates where performance improvements and efficiencies can be made in your Roku app. The tool enables you to collect and analyze CPU usage, wall-clock time, function call counts, and memory usage, including memory leak detection.
 For more information, see the [BrightScript Profiler guide](https://developer.roku.com/docs/developer-program/dev-tools/brightscript-profiler.md).
 ## Roku Remote Tool
 Enables you to create reusable scripts for ad-hoc app testing in order to ensure a high-quality end-user experience and efficient use of developer resources. For more information, see the [Roku Remote Tool guide](https://developer.roku.com/docs/developer-program/dev-tools/roku-remote-tool.md).
