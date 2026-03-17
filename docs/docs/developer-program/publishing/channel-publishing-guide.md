@@ -99,7 +99,9 @@ Field | Description
 ---|---
 Countries | Add or remove the countries where your app is distributed. Only add countries where you have the rights to distribute your app's content. The "Rest of World" Streaming Store includes regions not serviced by other Streaming Stores.
 Domestic region | Select the country where your app is considered native and/or domestic. Your app will be displayed in the "International" category of all regional Streming Stores that include your app and are outside your domestic region.
-Made for kids? | If your app is made for kids you must select "Yes" and comply with the applicable children’s privacy laws and youth protection laws in the countries in which your app is published.
+Made for kids? | If your app is made for kids you must select **Yes** and comply with the applicable children’s privacy laws and youth protection laws in the countries in which your app is published.
+
+When you select **Yes** , the **Category** field is automatically fixed to "Kids" and cannot be changed, and you cannot set the **App Age Rating** to "Adult". If you select **No** , you cannot set the **Category** to "Kids".
 
 Selecting "Yes" automatically enables the **kidsContent** parameter in calls to the [Roku Advertising Framework (RAF) setContentGenre() method](https://developer.roku.com/docs/developer-program/advertising/raf-api.md#setcontentgenregenres-as-string-kidscontent-as-boolean). For more information, see [Channels Made for Kids](https://docs.roku.com/published/madeforkids).
 
