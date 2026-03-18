@@ -3,52 +3,11 @@
 ## Roku OS 15.2 Beta
 Roku OS 15.2, which is being shared with developer beta partners under non-disclosure agreements (NDAs), enhances Roku’s Perfetto-based app tracing tool, which can now visualize the BrightScript heap graph to inform developers which SceneGraph and BrightScript objects consume the most memory.
 Developers can now get raw Linux CPU and processing statistics with the **chanperf** ECP command and integrate it into their first-party app monitoring tools. Other new Developer Tool features include new Debug Protocol virtual variables for retrieving **roInputEvent** , **roUrlEvent** , and **roDateTime** values.
-In addition, this release includes new BrightScript APIs that configure low-memory event notificatons, get remote control repeat delay/rate information, support AES-GCM cyphers. The BrightScript language itself now supports automatic line continuation.
+In addition, this release includes new BrightScript APIs that configure low-memory event notificatons, get remote control repeat delay/rate information, support AES-GCM cyphers.
 Here is the list of key developer-facing Roku OS 15.2 updates:
 #### BrightScript APIs
 ##### Configurable low-memory events
 When you use the [**roAppMemoryMonitor** node](https://developer.roku.com/docs/references/brightscript/components/roappmemorymonitor.md) to subscribe your app to low-memory events, you can now specify the threshold percentages that trigger notifications (by default, 80%, 85%, 90%, 95% of the per-app memory limit). Notifications are throttled to prevent excessive events.
-##### Automatic line continuation
-BrightScript now supports the following line breaks and whitespace to improve code readability and maintenance:
-  * After opening delimiters (`(`, `[`, `{`): Allows formatting with an opening delimiter on one line.
-  * Before closing delimiters (`)`, `]`, `}): Allows formatting with a closing delimiter on its own line.
-  * After commas: Allows each list item on its own line.
-  * After binary operators: Allows breaking long expressions across multiple lines.
-
-**Examples**
-```
-result = someFunction(
-    arg1,
-    arg2,
-    arg3
-)
-myArray = [
-    "item1",
-    "item2",
-    "item3"
-]
-myObject = {
-    key1: "value1",
-    key2: "value2",
-    key3: "value3"
-}
-result = value1 +
-         value2 *
-         value3
-condition = isValid AND
-            isEnabled OR
-            isRequired
-result = calculateValue(
-    param1 +
-    param2,
-    {
-        option1: true,
-        option2: false
-    }
-)
-
-```
-
 ##### roDeviceInfo remote control repeat delay/rate APIs
 The [roDeviceInfo node](https://developer.roku.com/docs/references/brightscript/components/rodeviceinfo.md) includes the following functions for querying and monitoring [EN 301 549 accessibility-related remote repeat settings](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf):
   * **GetRemoteRepeatDelay() as Integer** : Returns the current remote key repeat delay in seconds (0–5). 0 is the default behavior.
