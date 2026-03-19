@@ -1,11 +1,11 @@
 # ifArray
 ## Implemented by
-Name | Description
----|---
-[roArray](https://developer.roku.com/docs/references/brightscript/components/roarray.md "roArray") | An array stores an indexed collection of BrightScript objects. Each entry of an array can be a different type, or they may all of the same type
-[roByteArray](https://developer.roku.com/docs/references/brightscript/components/robytearray.md "roByteArray") | The byte array component is used to contain and manipulate an arbitrary array of bytes
-[roList](https://developer.roku.com/docs/references/brightscript/components/rolist.md "roList") | The list object implements the interfaces: ifList, ifArray, ifEnum and therefore can behave like an array that can dynamically add members
-[roXMLList](https://developer.roku.com/docs/references/brightscript/components/roxmllist.md "roXMLList") | Contains a list of roXML objects
+| Name  | Description  |
+| --- | --- |
+| [roArray](https://developer.roku.com/docs/references/brightscript/components/roarray.md "roArray")  | An array stores an indexed collection of BrightScript objects. Each entry of an array can be a different type, or they may all of the same type  |
+| [roByteArray](https://developer.roku.com/docs/references/brightscript/components/robytearray.md "roByteArray")  | The byte array component is used to contain and manipulate an arbitrary array of bytes  |
+| [roList](https://developer.roku.com/docs/references/brightscript/components/rolist.md "roList")  | The list object implements the interfaces: ifList, ifArray, ifEnum and therefore can behave like an array that can dynamically add members  |
+| [roXMLList](https://developer.roku.com/docs/references/brightscript/components/roxmllist.md "roXMLList")  | Contains a list of roXML objects  |
 ## Supported methods
 ### Peek() As Dynamic
 #### Description
@@ -21,9 +21,9 @@ The last (highest index) array entry.
 #### Description
 Adds the specified value to the end of the array.
 #### Parameters
-Name | Type | Description
----|---|---
-tvalue | Dynamic | The value to be added to the end of the array.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| tvalue  | Dynamic  | The value to be added to the end of the array.  |
 ### Shift() As Dynamic
 #### Description
 Removes the first entry (zero index) from the beginning of the array and shifts the other entries up. This method is similar to the [Pop method](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifarray.md#pushtvalue-as-dynamic-as-void), but removes the first entry in the array instead of the last one.
@@ -33,16 +33,16 @@ The first entry (zero index) removed from the array.
 #### Description
 Adds the specified value to the beginning of the array (at the zero index) and shifts the other entries down. This method is similar to the [Push method](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifarray.md#push-as-dynamic), but adds the new entry to the beginning of the array instead of to the end.
 #### Parameters
-Name | Type | Description
----|---|---
-tvalue | Dynamic | The value to be added to the beginning of the array.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| tvalue  | Dynamic  | The value to be added to the beginning of the array.  |
 ### Delete(index as Integer) As Boolean
 #### Description
 Deletes the indicated array entry, and shifts all entries up. This decreases the array length by one.
 #### Parameters
-Name | Type | Description
----|---|---
-index | Integer | The entry to be removed from the array.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| index  | Integer  | The entry to be removed from the array.  |
 #### Return Value
 A flag indicating whether the specified array entry has been removed. If the entry was successfully deleted, returns true. If index is out of range, returns false and does not change the array.
 ### Count() As Integer
@@ -57,6 +57,6 @@ Deletes all the entries in the array.
 #### Description
 Appends the entries in one **roArray** to another. If the passed array contains entries that have not been set to a value, they are not appended.
 #### Parameters
-Name | Type | Description
----|---|---
-array | Object | The **roArray** to be appended to the target array.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| array  | Object  | The **roArray** to be appended to the target array.  |

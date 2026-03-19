@@ -11,6 +11,7 @@ roEVPDigest processes an arbitrary amount of data and generates a hash of the da
   * sha512 - SHA-2, 512 bit variant
 
 **Example: SHA1 Message Digest with roEVPDigest**
+
 ```
 ba = CreateObject("roByteArray")
 ' ...populate bytearray...
@@ -22,6 +23,7 @@ print result
 ```
 
 **Example: MD5 Message Digest with roEVPDigest**
+
 ```
 ba1 = CreateOjbect("roByteArray")
 ' ...populate ba1...

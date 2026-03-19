@@ -3,6 +3,7 @@ BrightScript has a set of standard, module scope, functions. These functions are
 * * *
 ## Sleep(milliseconds as Integer) as Void
 This function causes the script to pause for the specified time, without wasting CPU cycles. There are 1000 milliseconds in one second.
+
 ```
 sleep(1000) ' sleep for 1 second
 sleep(200) ' sleep 2/10 of a second
@@ -13,6 +14,7 @@ sleep(3000) ' sleep three seconds
 ## Wait(timeout as Integer, port as Object) as Object
 This function waits on objects that are "waitable" (those that have a MessagePort interface). Wait() returns the event object that was posted to the message port. If timeout is zero, "wait" will wait for ever. Otherwise, Wait will return after timeout milliseconds if no messages are received. In this case, Wait returns a type "invalid".
 **Example**
+
 ```
 p = CreateObject("roMessagePort")
 s = CreateObject("roScreen")
@@ -28,6 +30,7 @@ Each BrightScript Component has one or more interfaces. This function returns a 
 ## FindMemberFunction(object as Object, funName as String) As Interface
 Returns the interface from the object that provides the specified function, or invalid if not found.
 For example:
+
 ```
 print FindMemberFunction({}, "Count") '= <Interface: ifAssociativeArray>
 
@@ -40,6 +43,7 @@ Requests the system to perform a soft reboot. The Roku platform has disabled thi
 ## ListDir(path as String) as Object
 Returns a List object containing the contents of the directory path specified.
 For example:
+
 ```
  BrightScript> l=ListDir("pkg:/movies")
  BrightScript> print l
@@ -55,6 +59,7 @@ This function reads the specified file and returns the data as a string.
 The file can be encoded as either UTF-8 (which includes the 7-bit ASCII subset) or UTF-16.
 An empty string is returned if the file can not be read.
 For example:
+
 ```
 text=ReadAsciiFile("tmp:/config.txt")
 
@@ -65,6 +70,7 @@ This function writes the specified string data to a file at the specified locati
 The string data is written as UTF-8 encoded (which includes the 7-bit ASCII subset).
 The function returns true if the file was successfully written.
 For example:
+
 ```
 WriteAsciiFile("tmp:/config.txt", "the text to write")
 
@@ -86,6 +92,7 @@ The pattern may contain certain special characters:
   * The characters '?', '*' and '[' lose their special meaning if preceded by a single '\'. A single '\' can be matched as '\\\'.
 
 For example:
+
 ```
 files = MatchFiles(".", "*.mpg")
 
@@ -105,6 +112,7 @@ Return the integer value of the string, or 0 if nothing is parsed.
 This function runs the garbage collector on the current thread. It returns and Associative array with some statistics regarding the garbage collection.
 See the [Garbage collection](https://developer.roku.com/docs/references/brightscript/language/component-architecture.md#garbage-collection) section of this manual for more detail. You don't normally need to call this function.
 For example:
+
 ```
 BrightScript Debugger> a=[]
 BrightScript Debugger> a[0]=a
@@ -125,6 +133,7 @@ This function will parse a string formatted according to RFC4627 and return an e
   * An error will be returned if arrays/associative arrays are nested more than 256 levels deep.
 
 For example, lets say your service returns a JSON object that contains a list of photo URLs:
+
 ```
 {
       "photos" : [
@@ -144,6 +153,7 @@ For example, lets say your service returns a JSON object that contains a list of
 }
 
 ```
+
 ```
 searchRequest = CreateObject("roUrlTransfer")
 searchRequest.SetURL("http://api.example.com/services/rest/getPhotos")
@@ -162,11 +172,12 @@ An error will be returned if arrays/associative arrays are nested more than 256 
 If an error occurs an empty string will be returned.
 Normally non-ASCII characters are escaped in the output string as "\uXXXX" where XXXX is the hexadecimal representation of the Unicode character value.
 #### Output flags (optional)
-**Value** | **Description**
----|---
-&h0000 | Default: Non-ASCII characters are escaped in the output string as "\uHHHH" where HHHH is the hexadecimal representation of the Unicode character value.
-&h0001 | DontEscape: Non-ASCII characters are **not** escaped.
+| **Value**  | **Description**  |
+| --- | --- |
+| &h0000  | Default: Non-ASCII characters are escaped in the output string as "\uHHHH" where HHHH is the hexadecimal representation of the Unicode character value.  |
+| &h0001  | DontEscape: Non-ASCII characters are **not** escaped.  |
 ##### Example
+
 ```
 euroStr = Chr(&h20AC)
 
@@ -181,12 +192,13 @@ euroStr = Chr(&h20AC)
 ```
 
 #### Behavior flags (optional)
-**Flag** | **Description**
----|---
-&h0000 | Default: If an unsupported value type is encounted, FormatJSON fails and returns an empty string.
-&h0100 | Ignore: Unsupported value types are output as JSON null values.
-&h0200 | Annotate: Unsupported value types are output as a descriptive string.
+| **Flag**  | **Description**  |
+| --- | --- |
+| &h0000  | Default: If an unsupported value type is encounted, FormatJSON fails and returns an empty string.  |
+| &h0100  | Ignore: Unsupported value types are output as JSON null values.  |
+| &h0200  | Annotate: Unsupported value types are output as a descriptive string.  |
 ##### Example
+
 ```
 list = CreateObject("roList")
 obj = {list:list, n:1}
@@ -215,6 +227,7 @@ Translates the source string into the language of the current locale. The functi
 In some cases you may want to include a placeholder marker in a localizable string that gets dynamically substituted with a value at runtime.
 One way to accomplish that is to use the Replace method on the string value returned from the Tr() lookup.
 For example:
+
 ```
 `text = Tr("Video will start in %1 seconds").Replace("%1",
 numSeconds.ToStr())`

@@ -1,8 +1,8 @@
 # ifMicrophone
 ## Implemented by
-Name | Description
----|---
-[roMicrophone](https://developer.roku.com/docs/references/brightscript/components/romicrophone.md "roMicrophone") | The roMicrophone API allows apps to receive audio data from the user’s microphone-supported remote control device or mobile phone
+| Name  | Description  |
+| --- | --- |
+| [roMicrophone](https://developer.roku.com/docs/references/brightscript/components/romicrophone.md "roMicrophone")  | The roMicrophone API allows apps to receive audio data from the user’s microphone-supported remote control device or mobile phone  |
 ## Supported methods
 ### CanRecord() as Boolean
 #### Description
@@ -13,16 +13,16 @@ A flag indicating whether the microphone can be opened.
 #### Description
 Sets the text to be displayed in the system microphone UI.
 #### Parameters
-Name | Type | Description
----|---|---
-prompt | String | The text to be displayed in the system microphone UI.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| prompt  | String  | The text to be displayed in the system microphone UI.  |
 ### RecordToFile(wavFilePath as String) as Boolean
 #### Description
 Opens the microphone and records to create a WAV file at the specified output file path. Only tmp:/ paths are supported.
 #### Parameters
-Name | Type | Description
----|---|---
-wavFilePath | String | The file path where the WAV file is to be stored.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| wavFilePath  | String  | The file path where the WAV file is to be stored.  |
 #### Return Value
 A flag indicating whether the recording was performed and saved successfully.
 ### StartRecording() as Boolean

@@ -3,14 +3,14 @@ Publishers integrate the Demand API to create a direct automated connection with
 > Apps in the U.S. Streaming Store that have both streamed more than an average of 100,000 hours per month and averaged more than 10,000 new installs per month over the last three months must implement the Demand API as part of their integration (this requirement is also applicable to new apps projected to reach the specified thresholds shortly after launch).
 > Apps outside the U.S. Streaming Store that have streamed more than an average of 200,000 hours per month over the last three months, and new apps outside the U.S. Streaming Store that are projected to reach this threshold, must also implement the Demand API.
 > The following table summarizes which apps must implement the Demand API and when the implementation is required:
-> App criteria | In U.S Streaming Store | Outside U.S Streaming Store
-> ---|---|---
-> Inventory relationship with Roku? | YES | YES
-> Streaming hours
-> (average hours per month over the last three months) | 100,000 | 200,000
-> New installs
-> (average new installs per month over the last three months) | 10,000 | N/A
-> Requirement effective date | April 1, 2021 | April 1, 2022
+> | App criteria  | In U.S Streaming Store  | Outside U.S Streaming Store  |
+> | --- | --- | --- |
+> | Inventory relationship with Roku?  | YES  | YES  |
+> | Streaming hours
+> (average hours per month over the last three months)  | 100,000  | 200,000  |
+> | New installs
+> (average new installs per month over the last three months)  | 10,000  | N/A  |
+> | Requirement effective date  | April 1, 2021  | April 1, 2022  |
 ## Integration steps
 The Demand API integration is completed in two phases:
   1. Publisher calls the Demand API following the instructions in the integration document that will be provided to them and then verifies that their system is receiving a response. By verifying that their system can send and receive Demand API calls, the publisher is placed in a queue for completing the integration.

@@ -1,18 +1,18 @@
 # ifSGNodeFocus
 The ifSGNodeFocus interface is used to query and manipulate the remote control focus of the nodes in a SceneGraph node tree.
 ## Implemented by
-Name | Description
----|---
-[roSGNode](https://developer.roku.com/docs/references/brightscript/components/rosgnode.md "roSGNode") | The roSGNode object is the BrightScript equivalent of SceneGraph XML file node creation
+| Name  | Description  |
+| --- | --- |
+| [roSGNode](https://developer.roku.com/docs/references/brightscript/components/rosgnode.md "roSGNode")  | The roSGNode object is the BrightScript equivalent of SceneGraph XML file node creation  |
 ## Supported methods
 ### setFocus(on as Boolean) as Boolean
 #### Description
 Sets the current remote control focus to the subject node.
 #### Parameters
-Name | Type | Description
----|---|---
-on | Boolean | True = Sets the current remote control focus to the subject node. This also automatically removes focus from the node on which it was previously set.
-False = Removes focus from the subject node if it had it. Setting the remote control focus to false is rarely necessary, and can lead to unexpected behavior.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| on  | Boolean  | True = Sets the current remote control focus to the subject node. This also automatically removes focus from the node on which it was previously set.
+False = Removes focus from the subject node if it had it. Setting the remote control focus to false is rarely necessary, and can lead to unexpected behavior.  |
 #### Return Value
 A flag indicating whether focus on the subject node has successfully been updated.
 ### hasFocus() as Boolean

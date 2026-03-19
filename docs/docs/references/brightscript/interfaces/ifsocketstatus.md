@@ -1,9 +1,9 @@
 # ifSocketStatus
 ## Implemented by
-Name | Description
----|---
-[roDataGramSocket](https://developer.roku.com/docs/references/brightscript/components/rodatagramsocket.md "roDataGramSocket") | The roDataGramSocket component enables Brightscript apps to send and receive UDP packets
-[roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket") | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them
+| Name  | Description  |
+| --- | --- |
+| [roDataGramSocket](https://developer.roku.com/docs/references/brightscript/components/rodatagramsocket.md "roDataGramSocket")  | The roDataGramSocket component enables Brightscript apps to send and receive UDP packets  |
+| [roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket")  | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them  |
 ## Supported methods
 ### eAgain() as Boolean
 #### Description

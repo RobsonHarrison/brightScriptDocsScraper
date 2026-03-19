@@ -4,6 +4,7 @@ You can also localize your application from your server using URL directives bas
 > The application package localization features rely on the locales and locale IDs currently supported by Roku. The list of these supported locales can be found in the description of the [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md) `GetCurrentLocale()` method.
 ## Localizing strings in the application package
 For each string to be localized, provide localized translations of the string, in as many languages as you want that are currently supported by Roku. You can provide localized strings in either the TS or XLIFF XML localization file formats as supported by Roku. The string localization files should be placed in the `pkg:/locale/` subdirectory for the supported locale. For example, if you want to include a `translations.ts` localization file in the TS format for Canadian French, place the file in the `pkg:/locale/` subdirectory named for the locale ID `fr_CA`:
+
 ```
 pkg:/locale/fr_CA/translations.ts
 
@@ -12,12 +13,14 @@ pkg:/locale/fr_CA/translations.ts
 For strings defined in XML markup in a <children> element, or <interface> element field strings, the strings will be automatically translated by the SceneGraph application, if translations of the string exist in the localization files. If no translation file exists for the current locale, or no translation of the string exists in the translation file, the original string will be used.
 > All field values set in markup will be translated if the string value has a corresponding entry in a translation file. Roku best practices therefore strongly recommend initializing RSG field values that need to be localized in the corresponding BrightScript Init() function.
 For strings assigned using BrightScript in a <script> element, you can use the [`tr()`](https://developer.roku.com/docs/references/brightscript/language/global-utility-functions.md#trsource-as-string-as-string) function to localize a string, if you have provided a translation of the string in a `translations.xml` file in the XLIFF XML format in the package directory `pkg:/locale/locale_ID/` directory. The `tr()` function is a global BrightScript utility function that looks for the string in the `translations.xml` file, then finds the corresponding string translation in the file for the current locale. To use the `tr()` function to localize a specific _source_ string:
+
 ```
 tr(String source) as String
 
 ```
 
 For example, to translate the string "hello world" in BrightScript:
+
 ```
 m.greetinglabel.text = tr("hello world")
 
@@ -25,6 +28,7 @@ m.greetinglabel.text = tr("hello world")
 
 The `tr()` function will look for the `pkg:/locale/locale_ID/translations.xml` file, and look in the file for the "hello world" source string. If the source string exists in the file, with a translated string, the translated string will be returned, and assigned to the `text` field of the [**Label**](https://developer.roku.com/docs/references/scenegraph/label-nodes/label.md) node object `m.greetinglabel`. If no translation file exists, or the source string and translated string does not exist in the file, the original source string will be returned, and assigned to the `text` field.
 The `tr()` function also supports string substitutions. For example:
+
 ```
 text = tr("Video will start in %1 seconds").Replace("%1", numSeconds.ToStr())
 
@@ -32,12 +36,14 @@ text = tr("Video will start in %1 seconds").Replace("%1", numSeconds.ToStr())
 
 ## Localizing graphical images in the application package
 For each graphical image to be localized, provide each localized image in the `pkg:/locale/` directory, in as many languages as you want that are currently supported by Roku. Then use the following format for the value of the `uri` field of the [Poster](https://developer.roku.com/docs/references/scenegraph/renderable-nodes/poster.md) node:
+
 ```
 pkg:/locale/images/localized_image
 
 ```
 
 For example, to provide a localized version of `myPoster.jpg`, set the Poster node `uri` field as follows:
+
 ```
 <Poster uri = pkg:/locale/images/myPoster.jpg />
 
@@ -58,6 +64,7 @@ For example, if you want to have a localized version of a graphical image for Ca
 `pkg:/locale/fr_CA/images/image_name_canadian_french` `pkg:/locale/default/images/image_name_default`
 In Brightscript in a <script> element, you can also use the getLocalizedAsset() method in [ifLocalization](https://developer.roku.com/docs/references/brightscript/interfaces/iflocalization.md) to get a localized graphical image.
 For example:
+
 ```
 localize = createObject("RoLocalization")
 bannerposter = m.top.findNode("bannerPoster")
@@ -66,6 +73,7 @@ bannerposter.uri = localize.GetLocalizedAsset("images", "banner.png")
 ```
 
 Is equivalent to:
+
 ```
 bannerposter = m.top.findNode("bannerPoster")
 bannerposter.uri = "pkg:/locale/images/banner.png"
@@ -75,6 +83,7 @@ bannerposter.uri = "pkg:/locale/images/banner.png"
 ## TS file example
 The following is an example of a `translations.ts` file in the TS XML format placed in the `pkg:/locale/fr_CA` directory to translate English to Canadian French:
 **Example of a translations.ts file in the TS XML format**
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
@@ -102,6 +111,7 @@ The following is an example of a `translations.ts` file in the TS XML format pla
 ## XLIFF file example
 The following is an example of a `translations.xml` file in the XLIFF XML format placed in the `pkg:/locale/fr_CA` directory to translate English to Canadian French:
 **Example of a translations.xml file in the XLIFF XML format**
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">

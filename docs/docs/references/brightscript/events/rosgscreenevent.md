@@ -5,6 +5,7 @@
 Checks whether the screen has been closed and is no longer displayed to the user. This method returns true if the screen was closed; otherwise, it returns false.
 Apps respond to this event by exiting the main BrightScript thread to exit the application.
 #### Example: Handling the isScreenClosed event to terminate an app in source/main.brs
+
 ```
 sub Main()
     showChannelSGScreen()

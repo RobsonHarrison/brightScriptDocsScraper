@@ -42,6 +42,7 @@ To create the automated sign-in script, follow these steps:
      * Change the entered user name to `script-login`.
      * Change the entered password to `script-password`.
 The steps in the script should therefore appear as follows:
+
 ```
 - text: script-login
 - text: script-password

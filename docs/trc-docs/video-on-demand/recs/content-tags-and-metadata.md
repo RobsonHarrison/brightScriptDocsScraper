@@ -11,19 +11,19 @@ Include **at least 2 relevant Roku Provided Tags** from the menu below on _every
   * Roku reserves the right to make changes to metadata if/when content is miscategorized.
 
 Examples:
-Title | Baseline
+| Title  | Baseline
 (2 Roku tags)
-Preferred | Rich Tags
+Preferred  | Rich Tags
 (2 Roku Tags +)
-Preferred |  | Mismatched Tags -
-Not Preferred
----|---|---|---|---
-Mean Girls | comedy
-coming of age | comedy, coming of age, romantic comedy, leading ladies |  | action, documentary
-Schindler's List | drama
-world war 2 | drama, world war 2, war, history, biography |  | comedy, romance, action
-Hoarders | reality tv
-documentary | reality tv, documentary, bingeworthy |  | romance, ensemble tv shows, cooking
+Preferred  |   | Mismatched Tags -
+Not Preferred  |
+| --- | --- | --- | --- | --- |
+| Mean Girls  | comedy
+coming of age  | comedy, coming of age, romantic comedy, leading ladies  |   | action, documentary  |
+| Schindler's List  | drama
+world war 2  | drama, world war 2, war, history, biography  |   | comedy, romance, action  |
+| Hoarders  | reality tv
+documentary  | reality tv, documentary, bingeworthy  |   | romance, ensemble tv shows, cooking  |
 Choose from the list of Roku tags:
 ### **Core Tags**
 These are high (level 1) genres.
@@ -57,10 +57,10 @@ These are high (level 1) genres.
 ### **Niche/Specific Tags**
 These are level 2 tags. Used to add an additional layer of description not covered from a Core Genre Tag. Needs to be at least 80 % of the content to be applicable.
 Examples:
-Title | Core Tag | Niche Tag
----|---|---
-Terminator | action | cyborgs
-Downton Abbey | drama | period pieces
+| Title  | Core Tag  | Niche Tag  |
+| --- | --- | --- |
+| Terminator  | action  | cyborgs  |
+| Downton Abbey  | drama  | period pieces  |
   * aliens
   * animals
   * anime

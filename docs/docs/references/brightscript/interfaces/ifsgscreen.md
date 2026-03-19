@@ -1,16 +1,16 @@
 # ifSGScreen
 ## Implemented by
-Name | Description
----|---
-[roSGScreen](https://developer.roku.com/docs/references/brightscript/components/rosgscreen.md "roSGScreen") | The roSGScreen object is a SceneGraph canvas that displays the contents of a SceneGraph Scene node tree
+| Name  | Description  |
+| --- | --- |
+| [roSGScreen](https://developer.roku.com/docs/references/brightscript/components/rosgscreen.md "roSGScreen")  | The roSGScreen object is a SceneGraph canvas that displays the contents of a SceneGraph Scene node tree  |
 ## Supported methods
 ### SetMessagePort(port as roMessagePort) as Void
 #### Description
 Specifies the roMessagePort object for the roSGScreen object
 #### Parameters
-Name | Type | Description
----|---|---
-port | roMessagePort | The roMessagePort to be used for the SceneGraph scene.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| port  | roMessagePort  | The roMessagePort to be used for the SceneGraph scene.  |
 ### GetMessagePort() as roMessagePort
 #### Description
 Returns the roMessagePort object for the SceneGraph scene.
@@ -22,6 +22,7 @@ Returns a global reference object for the SceneGraph application.
 #### Return Value
 A global reference object.
 #### Example: Starting Scene Graph Applications
+
 ```
 sub showChannelSGScreen()
   print "in showChannelSGScreen"
@@ -63,9 +64,9 @@ Removes the SceneGraph scene from the display screen.
 #### Description
 Creates the SceneGraph scene object based on the specified sceneType object.
 #### Parameters
-Name | Type | Description
----|---|---
-sceneType | String | The sceneType object to be used to create the scene object.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| sceneType  | String  | The sceneType object to be used to create the scene object.  |
 #### Return Value
 The roSGScene object associated with the screen.
 ### GetScene() as roSGNode

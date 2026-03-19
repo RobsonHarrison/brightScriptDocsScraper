@@ -15,6 +15,7 @@ The `font` field can also be used to specify custom settings in the default or s
   * `SmallestBoldSystemFont`
 
 For example, to specify the bolded small default font for a **Label** node in XML markup:
+
 ```
 <Label id="mySmallLabel"
     width="200" height="200"

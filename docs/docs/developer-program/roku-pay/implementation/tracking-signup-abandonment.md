@@ -44,6 +44,7 @@ Signup events can be sent using the Roku Event Dispatcher (RED) library or the *
 ### Integrating the Roku Event Dispatcher in the signup workflow
 To use the Roku Event Dispatcher in your app's signup workflow to send events, follow these steps:
   1. Enable the RED library in your app by adding the following line to the [manifest](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md) file:
+
 ```
 sg_component_libs_required=roku_analytics
 
@@ -54,6 +55,7 @@ a. When `roSGScreen` is active, create a "Roku_Analytics:AnalyticsNode" node and
 b. To add the RED library as a provider, include `RED: {}` when assigning to its `.init` field.
 c. To dispatch a signup event, assign `{RED: {eventName: "Sign_Up|pageNumber=int|pageType=type"}` or `{RED: {eventName: "Sign_Up_Form"|field=string"}` to the `.trackEvent` field.
 The following example demonstrates how to send signup events:
+
 ```
  sub Notify_Roku_UserIsLoggedIn(rsgScreen = invalid as Object)
      ' get the global node
@@ -83,18 +85,21 @@ The following example demonstrates how to send signup events:
 ### Integrating the RAF fireRokuMarketingPixel() method in the signup workflow
 To use the RAF **fireRokuMarketingPixel()** method to send authentication events to Roku, follow these steps:
   1. Enable the RAF library in your app by adding the following line to the [manifest](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md) file:
+
 ```
 bs_libs_required=roku_ads_lib
 
 ```
 
   2. Instantiate the RAF library in the app:
+
 ```
 adIface = Roku_Ads()
 
 ```
 
   3. When an authenticated customer launches your app, call the **fireRokuMarketingPixel()** method using the following syntax:
+
 ```
 adIface.fireRokuMarketingPixel("Sign_Up|pageNumber=1|pageType=landing")
 

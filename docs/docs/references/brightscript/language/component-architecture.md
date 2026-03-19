@@ -25,6 +25,7 @@ The "." Operator works on any object that has an [ifAssociativeArray](https://de
 Any expression that is expecting an Integer, Float, Double, Boolean or String, can take an object with the [ifInt](https://developer.roku.com/docs/references/brightscript/interfaces/ifint.md), [ifFloat](https://developer.roku.com/docs/references/brightscript/interfaces/iffloat.md), [ifDouble](https://developer.roku.com/docs/references/brightscript/interfaces/ifdouble.md), [ifBoolean](https://developer.roku.com/docs/references/brightscript/interfaces/ifboolean.md), or [ifString](https://developer.roku.com/docs/references/brightscript/interfaces/ifstring.md) interface.
 ## Intrinsic types and object types
 A variable may hold either an "intrinsic type" or an "object type". An intrinsic type is one of Integer, Float, Double, String, Invalid, Boolean or Function. An object type is one of Array, Associative Array or BrightScript Component. The most important difference is a variable containing an intrinsic type contains the value itself; that is, the Integer, Float, Double, etc. is contained within the variable. On the other hand, a variable containing an object type contains merely a pointer or reference to the actual object. Assigning an object type results in two pointers to the same object, while assigning an intrinsic type results in two copies of the same value, which can be modified independently of each other.
+
 ```
 a = 42  ' a contains an intrinsic Integer
 b = a   ' b contains a copy of a
@@ -40,6 +41,7 @@ b[1] = 6        ' now both a[1] and b[1] equal 6
 
 The same thing holds true when variables are passed as function parameters. If the variable is intrinsic, the function parameter is a copy of the original. But if the variable is object, the function parameter is merely an additional reference to the same object. That is, intrinsic variables are "passed by value", while object variables are "passed by reference".
 **Example**
+
 ```
 function Modify(a as Integer, b as Object) as Void
     a = 43
@@ -57,6 +59,7 @@ end function
 
 Each object maintains a "reference count", which is the number of variables which refer to the object. The reference count is set to 1 when the object is created and a reference to it is saved in a variable. When an object's reference count drops to zero, the object is destroyed.
 **Example**
+
 ```
 a = CreateObject("roArray")   ' array has a ref count of 1
 b = a                         ' array has a ref count of 2
@@ -71,6 +74,7 @@ Note that after the last statement, since no variables refer to the object any l
 ## Use of wrapper functions on intrinsic types
 If an intrinsic types is passed to a function that expects an Object, a "wrapper" object will be created, assigned the correct value, and passed to the function. Wrapper objects are objects which behave like the intrinsic entities that they represent. For example, an integer may be converted to an roInt object, which can be used much like an ordinary integer, but it has object semantics. This automatic conversion to an object is sometimes referred to as "autoboxing".
 **Example**
+
 ```
 Function Main()
     MyFunA(4)
@@ -88,6 +92,7 @@ End Function
 ```
 
 **Will Print:**
+
 ```
   A 4 roInt
   B 4
@@ -96,6 +101,7 @@ Integer
 ```
 
 **Example**
+
 ```
 Print 5.tostr()+"th"   ' prints 5th
 Print "5".toint()+5    ' prints 10
@@ -135,6 +141,7 @@ BrightScript supports XML via two BrightScript Components, and some dedicated la
 ### Attribute operator
 The @ operator can be used on an roXMLElement to return a named attribute. It is always case insensitive (despite the fact that XML is technically case sensitive). When used on an roXMLList, the @ operator will return a value only if the list contains exactly one element.
 For example, if the file "example.xml" contains the following:
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 <rsp stat="ok">
@@ -148,6 +155,7 @@ For example, if the file "example.xml" contains the following:
 ```
 
 Then
+
 ```
  rsp=CreateObject("roXMLElement")
  rsp.Parse(ReadAsciiFile("tmp:/example.xml"))
@@ -160,6 +168,7 @@ Then
 rsp.photos@perpage will return the string 100.
 Use the GetText() method to return an element's text.
 For example, if the variable booklist contains this roXMLElement:
+
 ```
  <booklist>
  <book lang=eng>The Dawn of Man</book>
@@ -168,24 +177,28 @@ For example, if the variable booklist contains this roXMLElement:
 ```
 
 then
+
 ```
  print booklist.book.gettext()
 
 ```
 
 Will print "The Dawn of Man", and
+
 ```
  print booklist.book@lang
 
 ```
 
 will print
+
 ```
 "eng"
 
 ```
 
 **Example: flikr**
+
 ```
 REM
 REM Interestingness
@@ -249,6 +262,7 @@ End Function
 
 #### Parsing colons in namespace element and attribute tags
 For elements and attributes with namespaces, you can use the [roXMLElement interface](https://developer.roku.com/docs/references/brightscript/interfaces/ifxmlelement.md#getattributes-as-object) to parse the colons in their tags. Consider the following XML:
+
 ```
 <media:thumbnail xmlns:media='http://something.something.com/mrss/' url='http://blahblablah.com' width='72' height='72' />
 
@@ -263,6 +277,7 @@ To parse these tags, do the following
 BrightScript will automatically free strings when they are no longer used, and it will free objects when their reference count goes to zero. This is done at the time the object or string is no longer used; there is no background garbage collection task. This results in very predictable "garbage collection" – there are no unexpected stalls in execution.
 A "mark and sweep" garbage collection is run after a script executes, or can be manually forced to run via the debug console. A script can force the Garbage collector to run via the RunGarbageCollector() function. The Garbage collector's purpose is to clean up objects that refer to themselves or have other circular references (which are not managed by the normal reference counting garbage collection).
 **Example**
+
 ```
 i=roCreateObject("roInt")
 j=i ' reference incremented
@@ -274,6 +289,7 @@ j=0 ' roInt just free'd.
 ## Events
 Events in BrightScript center around an event loop and the roMessagePort BrightScript Component. Any BrightScript Component can be posted to a message port. Typically these will be Objects that are designed to represent an events. For example, the roFilesystem class posts events of type roFilesystemEvent.
 **Example**
+
 ```
 fs = CreateObject("roFilesystem")
 port = CreateObject("roMessagePort")
@@ -305,6 +321,7 @@ An intrinsic object is simply an roAssociativeArray which contains function refe
 ## "m" the BrightScript "this pointer"
 A BrightScript object is an roAssociativeArray which contains function pointers. When a member function is called "from" an AssociativeArray, the special variable "m" is set to point to that AssociativeArray. "m" is accessible inside the called function to access other data in the AssociativeArray object.
 **Example**
+
 ```
 function Main()
      obj = ConstructMyObject()
@@ -340,6 +357,7 @@ Additional libraries may be provided by the platform for specific usage purposes
 **Example**
 Library "v30/bslCore.brs"
 The common library file sources can be viewed from the debug console:
+
 ```
 BrightScript> bslCore =
 ReadAsciiFile("common:/LibCore/v30/bslCore.brs")
@@ -416,6 +434,7 @@ When using these regions as drawables, your graphics will be translated and clip
 
 ###### Example: bslDefender.brs
 If spriteMap.xml contains the following:
+
 ```
 <DefenderBitmapSet>
 <ExtraInfo cellsize="40"/>
@@ -435,6 +454,7 @@ If spriteMap.xml contains the following:
 ```
 
 Then
+
 ```
  BrightScript> xml = ReadAsciiFile("pkg:/images/map.xml")
  BrightScript> bitmapset = dfNewBitmapSet(xml)

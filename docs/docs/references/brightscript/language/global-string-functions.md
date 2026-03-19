@@ -1,6 +1,7 @@
 # Global string functions
 ## UCase(s as String) as String
 Converts the string to all upper case.
+
 ```
  print UCase("Hello")  ' prints: HELLO
 
@@ -8,6 +9,7 @@ Converts the string to all upper case.
 
 ## LCase(s as String) as String
 Converts the string to all lower case.
+
 ```
  print LCase("Hello")  ' prints: hello
 
@@ -16,6 +18,7 @@ Converts the string to all lower case.
 ## Asc(letter as String) as Integer
 Returns the Unicode ("ASCII") value for the first character of the specified string.
 An empty string argument will return 0.
+
 ```
  print Asc("C") ' prints: 67
 
@@ -24,12 +27,14 @@ An empty string argument will return 0.
 ## Chr(ch as Integer) as String
 Performs the inverse of the Asc function: returns a one-character string whose character has the specified Unicode value.
 Returns empty string if the specified value is 0 or an invalid Unicode value.
+
 ```
  print Chr(67) ' prints: C
 
 ```
 
 By using Chr, you can create strings containing characters which cannot be contained in quotes, such as newline or the quote character itself.
+
 ```
  print (Chr(34) + "hello" + Chr(34))  ' prints: "hello"
 
@@ -38,6 +43,7 @@ By using Chr, you can create strings containing characters which cannot be conta
 ## Instr(start as Integer, text as String, substring as String) as Integer
 Returns the position of the first instances of substring within text, starting at the specified start position.
 Returns 0 if the substring is not found. Unlike the ifString.Instr() method, the first position is 1.
+
 ```
  print Instr(1, "this is a test", "t")  ' prints: 1
  print Instr(2, "this is a test", "t")  ' prints: 11
@@ -47,6 +53,7 @@ Returns 0 if the substring is not found. Unlike the ifString.Instr() method, the
 
 ## Left(s as String, n as Integer) as String
 Returns the first _n_ characters of _s._
+
 ```
  print Left("timothy", 3) ' prints: tim
 
@@ -54,6 +61,7 @@ Returns the first _n_ characters of _s._
 
 ## Len(s as String) as Integer
 Returns the number of characters in the specified string.
+
 ```
  print Len("timothy") ' prints: 7
 
@@ -63,6 +71,7 @@ Returns the number of characters in the specified string.
 Returns a substring of _s_ with length _n_ and starting at position _p_.
 n may be omitted, in which case the string starting at p and ending at the end of the string is returned.
 Unlike the [ifStringOps.Mid()](https://developer.roku.com/docs/references/brightscript/interfaces/ifstringops.md#midstart_index-as-integer-as-string) method, the first character in the string is position 1.
+
 ```
  print mid("timothy", 4, 3) ' prints: oth
 
@@ -70,6 +79,7 @@ Unlike the [ifStringOps.Mid()](https://developer.roku.com/docs/references/bright
 
 ## Right(s as String, n as Integer) as String
 Returns the last n characters of s.
+
 ```
  print right("timothy", 3) ' prints: thy
 
@@ -87,6 +97,7 @@ Converts the integer value into a string representation using the given radix.
 If radix is not 2 .. 36 then an empty string is returned.
 Note that the returned string does not include a base prefix and uses lowercase letters to represent those digits in bases greater than 10.
 For example:
+
 ```
 print StrI(255, 16) '= "ff"
 
@@ -97,6 +108,7 @@ print StrI(9, 2) '= "1001"
 ## String(n as Integer, str as String ) as String
 Returns a string composed of n copies of the second argument concatenated together.
 For example,
+
 ```
  print String(4, "ab") ' prints: abababab
 
@@ -105,6 +117,7 @@ For example,
 ## StringI(n as Integer, ch as Integer) as String
 Returns a string composed of n copies of the character whose Unicode value is the second argument.
 For example,
+
 ```
  print StringI(5, 67) ' prints: CCCCC
 
@@ -118,6 +131,7 @@ Returns the integer value from parsing the string with the specified radix.
 Radix should be 2 .. 36 or the special value 0 (which automatically identified hexadecimal or octal numbers based on 0x or 0 prefixes respectively).
 Leading whitespace is ignored then as much of the rest of the string will be parsed as valid.
 For example:
+
 ```
 print Val("0x80", 0) '= 128
 
@@ -130,6 +144,7 @@ print Val("1001", 2) '= 9
 ## Substitute(str as String, arg0 as String, arg1 = "" as String, arg2 = "" as String, arg3 = "" as String) as String
 Replaces all instances of {0} or ^0 in a string with arg0. Similarly, replaces all instances of {1} or ^1 with arg1, {2} or ^2 with arg2, and {3} or ^3 with arg3.
 **Example**
+
 ```
 thing = "book"
 color = "red"
@@ -140,6 +155,7 @@ print Substitute("My {0} is {1}.", thing, color) ' prints "My book is red."
 ## Arg(arg%1 as String, arg%2 as String, arg%3 as String,str as String, , arg1 as String = "",
 Replaces %_n_ placeholders (for example, %1, %2, etc.) with arg1, arg2, and so on. The placeholders are not zero-index-based.
 **Example**
+
 ```
 currentPlanText = Substitute(tr("Current plan: %1 %2 %3/%4", tierDisplayName, LCase(getPlanName(currentPlan.productType)), cost, currentPlan.renewalPeriodNounTextAbbrv)
 

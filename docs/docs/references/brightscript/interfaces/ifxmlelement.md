@@ -1,16 +1,16 @@
 # ifXMLElement
 ## Implemented by
-Name | Description
----|---
-[roXMLElement](https://developer.roku.com/docs/references/brightscript/components/roxmlelement.md "roXMLElement") | roXMLElement is used to contain an XML tree
+| Name  | Description  |
+| --- | --- |
+| [roXMLElement](https://developer.roku.com/docs/references/brightscript/components/roxmlelement.md "roXMLElement")  | roXMLElement is used to contain an XML tree  |
 ## Supported methods
 ### Parse(xml as String) as Boolean
 #### Description
 Parses a string of XML.
 #### Parameters
-Name | Type | Description
----|---|---
-xml | String | The XML string to be parsed
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| xml  | String  | The XML string to be parsed  |
 #### Return Value
 A flag indicating whether the operation was successful. In that case, other methods below can then be used to extract information about the parsed element.
 ### GetBody() as Object
@@ -48,44 +48,44 @@ An element list.
 #### Description
 Returns an [roXMLList](https://developer.roku.com/docs/references/brightscript/components/roxmllist.md "roXMLList") representing all child elements of this element whose case-sensitive name is specified. If only one element matches the name, an roXMLList containing one element is returned. If no elements match, an empty roXMLList is returned.
 #### Parameters
-Name | Type | Description
----|---|---
-name | String | The parent element containing the child elements to be listed. Matching of the parent element name is case-sensitive.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| name  | String  | The parent element containing the child elements to be listed. Matching of the parent element name is case-sensitive.  |
 #### Return Value
 An element list.
 ### GetNamedElementsCi(name as String) as Object
 #### Description
 Returns an [roXMLList](https://developer.roku.com/docs/references/brightscript/components/roxmllist.md "roXMLList") representing all child elements of this element whose case-insensitive name is specified. If only one element matches the name, an roXMLList containing one element is returned. If no elements match, an empty roXMLList is returned.
 #### Parameters
-Name | Type | Description
----|---|---
-name | String | The parent element containing the child elements to be listed. Matching of the parent element name is case-sensitive.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| name  | String  | The parent element containing the child elements to be listed. Matching of the parent element name is case-sensitive.  |
 #### Return Value
 An element list.
 ### IsName(name as String) as Boolean
 #### Description
 Checks whether the element has the specified name.
 #### Parameters
-Name | Type | Description
----|---|---
-name | String | The element name to be verified.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| name  | String  | The element name to be verified.  |
 #### Return Value
 A flag indicating whether the element has the specified name.
 ### HasAttribute(attr as String) as Boolean
 Checks whether the element has the specified attribute.
 #### Parameters
-Name | Type | Description
----|---|---
-attr | String | The element attribute to be verified.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| attr  | String  | The element attribute to be verified.  |
 #### Return Value
 A flag indicating whether the element has the specified attribute.
 ### SetBody(body as Object) as Void
 #### Description
 Sets the element text from the specified string
 #### Parameters
-Name | Type | Description
----|---|---
-body | Object | The string to be used to set the element text.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| body  | Object  | The string to be used to set the element text.  |
 ### AddBodyElement() as Object
 #### Description
 Adds a new unnamed/empty child element and returns it. This should generally be followed by a call to the [SetName()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifxmlelement.md#setnamename-as-string-as-void) method of the child element. Alternatively, the [AddElement()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifxmlelement.md#addelementname-as-string-as-object) or [AddElementWidthBody()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifxmlelement.md#addelementwithbodyname-as-string-body-as-object-as-object) method can be used to combine this step with additional construction into one call.
@@ -95,59 +95,59 @@ Object value.
 #### Description
 Adds a new child element with the specified name and returns the new element.
 #### Parameters
-Name | Type | Description
----|---|---
-name | String | The name of the child element to be added.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| name  | String  | The name of the child element to be added.  |
 #### Return Value
 The new element added.
 ### AddElementWithBody(name as String, body as Object) as Object
 #### Description
 Adds a new child element with the specified name and text from the specified body string, and returns the new element.
 #### Parameters
-Name | Type | Description
----|---|---
-name | String | The name of the child element to be added.
-body | Object | The text of the child element to be added (via the body string).
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| name  | String  | The name of the child element to be added.  |
+| body  | Object  | The text of the child element to be added (via the body string).  |
 #### Return Value
 The new element added.
 ### AddText(text as String) as Void
 #### Description
 Adds text to the element.
 #### Parameters
-Name | Type | Description
----|---|---
-text | String | The text to be added to the element.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| text  | String  | The text to be added to the element.  |
 ### AddAttribute(attr as String, value as String) as Void
 #### Description
 Adds an attribute value to the element. If an attribute of the same name already exists it is replaced. XML attribute order is not preserved.
 #### Parameters
-Name | Type | Description
----|---|---
-attr | String | The name of the attribute to be added to the element.
-value | Object | The value of the attribute being added to the element.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| attr  | String  | The name of the attribute to be added to the element.  |
+| value  | Object  | The value of the attribute being added to the element.  |
 ### SetName(name as String) as Void
 #### Description
 Sets the name of the element.
 #### Parameters
-Name | Type | Description
----|---|---
-name | String | The name of the element.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| name  | String  | The name of the element.  |
 ### GenXML(gen_header as Boolean) as String
 #### Description
 Serializes the element to XML document text.
 #### Parameters
-Name | Type | Description
----|---|---
-gen_header | Boolean | Specifies whether the output begins with a standard XML declaration specifying UTF-8 encoding.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| gen_header  | Boolean  | Specifies whether the output begins with a standard XML declaration specifying UTF-8 encoding.  |
 #### Return Value
 A serialized string.
 ### GenXMLHdr(hdr as String) as String
 #### Description
 Serializes the element to XML document text. The specified header is used to begin the output (for example, as a custom XML declaration).
 #### Parameters
-Name | Type | Description
----|---|---
-hdr | String | Specify the header with which the output begins.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| hdr  | String  | Specify the header with which the output begins.  |
 #### Return Value
 A serialized string.
 ### Clear() as Void

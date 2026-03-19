@@ -9,6 +9,7 @@ Roku Pay push notification HTTP requests have the following format:
 ![roku815px - img](https://image.roku.com/ZHZscHItMTc2/roku-jose-header-v2.jpg)
 ### HTTP header
 The HTTP body is considered to be plain text; therefore, the header specifies the plain text format. Plain text is used because Roku Pay push notification messages are sent over a TLS-secured link and the critical content elements are already base64url-encoded.
+
 ```
 Content-Type: text/plain
 
@@ -21,6 +22,7 @@ Roku Pay push notifications use the JavaScript Object Signing and Encryption (JO
   * **signature**. A JWS generated from the concatenation of the header and the set of JWT claims.
 
 The JOSE header and the set of JWT claims are each base64url-encoded. The two are then concatenated with a period (".") separator and a JWS (also a base64url-encoded string) is then calculated across the resulting string. The JWS is attached to the end of the header/payload string, again separated by a period. The following demonstrates the format of the un-encoded HTTP body:
+
 ```
 ' JOSE header
 {
@@ -56,6 +58,7 @@ The JOSE header and the set of JWT claims are each base64url-encoded. The two ar
 > The JSON format of the JWS signature conforms to the [JWS RFC 7515](https://datatracker.ietf.org/doc/html/rfc7515) standard.
 ### Encoded HTTP message body
 The encoded, period-concatenated JOSE header, payload, and JWS signature form the full HTTP message body:
+
 ```
 eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.
 eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.
@@ -73,6 +76,7 @@ To receive the contents of Roku Pay push notifications, publishers must do the f
 > Publishers can visit [https://jwt.io](https://jwt.io/), go to the **Debugger** section, and try to decode the push notifications.
 ### Decoding the x-Roku-message JWT claim to get the push notification message
 The **x-Roku-message** field within the JWT claim payload is a base64url-encoded string that contains the contents of the push notification message. The following example demonstrates the decoded **x-Roku-message** field for a [Sale notification message](https://developer.roku.com/docs/developer-program/roku-pay/implementation/push-notifications.md#sale):
+
 ```
 {
     "customerId":"4e5812f5b00b4f5b90f768d22a7de170",
@@ -101,6 +105,7 @@ The **x-Roku-message** field within the JWT claim payload is a base64url-encoded
 ## Response (required from the publisher)
 To acknowledge the receipt of a Roku Pay push notification message, send a **200 OK** response.
 ### Header
+
 ```
 HTTP/1.1 200 OK
 
@@ -109,6 +114,7 @@ HTTP/1.1 200 OK
 ## Public keys
 Publishers must use Roku-provided public keys, which are located [here](https://assets.cs.roku.com/keys/partner-jwks.json), to verify message signatures. The public keys are provided in JSON Web Key (JWK) format and are similar to the example shown below. Select the key that corresponds to the **kid** specified in the [JOSE header](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications-jwt.md#http-body).
 **Public keys in JWK format**
+
 ```
 {
   "keys": [

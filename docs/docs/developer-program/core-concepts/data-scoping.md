@@ -8,6 +8,7 @@ These different levels of scoping are identified by the use of the `m` object re
 * * *
 ## Function scope
 For creating objects with function scope, do not use the `m` object reference. For example, the following creates and defines several fields for a `dialog` object that can only be accessed within the function in which it is created and defined:
+
 ```
 dialog = createObject("RoSGNode","Dialog")
 dialog.backgroundUri = "pkg:/images/sgetdialogbg.9.png"
@@ -19,6 +20,7 @@ dialog.message = "Press * To Dismiss"
 
 ## Component scope
 For creating objects with component scope, use the `m` object reference to identify objects that can be accessed anywhere within a component XML file. For example, if you wanted to create the same `dialog` object above in one function, but define it, or otherwise access it, in another function in the same component XML file:
+
 ```
 sub createdialog()
 
@@ -40,6 +42,7 @@ sub definedialog()
 
 ## m.top component scope reference
 There is a special use of the `m` object reference in SceneGraph for identifying the _top_ of the SceneGraph tree for a component XML file. To do this, use the `m.top` object reference, which refers to the component itself. For example, to create the `dialog` object and assign it to the `dialog` field of a Scene node defined in a component XML file (which is the required usage of the Dialog node class), assign the `dialog` object to the `dialog` field using the `m.top` object reference:
+
 ```
 dialog = createObject("RoSGNode","Dialog")
 
@@ -56,6 +59,7 @@ m.top.dialog = dialog`
 ```
 
 Likewise, if you want to use `findNode()` to find a SceneGraph node object anywhere in the SceneGraph tree for a component XML file, use the `m.top` reference to start at the top of the tree:
+
 ```
 m.categorieslist = m.top.findNode("categorieslist")
 
@@ -69,6 +73,7 @@ m.categorieslist = m.top.findNode("categorieslist")
   * In **non-component script** , where the global node is obtained using **`getGlobalNode()`**, you can store it in**`m.global`**so that the syntax for subsequent references to it matches that for components.
 
 For example:
+
 ```
 screen = CreateObject("roSGScreen")
 
@@ -86,6 +91,7 @@ As noted, this is not necessary in component script, as `m.global` is predefined
 You can access and set the fields, or the children nodes, of the global node from anywhere in the SceneGraph application. In the non-component example above, the global node **`id`field** value is set to **`Global node`**. Likewise, you can access and set the fields for the global node from components by accessing the component**`m`**to get its special global element:
 > Note that you cannot edit elements within [associative arrays](https://developer.roku.com/docs/references/brightscript/components/roassociativearray.md).
 You will need to take the associative array, modify it and save it back into the field.
+
 ```
 m.global.addFields( {red: &hff0000ff, green: &h00ff00ff, blue: &h0000ffff} )
 ...

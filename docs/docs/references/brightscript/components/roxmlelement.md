@@ -1,12 +1,14 @@
 # roXMLElement
 roXMLElement is used to contain an XML tree.
 For instance,
+
 ```
 <tag1>this is some text</tag1>
 
 ```
 
 Would parse such that:
+
 ```
     Name = "tag1"
     Attributes = invalid
@@ -15,12 +17,14 @@ Would parse such that:
 ```
 
 **Example**
+
 ```
 <emptytag caveman="barney" />
 
 ```
 
 Would parse such that:
+
 ```
     Name = "emptytag"
     Attributes = roAssociativeArray, with one entry { caveman: "barney" }
@@ -33,6 +37,7 @@ To generate XML, create an roXMLElement, then use functions like SetName(), AddA
 Then call GenXML() to return the XML as a string.
 GenXML() takes one parameter (boolean) that indicates whether the generated xml should have the <?xml …> tag at the top.
 **Example: Subroutine to print out the contents of an roXMLElement tree**
+
 ```
 PrintXML(root, 0)
 
@@ -61,6 +66,7 @@ end sub
 ```
 
 **Example: Generating XML**
+
 ```
 root.SetName("myroot")
 root.AddAttribute("key1", "value1")

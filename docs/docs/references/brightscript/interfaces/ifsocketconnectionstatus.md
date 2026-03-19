@@ -1,8 +1,8 @@
 # ifSocketConnectionStatus
 ## Implemented by
-Name | Description
----|---
-[roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket") | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them
+| Name  | Description  |
+| --- | --- |
+| [roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket")  | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them  |
 ## Supported methods
 ### eConnAborted() as Boolean
 #### Description

@@ -35,10 +35,10 @@ Partners can select between three payout methods when enrolling in the Roku Part
   * With PayPal, there is no payment fee. With wire transfers and ACH payments, your bank will charge you bank fees.
 
 Payments and revenue reports are sent out quarterly, 60 days post-quarter closing. See table below. Payments will be sent directly to the payout method in your Developer Dashboard. Revenue reports will be sent via e-mail. If you would like to be included in the revenue report distribution list, please contact trcpartnersupport@roku.com.
-Quarter | Date
----|---
-Q1 | By May 31st
-Q2 | By August 31st
-Q3 | By November 30th
-Q4 | By February 28th
+| Quarter  | Date  |
+| --- | --- |
+| Q1  | By May 31st  |
+| Q2  | By August 31st  |
+| Q3  | By November 30th  |
+| Q4  | By February 28th  |
 Not that partners will not be paid until the aggregate sums due are equal to or exceed $100.00. Detailed payout terms are found in the Commercial Terms Exhibit of the [Roku Distribution Agreement](https://docs.roku.com/doc/developerdistribution/en-us).

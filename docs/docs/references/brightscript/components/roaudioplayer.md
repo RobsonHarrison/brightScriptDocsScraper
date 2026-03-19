@@ -4,6 +4,7 @@ This object does not provide an interface to a screen. In order to get events bo
 This object is created with no parameters:
 `CreateObject("roAudioPlayer")`
 **Example**
+
 ```
 Sub Main()
     audioPlayer = CreateObject("roAudioPlayer")

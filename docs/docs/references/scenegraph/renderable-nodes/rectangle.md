@@ -6,6 +6,7 @@ The following are examples using the Rectangle node.
 ![roku815px - rectangle-node](https://image.roku.com/ZHZscHItMTc2/rectangle-node.png)
 ![roku815px - rectangle-node-rotated](https://image.roku.com/ZHZscHItMTc2/rectangle-node-rotated.png)
 Rectangle Node Class Example:
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 
@@ -42,11 +43,11 @@ end sub
 Rotation of Rectangles is supported. On platforms that do not support OpenGL, only rotations of 0, 90, 180, and 270 degrees are supported.
 ## Fields
 [Fields](https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/group.md#fields "Fields") derived from the Group base class can also be used.
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-width | float | 0.0 | READ_WRITE | Specifies the width of the rectangle in local coordinates
-height | float | 0.0 | READ_WRITE | Specifies the height of rectangle in local coordinates
-color | color (string containing hex value e.g. RGBA) | 0xFFFFFFFF | READ_WRITE | Specifies the color of the rectangle
-blendingEnabled | boolean | true | READ_WRITE | Specifies if the rectangle should be alpha blended with the nodes that are behind it
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| width  | float  | 0.0  | READ_WRITE  | Specifies the width of the rectangle in local coordinates  |
+| height  | float  | 0.0  | READ_WRITE  | Specifies the height of rectangle in local coordinates  |
+| color  | color (string containing hex value e.g. RGBA)  | 0xFFFFFFFF  | READ_WRITE  | Specifies the color of the rectangle  |
+| blendingEnabled  | boolean  | true  | READ_WRITE  | Specifies if the rectangle should be alpha blended with the nodes that are behind it  |
 ## Sample app
 [RectangleExample](https://github.com/rokudev/samples/tree/master/ux%20components/screen%20elements/renderable%20nodes/RectangleExample) is a sample app demonstrating Rectangle in action.

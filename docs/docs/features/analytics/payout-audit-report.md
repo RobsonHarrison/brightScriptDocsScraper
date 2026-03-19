@@ -16,23 +16,23 @@ The Payout Audit Report displays only a tabular grid, in which each row represen
   * **Event Date** – The date of the transaction (in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format).
   * **Invoice Number** –The Roku-generated unique ID for the transaction. This invoice number is included in purchase confirmation emails sent to customers. It can be used as a lookup key for customer queries or requests.
   * **Transaction Type** – The nature of the transaction, as explained in the table below:
-Type | Meaning
----|---
-Cancellation | Either an end user actively canceled a subscription ("active" cancellation), or Roku is unable to successfully capture the end user's subscription event ("passive" cancellation).
-Charge | A successful purchase transaction (historically used to indicate purchases under Roku as Payment Method: RPM).
-DowngradeCancel | A successful downgrade transaction's cancellation of the outgoing (base) subscription.
-DowngradeSale | A successful downgrade transaction's sale of a new (downgraded) subscription, to replace the outgoing (base) plan.
-Purchase | A successful purchase transaction (historically used to indicate purchases under Roku Standard Billing: RSB). Such transactions include 1) one-time purchases. and 2) initial and recurring subscription charges.
-Refund | A successful refund transaction (historically used to indicate refunds under Roku as Payment Method: RPM).
-Renewal | An end user, who actively cancelled a subscription, successfully signed up again before the previously scheduled expiration of the subscription.
-Reversal | A successful refund transaction (historically used to indicate refunds under Roku Standard Billing: RSB).
-UpgradeCancel | A successful upgrade transaction's cancellation of the outgoing (base) subscription.
-UpgradeSale | A successful upgrade transaction's sale of a new (upgraded) subscription, replacing the outgoing (base) subscription.
-Chargeback | The customer has initiated a transaction dispute. The transaction will be deducted from the partner's payout.
+| Type  | Meaning  |
+| --- | --- |
+| Cancellation  | Either an end user actively canceled a subscription ("active" cancellation), or Roku is unable to successfully capture the end user's subscription event ("passive" cancellation).  |
+| Charge  | A successful purchase transaction (historically used to indicate purchases under Roku as Payment Method: RPM).  |
+| DowngradeCancel  | A successful downgrade transaction's cancellation of the outgoing (base) subscription.  |
+| DowngradeSale  | A successful downgrade transaction's sale of a new (downgraded) subscription, to replace the outgoing (base) plan.  |
+| Purchase  | A successful purchase transaction (historically used to indicate purchases under Roku Standard Billing: RSB). Such transactions include 1) one-time purchases. and 2) initial and recurring subscription charges.  |
+| Refund  | A successful refund transaction (historically used to indicate refunds under Roku as Payment Method: RPM).  |
+| Renewal  | An end user, who actively cancelled a subscription, successfully signed up again before the previously scheduled expiration of the subscription.  |
+| Reversal  | A successful refund transaction (historically used to indicate refunds under Roku Standard Billing: RSB).  |
+| UpgradeCancel  | A successful upgrade transaction's cancellation of the outgoing (base) subscription.  |
+| UpgradeSale  | A successful upgrade transaction's sale of a new (upgraded) subscription, replacing the outgoing (base) subscription.  |
+| Chargeback  | The customer has initiated a transaction dispute. The transaction will be deducted from the partner's payout.
 
-For apps in the Germany Streaming Store only, a SEPA chargeback may occur when the customer disputes a transaction made through Roku Pay that results in a chargeback or their bank account has insufficient funds.
-ChargebackReversed | Roku successfully reversed the chargeback claim. The revenue share will be returned to the partner payout.
-SecondChargeback | The customer's bank has disputed the chargeback reversal on the transaction (this may occur if the customer provided new information, the chargeback reason changed, or the bank determined that the information provided by Roku was not sufficient to refute the chargeback). The transaction will be deducted from the partner's payout.
+For apps in the Germany Streaming Store only, a SEPA chargeback may occur when the customer disputes a transaction made through Roku Pay that results in a chargeback or their bank account has insufficient funds.  |
+| ChargebackReversed  | Roku successfully reversed the chargeback claim. The revenue share will be returned to the partner payout.  |
+| SecondChargeback  | The customer's bank has disputed the chargeback reversal on the transaction (this may occur if the customer provided new information, the chargeback reason changed, or the bank determined that the information provided by Roku was not sufficient to refute the chargeback). The transaction will be deducted from the partner's payout.  |
   * **Developer Transaction ID** – The partner-specific unique ID for the transaction.
   * **User Transaction ID** – The user-based ID for the transaction. If this transaction is a purchase, it will be the same as the **Original Transaction ID** (see below). If this transaction is a renewal, it will be different.
 

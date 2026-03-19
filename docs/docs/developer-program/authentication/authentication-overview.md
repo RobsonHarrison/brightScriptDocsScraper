@@ -5,8 +5,8 @@ Using AAL further simplifies authentication for customers with multiple Roku dev
 AVOD and non-monetized apps requiring a user account to log in can use [AAL](https://developer.roku.com/docs/developer-program/authentication/universal-authentication-protocol-for-single-sign-on.md) to authenticate customers on all of the Roku devices linked to their Roku account.
 TVE apps can use the ["rendezvous" linking ](https://developer.roku.com/docs/developer-program/authentication/authentication-and-linking.md)to validate subscriptions. With this method, apps get a registration code and display it on the Roku device. When the customers enter the registration code on the provider's external website, the provider's authentication service links the customer's device to their Roku account via an access token that is downloaded and stored on the device.
 For more information on implementing these authentication methods, see their respective integration documents:
-App | Authentication Method
----|---
-SVOD, TVOD | [On-device authentication](https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md)
-AVOD, non-monetized apps | [Automatic Account Link](https://developer.roku.com/docs/developer-program/authentication/universal-authentication-protocol-for-single-sign-on.md)
-TVE | [Rendezvous linking](https://developer.roku.com/docs/developer-program/authentication/authentication-and-linking.md)
+| App  | Authentication Method  |
+| --- | --- |
+| SVOD, TVOD  | [On-device authentication](https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md)  |
+| AVOD, non-monetized apps  | [Automatic Account Link](https://developer.roku.com/docs/developer-program/authentication/universal-authentication-protocol-for-single-sign-on.md)  |
+| TVE  | [Rendezvous linking](https://developer.roku.com/docs/developer-program/authentication/authentication-and-linking.md)  |

@@ -1,17 +1,17 @@
 # ifSocketConnection
 ## Implemented by
-Name | Description
----|---
-[roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket") | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them
+| Name  | Description  |
+| --- | --- |
+| [roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket")  | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them  |
 ## Supported methods
 Each of these operations except listen() is either synchronous or asynchronous as determined by the socket's blocking behavior. If there is a valid assigned roMessagePort, the blocking behavior is considered asynchronous (non-blocking). Otherwise, the blocking behavior is considered synchronous.
 ### Listen(backlog as Integer) as Boolean
 #### Description
 Puts the socket into the listen state.
 #### Parameters
-Name | Type | Description
----|---|---
-backlog | Integer | The limit for the queue of incoming connections
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| backlog  | Integer  | The limit for the queue of incoming connections  |
 #### Return Value
 A flag indicating whether listening can be done (generally, if bound address is valid).
 ### IsListening() as Boolean

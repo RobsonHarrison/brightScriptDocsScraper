@@ -5,11 +5,11 @@ Automatic account link enables apps to authenticate customers using an access to
 To implement Automatic Account Link, you first check whether there is a valid access token stored in the device registry. If the device registry contains an access token, grant the customer access to your content.
 If the device registry does not contain a valid access token, you check whether one is stored in the Roku cloud. If there is an access token in the Roku cloud, store it in the device registry and then grant the customer access to your content; otherwise, display your app UI and have the customer sign in or sign up and then grant access.
 The following table summarizes the logic to be used for Automatic Account Link; the subsequent flow chart illustrates this workflow.
-Valid Access Token in Device Registry ? | Valid Access Token in Roku Cloud? | Next Steps
----|---|---
-YES | — | Get a refresh token from your entitlement server and store it in the device registry and Roku cloud. Grant access to content.
-NO | YES | Store the access token in the device registry. Grant access to content.
-NO | NO | Display your app UI, get the customer's email address, and have them sign up or sign back in. Once the customer has successfully authenticated, generate a new access token from your entitlement server and store it in the device registry and Roku cloud. Grant access to content.
+| Valid Access Token in Device Registry ?  | Valid Access Token in Roku Cloud?  | Next Steps  |
+| --- | --- | --- |
+| YES  | —  | Get a refresh token from your entitlement server and store it in the device registry and Roku cloud. Grant access to content.  |
+| NO  | YES  | Store the access token in the device registry. Grant access to content.  |
+| NO  | NO  | Display your app UI, get the customer's email address, and have them sign up or sign back in. Once the customer has successfully authenticated, generate a new access token from your entitlement server and store it in the device registry and Roku cloud. Grant access to content.  |
 ![roku815px - automatic account link flow chart](https://image.roku.com/ZHZscHItMTc2/AAL.jpg)
 ## Checking for a valid access token in the device registry
 To check for a valid access token in the device registry, follow these steps:
@@ -91,6 +91,7 @@ If both the device registry and Roku cloud do not contain a valid access token, 
 To store an access token in the Roku cloud, call the [**ChannelStore.storeChannelCredData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#storechannelcreddata) command. You can use the **status** and **response** fields of the **storeChannelCredDataStatus** content node to verify that the command was successful and that the access token stored in the Roku cloud has the specified value.
 
 > Any metadata within the access token related to its validity must be managed entirely by the publisher.
+
 ```
     myChannelStore.channelCredData = "your access token"
     myChannelStore.command = "storeChannelCredData"

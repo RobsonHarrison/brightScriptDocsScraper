@@ -1,11 +1,11 @@
 # SceneGraph coordinate systems
 Each renderable node has a local coordinate system associated with it with an origin at (0,0) with x increasing left-to-right and y increasing top-to-bottom. Each node can also have a 2D transformation specified that transform its local coordinate system into a transformed coordinate system. In the Roku SceneGraph implementation a node transformation matrix is specified by setting the values of four fields:
-Field | Description
----|---
-translation | 2D vector that describes an [x, y] offset of the local coordinate system origin
-scale | 2D vectors that describes an [x, y] scaling of the local coordinate system
-rotation | Floating point value that describes a Z-axis rotation of the local coordinate system. The value is specified in radians with positive values representing a counter-clockwise rotation.
-scaleRotateCenter | 2D vector that describes a point in the local coordinate system that serves as the center of scaling and rotation
+| Field  | Description  |
+| --- | --- |
+| translation  | 2D vector that describes an [x, y] offset of the local coordinate system origin  |
+| scale  | 2D vectors that describes an [x, y] scaling of the local coordinate system  |
+| rotation  | Floating point value that describes a Z-axis rotation of the local coordinate system. The value is specified in radians with positive values representing a counter-clockwise rotation.  |
+| scaleRotateCenter  | 2D vector that describes a point in the local coordinate system that serves as the center of scaling and rotation  |
 Each of these fields can be combined into an overall 2D transformation for the node by first applying these steps:
   1. Translate by the inverse of the scale/rotate center
   2. Multiplying by the scale amount
@@ -14,6 +14,7 @@ Each of these fields can be combined into an overall 2D transformation for the n
   5. Translate by the translation amount.
 
 In matrix math, the overall matrix is:
+
 ```
    M = C(-1) S R C T
 

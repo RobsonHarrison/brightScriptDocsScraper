@@ -1,16 +1,16 @@
 # ifEVPDigest
 ## Implemented by
-Name | Description
----|---
-[roEVPDigest](https://developer.roku.com/docs/references/brightscript/components/roevpdigest.md "roEVPDigest") | The EVP Digest component provides an interface to the OpenSSL EVP library of message digest algorithms
+| Name  | Description  |
+| --- | --- |
+| [roEVPDigest](https://developer.roku.com/docs/references/brightscript/components/roevpdigest.md "roEVPDigest")  | The EVP Digest component provides an interface to the OpenSSL EVP library of message digest algorithms  |
 ## Supported methods
 ### Setup(digestType as String) as Integer
 #### Descriptions
 Initializes a new message digest context.
 #### Parameters
-Name | Type | Description
----|---|---
-digestType | String | The supported digest algorithm from openssl, listed at roEVPDigest.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| digestType  | String  | The supported digest algorithm from openssl, listed at roEVPDigest.  |
 #### Return Value
 Returns 0 on success or non-zero on failure.
 ### Reinit() as Integer
@@ -22,18 +22,20 @@ Returns 0 on success or non-zero on failure.
 #### Description
 Digests the provided data.
 #### Parameters
-Name | Type | Description
----|---|---
-bytes | Object | An [roByteArray](https://developer.roku.com/docs/references/brightscript/components/robytearray.md) containing digested data
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| bytes  | Object  | An [roByteArray](https://developer.roku.com/docs/references/brightscript/components/robytearray.md) containing digested data  |
 #### Return Value
 A Hex string (Digested array data).
 #### Example
+
 ```
   x = evp.Process(bytes)
 
 ```
 
 is equivalent to
+
 ```
   evp.Reinit()
   evp.Update(bytes)
@@ -45,9 +47,9 @@ is equivalent to
 #### Description
 Adds more data to be digested.
 #### Parameters
-Name | Type | Description
----|---|---
-bytes | Object | An [roByteArray](https://developer.roku.com/docs/references/brightscript/components/robytearray.md) containing data to be added to the current digest
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| bytes  | Object  | An [roByteArray](https://developer.roku.com/docs/references/brightscript/components/robytearray.md) containing data to be added to the current digest  |
 ### Final() as String
 #### Description
 Returns the digest of data passed in by previous calls to [Update()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifevpdigest.md#updatebytes-as-object-as-void) as a hex string.

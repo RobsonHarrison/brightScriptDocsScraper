@@ -2,6 +2,7 @@
 roAppInfo retrieves the developer ID, which can be useful during development. It also retrieves manifest values, such as the title and version number, avoiding the need to parse the manifest file from BrightScript. This object is created with no parameters.
 #### Example
 **Implementation**
+
 ```
 brush: vb; gutter: false; theme: Confluence
 appInfo = CreateObject("roAppInfo")
@@ -16,6 +17,7 @@ print "MajVers: " ; appInfo.GetValue("major_version")
 ```
 
 **Output**
+
 ```
 brush: plain; gutter: false; theme: Confluence
 '      ID: 41089_bd3a

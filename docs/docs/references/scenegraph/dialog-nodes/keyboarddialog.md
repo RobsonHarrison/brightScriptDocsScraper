@@ -8,9 +8,9 @@ Also, the KeyboardDialog node class inherits the behavior of the interrnal [Keyb
 Typically, you will want to set the KeyboardDialog node title field to prompt the user to enter the string, and add "OK" and "Cancel" buttons by setting the Dialog node buttons field to [ "OK", "Cancel" ], then observe the Dialog node class buttonSelected field to react when the user presses one of those buttons. At any time, the text field can be accessed to obtain the string entered by the user.
 Another typical usage of the KeyboardDialog node class adds a "Hide Text" button, with an observer function set up to toggle the secureMode field of the Keyboard node internal TextEditBox node (that is, by toggling the value of the keyboard.textEditBox.secureMode field).
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-text | string | "" | READ_WRITE | Can be used to explicitly set the internal Keyboard node text string, as well as to access the string entered by the user
-keyboard | Keyboard node | system default | READ_ONLY | Provides access to the internal Keyboard node. The field is read-only, but the fields of the Keyboard node it refers to can be read and written, allowing you to fully customize the Keyboard node appearance and behavior
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| text  | string  | ""  | READ_WRITE  | Can be used to explicitly set the internal Keyboard node text string, as well as to access the string entered by the user  |
+| keyboard  | Keyboard node  | system default  | READ_ONLY  | Provides access to the internal Keyboard node. The field is read-only, but the fields of the Keyboard node it refers to can be read and written, allowing you to fully customize the Keyboard node appearance and behavior  |
 ## Sample app
 [KeyboardDialogExample](https://github.com/rokudev/samples/tree/master/ux%20components/dialogs/KeyboardDialogExample) is a sample app demonstrating KeyboardDialog in action.

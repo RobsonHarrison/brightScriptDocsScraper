@@ -1,9 +1,9 @@
 # ifList
 ## Implemented by
-Name | Description
----|---
-[roList](https://developer.roku.com/docs/references/brightscript/components/rolist.md "roList") | The list object implements the interfaces: ifList, ifArray, ifEnum and therefore can behave like an array that can dynamically add members
-[roXMLList](https://developer.roku.com/docs/references/brightscript/components/roxmllist.md "roXMLList") | Contains a list of roXML objects
+| Name  | Description  |
+| --- | --- |
+| [roList](https://developer.roku.com/docs/references/brightscript/components/rolist.md "roList")  | The list object implements the interfaces: ifList, ifArray, ifEnum and therefore can behave like an array that can dynamically add members  |
+| [roXMLList](https://developer.roku.com/docs/references/brightscript/components/roxmllist.md "roXMLList")  | Contains a list of roXML objects  |
 ## Supported methods
 ### ResetIndex() As Boolean
 #### Description
@@ -14,16 +14,16 @@ A flag indicating whether the index has been reset.
 #### Description
 Adds an element to the tail of the list.
 #### Parameters
-Name | Type | Description
----|---|---
-AddTail | Dynamic | The element to be added to the tail of the list.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| AddTail  | Dynamic  | The element to be added to the tail of the list.  |
 ### AddHead(tval As Dynamic) As Void
 #### Description
 Adds an element to the head of the list.
 #### Parameters
-Name | Type | Description
----|---|---
-AddHead | Dynamic | The element to be added to the head of the list.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| AddHead  | Dynamic  | The element to be added to the head of the list.  |
 ### RemoveIndex() As Dynamic
 #### Description
 Removes the entry at the current index or position from the list and increments the index or position in the list.

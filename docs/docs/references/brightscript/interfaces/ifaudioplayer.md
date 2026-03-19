@@ -1,8 +1,8 @@
 # ifAudioPlayer
 ## Implemented by
-Name | Description
----|---
-[roAudioMetadata](https://developer.roku.com/docs/references/brightscript/components/roaudiometadata.md "roAudioMetadata") | The Audio Player object provides the ability to setup the playing of a series of audio streams
+| Name  | Description  |
+| --- | --- |
+| [roAudioMetadata](https://developer.roku.com/docs/references/brightscript/components/roaudiometadata.md "roAudioMetadata")  | The Audio Player object provides the ability to setup the playing of a series of audio streams  |
 ## Supported methods
 ### SetContentList(contentList as Object) as Void
 #### Description
@@ -13,9 +13,9 @@ An array of associative arrays (Content Meta-Data objects) representing the info
 #### Description
 Adds a new ContentMetaData item to the end of the content list for the Audio Player.
 #### Parameters
-Name | Type | Description
----|---|---
-contentItem | Object | The new ContentMetaData item to be added to the content list.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| contentItem  | Object  | The new ContentMetaData item to be added to the content list.  |
 ### ClearContent() as Void
 #### Description
 Clears the content list.
@@ -43,18 +43,18 @@ A flag indicating whether the Audio Player was successfully set to play mode.
 #### Description
 Enables/disables the automatic replaying of the Content List.
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | Set to true to have the Audio Player automatically begin playing the first item in the content list after playing the last item.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | Set to true to have the Audio Player automatically begin playing the first item in the content list after playing the last item.
 
-Set to false to have the Audio Player stop after playing the last item in the content list.
+Set to false to have the Audio Player stop after playing the last item in the content list.  |
 ### SetNext(item as Integer) as Void
 #### Description
 Sets the next item in the Content List to be played.
 #### Parameters
-Name | Type | Description
----|---|---
-item | Integer | Item is the zero-based index of the item in the content list. This item will be played after the currently playing item finishes.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| item  | Integer  | Item is the zero-based index of the item in the content list. This item will be played after the currently playing item finishes.  |
 ### Seek(offsetMs as Integer) as Boolean
 #### Description
 Set the start point of playback for the current item to offsetMs milliseconds.
@@ -62,21 +62,21 @@ Set the start point of playback for the current item to offsetMs milliseconds.
   * If the item is not currently playing, playback will begin at the specified offset when Play() is called.
 
 #### Parameters
-Type | Name | Description
----|---|---
-Integer | offsetMs | The offset to be used to determine the start point of the current content item.
+| Type  | Name  | Description  |
+| --- | --- | --- |
+| Integer  | offsetMs  | The offset to be used to determine the start point of the current content item.  |
 #### Return Value
 A flag indicating whether the Audio Player was successfully set to the specified offset.
 ### SetTimedMetaDataForKeys(keys[] as Dynamic) as Void
 #### Description
 Specifies the timedMetaData keys that the app is interested in receiving from the timedMetaData event.
 #### Parameters
-Name | Type | Description
----|---|---
-keys[] | Dynamic | The set of keys to be received from the timedMetaData event.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| keys[]  | Dynamic  | The set of keys to be received from the timedMetaData event.
 
 If the keys array is empty, all the timed metadata associated with the current stream is sent with the isTimedMetaData event.
 
 If the keys array is invalid, then do not return any keys to the BrightScript app.
 
-Any keys not specified with this method are deleted by the Roku OS and never returned to the BrightScript application.
+Any keys not specified with this method are deleted by the Roku OS and never returned to the BrightScript application.  |

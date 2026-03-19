@@ -1,8 +1,8 @@
 # ifSocketConnectionOption
 ## Implemented by
-Name | Description
----|---
-[roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket") | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them
+| Name  | Description  |
+| --- | --- |
+| [roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket")  | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them  |
 ## Supported methods
 ### GetKeepAlive() as Boolean
 #### Description
@@ -13,9 +13,9 @@ A flag indicating whether keep alive is set.
 #### Description
 Sends no-data packets to keep the connection alive.
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag specifying whether keep alive is enabled.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag specifying whether keep alive is enabled.  |
 #### Return Value
 A flag indicating whether keep alive was successfully set.
 ### GetLinger() as Integer
@@ -27,9 +27,9 @@ The max time in seconds.
 #### Description
 Sets the max time in seconds that the socket close() blocks to allow send data to be flushed in synchronous mode.
 #### Parameters
-Name | Type | Description
----|---|---
-time | Integer | The max time.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| time  | Integer  | The max time.  |
 #### Return Value
 A flag indicating whether the linger was successfully set.
 ### GetMaxSeg() as Integer
@@ -41,9 +41,9 @@ The segment size.
 #### Description
 Sets the max TCP segment size.
 #### Parameters
-Name | Type | Description
----|---|---
-time | Integer | The max TCP segment size.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| time  | Integer  | The max TCP segment size.  |
 #### Return Value
 A flag indicating whether the max TCP segment size was successfully set.
 ### GetNoDelay() as Boolean
@@ -55,8 +55,8 @@ A flag indicating whether the no delay property is enabled.
 #### Description
 Enables the no delay property on the socket. This means that data is sent as soon as it is available rather than once there is enough data to fill a segment.
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag specifying whether the no delay property is enabled.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag specifying whether the no delay property is enabled.  |
 #### Return Value
 A flag indicating whether the no delay property was successfully set.

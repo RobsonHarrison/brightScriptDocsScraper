@@ -27,17 +27,17 @@ e. recovered (from in-grace or on-hold states)
 > Limit calls to less than 10 requests per minute (RPM). Developers exceeding this limit may lose access to the test APIs.
 ## Subscription recovery test API methods
 The **subscription-recovery** test API includes a set of POST methods for changing the state of subscriptions. Changes in the subscription state may take 10–30 minutes.
-# | Usecase | Subscription state change | Method | URL
----|---|---|---|---
-1 | Move an active subscription to the in-grace state | active → in-grace | POST | [https://apipub.roku.com/test/subscription-recovery/grace-period-state/{partnerApiKey}/{transactionId}](https://apipub.roku.com/test/subscription-recovery/grace-period-state/%7BpartnerApiKey%7D/%7BtransactionId%7D)
-2 | Move an in-grace subscription to the on-hold state | in-grace → on-hold | POST | [https://apipub.roku.com/test/subscription-recovery/passive-onhold-state/{partnerApiKey}/{transactionId}](https://apipub.roku.com/test/subscription-recovery/passive-onhold-state/%7BpartnerApiKey%7D/%7BtransactionId%7D)
-3 | Passively cancel a subscription |
+| #  | Usecase  | Subscription state change  | Method  | URL  |
+| --- | --- | --- | --- | --- |
+| 1  | Move an active subscription to the in-grace state  | active → in-grace  | POST  | [https://apipub.roku.com/test/subscription-recovery/grace-period-state/{partnerApiKey}/{transactionId}](https://apipub.roku.com/test/subscription-recovery/grace-period-state/%7BpartnerApiKey%7D/%7BtransactionId%7D)  |
+| 2  | Move an in-grace subscription to the on-hold state  | in-grace → on-hold  | POST  | [https://apipub.roku.com/test/subscription-recovery/passive-onhold-state/{partnerApiKey}/{transactionId}](https://apipub.roku.com/test/subscription-recovery/passive-onhold-state/%7BpartnerApiKey%7D/%7BtransactionId%7D)  |
+| 3  | Passively cancel a subscription  |
   * in-grace → canceled
   * on-hold → canceled
 
-| POST | [https://apipub.roku.com/test/subscription-recovery/deactivated-state/{partnerApiKey}/{transactionId}](https://apipub.roku.com/test/subscription-recovery/deactivated-state/%7BpartnerApiKey%7D/%7BtransactionId%7D)
-4 | Recover a subscription |
+ | POST  | [https://apipub.roku.com/test/subscription-recovery/deactivated-state/{partnerApiKey}/{transactionId}](https://apipub.roku.com/test/subscription-recovery/deactivated-state/%7BpartnerApiKey%7D/%7BtransactionId%7D)  |
+| 4  | Recover a subscription  |
   * in-grace → recovered
   * on-hold → recovered
 
-| POST |  [https://apipub.roku.com/test/subscription-recovery/recover/{](https://apipub.roku.com/test/subscription-recovery/recover/%7BdevToken%7D/%7BtransactionId)[partnerApiKey](https://apipub.roku.com/test/subscription-recovery/deactivated-state/%7BpartnerApiKey%7D/%7BtransactionId)}/{transactionId}
+ | POST  |  [https://apipub.roku.com/test/subscription-recovery/recover/{](https://apipub.roku.com/test/subscription-recovery/recover/%7BdevToken%7D/%7BtransactionId)[partnerApiKey](https://apipub.roku.com/test/subscription-recovery/deactivated-state/%7BpartnerApiKey%7D/%7BtransactionId)}/{transactionId}  |

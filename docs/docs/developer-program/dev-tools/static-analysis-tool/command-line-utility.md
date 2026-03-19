@@ -6,6 +6,7 @@ You can download the static analysis utility [here](https://devtools.web.roku.co
 This utility supports Windows, Mac and Linux and requires Java to be installed in the system.
 ## Structure of the utility
 The static analysis utility is distributed as a ZIP file. The contents of the ZIP as as follows:
+
 ```
 .
 └── sca-cmd

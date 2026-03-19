@@ -16,14 +16,14 @@ A StandardDialog contains a background image drawn under the dialog contents. Th
 ## Summary
 ### Pre-built dialog hierarchy and examples
 The pre-built message, keyboard, pin pad, and progress dialogs inherit their basic properties from the **StandardDialog** node class, which extends the **Group** node. The following table summarizes the standard dialog nodes and their hierarchy:
-Node | Description | Example
----|---|---
-Group |  |
-++ StandardDialog | Defines the width, height, color palette, button selected, and button focused fields that are inherited by its child nodes. |
-++++ StandardMessageDialog | Displays a message to the user. | ![roku400px - standard-message-dialog](https://image.roku.com/ZHZscHItMTc2/standard-message-dialog.jpg)
-++++ StandardKeyboardDialog | Enables text and voice entry of strings consisting of alphanumeric characters as well as many commonly used symbols. | ![roku400px - keyboard-dialog](https://image.roku.com/ZHZscHItMTc2/keyboard-dialog.jpg)
-++++ StandardPinPadDialog | Enables text and voice entry of numeric digits—typically, short numeric PIN codes. | ![roku400px - pin-pad](https://image.roku.com/ZHZscHItMTc2/pin-pad-dialog-v3.jpg)
-++++ StandardProgressDialog | Displays a spinning progress indicator that includes a short progress message to the user. | ![roku400px - progress-dialog](https://image.roku.com/ZHZscHItMTc2/progress-dialog.jpg)
+| Node  | Description  | Example  |
+| --- | --- | --- |
+| Group  |   |   |
+| ++ StandardDialog  | Defines the width, height, color palette, button selected, and button focused fields that are inherited by its child nodes.  |   |
+| ++++ StandardMessageDialog  | Displays a message to the user.  | ![roku400px - standard-message-dialog](https://image.roku.com/ZHZscHItMTc2/standard-message-dialog.jpg)  |
+| ++++ StandardKeyboardDialog  | Enables text and voice entry of strings consisting of alphanumeric characters as well as many commonly used symbols.  | ![roku400px - keyboard-dialog](https://image.roku.com/ZHZscHItMTc2/keyboard-dialog.jpg)  |
+| ++++ StandardPinPadDialog  | Enables text and voice entry of numeric digits—typically, short numeric PIN codes.  | ![roku400px - pin-pad](https://image.roku.com/ZHZscHItMTc2/pin-pad-dialog-v3.jpg)  |
+| ++++ StandardProgressDialog  | Displays a spinning progress indicator that includes a short progress message to the user.  | ![roku400px - progress-dialog](https://image.roku.com/ZHZscHItMTc2/progress-dialog.jpg)  |
 ### Custom dialog hierarchy and examples
 As described in the dialog structure overview, a dialog contains three areas: title, content, and button. Additionally, a custom dialog may include a side card, which is a freeform area to the right or left side of the dialog that is used for displaying decorative images or annotative text.
 Each of these areas has a corresponding node for building a custom dialog: **StdDlgTitleArea** , **StdDlgContentArea** , **StdDlgButtonArea** , and **StdDlgSideCardArea**. Each of these nodes inherits its functionality from the **StdDlgAreaBase** node, which extends the **Group** node.
@@ -36,32 +36,35 @@ Each of these areas has a corresponding node for building a custom dialog: **Std
   * The **StdDlgSideCardArea** node may contain one or SceneGraph nodes (for example, a [Poster](https://developer.roku.com/docs/references/scenegraph/renderable-nodes/poster.md) node for displaying an image or a [Label](https://developer.roku.com/docs/references/scenegraph/label-nodes/label.md) node for displaying text).
 
 The following table summarizes the standard dialog nodes used to build custom dialogs and their hierarchy. For completeness, the content items and buttons that may be included in the **StdDlgContentArea** and **StdDlgButtonArea** nodes are listed; however, they do not inherit any properties from the nodes.
-Node | Description
----|---
-Group |
-++ StdDlgAreaBase | Provides common functionality for the **StdDlgTitleArea** , **StdDlgContentArea** and **StdDlgButtonArea** classes.
-++++ StdDlgTitleArea | Contains the title information and/or icons at the top of the dialog.
-++++ StdDlgContentArea | Contains the main body of the dialog, which may include zero to multiple content area items (**StdDlgItemBase** nodes), which are as follows:  | Node | Description | Example
----|---|---
-StdDlgItemBase | Provides common functionality for all content area items. |
-++StdDlgItemGroup | Visually groups a set of StdDlgAreaBase child nodes in a custom dialog |
-++StdDlgActionCardItem | Highlights the StdDlgItemBase child nodes in the content area of a custom dialog. | ![roku400px - StdDlgBulletTextItem](https://image.roku.com/ZHZscHItMTc2/action-cards-example.png)
-++ StdDlgBulletTextItem | A bulleted list of text. | ![roku400px - StdDlgBulletTextItem](https://image.roku.com/ZHZscHItMTc2/StdDlgBulletTextItem-v2.jpg)
-++ StdDlgDeterminateProgressItem | A progress indicator that represents the percentage of the progress that has been completed. | ![roku400px - std-dlg-determinate-progress-item](https://image.roku.com/ZHZscHItMTc2/std-dlg-determinate-progress-item-2.jpg)
-++ StdDlgGraphicItem | An image with an optional text label. | ![roku400px - v](https://image.roku.com/ZHZscHItMTc2/std-dlg-graphic-item.jpg)
-++ StdDlgKeyboardItem | Either a keyboard or PIN pad for the text and voice entry of alphanumeric/symbol strings or numeric digits (typically, short numeric PIN codes), respectively. | ![roku400px - std-dlg-keyboard-item](https://image.roku.com/ZHZscHItMTc2/std-dlg-keyboard-item.jpg)
-++ StdDlgMultiStyleTextItem | A line of text with multiple styles (for example, plain and bold characters, different fonts, multiple colors, and/or emojis). | ![roku400px - std-dlg-progress-item](https://image.roku.com/ZHZscHItMTc2/stdDlgMultiStyleTextItem-green-text.png)
-++ StdDlgProgressItem | A spinning progress indicator for tasks that take an indeterminate amount of time. | ![roku400px - std-dlg-progress-item](https://image.roku.com/ZHZscHItMTc2/std-dlg-progress-item.jpg)
-++ StdDlgTextItem | A block of text. | ![roku400px - std-dlg-text-item](https://image.roku.com/ZHZscHItMTc2/std-dlg-text-item.jpg)
-++ StdDlgCustomItem | A free-form custom item. | ![roku400px - custom-item-roku250px](https://image.roku.com/ZHZscHItMTc2/std-dlg-custom-item-multi-column.jpeg)
-++++ StdDlgButtonArea | Contains any buttons (**StdDlgButton** nodes) in the button area located at the bottom of the dialog:
-++++ StdDlgSideCardArea | A freeform area to the right or left side of a custom standard framework dialog that contains decorative images or annotative text.
+| Node  | Description  |
+| --- | --- |
+| Group  |   |
+| ++ StdDlgAreaBase  | Provides common functionality for the **StdDlgTitleArea** , **StdDlgContentArea** and **StdDlgButtonArea** classes.  |
+| ++++ StdDlgTitleArea  | Contains the title information and/or icons at the top of the dialog.  |
+| ++++ StdDlgContentArea  | Contains the main body of the dialog, which may include zero to multiple content area items (**StdDlgItemBase** nodes), which are as follows:
+ | Node  | Description  | Example  |
+| --- | --- | --- |
+| StdDlgItemBase  | Provides common functionality for all content area items.  |   |
+| ++StdDlgItemGroup  | Visually groups a set of StdDlgAreaBase child nodes in a custom dialog  |   |
+| ++StdDlgActionCardItem  | Highlights the StdDlgItemBase child nodes in the content area of a custom dialog.  | ![roku400px - StdDlgBulletTextItem](https://image.roku.com/ZHZscHItMTc2/action-cards-example.png)  |
+| ++ StdDlgBulletTextItem  | A bulleted list of text.  | ![roku400px - StdDlgBulletTextItem](https://image.roku.com/ZHZscHItMTc2/StdDlgBulletTextItem-v2.jpg)  |
+| ++ StdDlgDeterminateProgressItem  | A progress indicator that represents the percentage of the progress that has been completed.  | ![roku400px - std-dlg-determinate-progress-item](https://image.roku.com/ZHZscHItMTc2/std-dlg-determinate-progress-item-2.jpg)  |
+| ++ StdDlgGraphicItem  | An image with an optional text label.  | ![roku400px - v](https://image.roku.com/ZHZscHItMTc2/std-dlg-graphic-item.jpg)  |
+| ++ StdDlgKeyboardItem  | Either a keyboard or PIN pad for the text and voice entry of alphanumeric/symbol strings or numeric digits (typically, short numeric PIN codes), respectively.  | ![roku400px - std-dlg-keyboard-item](https://image.roku.com/ZHZscHItMTc2/std-dlg-keyboard-item.jpg)  |
+| ++ StdDlgMultiStyleTextItem  | A line of text with multiple styles (for example, plain and bold characters, different fonts, multiple colors, and/or emojis).  | ![roku400px - std-dlg-progress-item](https://image.roku.com/ZHZscHItMTc2/stdDlgMultiStyleTextItem-green-text.png)  |
+| ++ StdDlgProgressItem  | A spinning progress indicator for tasks that take an indeterminate amount of time.  | ![roku400px - std-dlg-progress-item](https://image.roku.com/ZHZscHItMTc2/std-dlg-progress-item.jpg)  |
+| ++ StdDlgTextItem  | A block of text.  | ![roku400px - std-dlg-text-item](https://image.roku.com/ZHZscHItMTc2/std-dlg-text-item.jpg)  |
+| ++ StdDlgCustomItem  | A free-form custom item.  | ![roku400px - custom-item-roku250px](https://image.roku.com/ZHZscHItMTc2/std-dlg-custom-item-multi-column.jpeg)  |
+ |
+| ++++ StdDlgButtonArea  | Contains any buttons (**StdDlgButton** nodes) in the button area located at the bottom of the dialog:  |
+| ++++ StdDlgSideCardArea  | A freeform area to the right or left side of a custom standard framework dialog that contains decorative images or annotative text.  |
 ## Code examples
 The following sections demonstrate the SceneGraph and/or BrightScript code that could be used to create the following confirmation dialog using pre-built and custom standard dialog nodes:
 ![roku400px - button-dialog](https://image.roku.com/ZHZscHItMTc2/button-dialog.jpg)
 ### Creating a pre-built dialog
 To create the confirmation dialog with a pre-built StandardDialog node and detect button events, the following BrightScript code could be used:
 ##### BrightScript
+
 ```
 sub showAccountDialog()
     ' set up the dialog
@@ -92,6 +95,7 @@ end sub
 ### Creating a custom dialog
 To create the confirmation dialog with a custom standard dialog and detect button events, the following SceneGraph and BrightScript code could be used:
 ##### SceneGraph
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="AccountDialog" extends="StandardDialog" >
@@ -110,6 +114,7 @@ To create the confirmation dialog with a custom standard dialog and detect butto
 ```
 
 ##### BrightScript
+
 ```
 sub showAccountDialog()
     ' set up the dialog
@@ -157,6 +162,7 @@ By default, the StandardDialog node uses a default color palette consisting of s
 For more information about how StandardDialog nodes used the RSGPalette colors, see the [StandardDialog](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/standard-dialog.md "StandardDialog")'s palette field.
 ##### Example
 The following BrightScript code demonsrates how to create an **RSGPalette** node with green colors and assign it to the Scene's palette field. The resulting dialog is displayed below the code.
+
 ```
 m.greenPalette = createObject("roSGNode", "RSGPalette")
 m.greenPalette.colors = {DialogBackgroundColor: "0x003000FF",

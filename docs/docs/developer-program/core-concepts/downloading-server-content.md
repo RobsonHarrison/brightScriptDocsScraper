@@ -4,6 +4,7 @@ For many nodes that require more complex data, a `content` field is provided. Th
 ## Configuring a content node for static content
 Generally, you'll want to download dynamic content for your application from your server. But to simply illustrate how to set up a ContentNode for a node requiring data, the following shows setting a ContentNode as a child of a LabelList node requiring the data using the `role` attribute. The example makes clear the hierarchal relationship required for the `content` field of a LabelList node, with a parent ContentNode and several child ContentNodes for the list item text. The `role` attribute automatically assigns the ContentNode to the `content` field of the LabelList node, and the SceneGraph application shows the text strings in the child ContentNodes as the items of the list.
 **Static ContentNode configuration**
+
 ```
 <LabelList
   id = "moviemenu"
@@ -29,6 +30,7 @@ In a Task node, you can use the BrightScript roUrlTransfer component to read the
 For example, the following Task node downloads a list of strings to be used as text for a LabelList node. The Task node includes two <interface> fields, one for the URI of the content data (`uri`), and another for the ContentNode that will be configured with the data (`content`). When an XML component requires a list of strings for a LabelList node, the component can set the `control` field of the Task node object to `RUN`. This sends the specified <interface> field values to the Task node, in this case the URI of the content data, and starts the Task node. The Task node then downloads an XML file with the content data from the specified URI, parses the XML data, and creates a parent ContentNode, and child ContentNodes for each string. When the ContentNode node is configured with all the strings in the XML file, it is assigned to the ContentNode object reference set in the <interface> field. This change in the field value triggers the `observeField()` callback function in the component XML file to add the strings to the LabelList node `content` field.
 First, here's the XML file the example Task node downloads from the server and parses:
 **Example server XML file**
+
 ```
 <?xml version = "1.0" encoding = "UTF-8" standalone="yes" ?>
 
@@ -45,6 +47,7 @@ First, here's the XML file the example Task node downloads from the server and p
 
 And here is how the component XML file configures and starts the Task node process, including setting the `observeField()` function to trigger a callback function to display the LabelList node after the content data is downloaded:
 **Example Task node configuration and launch**
+
 ```
 m.getHomeOptionsList = createObject("roSGNode", "getLabelListContent")
 m.getHomeOptionsList.setField("uri", "http://www.sdktestinglab.com/homeoptionslistcontent.xml")
@@ -56,6 +59,7 @@ m.getHomeOptionsList.control = "RUN"
 
 And here's the actual Task node itself that does the work of downloading the server XML file, parsing the XML content data, and configuring a ContentNode with the data:
 **Downloading LabelList node content**
+
 ```
 <?xml version = "1.0" encoding = "utf-8" ?>
 

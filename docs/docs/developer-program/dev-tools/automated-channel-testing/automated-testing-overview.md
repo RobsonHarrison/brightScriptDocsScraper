@@ -21,6 +21,7 @@ Test the [Roku WebDriver](https://developer.roku.com/docs/developer-program/dev-
 a. [Download](https://www.python.org/downloads) and install Python 3.7 (or higher). Set the version you install as the default version of Python on your computer.
 b. Download and install the Python package installer ([pip](https://pypi.org/project/pip)).
 c. Install the [**requests**](https://pypi.org/project/requests) HTTP library for Python, which enables the sample client application to send HTTP 1.1 requests:
+
 ```
 python -m pip install requests
 
@@ -28,6 +29,7 @@ python -m pip install requests
 
 d. [Sideload](https://developer.roku.com/docs/developer-program/getting-started/developer-setup.md#sideloading-channels) the sample app (**channel.zip**) included in the **/automated-channel-testing-master/sample** directory.
 e. Run the sample Web driver client application. Include the IP address of your Roku device as an argument. If the test is successful, "Test Passed" is output in the console.
+
 ```
  python <path>/automated-channel-testing-master/sample/script/main.py <device-ip-address>
 
@@ -36,12 +38,14 @@ e. Run the sample Web driver client application. Include the IP address of your 
 ### Installing and testing the Robot Framework Library
 To install the [Roku Robot Framework Library](https://developer.roku.com/docs/developer-program/dev-tools/automated-channel-testing/robot-framework-library.md) and test it on one or more devices, follow these steps:
   1. Optionally, install the Python version of the Roku Robot Framework Library via a local Python package. This enables you to directly import the Roku Robot Framework library in your Robot test case files.
+
 ```
 python pip install <path>/automated-channel-testing-master/RobotLibrary
 
 ```
 
   2. Install the dependencies listed in the **/automated-channel-testing-master/RobotLibrary/requirements.txt** file:
+
 ```
 python -m pip install -r /automated-channel-testing-master/RobotLibrary/requirements.txt
 
@@ -50,6 +54,7 @@ python -m pip install -r /automated-channel-testing-master/RobotLibrary/requirem
   3. Update line 41 of the **/automated-channel-testing-master/RobotLibrary/Tests/Basic_tests.robot** file with the password of your Roku device.
 
   4. Run the sample basic Robot test case on a single device. When running the Robot tests and samples, you must run them from the **RobotLibrary** folder. You must also provide the Roku device IP address and WebDriver server path as variables in the console as demonstrated in the following example:
+
 ```
  cd RobotLibrary
  python -m robot.run --outputdir Results --variable ip_address:192.168.1.94 --variable server_path:<path>/automated-channel-testing-master/bin/RokuWebDriver_<os|linux|windows.exe>  Tests/Basic_tests.robot
@@ -57,6 +62,7 @@ python -m pip install -r /automated-channel-testing-master/RobotLibrary/requirem
 ```
 
 Alternatively, you can hard code the Roku device IP address and WebDriver server path variables in the **/automated-channel-testing-develop/RobotLibrary/Library/variables.py** file, and then use the following command:
+
 ```
  python3 -m robot.run --outputdir Results Tests/Basic_tests.robot
 
@@ -69,6 +75,7 @@ Alternatively, you can hard code the Roku device IP address and WebDriver server
 a. Update the JSON configuration file (**config.json**) in the **automated-channel-testing-master/RobotLibrary/multipleDevices** directory, which contains the Roku devices to be used for testing, the Web driver server path, test case, and the output directory.
 Each Roku device is an object that has an arbitrary name and a key-value pair with the device's IP address. Key-value pairs may also be provided for the timeout and keypress delay to be used for the test on that device (these override the global test values specified in the Robot test case).
 The syntax of the **config.json** file is as follows:
+
 ```
  {
      "devices": {
@@ -90,6 +97,7 @@ The syntax of the **config.json** file is as follows:
 ```
 
 The following example demonstrates how to write the **config.json** file:
+
 ```
  {
      "devices": {
@@ -114,6 +122,7 @@ The following example demonstrates how to write the **config.json** file:
 b. [Sideload](https://developer.roku.com/docs/developer-program/getting-started/developer-setup.md#sideloading-channels) the sample app (**channel.zip**) in the **/automated-channel-testing-master/sample** folder.
 c. Update the **/automated-channel-testing-master/RobotLibrary/Library/variables.py** file with the IP address of the Roku test device and WebDriver path.
 d. Run the following console command:
+
 ```
  cd RobotLibrary
  python multipleDevices/multi.py multipleDevices/config.json
@@ -129,12 +138,14 @@ To install the [Roku JavaScript Library](https://developer.roku.com/docs/develop
   2. Download and install the [Yarn](https://classic.yarnpkg.com/en/docs/install) JavaScript package manager.
 
   3. Install the dependencies listed in the **/automated-channel-testing-master/jsLibrary/package.json** file:
+
 ```
 yarn install
 
 ```
 
   4. To use the [Mocha](https://mochajs.org/) JavaScript test framework and run tests on multiple devices, globally install Mocha and [Mochawesome](https://www.npmjs.com/package/mochawesome):
+
 ```
 yarn global add mocha
 yarn global add mochawesome
@@ -147,12 +158,14 @@ b. In line 27, update the IP address to your Roku device.
 c. In line 28, update the password.
 
   6. Run the sample basic JavaScript test case on a single device. When running the JavaScript tests and samples, you must run them from the **jsLibrary** folder
+
 ```
  yarn tests/test_basic.js
 
 ```
 
 To run the test using Mocha and report the test results with Mochawesome, enter the following command:
+
 ```
   mocha tests/test_basic.js --reporter mochawesome
 
@@ -165,6 +178,7 @@ To run the test using Mocha and report the test results with Mochawesome, enter 
 a. Update the JSON configuration file (**config.json**) in the **/automated-channel-testing-master/jsLibrary/multipleDevices** directory, which contains the Roku devices to be used for testing, the Web driver server path, test case, and the output directory.
 Each Roku device is an object that has an arbitrary name and a key-value pair with the device's IP address. Key-value pairs may also be provided for the timeout and keypress delay to be used for the test on that device (these override the global test values specified in the Robot test case).
 The syntax of the **config.json** file is as follows:
+
 ```
  {
      "devices": {
@@ -186,6 +200,7 @@ The syntax of the **config.json** file is as follows:
 ```
 
 The following example demonstrates how to write the **config.json** file:
+
 ```
  {
      "devices": {
@@ -209,6 +224,7 @@ The following example demonstrates how to write the **config.json** file:
 
 b. [Sideload](https://developer.roku.com/docs/developer-program/getting-started/developer-setup.md#sideloading-channels) the sample app (**channel.zip**) in the **/automated-channel-testing-master/sample** folder.
 c. Run the following console command:
+
 ```
  node multipleDevices/multi.js  config.json
 

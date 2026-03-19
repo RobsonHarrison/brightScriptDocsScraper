@@ -1,16 +1,16 @@
 # ifSocketAddress
 ## Implemented by
-Name | Description
----|---
-[roSocketAddress](https://developer.roku.com/docs/references/brightscript/components/rosocketaddress.md "roSocketAddress") | The roSocketAddress is used by the roStreamSocket and roDataGramSocket components for TCP and UDP traffic respectively
+| Name  | Description  |
+| --- | --- |
+| [roSocketAddress](https://developer.roku.com/docs/references/brightscript/components/rosocketaddress.md "roSocketAddress")  | The roSocketAddress is used by the roStreamSocket and roDataGramSocket components for TCP and UDP traffic respectively  |
 ## Supported methods
 ### SetAddress(address as String) as Boolean
 #### Description
 Sets the IPV4 address.
 #### Parameters
-Name | Type | Description
----|---|---
-address | String | The string consists of a hostname, optionally followed by a colon and a decimal port number. The hostname may be either dotted quad (such as "192.168.1.120") or a DNS name (such as "roku.com"). If a name is given, a DNS lookup is performed to convert it to dotted quad. Use IsAddressValid() to determine the result of the DNS lookup. Example: "192.168.1.120:8888" or "roku.com".
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| address  | String  | The string consists of a hostname, optionally followed by a colon and a decimal port number. The hostname may be either dotted quad (such as "192.168.1.120") or a DNS name (such as "roku.com"). If a name is given, a DNS lookup is performed to convert it to dotted quad. Use IsAddressValid() to determine the result of the DNS lookup. Example: "192.168.1.120:8888" or "roku.com".  |
 #### Return Value
 A flag indicating whether the IPV4 address was successfully set.
 ### GetAddress() as String
@@ -21,9 +21,9 @@ The IPV4 address.
 #### Description
 Sets the hostname. The port number is unchanged.
 #### Parameters
-Name | Type | Description
----|---|---
-hostname | String | The hostname to be used.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| hostname  | String  | The hostname to be used.  |
 #### Return Value
 A flag indicating whether the hostname was successfully set.
 ### GetHostName() as String
@@ -36,9 +36,9 @@ The hostname.
 #### Description
 Sets the port number. The hostname is unchanged.
 #### Parameters
-Name | Type | Description
----|---|---
-port | Integer | The port number to be used.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| port  | Integer  | The port number to be used.  |
 #### Return Value
 A flag indicating whether the port number was successfully set.
 ### GetPort() as Integer

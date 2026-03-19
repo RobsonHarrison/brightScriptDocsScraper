@@ -4,18 +4,19 @@ Apps implement on-device authentications so that customers can complete sign-ups
 > Apps must complete upgrades and downgrades on the device using [On-device upgrade and downgrade](https://developer.roku.com/docs/developer-program/roku-pay/implementation/on-device-upgrade-downgrade.md). The upgrade/downgrade workflows are prohibited from including external webpages.
 ## Overview
 To implement on-device authentication, you first verify whether a customer should have access to your content. To do this, you check whether the customer has an active Roku subscription for the content, and then check whether there is a valid access token stored in their device registry. If the device registry does not contain a valid access token, you check whether one is stored in the Roku cloud. The next steps depend on the results of these checks. The following table lists the next steps for each possible outcome; the subsequent flow chart illustrates the logic used in this authentication workflow.
-Active Subscription through Roku Pay? | Valid Access Token in Device Registry and Entitlement? | Valid Access Token in Roku Cloud? | Next Steps
----|---|---|---
-YES | YES | — | Get a refresh token from your entitlement server and store it in the device registry and Roku cloud. Grant access to content.
-YES | NO | YES | Store an access token in the device registry. Grant access to content.
-YES | NO | NO | The next steps depend on whether the customer originally created their account through Roku Pay or your own service ("publisher service)":
+| Active Subscription through Roku Pay?  | Valid Access Token in Device Registry and Entitlement?  | Valid Access Token in Roku Cloud?  | Next Steps  |
+| --- | --- | --- | --- |
+| YES  | YES  | —  | Get a refresh token from your entitlement server and store it in the device registry and Roku cloud. Grant access to content.  |
+| YES  | NO  | YES  | Store an access token in the device registry. Grant access to content.  |
+| YES  | NO  | NO  | The next steps depend on whether the customer originally created their account through Roku Pay or your own service ("publisher service)":
 
   * **Created through Roku Pay** : Validate the previous transaction. Get a new access token from your entitlement server and store in device registry and Roku cloud. Grant access to content.
   * **Created through publisher service** : Check whether the Roku cloud has an access token. If it does and the customer is signed in, store the access token in the device registry, and then grant access to content.
 
-NO | YES | — | Grant access to content.
-NO | NO | YES | If the customer is signed in, store the access token in the device registry, and grant access to content. If the customer is signing up (or has signed out), have them re-authenticate.
-NO | NO | NO | Create a new subscription through Roku Pay.
+ |
+| NO  | YES  | —  | Grant access to content.  |
+| NO  | NO  | YES  | If the customer is signed in, store the access token in the device registry, and grant access to content. If the customer is signing up (or has signed out), have them re-authenticate.  |
+| NO  | NO  | NO  | Create a new subscription through Roku Pay.  |
 If the customer is not signed up or is signed out, display your app UI, get the customer's email address, and have them sign up or sign back in. Once the customer has successfully authenticated, generate a new access token from your entitlement server and store it in the device registry and Roku cloud. Grant access to content.
 If the Roku cloud does not have an access token, display your app UI and then get the customer's email address. Use the email address to check whether the customer is linked to an active subscription in your system. If there is already an active subscription, generate a new access token from your entitlement server and store it in the device registry and Roku cloud. Grant access to content.
 ![roku815px - on-device-authenticaton with automatic account link flow chart](https://image.roku.com/ZHZscHItMTc2/on-device-authentication-aal-v11.jpeg)
@@ -26,12 +27,14 @@ The first step for implementing on-device authentication entails checking whethe
 ### Check for an active Roku subscription
 To check for an active Roku subscription with the **ChannelStore API** , follow these steps:
   1. Call the [**ChannelStore.getAllPurchases**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases) command. This command returns all of the historical subscription and one-time purchases made by the customer on the app. It causes the **purchases** field to be set to a **ContentNode** containing the results of the command. The **purchases** contentNode contains a child content node for each purchase.
+
 ```
 myChannelStore.command = "getAllPurchases"
 
 ```
 
   2. Get the transaction ID from the **purchaseId** field of the child content node. Find the subscription to be validated using the **code** or **productType** fields of the child content node.
+
 ```
 if (myChannelStore.purchases <> invalid)
     count = myChannelStore.purchases.GetChildCount()
@@ -45,12 +48,14 @@ endif
 ```
 
   3. Pass the transaction ID into a [**validate-transaction**](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#validate-transaction) Roku Pay web service GET API call.
+
 ```
 https://apipub.roku.com/listen/transaction-service.svc/validate-transaction/{partnerAPIKey}/transactionid
 
 ```
 
   4. Check the **isEntitled** field in the response to verify that the user is entitled to the content.
+
 ```
 <result>
     <transactionId>{transactionId}</transactionId>
@@ -68,6 +73,7 @@ https://apipub.roku.com/listen/transaction-service.svc/validate-transaction/{par
 ### Check for a valid access token in the device registry
 To check for a valid access token in the device registry, follow these steps:
   1. Create an [**roRegistrySection**](https://developer.roku.com/docs/references/brightscript/components/roregistrysection.md) object. This provides access to your section within the device registry to get and read your keys. When creating the registry section, pass in the name of your registry. This must be the same name used when the registry section was created.
+
 ```
 reg_sec = CreateObject("roRegistrySection", <your_registry_section>")
 
@@ -75,6 +81,7 @@ reg_sec = CreateObject("roRegistrySection", <your_registry_section>")
 
 > To get a list of the keys in the registry section in order to find the one linked to the access token, call the [**roRegistrySection.getKeyList()**](https://developer.roku.com/docs/references/brightscript/interfaces/ifregistrysection.md#getkeylist-as-object) method.
   2. Use the **roRegistrySection.read()** method to retrieve the access token. This method takes the name of the key to get the value associated with it.
+
 ```
 access_token_value = reg_sec.read("access_token_key_name")
 
@@ -83,6 +90,7 @@ access_token_value = reg_sec.read("access_token_key_name")
   3. Check the access token in your entitlement server to verify whether it is still valid.
 a. If the access token is valid, check your system to verify that the subscription is valid. If the subscription is valid, generate a refresh token in your system and store it in the device registry and in the Roku cloud, and then grant the customer access to the content. In this case, no additional steps are required and authentication is complete.
      * Call the [**roRegistrySection.write()**](https://developer.roku.com/docs/references/brightscript/interfaces/ifregistrysection.md#writekey-as-string-value-as-string-as-boolean) and [**roRegistrySection.flush()**](https://developer.roku.com/docs/references/brightscript/interfaces/ifregistrysection.md#deletekey-as-string-value-as-string-as-boolean) methods to permanently store the refresh token on the device:
+
 ```
        reg_sec.write("access_token_key_name", "access_token_value")
        reg_sec.flush()
@@ -90,6 +98,7 @@ a. If the access token is valid, check your system to verify that the subscripti
 ```
 
      * Call the [**ChannelStore.storeChannelCredData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#storechannelcreddata) command to store an access token in the Roku cloud. You can use the **status** and **response** fields of the **storeChannelCredDataStatus** content node to verify that the command was successful and that the access token stored in the Roku cloud has the specified value.
+
 ```
        myChannelStore.channelCredData = "your access token"
        myChannelStore.command = "storeChannelCredData "
@@ -109,6 +118,7 @@ a. If the access token is valid, check your system to verify that the subscripti
 ```
 
 b. If the access token is valid, but the subscription cannot be verified in your system, delete the access token using the [**roRegistrySection.delete()**](https://developer.roku.com/docs/references/brightscript/interfaces/ifregistrysection.md#deletekey-as-string-as-boolean) method.
+
 ```
      reg_sec.delete("access_token_key_name")
 
@@ -122,6 +132,7 @@ f. If the access token is invalid and the customer does not have an active subsc
 ### Check for a valid access token in the Roku cloud
 To check for a valid access token in the Roku cloud, follow these steps:
   1. Call the [**ChannelStore.getChannelCred**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getchannelcred) command. This causes the **channelCred** field to be set to a **ContentNode** that includes a **json.channel_data** field.
+
 ```
 myChannelStore.command = "getChannelCred"
 accessToken = myChannelStore.channelCred.json.channel_data
@@ -131,6 +142,7 @@ accessToken = myChannelStore.channelCred.json.channel_data
   2. If the **json.channel_data** field contains your access token, check whether the customer is currently signed in using a flag in the device registry. This is a publisher-specific key-value pair that you have previously added to your registry section to track the login status of customers. The value should be toggled when customers sign in and out.
 
   3. If the customer is signed in, get the access token from the device registry and store it in the Roku cloud, and then grant the customer access to the content. In this case, no additional steps are required and authentication is complete. To store an access token in the Roku cloud, call the [**ChannelStore.storeChannelCredData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#storechannelcreddata) command.
+
 ```
 myChannelStore.channelCredData = "your access token"
 myChannelStore.command = "storeChannelCredData "
@@ -144,6 +156,7 @@ To enable customers to purchase a new subscription from your app UI, you first g
 ### Get and check account credentials
 To obtain and validate the customers' account credentials, follow these steps:
   1. Set the [**ChannelStore.requestedUserData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#fields) field to "email, firstName, lastName" to ask the customer to share their email address and name from their account, and then call the [**ChannelStore.getUserData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getuserdata) command to get the email address and name.
+
 ```
 myChannelStore.requestedUserData("email, firstName, lastName")
 myChannelStore.command = "getUserData"
@@ -154,6 +167,7 @@ myChannelStore.command = "getUserData"
 ![roku815px - signup-2-rfi](https://image.roku.com/ZHZscHItMTc2/signup-rfi-getuserdata-v2.jpg)
 
   3. If the customer clicks **Continue** , the `userData` field is automatically set to a **ContentNode** that contains a string field with the customer's email address and name. In step 5, you will use the email address to verify whether the customer already has an active subscription that is billed through your services. You will send all the information stored in this ContentNode to your system when the order is completed.
+
 ```
 email = myChannelStore.userData.email
 firstName = myChannelStore.userData.firstName
@@ -172,12 +186,14 @@ b. After the user submits their password, validate their credentials in your sys
 ### Complete and validate new subscription
 To complete and validate the new subscription, follow these steps:
   1. Call the **ChannelStore** [**getCatalog**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) command to display the list of products that are available for purchase.
+
 ```
 myChannelStore.command = getCatalog
 
 ```
 
   2. Once the customer selects a product, [create an order](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#creating-an-order) that contains the product the customer is purchasing. To do this, you set the [**ChannelStore.order**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#order) field to a **ContentNode** that has one child **ContentNode** for the item the customer is purchasing.
+
 ```
 myOrder = CreateObject("roSGNode", "ContentNode")
 itemPurchased = myOrder.createChild("ContentNode")
@@ -187,6 +203,7 @@ myChannelStore.order = myOrder
 ```
 
   3. Call the **ChannelStore** [**doOrder**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#doorder) command to display the Roku Pay order confirmation dialog, which is pre-populated with an order summary.
+
 ```
  myChannelStore.command = "doOrder"
 
@@ -195,6 +212,7 @@ myChannelStore.order = myOrder
 ![roku815px - signup-3-order-confirmation](https://image.roku.com/ZHZscHItMTc2/signup-order-confirmation-do-order.jpg)
 
   4. Once the customer approves the purchase, the **ChannelStore.orderStatus** field is set to a **ContentNode** containing information about the completed order. The **ContentNode** will have a child **ContentNode** for the item purchased. Get the transaction ID from the **orderStatus** ContentNode.
+
 ```
 transactionId = myChannelStore.orderStatus.getChild(0).purchaseId
 
@@ -204,6 +222,7 @@ transactionId = myChannelStore.orderStatus.getChild(0).purchaseId
 
   6. Create a new account for the customer in your system. Store the validated transaction ID, and the customer's email address, name, and user ID in your system.
   7. Generate a new access token in your system and store it in the device registry and in the Roku cloud. To store an access token in the Roku cloud, call the [**ChannelStore.storeChannelCredData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#storechannelcreddata) command.
+
 ```
 myChannelStore.channelCredData = "your access token"
 myChannelStore.command = "storeChannelCredData "
@@ -215,6 +234,7 @@ myChannelStore.command = "storeChannelCredData "
 ## Signing in existing subscribers
 If a customer is signing in, have them authenticate themselves in your app UI following these steps:
   1. After the user enters the sign-in flow, set the [**ChannelStore.requestedUserData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#requesteduserdata) field to "email" to ask the customer to share their email address, and set the [**ChannelStore.requestedUserDataInfo**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#requesteduserdatainfo) field to a ContentNode that has a **context** field set to "signin".
+
 ```
 myChannelStore.requestedUserData("email")
 info = CreateObject(“roSGNode”, “ContentNode”)
@@ -224,6 +244,7 @@ myChannelStore.requestedUserDataInfo = info
 ```
 
   2. Call the [**ChannelStore.getUserData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getuserdata) command to get the email address.
+
 ```
 myChannelStore.command = "getUserData"
 
@@ -233,6 +254,7 @@ myChannelStore.command = "getUserData"
 ![roku815px - signin-2-rfi-splash](https://image.roku.com/ZHZscHItMTc2/signin-2-rfi-splash-v2.jpg)
 
   4. If the customer clicks **Continue** , the `userData` field is automatically set to a **ContentNode** that contains **email** and/or **phone** fields, which are strings set to the customer's email address and phone number.
+
 ```
  email = myChannelStore.userData.email
 

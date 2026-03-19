@@ -3,6 +3,7 @@
 You can pass data between threads without incurring rendezvous or blocking a Task thread by using the [roRenderThreadQueue component](https://developer.roku.com/docs/developer-program/release-notes/data-transfer-apis.md#queueing-messages). This component provides an interface for queuing messages to be consumed by handlers on the Render thread. This allows for asynchronous communication between Task threads and the Render thread. Messages passed using this mechanism will not block the Render thread in the way that a rendezvous does.
 ### Example
 #### Task thread
+
 ```
 my_array = { str_key: "my_string", int_key: 42 }
 rtq = CreateObject("roRenderThreadQueue")
@@ -12,6 +13,7 @@ rtq.PostMessage("result_array", my_array)
 ```
 
 This will result in the following being printed to the console. The array is empty because passing it to `PostMessage()` caused its contents to be moved to the Render thread. Also note that the print happens immediately and is not blocked by the handler running on the Render thread.
+
 ```
 <Component: roAssociativeArray> =
 {
@@ -21,6 +23,7 @@ This will result in the following being printed to the console. The array is emp
 
 #### Render thread
 Setting up a message handler is very similar to setting up a field observer.
+
 ```
 rtq = CreateObject("roRenderThreadQueue")
 rtq.AddMessageHandler("result_array", "OnTaskResultArrayRTQ")
@@ -33,6 +36,7 @@ end sub
 ```
 
 This will result in the following being printed to the console. The data parameter will contain the same values that were passed to `PostMessage()` on the Task thread.
+
 ```
 <Component: roAssociativeArray> =
 {
@@ -44,6 +48,7 @@ This will result in the following being printed to the console. The data paramet
 
 ## Observer callback models
 **Nested functions example**
+
 ```
 function init()
     m.top.observeField("f1", "c1")
@@ -63,6 +68,7 @@ end function
 
 In the nested functions example above, the queued callback model would have the ordering of the print statements as:
 **Output**
+
 ```
 c1(): v2
 c2(): v2
@@ -73,6 +79,7 @@ init(): v2
 ### Recursive callback model
 With the recursive callback model, the expected output is now more intuitive and the order of the print statements would be:
 **Output**
+
 ```
 c2(): v2
 c1(): v2
@@ -93,25 +100,26 @@ You can handle remote control key events by writing an `onKeyEvent()` function i
 ### Using the onKeyEvent() function
 The `onKeyEvent()` function takes two parameters, `key` and `press`. The `press` parameter is a Boolean value that is true if the key was pressed, and false if the key was released. The `key` parameter of the `onKeyEvent()` function contains a string, which is case-sensitive, that identifies the key that was pressed. The `key` strings supported by the `onKeyEvent()` function, and the corresponding remote key, are as follows:
 ![roku815px - rokuremotekeysnew](https://image.roku.com/ZHZscHItMTc2/rokuremotekeysnew-v1.png)
-String | Key | Appearance/Icon
----|---|---
-back | **Back** | left-pointing arrow at top of remote
-up | **Up** | up-pointing caret of remote directional pad
-down | **Down** | down-pointing caret of remote directional pad
-left | **Left** | left-pointing caret of remote directional pad
-right | **Right** | right-pointing caret of remote directional pad
-OK | **OK** | key usually labeled **OK** near or in the center of remote directional pad
-replay | **Replay** | key usually labeled with a circular-pointing arrow
-play | **Play/Stop** | key usually labeled with a right-pointing triangle and two bars
-rewind | **Rewind** | key usually labeled with two left-pointing triangles
-fastforward | **Fast Forward** | key usually labeled with two right-pointing triangles
-options | **Options** | key labeled with an asterisk
+| String  | Key  | Appearance/Icon  |
+| --- | --- | --- |
+| back  | **Back**  | left-pointing arrow at top of remote  |
+| up  | **Up**  | up-pointing caret of remote directional pad  |
+| down  | **Down**  | down-pointing caret of remote directional pad  |
+| left  | **Left**  | left-pointing caret of remote directional pad  |
+| right  | **Right**  | right-pointing caret of remote directional pad  |
+| OK  | **OK**  | key usually labeled **OK** near or in the center of remote directional pad  |
+| replay  | **Replay**  | key usually labeled with a circular-pointing arrow  |
+| play  | **Play/Stop**  | key usually labeled with a right-pointing triangle and two bars  |
+| rewind  | **Rewind**  | key usually labeled with two left-pointing triangles  |
+| fastforward  | **Fast Forward**  | key usually labeled with two right-pointing triangles  |
+| options  | **Options**  | key labeled with an asterisk  |
 The `onKeyEvent()` function must return true if the component handled the event, or false if it did not handle the event. Returning false allows the event to continue bubbling up the focus chain (see [Remote control events](https://developer.roku.com/docs/developer-program/core-concepts/scenegraph-xml/remote-control-events.md)) so that ancestors of the component can handle the event.
 Starting from Roku OS 8, the behavior of the Roku system overlay is such that the system overlay now slides in whenever the * button is pressed, the Video node is in focus, and the app does not have its OnKeyEvent() handler fired. When the Video node is not in focus, the system overlay does not slide in and the OnKeyEvent() handler is fired.
 There are one or more keys on any Roku remote control which are not handled by the `onKeyEvent()` function (or any Roku application event handler), such as the **Home** key. Presses of these keys are handled by the global Roku firmware event handler in a default manner that cannot be modified by application code. Also note that several node classes handle certain remote control key events automatically, so `onKeyEvent()` is not required to handle those events, and should not be used for those events in those nodes. As an example of node classes that automatically handle certain remote control key events, grid node classes such as [PosterGrid](https://developer.roku.com/docs/references/scenegraph/list-and-grid-nodes/postergrid.md) automatically handle **Up** , **Down** , **Right** , and **Left** key presses when the poster grid has focus. Typically, you should use the [ifSGNodeField](https://developer.roku.com/docs/references/brightscript/interfaces/ifsgnodefield.md) `observeField()` method to handle changes in the subject node fields caused by automatic key event handling of the node.
 ### Example
 The following `onKeyEvent()` example handles supported remote control key presses other than the **Back** key by displaying a warning message until the **OK** key is pressed.
 **onKeyEvent() event handling example**
+
 ```
 function onKeyEvent(key as String, press as Boolean) as Boolean
   handled = false
@@ -141,12 +149,14 @@ There are two [ifSGNodeField](https://developer.roku.com/docs/references/brights
 
 ### Using the ifSGNodeField observeField() and unobserveField() methods
 `observeField()` is an overloaded method with two versions, useful for different purposes. The first allows you to trigger a specified callback function in response to any change in the value of the observed node field. For example, to set up an observer of a [Timer](https://developer.roku.com/docs/references/scenegraph/control-nodes/timer.md) node `fire` field that calls a `handleexampletimerfire()` event handler function that you write:
+
 ```
 exampletimer.ObserveField("fire", "handleexampletimerfire")
 
 ```
 
 Once this observer is set up, the component will continuously monitor the `exampletimer` node object `fire` field for the remaining existence of the component or node, or until `unobserveField()` is called (perhaps as part of the event handler function itself):
+
 ```
 exampletimer.unobserveField("fire")
 
@@ -158,6 +168,7 @@ Here is an example of a field observer and the associated event handler function
 **Field observer XML BrightScript example**
 > **Optional roSGNodeEvent Callback Function** Argument Field observer callback functions can specify an [roSGNodeEvent](https://developer.roku.com/docs/references/brightscript/events/rosgnodeevent.md) argument. For example, the changetext() callback function signature in the example above could have been written as sub changetext(event as roSGNodeEvent). In this case, the callback function can call the [roSGNodeEvent](https://developer.roku.com/docs/references/brightscript/events/rosgnodeevent.md) functions to extract information about the node that triggered the callback, specific field that triggered the callback, etc.
 The second version of `observeField()` lets you specify a message port to notify when the observed field changes:
+
 ```
 m.texttimer.ObserveField("fire", m.port)
 

@@ -35,12 +35,12 @@ As previously described, the RFI screen enables customers to grant the app acces
 ## Integrations
 Roku offers a number of integrations that enable apps to provide customers with a seamless on-device sign-up experience. Implementing these integrations helps apps increase the number of successful subscriptions and purchases, and it ensures that your app complies with Roku's [app certification requirements related to purchasing](https://developer.roku.com/docs/developer-program/certification/certification.md#2-purchases).
 Some integrations are required only if your app meets the stated streaming thresholds; however, implementing all of these integrations is recommended for all apps.
-Integration | Streaming threshold
----|---
-[On-device authentication](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/signup-best-practices.md#on-device-authentication) | Required for all SVOD and TVOD apps.
-[On-device upgrade/downgrade](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/signup-best-practices.md#on-device-upgradedowngrade) | Required for all SVOD and TVOD apps.
-[Automatic Account Link](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/signup-best-practices.md#automatic-account-link) | Required for all apps with user accounts that have streamed more than an average of **1 million hours** per month over the last three months.
-[Abandonment tracking](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/signup-best-practices.md#abandonment-tracking) | Required for SVOD apps that have streamed more than an average of **5 million hours** per month over the last three months.
+| Integration  | Streaming threshold  |
+| --- | --- |
+| [On-device authentication](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/signup-best-practices.md#on-device-authentication)  | Required for all SVOD and TVOD apps.  |
+| [On-device upgrade/downgrade](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/signup-best-practices.md#on-device-upgradedowngrade)  | Required for all SVOD and TVOD apps.  |
+| [Automatic Account Link](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/signup-best-practices.md#automatic-account-link)  | Required for all apps with user accounts that have streamed more than an average of **1 million hours** per month over the last three months.  |
+| [Abandonment tracking](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/signup-best-practices.md#abandonment-tracking)  | Required for SVOD apps that have streamed more than an average of **5 million hours** per month over the last three months.  |
 ### On-device authentication
 On-device authentication enables customers to start a subscription from your on-device app UI. This integration uses the [ChannelStore APIs](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases) to manage the on-device user experience of the purchase flow through Roku Pay. It includes a complete suite of APIs for implementing the on-device purchasing, entitlement, and authentication workflows.
 ![on-device-auth-schematic](https://image.roku.com/ZHZscHItMTc2/on-device-auth-schematic-v2.jpg)

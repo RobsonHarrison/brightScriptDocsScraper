@@ -19,20 +19,21 @@ If you set the list field to a LabelList node, the default values for the itemSi
 #### MarkupList Specific Usage Notes
 If you set the list field to a MarkupList node, because the MarkupList is by nature custom, you will generally need to set the MarkupList's itemSize, itemSpacing and numRows fields. The ListPanel will position the list appropriately.
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-list | Node | NULL | READ_WRITE | The list field should be set to either a LabelList or MarkupList node to be displayed in the Panel. See the LabelList and MarkupList notes above about setting up the list's layout.
-leftLabel | Node | Label node | READ_WRITE | The leftLabel field is set to a Label node that is positioned just above the left/top corner of the list. Setting the Label node's text field will cause that text string to be displayed. Setting other fields of the Label node can be used to adjust the Label's text color and other visual attributes.
-rightLabel | Node | Label node | READ_WRITE | The rightLabel field is set to a Label node that is positioned just above the right/top corner of the list. Setting the Label node's text field will cause that text string to be displayed. Setting other fields of the Label node can be used to adjust the Label's text color and other visual attributes.
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| list  | Node  | NULL  | READ_WRITE  | The list field should be set to either a LabelList or MarkupList node to be displayed in the Panel. See the LabelList and MarkupList notes above about setting up the list's layout.  |
+| leftLabel  | Node  | Label node  | READ_WRITE  | The leftLabel field is set to a Label node that is positioned just above the left/top corner of the list. Setting the Label node's text field will cause that text string to be displayed. Setting other fields of the Label node can be used to adjust the Label's text color and other visual attributes.  |
+| rightLabel  | Node  | Label node  | READ_WRITE  | The rightLabel field is set to a Label node that is positioned just above the right/top corner of the list. Setting the Label node's text field will cause that text string to be displayed. Setting other fields of the Label node can be used to adjust the Label's text color and other visual attributes.
 
-The rightLabel is often used to display a "1 of N" message that reflects the index of the list's focused item.
-showSectionLabels | Boolean | false | READ_WRITE | If showSectionLabels is set to true and the data for the list node is divided into sections, the Title attribute of the current section will be displayed as the leftLabel of the list. As the list items scroll, the leftLabel will smoothly transition as each section of the list reaches the focus position.
-createNextPanelIndex | integer | N/A | READ_ONLY | When the createNextPanelOnItemFocus field is true, createNextPanel is set when a new panel needs to be created and added to the PanelSet. The value of the field is the index of the list's content that should be used to create and populate the new panel.
+The rightLabel is often used to display a "1 of N" message that reflects the index of the list's focused item.  |
+| showSectionLabels  | Boolean  | false  | READ_WRITE  | If showSectionLabels is set to true and the data for the list node is divided into sections, the Title attribute of the current section will be displayed as the leftLabel of the list. As the list items scroll, the leftLabel will smoothly transition as each section of the list reaches the focus position.  |
+| createNextPanelIndex  | integer  | N/A  | READ_ONLY  | When the createNextPanelOnItemFocus field is true, createNextPanel is set when a new panel needs to be created and added to the PanelSet. The value of the field is the index of the list's content that should be used to create and populate the new panel.
 
-The createNextPanelIndex field is guaranteed to be set exactly once whenever the next panel for the focused list item needs to be created.
-nextPanel | Node | false | WRITE_ONLY | When the createNextPanelOnItemFocus field is true, the nextPanel field should be set to a Panel node to the next panel to add to the PanelSet in response to the createNextPanelIndex field being set. It must be set immediately in repsonse to the createNextPanelIndex field being set.
-createNextPanelOnItemFocus | Boolean | true | READ_WRITE | When set to true, the Create Next Panel mechanism is enabled (i.e. the createNextPanelIndex field will be set when a new list item receives the focus). When set to false, the Create Next Panel mechanism is disabled (i.e. the createNextPanelIndex field will not be set when a new list item receives the focus).
+The createNextPanelIndex field is guaranteed to be set exactly once whenever the next panel for the focused list item needs to be created.  |
+| nextPanel  | Node  | false  | WRITE_ONLY  | When the createNextPanelOnItemFocus field is true, the nextPanel field should be set to a Panel node to the next panel to add to the PanelSet in response to the createNextPanelIndex field being set. It must be set immediately in repsonse to the createNextPanelIndex field being set.  |
+| createNextPanelOnItemFocus  | Boolean  | true  | READ_WRITE  | When set to true, the Create Next Panel mechanism is enabled (i.e. the createNextPanelIndex field will be set when a new list item receives the focus). When set to false, the Create Next Panel mechanism is disabled (i.e. the createNextPanelIndex field will not be set when a new list item receives the focus).  |
 > If you are creating the list field(either a LabelList or MarkupList) associated with a ListPanel in script of a component that extends ListPanel, you also need to add the list as a child of the ListPanel. For example, in a component that extends ListPanel, where m.top is that component, you would associate the list field with a LabelList as follows:
+
 ```
 list = m.top.createChild("LabelList")
 m.top.list = list

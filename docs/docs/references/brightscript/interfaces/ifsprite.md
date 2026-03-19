@@ -1,25 +1,25 @@
 # ifSprite
 ## Implemented by
-Name | Description
----|---
-[roSprite](https://developer.roku.com/docs/references/brightscript/components/rosprite.md "roSprite") | This component is associated with a managing roCompositor object
+| Name  | Description  |
+| --- | --- |
+| [roSprite](https://developer.roku.com/docs/references/brightscript/components/rosprite.md "roSprite")  | This component is associated with a managing roCompositor object  |
 ## Supported methods
 ### MoveTo(x as Integer, y as Integer) as Void
 #### Description
 Move the sprite to a new set of coordinates.
 #### Parameters
-Name | Type | Description
----|---|---
-x | Integer | The x-coordinate to which the sprite is to be moved.
-y | Integer | The y-coordinate to which the sprite is to be moved.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| x  | Integer  | The x-coordinate to which the sprite is to be moved.  |
+| y  | Integer  | The y-coordinate to which the sprite is to be moved.  |
 ### MoveOffset(xOffset as Integer, yOffset as Integer) as Void
 #### Description
 Move the sprite to a new position based on offsets to the current position.
 #### Parameters
-Name | Type | Description
----|---|---
-xOffset | Integer | The offset from the current x-coordinate to be used.
-yOffset | Integer | The offset from the current y-coordinate to be used.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| xOffset  | Integer  | The offset from the current x-coordinate to be used.  |
+| yOffset  | Integer  | The offset from the current y-coordinate to be used.  |
 ### GetX() as Integer
 #### Description
 Returns the x-coordinate of the sprite.
@@ -34,9 +34,9 @@ The y-coordinate of the sprite.
 #### Description
 Sets the z value of the sprite. The z value defines the order in which sprites are drawn. Sprites with higher z values are drawn after (in front of) sprites with lower z values. The default z value is 0.
 #### Parameters
-Name | Type | Description
----|---|---
-z | Integer | The z value to be used for the sprite.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| z  | Integer  | The z value to be used for the sprite.  |
 ### GetZ() as Integer
 #### Description
 Returns the z value of the sprite.
@@ -47,13 +47,13 @@ The z value of the sprite.
 Sets whether this sprite is drawable or just used for collision tests. An undrawable sprite can be used to define a region in the background that needs collision testing. It can also be used as an auxiliary collision region for a more complex sprite defined in another sprite.
 The default value is true, and it is set when a sprite is created.
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag specifying whether the sprite is drawable:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag specifying whether the sprite is drawable:
 
 True = The sprite is drawable.
 
-False = The sprite may only be used for collision tests.
+False = The sprite may only be used for collision tests.  |
 ### GetDrawableFlag() as Boolean
 #### Description
 Checks whether the sprite is drawable.
@@ -63,9 +63,9 @@ A flag indicating whether the sprite is drawable.
 #### Description
 Defines the sprite membership though flags. The flags are used with CollidableFlags to define which sprites are allowed to collide.
 #### Parameters
-Name | Type | Description
----|---|---
-flags | Integer | Enables "levels" of collision detection, as only sprites with a member flag bit that matches a collidable flag bit will be checked for collisions. The default value is 1.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| flags  | Integer  | Enables "levels" of collision detection, as only sprites with a member flag bit that matches a collidable flag bit will be checked for collisions. The default value is 1.  |
 ### GetMemberFlags() as Integer
 #### Description
 Returns the value of member flags variable.
@@ -75,9 +75,9 @@ The value of the member flag variable.
 #### Description
 Sets bits to determine which sprites will be checked for collisions. The sprites that are checked must have the corresponding bits sets in their MemberFlags.
 #### Parameters
-Name | Type | Description
----|---|---
-flags | Integer | The bits to be set for determining which sprites to check for collisions. The default value is 1.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| flags  | Integer  | The bits to be set for determining which sprites to check for collisions. The default value is 1.  |
 ### GetCollidableFlags() as Integer
 #### Description
 Returns the value of collidable flags variable.
@@ -87,9 +87,9 @@ The value of the flag variable.
 #### Description
 Sets the region of the sprite to the passed roRegion object. If one already is set, it is replaced.
 #### Parameters
-Name | Type | Description
----|---|---
-region | Object | The roRegion object to be used as the region for the sprite.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| region  | Object  | The roRegion object to be used as the region for the sprite.  |
 ### GetRegion() as Object
 #### Description
 Returns an roRegion object that specifies the region of a bitmap that is the sprite's display graphic.
@@ -99,19 +99,19 @@ roRegion object.
 #### Description
 Adjusts the part of an [roRegion](https://developer.roku.com/docs/references/brightscript/components/roregion.md "roRegion")'s bitmap that is being displayed as the sprite. Wrap is taken into consideration.
 #### Parameters
-Name | Type | Description
----|---|---
-x | Integer | The x-coordinate for the bitmap.
-y | Integer | The y-coordinate for the bitmap.
-width | Integer | The width of the bitmap.
-height | Integer | The height of the bitmap.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| x  | Integer  | The x-coordinate for the bitmap.  |
+| y  | Integer  | The y-coordinate for the bitmap.  |
+| width  | Integer  | The width of the bitmap.  |
+| height  | Integer  | The height of the bitmap.  |
 ### SetData(data as Dynamic) as Void
 #### Description
 Associates user-defined data with the sprite. The data can be any type including intrinsic types or objects.
 #### Parameters
-Name | Type | Description
----|---|---
-data | Dynamic | The user-defined data to be associated with the sprite.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| data  | Dynamic  | The user-defined data to be associated with the sprite.  |
 ### GetData() as Dynamic
 #### Description
 Returns any user data associated with the sprite previously set via the [SetData()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifsprite.md#setdatadata-as-dynamic-as-void) method.

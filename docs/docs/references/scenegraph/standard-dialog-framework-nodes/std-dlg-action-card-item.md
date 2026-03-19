@@ -6,17 +6,19 @@ The icons and the StdDlgItemBase child nodes are drawn on top of a rectangular b
 When the StdDlgActionCardItem node has focus, the icons themselves are tinted using the [RSGPalette's](https://developer.roku.com/docs/references/scenegraph/scene.md#fields) **DialogFocusItemColor** field. When the node does not have focus, the icons are tinted using the **DialogTextColor** field.
 The **StdDlgActionCardItem** node is designed to be focusable; therefore, it may receive key events.
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-iconStatus | bool | false | READ_WRITE | Indicates whether the **StdDlgActionCardItem** node is in the checked or unchecked state when the **iconType** field is set to "checkbox" or "radiobutton".
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| iconStatus  | bool  | false  | READ_WRITE  | Indicates whether the **StdDlgActionCardItem** node is in the checked or unchecked state when the **iconType** field is set to "checkbox" or "radiobutton".
 
-The icon shown for an action card is based on the value of this field.
-iconType | string | "none" | READ_WRITE | Specifies the icon used for a **StdDlgActionCardItem** node. This may be one of the following values:  | Value | Type | Description
----|---|---
-none | string | No icon is shown.
-more_info | string | A right arrow icon is displayed to the right of the **StdDlgActionCardItem** child nodes. This icon is typically used to indicate that more information will be shown when the action card is selected. Typically, this additional content is displayed in another dialog.
-checkbox | string | A checkbox icon is shown to the left of the StdDlgActionCardItem child nodes.When the **iconStatus** field is set to "true", this adds a checkmark inside the box.When the **iconStatus** field is set to "false", an empty box icon is displayed.
-radiobutton | string | A radio button icon is shown to the left of the StdDlgActionCardItem child nodes.When the **iconStatus** field is set to "true", this adds a filled circle inside the box.When the **iconStatus** field is set to "false", an empty circle icon is displayed.
+The icon shown for an action card is based on the value of this field.  |
+| iconType  | string  | "none"  | READ_WRITE  | Specifies the icon used for a **StdDlgActionCardItem** node. This may be one of the following values:
+ | Value  | Type  | Description  |
+| --- | --- | --- |
+| none  | string  | No icon is shown.  |
+| more_info  | string  | A right arrow icon is displayed to the right of the **StdDlgActionCardItem** child nodes. This icon is typically used to indicate that more information will be shown when the action card is selected. Typically, this additional content is displayed in another dialog.  |
+| checkbox  | string  | A checkbox icon is shown to the left of the StdDlgActionCardItem child nodes.When the **iconStatus** field is set to "true", this adds a checkmark inside the box.When the **iconStatus** field is set to "false", an empty box icon is displayed.  |
+| radiobutton  | string  | A radio button icon is shown to the left of the StdDlgActionCardItem child nodes.When the **iconStatus** field is set to "true", this adds a filled circle inside the box.When the **iconStatus** field is set to "false", an empty circle icon is displayed.  |
+ |
 ## Examples
 ### Mixed iconTypes
 In this example, the dialog has a **StdDlgContentArea** node with a StdDlgTextItem node ("Here are some nice action cards"), and it has the following three **StdDlgActionCardItem** nodes (listed in order):
@@ -27,6 +29,7 @@ In this example, the dialog has a **StdDlgContentArea** node with a StdDlgTextIt
   * A **SimpleLabel** child node that displays the text "Check Box Action Card". The **iconType** field is set to "checkbox", resulting in the display of a check box.
 
 ![roku815px - actionCards-normal](https://image.roku.com/ZHZscHItMTc2/actionCards-normal.jpg)
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 
@@ -144,6 +147,7 @@ In this example, the dialog has a **StdDlgContentArea** node a **StdDlgItemGroup
 The **StdDlgItemGroup** node enforces the rule that when multiple items **StdDlgActionCardItem** nodes have their **iconType** field set to "radiobutton", only one may have its **selected** status be set to "true".
 This example configures an [**RSGPalette** node](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/standard-dialog.md) for the dialog, and then it uses the "DialogTextColor" from that palette as the colors for the **SimpleLabel** children of the **StdDlgActionCardItem** node.
 ![roku815px - actionCards-radio-checkbox-items](https://image.roku.com/ZHZscHItMTc2/actionCards-radio-checkbox-items.jpg)
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 

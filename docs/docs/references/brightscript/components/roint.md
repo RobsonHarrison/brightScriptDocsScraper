@@ -10,6 +10,7 @@ This is useful in the following situations:
 > k=o 'presumably k is dynamic typed, so it becomes another reference to the roInt o
 > o=5 'this is NOT the same as o.SetInt(5). Instead it releases o, and 'changes the type of o to Integer (o is dynamically typed). And assigns it to 5.
 **Example**
+
 ```
 BrightScript> o=CreateObject("roInt")
 BrightScript> o.SetInt(555)

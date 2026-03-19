@@ -102,21 +102,21 @@ For branded content, Roku uses DeWolfe Music as a music provider. Please contact
 #### 5.2.3 Rating guidelines
 Roku Originals content must fall within a TV-14 or TV-PG rating. Some general ratings guidance has been provided below for you to keep in mind as the creative story progresses in editorial. Please note, however, this is a very subjective process and the rating tiers below are regularly reviewed and may be modified in response to shifts in industry standards. So please be sure to reach out to your Roku Legal contact if you have any questions or clarifications.
 **Rating Tiers**
-| VIOLENCE | SEX/NUDITY | SUBSTANCE USE/ABUSE | LANGUAGE
----|---|---|---|---
-**TV-PG** |  **✔** Shootings, brawls, fist fights
-**✖** No blood |  **✔** Limited to kissing, couples in bed, implied sexual situations
+|   | VIOLENCE  | SEX/NUDITY  | SUBSTANCE USE/ABUSE  | LANGUAGE  |
+| --- | --- | --- | --- | --- |
+| **TV-PG**  |  **✔** Shootings, brawls, fist fights
+**✖** No blood  |  **✔** Limited to kissing, couples in bed, implied sexual situations
 **✖** No nudity at all
-**✖** No sexual violence |  **✔** Implied drug use (not glorified or must show consequences) |  **✔** Limited use of bleeping/dropping strong language. Ass, damn, hell, and bitch
-**TV-14** |  **✔** Brief violence, OK with some blood shown
-**✕** No gore |  **✔** Covered sex is allowed, brief thrusting, implied sexual abuse OK
+**✖** No sexual violence  |  **✔** Implied drug use (not glorified or must show consequences)  |  **✔** Limited use of bleeping/dropping strong language. Ass, damn, hell, and bitch  |
+| **TV-14**  |  **✔** Brief violence, OK with some blood shown
+**✕** No gore  |  **✔** Covered sex is allowed, brief thrusting, implied sexual abuse OK
 **✔** Exposed butt/side breast OK
-**✖** No full nudity |  **✔** Visuals/use of drug abuse (not glorified, must show consequences)
-**✖** No smoking minors |  **✔** Shit, asshole, bastard (when used in a pejorative matter), goddamn, bitch, dick and pussy (as an insult)
-**TV-MA** |  **✔** On-screen graphic violence, gore |  **✔** Depictions of graphic sexual activity or sexual violence
-**✔** Full male or female nudity |  **✔** Graphic visuals of substance use/abuse, injection, etc. (both. minors and adults)
-**✖** No smoking minors |  **✔** Use of fuck, tits, twat, cum, pussy, and cunt
-**✖** Racial slurs and hate speech on a case-by-case basis
+**✖** No full nudity  |  **✔** Visuals/use of drug abuse (not glorified, must show consequences)
+**✖** No smoking minors  |  **✔** Shit, asshole, bastard (when used in a pejorative matter), goddamn, bitch, dick and pussy (as an insult)  |
+| **TV-MA**  |  **✔** On-screen graphic violence, gore  |  **✔** Depictions of graphic sexual activity or sexual violence
+**✔** Full male or female nudity  |  **✔** Graphic visuals of substance use/abuse, injection, etc. (both. minors and adults)
+**✖** No smoking minors  |  **✔** Use of fuck, tits, twat, cum, pussy, and cunt
+**✖** Racial slurs and hate speech on a case-by-case basis  |
 #### 5.2.4 Graphics milestones and review process
 Roku should be involved in key discussions related to graphics from title treatments to episodic graphics packages. All graphics work (title treatment, lower thirds, interstitials, etc.) must be completed by a Roku approved graphics vendor. These vendors are listed in the Roku Approved Graphics Vendor List in the Branded Content Series Kick-off Packet. This is to ensure brand safety and so graphics can have a streamlined approval before review of RC1 is underway. Roku Brand Studio requires final versions of graphics to be included for approval starting at the RC1 stage. This most importantly includes the title treatment. An RBS project will always have a graphics review timeline with the below milestones:
   1. A minimum of three graphics vendor options must be sent to Roku for review and approval
@@ -338,33 +338,33 @@ Mixing Specifications:
   * Audio should not peak above -2 dBfs (True Peak)
 
 #### 7.6.3 Texted video masters
-**Video Codec** | **ProRes**
----|---
-Container | MOV
-Profile | 422 HQ
-Minimum Bitrate | 175 mbits or higher
-Landscape aspect ratio | 16:9 (1.77:1) - (no black bars)
-W1920 x H1080 (HD)
-Pixel aspect ratio | Square pixels (1:1)
-Scan type | Progressive scan type
-Chroma Subsampling | 4:2:2
-Color Space | BT.709 Legal Video Range (16 to 940)
-Bit depth | 10-bit or 12-bit
-Constant Frame Rate | 23.976p, 24p, 25p, 29.97p, 30p, 50p, 59.94p, 60p
-Native frame rate | No 3:2 pulldown flags
-**Audio Codec** | **PCM**
-Format | Stereo
-Track Layout | Interleaved: Track 1: Stereo, LT/RT
-Sample Rate | 48000Hz
-Bit Depth | 24-bit
+| **Video Codec**  | **ProRes**  |
+| --- | --- |
+| Container  | MOV  |
+| Profile  | 422 HQ  |
+| Minimum Bitrate  | 175 mbits or higher  |
+| Landscape aspect ratio  | 16:9 (1.77:1) - (no black bars)
+W1920 x H1080 (HD)  |
+| Pixel aspect ratio  | Square pixels (1:1)  |
+| Scan type  | Progressive scan type  |
+| Chroma Subsampling  | 4:2:2  |
+| Color Space  | BT.709 Legal Video Range (16 to 940)  |
+| Bit depth  | 10-bit or 12-bit  |
+| Constant Frame Rate  | 23.976p, 24p, 25p, 29.97p, 30p, 50p, 59.94p, 60p  |
+| Native frame rate  | No 3:2 pulldown flags  |
+| **Audio Codec**  | **PCM**  |
+| Format  | Stereo  |
+| Track Layout  | Interleaved: Track 1: Stereo, LT/RT  |
+| Sample Rate  | 48000Hz  |
+| Bit Depth  | 24-bit  |
 #### 7.6.4 Textless delivery
 If your content includes burned-in on screen text, you will be required to deliver a Full Episode. This file should include clean, text-free versions of any shots that contain burned-in subtitles or graphic text elements. If the show contains a comprehensive graphics package, please strip all graphics and supply the graphics package or elements in Archival. Video and Audio specs should mirror the Texted Masters noted above.
 Audio mapping label verification as noted in 7.6.2 must be verified in textless master.
 Additionally, all episodes should be delivered with the same formatting; if one episode requires a textless master then all remaining episodes should also be delivered as textless masters.
 Examples of what to remove for the Textless Masters:
-Forced Narratives | Credits | Text-Based Graphics
----|---|---
-![roku400px - premium-asset-1](https://image.roku.com/ZHZscHItMTc2/post-alt-specs-1.png) | ![roku400px - premium-asset-1](https://image.roku.com/ZHZscHItMTc2/post-alt-specs-2.png) | ![roku400px - premium-asset-1](https://image.roku.com/ZHZscHItMTc2/post-alt-specs-3.jpeg)
+| Forced Narratives  | Credits  | Text-Based Graphics  |
+| --- | --- | --- |
+| ![roku400px - premium-asset-1](https://image.roku.com/ZHZscHItMTc2/post-alt-specs-1.png)  | ![roku400px - premium-asset-1](https://image.roku.com/ZHZscHItMTc2/post-alt-specs-2.png)  | ![roku400px - premium-asset-1](https://image.roku.com/ZHZscHItMTc2/post-alt-specs-3.jpeg)  |
 Roku Best Practices
   * Background elements with text, such as street signs, do not need to be included in a Textless version.
   * ‘Forced Narratives’ refers to on-screen text that is used in one of two ways: to translate foreign dialogue into English or to clarify dialogue that may be inaudible.
@@ -373,20 +373,20 @@ Roku Best Practices
 If you are delivering a Marquee Ad Video (MAV) then please refer to[ this separate document](https://roku.sharepoint.com/:b:/s/RokuBrandStudio/ETsX8ZF--6RJsK19kxSVUUMBZIKcnm3Y6U6N5_EgvPLwZQ?e=eCjt4Z) that details rough cut and master delivery specifications.
 #### 7.6.6 Final proxy files (clean & visible timecode)
 From each Texted Master created, please export the following proxy files:
-**Video Codec** | **H.264**
----|---
-Container | MOV or MP4
-Picture | (1) Clean & (1) w/ visible timecode
-Bitrate | 5mbit/s (total file size < 1gb)
-Dimensions | W1920 x H1080 (HD)
-Scan Type | Progressive scan type
-Color Space | BT.709 Legal Video Range
-Bit Depth | 10-bit or 12-bit
-Constant Frame Rate | Should Match Master
-Native Frame Rate | Should Match Master
-Audio | Ch.1 Stereo Left, Ch.2 Stereo Right
-Filename | Brand_ShowName_AirOrder_PROXY_TextVersion_Resolution_ColorSpace_FN_Audio_FrameRate_Date-v#.mov.
-Ex: Nike_ShowName_101_Proxy_TXTD_HD_SDR_ Stereo_23976p_20240701-v2.mov
+| **Video Codec**  | **H.264**  |
+| --- | --- |
+| Container  | MOV or MP4  |
+| Picture  | (1) Clean & (1) w/ visible timecode  |
+| Bitrate  | 5mbit/s (total file size < 1gb)  |
+| Dimensions  | W1920 x H1080 (HD)  |
+| Scan Type  | Progressive scan type  |
+| Color Space  | BT.709 Legal Video Range  |
+| Bit Depth  | 10-bit or 12-bit  |
+| Constant Frame Rate  | Should Match Master  |
+| Native Frame Rate  | Should Match Master  |
+| Audio  | Ch.1 Stereo Left, Ch.2 Stereo Right  |
+| Filename  | Brand_ShowName_AirOrder_PROXY_TextVersion_Resolution_ColorSpace_FN_Audio_FrameRate_Date-v#.mov.
+Ex: Nike_ShowName_101_Proxy_TXTD_HD_SDR_ Stereo_23976p_20240701-v2.mov  |
 Note: Textless versions of final proxies are not required: only a texted version.
 ### 7.7 Audio delivery
 Prior to the commencement of principal photography, please reach out to Roku Post Production in order to determine the necessary audio deliverables for your series. As content, formatting, and style will differ from one series to the next, Roku understands that stem delivery may also vary. Please upload to your Final Archive folder on [Frame.io](https://frame.io/).
@@ -447,16 +447,16 @@ ShowCode_Brand_ProductionNumber_AirOrder_Version_TextVersion_Resolution_ColorSpa
 Example: TCRE _Nike_101_1_Master_TXTD_HD_SDR_ Stereo_23976p_20240701-v2.mov
 Production Number = As listed on Post Grids
 Air Order = Please list even if the Air Order is the same as the Production Number
-File Name Segment | File Name Abbreviation
----|---
-Text Version | TXTD (Texted), TXLS (Textless), or PROXY
-Language | enUS (American English) or esMX (Mexican Spanish)
-Resolution | UHD or HD + Color Space = SDR or HDR
-Forced Narratives | FN (Present), NC (none present)
-Audio | Stereo 2CH (Interleaved)
-Frame Rate | 23976p, 24p, 25p, 2997p, 30p, 50p, 5994p, 60p
-Date | Please list in the following format: YYYYMMDD
-Version Number | To indicate the current or previous passes of QC and track the latest version for delivery
+| File Name Segment  | File Name Abbreviation  |
+| --- | --- |
+| Text Version  | TXTD (Texted), TXLS (Textless), or PROXY  |
+| Language  | enUS (American English) or esMX (Mexican Spanish)  |
+| Resolution  | UHD or HD + Color Space = SDR or HDR  |
+| Forced Narratives  | FN (Present), NC (none present)  |
+| Audio  | Stereo 2CH (Interleaved)  |
+| Frame Rate  | 23976p, 24p, 25p, 2997p, 30p, 50p, 5994p, 60p  |
+| Date  | Please list in the following format: YYYYMMDD  |
+| Version Number  | To indicate the current or previous passes of QC and track the latest version for delivery  |
 *See 7.6.6 for Proxy file naming.
 **7.9.3 Master audio deliverables**
 Audio materials should be named to include all appropriate information:
@@ -465,19 +465,19 @@ ShowCode_Brand_ProdNumber_Vers_Date_LangCode_MaterialType_Channel#_SampleRate_Bi
 MAMA_Nike_102_v04_20220919_enUS_PM_Nearfield_2ch_48k_24b_23976.L.wav
 MAMA_Nike_102_v03_20220919_esMX_FXSTEM_6ch_48k_24b_23976.R.wav
 MAMA_Nike_102_v02_20220919_esMX_ME_Nearfield_6ch_48k_24b_23976.C.wav
-Material Type | Abbreviation
----|---
-Printmaster | PM
-Music & Effects | ME
-Audio Stem | FXStem, MXStem, DIAStem, SFXStem
-Optional Tracks | OPT, OPTA, OPTB, GRP
-Add’l Detail (Dialogue Guide Track, ADR, etc) | GUIDE, ADR
-**Channel Type** | **Abbreviation**
-Mono | Mono
-Stereo | 2CH
-**Track Assignment** | **Abbreviation**
-Mono | N/A
-Stereo | LT, RT
+| Material Type  | Abbreviation  |
+| --- | --- |
+| Printmaster  | PM  |
+| Music & Effects  | ME  |
+| Audio Stem  | FXStem, MXStem, DIAStem, SFXStem  |
+| Optional Tracks  | OPT, OPTA, OPTB, GRP  |
+| Add’l Detail (Dialogue Guide Track, ADR, etc)  | GUIDE, ADR  |
+| **Channel Type**  | **Abbreviation**  |
+| Mono  | Mono  |
+| Stereo  | 2CH  |
+| **Track Assignment**  | **Abbreviation**  |
+| Mono  | N/A  |
+| Stereo  | LT, RT  |
 #### 7.9.4 File naming limitations
 Source video, closed captions, and artwork files delivered for ingest must adhere to the following guidelines:
   * File names must not exceed 64 characters in length.

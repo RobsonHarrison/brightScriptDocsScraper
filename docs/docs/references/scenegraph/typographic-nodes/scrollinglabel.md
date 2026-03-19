@@ -20,16 +20,16 @@ There are three possible values for the vertAlign field:
   * bottom The text is drawn so that bottom edge of the rendered text is positioned at the y-coordinate position corresponding to the computed height of the ScrollingLabel node's local coordinate system.
 
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-text | string | "" | READ_WRITE | Specifies the text to be displayed
-color | color | 0xddddddff | READ_WRITE | Specifies the text color
-font | Font | system default | READ_WRITE | Specifies the Font node to be used
-maxWidth | float | 500 | READ_WRITE | Specifies the maximum width of the rendered text. If the rendered text exceeds the maximum width, the scrolling behavior is automatically triggered
-height | float | 0 | READ_WRITE | Specifies the height of the label. If set to zero, the actual height is determined by the value of the numLines field if it is greater than zero. See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment")
-scrollSpeed | float | 100 | READ_WRITE | Specifies the horizontal scrolling speed in pixels per second
-repeatCount | float | -1 | READ_WRITE | If set to the default value of -1, the text scrolling behavior repeats continuously. If set to zero, the text will remain ellipsized and never scroll. If set to a value greater than zero, the text will scroll the specified number of times, at the end of which the text is rendered with an ellipsis at the end
-horizAlign | option string | left | READ_WRITE | See [Horizontal Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Horizontal Alignment")
-vertAlign | option string | top | READ_WRITE | See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment")
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| text  | string  | ""  | READ_WRITE  | Specifies the text to be displayed  |
+| color  | color  | 0xddddddff  | READ_WRITE  | Specifies the text color  |
+| font  | Font  | system default  | READ_WRITE  | Specifies the Font node to be used  |
+| maxWidth  | float  | 500  | READ_WRITE  | Specifies the maximum width of the rendered text. If the rendered text exceeds the maximum width, the scrolling behavior is automatically triggered  |
+| height  | float  | 0  | READ_WRITE  | Specifies the height of the label. If set to zero, the actual height is determined by the value of the numLines field if it is greater than zero. See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment")  |
+| scrollSpeed  | float  | 100  | READ_WRITE  | Specifies the horizontal scrolling speed in pixels per second  |
+| repeatCount  | float  | -1  | READ_WRITE  | If set to the default value of -1, the text scrolling behavior repeats continuously. If set to zero, the text will remain ellipsized and never scroll. If set to a value greater than zero, the text will scroll the specified number of times, at the end of which the text is rendered with an ellipsis at the end  |
+| horizAlign  | option string  | left  | READ_WRITE  | See [Horizontal Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Horizontal Alignment")  |
+| vertAlign  | option string  | top  | READ_WRITE  | See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment")  |
 ## Sample app
 [ScrollingLabelExample](https://github.com/rokudev/samples/tree/master/ux%20components/text/ScrollingLabelExample) is a sample app demonstrating ScrollingLabel in action.

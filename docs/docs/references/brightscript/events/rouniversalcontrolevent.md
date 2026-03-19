@@ -3,19 +3,19 @@ The roScreen object sends the roUniversalControlEvent with the following related
 ## Supported methods
 ### GetInt() as Integer
 Returns an integer representing pressed or released keys on the remote. This table can be accessed at runtime by calling `bslCore.brs: bslUniversalControlEventCodes()`:
-Button | When Pressed | When Released
----|---|---
-Back | 0 | 100
-Up | 2 | 102
-Down | 3 | 103
-Left | 4 | 104
-Right | 5 | 105
-Select | 6 | 106
-Instant Replay | 7 | 107
-Rewind | 8 | 108
-Fast Forward | 9 | 109
-Info | 10 | 110
-Play | 13 | 113
+| Button  | When Pressed  | When Released  |
+| --- | --- | --- |
+| Back  | 0  | 100  |
+| Up  | 2  | 102  |
+| Down  | 3  | 103  |
+| Left  | 4  | 104  |
+| Right  | 5  | 105  |
+| Select  | 6  | 106  |
+| Instant Replay  | 7  | 107  |
+| Rewind  | 8  | 108  |
+| Fast Forward  | 9  | 109  |
+| Info  | 10  | 110  |
+| Play  | 13  | 113  |
 ### GetKey() as Integer
 Returns the ID of the remote button that generated an event.
 ### GetRemoteID() as String

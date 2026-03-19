@@ -10,6 +10,7 @@ If the first keyframe has a key percentage greater than zero, then the field val
 ### Example
 The following scrolls the text string "Application Development Made Easy!" back and forth near the top of the display screen in 10 seconds, repeatedly.
 #### Vector2DFieldInterpolator Node Class Example
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 
@@ -57,12 +58,12 @@ The following scrolls the text string "Application Development Made Easy!" back 
 ```
 
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-fieldToInterp | string | "" | READ_WRITE | Specifies the field to interpolate. The string should contain the ID of a node in the scene and the name of a field of that node, separated by a dot ".". For example, "title.width" would indicate that the interpolator should be applied to the width field of a node whose id field was "title". The specified field must be of type float
-key | array of floats | [ ] | READ_WRITE | Specifies the key percentages for the interpolator's keyframes. Each key percentage should be a unique value from 0 to 1 indicating the percentage of the animation where the keyValue should occur. Behavior is undefined if the number of values in the key field does not match the number of values in the keyValue field
-keyValue | array of vector2ds | [ ] | READ_WRITE | Specifies the key values or the interpolator's keyframes. Each value in the keyValue array corresponds to a value in the key field's array. The interpolator's behavior is undefined if the number of values in the key field does not match the number of values in the keyValue field
-fraction | float | 0.0 | READ_WRITE | Specifies the percentage to be used to compute a value for the field
-reverse | boolean | false | READ_WRITE | Enables animation to be played in reverse.
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| fieldToInterp  | string  | ""  | READ_WRITE  | Specifies the field to interpolate. The string should contain the ID of a node in the scene and the name of a field of that node, separated by a dot ".". For example, "title.width" would indicate that the interpolator should be applied to the width field of a node whose id field was "title". The specified field must be of type float  |
+| key  | array of floats  | [ ]  | READ_WRITE  | Specifies the key percentages for the interpolator's keyframes. Each key percentage should be a unique value from 0 to 1 indicating the percentage of the animation where the keyValue should occur. Behavior is undefined if the number of values in the key field does not match the number of values in the keyValue field  |
+| keyValue  | array of vector2ds  | [ ]  | READ_WRITE  | Specifies the key values or the interpolator's keyframes. Each value in the keyValue array corresponds to a value in the key field's array. The interpolator's behavior is undefined if the number of values in the key field does not match the number of values in the keyValue field  |
+| fraction  | float  | 0.0  | READ_WRITE  | Specifies the percentage to be used to compute a value for the field  |
+| reverse  | boolean  | false  | READ_WRITE  | Enables animation to be played in reverse.  |
 ## Sample app
 [AnimationV2DExample](https://github.com/rokudev/samples/tree/master/ux%20components/animation/AnimationV2DExample) is a sample app demonstrating Vector2DfieldInterpolator in action.

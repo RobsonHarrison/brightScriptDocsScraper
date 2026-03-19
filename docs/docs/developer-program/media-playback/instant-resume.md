@@ -40,6 +40,7 @@ When the user later returns to the app, the Roku OS invokes the matching **custo
 #### Example
 ##### SceneGraph
 In the SceneGraph XML file of the app's Scene node, insert `customization suspendhandler` and `customization resumehandler` tags and set them to `customSuspend` and `customResume`, respectively:
+
 ```
 <customization suspendhandler="customSuspend" />
 <customization resumehandler="customResume" />
@@ -48,6 +49,7 @@ In the SceneGraph XML file of the app's Scene node, insert `customization suspen
 
 ##### BrightScript
 The following BrightScript code demonstrates how to execute the `customSuspend` and `customResume` handlers in the Scene. The **customResume** handler includes logic for managing the playback experience, which includes handling any deep link requests sent to the app upon relaunch. Details for each of these handlers, including the tasks to be performed within them, are provided after.
+
 ```
 function customSuspend(arg as dynamic)
      for each key in arg
@@ -95,6 +97,7 @@ Once an Instant Resume app is suspended, it should return the user to the Roku h
 > Apps should only use background tasks for lightweight tasks that do not consume too many CPU resources (for example, network IO tasks or logging); otherwise, the app may be removed from memory.
 #### Enabling background tasks
 To enable an Instant Resume app to execute background tasks, set the **allowBackgroundTask** field of the **Scene** node. The following BrightScript code demonstrates how to do this:
+
 ```
 scene = screen.CreateScene("BackgroundTaskTestScene")
 scene.allowBackgroundTask = true
@@ -120,10 +123,10 @@ To fire the **AppResumeComplete** beacon from the app, call the **signalBeacon()
 #### Instant Resume performance metrics
 You can use the BrightScript console (port 8085) to view a log with your app's Instant Resume performance metrics. When a beacon is fired, the console immediately outputs statistics related to the initiate or complete beacon. When you exit your app, the console displays a report summarizing the statistics for the just-concluded session.
 The following table lists how the resume and suspend beacons are measured and when their initiate and complete beacons are fired.
-Metric | Start Point | Stop Point | Initiate Beacon | Complete Beacon
----|---|---|---|---
-**Suspend** | An app interruption (for example, the user presses the Home button on the Roku remote control). If the user exits the app using the back key or an exit confirmation dialog, this beacon is not fired. | The app has been suspended to background and the home screen is fully rendered and operational. | AppSuspendInitiate (fired by Roku OS). The home key handler invokes app suspension. | AppSuspendComplete (fired by Roku OS). The first render pass completes after the complete beacon has been signaled (when the Roku OS completes application exit) and the Home screen is displayed.
-**Resume** | The user presses the **OK** button to launch an app that had previously been suspended to background from the home screen. | The app is fully rendered and operational on its initial UI screen, or it reaches user-operable video playback. | AppResumeInitiate (fired by Roku OS). The last keypress before the beacon was signaled. If there was no prior keypress, the initiate beacon signal time. |  **AppResumeComplete** (fired by app). The first render pass completes after the complete beacon has been signaled via the [**signalBeacon()** method](https://developer.roku.com/en-gb/docs/developer-program/media-playback/instant-resume.md#appresume-beacons).
+| Metric  | Start Point  | Stop Point  | Initiate Beacon  | Complete Beacon  |
+| --- | --- | --- | --- | --- |
+| **Suspend**  | An app interruption (for example, the user presses the Home button on the Roku remote control). If the user exits the app using the back key or an exit confirmation dialog, this beacon is not fired.  | The app has been suspended to background and the home screen is fully rendered and operational.  | AppSuspendInitiate (fired by Roku OS). The home key handler invokes app suspension.  | AppSuspendComplete (fired by Roku OS). The first render pass completes after the complete beacon has been signaled (when the Roku OS completes application exit) and the Home screen is displayed.  |
+| **Resume**  | The user presses the **OK** button to launch an app that had previously been suspended to background from the home screen.  | The app is fully rendered and operational on its initial UI screen, or it reaches user-operable video playback.  | AppResumeInitiate (fired by Roku OS). The last keypress before the beacon was signaled. If there was no prior keypress, the initiate beacon signal time.  |  **AppResumeComplete** (fired by app). The first render pass completes after the complete beacon has been signaled via the [**signalBeacon()** method](https://developer.roku.com/en-gb/docs/developer-program/media-playback/instant-resume.md#appresume-beacons).  |
 ## App behavior guidelines
 Instant Resume provides developers with the flexibility to customize their app's integration of this feature. Roku cannot anticipate proper app behavior in all circumstances, and can only provide guidelines and best practices for UX design and app behavior. Ultimately, the developer must determine how an app should handle Instant Resume to best complement the overall app UX and meet the needs of their viewers.
 > For the app UX, Instant Resume suspend/resume events should be handled as normal app exits/re-launches. Instant Resume will automatically accelerate the app re-launch.
@@ -132,6 +135,7 @@ It is recommended that apps resume playback at the current point in the live lin
 ### VOD playback
 It is recommended that apps use a basic implementation for the playback of VOD content. In this case, the video player screen is closed, which stops playback, and the content's Details Screen is displayed. The customer can then choose to either resume the video at its bookmarked position or play it from the beginning. This approach optimizes the user experience, while reducing the development time of more complex approaches that may be more susceptible to bugs and errors.
 The following code snippet illustrates logic that could be used to resume an app when a video node has already been created and is on the screen stack. In this case, it closes the video node, removes it from the screen stack, and switches focus on the previous screen, which is typically the Details Screen.
+
 ```
 ' Callback function when the app is suspended from an app exit.
 ' In this example, we are only printing to the brightscript console

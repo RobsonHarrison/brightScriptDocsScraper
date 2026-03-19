@@ -28,6 +28,7 @@ All subsequent API requests use this token to uniquely identify the customer and
 ![roku815px - authenticationandlinking1](https://image.roku.com/ZHZscHItMTc2/authenticationandlinking1.jpg)
 This transaction is used to retrieve a registration code from the server for device registration. The code is displayed on screen by the device and the user is requested to go to the website and enter this code. It is desirable to make the code as short as possible to make it easy for the user to enter, yet ensure uniqueness during the retry interval. The device will poll at a specified frequency (`retryInterval`) during registration until the device has been registered or the maximum time has expired (`retryDuration`).
 **Pre-registration request:**
+
 ```
 <preRegistration>
   <deviceID>(unique id/serial number for the device)</deviceID>
@@ -38,6 +39,7 @@ This transaction is used to retrieve a registration code from the server for dev
 ```
 
 **Response:**
+
 ```
 <result>
   <status>success/failure</status>
@@ -51,6 +53,7 @@ This transaction is used to retrieve a registration code from the server for dev
 ### Step 2: Device linking
 This transaction is used to check the registration progress to see if the user has successfully entered their registration code on the website to link their device. This method is polled continuously at the specified interval (`retryInterval`) from the time the pre-registration request is made until a `success` response is received or until the max retry time (`retryDuration`) has elapsed. An example of the request/response is shown below in XML format:
 **Link request:**
+
 ```
 <linkAccount>
   <regCode>(current registration code from PreRegistration request)</regCode>
@@ -63,6 +66,7 @@ This transaction is used to check the registration progress to see if the user h
 > Note: The device ID **should not** be used as the authentication token as is. You can however hash the device ID to create an auth token as long as it generates a unique value each time.
 **Intermediate response:**
 ![roku815px - authenticationandlinking2](https://image.roku.com/ZHZscHItMTc2/authenticationandlinking2.jpg)
+
 ```
 <result>
   <status>incomplete</status>
@@ -81,6 +85,7 @@ The app is expected to handle these types of responses gracefully.
 The final response after successfully linking the device should send a token (opaque string) back to the Roku device and be written to the app's registry. This token can then be used by the client to perform further operations on the server, such as play media. The next time the app is launched, the service should check to see that the token matches.
 **This token, and not the device serial number, should be used to identify an account on the server.** This allows a user to disassociate (unlink) a device from an account by simply removing the app or when doing a factory reset which causes the stored device token to be discarded.
 **Final response:**
+
 ```
 <result>
   <status>success/failure</status>

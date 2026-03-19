@@ -1,9 +1,9 @@
 # ifInt
 > Interface equivalent for intrinsic type 'Integer'
 ## Implemented by
-Name | Description
----|---
-[roInt](https://developer.roku.com/docs/references/brightscript/components/roint.md "roInt") | Object equivalent for intrinsic type Integer
+| Name  | Description  |
+| --- | --- |
+| [roInt](https://developer.roku.com/docs/references/brightscript/components/roint.md "roInt")  | Object equivalent for intrinsic type Integer  |
 ## Supported methods
 ### GetInt() As Integer
 #### Description
@@ -14,6 +14,6 @@ The integer value stored in the calling Integer object.
 #### Description
 Sets the calling Integer object to the specified integer value.
 #### Parameters
-Name | Type | Description
----|---|---
-value | Integer | The integer value to be set on the calling Integer object.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| value  | Integer  | The integer value to be set on the calling Integer object.  |

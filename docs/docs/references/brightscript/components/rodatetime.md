@@ -5,6 +5,7 @@ This object is created with no parameters:
 `CreateObject("roDateTime")`
 The date/time of the object is set to the current system time when the object is created. The date/time represented by the object can be changed by calling Mark(), FromSeconds(), or FromISO8601String().
 **Example**
+
 ```
 date = CreateObject("roDateTime")
 print "The date is now "; date.AsDateString("long-date")

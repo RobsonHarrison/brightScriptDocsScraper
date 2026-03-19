@@ -7,6 +7,7 @@ To identify that your app supports a hands-free voice profile selection screen, 
 To implement voice support for a profile selection screen, integrate the following APIs:
   * **Voice request trigger**. Upon launch, apps can call the [roAppManager.StartVoiceActionSelectionRequest()](https://developer.roku.com/docs/references/brightscript/interfaces/ifappmanager.md#startvoiceactionselectionrequest-as-void) function to trigger a voice request for the viewer to select a user profile on devices that are paired with a hands-free Roku Voice remote control, such as the Roku Voice Remote Pro.
 Before calling the **StartVoiceActionSelectionRequest()** function, developers can call the [roDeviceInfo.HasFeature("handsfree_voice")](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#hasfeaturefeature-as-string-as-boolean) function to check whether a Roku device is paired with a hands-free Roku remote control.
+
 ```
   appMgr = CreateObject("roAppManager")
   deviceInfo = CreateObject("roDeviceInfo")
@@ -18,6 +19,7 @@ Before calling the **StartVoiceActionSelectionRequest()** function, developers c
 ```
 
   * **Profile selection via registered/matched text strings**. Apps can call the [roAppManager.SetVoiceActionStrings()](https://developer.roku.com/docs/references/brightscript/interfaces/ifappmanager.md#setvoiceactionstringsactions-as-object-as-void) function to register a list of text strings, such as user profile names, that can be matched to voice requests.
+
 ```
   appMgr = CreateObject("roAppManager")
   profile1 = { text: "kids", link: "d46ge-i8Y5-192"}
@@ -31,6 +33,7 @@ Before calling the **StartVoiceActionSelectionRequest()** function, developers c
 ```
 
 When the name uttered by the user matches the registered text string, the matched text string is provided to the app via the [roInput voice command handler](https://developer.roku.com/docs/references/brightscript/interfaces/ifinput.md#eventresponseroassociativearray-aa-as-boolean). Specifically, if the **command** received by the handler is "action", the associative array returned by the [**roInputEvent.GetInfo()**](https://developer.roku.com/docs/references/brightscript/events/roinputevent.md#getinfo-as-object) method includes a **text** field that is set to the matched text string.
+
 ```
   function handleTransport(evt)
       cmd = evt.command
@@ -46,6 +49,7 @@ When the name uttered by the user matches the registered text string, the matche
 
   * **Profile selection via ordinal numbers**. The [roInput voice command handler](https://developer.roku.com/docs/references/brightscript/interfaces/ifinput.md#eventresponseroassociativearray-aa-as-boolean) also supports profile selection via ordinal numbers. For example, when a user says "first", "number one", "pick the first", "select the first", "choose the first", and so on to select a user profile within a row, the app will receive a value of "1".
 Specifically, if the **command** received by the handler is "select", the associative array returned by the [**roInputEvent.GetInfo()**](https://developer.roku.com/docs/references/brightscript/events/roinputevent.md#getinfo-as-object) method includes a **ordinal** field that is set to a numerical value corresponding to the ordinal number spoken by the user. Values may range between 1–6 (one-based indexing is used).
+
 ```
   function handleTransport(evt)
       cmd = evt.command

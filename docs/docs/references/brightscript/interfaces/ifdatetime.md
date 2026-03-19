@@ -1,8 +1,8 @@
 # ifDateTime
 ## Implemented by
-Name | Description
----|---
-[roDateTime](https://developer.roku.com/docs/references/brightscript/components/rodatetime.md "roDateTime") | The roDateTime provides an interface to obtain the current date/time for the player and manipulate date/times
+| Name  | Description  |
+| --- | --- |
+| [roDateTime](https://developer.roku.com/docs/references/brightscript/components/rodatetime.md "roDateTime")  | The roDateTime provides an interface to obtain the current date/time for the player and manipulate date/times  |
 ## Supported methods
 ### Mark() as Void
 #### Description
@@ -31,16 +31,16 @@ Number of seconds as a LongInteger.
 #### Description
 Sets the date/time value using the number of seconds from the Unix epoch.
 #### Parameters
-Name | Type | Description
----|---|---
-numSeconds | Integer | The number of seconds from the Unix epoch.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| numSeconds  | Integer  | The number of seconds from the Unix epoch.  |
 ### FromSecondsLong(numSeconds as LongInteger) as Void
 #### Description
 Sets the date/time value using the number of seconds from the Unix epoch.
 #### Parameters
-Name | Type | Description
----|---|---
-seconds | Integer or LongInteger | The number of seconds from the Unix epoch.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| seconds  | Integer or LongInteger  | The number of seconds from the Unix epoch.  |
 ### ToISOString() as String
 #### Description
 Returns an ISO 8601 representation of the date/time value.
@@ -50,9 +50,9 @@ ISO 8601 as String, e.g. "2021-03-25T18:53:03+0000"
 #### Description
 Returns an ISO 8601 representation of the date/time value with milliseconds precision.
 #### Parameters
-Name | Type | Format
----|---|---
-format | String | The format of the date string to be returned, which is "milliseconds"
+| Name  | Type  | Format  |
+| --- | --- | --- |
+| format  | String  | The format of the date string to be returned, which is "milliseconds"  |
 #### Return Value
 ISO 8601 as String with milliseconds precision, e.g. "2021-03-25T18:53:03.220+0000"
 ### FromISO8601String(dateString as String) as Void
@@ -60,111 +60,115 @@ ISO 8601 as String with milliseconds precision, e.g. "2021-03-25T18:53:03.220+00
 Sets the date/time using a string in the ISO 8601 format. For example "YYYY-MM-DD HH:MM:SS" e.g "2009-01-01 01:00:00.000" or "2009-01-01T01:00:00.000".
 > This function is unaware of the local time zone, so these time formats are effectively UTC even though the ISO 8601 spec says they should be in local time. The above formats are also the only formats recognized by this function, even though the ISO 8601 spec contains other valid formats.
 #### Parameters
-Name | Type | Description
----|---|---
-dateString | String | The ISO-8601 string to be used to set the date and time.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| dateString  | String  | The ISO-8601 string to be used to set the date and time.  |
 ### asDateStringLoc(format as String) as String
 _Available since Roku OS 12.0_
 #### Description
 Returns the localized date of the device.
 #### Parameters
-Name | Type | Description
----|---|---
-format | String | Specify the format of the date string to be returned:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| format  | String  | Specify the format of the date string to be returned:
   * full
   * long
   * medium
   * short
   * custom formatting string using date symbols (for example, "MMM d, y")
 
+ |
 #### Custom date formatting values
-Date symbol | Description
----|---
-EEE | Day of week, abbreviated
-EEEE | Day of week long name
-d | Day of month, numeric, minimum digits
-dd | Day of month, numeric, 2 digits, zero pad if needed
-M | Month, numeric, minimum digits
-MM | Month, numeric, 2 digits, zero pad if needed
-MMM | Month - short name
-MMMM | Month - long name
-y | Year, numeric, minimum digits
-yy | Year, numeric, two low-order digits, zero pad if needed
+| Date symbol  | Description  |
+| --- | --- |
+| EEE  | Day of week, abbreviated  |
+| EEEE  | Day of week long name  |
+| d  | Day of month, numeric, minimum digits  |
+| dd  | Day of month, numeric, 2 digits, zero pad if needed  |
+| M  | Month, numeric, minimum digits  |
+| MM  | Month, numeric, 2 digits, zero pad if needed  |
+| MMM  | Month - short name  |
+| MMMM  | Month - long name  |
+| y  | Year, numeric, minimum digits  |
+| yy  | Year, numeric, two low-order digits, zero pad if needed  |
 #### Return Value
 A date string corresponding to the specified format:
-Format | Example
----|---
-full | Friday, January 20, 2023
-long | January 20, 2023
-medium | Jan 20, 2023
-short | 1/20/23
-custom (for example, "MM.EEE/y") | 01.Fri/2023
+| Format  | Example  |
+| --- | --- |
+| full  | Friday, January 20, 2023  |
+| long  | January 20, 2023  |
+| medium  | Jan 20, 2023  |
+| short  | 1/20/23  |
+| custom (for example, "MM.EEE/y")  | 01.Fri/2023  |
 ### asTimeStringLoc(format as String) as String
 _Available since Roku OS 12.0_
 #### Description
 Returns the localized time of the device.
 #### Parameters
-Name | Type | Description
----|---|---
-format | String | Specify the format of the time string to be returned:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| format  | String  | Specify the format of the time string to be returned:
   * short
   * short-h12
   * short-h24
   * custom formatting string using time symbols (for example, "h:mm a")
 
+ |
 #### Custom time formatting values
-Time symbol | Description
----|---
-h | hour (12-hour), minimum digits
-hh | hour (12-hour), 2 digits, zero pad if needed
-H | hour (24-hour), minimum digits
-HH | hour (24-hour), 2 digits, zero pad if needed
-m | minute, minimum digits
-mm | minute, 2 digits, zero pad if needed
-a | AM PM, abbreviated
+| Time symbol  | Description  |
+| --- | --- |
+| h  | hour (12-hour), minimum digits  |
+| hh  | hour (12-hour), 2 digits, zero pad if needed  |
+| H  | hour (24-hour), minimum digits  |
+| HH  | hour (24-hour), 2 digits, zero pad if needed  |
+| m  | minute, minimum digits  |
+| mm  | minute, 2 digits, zero pad if needed  |
+| a  | AM PM, abbreviated  |
 #### Return Value
 A time string corresponding to the specified format:
-Format | Example
----|---
-short | 11:25 pm
-short-h12 | 11:25pm
-short-h24 | 23:25
-custom (for example, "h:mm") | 11:25
+| Format  | Example  |
+| --- | --- |
+| short  | 11:25 pm  |
+| short-h12  | 11:25pm  |
+| short-h24  | 23:25  |
+| custom (for example, "h:mm")  | 11:25  |
 ### AsDateString(format as String) as String
 #### Description
 Returns the date/time formatted string.
 > Day names, month names, separators, and order of fields may vary depending on the current locale.
 #### Parameters
-Name | Type | Description
----|---|---
-format | String |  | Format
----
-long-date
-short-weekday
-no-weekday
-short-month
-short-month-short-weekday
-short-month-no-weekday
-short-date
-short-date-dashes
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| format  | String  |
+ | Format  |
+| --- |
+| long-date  |
+| short-weekday  |
+| no-weekday  |
+| short-month  |
+| short-month-short-weekday  |
+| short-month-no-weekday  |
+| short-date  |
+| short-date-dashes  |
+ |
 #### Return Value
 A dateString corresponding to the specified format.
-Format | Example dateString
----|---
-long-date | Tuesday October 9, 2012
-short-weekday | Tue October 9, 2012
-no-weekday | October 9, 2012
-short-month | Tuesday Oct 9, 2012
-short-month-short-weekday | Tue Oct 9, 2012
-short-month-no-weekday | Oct 9, 2012
-short-date | 10/9/12
-short-date-dashes | 10-9-12
+| Format  | Example dateString  |
+| --- | --- |
+| long-date  | Tuesday October 9, 2012  |
+| short-weekday  | Tue October 9, 2012  |
+| no-weekday  | October 9, 2012  |
+| short-month  | Tuesday Oct 9, 2012  |
+| short-month-short-weekday  | Tue Oct 9, 2012  |
+| short-month-no-weekday  | Oct 9, 2012  |
+| short-date  | 10/9/12  |
+| short-date-dashes  | 10-9-12  |
 > The order of the fields in both short-date formats is changed depending on the current locale:
-Locale | Field Order
----|---
-Canada | YYYY/MM/DD
-United States | MM/DD/YY
-UK and rest of world | DD/MM/YY
+| Locale  | Field Order  |
+| --- | --- |
+| Canada  | YYYY/MM/DD  |
+| United States  | MM/DD/YY  |
+| UK and rest of world  | DD/MM/YY  |
 ### AsDateStringNoParam() as String
 #### Description
 Returns the date/time in long-date format.

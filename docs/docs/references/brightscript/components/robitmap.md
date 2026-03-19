@@ -10,6 +10,7 @@ Example: `CreateObject("roBitmap", {width:10, height:10, AlphaEnable:false, name
 An roBitmap can also load its image data from a file:
 `CreateObject("roBitmap", String filename)`
 **Example**
+
 ```
 ' Draw three bitmaps as fast as we can
 '
@@ -28,6 +29,7 @@ End While
 ```
 
 **Example: Double buffering with roBitmap**
+
 ```
 screen1=CreateObject("roScreen")
 off=CreateObject("roBitmap", {width:1280, height:720, AlphaEnable:false})

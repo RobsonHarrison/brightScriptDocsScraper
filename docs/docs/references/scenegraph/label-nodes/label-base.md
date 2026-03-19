@@ -48,25 +48,26 @@ If both the height and numLines field values are zero, and the maxLines field va
 Rotation of LabelBase nodes is supported. On platforms that do not support OpenGL, only rotations of 0, 90, 180, and 270 degrees are supported.
 ## Fields
 Fields derived from the [Group](https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/group.md#fields) base class can also be used.
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-text | string |  | READ_WRITE | Specifies the text to be displayed
-color | color | 0xddddddff | READ_WRITE | Specifies the text color
-monospacedDigits
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| text  | string  |   | READ_WRITE  | Specifies the text to be displayed  |
+| color  | color  | 0xddddddff  | READ_WRITE  | Specifies the text color  |
+| monospacedDigits
 
- _Available since Roku OS 14.0_ | Boolean | false | READ_WRITE | Renders numeric values using tabular (fixed-width) fonts.
-horizAlign | string | left | READ_WRITE | See [Horizontal Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment")
-vertAlign | string | top | READ_WRITE | See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/label-nodes/label-base.md#wrapping-text "Wrapping")
-width | float | 0 | READ_WRITE | Specifies the width of the label. If set to zero, the text is always displayed as a single line
-height | float | 0 | READ_WRITE | Specifies the height of the label. If set to zero, the actual height is determined by the value of the numLines field if it is greater than zero. See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment") and [Wrapping](https://developer.roku.com/docs/references/scenegraph/label-nodes/label-base.md#wrapping-text "Wrapping") for more details.
-numLines | integer | 0 | READ_WRITE | If the height field value is zero, provides an alternate way to specify the height of the bounding rectangle of the label. See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment") and [Wrapping](https://developer.roku.com/docs/references/scenegraph/label-nodes/label-base.md#wrapping-text "Wrapping") for more details.
-maxLines | integer | 0 | READ_WRITE | If the height and numLines field values are both zero, specifies the maximum number of lines of text to be displayed. See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment") and [Wrapping](https://developer.roku.com/docs/references/scenegraph/label-nodes/label-base.md#wrapping-text "Wrapping") for more details.
-wrap | boolean | false | READ_WRITE | See [Horizontal Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Horizontal Alignment")
-displayPartialLines | Boolean | false | READ_WRITE | If the height field value is greater than zero, used to determine whether or not the last line of visible text is displayed if it would be clipped vertically.
-ellipsizeOnBoundary | Boolean | false | READ_WRITE | If the width field value is greater than zero, controls whether or not the last line of text displayed should be ellipsized if it extends beyond the specified width. It is ignored if the truncateOnDelimiter field value is set to a non-empty string
+ _Available since Roku OS 14.0_  | Boolean  | false  | READ_WRITE  | Renders numeric values using tabular (fixed-width) fonts.  |
+| horizAlign  | string  | left  | READ_WRITE  | See [Horizontal Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment")  |
+| vertAlign  | string  | top  | READ_WRITE  | See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/label-nodes/label-base.md#wrapping-text "Wrapping")  |
+| width  | float  | 0  | READ_WRITE  | Specifies the width of the label. If set to zero, the text is always displayed as a single line  |
+| height  | float  | 0  | READ_WRITE  | Specifies the height of the label. If set to zero, the actual height is determined by the value of the numLines field if it is greater than zero. See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment") and [Wrapping](https://developer.roku.com/docs/references/scenegraph/label-nodes/label-base.md#wrapping-text "Wrapping") for more details.  |
+| numLines  | integer  | 0  | READ_WRITE  | If the height field value is zero, provides an alternate way to specify the height of the bounding rectangle of the label. See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment") and [Wrapping](https://developer.roku.com/docs/references/scenegraph/label-nodes/label-base.md#wrapping-text "Wrapping") for more details.  |
+| maxLines  | integer  | 0  | READ_WRITE  | If the height and numLines field values are both zero, specifies the maximum number of lines of text to be displayed. See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment") and [Wrapping](https://developer.roku.com/docs/references/scenegraph/label-nodes/label-base.md#wrapping-text "Wrapping") for more details.  |
+| wrap  | boolean  | false  | READ_WRITE  | See [Horizontal Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Horizontal Alignment")  |
+| displayPartialLines  | Boolean  | false  | READ_WRITE  | If the height field value is greater than zero, used to determine whether or not the last line of visible text is displayed if it would be clipped vertically.  |
+| ellipsizeOnBoundary  | Boolean  | false  | READ_WRITE  | If the width field value is greater than zero, controls whether or not the last line of text displayed should be ellipsized if it extends beyond the specified width. It is ignored if the truncateOnDelimiter field value is set to a non-empty string
   * When set to true, text will be ellipsized by whole words. Example: "This is the last line of..."
   * When set to false, text will be ellipsized by characters. Example: "This is the last line of tex..."
 
-wordBreakChars | string |  | READ_WRITE | By default, space and hyphen characters are used to determine where lines can be divided. In addition, this field can specify additional characters to be used to determine where the text can be broken into lines
-ellipsisText | string |  | READ_WRITE | By default, three dots (...) are used to ellipsize the last line of text that extends beyond the bounding rectangle. This field specifies alternate characters to be displayed when the last line of text is ellipsized
-isTextEllipsized | Boolean | false | READ_ONLY | Indicates whether the last line of text has been ellipsized
+ |
+| wordBreakChars  | string  |   | READ_WRITE  | By default, space and hyphen characters are used to determine where lines can be divided. In addition, this field can specify additional characters to be used to determine where the text can be broken into lines  |
+| ellipsisText  | string  |   | READ_WRITE  | By default, three dots (...) are used to ellipsize the last line of text that extends beyond the bounding rectangle. This field specifies alternate characters to be displayed when the last line of text is ellipsized  |
+| isTextEllipsized  | Boolean  | false  | READ_ONLY  | Indicates whether the last line of text has been ellipsized  |

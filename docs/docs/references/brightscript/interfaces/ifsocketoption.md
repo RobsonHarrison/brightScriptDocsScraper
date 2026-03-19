@@ -1,9 +1,9 @@
 # ifSocketOption
 ## Implemented by
-Name | Description
----|---
-[roDataGramSocket](https://developer.roku.com/docs/references/brightscript/components/rodatagramsocket.md "roDataGramSocket") | The roDataGramSocket component enables Brightscript apps to send and receive UDP packets
-[roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket") | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them
+| Name  | Description  |
+| --- | --- |
+| [roDataGramSocket](https://developer.roku.com/docs/references/brightscript/components/rodatagramsocket.md "roDataGramSocket")  | The roDataGramSocket component enables Brightscript apps to send and receive UDP packets  |
+| [roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket")  | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them  |
 ## Supported methods
 ### GetTTL() as Integer
 #### Description
@@ -14,9 +14,9 @@ The TTL value.
 #### Description
 Sets the TTL value for all IP packets on the socket.
 #### Parameters
-Name | Type | Description
----|---|---
-ttl | Integer | The TTL value to be used for IP packets on the socket.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| ttl  | Integer  | The TTL value to be used for IP packets on the socket.  |
 #### Return Value
 A flag indicating whether the TTL was successfully set.
 ### GetReuseAddr() as Boolean
@@ -28,9 +28,9 @@ A flag indicating whether the previously assigned address can be reassigned.
 #### Description
 Enables a previously assigned address to be immediately reassigned.
 #### Parameters
-Name | Type | Description
----|---|---
-Reuse | Boolean | A flag specifying whether the address can be reused.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| Reuse  | Boolean  | A flag specifying whether the address can be reused.  |
 #### Return Value
 A flag indicating whether the reuse address feature was successfully set.
 ### GetOOBInline() as Boolean
@@ -42,9 +42,9 @@ A flag indicating whether OOB data is read inline with regular data.
 #### Description
 Enables Out Of Bounds (OOB) data to be read inline with regular data.
 #### Parameters
-Name | Type | Description
----|---|---
-inline | Boolean | A flag specifying whether OOB data is read inline.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| inline  | Boolean  | A flag specifying whether OOB data is read inline.  |
 #### Return Value
 A flag indicating whether the OOB inline data feature was successfully set.
 ### GetSendBuf() as Integer
@@ -56,9 +56,9 @@ The buffer size.
 #### Description
 Sets the current send buffer size.
 #### Parameters
-Name | Type | Description
----|---|---
-size | Integer | The send buffer size to be used.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| size  | Integer  | The send buffer size to be used.  |
 #### Description
 A flag indicating whether the send buffer size was successfully set.
 ### GetRcvBuf() as Integer
@@ -70,9 +70,9 @@ The buffer size.
 #### Description
 Sets the current receive buffer size.
 #### Parameters
-Name | Type | Description
----|---|---
-size | Integer | The receive buffer size to be used.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| size  | Integer  | The receive buffer size to be used.  |
 #### Description
 A flag indicating whether the receive buffer size was successfully set.
 ### GetSendTimeout() as Integer
@@ -84,9 +84,9 @@ The number of seconds for the send timeout.
 #### Description
 Sets the current send timeout (in seconds).
 #### Parameters
-Name | Type | Description
----|---|---
-timeout | Integer | The number of seconds for the send timeout.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| timeout  | Integer  | The number of seconds for the send timeout.  |
 #### Return Value
 A flag indicating whether the send timeout was successfully set.
 ### GetReceiveTimeout() as Integer
@@ -98,8 +98,8 @@ The number of seconds for the receive timeout.
 #### Description
 Sets the current receive timeout (in seconds).
 #### Parameters
-Name | Type | Description
----|---|---
-timeout | Integer | The number of seconds for the receive timeout.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| timeout  | Integer  | The number of seconds for the receive timeout.  |
 #### Return Value
 A flag indicating whether the receive timeout was successfully set.

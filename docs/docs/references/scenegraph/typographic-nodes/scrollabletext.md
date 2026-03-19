@@ -20,17 +20,17 @@ There are three possible values for the vertAlign field:
 
 In most cases, the vertAlign field should remain set to top.
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-text | string | "" | READ_WRITE | Specifies the text to be displayed
-color | color | 0xddddddff | READ_WRITE | Specifies the text color
-font | Font | system default | READ_WRITE | Specifies the Font node to be used
-width | float | 0.0 | READ_WRITE | Specifies the width of the node. This includes both the area where the text is rendered in addition to the scroll bar on the right
-height | float | 0.0 | READ_WRITE | Specifies the height of the node. If the text to be displayed is larger than this height, a scrollbar is automatically added on the right, allowing users to scroll up and down using the remote's arrow keys
-lineSpacing | float | 8 | READ_WRITE | If the text is displayed on more than one line, specifies the amount of additional space added between lines
-horizAlign | string | left | READ_WRITE | See [Horizontal Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Horizontal Alignment")
-vertAlign | string | top | READ_WRITE | See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment")
-scrollbarTrackBitmapUri | string | "" | READ_WRITE | Specifies the URI of an image file to be loaded to replace the default scrollbar track. This should be a 9-patch image so that it can be stretched to the appropriate height specifed by the height field
-scrollbarThumbBitmapUri | string | "" | READ_WRITE | Specifies the URI of an image file to be loaded to replace the default scrollbar thumb. This should be a 9-patch image so that it can be stretched to the appropriate size
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| text  | string  | ""  | READ_WRITE  | Specifies the text to be displayed  |
+| color  | color  | 0xddddddff  | READ_WRITE  | Specifies the text color  |
+| font  | Font  | system default  | READ_WRITE  | Specifies the Font node to be used  |
+| width  | float  | 0.0  | READ_WRITE  | Specifies the width of the node. This includes both the area where the text is rendered in addition to the scroll bar on the right  |
+| height  | float  | 0.0  | READ_WRITE  | Specifies the height of the node. If the text to be displayed is larger than this height, a scrollbar is automatically added on the right, allowing users to scroll up and down using the remote's arrow keys  |
+| lineSpacing  | float  | 8  | READ_WRITE  | If the text is displayed on more than one line, specifies the amount of additional space added between lines  |
+| horizAlign  | string  | left  | READ_WRITE  | See [Horizontal Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Horizontal Alignment")  |
+| vertAlign  | string  | top  | READ_WRITE  | See [Vertical Alignment](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/scrollinglabel.md#alignment "Vertical Alignment")  |
+| scrollbarTrackBitmapUri  | string  | ""  | READ_WRITE  | Specifies the URI of an image file to be loaded to replace the default scrollbar track. This should be a 9-patch image so that it can be stretched to the appropriate height specifed by the height field  |
+| scrollbarThumbBitmapUri  | string  | ""  | READ_WRITE  | Specifies the URI of an image file to be loaded to replace the default scrollbar thumb. This should be a 9-patch image so that it can be stretched to the appropriate size  |
 ## Sample app
 [ScrollableTextExample](https://github.com/rokudev/samples/tree/master/ux%20components/text/ScrollableTextExample) is a sample app demonstrating ScrollableText in action.

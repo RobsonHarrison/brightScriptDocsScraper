@@ -1,8 +1,8 @@
 # ifCECStatus
 ## Implemented by
-Name | Description
----|---
-[roCECStatus](https://developer.roku.com/docs/references/brightscript/components/rocecstatus.md "roCECStatus") | Identifies the active source status for set boxes.
+| Name  | Description  |
+| --- | --- |
+| [roCECStatus](https://developer.roku.com/docs/references/brightscript/components/rocecstatus.md "roCECStatus")  | Identifies the active source status for set boxes.  |
 ## Supported methods
 ### IsActiveSource() As Boolean
 #### Description

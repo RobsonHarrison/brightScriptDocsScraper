@@ -45,14 +45,14 @@ The [GetAudioDecodeInfo()](https://developer.roku.com/docs/references/brightscri
 ### Other deprecated ifDeviceInfo methods
 Several properties of ifDeviceInfo were deprecated with the release of Roku OS 8.1 (May 2018) and were ultimately removed from the firmware in Roku OS 9.1 (April 2019).
 Those deprecated methods of [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md) were replaced with similar methods in Roku OS 8.1 (May 2018).
-**Deprecated method** | **Replacement method**
----|---
-GetDrmInfo() | [GetDrmInfoEx()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getdrminfoex-as-object)
-GetAdvertisingId() | [GetRIDA()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getrida-as-string)
-IsAdIdTrackingDisabled() | [IsRIDADisabled()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#isridadisabled-as-boolean)
-GetClientTrackingId() | [GetChannelClientId()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)
-GetDeviceUniqueId() | [GetChannelClientId()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)
-GetVideoDecodeInfo() as Object | [CanDecodeVideo()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#candecodevideovideo_format-as-object-as-object)
+| **Deprecated method**  | **Replacement method**  |
+| --- | --- |
+| GetDrmInfo()  | [GetDrmInfoEx()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getdrminfoex-as-object)  |
+| GetAdvertisingId()  | [GetRIDA()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getrida-as-string)  |
+| IsAdIdTrackingDisabled()  | [IsRIDADisabled()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#isridadisabled-as-boolean)  |
+| GetClientTrackingId()  | [GetChannelClientId()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)  |
+| GetDeviceUniqueId()  | [GetChannelClientId()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)  |
+| GetVideoDecodeInfo() as Object  | [CanDecodeVideo()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#candecodevideovideo_format-as-object-as-object)  |
 ### [ifUrlTransfer](https://developer.roku.com/docs/references/brightscript/interfaces/ifurltransfer.md)
 Deprecated prior to September 2018: UrlEncode(url as String)
 ### [roVideoPlayerEvent.IsStatusMessage() status values](https://developer.roku.com/docs/references/brightscript/events/rovideoplayerevent.md#isstatusmessage-as-boolean)
@@ -80,26 +80,26 @@ Several attributes have been deprecated; consult the linked documentation page f
 As of this date, all newly published or re-published apps were required to use SceneGraph or Direct Publisher. Accordingly, all legacy visual screen components and associated event components were deprecated.
 > These components were sunset as part of the Roku OS 11.5 release (September 12, 2022). The documentation for these components and events has been removed.
 Below is the list of relevant sunset components and events:
-**Legacy component** | **Associated event**
----|---
-roCaptionRenderer | roCaptionRendererEvent
-roCodeRegistrationScreen | roCodeRegistrationScreenEvent
-roFontMetrics |
-roGridScreen | roGridScreenEvent
-roKeyboardScreen | roKeyboardScreenEvent
-roImageCanvas | roImageCanvasEvent
-roListScreen | roListScreenEvent
-roMessageDialog | roMessageDialogEvent
-roOneLineDialog | roOneLineDialogEvent
-roParagraphScreen | roParagraphScreenEvent
-roPinEntryDialog | roPinEntryDialogEvent
-roPosterScreen | roPosterScreenEvent
-roSearchHistory |
-roSearchScreen | roSearchScreenEvent
-roSlideShow | roSlideShowEvent
-roSpringboardScreen | roSpringboardScreenEvent
-roTextScreen | roTextScreenEvent
-roVideoScreen | roVideoScreenEvent
+| **Legacy component**  | **Associated event**  |
+| --- | --- |
+| roCaptionRenderer  | roCaptionRendererEvent  |
+| roCodeRegistrationScreen  | roCodeRegistrationScreenEvent  |
+| roFontMetrics  |   |
+| roGridScreen  | roGridScreenEvent  |
+| roKeyboardScreen  | roKeyboardScreenEvent  |
+| roImageCanvas  | roImageCanvasEvent  |
+| roListScreen  | roListScreenEvent  |
+| roMessageDialog  | roMessageDialogEvent  |
+| roOneLineDialog  | roOneLineDialogEvent  |
+| roParagraphScreen  | roParagraphScreenEvent  |
+| roPinEntryDialog  | roPinEntryDialogEvent  |
+| roPosterScreen  | roPosterScreenEvent  |
+| roSearchHistory  |   |
+| roSearchScreen  | roSearchScreenEvent  |
+| roSlideShow  | roSlideShowEvent  |
+| roSpringboardScreen  | roSpringboardScreenEvent  |
+| roTextScreen  | roTextScreenEvent  |
+| roVideoScreen  | roVideoScreenEvent  |
 ## Deprecated interfaces: July 1, 2017
 Since July 1, 2017, the interfaces listed below have been deprecated and apps using them have been rejected during certification for publication or re-publication.
 > These interfaces were sunset as part of the Roku OS 11.5 release (September 12, 2022). The documentation for these interfaces has been removed.

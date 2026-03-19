@@ -3,6 +3,7 @@ A SceneGraph application consists of one or more custom SceneGraph components de
 You can select the node classes for your component from the built-in node classes (as described in **[SceneGraph API Reference](https://developer.roku.com/en-gb/docs/developer-program/core-concepts/xml-components/SceneGraph-API-Reference_1607602.html)**), and also from custom components that you have created yourself by defining the custom component in an XML file. In both cases, you must identify the node class or component to be defined for your component, either in BrightScript using the `createObject()` or `createChild()` or similar functions, or as child nodes of the **< children>** element in the XML file. In both cases, you begin the new XML file definition of the component by identifying either the basic abstract node class the component will be extended from, either a **Scene** node class or the **Group** node class, or a built-in node class, or another custom component defined in an XML file.
 For example, you may want to use the built-in node classes **Rectangle** and **Label** for a simple custom component that displays some text in an on-screen box. You can define the box and the text as follows:
 **Defining Custom Components in XML Markup**
+
 ```
 <children>
 
@@ -27,6 +28,7 @@ For example, you may want to use the built-in node classes **Rectangle** and **L
 ```
 
 To use this custom component directly in a **Scene** node, add this XML markup to an XML component file extended from one of the built-in abstract **Scene** node classes. To use it as a custom component in as many different custom components in your application where it would be useful, add the XML markup to an XML component file extended from the built-in abstract **Group** node class, with a descriptive name such as `textbox`. After that, you can use the component in any other XML component file by creating it using that name. For example, to use it by declaring it in the XML markup in the **< children>** element of an XML component file:
+
 ```
 <children>
 
@@ -46,6 +48,7 @@ There has been some confusion about how to set focus to a specific RSG element i
 Best practice is setting focus to view and allowing view to handle the proper child focus.
 Focus should be handled by observing **focusedchild** and then checking if the required node does not have focus.
 **MainScene.brs file**
+
 ```
 function init() as void
     customView = CreateObject("roSGNode", "CustomView")

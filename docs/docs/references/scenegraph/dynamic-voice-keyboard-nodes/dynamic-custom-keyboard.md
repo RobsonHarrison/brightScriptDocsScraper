@@ -5,6 +5,7 @@ The layout of the keyboard is customized based on a JSON-formatted Key Definitio
 ![roku815px - address-keyboard-voice](https://image.roku.com/ZHZscHItMTc2/address-keyboard-voice.jpg)
 ## Accessing the Key Definition File
 The instance of the **DynamicKeyGrid** node is accessed via the **keyGrid** field of the **DynamicCustomKeyboard** node. The **keyGrid** field includes a **keyDefinitionUri** field, which must be set to a valid Key Definition File. Typically, this is done by creating an RSG component that extends the **DynamicCustomKeyboard** and then defining an **init()** function for that component as demonstrated in the following example:
+
 ```
 sub init()
     m.top.keyGrid.keyDefinitionUri = "pkg:/data/coolKeyboardLayoutKDF.json"
@@ -15,15 +16,16 @@ end sub
 In this example, the **keyGrid** is set to the **coolKeyboardLayoutKDF.json** file, which is located in the **data** directory of the package file. The Key Definition File may be stored anywhere within the package file.
 ## Default key selection handlers
 It is recommended that developers create a component that extends the **DynamicCustomKeyboard** node class. This provides default key selection handling for the following use cases:
-Key | Default Handler
----|---
-"label" specified, but not "strOut" | The "label" string is inserted in the text field's string at the current cursor position.
-"strOut" set to "clear" ("clear" is case insensitive) | The text field is set to the empty string.
-"strOut" set to "backspace" ("backspace" is case insensitive) | The character to the left of the cursor position is deleted from the text field's string.
-"strOut" set to "space" ("space" is case insensitive") | A space is inserted in the text field's string at the current cursor position.
-"strOut" set to some other string | By default, the "strOut" string is inserted in the text field's string at the current cursor position. In this case, the component typically provides a custom key selection handler (see [Custom key selection handlers](https://developer.roku.com/en-gb/docs/references/scenegraph/dynamic-voice-keyboard-nodes/dynamic-custom-keyboard.md#custom-key-selection-handler) for more details).
+| Key  | Default Handler  |
+| --- | --- |
+| "label" specified, but not "strOut"  | The "label" string is inserted in the text field's string at the current cursor position.  |
+| "strOut" set to "clear" ("clear" is case insensitive)  | The text field is set to the empty string.  |
+| "strOut" set to "backspace" ("backspace" is case insensitive)  | The character to the left of the cursor position is deleted from the text field's string.  |
+| "strOut" set to "space" ("space" is case insensitive")  | A space is inserted in the text field's string at the current cursor position.  |
+| "strOut" set to some other string  | By default, the "strOut" string is inserted in the text field's string at the current cursor position. In this case, the component typically provides a custom key selection handler (see [Custom key selection handlers](https://developer.roku.com/en-gb/docs/references/scenegraph/dynamic-voice-keyboard-nodes/dynamic-custom-keyboard.md#custom-key-selection-handler) for more details).  |
 ## Custom key selection handlers
 For most keys defined in the Key Definition File, the [default key selection handlers](https://developer.roku.com/en-gb/docs/references/scenegraph/dynamic-voice-keyboard-nodes/dynamic-custom-keyboard.md#default-key-selection-handlers) will provide the desired behavior. If custom handling is needed, the component that extends the **DynamicCustomKeyboard** node class can implement an interface function. To do this, include a function within the component's element that has the following signature:
+
 ```
 function keySelected(key as string) as boolean
 
@@ -34,6 +36,7 @@ The function should return _true_ if it handles the key selection. Returning _fa
 #### Example custom key select handler
 The following example demonstrates a custom key handler:
   1. The Key Definition File for the component that extends **DynamicCustomKeyboard** node has a row that defines the following keys:
+
 ```
 "keys": [
     { "label": "Aa", "strOut": "ChangeCase" },
@@ -43,6 +46,7 @@ The following example demonstrates a custom key handler:
 ```
 
   2. When this key is selected, the keyboard's mode is changed from "UpperCase" to "LowerCase" (the Key Definition File would need to include grids for both modes). In this case, the child **DynamicCustomKeyboard** component includes a **keySelected()** function in its interface:
+
 ```
 <component name="MyCustomKeyboard" extends="DynamicCustomKeyboard>
     <interface>
@@ -54,6 +58,7 @@ The following example demonstrates a custom key handler:
 ```
 
   3. In the corresponding BrightScript file for the child **DynamicCustomKeyboard** component, the **keySelected()** function includes the following business logic:
+
 ```
 function keySelected(key as string) as boolean
     if key = "ChangeCase"
@@ -73,6 +78,7 @@ end function
 #### Custom key handlers that modify the entered text string
 In most cases, the default key selection handlers can be used for modifying the entered text string. However, if a custom key handler is used to do this, it must update the **cursorPosition** of the **DynamicCustomKeyboard**. The following example demonstrates a custom key handler that changes the text string:
   1. The Key Definition File includes a key definition with an action intended to duplicate the character to the left of the cursor position, positioning the cursor after the duplicated character:
+
 ```
 "keys": [
     { "icon": "pkg:/images/Duplicate.png", "strOut": "DuplicateCharacter" },
@@ -82,6 +88,7 @@ In most cases, the default key selection handlers can be used for modifying the 
 ```
 
   2. The **keySelected()** function includes the following business logic:
+
 ```
 function keySelected(key as string) as boolean
     if key = "DuplicateCharacter"
@@ -105,21 +112,23 @@ end function
 
 ## Fields
 See the [DynamicKeyboardBase](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/dynamic-keyboard-base.md "DynamicKeyboardBase") node and its base classes ([Group](https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/group.md) and [Node](https://developer.roku.com/docs/references/scenegraph/node.md)) for configuring the fields inherited by the **DynamicCustomKeyboard** node.
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-keyGrid | DynamicKeyGrid node | The DynamicKeyGrid node associated with the keyboard | READ | Provides access to the internal **DynamicKeyGrid** node of this **DynamicKeyboardBase** component.
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| keyGrid  | DynamicKeyGrid node  | The DynamicKeyGrid node associated with the keyboard  | READ  | Provides access to the internal **DynamicKeyGrid** node of this **DynamicKeyboardBase** component.
 
 Do not set this field to null or to a different DynamicKeyGrid node; this field should be used only to access the fields of this component's internal DynamicKeyGrid node.
 
 > The **DynamicKeyGrid**.**keyDefinitionUri** field must be set to the custom Key Definition File that defines the keyboard's layout.
+ |
 ## Default VoiceTextEditBox settings
-Field | Type | Default | Description
----|---|---|---
-voiceEntryType | string | "generic" | The type of characters accepted via voice entry.
-voiceEnabled | boolean | true | Specifies whether voice entry is enabled for the text edit box of the dynamic keyboard.
-maxTextLength | integer | 75 | The maximum number of characters that may be entered into the text edit box of the dynamic keyboard.
+| Field  | Type  | Default  | Description  |
+| --- | --- | --- | --- |
+| voiceEntryType  | string  | "generic"  | The type of characters accepted via voice entry.  |
+| voiceEnabled  | boolean  | true  | Specifies whether voice entry is enabled for the text edit box of the dynamic keyboard.  |
+| maxTextLength  | integer  | 75  | The maximum number of characters that may be entered into the text edit box of the dynamic keyboard.  |
 ## Sample Key Definition File
 The following sample demonstrates a Key Definition File that defines five grids for **DynamicCustomKeyboard** node. See the [Key Definition File specification](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/key-definition-file.md) for more information.
+
 ```
 {
   "keyboardWidthFHD": 576,

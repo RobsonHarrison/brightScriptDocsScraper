@@ -1,17 +1,18 @@
 # App localization
 Publishers can distribute their content across the world through the [Streaming Store](https://channelstore.roku.com/). The Streaming Store includes all of North America, many countries in Latin America, and several countries in Europe. The Roku development platform makes it easy to broadly disseminate content; however, publishers should consider localization in the development, distribution, engagement, and monetization of their apps.
 Roku has Streaming Stores in the following countries:
-North America | Europe | Latin America | Asia Pacific
----|---|---|---
+| North America  | Europe  | Latin America  | Asia Pacific  |
+| --- | --- | --- | --- |
+|
   * United States
   * Canada
 
-|
+ |
   * United Kingdom
   * Ireland
   * Germany
 
-|
+ |
   * Argentina
   * Brazil
   * Chile
@@ -25,7 +26,7 @@ North America | Europe | Latin America | Asia Pacific
   * Panama
   * Peru
 
-| Australia
+ | Australia  |
 ## Development
 The Roku platform supports the distribution of a single package file across multiple streaming stores. This means that developers only need to build and maintain one app and then handle localization in the application's code. For example, the app can be programmed to have a localized user experience, including multi-language support for the UI (labels, menus, and dialogs) and content metadata (titles and descriptions), and it can control the availability of content for different regions. In addition, the app UI can link to a privacy policy URL corresponding to the country associated with the user's Roku customer account.
 To do this, developers can [get the external IP address of a Roku device](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getexternalip-as-string) client-side, and return it back to the app's backend server. In the backend, the app can get the country ranges mapped to the IP address in order to present a localized experience and determine which content to show and allow access to customers.

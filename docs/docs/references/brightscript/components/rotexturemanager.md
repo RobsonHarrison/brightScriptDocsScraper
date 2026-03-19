@@ -1,6 +1,7 @@
 # roTextureManager
 The Texture Manager provides a set of API's for managing an roBitmap cache.
 **Example: Requesting an roBitmap from the roTextureManager**
+
 ```
 Sub Main()
     mgr = CreateObject("roTextureManager")

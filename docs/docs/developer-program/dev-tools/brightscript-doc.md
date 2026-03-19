@@ -64,6 +64,7 @@ The form of a bsdocs protocol URL is: bsdocs://type.method#field
 **Where:**
 The type portion is optional, and refers to a BrightScript type or the special case type “global”. BrightScript types are the names of the built-in BrightScript components, interfaces, and events. The special case “global” type refers to the BrightScript language global functions. Functions/subs and variables defined in the developer's BrightScript app code can be referenced by omitting the type portion of the and starting with the .method portion (with the #field portion only being required if the code element is a variable within the function/sub). URL The method portion is optional, refers to a function or sub, and is always prefixed with a “.” (dot character). The field portion is optional, refers to variables within the specified function or sub, and is always prefixed with a “#” character.
 ## Example
+
 ```
 ' Gets a false value in a convoluted way
 ' @deprecated Replaced by {@link .Foo2 Foo2} as of version 11.42

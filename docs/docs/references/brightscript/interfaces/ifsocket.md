@@ -1,48 +1,48 @@
 # ifSocket
 ## Implemented by
-Name | Description
----|---
-[roDataGramSocket](https://developer.roku.com/docs/references/brightscript/components/rodatagramsocket.md "roDataGramSocket") | The roDataGramSocket component enables Brightscript apps to send and receive UDP packets
-[roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket") | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them
+| Name  | Description  |
+| --- | --- |
+| [roDataGramSocket](https://developer.roku.com/docs/references/brightscript/components/rodatagramsocket.md "roDataGramSocket")  | The roDataGramSocket component enables Brightscript apps to send and receive UDP packets  |
+| [roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket")  | The roStreamSocket component enables BrightScript apps to accept and connect to TCP streams as well as send and receive data with them  |
 ## Supported methods
 These are the basic binding and data transfer operations used on both [roStreamSocket](https://developer.roku.com/docs/references/brightscript/components/rostreamsocket.md "roStreamSocket") and [roDataGramSocket](https://developer.roku.com/docs/references/brightscript/components/rodatagramsocket.md "roDataGramSocket"). They are synchronous or asynchronous as determined by the socket's blocking behavior. If there is a valid assigned [roMessagePort](https://developer.roku.com/docs/references/brightscript/components/romessageport.md "roMessagePort"), the blocking behavior is considered asynchronous (non-blocking). Otherwise, the blocking behavior is considered synchronous.
 ### Send(data as Object, startIndex as Integer, length as Integer) as Integer
 #### Description
 Sends up to length bytes of data to the socket.
 #### Parameters
-Name | Type | Description
----|---|---
-data | Object | A [roByteArray](https://developer.roku.com/docs/references/brightscript/components/robytearray.md "roByteArray") containing the data to be sent.
-startIndex | Integer | The index of the byte array from which to start sending data.
-length | Integer | The amount of data to be sent to the socket.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| data  | Object  | A [roByteArray](https://developer.roku.com/docs/references/brightscript/components/robytearray.md "roByteArray") containing the data to be sent.  |
+| startIndex  | Integer  | The index of the byte array from which to start sending data.  |
+| length  | Integer  | The amount of data to be sent to the socket.  |
 #### Return Value
 The number of bytes sent.
 ### SendStr(data as String) as Integer
 #### Description
 Sends the whole string to the socket, if possible.
 #### Parameters
-Name | Type | Description
----|---|---
-data | String | A string containing the data to be sent.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| data  | String  | A string containing the data to be sent.  |
 #### Return Value
 The number of bytes sent.
 ### Receive(data as Object, startIndex as Integer, length as Integer) as Integer
 #### Description
 Reads data from the socket.
 #### Parameters
-Name | Type | Description
----|---|---
-data | Object | A [roByteArray](https://developer.roku.com/docs/references/brightscript/components/robytearray.md "roByteArray") containing the data to be stored.
-startIndex | Integer | The index of the byte array from which to start reading data.
-length | Integer | The amount of data to be read from the socket.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| data  | Object  | A [roByteArray](https://developer.roku.com/docs/references/brightscript/components/robytearray.md "roByteArray") containing the data to be stored.  |
+| startIndex  | Integer  | The index of the byte array from which to start reading data.  |
+| length  | Integer  | The amount of data to be read from the socket.  |
 #### Return Value
 The number of bytes read.
 ### ReceiveStr(length as Integer) as String
 Reads data from the socket and stores the result in a string.
 #### Parameters
-Name | Type | Description
----|---|---
-length | Integer | The amount of data to be read from the socket.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| length  | Integer  | The amount of data to be read from the socket.  |
 #### Return Value
 The received byte length string. If no bytes are received, the string is empty.
 ### Close() as Void
@@ -52,13 +52,13 @@ On non-blocking sockets, both the send and the receive buffer may be read but no
 ### SetAddress(sockAddr as Object) as Boolean
 #### Description
 Sets the address using a BSD bind() call
-Name | Return Type | Parameters | Return Value | Description
----|---|---|---|---
-SetAddress | Boolean | ${setaddressparamTable} | True/False |
+| Name  | Return Type  | Parameters  | Return Value  | Description  |
+| --- | --- | --- | --- | --- |
+| SetAddress  | Boolean  | ${setaddressparamTable}  | True/False  |   |
 #### Parameters
-Name | Type | Description
----|---|---
-sockAddr | Object | An roSocketAddress.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| sockAddr  | Object  | An roSocketAddress.  |
 #### Return Value
 A flag indicating whether the address was successfully set.
 ### GetAddress() as Object
@@ -70,9 +70,9 @@ roSocketAddress Object.
 #### Description
 Sets the remote address for next message to be sent.
 #### Parameters
-Name | Type | Description
----|---|---
-sockAddr | Object | An roSocketAddress.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| sockAddr  | Object  | An roSocketAddress.  |
 #### Return Value
 A flag indicating whether the address was successfully stored as the first half of underlying BSD sendto() call.
 ### GetSendToAddress() as Object

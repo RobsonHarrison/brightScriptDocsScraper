@@ -5,12 +5,12 @@ The **StdDlgItemGroup** node may contain one or more [**StdDlgItemBase**](https:
 ![roku815px - actionCards-radio-checkbox-items](https://image.roku.com/ZHZscHItMTc2/actionCards-radio-checkbox-items.jpg)
 > See the [**stdDlgActionCardItem** documentation](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-action-card-item.md#radiobutton-icontype) for code demonstarting how to use the **StdDlgItemGroup** node in a custom dialog.
 #### Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-selectedIndex | integer | 0 | READ_WRITE | The index of the currently selected [StdDlgAreaBase](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-area-base.md) child node. This field is updated when the user selects any of the [StdDlgActionCardItem](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-action-card-item.md) child nodes.
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| selectedIndex  | integer  | 0  | READ_WRITE  | The index of the currently selected [StdDlgAreaBase](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-area-base.md) child node. This field is updated when the user selects any of the [StdDlgActionCardItem](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-action-card-item.md) child nodes.
 
 This field can also be updated via BrightScript to change which child node in the StdDlgItemGroup is selected.
 
-When this field is updated and it corresponds to a [StdDlgActionCardItem](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-action-card-item.md) node that has its **iconType** field set to "radiobutton", the **StdDlgItemGroup** node enforces the "only 1 of _n_ " rule for radio buttons by setting the **iconStatus** field of the other radio button action card items to "false".
+When this field is updated and it corresponds to a [StdDlgActionCardItem](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-action-card-item.md) node that has its **iconType** field set to "radiobutton", the **StdDlgItemGroup** node enforces the "only 1 of _n_ " rule for radio buttons by setting the **iconStatus** field of the other radio button action card items to "false".  |
 ## Sample app
 You can download and install a [sample app](https://github.com/rokudev/standard-dialog-framework) that demonstrates how to create a custom dialog that includes action card items in an item group.

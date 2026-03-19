@@ -32,6 +32,7 @@ Click for more information on how to create a [self-signed SSL certificate](http
     Field 1: IP address <IP Address>                         Field 2: host <IP Address>
 
 ```
+
 ```
 ![roku815px - capturing-and-decrypting-2](https://image.roku.com/ZHZscHItMTc2/capturing-and-decrypting-2.png "capturing-and-decrypting-2.png")
 

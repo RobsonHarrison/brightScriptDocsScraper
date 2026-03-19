@@ -16,35 +16,35 @@ The workflow of the BrightScript Profiler is as below:
 
 ## Manifest entries
 Below is the list of manifest keys used by the profiler:
-**Manifest Entry** | **Value Type** | **Legal Values** | **Default Value** | **Required** | **Description**
----|---|---|---|---|---
-bsprof_data_dest | enum | local , network | local | Yes | If this entry value is `local`, profiling data is collected on the device and can be downloaded from the Application Installer after the app terminates. This is the default. If this entry value is `network`, the profiling data is sent over the network rather than being stored on the device. See the section on Retrieving Profiling Data for details.
-bsprof_enable | boolean | 0 , 1 | 0 | Yes | Turns on BrightScript Profiling when the app is running. This is the master flag and must be set to 1 for any other profiling options to take effect.
-bsprof_enable_lines | boolean | 0 , 1 | 0 | Yes | Collects memory and CPU data for each line of BrightScript source code. This makes it easier to pinpoint memory and CPU usage issues.
+| **Manifest Entry**  | **Value Type**  | **Legal Values**  | **Default Value**  | **Required**  | **Description**  |
+| --- | --- | --- | --- | --- | --- |
+| bsprof_data_dest  | enum  | local , network  | local  | Yes  | If this entry value is `local`, profiling data is collected on the device and can be downloaded from the Application Installer after the app terminates. This is the default. If this entry value is `network`, the profiling data is sent over the network rather than being stored on the device. See the section on Retrieving Profiling Data for details.  |
+| bsprof_enable  | boolean  | 0 , 1  | 0  | Yes  | Turns on BrightScript Profiling when the app is running. This is the master flag and must be set to 1 for any other profiling options to take effect.  |
+| bsprof_enable_lines  | boolean  | 0 , 1  | 0  | Yes  | Collects memory and CPU data for each line of BrightScript source code. This makes it easier to pinpoint memory and CPU usage issues.
 
 This value is set to 0 by default, which means that data is collected for each BrightScript function as a whole.
 
 Enabling this feature can have a significant impact on device performance.
 
-Requires BrightScript profiling to be enabled (`bsprof_enable=1`), and the RSG version to be set to 1.2 (`rsg_version=1.2`).
-bsprof_enable_mem | boolean | 0 , 1 | 0 | Yes, if using memory profiling | Turns on memory profiling.
+Requires BrightScript profiling to be enabled (`bsprof_enable=1`), and the RSG version to be set to 1.2 (`rsg_version=1.2`).  |
+| bsprof_enable_mem  | boolean  | 0 , 1  | 0  | Yes, if using memory profiling  | Turns on memory profiling.
 
 Requires BrightScript profiling to be enabled (`bsprof_enable=1`).
 
-If this is enabled, the `bsprof_sample_ratio` is automatically set to 1.0.
-bsprof_pause_on_start | boolean | 0 , 1 | 0 | No | Immediately after launching the app, profiling is paused until manually resumed with the bsprof-resume command on the port 8080 debug console.
+If this is enabled, the `bsprof_sample_ratio` is automatically set to 1.0.  |
+| bsprof_pause_on_start  | boolean  | 0 , 1  | 0  | No  | Immediately after launching the app, profiling is paused until manually resumed with the bsprof-resume command on the port 8080 debug console.
 
 This is useful for profiling isolated parts of an app's UI or operations, rather than profiling the entire startup sequence of the app.
 
-Requires BrightScript profiling to be enabled (`bsprof_enable=1`).
-bsprof_sample_ratio | float | 0.001 to 1.0 | 1.0 | Yes | Sets how often profiling samples are taken, while the app is running. Only has effect if `bsprof_enable=1`.If memory profiling is enabled (`bsprof_enable_mem=1`), this value is automatically set to 1.0.
+Requires BrightScript profiling to be enabled (`bsprof_enable=1`).  |
+| bsprof_sample_ratio  | float  | 0.001 to 1.0  | 1.0  | Yes  | Sets how often profiling samples are taken, while the app is running. Only has effect if `bsprof_enable=1`.If memory profiling is enabled (`bsprof_enable_mem=1`), this value is automatically set to 1.0.
 
-The `bs_prof_sample_ratio` can be adjusted from 0.001 to 1.0. A sample ratio of 1.0 is the default and provides the most accurate data because every BrightScript statement is measured. A sample ratio of 1.0, however, may slow down device performance, but does not typically affect the usability of the app. If slower device performance is observed, reduce the ratio to lessen the profiler’s overhead.
-rsg_version | float | 1.1, 1.2 |  | Yes, if using line-levl memory profiling | To use line-level profiling, this must be set to 1.2 (`rsg_version=1.2`). If it is not set to 1.2, profiling will still work correctly; however, line-level data will not be generated.
+The `bs_prof_sample_ratio` can be adjusted from 0.001 to 1.0. A sample ratio of 1.0 is the default and provides the most accurate data because every BrightScript statement is measured. A sample ratio of 1.0, however, may slow down device performance, but does not typically affect the usability of the app. If slower device performance is observed, reduce the ratio to lessen the profiler’s overhead.  |
+| rsg_version  | float  | 1.1, 1.2  |   | Yes, if using line-levl memory profiling  | To use line-level profiling, this must be set to 1.2 (`rsg_version=1.2`). If it is not set to 1.2, profiling will still work correctly; however, line-level data will not be generated.
 
 `rsg_version 1.2` provides significant performance improvements; therefore, you should set it to 1.2 regardless whether your app is using line-level profiling.
 
-See [Roku Manifest for more information](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md).
+See [Roku Manifest for more information](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md).  |
 ## Running the profiler on an app
 To initiate the memory profiler, sideload, run, and then exit the app. The profiling data is complete only after the app exits.
 **Pausing and resuming profiling**
@@ -59,11 +59,11 @@ Manifest entry:
 For example, if starting video playback is slow or seems to cause memory leaks, the `bsprof_pause_on_start=1` entry can be set in the app's manifest. After the app is launched, but prior to video playback, execute the bsprof-resume command on port 8080 to begin collecting profiling data. After performing the UI operations to be profiled, execute the bsprof-pause command to suspend the storing operation of the profiling data. Then, exit the app to make the profiling data available for analysis. In this scenario, the profiling data will pertain specifically to the operations performed between `bsprof-resume` and `bsprof-pause`.
 ### Port 8080 Commands
 These profiling commands exist on port 8080 (Roku OS Versions 9 and later):
-**Command** | **Purpose**
----|---
-bsprof-status | Get the status of BrightScript profiling
-bsprof-pause | Pause the generation of profiling data
-bsprof-resume | Resume the generation of profiling data
+| **Command**  | **Purpose**  |
+| --- | --- |
+| bsprof-status  | Get the status of BrightScript profiling  |
+| bsprof-pause  | Pause the generation of profiling data  |
+| bsprof-resume  | Resume the generation of profiling data  |
 ## Collecting the data
 The app's manifest entry `bsprof_data_dest` determines how the profiling data is retrieved from the device. The data can be stored locally on the device and downloaded after the app finishes running and exits, or it can be streamed over a network connection while the app is running. Streaming consumes significantly less memory on the device while the app is running. In addition, if the app fails, the memory data will have been accurately collected up until the time of the crash (CPU data, however, is typically lost if a failure occurs).
 ### Data Destination: Local
@@ -78,18 +78,21 @@ Local data storage is the default storage for profiling, though it can be explic
 ### Data Destination: Network
 In order to stream an app's profiling data to a network while the app is running, add `bsprof_data_dest=network` to the app's manifest. Streaming data over the network is especially useful when profiling an app's memory usage because all memory operations are included in the profiling data, and the amount of space necessary to store the data can be very large. By streaming the data to a network, the data size is limited primarily by the host computer receiving the data, and not by the available memory on the device itself. Even while streaming the profiling data to the network, there are still additional demands placed on the device's resources while profiling as compared to running an app without profiling. However, the use of resources on the device is significantly reduced.
 When this feature is enabled, the start of the app is delayed until a network connection is received by the device, which is the destination for the data. When the app is launched, a message similar to the following appears on the port 8085 developer console:
+
 ```
 `08-31 23:15:29.542 [scrpt.prof.connect.wait] Waiting for connection to http://192.168.1.1:8090/bsprof/channel.bsprof`
 
 ```
 
 The URL is used with wget, curl, or a web browser. Once a connection is received from one of those programs, the following message appears on the developer console:
+
 ```
 `08-31 23:15:38.939 [scrpt.prof.connect.ok] profiler connected`
 
 ```
 
 When the app exits, the following message appears on the developer console:
+
 ```
 `08-31 23:16:04.774 [scrpt.prof.save.ok] Profiling data complete, sent via network`
 
@@ -123,21 +126,22 @@ See [Profiling Values](https://developer.roku.com/en-gb/docs/developer-program/d
 #### Profiling Values
 The following table describes the profile statistics displayed in the BrightScript profiler tool. The descriptions are applicable for the functions as a whole or for individuals lines of code in the functions (if using [line-level profiling](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/brightscript-profiler.md#line-level-profiling)).
 ### Values from memory profiling
-Calls | Number of times a function was called
----|---
-Cpu.self | CPU* used in a function, itself
-Cpu.callees | CPU* used in functions called by a function
-Cpu.total | Cpu.self + cpu.callees
-Mem.self | Memory allocated within a function itself, but not freed (leaks)
-Mem.callees | Memory allocated by functions called by a function, but not freed (leaks)
-Mem.total | Mem.self + mem.callees
-Tm.self | Real (wall-clock) time spent on a function, itself
-Tm.callees | Real (wall-clock) time spent on functions called by a function
-Tm.total | Tm.self + tm.callees
-Avg.cpu_self, Avg.cpu_callees, Avg.cpu_total, Avg.mem_self, Avg.mem_total, Avg.tm_self, Avg.tm_callees, Avg.tm_total, | Average of the metric, over the number of calls (e.g., if cpu.self=100 and calls=2, avg_cpu_self will be 50)
+| Calls  | Number of times a function was called  |
+| --- | --- |
+| Cpu.self  | CPU* used in a function, itself  |
+| Cpu.callees  | CPU* used in functions called by a function  |
+| Cpu.total  | Cpu.self + cpu.callees  |
+| Mem.self  | Memory allocated within a function itself, but not freed (leaks)  |
+| Mem.callees  | Memory allocated by functions called by a function, but not freed (leaks)  |
+| Mem.total  | Mem.self + mem.callees  |
+| Tm.self  | Real (wall-clock) time spent on a function, itself  |
+| Tm.callees  | Real (wall-clock) time spent on functions called by a function  |
+| Tm.total  | Tm.self + tm.callees  |
+| Avg.cpu_self, Avg.cpu_callees, Avg.cpu_total, Avg.mem_self, Avg.mem_total, Avg.tm_self, Avg.tm_callees, Avg.tm_total,  | Average of the metric, over the number of calls (e.g., if cpu.self=100 and calls=2, avg_cpu_self will be 50)  |
 > A “memory leak” is simply any memory that is allocated, but not freed while the profiler was running. If memory is freed while profiling is paused, the free memory is not tracked and the memory may show up as “leaked.”
 > Time is measured as if a stopwatch were used to time the action. For example, if a function makes a network call, there may be very little CPU time used, but a significant amount of time waiting for the network response.
 If any of these metrics appear in a call path, they are specific to that call path. For example, in this call path:
+
 ```
 <root>: cpu.self=0,cpu.callees=14700,tm.self=0.000,tm.callees=1.989,mem.self=0,mem.callees=324452,calls=0
 
@@ -149,6 +153,7 @@ If any of these metrics appear in a call path, they are specific to that call pa
 
 The metrics for func2() are specific to when it is called from func1().
 However, in the table below:
+
 ```
 ------------- BEGIN: TOP CONSUMERS: CPU.SELF -----------------
 
@@ -167,8 +172,8 @@ The **Top Offenders** tab displays the functions or function call paths that use
 Click **Show call paths** to open the **CPU** or **Memory** tab with more detailed profiling data for the selected function and metric.
 ## Using this data
 Here are a few key points on how to use this data to improve app performance:
-Data Type | Definition and Best Use
----|---
-High wall-clock time but low CPU time | This pattern shows a function is consistently waiting, whether it be for input or a response from an external source. These functions are best suited for Task nodes so that it doesn't block the main thread.
-Complex functions | Try to simplify the as much as possible. If a function handles multiple tasks, consider breaking it out into several functions to further isolate how much CPU or wall-clock time is consumed by each task.
-Functions that consume a large amount of CPU or wall-clock time | Move functions to Task nodes, if they are consistently waiting. A function can be determined to be waiting if it's wall-clock time is high, but its CPU cost is low
+| Data Type  | Definition and Best Use  |
+| --- | --- |
+| High wall-clock time but low CPU time  | This pattern shows a function is consistently waiting, whether it be for input or a response from an external source. These functions are best suited for Task nodes so that it doesn't block the main thread.  |
+| Complex functions  | Try to simplify the as much as possible. If a function handles multiple tasks, consider breaking it out into several functions to further isolate how much CPU or wall-clock time is consumed by each task.  |
+| Functions that consume a large amount of CPU or wall-clock time  | Move functions to Task nodes, if they are consistently waiting. A function can be determined to be waiting if it's wall-clock time is high, but its CPU cost is low  |

@@ -13,6 +13,7 @@
 
 ### Referencing subsections of m.global
 Given the rendezvous penalties, don't repeatedly reference the same fields in `m.global` to get data subsections. Use temporaries to hold references to successive parts of the tree. For example, assume that you have a large set of app configuration data stored in `m.global.config`. This data is a large web with elements (AAs or node trees) for settings, analytics, etc.:
+
 ```
 m.global
 {
@@ -30,6 +31,7 @@ m.global
 ```
 
 Getting some or all of this data into a Task node can be done as follows:
+
 ```
 <component name="DataTask" extends="Task">
 <interface>

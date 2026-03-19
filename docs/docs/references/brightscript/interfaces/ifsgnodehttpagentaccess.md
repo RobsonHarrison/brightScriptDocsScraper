@@ -1,9 +1,9 @@
 # ifSGNodeHttpAgentAccess
 The ifSGNodeHttpAgentAccess interface allows you to get an [roHttpAgent](https://developer.roku.com/docs/references/brightscript/components/rohttpagent.md "roHttpAgent") object from a SceneGraph node, and set an roHttpAgent object for a nod
 ## Implemented by
-Name | Description
----|---
-[roSGNode](https://developer.roku.com/docs/references/brightscript/components/rosgnode.md "roSGNode") | The roSGNode object is the BrightScript equivalent of SceneGraph XML file node creation
+| Name  | Description  |
+| --- | --- |
+| [roSGNode](https://developer.roku.com/docs/references/brightscript/components/rosgnode.md "roSGNode")  | The roSGNode object is the BrightScript equivalent of SceneGraph XML file node creation  |
 ## Supported methods
 ### getHttpAgent() as Object
 #### Description
@@ -17,8 +17,8 @@ The roHttpAgent object for the node, which may be one of the following:
 ### setHttpAgent(HTTP_agent as Object) as Boolean
 Sets an roHttpAgent object for the node.
 #### Parameters
-Name | Type | Description
----|---|---
-HTTP_agent | Object | The roHttpAgent object to be set for the node.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| HTTP_agent  | Object  | The roHttpAgent object to be set for the node.  |
 #### Return Value
 A flag indicating whether the roHttpAgent object was successfully set.

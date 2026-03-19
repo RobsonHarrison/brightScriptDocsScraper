@@ -15,26 +15,26 @@ The Sales Activity Report displays only a tabular grid, in which each row repres
   * **Channel Name** – The name of the app that generated this row's transactions.
   * **Transaction Date** – The date of all transactions represented by this row.
   * **Transaction Type** – The nature of the transaction, as explained in the table below:
-Type | Meaning
----|---
-Cancellation | Either an end user actively canceled a subscription ("active" cancellation), or Roku is unable to successfully capture the end user's subscription event ("passive" cancellation).
-Charge | A successful purchase transaction (historically used to indicate purchases under Roku as Payment Method: RPM).
-DowngradeCancel | A successful downgrade transaction's cancellation of the outgoing (base) subscription.
-DowngradeSale | A successful downgrade transaction's sale of a new (downgraded) subscription, to replace the outgoing (base) plan.
-Purchase | A successful purchase transaction (historically used to indicate purchases under Roku Standard Billing: RSB). Such transactions include 1) one-time purchases. and 2) initial and recurring subscription charges.
-Refund | A successful refund transaction (historically used to indicate refunds under Roku as Payment Method: RPM).
-Renewal | An end user, who actively cancelled a subscription, successfully signed up again before the previously scheduled expiration of the subscription.
-Reversal | A successful refund transaction (historically used to indicate refunds under Roku Standard Billing: RSB).
-GraceInitiated | Payment for a subscription auto-renewal fails. Customer may still access content while Roku attempts to charge the MOP.
-GraceRecovered | Payment is received for a subscription that was in a grace period. Customer maintains access to content and the billing period remains the same.
-OnHoldInitiated | Payment for a subscription auto-renewal fails after the grace period elapses. Customer should no longer have access to content while Roku continues to attempt to charge the MOP.
-UpgradeCancel | A successful upgrade transaction's cancellation of the outgoing (base) subscription.
-UpgradeSale | A successful upgrade transaction's sale of a new (upgraded) subscription, replacing the outgoing (base) subscription.
-Chargeback | The customer has initiated a transaction dispute.
+| Type  | Meaning  |
+| --- | --- |
+| Cancellation  | Either an end user actively canceled a subscription ("active" cancellation), or Roku is unable to successfully capture the end user's subscription event ("passive" cancellation).  |
+| Charge  | A successful purchase transaction (historically used to indicate purchases under Roku as Payment Method: RPM).  |
+| DowngradeCancel  | A successful downgrade transaction's cancellation of the outgoing (base) subscription.  |
+| DowngradeSale  | A successful downgrade transaction's sale of a new (downgraded) subscription, to replace the outgoing (base) plan.  |
+| Purchase  | A successful purchase transaction (historically used to indicate purchases under Roku Standard Billing: RSB). Such transactions include 1) one-time purchases. and 2) initial and recurring subscription charges.  |
+| Refund  | A successful refund transaction (historically used to indicate refunds under Roku as Payment Method: RPM).  |
+| Renewal  | An end user, who actively cancelled a subscription, successfully signed up again before the previously scheduled expiration of the subscription.  |
+| Reversal  | A successful refund transaction (historically used to indicate refunds under Roku Standard Billing: RSB).  |
+| GraceInitiated  | Payment for a subscription auto-renewal fails. Customer may still access content while Roku attempts to charge the MOP.  |
+| GraceRecovered  | Payment is received for a subscription that was in a grace period. Customer maintains access to content and the billing period remains the same.  |
+| OnHoldInitiated  | Payment for a subscription auto-renewal fails after the grace period elapses. Customer should no longer have access to content while Roku continues to attempt to charge the MOP.  |
+| UpgradeCancel  | A successful upgrade transaction's cancellation of the outgoing (base) subscription.  |
+| UpgradeSale  | A successful upgrade transaction's sale of a new (upgraded) subscription, replacing the outgoing (base) subscription.  |
+| Chargeback  | The customer has initiated a transaction dispute.
 
-For apps in the Germany Streaming Store only, a SEPA chargeback may occur when the customer disputes a transaction made through Roku Pay that results in a chargeback or their bank account has insufficient funds.
-ChargebackReversed | Roku successfully reversed the chargeback claim.
-SecondChargeback | The customer's bank has disputed the chargeback reversal on the transaction (this may occur if the customer provided new information, the chargeback reason changed, or the bank determined that the information provided by Roku was not sufficient to refute the chargeback).
+For apps in the Germany Streaming Store only, a SEPA chargeback may occur when the customer disputes a transaction made through Roku Pay that results in a chargeback or their bank account has insufficient funds.  |
+| ChargebackReversed  | Roku successfully reversed the chargeback claim.  |
+| SecondChargeback  | The customer's bank has disputed the chargeback reversal on the transaction (this may occur if the customer provided new information, the chargeback reason changed, or the bank determined that the information provided by Roku was not sufficient to refute the chargeback).  |
   * **Developer Percentage** – The Publisher's portion of earnings reflected by this row, expressed as a percentage.
   * **Product Code** – The Publisher's unique identifying code for the product reflected by this row.
   * **Product Name** – The Publisher's name for the product specified in the row's Product Code

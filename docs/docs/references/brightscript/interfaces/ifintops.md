@@ -1,10 +1,11 @@
 # ifIntOps
 ## Implemented by
-Name | Description
----|---
-[roInt](https://developer.roku.com/docs/references/brightscript/components/roint.md "roInt") | Object equivalent for intrinsic type Integer
+| Name  | Description  |
+| --- | --- |
+| [roInt](https://developer.roku.com/docs/references/brightscript/components/roint.md "roInt")  | Object equivalent for intrinsic type Integer  |
 > To verify whether an object is of an integer type, you can pass the object and this interface into the [GetInterface() method](https://developer.roku.com/docs/references/brightscript/language/global-utility-functions.md#getinterfaceobject-as-object-ifname-as-string-as-interface):
-> ```
+>
+```
 if (GetInterface(someInteger, "ifIntOps") <> invalid)
     ...
 End if

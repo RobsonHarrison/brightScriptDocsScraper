@@ -9,9 +9,10 @@ The StandardProgressDialog is comprised of the following areas and building bloc
     * One StdDlgProgressItem
 
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-title | string | "" | READ_WRITE | The title to be displayed at the top of the dialog.If no title is specified, the progress dialog will be displayed without a title area and will use the minimum width needed to show the spinning progress indicator and message
-message | string | "" | READ_WRITE | A string to be displayed next to the spinning progress indicator. It typically tells the user why they are waiting.
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| title  | string  | ""  | READ_WRITE  | The title to be displayed at the top of the dialog.If no title is specified, the progress dialog will be displayed without a title area and will use the minimum width needed to show the spinning progress indicator and message  |
+| message  | string  | ""  | READ_WRITE  | A string to be displayed next to the spinning progress indicator. It typically tells the user why they are waiting.
 
 > Minimize the message length.
+ |

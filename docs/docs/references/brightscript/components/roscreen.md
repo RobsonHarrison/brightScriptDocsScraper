@@ -34,6 +34,7 @@ If a single parameter is passed, it is a Boolean that indicates if the screen is
 If four parameters are passed, the last two specify the screen's resolution. The dimensions must be one of the screen sizes specified above:
 `CreateObject("roScreen", true, 720, 480) ' db & SD res`
 **Example: Display an image**
+
 ```
 Screen=CreateObject("roScreen")
 dfDrawImage(screen, "myphoto.jpg",0,0)
@@ -42,6 +43,7 @@ Screen.Finish()
 ```
 
 **Example: Alpha blending**
+
 ```
 white=&hFFFFFFFF
 screen0=CreateObject("roScreen")

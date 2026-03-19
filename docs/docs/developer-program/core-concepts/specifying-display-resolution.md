@@ -4,11 +4,11 @@ SceneGraph applications allow you to specify an intended display screen resoluti
 The following describes how SceneGraph applications support different display screen resolutions.
 ### Supported screen resolutions
 Roku players support up to three screen resolutions for the application user interface, depending on the specific Roku player. Please note that SD-only apps are not supported on Roku.
-Resolution | Pixel Dimensions | Pixel Shape
----|---|---
-Full high-definition | 1920 x 1080 | square
-High-definition | 1280 x 720 | square
-Standard definition | 720 x 480 | non-square
+| Resolution  | Pixel Dimensions  | Pixel Shape  |
+| --- | --- | --- |
+| Full high-definition  | 1920 x 1080  | square  |
+| High-definition  | 1280 x 720  | square  |
+| Standard definition  | 720 x 480  | non-square  |
 ### Automatic screen element scaling
 SceneGraph applications can automatically scale screen elements, such as fonts and rectangles, to any specified supported resolution. This scaling is controlled by specifying the screen resolutions the application is intended to support. If support is only specified for high-definition, and not full high-definition, then the screen elements are scaled from 720 resolution to 1080 resolution if needed for the display resolution. If support is only specified for full high-definition, and not high definition, then the screen elements are scaled from 1080 resolution to 720 resolution if needed for the display resolution.
 #### Automatic selection of supported graphical image resolutions

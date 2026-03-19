@@ -11,6 +11,7 @@ Create an application directory with the following minimum subdirectories and fi
 Name this directory for the application it will contain, such as VideoStore. In most cases you will probably just copy an existing application directory (such as provided for the [SceneGraph XML Tutorial](https://github.com/rokudev/samples/tree/master/getting%20started/SceneGraphTutorial)), and modify, add, and rename files and directories for your new application, as described below.
 ## Create or modify a manifest file
 The `manifest` file contains the following fields:
+
 ```
 title=application_title
 subtitle=application_subtitle
@@ -38,6 +39,7 @@ The two application splash screen graphic files are for SD and HD user displays.
 The graphics files specified in the manifest file should be included in the application package `images` directory, so the URI to set the path to the files should use `pkg:` resource prefix, such as `pkg:/images/splash_sd.jpg`. More information about the requirements and recommendations for the graphics files included in the application package can be found in [Set up the images directory](https://developer.roku.com/docs/developer-program/core-concepts/developing-scenegraph-applications.md#set-up-the-images-directory).
 The following is an example of a `manifest` file.
 **Manifest file example**
+
 ```
 title=Test Application
 subtitle=A SceneGraph Test
@@ -61,6 +63,7 @@ splash_min_time=1000
 The source directory contains BrightScript code for the main applications execution thread, with the extension `.brs`. Since applications including SceneGraph scenes allow BrightScript code to either be embedded in, or used by, an XML component file in a <script> element, for many SceneGraph applications this directory will only contain a `main.brs` file to start the application. The `main.brs` file only need have enough BrightScript code to start the application by creating and displaying the scene specified in the SceneGraph scene.
 The following shows a `main.brs` file that starts the application by creating and showing the scene defined in the SceneGraph scene named `rectangleScene` (the `rectangleScene` scene is defined in an XML component file in the `components` directory as described in [Set up the components directory](https://developer.roku.com/docs/developer-program/core-concepts/developing-scenegraph-applications.md#set-up-the-components-directory)).
 **Example main.brs file**
+
 ```
 sub Main()
   showChannelSGScreen()
@@ -91,6 +94,7 @@ You can use this example `main.brs` file for your SceneGraph applications simply
 For example:
 `scene = screen.CreateScene("posterScene")`
 Similarly, you can control the flow of scenes through your application by creating and showing scenes as needed:
+
 ```
 screen = CreateObject("roSGScreen")
 m.port = CreateObject("roMessagePort")
@@ -105,6 +109,7 @@ The `components` directory contains all the XML component and associated BrightS
 Each XML component file contains a single <component> element that contains a specific SceneGraph node/element tree defining that component.
 For example:
 **Example SceneGraph XML component file**
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 

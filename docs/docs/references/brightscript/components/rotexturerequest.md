@@ -3,6 +3,7 @@ An roTextureRequest is used to make requests to the roTextureManager.
 An roTextureRequest object is created using the CreateObject() method and passing it a URI string:
 `CreateObject("roTextureRequest", "pkg:/assets/comet.jpg")`
 **Example: Requesting a URL from the roTextureManager**
+
 ```
 Sub Main()
     mgr = CreateObject("roTextureManager")
@@ -31,6 +32,7 @@ End Sub
 ```
 
 **Example: Requesting a scaled image from the roTextureManager**
+
 ```
 Sub Main()
     mgr = CreateObject("roTextureManager")
@@ -46,6 +48,7 @@ End Sub
 ```
 
 **Example: Making an HTTPS request from the roTextureManager**
+
 ```
 Sub Main()
     mgr = CreateObject("roTextureManager")

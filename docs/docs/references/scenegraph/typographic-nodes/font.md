@@ -3,6 +3,7 @@ Extends [**Node**](https://developer.roku.com/docs/references/scenegraph/node.md
 The Font node class specifies the font to be used by a Label node, or any other nodes that render text.
 Nodes that use fonts include a field that stores a Font node. The font to use is specified by creating a Font node, and setting its uri and size fields.
 The uri field can be set to any TrueType/OpenType font file. For example, to specify a font in XML markup:
+
 ```
 <Label>
   <Font role = "font" uri = "pkg:/fonts/font.ttf" size = "24" />
@@ -11,6 +12,7 @@ The uri field can be set to any TrueType/OpenType font file. For example, to spe
 ```
 
 A default system font can also be specified, such as in the following:
+
 ```
 <Label id = "myLabel"
   width = "200"
@@ -40,6 +42,7 @@ Below is the list of all the possible system font values:
   * BadgeSystemFont
 
 The font can also be specified in BrightScript, for example:
+
 ```
 label = CreateObject("roSGNode", "Label")
 font  = CreateObject("roSGNode", "Font")
@@ -50,8 +53,8 @@ label.font = font
 ```
 
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-uri | uri | "" | READ_WRITE | Specifies a TrueType or OpenType font file. Currently only font files included in the application can be specified
-size | integer | 1 | READ_WRITE | Specifies the size of the font in points
-fallbackGlyph | string | "" | READ_WRITE | String representation of a Unicode character to display when an unsupported glyph is encountered. For example, "u0020" would render a space for any unrenderable characters
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| uri  | uri  | ""  | READ_WRITE  | Specifies a TrueType or OpenType font file. Currently only font files included in the application can be specified  |
+| size  | integer  | 1  | READ_WRITE  | Specifies the size of the font in points  |
+| fallbackGlyph  | string  | ""  | READ_WRITE  | String representation of a Unicode character to display when an unsupported glyph is encountered. For example, "u0020" would render a space for any unrenderable characters  |

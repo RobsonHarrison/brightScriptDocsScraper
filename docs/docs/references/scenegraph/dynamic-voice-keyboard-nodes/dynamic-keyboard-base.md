@@ -15,17 +15,17 @@ The [**DynamicCustomKeyboard** node](https://developer.roku.com/docs/references/
 >
 
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-text | string | "" | READ_WRITE | Contains the string of characters that has been entered. The text written to this field may also be displayed in the VoiceTextEditBox.
-textEditBox | [**VoiceTextEditBox** node](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/voice-text-edit-box.md) | The VoiceTextEditBox associated with the keyboard | READ | The internal [VoiceTextEditBox node](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/voice-text-edit-box.md) used by this DynamicKeyboardBase node.
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| text  | string  | ""  | READ_WRITE  | Contains the string of characters that has been entered. The text written to this field may also be displayed in the VoiceTextEditBox.  |
+| textEditBox  | [**VoiceTextEditBox** node](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/voice-text-edit-box.md)  | The VoiceTextEditBox associated with the keyboard  | READ  | The internal [VoiceTextEditBox node](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/voice-text-edit-box.md) used by this DynamicKeyboardBase node.
 
-Do not set this field to null or to a different VoiceTextEditBox node; this field should be used only to access the fields of this node's internal VoiceTextEditBox node.
-hideTextBox | boolean | false | READ_WRITE | Hides the keyboard's internal **VoiceTextEditBox** , and renders the keyboard's **DynamicKeyGrid** at the top of the node.
-keyGrid | **[DynamicKeyGrid node](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/dynamic-key-grid.md)** | The DynamicKeyGrid associated with the keyboard | READ | The internal [DynamicKeyGrid node](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/dynamic-key-grid.md) used by this DynamicKeyboardBase node.
+Do not set this field to null or to a different VoiceTextEditBox node; this field should be used only to access the fields of this node's internal VoiceTextEditBox node.  |
+| hideTextBox  | boolean  | false  | READ_WRITE  | Hides the keyboard's internal **VoiceTextEditBox** , and renders the keyboard's **DynamicKeyGrid** at the top of the node.  |
+| keyGrid  | **[DynamicKeyGrid node](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/dynamic-key-grid.md)**  | The DynamicKeyGrid associated with the keyboard  | READ  | The internal [DynamicKeyGrid node](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/dynamic-key-grid.md) used by this DynamicKeyboardBase node.
 
-Do not set this field to null or to a different DynamicKeyGrid node; this field should be only used to access the fields of this node's internal DynamicKeyGrid node, such as the mode or horizWrapping fields.
-domain | string | "generic" | READ_WRITE | The keyboard mode, which may be one of the following:
+Do not set this field to null or to a different DynamicKeyGrid node; this field should be only used to access the fields of this node's internal DynamicKeyGrid node, such as the mode or horizWrapping fields.  |
+| domain  | string  | "generic"  | READ_WRITE  | The keyboard mode, which may be one of the following:
 
   * "email": letter-by-letter dictation for emails.
   * "numeric": letter-by-letter dictation for PIN codes, zip codes, and other numeric input.
@@ -40,6 +40,7 @@ The domain may be used to:
   * Specify whether the entered string is displayed as a single string or a discrete sequence of characters (for example, a PIN code).
   * Enable key suggestions (for example, a pop-up for the ampersand key (&) to provide common email choices).
 
+ |
 ## UX recommendations
   1. Do not show hint text in the [VoiceTextEditBox](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/voice-text-edit-box.md).
   2. Display secondary text under the title.

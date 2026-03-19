@@ -53,6 +53,7 @@ Packaging an app can be done in Eclipse. Publishing an app on the Streaming Stor
   2. In the following dialog: click the check-box next to **Install on Roku Box** , and **Create Package (.pkg) file.** Click **Finish** and the package will be available in the out folder of the current BrightScript project in the Eclipse workspace.
 
 > If the genkey utility has not been run previously, click **New Keys** to generate a signing key.
+
 ```
 ![roku600px -  - packagingchannels2](https://image.roku.com/ZHZscHItMTc2/packagingchannels2.png "packagingchannels2")
 

@@ -12,12 +12,14 @@ When accessing fields on an SG node, either for read or write, the data will be 
 For example, accessing a 5.6MB AA can take hundreds of milliseconds. If this copy happens inside a rendezvous observer, the render thread may skip frames during animation.
 #### Copying Nodes
 When copying nodes, do not simply call:
+
 ```
 node2.setFields(node1.getFields())
 
 ```
 
 Setting nonexistent fields in a node will invoke additional internal verification and warning outputs to the debug console, causing UI lag. Instead, do something like:
+
 ```
 function cloneNode(oldNode as Object) as Object
   newNode = createObject("roSGNode",oldNode.subtype()) 'subtyped node should automatically have all the fields of the original node

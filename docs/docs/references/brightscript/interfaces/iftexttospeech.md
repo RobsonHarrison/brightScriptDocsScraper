@@ -1,21 +1,21 @@
 # ifTextToSpeech
 > To implement CVAA/screen reader support in your app, use the [roAudioGuide](https://developer.roku.com/docs/references/brightscript/components/roaudioguide.md) component object. The roTextToSpeech component object is typically used for book readers and other special-purpose applications.
 ## Implemented by
-Name | Description
----|---
-[roTextToSpeech](https://developer.roku.com/docs/references/brightscript/components/rotexttospeech.md "roTextToSpeech") | The roTextToSpeech component provides text to speech capabilities to applications
+| Name  | Description  |
+| --- | --- |
+| [roTextToSpeech](https://developer.roku.com/docs/references/brightscript/components/rotexttospeech.md "roTextToSpeech")  | The roTextToSpeech component provides text to speech capabilities to applications  |
 ## Supported methods
 ### Say(text as String) as Integer
 #### Description
 Returns an ID for the spoken string to notify observer callbacks about a specific spoken string.
 #### Parameters
-Name | Type | Description
----|---|---
-text | String | The UTF8 text to be spoken.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| text  | String  | The UTF8 text to be spoken.
 
 Punctuation such as commas and periods can be used to add pauses to the speech playback.
 
-Typically, special characters are generally not spoken; however, you can pass in the appropriate text such as "question mark" to have a special character be spoken (do not use the symbol).
+Typically, special characters are generally not spoken; however, you can pass in the appropriate text such as "question mark" to have a special character be spoken (do not use the symbol).  |
 #### Return Value
 The ID for the spoken string.
 ### Silence(duration as Integer) as Integer
@@ -23,9 +23,9 @@ The ID for the spoken string.
 Causes text to speech to continue to suppress any application background sound for the amount of time specified by `duration`.
 This can be used to add clarity for longer spoken text that may have pauses that might otherwise allow application background sound to be heard.
 #### Parameters
-Name | Type | Description
----|---|---
-duration | Integer | The amount of time to suppress application background sound
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| duration  | Integer  | The amount of time to suppress application background sound  |
 #### Return Value
 The duration for the speech suppression.
 ### Flush() as Void
@@ -45,9 +45,9 @@ A list of languages.
 #### Description
 Sets the language specified by `name` for text to speech, from one of the available languages returned by the [GetAvailableLanguages()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/iftexttospeech.md#getavailablelanguages-as-object) method.
 #### Parameters
-Name | Type | Description
----|---|---
-name | String | The text-to-speech language to be used.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| name  | String  | The text-to-speech language to be used.  |
 ### GetLanguage() as String
 #### Description
 Returns the name of the currently-selected text-to-speech language.
@@ -62,9 +62,9 @@ A list of voices.
 #### Description
 Sets the voice specified by name for text to speech, from one of the available voices returned by the [GetAvailableVoices()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/iftexttospeech.md#getavailablevoices-as-object) method.
 #### Parameters
-Name | Type | Description
----|---|---
-name | String | The available text-to-speech voice to be used
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| name  | String  | The available text-to-speech voice to be used  |
 ### GetVoice() as String
 #### Description
 Returns the currently-selected voice.
@@ -79,9 +79,9 @@ The volume.
 #### Description
 Sets the volume at which text is spoken.
 #### Parameters
-Name | Type | Description
----|---|---
-volume | Integer | The volume at which text is spoken. The value ranges from 0 for muted to 1000 for the highest volume. The default value is 1000.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| volume  | Integer  | The volume at which text is spoken. The value ranges from 0 for muted to 1000 for the highest volume. The default value is 1000.  |
 ### GetRate() as Integer
 #### Description
 Returns the rate at which text is spoken. The value ranges from -40 to 200 with a default value of 0.
@@ -91,9 +91,9 @@ The rate.
 #### Description
 Sets the rate at which text is spoken.
 #### Parameters
-Name | Type | Description
----|---|---
-rate | Integer | The rate at which text is to be spoken. The possible values range from -40 to 200.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| rate  | Integer  | The rate at which text is to be spoken. The possible values range from -40 to 200.  |
 ### GetPitch() as Integer
 #### Description
 Returns the pitch at which text is spoken. The possible values range from -60 to +60.
@@ -103,6 +103,6 @@ The pitch.
 #### Description
 Sets the pitch at which text is spoken.
 #### Parameters
-Name | Type | Description
----|---|---
-pitch | Integer | The pitch at which text is to be spoken. The possible values range from -60 to +60.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| pitch  | Integer  | The pitch at which text is to be spoken. The possible values range from -60 to +60.  |

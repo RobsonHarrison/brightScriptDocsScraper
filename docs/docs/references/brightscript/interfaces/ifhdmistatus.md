@@ -1,8 +1,8 @@
 # ifHdmiStatus
 ## Implemented by
-Name | Description
----|---
-[roHdmiStatus](https://developer.roku.com/docs/references/brightscript/components/rohdmistatus.md "roHdmiStatus") | The HDMI status component provides an interface to the current HDMI operational status of Roku streaming players (or set-top boxes [STBs]). This interface is not applicable for Roku TVs.
+| Name  | Description  |
+| --- | --- |
+| [roHdmiStatus](https://developer.roku.com/docs/references/brightscript/components/rohdmistatus.md "roHdmiStatus")  | The HDMI status component provides an interface to the current HDMI operational status of Roku streaming players (or set-top boxes [STBs]). This interface is not applicable for Roku TVs.  |
 ## Supported methods
 ### IsConnected() as Boolean
 #### Description
@@ -20,8 +20,8 @@ If an empty string is returned, HDCP is disabled. In this case, videos that requ
 #### Description
 Checks if the current established HDCP link is the specified version or higher
 #### Parameters
-Name | Type | Description
----|---|---
-version | String | The HDCP link version to be checked (for example, "1.4" or "2.2").
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| version  | String  | The HDCP link version to be checked (for example, "1.4" or "2.2").  |
 #### Return Value
 A flag indicating whether the current established HDCP link is the specified `version`.

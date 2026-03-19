@@ -6,6 +6,7 @@ The roDeviceCrypto component enables you to encrypt and decrypt data on a device
 ## Description
 roDeviceCrypto has two methods: `Encrypt()` and `Decrypt()`. Both methods take a `roByteArray` and the encryption key type (`encType`), which is a string that may be set to "channel", "device", or "model".
 Both methods return a `roByteArray` so that you can encrypt plaintext on a Roku device and then decode it, as demonstrated in the following example:
+
 ```
   ' store plaintext to be encrypted in an roByteArray
   ba = CreateObject("roByteArray")

@@ -31,6 +31,7 @@ The External Control Protocol (ECP) enables a Roku device to be controlled over 
 ## Simple Service Discovery Protocol (SSDP)
 SSDP is an industry IETF standard network protocol for discovery of local area network services. Roku devices advertise their external control services using the multicast SSDP so that programs can discover the IP address of Roku devices in the area. There is a standard SSDP multicast address and port (239.255.255.250:1900) used for local area network communication. The Roku device responds to M-SEARCH queries on this IP address and port.
 To query for a Roku device IP address, send the following HTTP request to 239.255.255.250 port 1900:
+
 ```
 M-SEARCH * HTTP/1.1
 Host: 239.255.255.250:1900
@@ -40,12 +41,14 @@ ST: roku:ecp
 ```
 
 There _must_ be a blank line at the end of the file above. If you put the above request into a file such as roku_ecp_req.txt, you can issue the following command on most Linux machines to test the request:
+
 ```
 $ ncat -u 239.255.255.250 1900 < roku_ecp_req.txt
 
 ```
 
 If you view the response using Wireshark, and filter on port 1900, you can see the Roku device response (Ncat has trouble receiving multicast traffic, so viewing the response using Ncat does not work). The response has the following format:
+
 ```
 HTTP/1.1 200 OK
 Cache-Control: max-age=3600
@@ -61,162 +64,168 @@ Please note the Cache-Control header. Roku devices multicast NOTIFY messages per
 ## External control service commands
 The external control services provided by ECP are included in a simple RESTful API accessed using HTTP on port 8060. Once you have the Roku device IP address, you can issue the following external control service commands to the Roku device.
 ### General ECP commands
-Command | Description | Required Device Settings
----|---|---
-query/media-player | Returns a child element named 'player' that identifies the media player state. The information returned includes the current stream segment and position of the content being played, the running time of the content, audio format, and buffering. This command is accessed using an HTTP GET. |
-keydown/<KEY> | Equivalent to pressing the remote control key identified after the slash. This command is sent using an HTTP POST with no body. |  **Control by mobile apps** setting “Enabled”
-keyup/<KEY> | Equivalent to releasing the remote control key identified after the slash. This command is sent using an HTTP POST with no body. |  **Control by mobile apps** setting “Enabled”
-keypress/<KEY> | Equivalent to pressing down and releasing the remote control key identified after the slash. You can also use this command, and the keydown and keyup commands, to send keyboard alphanumeric characters when a keyboard screen is active, as described in [Keypress Key Values](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/external-control-api.md#keypress-key-values). This command is sent using an HTTP POST with no body. |  **Control by mobile apps** setting “Enabled”
-query/device-info | Retrieves device information similar to that returned by roDeviceInfo. This command is accessed using an HTTP GET.
+| Command  | Description  | Required Device Settings  |
+| --- | --- | --- |
+| query/media-player  | Returns a child element named 'player' that identifies the media player state. The information returned includes the current stream segment and position of the content being played, the running time of the content, audio format, and buffering. This command is accessed using an HTTP GET.  |   |
+| keydown/<KEY>  | Equivalent to pressing the remote control key identified after the slash. This command is sent using an HTTP POST with no body.  |  **Control by mobile apps** setting “Enabled”  |
+| keyup/<KEY>  | Equivalent to releasing the remote control key identified after the slash. This command is sent using an HTTP POST with no body.  |  **Control by mobile apps** setting “Enabled”  |
+| keypress/<KEY>  | Equivalent to pressing down and releasing the remote control key identified after the slash. You can also use this command, and the keydown and keyup commands, to send keyboard alphanumeric characters when a keyboard screen is active, as described in [Keypress Key Values](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/external-control-api.md#keypress-key-values). This command is sent using an HTTP POST with no body.  |  **Control by mobile apps** setting “Enabled”  |
+| query/device-info  | Retrieves device information similar to that returned by roDeviceInfo. This command is accessed using an HTTP GET.
 
 As of Roku OS 15.0, this command returns the following fields that indicate whether TV power and audio volume control have been enabled on a Roku streaming player:
 
 - supports-tv-power-control
-- supports-audio-volume-control |
-query/icon/<APP_ID> | supports-tv-power-control supports-audio-volume-controlReturns an icon corresponding to the application identified by appID. The binary data with an identifying MIME-type header is returned. This command is accessed using an HTTP GET. Example: GET /query/icon/1 |  **Control by mobile apps** setting “Enabled”
-query/chanperf
+- supports-audio-volume-control  |   |
+| query/icon/<APP_ID>  | supports-tv-power-control supports-audio-volume-controlReturns an icon corresponding to the application identified by appID. The binary data with an identifying MIME-type header is returned. This command is accessed using an HTTP GET. Example: GET /query/icon/1  |  **Control by mobile apps** setting “Enabled”  |
+| query/chanperf
 
-query/chanperf/<_channelld_ >?duration-seconds=<_seconds_ > | Returns the current memory and CPU utilization of the app running in the foreground (RAM usage is reported bytes). The foreground app may either be a sideloaded app or an app from the Streaming Store. To output the results for an app in the app store, the device must be keyed with the same developer ID/key that was used to generate the package file.
+query/chanperf/<_channelld_ >?duration-seconds=<_seconds_ >  | Returns the current memory and CPU utilization of the app running in the foreground (RAM usage is reported bytes). The foreground app may either be a sideloaded app or an app from the Streaming Store. To output the results for an app in the app store, the device must be keyed with the same developer ID/key that was used to generate the package file.
 
   * Including the **channelId** option in the path outputs statistics for a specific app from the Streaming Store. To use this command, the device must be keyed with the same developer ID/key that was used to generate the package file. The app's process ID (pid) is added to the output of this command.
 
-| Developer mode enabled
+ | Developer mode enabled
 
-**Control by mobile apps** setting “Enabled”
-query/r2d2-bitmaps | Returns a list of the assets that have been loaded into texture memory and the amount of used, available, and maximum memory on your device (in bytes).
+**Control by mobile apps** setting “Enabled”  |
+| query/r2d2-bitmaps  | Returns a list of the assets that have been loaded into texture memory and the amount of used, available, and maximum memory on your device (in bytes).
 
-As of Roku OS 11.5, this query returns all bitmaps in texture memory, including those that cannot be directly attributed to an app. | Developer mode enabled
+As of Roku OS 11.5, this query returns all bitmaps in texture memory, including those that cannot be directly attributed to an app.  | Developer mode enabled
 
-**Control by mobile apps** setting “Enabled”
-query/sgnodes/all?count_only=true&sizes=true | Returns all the nodes created by the currently running app. This includes the number of **osref** references to the node (held in the Roku platform) and **bscref** references (held in the app).
+**Control by mobile apps** setting “Enabled”  |
+| query/sgnodes/all?count_only=true&sizes=true  | Returns all the nodes created by the currently running app. This includes the number of **osref** references to the node (held in the Roku platform) and **bscref** references (held in the app).
 
   * The **bcsref** count includes references from "m." variable and local variables. Child references and field references do not increase **bscref** counts. The **bscref** count provides a more relevant and accurate indication of the resources that the app itself controls.
 
 - The **count_only** parameter returns the total number of objects as a parameter in the **All-Nodes** field .
-- The **size** parameter returns the memory used by the object (in kB). | Developer mode enabled
+- The **size** parameter returns the memory used by the object (in kB).  | Developer mode enabled
 
-**Control by mobile apps** setting “Enabled”
-query/sgnodes/roots?count_only=true&sizes=true | Prints every existing node without a parent that has been created by the currently running app. The existence of these un-parented nodes means they are being kept alive by direct BrightScript references. These could be in variables local to a function, arrays, or associative arrays, including a component global m or an associative array field of a node. | Developer mode enabled
+**Control by mobile apps** setting “Enabled”  |
+| query/sgnodes/roots?count_only=true&sizes=true  | Prints every existing node without a parent that has been created by the currently running app. The existence of these un-parented nodes means they are being kept alive by direct BrightScript references. These could be in variables local to a function, arrays, or associative arrays, including a component global m or an associative array field of a node.  | Developer mode enabled
 
-**Control by mobile apps** setting “Enabled”
-query/sgnodes/nodes?node-id=_nodeId_ &count_only=true&sizes=true | Prints nodes with an id field set to node_ID, except it, bypasses all the hierarchy and rules and just runs straight down the whole list in the order of node creation. It will list multiple nodes if there are several that match. | Developer mode enabled
+**Control by mobile apps** setting “Enabled”  |
+| query/sgnodes/nodes?node-id=_nodeId_ &count_only=true&sizes=true  | Prints nodes with an id field set to node_ID, except it, bypasses all the hierarchy and rules and just runs straight down the whole list in the order of node creation. It will list multiple nodes if there are several that match.  | Developer mode enabled
 
-**Control by mobile apps** setting “Enabled”
-sgrendezvous | Lists the node rendezvous events for a sideloaded app or production/beta app linked to the Roku developer's account.
+**Control by mobile apps** setting “Enabled”  |
+| sgrendezvous  | Lists the node rendezvous events for a sideloaded app or production/beta app linked to the Roku developer's account.
 
 Use the following commands to enable the logging of rendezvous events, log the events, and disable logging. To use these commands, the device must have developer mode enabled.
 
-| Command | Argument | Description
----|---|---
-sgrendezvous/track
-(POST request) | channel_id (optional) | Starts the logging of node rendezvous events node between threads. Only one app can be tracked at a time. Tracking a different app clears any queued rendezvous events.
+ | Command  | Argument  | Description  |
+| --- | --- | --- |
+| sgrendezvous/track
+(POST request)  | channel_id (optional)  | Starts the logging of node rendezvous events node between threads. Only one app can be tracked at a time. Tracking a different app clears any queued rendezvous events.
 
-To track rendezvous events, send a POST command with no JSON body: ```
+To track rendezvous events, send a POST command with no JSON body:
+```
 POST http://[IP address]:8060/query/sgrendezvous/track
 POST http://[IP address]:8060/query/sgrendezvous/track/[channel_id]
 
 ```
-The response to this command is as follows: ```
+The response to this command is as follows:
+```
 <sgrendezvous>
     <tracking-enabled>true</tracking-enabled>
     <status>OK</status>
 </sgrendezvous>
 
 ```
+ |
+| query/sgrendezvous  |   | Returns the rendezvous events that have occurred since tracking was enabled, or since the previous call to query/sgrendezvous. A maximum of 1,000 events are queued between calls; events beyond this limit are not logged. If events are dropped, the response includes the total count of those dropped events.
 
-query/sgrendezvous |  | Returns the rendezvous events that have occurred since tracking was enabled, or since the previous call to query/sgrendezvous. A maximum of 1,000 events are queued between calls; events beyond this limit are not logged. If events are dropped, the response includes the total count of those dropped events.
-
-To retrieve rendezvous events, send a GET command: ```
+To retrieve rendezvous events, send a GET command:
+```
 GET http://[IP address]:8060/query/sgrendezvous
 
 ```
 
-See [query/sgrendezvous example](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/external-control-api.md#querysgrendezvous-example) for details on the command response.
-sgrendezvous/untrack |  | To stop the tracking of rendezvous events, send a POST command with no JSON body: ```
+See [query/sgrendezvous example](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/external-control-api.md#querysgrendezvous-example) for details on the command response.  |
+| sgrendezvous/untrack  |   | To stop the tracking of rendezvous events, send a POST command with no JSON body:
+```
 POST http://[IP address]:8060/query/sgrendezvous/untrack
 
 ```
 
-The response to this command is as follows: ```
+The response to this command is as follows:
+```
 <sgrendezvous>
     <tracking-enabled>false</tracking-enabled>
     <status>OK</status>
 </sgrendezvous>
 
 ```
+ |
+| Developer mode enabled
 
-Developer mode enabled
+**Control by mobile apps** setting “Enabled”  |
+| query/registry/<_channelld_ >  | Lists the entries in the device registry for a sideloaded app or production/beta app linked to the Roku developer's account. The app ID must be provided; for sideloaded apps, use "dev" as the channelId.  | Developer mode enabled
 
-**Control by mobile apps** setting “Enabled”
-query/registry/<_channelld_ > | Lists the entries in the device registry for a sideloaded app or production/beta app linked to the Roku developer's account. The app ID must be provided; for sideloaded apps, use "dev" as the channelId. | Developer mode enabled
+**Control by mobile apps** setting “Enabled”  |
+| query/graphics-frame-rate
 
-**Control by mobile apps** setting “Enabled”
-query/graphics-frame-rate
+ _Available since Roku OS 12.0_  | Returns the recent number of rendered graphics frames per seconds (this value is separate from the video frame rate). Developer mode must be enabled to use this command.  | Developer mode enabled
 
- _Available since Roku OS 12.0_ | Returns the recent number of rendered graphics frames per seconds (this value is separate from the video frame rate). Developer mode must be enabled to use this command. | Developer mode enabled
+**Control by mobile apps** setting “Enabled”  |
+| fwbeacons
 
-**Control by mobile apps** setting “Enabled”
-fwbeacons
+ _Available since Roku OS 12.0_  | Tracks app and media lifecycle events for a specific app. To use these commands, the device must have developer mode enabled.
 
- _Available since Roku OS 12.0_ | Tracks app and media lifecycle events for a specific app. To use these commands, the device must have developer mode enabled.
-| Command | Description
----|---
-fwbeacons/track fwbeacons/track/<_channelId_ >
-(POST request) | Enables tracking of app and media lifecycle events for a specific app. When tracking is enabled, a maximum of 1,000 events may be queued for retrieval with the **query/fwbeacons** command; events may be lost if not queried. If tracking is enabled with a different channel ID, all queued events on the previous app are discarded.
+ | Command  | Description  |
+| --- | --- |
+| fwbeacons/track fwbeacons/track/<_channelId_ >
+(POST request)  | Enables tracking of app and media lifecycle events for a specific app. When tracking is enabled, a maximum of 1,000 events may be queued for retrieval with the **query/fwbeacons** command; events may be lost if not queried. If tracking is enabled with a different channel ID, all queued events on the previous app are discarded.
 
 If the _channelId_ path parameter is not specified, the query is run on the foreground UI app.
 
-All devices may monitor a sideloaded app. Devices that are keyed may monitor apps from the Streaming Store that are signed with the same developer key.
-query/fwbeacons | Retrieves the app and media lifecycle events that have occurred since the previous query, or since tracking was enabled if no query has been done.
-fwbeacons/untrack | Disables tracking of app and media lifecycle events (if enabled) and discards all queued events.
-Developer mode enabled
+All devices may monitor a sideloaded app. Devices that are keyed may monitor apps from the Streaming Store that are signed with the same developer key.  |
+| query/fwbeacons  | Retrieves the app and media lifecycle events that have occurred since the previous query, or since tracking was enabled if no query has been done.  |
+| fwbeacons/untrack  | Disables tracking of app and media lifecycle events (if enabled) and discards all queued events.  |
+| Developer mode enabled
 
-**Control by mobile apps** setting “Enabled”
-query/app-object-counts/<_channelId_ >
+**Control by mobile apps** setting “Enabled”  |
+| query/app-object-counts/<_channelId_ >
 
-_Available since Roku OS 13.0_ | Returns the counts for the different BrightScript node objects in the app. This helps developers determine the counts of each type of object held by their Brightscript app.
+_Available since Roku OS 13.0_  | Returns the counts for the different BrightScript node objects in the app. This helps developers determine the counts of each type of object held by their Brightscript app.
 
-The app may either be a sideloaded app or an app from the Streaming Store. To output the results for an app in the app store, the device must be keyed with the same developer ID/key that was used to generate the package file. | Developer mode enabled
+The app may either be a sideloaded app or an app from the Streaming Store. To output the results for an app in the app store, the device must be keyed with the same developer ID/key that was used to generate the package file.  | Developer mode enabled
 
-**Control by mobile apps** setting “Enabled”
-query/app-state/<_appId_ >
+**Control by mobile apps** setting “Enabled”  |
+| query/app-state/<_appId_ >
 
-_Available since Roku OS 13.0_ | Returns the current app state: "active", "background" (suspended; running in the background), or "inactive".
+_Available since Roku OS 13.0_  | Returns the current app state: "active", "background" (suspended; running in the background), or "inactive".
 
 The app may either be a sideloaded app or an app from the Streaming Store. To output the results for an app in the app store, the device must be keyed with the same developer ID/key that was used to generate the package file.
 
-If the app is not installed, this command returns an error. | Developer mode enabled
+If the app is not installed, this command returns an error.  | Developer mode enabled
 
-**Control by mobile apps** setting “Enabled”
-exit-app
+**Control by mobile apps** setting “Enabled”  |
+| exit-app
 
 (POST request)
 
-_Available since Roku OS 13.0_ | Suspends or terminates an app that is running:
+_Available since Roku OS 13.0_  | Suspends or terminates an app that is running:
 
   * If the app supports Instant Resume and is running in the foreground, sending this command suspends the app (the app runs in the background).
   * If the app supports Instant Resume and is running in the background or the app does not support Instant Resume and is running, sending this command terminates the app.
 
-| Developer mode enabled
+ | Developer mode enabled
 
-**Control by mobile apps** setting “Enabled”
-input | Sends custom events to the current application. It takes a user defined list of name-value pairs sent as query string URI parameters. The external control server places these name-value pairs into an associative array, and passes them directly through to the currently executing app script using a Message Port attached to a created roInput object.
+**Control by mobile apps** setting “Enabled”  |
+| input  | Sends custom events to the current application. It takes a user defined list of name-value pairs sent as query string URI parameters. The external control server places these name-value pairs into an associative array, and passes them directly through to the currently executing app script using a Message Port attached to a created roInput object.
 
 [Input Command Conventions](https://developer.roku.com/docs/developer-program/dev-tools/external-control-api.md#input-command-conventions) includes detailed recommendations on how to pass your data.
 
 Messages of type [roInputEvent](https://developer.roku.com/docs/references/brightscript/events/roinputevent.md) have a GetInfo() method that will obtain the associative array. The arguments must be URL-encoded.
 
-This command is sent using an HTTP POST with no body. Example: `POST /input?acceleration.x=0.0&acceleration.y=0.0&acceleration.z=9.8` |
+This command is sent using an HTTP POST with no body. Example: `POST /input?acceleration.x=0.0&acceleration.y=0.0&acceleration.z=9.8`  |   |
   * Including **duration-seconds** in the query string executes and repeats the **chanperf** command the specified number of seconds. To cancel a repeating command, use the chanperf command with no arguments or with the duration-seconds parameter set to 0 ("chanperf" or "chanperf/duration-seconds=0"). The default duration is **1** second.
 
   * The **osref** count also includes child references and references from Roku SceneGraph interface fields. For example, for any node with a parent, the parent will count as one **osref** on the child. Additionally, any field of type **node** , **nodearray** , or **assocarray** will add one **osref** to each node referenced from within that field. These could be in variables local to a function, arrays, or associative arrays, including a component global m or an associative array field of a node. The reported **osref** count may vary from release to release of Roku OS; the information here is provided only to give a sense of the kinds of items that the count includes.
 
 ### Roku TV ECP commands
 Roku TV devices additionally support the following external control services.
-Command | Description
----|---
-query/tv-channels | Returns information about the TV channel / line-up available for viewing in the TV tuner UI.
-query/tv-active-channel | Returns information about the currently tuned TV channel.
+| Command  | Description  |
+| --- | --- |
+| query/tv-channels  | Returns information about the TV channel / line-up available for viewing in the TV tuner UI.  |
+| query/tv-active-channel  | Returns information about the currently tuned TV channel.  |
 ## Input command conventions
 As the Roku OS simply marshals the arguments to the **input** command and passes them to the app script, the forms below compose a conventional way to communicate input from several common input device types.
 ### Sensor input values
@@ -251,6 +260,7 @@ Other information you might want to pass using the **input** command may include
 
 ## External Control Protocol examples
 The following are some example ECP commands sent via the curl command. The ROKU_DEV_TARGET environment variable should be set with the TCP/IP address of the target Roku device, e.g.
+
 ```
 $ export ROKU_DEV_TARGET=192.168.1.134
 
@@ -258,12 +268,14 @@ $ export ROKU_DEV_TARGET=192.168.1.134
 
 ### Query/media-player example
 The following command retrieves media player information.
+
 ```
 $ curl "http://$ROKU_DEV_TARGET:8060/query/media-player"
 
 ```
 
 The response includes the following fields:
+
 ```
 <player error="false" state="play">
     <plugin bandwidth="44692475 bps" id="dev" name="MultiLive"/>
@@ -281,6 +293,7 @@ The response includes the following fields:
 
 ### Keypress example
 The following command simulates a user hitting the "Home" button
+
 ```
 $ curl -d '' "http://$ROKU_DEV_TARGET:8060/keypress/home"
 
@@ -288,6 +301,7 @@ $ curl -d '' "http://$ROKU_DEV_TARGET:8060/keypress/home"
 
 ### Keyup/keydown example
 The following commands move the cursor to the far left by holding down the Left key for 10 seconds
+
 ```
 $ curl -d '' "http://$ROKU_DEV_TARGET:8060/keydown/left"
 $ sleep 10
@@ -297,6 +311,7 @@ $ curl -d '' "http://$ROKU_DEV_TARGET:8060/keyup/left"
 
 ### Query/device-info example
 Below is an example query/device-info request and response.
+
 ```
 $ curl "http://$ROKU_DEV_TARGET:8060/query/device-info"
 <device-info>
@@ -339,6 +354,7 @@ $ curl "http://$ROKU_DEV_TARGET:8060/query/device-info"
 
 ### Query/icon example
 This following command will return the icon for the app with ID 12 (Netflix). The response will be raw binary picture data, after HTTP headers, including one with the MIME type of the picture data.
+
 ```
 $ curl -v "http://$ROKU_DEV_TARGET:8060/query/icon/12" -o image-12
 < HTTP/1.1 200 OK
@@ -351,12 +367,14 @@ $ curl -v "http://$ROKU_DEV_TARGET:8060/query/icon/12" -o image-12
 ### Query debugging examples
 #### Query/chanperf example
 The following command returns the current memory and CPU utilization of an app (RAM usage is reported in bytes).
+
 ```
 curl "http://${ROKU_DEV_TARGET}:8060/query/chanperf"
 
 ```
 
 The response includes the following fields:
+
 ```
  <chanperf>
     <timestamp>1672980398506</timestamp>
@@ -386,12 +404,14 @@ The response includes the following fields:
 
 #### Query/r2d2-bitmaps example
 The following command returns a list of the assets that have been loaded into texture memory, and the amount of used, available, and maximum memory on your device (in bytes).
+
 ```
 curl "http://${ROKU_DEV_TARGET}:8060/query/r2d2-bitmaps"
 
 ```
 
 The response includes the following fields:
+
 ```
 <r2d2-bitmaps>
     <rographics>
@@ -425,12 +445,14 @@ The response includes the following fields:
 
 #### Query/sgnodes/all example
 The following command returns each existing node created by the currently running app. This includes the number of **osref** references to the node (held in the Roku platform) and **bscref** references (held in the app)..
+
 ```
 curl "http://${ROKU_DEV_TARGET}:8060/query/sgnodes"
 
 ```
 
 The response includes the following fields:
+
 ```
 <sgnodes>
    <All_Nodes>
@@ -453,6 +475,7 @@ The response includes the following fields:
 
 #### query/sgrendezvous example
 The following commands enable rendezvous tracking and list the rendezvous events for a sideloaded app or production/beta app linked to the Roku developer's account:
+
 ```
 $ curl -d '' "http://$ROKU_DEV_TARGET:8060/query/sgrendezvous/track"
 $ curl "http://${ROKU_DEV_TARGET}:8060/query/sgrendezvous"
@@ -484,6 +507,7 @@ The response includes an element for each node rendezvous event that was logged.
 ```
 
 The following command disables rendezvous tracking:
+
 ```
 $ curl -d '' "http://$ROKU_DEV_TARGET:8060/query/sgrendezvous/untrack"
 
@@ -491,12 +515,14 @@ $ curl -d '' "http://$ROKU_DEV_TARGET:8060/query/sgrendezvous/untrack"
 
 #### query/registry example
 The following command returns the registry entries for the app.
+
 ```
 curl '' "http://$ROKU_DEV_TARGET:8060/query/registry/dev"
 
 ```
 
 The response includes the following fields:
+
 ```
 <plugin-registry>
     <registry>
@@ -526,6 +552,7 @@ The response includes the following fields:
 
 #### query/fwbeacons example
 The following commands enable app and media lifecycle event tracking and list the events for a sideloaded app:
+
 ```
 $ curl -d '' "http://${ROKU_DEV_TARGET}:8060/fwbeacons/track/dev"
 $ curl "http://${ROKU_DEV_TARGET}:8060/query/fwbeacons"
@@ -533,6 +560,7 @@ $ curl "http://${ROKU_DEV_TARGET}:8060/query/fwbeacons"
 ```
 
 The response includes the following fields:
+
 ```
 <fwbeacons>
     <tracking-enabled>true</tracking-enabled>
@@ -566,12 +594,14 @@ The response includes the following fields:
 
 #### query/app-object-counts example
 The following command returns the counts for the different BrightScript node objects in the app.
+
 ```
 $ curl '' "http://$ROKU_DEV_TARGET:8060/query/app-object-counts/<channelId>"
 
 ```
 
 The response includes the following fields:
+
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
 <app-object-counts>
@@ -619,12 +649,14 @@ The response includes the following fields:
 
 #### query/app-state example
 The following command returns the state of the app state: "active", "background" (suspended; running in the background), or "inactive".
+
 ```
 $ curl '' "http://$ROKU_DEV_TARGET:8060/query/app-state/<appId>"
 
 ```
 
 The response includes the following fields:
+
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
 <channel>
@@ -637,6 +669,7 @@ The response includes the following fields:
 
 #### exit-app example
 The following command suspends or terminates an app that is running.
+
 ```
 $ curl -d '' "http://$ROKU_DEV_TARGET:8060/exit-app/<channelId>"
 
@@ -645,12 +678,14 @@ $ curl -d '' "http://$ROKU_DEV_TARGET:8060/exit-app/<channelId>"
 This command returns an HTTP 200 success code if the app was active or suspended. It returns an HTTP 404 (Not Found) error if the app was not running.
 ### Input examples
 The following command passes three components of acceleration through to the app. All query string parameters are passed to the currently running app. The remote app and the currently running app just need to agree on the query string parameters and any communication can be developed.
+
 ```
 $ curl -d '' "http://$ROKU_DEV_TARGET:8060/input?acceleration.x=0.0&acceleration.y=0.0&acceleration.z=9.8"
 
 ```
 
 The following command indicates that a touch at the given x and y has touched down on the screen.
+
 ```
 $ curl -d '' "http://$ROKU_DEV_TARGET:8060/input?touch.0.x=200.0&touch.0.y=135.0&touch.0.op=down"
 
@@ -658,6 +693,7 @@ $ curl -d '' "http://$ROKU_DEV_TARGET:8060/input?touch.0.x=200.0&touch.0.y=135.0
 
 ### Query/tv-channels example
 Below is an example of the Roku TV query/tv-channels response.
+
 ```
 $ curl "http://$ROKU_DEV_TARGET:8060/query/tv-channels"
 
@@ -680,6 +716,7 @@ $ curl "http://$ROKU_DEV_TARGET:8060/query/tv-channels"
 
 ### Query/tv-active-channel example
 Below is an example of the Roku TV query/tv-active-channel response.
+
 ```
 $ curl "http://$ROKU_DEV_TARGET:8060/query/tv-active-channel"
 
@@ -712,17 +749,19 @@ $ curl "http://$ROKU_DEV_TARGET:8060/query/tv-active-channel"
 ## Deep linking to an app
 One of the most common ways that app developers encounter ECP is deep linking. Deep linking lets other parts of the system launch a particular piece of content via parameters passed to the app at launch time. See this section on [Deep Linking](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) for implementation details.
 The standard for deep linking uses parameters:
-Parameter | Description | Possible Values
----|---|---
-contentID | Partner defined unique identifier for a specific piece of content | Any value < 255 characters long and not using "&" or other characters that are not URL encoded
-mediaType | Parameter to give context to the type of contentID passed | "series", "season", "episode", movie", "shortFormVideo", and "tvSpecial"
+| Parameter  | Description  | Possible Values  |
+| --- | --- | --- |
+| contentID  | Partner defined unique identifier for a specific piece of content  | Any value < 255 characters long and not using "&" or other characters that are not URL encoded  |
+| mediaType  | Parameter to give context to the type of contentID passed  | "series", "season", "episode", movie", "shortFormVideo", and "tvSpecial"  |
 You trigger deep linking by doing an HTTP post to port 8060 on your Roku device. The general form is
+
 ```
 http://<IP of Roku>:8060/launch/[dev | channeID]?contentId=<content ID>&MediaType=<mediaType>
 
 ```
 
 The first example will launch the current sideloaded application and deep link to a season contentID 1234. Notice the -d ' ' which forces it to do a http post.
+
 ```
 curl -d '' "http://$ROKU_DEV_TARGET:8060/launch/dev?contentID=13234&MediaType=season"
 
@@ -739,6 +778,7 @@ When the current screen on the Roku box includes an on-screen keyboard, any keyb
 Printable ASCII character code values can be transmitted "as-is" with the "Lit_" prefix. For example, you can send a 'r' with "Lit_r". In addition, any UTF-8 encoded character can be sent by URL-encoding it. For example, the euro symbol can be sent with "Lit_%E2%82%AC".
 There are even some keys you can send that are not available on any physical remote. _Enter_ is for completing keyboard entry fields, such as search fields (it is _not_ the same as Select). _Search_ is used for pressing and holding down the microphone/magnifying glass button, which causes the Roku Voice heads-up display to listen for a voice command.
 The following are the key names that are recognized by ECP:
+
 ```
   Home
   Rev
@@ -759,6 +799,7 @@ The following are the key names that are recognized by ECP:
 ```
 
 Roku devices that support the "Find Remote" support:
+
 ```
   FindRemote
 
@@ -767,6 +808,7 @@ Roku devices that support the "Find Remote" support:
 *Note that **query/device-info** includes a **supports-find-remote** flag that indicates whether the Roku device supports FindRemote.
 However, this does not specifically indicate that the device has a paired remote that supports "Find remote" as well.
 Some Roku devices, such as Roku TVs, also support:
+
 ```
   VolumeDown
   VolumeMute
@@ -776,6 +818,7 @@ Some Roku devices, such as Roku TVs, also support:
 ```
 
 Roku TV devices also support changing the app when watching the TV tuner input:
+
 ```
   ChannelUp
   ChannelDown
@@ -783,6 +826,7 @@ Roku TV devices also support changing the app when watching the TV tuner input:
 ```
 
 Roku TV devices also support keys to set the current TV input UI:
+
 ```
   InputTuner
   InputHDMI1
@@ -794,6 +838,7 @@ Roku TV devices also support keys to set the current TV input UI:
 ```
 
 Example: On the on-screen keyboard, the string 'roku' can be sent via the following commands:
+
 ```
 $ curl -d '' "http://$ROKU_DEV_TARGET:8060/keypress/Lit_r"
 $ curl -d '' "http://$ROKU_DEV_TARGET:8060/keypress/Lit_o"
@@ -804,6 +849,7 @@ $ curl -d '' "http://$ROKU_DEV_TARGET:8060/keypress/Lit_u"
 
 ## Example programs
 There is a sample External Control Protocol application available that requires only glibc to compile. The program is self contained in the /examples/rokuExternalControl.c file in the sample. You can compile and run it with the following commands:
+
 ```
 $ cd SDK_directory
 $ gcc ./examples/rokuExternalControl.c –o rokuExternalControl
@@ -812,6 +858,7 @@ $ ./rokuExternalControl
 ```
 
 On Windows, it can be compiled with the following line:
+
 ```
 > cl /D "WIN32" rokuExternalControl.c
 

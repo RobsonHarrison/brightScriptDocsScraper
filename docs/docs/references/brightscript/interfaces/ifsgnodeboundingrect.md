@@ -1,16 +1,16 @@
 # ifSGNodeBoundingRect
 The ifSGNodeBoundingRect interface can be used to query the bounding rectangle of subject node. The ifSGNodeBoundingRect interface methods return a node bounding rectangle as an associative array with four elements:
-Name | Value
----|---
-x | x-coordinate of the origin of the bounding rectangle
-y | y-coordinate of the origin of the bounding rectangle
-width | width of the bounding rectangle
-height | height of the bounding rectangle
+| Name  | Value  |
+| --- | --- |
+| x  | x-coordinate of the origin of the bounding rectangle  |
+| y  | y-coordinate of the origin of the bounding rectangle  |
+| width  | width of the bounding rectangle  |
+| height  | height of the bounding rectangle  |
 > These methods return the bounding rectangle dimensions and location of component objects at the time they are called. If they are called before an object is fully constructed, such as before all graphical images have been loaded, they will return the dimensions and location at the time of the call, which may not be the correct values for placing the component object properly. To ensure that your screen has the component objects located as you intended, make sure you call these methods after the component object is fully constructed. For example, if the component object relies on loading graphical images to construct its appearance, it is best to use these methods as part of an observer callback function triggered by the image loading field events, such as the loadStatus field of the Poster node.
 ## Implemented by
-Name | Description
----|---
-[roSGNode](https://developer.roku.com/docs/references/brightscript/components/rosgnode.md) | The roSGNode object is the BrightScript equivalent of SceneGraph XML file node creation
+| Name  | Description  |
+| --- | --- |
+| [roSGNode](https://developer.roku.com/docs/references/brightscript/components/rosgnode.md)  | The roSGNode object is the BrightScript equivalent of SceneGraph XML file node creation  |
 ## Supported methods
 ### boundingRect() as Dynamic
 #### Description
@@ -35,74 +35,79 @@ Returns the bounding rectangle of this node and all of its children in the Scene
 In most cases, this will result in the bounding rectangle expressed in display coordinates.
 If the node is not connected to a Scene node, this will return the same value as the [boundingRect()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifsgnodeboundingrect.md#boundingrect-as-dynamic) method.
 #### Parameters
-Name | Type | Description
----|---|---
-ancestor | roSGNode | The ancestor of the subject node.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| ancestor  | roSGNode  | The ancestor of the subject node.  |
 #### Return Value
 An associative array with the bounding rectangle and all of its children in the Scene's root coordinate system.
 ### localSubBoundingRect(itemnumber as String) as Dynamic
 #### Description
 Returns the local bounding rectangle of this node's identified sub part in the node's local coordinate system. If the subpart does not exist, the node's local bounding rectangle is returned.
 #### Parameters
-Name | Type | Description
----|---|---
-itemnumber | String | The _itemnumber_ parameter may contain one of the following strings:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| itemnumber  | String  | The _itemnumber_ parameter may contain one of the following strings:
   * itemX: where X is the index of an item in an ArrayGrid's data model (for example, **item17** is the 17th item in the data model).
   * itemX_Y: where X is the index of the row and Y is the index of an item in that row in a RowList's data model (for example, **item4_11** is the 11th item in row 4 of the data model).
   * focusItem: Gets the bounding rect of the ArrayGrid's focused item.
   * focusIndicator: Gets the bounding rect of the ArrayGrid's focus indicator (for example, the focus ring or list highlight).
 
+ |
 #### Return Value
 An associative array with the local bounding rectangle of the node's identified sub part.
 ### subBoundingRect(itemnumber as String) as Dynamic
 #### Description
 Returns the bounding rectangle of this node's identified sub part, as transformed by this node's transformation matrix, in its parent node's coordinate system. If the subpart does not exist, the node's bounding rectangle is returned.
 #### Parameters
-Name | Type | Description
----|---|---
-itemnumber | String | The _itemnumber_ parameter may contain one of the following strings:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| itemnumber  | String  | The _itemnumber_ parameter may contain one of the following strings:
   * itemX: where X is the index of an item in an ArrayGrid's data model (for example, **item17** is the 17th item in the data model).
   * itemX_Y: where X is the index of the row and Y is the index of an item in that row in a RowList's data model (for example, **item4_11** is the 11th item in row 4 of the data model).
   * focusItem: Gets the bounding rect of the ArrayGrid's focused item.
   * focusIndicator: Gets the bounding rect of the ArrayGrid's focus indicator (for example, the focus ring or list highlight).
 
+ |
 #### Return Value
 An associative array with the bounding rectangle.
 ### sceneSubBoundingRect(itemnumber as String) as Dynamic
 #### Description
 Returns the bounding rectangle of this node's subpart in its Scene's coordinate system If the subpart does not exist or if the node is not an ancestor of a Scene node, this will return the node's bounding rectangle.
 #### Parameters
-Name | Type | Description
----|---|---
-itemnumber | String | The _itemnumber_ parameter may contain one of the following strings:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| itemnumber  | String  | The _itemnumber_ parameter may contain one of the following strings:
   * itemX: where X is the index of an item in an ArrayGrid's data model (for example, **item17** is the 17th item in the data model).
   * itemX_Y: where X is the index of the row and Y is the index of an item in that row in a RowList's data model (for example, **item4_11** is the 11th item in row 4 of the data model).
   * focusItem: Gets the bounding rect of the ArrayGrid's focused item.
   * focusIndicator: Gets the bounding rect of the ArrayGrid's focus indicator (for example, the focus ring or list highlight).
 
+ |
 #### Return Value
 An associative array with the bounding rectangle.
-Name | Return Type | Parameters | Return Value | Description
----|---|---|---|---
-sceneSubBoundingRect | Dynamic | ${sceneSubBoundingRect} | Bounding rectangle |
+| Name  | Return Type  | Parameters  | Return Value  | Description  |
+| --- | --- | --- | --- | --- |
+| sceneSubBoundingRect  | Dynamic  | ${sceneSubBoundingRect}  | Bounding rectangle  |   |
 ### ancestorSubBoundingRect(itemnumber as String, ancestor as roSGNode) as Object
 #### Description
 Returns the bounding rectangle of this node's subpart into the specified ancestor' s coordinate system. If the subpart does not exist or if the node is not an ancestor of the specified node, this will return the node's bounding rectangle
 #### Parameters
-Name | Type | Description
----|---|---
-itemnumber | String | The _itemnumber_ parameter may contain one of the following strings:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| itemnumber  | String  | The _itemnumber_ parameter may contain one of the following strings:
   * itemX: where X is the index of an item in an ArrayGrid's data model (for example, **item17** is the 17th item in the data model).
   * itemX_Y: where X is the index of the row and Y is the index of an item in that row in a RowList's data model (for example, **item4_11** is the 11th item in row 4 of the data model).
   * focusItem: Gets the bounding rect of the ArrayGrid's focused item.
   * focusIndicator: Gets the bounding rect of the ArrayGrid's focus indicator (for example, the focus ring or list highlight).
 
-ancestor | roSGNode | The ancestor of the subject node.
+ |
+| ancestor  | roSGNode  | The ancestor of the subject node.  |
 #### Return Value
 An associative array with the bounding rectangle.
 ## Example: Illustrating Bounding Rectangles
 We start with the following code example:
 The scene has the following parenting structure:
+
 ```
 Scene
 RectangleGroup

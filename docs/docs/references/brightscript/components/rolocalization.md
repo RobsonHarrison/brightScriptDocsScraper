@@ -3,6 +3,7 @@ The roLocalization object provides functions to assist in localization. This obj
 It is created with no parameters:
 `CreateObject("roLocalization")`
 **Example**
+
 ```
 loc = CreateObject("roLocalization")
 image = loc.GetLocalizedAsset("images", "splash.png")

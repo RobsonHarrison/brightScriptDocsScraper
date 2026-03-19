@@ -2,6 +2,7 @@
 The roCompositor allows the composition and animation of multiple roBitmaps and roRegions.
 This object can create and manage roSprites in a z-ordered list. The sprites can be of arbitrary size and can be thought of as planes. The compositor can manage collision detection between the sprites, support scrolling the sprite bitmap source, and support animated sprites (multi-frame sprites with frame-flipping animation). You may have multiple roCompositor components, and they can composite onto the same or separate bitmaps. That said, the most common scenario is to have a single roCompositor.
 **Example: Scrolling a bitmap**
+
 ```
 Library "v30/bslCore.brs"
 Function main()

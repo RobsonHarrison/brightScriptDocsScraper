@@ -24,6 +24,7 @@ a. When `roSGScreen` is active, create a "Roku_Analytics:AnalyticsNode" node and
 b. To add the RED library as a provider, include `RED: {}` when assigning to its `.init` field.
 c. To dispatch an event for authentication, assign `{RED: {eventName: "Roku_Authenticated"}} to the .trackEvent` field.
 The following example demonstrates how to send authentication events:
+
 ```
    sub Notify_Roku_UserIsLoggedIn(rsgScreen = invalid as Object)
     ' get the global node

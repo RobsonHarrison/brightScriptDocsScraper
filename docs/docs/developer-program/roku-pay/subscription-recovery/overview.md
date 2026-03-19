@@ -2,29 +2,29 @@
 Roku Pay includes basic and enhanced subscription recovery solutions to help publishers reduce passive cancelations. When payment for a subscription auto-renewal fails, Roku Pay continuously notifies the customer to update their method of payment (MOP). In addition, Roku Pay provides options for controlling whether customers remain entitled to content while Roku attempts to collect their payment.
 ## Subscription Recovery solutions overview
 While both the basic and enhanced subscription recovery solutions include renewal notifications and entitlement controls, they do vary in a number of aspects, including availability, recovery period, and on-screen notifications. The following table breaks down the differences between the basic and enhanced subscription recovery solutions:
-| Basic Subscription Recovery | Enhanced Subscription Recovery
----|---|---
-**Availability** | Apps that have streamed **less than** an average of 5 million hours per month over the last three months that are already using the [basic subscription recovery solution](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/basic-recovery.md) may continue using it. It is recommended, however, that these apps migrate to [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md).
+|   | Basic Subscription Recovery  | Enhanced Subscription Recovery  |
+| --- | --- | --- |
+| **Availability**  | Apps that have streamed **less than** an average of 5 million hours per month over the last three months that are already using the [basic subscription recovery solution](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/basic-recovery.md) may continue using it. It is recommended, however, that these apps migrate to [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md).
 
 Apps below the streaming hours threshold that have not yet implemented a recovery solution must implement Enhanced Subscription Recovery.
 
-Effective October 1, 2024, all apps using Roku Pay must implement Enhanced Subscription Recovery to pass [certification](https://developer.roku.com/docs/developer-program/certification/certification.md#4-channel-operation), regardless of the streaming hours. | Apps that have streamed **more than** an average of 5 million hours per month over the last three months must implement [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md) to pass certification.
-**Recovery period** | 3 days | 60 days
-**Grace period offered** | yes
+Effective October 1, 2024, all apps using Roku Pay must implement Enhanced Subscription Recovery to pass [certification](https://developer.roku.com/docs/developer-program/certification/certification.md#4-channel-operation), regardless of the streaming hours.  | Apps that have streamed **more than** an average of 5 million hours per month over the last three months must implement [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md) to pass certification.  |
+| **Recovery period**  | 3 days  | 60 days  |
+| **Grace period offered**  | yes
 
 Customers have a 3-day grace period where they may continue accessing content while Roku notifies the customer to update their MOP.
 
-After the 3-day grace period, the subscription is canceled. | yes
+After the 3-day grace period, the subscription is canceled.  | yes
 
 Customers have a 3-day grace period where they may continue accessing content while Roku notifies the customer to update their MOP. After the 3-day grace period, the subscription is placed on hold.
 
 When a subscription is on hold, customers may not access content while Roku notifies the customer to update their MOP.
 
-After the 60-day recovery period, the subscription is canceled.
-**On-screen notifications** | no | yes
-**Push notifications when renewal fails/payment is received** | Yes | yes
-**Billing period if payment is received** | same | payment date
-**Documentation** | [Basic subscription recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/basic-recovery.md) | [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md)
+After the 60-day recovery period, the subscription is canceled.  |
+| **On-screen notifications**  | no  | yes  |
+| **Push notifications when renewal fails/payment is received**  | Yes  | yes  |
+| **Billing period if payment is received**  | same  | payment date  |
+| **Documentation**  | [Basic subscription recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/basic-recovery.md)  | [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md)  |
 ### Basic subscription recovery
 > Effective October 1, 2024, all apps using Roku Pay must implement Enhanced subscription recovery to pass [certification](https://developer.roku.com/docs/developer-program/certification/certification.md#4-channel-operation), regardless of the streaming hours. As a result, apps using basic subscription recovery solution must migrate to [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md).
 When the auto-renewal of a customer's subscription fails, Roku Pay automatically places the subscription in recovery. When a subscription is in recovery, the customer is given a grace period where they may continue accessing content for 3 days. During this 3-day grace period, the customer is notified daily via email to update their MOP.

@@ -1,9 +1,9 @@
 # ifDouble
 > Interface equivalent for intrinsic type Double
 ## Implemented by
-Name | Description
----|---
-[roDouble](https://developer.roku.com/docs/references/brightscript/components/rodouble.md "roDouble") | roDouble is a legacy object name, corresponding to the intrinsic Double object
+| Name  | Description  |
+| --- | --- |
+| [roDouble](https://developer.roku.com/docs/references/brightscript/components/rodouble.md "roDouble")  | roDouble is a legacy object name, corresponding to the intrinsic Double object  |
 ## Supported methods
 ### GetDouble() As Double
 #### Description
@@ -14,6 +14,6 @@ The double value stored in the calling Double object.
 #### Description
 Sets the calling Double object to the specified double value.
 #### Parameters
-Name | Type | Description
----|---|---
-value | Double | The double value to be set on the calling Double object.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| value  | Double  | The double value to be set on the calling Double object.  |

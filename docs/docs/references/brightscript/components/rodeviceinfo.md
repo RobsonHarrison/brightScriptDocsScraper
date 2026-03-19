@@ -4,6 +4,7 @@ These attributes are not changeable by the script, but may be queried to obtain 
 This object is created with no parameters:
 `CreateObject("roDeviceInfo")`
 **Example**
+
 ```
 di = CreateObject("roDeviceInfo")
 print di.GetModel()
@@ -14,6 +15,7 @@ print di.GetChannelClientId()
 
 **Output**
 The output from the above code would like the following:
+
 ```
  N1000
  999.99E99999X

@@ -7,6 +7,7 @@ A ContentNode can also be used to specify the data for custom components with de
 ### Creating ContentNodes
 To create a ContentNode object and populate it with data, you can define the ContentNode in XML markup, or create it using BrightScript. In both cases, you will usually be first creating or defining a parent ContentNode, then creating or defining children ContentNodes below the parent, with possibly other levels of children ContentNodes.
 As an example, to define a ContentNode with one level of children ContentNodes, you should generally:
+
 ```
 <ContentNode role= or id= >
   <ContentNode content_meta-data_attribute = "attribute" ... />
@@ -16,6 +17,7 @@ As an example, to define a ContentNode with one level of children ContentNodes, 
 ```
 
 The parent ContentNode is defined with either an XML role attribute or an id field, depending on how you want to assign or use the content data. For the nodes classes that have a content field that is to be assigned a ContentNode, such as LabelList nodes, the parent ContentNode should be defined as a child node of the node:
+
 ```
 <LabelList  id = "labellist" >
   <ContentNode  role = "content" >
@@ -35,6 +37,7 @@ To create a ContentNode in BrightScript, you should generally:
   3. Assign the data to the field(s) of each ContentNode child object
 
 As follows:
+
 ```
 ContentNode_object = createObject("RoSGNode","ContentNode")
 ContentNode_child_object = ContentNode_object.createChild("ContentNode")
@@ -45,12 +48,14 @@ ContentNode_child_object.field_name = data
 
 ### Assigning ContentNode Data To Nodes/Components
 For nodes and components that require a ContentNode as the specification of their content field, you can define it as a child of the node or component in XML markup using the role attribute, or just assign the ContentNode object to the content field as follows:
+
 ```
 NodeComponent.content = ContentNode_object
 
 ```
 
 For other nodes and components that don't require a ContentNode, you can use getChild() or a similar function to locate the specific child ContentNode object that contains the data you want to assign to a particular node/component field:
+
 ```
 ContentNode_child_object = ContentNode_object.getChild(child_number)
 NodeComponent.field_name = ContentNode_child_object.field_name
@@ -61,6 +66,7 @@ NodeComponent.field_name = ContentNode_child_object.field_name
 ### Example
 The following creates a component with a LabelList node populated with some specific content. To configure the content, a ContentNode is created for the content field of the LabelList node. The LabelList node is divided into several sections, so for each section, a child ContentNode object is added to the parent ContentNode using the addSection() function. Then the individual items in each section of the list are added as child nodes of the section ContentNode object using the addItem() function. The functions access the global variables for the ContentNode object reference m.content for the parent ContentNode, and m.sectionContent for the section ContentNodes.
 #### ContentNode Class Example
+
 ```
 <?xml version = "1.0" encoding = "utf-8" ?>
 
@@ -140,12 +146,14 @@ The following creates a component with a LabelList node populated with some spec
 
 ## Fields
 All of the attributes listed in [Content Meta-Data](https://developer.roku.com/docs/developer-program/getting-started/architecture/content-metadata.md "Content Meta-Data") are accessible as fields using dot (.) notation on a ContentNode object. For example, for a ContentNode object iteminfo, the Content Meta-Data Description attribute can be read or written as follows:
+
 ```
 iteminfo.description
 
 ```
 
 You can also access ContentNode attributes as fields using dot (.) notation if you add the attribute as an [<interface>](https://developer.roku.com/docs/references/scenegraph/xml-elements/interface.md "<interface>") element field to an extended ContentNode component. For example, you could extend a ContentNode as a custom listitemcontent component with a componentname field to include an XML component name in a list item:
+
 ```
 <component  name = "listitemcontent" extends = "ContentNode" >
 
@@ -158,6 +166,7 @@ You can also access ContentNode attributes as fields using dot (.) notation if y
 ```
 
 Then for a listitemcontent ContentNode object iteminfo, you can read or write the componentname field in the same way as if it were a Content Meta-Data attribute:
+
 ```
 iteminfo.componentname
 

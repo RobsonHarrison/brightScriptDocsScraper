@@ -6,6 +6,7 @@ The Animation node class provides a simple linear interpolator function, where t
 [Animation Markup](https://github.com/rokudev/samples/tree/master/ux%20components/lists%20and%20grids/PosterGridExampleanimation-markup.md "Animation Markup") in the [SceneGraph Samples](https://github.com/rokudev/samples/tree/master/ux%20components/lists%20and%20grids/PosterGridExampleoverview.md "SceneGraph Samples") provides several simple examples of Animation node definitions that use all of the field interpolator nodes. Other simple examples of using the field interpolators can be found in the [FloatFieldInterpolator](https://developer.roku.com/docs/references/scenegraph/animation-nodes/floatfieldinterpolator.md "FloatFieldInterpolator"), [Vector2DFieldInterpolator](https://developer.roku.com/docs/references/scenegraph/animation-nodes/vector2dfieldinterpolator.md "Vector2DFieldInterpolator"), and [ColorFieldInterpolator](https://developer.roku.com/docs/references/scenegraph/animation-nodes/colorfieldinterpolator.md "ColorFieldInterpolator").
 The following example shows how to use some simple animations. It uses two Animation nodes, each with its own Vector2DFieldInterpolator. The first defines a translation animation of the poster image, and the second defines a scale animation. They are both launched in an init() function using BrightScript. When run together, the effect is to "bloom" the poster image on the screen.
 #### Animation BrightScript example
+
 ```
 function init()
    scaleAnimation = m.top.FindNode("scaleAnimation")
@@ -17,6 +18,7 @@ end function
 ```
 
 #### Animation XML example
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="SimpleScaleAnimation" extends="Group" >
@@ -53,31 +55,33 @@ end function
 ```
 
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-duration | Time | 0 | READ_WRITE | Sets the duration of the animation in seconds
-easeFunction | string | "outCubic" | READ_WRITE | Specifies the interpolator function to be used for the animation:  | Value | Ease-In/Ease-Out Function
----|---
-linear | No ease-in or ease-out
-inQuad | Quadratic ease-in function, no ease-out
-inCubic | Cubic ease-in function, no ease-out
-inQuartic | Quartic ease-in function, no ease-out
-inQuintic | Quintic ease-in function, no ease-out
-inExpo | Exponential ease-in function, no ease-out
-outQuad | Quadratic ease-out function, no ease-in
-outCubic | Cubic ease-out function, no ease-in
-outQuartic | Quartic ease-out function, no ease-in
-outQuintic | Quintic ease-out function, no ease-in
-outExpo | Exponential ease-out function, no ease-in
-inOutQuad | Quadratic ease-in and ease-out function
-inOutCubic | Cubic ease-in and ease-out function
-inOutQuartic | Quartic ease-in and ease-out function
-inOutQuintic | Quintic ease-in and ease-out function
-inOutExpo | Exponential ease-in and ease-out function
-piecewise | Quadratic ease-in and ease-out function with extra control over the percentage of the duration during which ease-in and ease-out occurs. The extra control is specified using the `easeInPercent` and `easeOutPercent` fields.
-easeInPercent | float | 0.5 | READ_WRITE | If easeFunction is set to piecewise, easeInPercent sets the percentage of the animation duration during which ease-in is applied. Note that the values of easeInPercent plus easeOutPercent must be less than or equal to 1. For all other values of easeFunction, easeInPercent is ignored
-easeOutPercent | float | 0.5 | READ_WRITE | If easeFunction is set to piecewise, easeOutPercent sets the percentage of the animation duration during which ease-out is applied. Note that the values of easeInPercent plus easeOutPercent must be less than or equal to 1. For all other values of easeFunction, easeOutPercent is ignored
-optional | boolean | false | READ_WRITE | Set to true to skip animations on lower performing Roku devices. See [Roku Devices](https://developer.roku.com/docs/specs/hardware.md#current-models "Roku Devices") for model numbers and code names. When an Animation has optional set to true, setting the control field to start will cause the state field to change to running and immediately change again to finished. These state changes allow any logic tied to state field observers that run at the start and end of the Animation to be properly called
-willBeSkipped | boolean | false | READ_ONLY | Indicates whether the animation runs or jumps to the end (effectively skipping the animation and rendering it in its final state).
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| duration  | Time  | 0  | READ_WRITE  | Sets the duration of the animation in seconds  |
+| easeFunction  | string  | "outCubic"  | READ_WRITE  | Specifies the interpolator function to be used for the animation:
+ | Value  | Ease-In/Ease-Out Function  |
+| --- | --- |
+| linear  | No ease-in or ease-out  |
+| inQuad  | Quadratic ease-in function, no ease-out  |
+| inCubic  | Cubic ease-in function, no ease-out  |
+| inQuartic  | Quartic ease-in function, no ease-out  |
+| inQuintic  | Quintic ease-in function, no ease-out  |
+| inExpo  | Exponential ease-in function, no ease-out  |
+| outQuad  | Quadratic ease-out function, no ease-in  |
+| outCubic  | Cubic ease-out function, no ease-in  |
+| outQuartic  | Quartic ease-out function, no ease-in  |
+| outQuintic  | Quintic ease-out function, no ease-in  |
+| outExpo  | Exponential ease-out function, no ease-in  |
+| inOutQuad  | Quadratic ease-in and ease-out function  |
+| inOutCubic  | Cubic ease-in and ease-out function  |
+| inOutQuartic  | Quartic ease-in and ease-out function  |
+| inOutQuintic  | Quintic ease-in and ease-out function  |
+| inOutExpo  | Exponential ease-in and ease-out function  |
+| piecewise  | Quadratic ease-in and ease-out function with extra control over the percentage of the duration during which ease-in and ease-out occurs. The extra control is specified using the `easeInPercent` and `easeOutPercent` fields.  |
+ |
+| easeInPercent  | float  | 0.5  | READ_WRITE  | If easeFunction is set to piecewise, easeInPercent sets the percentage of the animation duration during which ease-in is applied. Note that the values of easeInPercent plus easeOutPercent must be less than or equal to 1. For all other values of easeFunction, easeInPercent is ignored  |
+| easeOutPercent  | float  | 0.5  | READ_WRITE  | If easeFunction is set to piecewise, easeOutPercent sets the percentage of the animation duration during which ease-out is applied. Note that the values of easeInPercent plus easeOutPercent must be less than or equal to 1. For all other values of easeFunction, easeOutPercent is ignored  |
+| optional  | boolean  | false  | READ_WRITE  | Set to true to skip animations on lower performing Roku devices. See [Roku Devices](https://developer.roku.com/docs/specs/hardware.md#current-models "Roku Devices") for model numbers and code names. When an Animation has optional set to true, setting the control field to start will cause the state field to change to running and immediately change again to finished. These state changes allow any logic tied to state field observers that run at the start and end of the Animation to be properly called  |
+| willBeSkipped  | boolean  | false  | READ_ONLY  | Indicates whether the animation runs or jumps to the end (effectively skipping the animation and rendering it in its final state).  |
 ## Sample app
 [SimpleAnimation](https://github.com/rokudev/samples/tree/master/ux%20components/animation) demonstrates Animation in action.

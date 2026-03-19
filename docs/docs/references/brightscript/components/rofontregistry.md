@@ -3,6 +3,7 @@ The roFontRegistry object allows you to create roFont objects, either using the 
 This object is created with no parameters:
 `CreateObject("roFontRegistry")`
 **Example**
+
 ```
 reg = CreateObject("roFontRegistry")
 font = reg.GetDefaultFont(30, false, false)
@@ -12,6 +13,7 @@ screen.DrawText("hello world", 100, 100, &hFFFFFFFF, font)
 ```
 
 **Example using a font file**
+
 ```
 reg.Register("pkg:/fonts/myfont.ttf")
 font = reg.GetFont("MyFont", 30, false, false)

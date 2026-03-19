@@ -30,18 +30,19 @@ To get started with your RAF integration, do the following:
   * Review the [RAF integration guide](https://developer.roku.com/docs/developer-program/advertising/integrating-roku-advertising-framework.md).
 
 ## Supported features of popular ad formats
-VAST 2.0 Feature | Supported
----|---
-Linear Ads | Yes
-Wrapper and Inline Ads | Yes
-Tracking Events | Yes
-ClickThrough (interactive ads) | Yes
-Companion Ads |  _apiFramework_ handled:
+| VAST 2.0 Feature  | Supported  |
+| --- | --- |
+| Linear Ads  | Yes  |
+| Wrapper and Inline Ads  | Yes  |
+| Tracking Events  | Yes  |
+| ClickThrough (interactive ads)  | Yes  |
+| Companion Ads  |  _apiFramework_ handled:
   * "innovid"
   * "brightline"
   * "brightline_RSG"
 
-MediaFile type |
+ |
+| MediaFile type  |
   * "video/mp4"
   * "video/x-mp4"
   * "video/mp4-h264"
@@ -49,23 +50,25 @@ MediaFile type |
   * "application/vnd.apple.mpegurl"
   * "application/json"
 
-Extension elements |
+ |
+| Extension elements  |
   * DFP waterfall
   * TrueX
 
-Non-Linear Ads | No
-VAST 3.0 Feature | Supported
-Ad pods via sequence attribute | Yes
-Extended error tracking | Yes
-VAST tracking macros | Yes
-Ad “buffet” selection | Yes
-Skippable linear ads | No
-OBA industry icon | No
-VMAP Feature | Supported
-Ad pods playlists | Yes
-Tracking events | Yes
-‘repeatAfter’ AdBreak attribute | No
-Extension elements | No
+ |
+| Non-Linear Ads  | No  |
+| VAST 3.0 Feature  | Supported  |
+| Ad pods via sequence attribute  | Yes  |
+| Extended error tracking  | Yes  |
+| VAST tracking macros  | Yes  |
+| Ad “buffet” selection  | Yes  |
+| Skippable linear ads  | No  |
+| OBA industry icon  | No  |
+| VMAP Feature  | Supported  |
+| Ad pods playlists  | Yes  |
+| Tracking events  | Yes  |
+| ‘repeatAfter’ AdBreak attribute  | No  |
+| Extension elements  | No  |
 ## RAF video lesson
 You can learn how to implement RAF in order to display video ads in your app by watching the [Displaying video ads](https://developer.roku.com/videos/courses/rsg/video-ads.md) video lesson in Roku's [SceneGraph: Build a channel online video course](https://developer.roku.com/videos/courses/rsg/overview.md).
 This lesson describes how to implement RAF in order to seamlessly insert video ads into content. It highlights the different client and server-side ad insertion and stitching solutions provided by RAF, and explains how to get started with RAF in order to display video ads in your app.

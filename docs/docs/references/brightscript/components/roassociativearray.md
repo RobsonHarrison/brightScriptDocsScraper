@@ -1,5 +1,6 @@
 # roAssociativeArray
 An associative array (also known as a map, dictionary or hash table) allows objects to be associated with string keys. Associative arrays are built into the language. They can be accessed implicitly by using the dot or bracket operators, or by calling functions from the [ifAssociativeArray](https://developer.roku.com/docs/references/brightscript/interfaces/ifassociativearray.md "ifAssociativeArray") interface. For example, the last three lines in this example are equivalent:
+
 ```
 aa = { one : 1, two : 2, three : 3 }
 x = aa["two"]
@@ -9,6 +10,7 @@ x = aa.Lookup("two")
 ```
 
 This object is created with no parameters:
+
 ```
 CreateObject("roAssociativeArray")
 
@@ -17,6 +19,7 @@ CreateObject("roAssociativeArray")
 It can also be created implicitly by using an Associative Array literal.
 Starting from Roku OS 8, the quoted keys in Associative Array literals are now case-preserving. This change improves the readability of your code and is compatible with JSON usage.
 **Example**
+
 ```
 ' Creation of associative arrays
 

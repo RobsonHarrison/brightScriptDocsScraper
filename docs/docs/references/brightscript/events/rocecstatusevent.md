@@ -12,11 +12,12 @@ Returns the string "CECStatus".
 The index value of this event is not used and is always set to 0.
 ### GetInfo() as Object
 Returns an associative array with the following key/value pairs:
-Name | Type | Description
----|---|---
-active | Boolean | Indicates whether the device is the active source (true if it is the active source; otherwise, false).
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| active  | Boolean  | Indicates whether the device is the active source (true if it is the active source; otherwise, false).  |
 ## Subscription
 A BrightScript app subscribes to roCECStatusEvent by creating an "roCECStatus" object. For example:
+
 ```
 cecstatus = CreateObject("roCECStatus")
 m.port = CreateObject("roMessagePort")

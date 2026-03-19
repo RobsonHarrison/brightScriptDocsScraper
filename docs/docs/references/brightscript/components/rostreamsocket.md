@@ -3,6 +3,7 @@ The roStreamSocket component enables BrightScript apps to accept and connect to 
 This object is created without any arguments:
 `CreateObject("roStreamSocket")`
 **Example: Open TCP Connection to Server**
+
 ```
 sendAddress = CreateObject("roSocketAddress")
 sendAddress.SetAddress("www.google.com:80")
@@ -15,6 +16,7 @@ End If
 ```
 
 **Example: Echo Server**
+
 ```
 function main()
     messagePort = CreateObject("roMessagePort")

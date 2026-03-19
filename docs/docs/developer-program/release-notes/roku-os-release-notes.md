@@ -23,6 +23,7 @@ AES-GCM is an authenticated encryption mode. It generates an authentication tag 
   * **roEVPCipher.getTag() as roByteArray**
 
 **Example:**
+
 ```
 cipher = CreateObject("roEVPCipher")
 cipher.Setup(true, "aes-128-gcm", key, iv, false)
@@ -50,6 +51,7 @@ To generate a heap graph, follow these steps:
 Read [Roku's app tracing documentation](https://developer.roku.com/docs/developer-program/release-notes/app-tracing.md#enabling-perfetto) to enable perfetto tracing and setup a websocket destination.
 ###### Add heap snapshots to the trace
 Once you have enabled app tracing, send the following ECP command to add heap snapshots to the trace:
+
 ```
 curl -d '' http://$ip:8060/perfetto/heapgraph/trigger/dev
 
@@ -57,7 +59,8 @@ curl -d '' http://$ip:8060/perfetto/heapgraph/trigger/dev
 
 > Shortest Path used to display heap graph
 > The heap graph is always shown as the shortest path from a _root_ to any given object. This can sometimes lead to charts that might have unexpected structure. For example, if you have a Scene that owns a Grid which in turn owns a ContentNode, you might expect a chart reflecting this:
-> ```
+>
+```
 == MyScene ==========
   -- MyGrid ---------
     - MyContentNode -
@@ -65,7 +68,8 @@ curl -d '' http://$ip:8060/perfetto/heapgraph/trigger/dev
 ```
 
 > However, if there is also a reference to the content node from directly from the domain - perhaps because it is referenced by a local variable, then this path will be preferentially displayed:
-> ```
+>
+```
 == $bsProc-MyScene-Render ====   == MyScene ==
   - MyContentNode -               -- MyGrid --
 
@@ -74,6 +78,7 @@ curl -d '' http://$ip:8060/perfetto/heapgraph/trigger/dev
 ##### ECP chanperf command returns raw Linux performance stats
 The ECP **chanperf** command returns a new ****field that reports the raw Linux CPU and processing status information ([/proc/pid/stat](https://www.man7.org/linux/man-pages//man5/proc_pid_stat.5.html)). Developers can use this data in their own monitoring and debugging tools to optimize app performance.
 **Example**
+
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
 <chanperf>
@@ -115,24 +120,24 @@ The ECP **chanperf** command returns a new ****field that reports the raw Linux 
 
 ##### Debug protocol support for new virtual variables
 Developers can now retrieve **roInputEvent** , **roUrlEvent** , and **roDateTime** values with the [Debug Protocol](https://developer.roku.com/docs/developer-program/debugging/socket-based-debugger.md#virtual-variables). This improves stepping performance when these virtual variables are expanded.
-Object Type | Name | Type | Description
----|---|---|---
-roInputEvent | $isInput | .IsInput() | Returns a flag indicating whether an input event was received
-roInputEvent | $info | .GetInfo() | Returns an roAssociativeArray describing the input event.
-roUrlEvent | $int | .GetInt() | Returns the type of event
-roUrlEvent | $responseCode | .GetResponseCode() | Returns the protocol response code associated with this event.
-roUrlEvent | $failureReason | .GetFailureReason() | Returns a description of the failure that occurred.
-roUrlEvent | $string | .GetString() | For transfer complete AsyncGetToString, AsyncPostFromString and AsnycPostFromFile requests this will be the actual response body from the server. This method returns the string associated with the event.
-roUrlEvent | $sourceIdentity | .GetSourceIdentity() | Returns a magic number that can be matched with the value returned by the [roUrlTransfer.GetIdentity()](https://developer.roku.com/docs/references/brightscript/interfaces/ifurltransfer.md#getidentity-as-integer) method to determine the source of the roUrlTransfer event.
-roUrlEvent | $responseHeaders | .GetResponseHeaders() | Return an roAssociativeArray containing all the headers returned by the server for appropriate protocols (such as HTTP). Headers are only returned when the status code is greater than or equal to 200 and less than 300
-roUrlEvent | $targetIpAddress | .GetTargetIpAddress() | Returns the IP address of the destination.
-roUrlEvent | $responseHeadersArray | .GetResponseHeadersArray() | Returns an roArray of roAssociativeArrays, where each associative array contains a single header name/value pair. Use this function if you need access to duplicate headers, since GetResponseHeaders() returns only the last name/value pair for a given name. All headers are returned regardless of the status code
-roDateTime | $asSecondLong | .GetAsSecondLong() | Returns a LongInteger representing the date/time as the number of seconds from the Unix epoch (00:00:00 1/1/1970 GMT).
-roDateTime | $date | .GetDate() | Returns the localized date of the device.
-roDateTime | $iso | .GetIso() | Returns an ISO 8601 representation of the date/time value with milliseconds precision.
-roDateTime | $milliseconds | .GetMilliseconds() | Returns the date/time value's millisecond within the second.
-roDateTime | $lastDayOfMonth | .GetLastDayOfMonth() | Returns the date/time value's last day of the month.
-roDateTime | $dayOfWeek | .GetDayOfWeek() | Returns the date/time value's day of week.
+| Object Type  | Name  | Type  | Description  |
+| --- | --- | --- | --- |
+| roInputEvent  | $isInput  | .IsInput()  | Returns a flag indicating whether an input event was received  |
+| roInputEvent  | $info  | .GetInfo()  | Returns an roAssociativeArray describing the input event.  |
+| roUrlEvent  | $int  | .GetInt()  | Returns the type of event  |
+| roUrlEvent  | $responseCode  | .GetResponseCode()  | Returns the protocol response code associated with this event.  |
+| roUrlEvent  | $failureReason  | .GetFailureReason()  | Returns a description of the failure that occurred.  |
+| roUrlEvent  | $string  | .GetString()  | For transfer complete AsyncGetToString, AsyncPostFromString and AsnycPostFromFile requests this will be the actual response body from the server. This method returns the string associated with the event.  |
+| roUrlEvent  | $sourceIdentity  | .GetSourceIdentity()  | Returns a magic number that can be matched with the value returned by the [roUrlTransfer.GetIdentity()](https://developer.roku.com/docs/references/brightscript/interfaces/ifurltransfer.md#getidentity-as-integer) method to determine the source of the roUrlTransfer event.  |
+| roUrlEvent  | $responseHeaders  | .GetResponseHeaders()  | Return an roAssociativeArray containing all the headers returned by the server for appropriate protocols (such as HTTP). Headers are only returned when the status code is greater than or equal to 200 and less than 300  |
+| roUrlEvent  | $targetIpAddress  | .GetTargetIpAddress()  | Returns the IP address of the destination.  |
+| roUrlEvent  | $responseHeadersArray  | .GetResponseHeadersArray()  | Returns an roArray of roAssociativeArrays, where each associative array contains a single header name/value pair. Use this function if you need access to duplicate headers, since GetResponseHeaders() returns only the last name/value pair for a given name. All headers are returned regardless of the status code  |
+| roDateTime  | $asSecondLong  | .GetAsSecondLong()  | Returns a LongInteger representing the date/time as the number of seconds from the Unix epoch (00:00:00 1/1/1970 GMT).  |
+| roDateTime  | $date  | .GetDate()  | Returns the localized date of the device.  |
+| roDateTime  | $iso  | .GetIso()  | Returns an ISO 8601 representation of the date/time value with milliseconds precision.  |
+| roDateTime  | $milliseconds  | .GetMilliseconds()  | Returns the date/time value's millisecond within the second.  |
+| roDateTime  | $lastDayOfMonth  | .GetLastDayOfMonth()  | Returns the date/time value's last day of the month.  |
+| roDateTime  | $dayOfWeek  | .GetDayOfWeek()  | Returns the date/time value's day of week.  |
 ## Roku OS 15.1
 Roku OS 15.1 includes support for app tracing with Perfetto, new media playback and content metadata features, and a deprecated API.
 Here is the list of key developer-facing Roku OS 15.1 updates:
@@ -740,13 +745,13 @@ For our consumer release notes, [see here](https://support.roku.com/article/2288
 Five [roDeviceInfo](https://developer.roku.com/docs/references/brightscript/components/rodeviceinfo.md) methods are being deprecated and replaced with similar APIs (as seen in the chart below).
 The deprecated APIs will remain in the Roku OS and continue to work for one year; they will be removed from the Roku OS in the Spring 2019 OS update. **Developers must update their apps to use the new APIs within the next year.**
 Below is a complete list of the APIs deprecated as of Roku OS 8.1.
-Deprecated API | Replacement API
----|---
-GetDrmInfo() | [GetDrmInfoEx()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getdrminfoex-as-object)
-GetAdvertisingId() | [GetRIDA()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getrida-as-string)
-IsAdIdTrackingDisabled() | [IsRIDADisabled()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#isridadisabled-as-boolean)
-GetClientTrackingId() | [GetChannelClientId()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)
-GetDeviceUniqueId() | N/A — Use [GetChannelClientId()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)
+| Deprecated API  | Replacement API  |
+| --- | --- |
+| GetDrmInfo()  | [GetDrmInfoEx()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getdrminfoex-as-object)  |
+| GetAdvertisingId()  | [GetRIDA()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getrida-as-string)  |
+| IsAdIdTrackingDisabled()  | [IsRIDADisabled()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#isridadisabled-as-boolean)  |
+| GetClientTrackingId()  | [GetChannelClientId()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)  |
+| GetDeviceUniqueId()  | N/A — Use [GetChannelClientId()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)  |
 #### General API Enhancements
   * **Memory-level notification** — This release adds a memory-level notification API ([generalMemoryLevel](https://developer.roku.com/docs/references/brightscript/components/rodeviceinfo.md)) to roDeviceInfoEvent to fire notifications to the app. Apps can also query the memory level directly using [two new methods](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#enablelowgeneralmemoryeventenabled-as-boolean-as-dynamic) of the [roDeviceInfo](https://developer.roku.com/docs/references/brightscript/components/rodeviceinfo.md) component.
   * **GetUserCountryCode() API** — To determine the country associated with a user’s Roku account, a new method [GetUserCountryCode()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getusercountrycode-as-string) as String was added to [roDeviceInfo](https://developer.roku.com/docs/references/brightscript/components/rodeviceinfo.md).

@@ -26,11 +26,11 @@ Some elementary stream formats can be streamed directly without encapsulating th
 ## Adaptive streaming protocols
 Network speeds can vary over time; therefore, it is important to provide multiple video streams of varying quality to provide the best experience to your viewers is. Roku devices can then automatically select the best streaming quality based on the viewer's network connection.
 Roku supports the following widely-used standard formats for adaptive bit rate switching:
-| DASH | HLS | Smooth
----|---|---|---
-Audio Codecs | AAC, DTS, DD, DD+ | AAC, MP3, DTS, DD, DD+ | AAC, MP3, DTS, DD, DD+
-Video Codecs | AVC, HEVC | AVC, HEVC, VP9 | AVC, HEVC
-Subtitle formats | TTML, fragmented ISMT
+|   | DASH  | HLS  | Smooth  |
+| --- | --- | --- | --- |
+| Audio Codecs  | AAC, DTS, DD, DD+  | AAC, MP3, DTS, DD, DD+  | AAC, MP3, DTS, DD, DD+  |
+| Video Codecs  | AVC, HEVC  | AVC, HEVC, VP9  | AVC, HEVC  |
+| Subtitle formats  | TTML, fragmented ISMT
 TTML, unfragmented TTML text
 TTML, side-loaded TTML text
 
@@ -38,22 +38,22 @@ WebVTT, fragmented WebVTT text
 WebVTT, unfragmented WebVTT text
 WebVTT, side-loaded WebVTT text
 
-SRT, side-loaded SRT text | TTML, side-loaded TTML text
+SRT, side-loaded SRT text  | TTML, side-loaded TTML text
 
 WebVTT, fragmented WebVTT text
 WebVTT, unfragmented WebVTT text
 WebVTT, side-loaded WebVTT text
 
-SRT, side-loaded SRT text | TTML, fragmented ISMT
+SRT, side-loaded SRT text  | TTML, fragmented ISMT
 TTML, side-loaded TTML text
 
 WebVTT, side-loaded WebVTT text
 
-SRT, side-loaded SRT text
-Audio/video chunk format | Fragmented MP4, CMAF (muxing audio and video not supported for CMAF) | video: TS, CMAF (muxing audio and video not supported for CMAF)
-audio: aac, ac3, eac3 | PIFF
-DRM | PlayReady, Widevine | AES-128, Widevine, Verimatrix | PlayReady
-HDR support | Dolby Vision, HDR10 | Dolby Vision, HDR10 |
+SRT, side-loaded SRT text  |
+| Audio/video chunk format  | Fragmented MP4, CMAF (muxing audio and video not supported for CMAF)  | video: TS, CMAF (muxing audio and video not supported for CMAF)
+audio: aac, ac3, eac3  | PIFF  |
+| DRM  | PlayReady, Widevine  | AES-128, Widevine, Verimatrix  | PlayReady  |
+| HDR support  | Dolby Vision, HDR10  | Dolby Vision, HDR10  |   |
 ### Best practices
   * Dash and HLS are the preferred formats. These protocols will be the first to receive new features and offer the best playback performance.
   * For best performance, the [manifest](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md) should indicate the resolution and frame rate of each representation. This allows the player to filter out encodings that cannot be played in advance, without the need to fetch the actual media.
@@ -77,23 +77,23 @@ For live streams, apps must be a minimum of 30 seconds away from the live edge.
 For trickplay of live streams, apps should seek to a position of 999,999 seconds (for both DASH and HLS streams). The Roku media player clips that position to the current availability window and provides a robust buffer.
 ## Supported video codecs
 Videos can be encoded using `H.264`, `HEVC (H.265)`, `VP9`, or `AV1` (DASH only) codecs.
-| AVC (H.264) | HEVC (H.265)[1](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-1) | VP9[2](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-2) | AV1 (DASH only)
----|---|---|---|---
-Aspect Ratio 2[3](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-3) | Various | Various | Various |
-Dimension | Various up to 1920x1080 | Various up to 3840x2160 | Various up to 3840x2160 | Various up to 7680 x 4320
-Input Frame Rate[4](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-4) | 24p, 25p, 30p, 50p, 60p | 24p, 25p, 30p, 50p, 60p | 24p, 25p, 30p, 60p[6](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-6) | 24p,25p,30p,50p,60p
-Color Space | Rec.709 | Rec.709, Rec.2020 | Rec.709, Rec.2020 | Rec.709, Rec.2020
-Profile | main, high | main, main 10 | profile 0, profile 2 | main, main 10
-Level | 4.1, 4.2 | 4.1, 5.0, 5.1 |  | 4.1, 5.0, 5.1
-Video Mode | Constrained VBR | Constrained VBR | Constrained VBR | Constrained VBR
-Video Bitrate | Up to 10Mbps | Up to 40Mbps | Up to 40Mbps | Up to 40Mbps
-Peak Video Bit rate | 1.5x average | 1.5x average | 1.5x average | 1.5x average
-Key Frame Interval [5](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-5) | < 10s | < 10s | < 10s | < 10s
-HDR support | Dolby Vision: dvav.09 | Dolby Vision: dvhe.05
+|   | AVC (H.264)  | HEVC (H.265)[1](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-1)  | VP9[2](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-2)  | AV1 (DASH only)  |
+| --- | --- | --- | --- | --- |
+| Aspect Ratio 2[3](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-3)  | Various  | Various  | Various  |   |
+| Dimension  | Various up to 1920x1080  | Various up to 3840x2160  | Various up to 3840x2160  | Various up to 7680 x 4320  |
+| Input Frame Rate[4](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-4)  | 24p, 25p, 30p, 50p, 60p  | 24p, 25p, 30p, 50p, 60p  | 24p, 25p, 30p, 60p[6](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-6)  | 24p,25p,30p,50p,60p  |
+| Color Space  | Rec.709  | Rec.709, Rec.2020  | Rec.709, Rec.2020  | Rec.709, Rec.2020  |
+| Profile  | main, high  | main, main 10  | profile 0, profile 2  | main, main 10  |
+| Level  | 4.1, 4.2  | 4.1, 5.0, 5.1  |   | 4.1, 5.0, 5.1  |
+| Video Mode  | Constrained VBR  | Constrained VBR  | Constrained VBR  | Constrained VBR  |
+| Video Bitrate  | Up to 10Mbps  | Up to 40Mbps  | Up to 40Mbps  | Up to 40Mbps  |
+| Peak Video Bit rate  | 1.5x average  | 1.5x average  | 1.5x average  | 1.5x average  |
+| Key Frame Interval [5](https://developer.roku.com/en-gb/docs/specs/media/streaming-specifications.md#fn-5)  | < 10s  | < 10s  | < 10s  | < 10s  |
+| HDR support  | Dolby Vision: dvav.09  | Dolby Vision: dvhe.05
 HDR10 (HEVC profile Main 10)
-HLG | HDR10 | Dolby Vision
+HLG  | HDR10  | Dolby Vision
 HDR10
-HDR10+
+HDR10+  |
 Some decoder and security features are device specific. For details, see [Roku Models and Features](https://developer.roku.com/docs/specs/hardware.md).
 ## Supported audio codecs
 Roku devices support the following audio file types:
@@ -107,13 +107,13 @@ Roku devices support the following audio file types:
   * Passthrough: DTS
 
 The most common audio codecs for video content are AAC, AC3, E-AC3, and DTS. It is strongly recommended that content with multichannel audio (i.e., 5.1, 7.1 channels) be made available in Dolby Digital Plus (E-AC3). This is the preferred multichannel format for streaming on Roku's Dolby Digital Plus-enabled devices.
-| AAC | AC3/E-AC3 | DTS
----|---|---|---
-Decode/Passthrough | Decode on all devices | Device specific | Passthrough
-Sampling Rate | 44.1 Khz, 48 Khz | 48 Khz | Passthrough
-Sample Size | 16-bit | 16-bit | Passthrough
-Bit rate | 32-256 Kbps | 96-768 Kbps | Passthrough
-Number of Channels | 2.0 | 2.0, 5.1, 7.1, Atmos | Passthrough
+|   | AAC  | AC3/E-AC3  | DTS  |
+| --- | --- | --- | --- |
+| Decode/Passthrough  | Decode on all devices  | Device specific  | Passthrough  |
+| Sampling Rate  | 44.1 Khz, 48 Khz  | 48 Khz  | Passthrough  |
+| Sample Size  | 16-bit  | 16-bit  | Passthrough  |
+| Bit rate  | 32-256 Kbps  | 96-768 Kbps  | Passthrough  |
+| Number of Channels  | 2.0  | 2.0, 5.1, 7.1, Atmos  | Passthrough  |
 >   * Multichannel AAC is not supported on all Roku models. Roku TVs, Roku 4, and Roku Ultra set-top-boxes support multichannel decode to PCM stereo.
 >   * For AC3 and E-AC3, Roku devices will do passthrough to the receiving device. Roku Ultra streaming players (Benjamin [4800X] and Brewster [4850X] models only) support the latest Dolby technologies such as Dolby Atmos and System Sound Mixing [(MS12)](http://www.dolby.com/us/en/professional/broadcast/products/dolby-ms12.html). The Roku Ultra LT (4800X) does not include Dolby support.
 > Apps must always provide an AAC stereo audio track (in addition to the optional Dolby track) that players can use in case the receiving device does not support AC3 or E-AC3 decoding.
@@ -139,41 +139,41 @@ For typical streaming video applications, we recommend a range of about 400Kbps 
 > If the content contains a surround sound track, AAC 2-channel stereo must be provided as a backup audio track.
 All devices do not support 1080p60 playback; therefore, include a high-quality 720p60 or 1080p24/30 encoding; otherwise, users with these devices may not get a good experience, even under excellent network conditions.
 The ideal bitrate ladder is as follows:
-Resolution | Bitrate (kbps)
----|---
-1920x1080 | 5800
-1920x1080 | 4300
-1280x720 | 3500
-1280x720 | 2750
-720x404 | 1750
-720x404 | 1100
-512x288 | 700
-384x216 | 400
+| Resolution  | Bitrate (kbps)  |
+| --- | --- |
+| 1920x1080  | 5800  |
+| 1920x1080  | 4300  |
+| 1280x720  | 3500  |
+| 1280x720  | 2750  |
+| 720x404  | 1750  |
+| 720x404  | 1100  |
+| 512x288  | 700  |
+| 384x216  | 400  |
 The minimum bitrate ladder is as follows:
-Resolution | Bitrate (kbps)
----|---
-1920x1080 | 4300
-1280x720 | 2650
-720x404 | 1500
-512x288 | 800
-384x216 | 400
+| Resolution  | Bitrate (kbps)  |
+| --- | --- |
+| 1920x1080  | 4300  |
+| 1280x720  | 2650  |
+| 720x404  | 1500  |
+| 512x288  | 800  |
+| 384x216  | 400  |
 > In the case of muxed HLS transport streams, video must be present at all bitrates.
 ### HEVC 4K encodings
 Roku recommends HEVC for UHD encodings. Roku 4K devices support HEVC up to level 5.1 and bitrates up to 25Mbps.
 UHD encodings should provide the complete bitrate ladder with the same codec. This is because Roku devices do not support seamless codec changes when switching video bitrates.
 ### Dolby audio features and recommendations
 Encoding in Dolby Digital Plus (instead of Dolby Digital) is recommended with the following bit rates:
-Channels | Bit rate
----|---
-Stereo 2.0 | 96 kbps
-Multi-channel 5.1 | 192 kbps
-Multi-channel 7.1 | 384 kbps
+| Channels  | Bit rate  |
+| --- | --- |
+| Stereo 2.0  | 96 kbps  |
+| Multi-channel 5.1  | 192 kbps  |
+| Multi-channel 7.1  | 384 kbps  |
 Developers can encode video content using services like Azure or [Encoding.com](http://Encoding.com). For more information, visit [developer.dolby.com](https://developer.dolby.com/)
 ### 4K UHD video streaming requirements
-Specification | Requirement
----|---
-HDMI Version | 2.0
-HDCP Version | 2.2
+| Specification  | Requirement  |
+| --- | --- |
+| HDMI Version  | 2.0  |
+| HDCP Version  | 2.2  |
 #### Detecting 4K UHD compatibility
 There are several conditions that must be checked to see if 4K UHD content can be played:
   * Video output mode must be 2160p
@@ -220,6 +220,7 @@ End Function
 > This example returns true only if both 4K HEVC and 4K VP9 decoding is supported. If your 4K UHD content is only encoded in one of these codecs, modify the third conditional statement as necessary.
 ### HDR10 video streaming requirements
 HDR10 playback requires HDMI version 2.0a. HDCP version 2.2, and an HDR10 capable player and display. Apps can check if the Roku device and connected display support HDR10 with **GetDisplayProperties().hdr10** field of the [roDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md) component.
+
 ```
 Function canPlayHDR() as Boolean
   dev_info = createObject("roDeviceInfo")

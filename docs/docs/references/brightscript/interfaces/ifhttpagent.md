@@ -1,41 +1,41 @@
 # ifHttpAgent
 The ifHttpAgent methods modify the way that URLs are accessed
 ## Implemented by
-Name | Description
----|---
-[roAppManager](https://developer.roku.com/docs/references/brightscript/components/roappmanager.md "roAppManager") | The Application Manager APIs set application level attributes, which mostly affect the look-and-feel of the application
-[roAudioPlayer](https://developer.roku.com/docs/references/brightscript/components/roaudioplayer.md "roAudioPlayer") | The Audio Player object provides the ability to setup the playing of a series of audio streams
-[roSGNode](https://developer.roku.com/docs/references/brightscript/components/rosgnode.md "roSGNode") | The roSGNode object is the BrightScript equivalent of SceneGraph XML file node creation
-[roTextureManager](https://developer.roku.com/docs/references/brightscript/components/rotexturemanager.md "roTextureManager") | The Texture Manager provides a set of API's for managing an roBitmap cache.
-[roTextureRequest](https://developer.roku.com/docs/references/brightscript/components/rotexturerequest.md "roTextureRequest") | An roTextureRequest is used to make requests to the roTextureManager
-[roUrlTransfer](https://developer.roku.com/docs/references/brightscript/components/rourltransfer.md "roUrlTransfer") | A roUrlTransfer object transfers data to or from remote servers specified by URLs
-[roVideoPlayer](https://developer.roku.com/docs/references/brightscript/components/rovideoplayer.md "roVideoPlayer") | The roVideoPlayer component implements a video player with more programmatic control, but less user control than the roVideoScreen component
+| Name  | Description  |
+| --- | --- |
+| [roAppManager](https://developer.roku.com/docs/references/brightscript/components/roappmanager.md "roAppManager")  | The Application Manager APIs set application level attributes, which mostly affect the look-and-feel of the application  |
+| [roAudioPlayer](https://developer.roku.com/docs/references/brightscript/components/roaudioplayer.md "roAudioPlayer")  | The Audio Player object provides the ability to setup the playing of a series of audio streams  |
+| [roSGNode](https://developer.roku.com/docs/references/brightscript/components/rosgnode.md "roSGNode")  | The roSGNode object is the BrightScript equivalent of SceneGraph XML file node creation  |
+| [roTextureManager](https://developer.roku.com/docs/references/brightscript/components/rotexturemanager.md "roTextureManager")  | The Texture Manager provides a set of API's for managing an roBitmap cache.  |
+| [roTextureRequest](https://developer.roku.com/docs/references/brightscript/components/rotexturerequest.md "roTextureRequest")  | An roTextureRequest is used to make requests to the roTextureManager  |
+| [roUrlTransfer](https://developer.roku.com/docs/references/brightscript/components/rourltransfer.md "roUrlTransfer")  | A roUrlTransfer object transfers data to or from remote servers specified by URLs  |
+| [roVideoPlayer](https://developer.roku.com/docs/references/brightscript/components/rovideoplayer.md "roVideoPlayer")  | The roVideoPlayer component implements a video player with more programmatic control, but less user control than the roVideoScreen component  |
 ## Supported methods
 ### AddHeader(name as String, value as String) as Boolean
 Adds the specified HTTP header to the list of headers that will be sent in the HTTP request.
 Certain well known headers such as User-Agent, Content-Length, and so on are automatically sent. The application may override the values for these headers if needed (for example, some servers may require a specific user agent string).
 #### Parameters
-Name | Type | Description
----|---|---
-name | String | The name of the HTTP header to be added to the list of headers.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| name  | String  | The name of the HTTP header to be added to the list of headers.
 
 If "x-roku-reserved-dev-id" is passed as the name, the value parameter is ignored and in its place, the devid of the currently running app is used as the value. This allows the developer's server to know which client app is talking to it.
 
-Any other headers with names beginning with "x-roku-reserved-" are reserved and may not be set.
-value | String | The value of the HTTP header being added.
+Any other headers with names beginning with "x-roku-reserved-" are reserved and may not be set.  |
+| value  | String  | The value of the HTTP header being added.  |
 #### Return Value
 A flag indicating whether the HTTP header was successfully added.
 ### SetHeaders(nameValueMap as Object) as Boolean
 #### Description
 Sets the HTTP headers to be sent in the HTTP request.
 #### Parameters
-Name | Type | Description
----|---|---
-nameValueMap | Object | An associative array containing the HTTP headers and values to be included in the HTTP request.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| nameValueMap  | Object  | An associative array containing the HTTP headers and values to be included in the HTTP request.
 
 If "x-roku-reserved-dev-id" is passed as a key, the value parameter is ignored and in its place, the devid of the currently running app is used as the value. This allows the developer's server to know which client app is talking to it.
 
-Any other headers with names beginning with "x-roku-reserved-" are reserved and may not be set.
+Any other headers with names beginning with "x-roku-reserved-" are reserved and may not be set.  |
 #### Return Value
 A flag indicating whether the HTTP header was successfully set.
 ### InitClientCertificates() as Boolean
@@ -47,18 +47,18 @@ A flag indicating whether the object sent to to the Roku client certificate was 
 ### SetCertificatesFile(path as String) as Boolean
 Set the certificates file used for SSL to the specified .pem file.
 #### Parameters
-Name | Type | Description
----|---|---
-path | String | The directory path of the .pem file to be used.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| path  | String  | The directory path of the .pem file to be used.  |
 #### Return Value
 A flag indicating whether the certificate was successfully set.
 ### SetCertificatesDepth(depth as Integer) as Void
 #### Description
 Sets the maximum depth of the certificate chain that will be accepted.
 #### Parameters
-Name | Type | Description
----|---|---
-depth | Integer | The maximum depth to be used.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| depth  | Integer  | The maximum depth to be used.  |
 ### EnableCookies() as Void
 #### Description
 Enables any Set-Cookie headers returned from the request to be interpreted and the resulting cookies to be added to the cookie cache.
@@ -66,40 +66,42 @@ Enables any Set-Cookie headers returned from the request to be interpreted and t
 #### Descripton
 Returns any cookies from the cookie cache that match the specified domain and path. Expired cookies are not returned.
 #### Parameters
-Name | Type | Description
----|---|---
-domain | String | The domain of the cookies to be retrieved. To match all domains, provide an empty string.
-path | String | The path of the cookies to be retrieved.
-secure
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| domain  | String  | The domain of the cookies to be retrieved. To match all domains, provide an empty string.  |
+| path  | String  | The path of the cookies to be retrieved.  |
+| secure
 
- _Available since Roku OS 12.0_ | Boolean | Indicates whether the cookie is to be retrieved via HTTPS (true) or HTTP (false).
+ _Available since Roku OS 12.0_  | Boolean  | Indicates whether the cookie is to be retrieved via HTTPS (true) or HTTP (false).  |
 #### Return Value
 An roArray of roAssociativeArrays, where each associative array represents a cookie. The roAssociativeArrays contain the following key-value pairs:
-Name | Type | Description
----|---|---
-Version | Integer | Cookie version number
-Domain | String | Domain to which cookie applies
-Path | String | Path to which cookie applies
-Name | String | Name of the cookie
-Value | String | Value of the cookie
-Expires | roDateTime | Cookie expiration date, if any
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| Version  | Integer  | Cookie version number  |
+| Domain  | String  | Domain to which cookie applies  |
+| Path  | String  | Path to which cookie applies  |
+| Name  | String  | Name of the cookie  |
+| Value  | String  | Value of the cookie  |
+| Expires  | roDateTime  | Cookie expiration date, if any  |
 ### AddCookies(cookies as Object) as Boolean
 #### Description
 Adds the specified cookies to the cookie cache.
 #### Parameters
-Name | Type | Description
----|---|---
-cookies | Object | An roArray of roAssociativeArrays, where each associative array represents a cookie to be added. Each associative array must contain the following key-value pairs:  | Name | Type | Description
----|---|---
-Version | Integer | Cookie version number
-Domain | String | Domain to which cookie applies
-Path | String | Path to which cookie applies
-Name | String | Name of the cookie
-Value | String | Value of the cookie
-Expires | roDateTime | Cookie expiration date, if any
-Secure
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| cookies  | Object  | An roArray of roAssociativeArrays, where each associative array represents a cookie to be added. Each associative array must contain the following key-value pairs:
+ | Name  | Type  | Description  |
+| --- | --- | --- |
+| Version  | Integer  | Cookie version number  |
+| Domain  | String  | Domain to which cookie applies  |
+| Path  | String  | Path to which cookie applies  |
+| Name  | String  | Name of the cookie  |
+| Value  | String  | Value of the cookie  |
+| Expires  | roDateTime  | Cookie expiration date, if any  |
+| Secure
 
- _Available since Roku OS 12.0_ | Boolean | Indicates whether the cookie is to be sent over HTTPS (true) or HTTP (false).
+ _Available since Roku OS 12.0_  | Boolean  | Indicates whether the cookie is to be sent over HTTPS (true) or HTTP (false).  |
+ |
 #### Return Value
 A flag indicating whether the cookies were successfully added to the cache.
 ### ClearCookies() as Void
@@ -109,6 +111,7 @@ Removes all cookies from the cookie cache.
   1. Create a Self-Signed CA (Certificate Authority) root Certificate
      * Create the root CA private key (remember the password chosen). This is needed to sign new certificates.
      * Create the root CA.
+
 ```
   openssl genrsa -out rootCA.key 4096
   openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 825 -out rootCA.crt
@@ -119,6 +122,7 @@ Removes all cookies from the cookie cache.
      * Create the Web Server's key (remember the password chosen).
      * Create the Web Server's Cert Req.
      * Sign the Web Server's Cert Req with the CA Cert. In the _extfile_ keyword, provide the path to the config file.
+
 ```
   openssl genrsa -out <server>.key 2048
   openssl req -new -key <server>.key -out <server>.csr -config <server>.conf

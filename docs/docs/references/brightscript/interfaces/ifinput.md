@@ -1,8 +1,8 @@
 # ifInput
 ## Implemented by
-Name | Description
----|---
-[roInput](https://developer.roku.com/docs/references/brightscript/components/roinput.md "roInput") | An roInput object can be used to receive events sent from a network client using the External Control Protocol (ECP), as described in External Control API
+| Name  | Description  |
+| --- | --- |
+| [roInput](https://developer.roku.com/docs/references/brightscript/components/roinput.md "roInput")  | An roInput object can be used to receive events sent from a network client using the External Control Protocol (ECP), as described in External Control API  |
 ## Supported methods
 ### GetMessagePort() as Object
 #### Description
@@ -13,9 +13,9 @@ The message port value.
 #### Description
 Sets the roMessagePort to be used to receive events.
 #### Parameters
-Name | Type | Description
----|---|---
-port | Object | The port to be used to receive events.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| port  | Object  | The port to be used to receive events.  |
 ### EnableTransportEvents() as Boolean
 #### Description
 Registers an app to receive `roInput transport` events, which are voice commands sent via the Roku remote control, Roku mobile app, or a virtual assistant such as Amazon Alexa or Google Assistant.
@@ -30,10 +30,10 @@ If your app has registered for handling transport events (by calling the `Enable
 If your app has registered for transport events, but does not call this method within 5 seconds of receiving a transport event, the event is considered unhandled.
 #### Parameters
 This method takes an AssociativeArray with two fields: **id** and **status**. The **id** field specifies the transport ID event; the **status** specifies whether the event was handled, handled with an error, or unhandled.
-Parameter | Type | Description
----|---|---
-Id | String | The unique ID of the transport event.
-status | String | Indicates whether the event was handled successfully, handled with an error, or unhandled. This may be one of the following values:
+| Parameter  | Type  | Description  |
+| --- | --- | --- |
+| Id  | String  | The unique ID of the transport event.  |
+| status  | String  | Indicates whether the event was handled successfully, handled with an error, or unhandled. This may be one of the following values:
 
   * "error.generic". No active media is available to fulfill the voice command. Passing this status displays "That is not available" in the Roku Voice heads-up display. This can be used in cases, for example, when an app receives a "forward" or "next" command, but there is no content to fast forward or play next, respectively.
   * "unhandled". The app is not handling the event. The default behavior is executed by the Roku OS, if defined.
@@ -47,5 +47,6 @@ status | String | Indicates whether the event was handled successfully, handled 
   * "success.seek-start". A seek command was handled successfully, but the seek duration was before the beginning.
   * "success.seek-end". A seek command was handled successfully but the seek location was past the end.
 
+ |
 #### Return Value
 A flag indicating whether the event response operation was successful.

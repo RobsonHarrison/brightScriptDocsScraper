@@ -13,58 +13,59 @@ The Roku Analytics Component Library officially supports the following vendors. 
 ### Ooyala
 **Model #1**
 #### Initialization attributes
-Attribute | Type | Required | Description
----|---|---|---
-pcode | String | Required | Ooyala [publisher code](https://help.ooyala.com/video-platform/concepts/api_keys.html)
-userinfo | roAssociativeArray of Strings | Optional | [User information](https://apidocs.ooyala.com/iq_roku/IQ.html#toc17__anchor)
-geoinfo | roAssociativeArray of Strings | Optional | [Geographic information](https://apidocs.ooyala.com/iq_roku/IQ.html#toc16__anchor)
+| Attribute  | Type  | Required  | Description  |
+| --- | --- | --- | --- |
+| pcode  | String  | Required  | Ooyala [publisher code](https://help.ooyala.com/video-platform/concepts/api_keys.html)  |
+| userinfo  | roAssociativeArray of Strings  | Optional  | [User information](https://apidocs.ooyala.com/iq_roku/IQ.html#toc17__anchor)  |
+| geoinfo  | roAssociativeArray of Strings  | Optional  | [Geographic information](https://apidocs.ooyala.com/iq_roku/IQ.html#toc16__anchor)  |
 #### Vendor-specific attributes for `setContentMetadata`
-Attribute | Type | Required | Description
----|---|---|---
-assetType | String | Required | Possible values include "ooyala" or "external"
-assetID | Integer | Optional | The video's embed code - If omitted, the ID attribute from the standard metadata is used
-duration | Integer | Optional | The duration of the video - If omitted, the length attribute from the standard metadata is used
+| Attribute  | Type  | Required  | Description  |
+| --- | --- | --- | --- |
+| assetType  | String  | Required  | Possible values include "ooyala" or "external"  |
+| assetID  | Integer  | Optional  | The video's embed code - If omitted, the ID attribute from the standard metadata is used  |
+| duration  | Integer  | Optional  | The duration of the video - If omitted, the length attribute from the standard metadata is used  |
 ### Brightcove
 **Model #1**
 #### Initialization attributes
-Attribute | Type | Required | Description
----|---|---|---
-account | String | Required | Brightcove account ID
-user | String | Optional | Unique ID for this user
+| Attribute  | Type  | Required  | Description  |
+| --- | --- | --- | --- |
+| account  | String  | Required  | Brightcove account ID  |
+| user  | String  | Optional  | Unique ID for this user  |
 #### Vendor-specific attributes for `setContentMetadata`
-Attribute | Type | Required | Description
----|---|---|---
-source | String | Optional | If omitted, the `url` attribute from the standard content metadata is used
-destination | String | Optional | If omitted, the `url` attribute from the standard content metadata is used
-video | Integer | Optional | If omitted, the `id` attribute from the standard content metadata is used
-video_name | String | Optional | If omitted, the `title` attribute from the standard content metadata is used
-video_duration | Integer | Optional | If omitted, the `length` attribute from the standard content metadata is used. If length is also absent, the duration field from the Video Node is used
+| Attribute  | Type  | Required  | Description  |
+| --- | --- | --- | --- |
+| source  | String  | Optional  | If omitted, the `url` attribute from the standard content metadata is used  |
+| destination  | String  | Optional  | If omitted, the `url` attribute from the standard content metadata is used  |
+| video  | Integer  | Optional  | If omitted, the `id` attribute from the standard content metadata is used  |
+| video_name  | String  | Optional  | If omitted, the `title` attribute from the standard content metadata is used  |
+| video_duration  | Integer  | Optional  | If omitted, the `length` attribute from the standard content metadata is used. If length is also absent, the duration field from the Video Node is used  |
 ### Omniture
 **Model #2**
-Attribute | Type | Required | Description
----|---|---|---
-baseURL | String | Required | The URL of the Omniture suite that data should be sent to
-persitentParams | roAssociativeArray | Optional | A set of static parameters and values that should be sent with every request
+| Attribute  | Type  | Required  | Description  |
+| --- | --- | --- | --- |
+| baseURL  | String  | Required  | The URL of the Omniture suite that data should be sent to  |
+| persitentParams  | roAssociativeArray  | Optional  | A set of static parameters and values that should be sent with every request  |
 Analytics vendors using Model #2 use `trackEvent` rather than `setContentMetadata`.
 ### Google analytics
 **Model #2**
 > This section has been updated based on Google Analytics 4 (GA4).
 ### Initialization attributes
-Parameter | Type | Required | Default value | Description | RACL implementation
----|---|---|---|---|---
-api_secret | string | Required | - | An `API Secret` that is generated through the Google Analytics UI. | This parameter is added to each request.
+| Parameter  | Type  | Required  | Default value  | Description  | RACL implementation  |
+| --- | --- | --- | --- | --- | --- |
+| api_secret  | string  | Required  | -  | An `API Secret` that is generated through the Google Analytics UI.  | This parameter is added to each request.
 
 If the parameter is not specified or the type is incorrect, RAC prints a warning to the debug console, and the payload is not sent.
 
-If data needs to be sent to multiple data streams, create one RAC instance per stream.
-measurement_id | string | Required | - | The identifier for a Data Stream. In the Google Analytics UI, this parameter is listed under **Admin** > **Data Streams** > **choose your stream** > **Measurement ID**.
+If data needs to be sent to multiple data streams, create one RAC instance per stream.  |
+| measurement_id  | string  | Required  | -  | The identifier for a Data Stream. In the Google Analytics UI, this parameter is listed under **Admin** > **Data Streams** > **choose your stream** > **Measurement ID**.
 
-Google Analytics (GA4) supports tracking multiple data streams for a single property. | This parameter is added to each request.
+Google Analytics (GA4) supports tracking multiple data streams for a single property.  | This parameter is added to each request.
 
-If the parameter is not specified or the type is incorrect, RAC prints a warning to the debug console, and the payload is not sent.
-defaultParams | roAssociativeArray | Optional | - | A set of static parameters and values that should be included in each request (see the [Google Analytics (GA4) JSON body documentation](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#payload_post_body) for more information). | RAC applies these parameters and values to the root level of each payload constructed by the [**trackEvent()** method](https://developer.roku.com/en-gb/docs/developer-program/libraries/roku-analytics-component.md#trackevent).
-defaultEventParams | roAssociativeArray | Optional | - | A set of static parameters and values that should be sent with every event. | RAC applies these parameters and values to each event within every payload constructed by the [**trackEvent()** method](https://developer.roku.com/en-gb/docs/developer-program/libraries/roku-analytics-component.md#trackevent).
+If the parameter is not specified or the type is incorrect, RAC prints a warning to the debug console, and the payload is not sent.  |
+| defaultParams  | roAssociativeArray  | Optional  | -  | A set of static parameters and values that should be included in each request (see the [Google Analytics (GA4) JSON body documentation](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#payload_post_body) for more information).  | RAC applies these parameters and values to the root level of each payload constructed by the [**trackEvent()** method](https://developer.roku.com/en-gb/docs/developer-program/libraries/roku-analytics-component.md#trackevent).  |
+| defaultEventParams  | roAssociativeArray  | Optional  | -  | A set of static parameters and values that should be sent with every event.  | RAC applies these parameters and values to each event within every payload constructed by the [**trackEvent()** method](https://developer.roku.com/en-gb/docs/developer-program/libraries/roku-analytics-component.md#trackevent).  |
 #### Example:
+
 ```
 m.global.RSG_analytics.init = {
     ga4: {
@@ -85,6 +86,7 @@ m.global.RSG_analytics.init = {
 
 ## Guidelines
 Manifest entry to use RACL:
+
 ```
 sg_component_libs_required=Roku_Analytics
 
@@ -94,6 +96,7 @@ Video Node - `notificationInterval`: For vendors using model #1, the `notificati
 Mid-roll ads: When using multiple Video nodes for client-side inserted mid-roll ads, `initVideoPlayer` must be set for each Video node that is created. However, `finishedVideoPlayback` should only be set **once** at the end of the content session. `finishedVideoPlayback` **should not be set** at the end of mid-roll ads.
 ### Implementation
 To use RACL, add a field, "RSG_analytics," to `m.global` and then create an roSGNode object like so:
+
 ```
 m.global.addField("RSG_analytics","node",false)
 m.global.RSG_analytics = CreateObject("roSGNode","Roku_Analytics:AnalyticsNode")
@@ -108,6 +111,7 @@ m.global.RSG_analytics = CreateObject("roSGNode","Roku_Analytics:AnalyticsNode")
 ### Initialization
 This method takes a roAssociativeArray of roAssociativeArrays containing configuration data for each analytics service such as endpoint URLs, API keys, etc. See [Supported Vendors](https://developer.roku.com/docs/developer-program/libraries/roku-analytics-component.md#supported-vendors) for vendor-specific configuration data.
 **Example:**
+
 ```
 m.global.RSG_analytics.init = {
     IQ : {
@@ -128,6 +132,7 @@ m.global.RSG_analytics.init = {
 > This method can only be used for vendors using model #1 such as Ooyala or Brightcove.
 This method takes a single roAssociativeArray with exactly one attribute named `video` containing a SceneGraph [Video node](https://developer.roku.com/docs/references/scenegraph/media-playback-nodes/video.md). If your app uses multiple Video nodes (as might be done for mid-roll ads), this method needs to be set each time a new Video node is created.
 **Example:**
+
 ```
 m.global.RSG_analytics.initVideoPlayer = {
     video: m.video
@@ -139,6 +144,7 @@ m.global.RSG_analytics.initVideoPlayer = {
 > This method can only be used for vendors using model #1 such as Ooyala or Brightcove.
 This method takes a roAssociativeArray of roAssociativeArrays. At least one sub-AA is required and must contain the [content metadata](https://developer.roku.com/docs/developer-program/getting-started/architecture/content-metadata.md) for playback. Any other sub-AAs may contain additional information required for analytics providers and are optional.
 **Example with only Roku content meta-data:**
+
 ```
 myContent = {
     streamFormat = "mp4"
@@ -152,6 +158,7 @@ m.global.RSG_analytics.setContentMetadata = {
 ```
 
 **Example with Roku content meta-data and additional analytics provider information:**
+
 ```
 myContent = {
     streamFormat = "mp4"
@@ -176,6 +183,7 @@ m.global.RSG_analytics.setContentMetadata = {
 This method is similar to `initVideoPlayer` and takes a single roAssociativeArray with exactly one attribute named `video` containing a Scenegraph [Video Node](https://developer.roku.com/docs/references/scenegraph/media-playback-nodes/video.md). This should be set once video playback has finished which will allow the component to finish analytics tasks and stop observing Video node events.
 Unlike `initVideoPlayer`, this method should only be set once the last Video node is closed (i.e., do not set this when closing a Video node after a mid-roll ad).
 **Example:**
+
 ```
 sub onVideoState()
     closeStates = {
@@ -204,24 +212,25 @@ This method takes a roAssociativeArray of roAssociativeArrays containing the par
 ### Google Analytics (GA4) events tracking
 Developers can track events from the [standard GA4 events](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events) list, and they can track their custom events and their parameters. To do this, pass the following data for events tracking and any other optional parameters, per [GA4 documentation](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference?client_type=gtag#payload_post_body), as needed.
 > Parameters may also be placed in the `defaultParams` or `defaultEventParams` fields during initialization and RAC will automatically apply them to every event.
-Parameter | Type | Required | Default value | Description | RAC implementation
----|---|---|---|---|---
-client_id | string | Required | [GetChannelClientID()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string) | Uniquely identifies a user instance of a web client.
+| Parameter  | Type  | Required  | Default value  | Description  | RAC implementation  |
+| --- | --- | --- | --- | --- | --- |
+| client_id  | string  | Required  | [GetChannelClientID()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)  | Uniquely identifies a user instance of a web client.
 
-This is the equivalent of the "cid" parameter in Universal Analytics (UA). | This field is populated with value returned by the [GetChannelClientID()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string) method, if it is not provided by the developer.
-events | roArray | Required | - | An array of event items that to be provided by developer.
+This is the equivalent of the "cid" parameter in Universal Analytics (UA).  | This field is populated with value returned by the [GetChannelClientID()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string) method, if it is not provided by the developer.  |
+| events  | roArray  | Required  | -  | An array of event items that to be provided by developer.
 
 Up to 25 events can be sent per request.
 
-See the [Google Analytics (GA4) events reference](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events) for all valid events. | RAC will print a debug console warning if this value is empty or is not an array. The payload is still sent if this parameter is not specified.
-events[].name | string | Required | - | The name for the event.
+See the [Google Analytics (GA4) events reference](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events) for all valid events.  | RAC will print a debug console warning if this value is empty or is not an array. The payload is still sent if this parameter is not specified.  |
+| events[].name  | string  | Required  | -  | The name for the event.
 
 See the [Google Analytics (GA4) events reference](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events) for all options.
 
-This is an equivalent of the "t" parameter in Universal Analytics (UA). | RAC only checks the "name" for each event in array. If the event "name" is not provided, RAC prints a debug console warning, but still sends the events to the Google server.
+This is an equivalent of the "t" parameter in Universal Analytics (UA).  | RAC only checks the "name" for each event in array. If the event "name" is not provided, RAC prints a debug console warning, but still sends the events to the Google server.
 
-If this parameter is not specified, the payload is still sent.
+If this parameter is not specified, the payload is still sent.  |
 **Example:**
+
 ```
 m.global.RSG_analytics.trackEvent = {
     GA4: {
@@ -249,6 +258,7 @@ m.global.RSG_analytics.trackEvent = {
 ### Debug
 This method takes a boolean to determine if debug data will be shown in the console. The default value is `false` (No debug data will be displayed in the console).
 **Example:**
+
 ```
 m.global.RSG_analytics.debug = true
 
@@ -256,6 +266,7 @@ m.global.RSG_analytics.debug = true
 
 ## Example
 Following is a simple example of using RACL with a service that supports Model #1.
+
 ```
 Sub VerySimpleShowVideo(item)
     m.global.addField("RSG_analytics","node",false)
@@ -317,7 +328,7 @@ Google Analytics Dashboard after running RACL:
 To test the library, sideload the sample apps below with respect to the analytics platform you are using. You can test either Ooyala (Model #1) or Google Analytics (Model #2).
 Use the Sample app #1 to test Ooyala analytics. Change the publisher code (PCODE) in the baseScene.brs to your Ooyala account PCODE to see the analytics.
 When using the sample app for Google analytics (Model #2), make sure to change the tracking ID to your Google analytics tracking ID in baseScene.brs under the folder components.
-Model | Download
----|---
-Simple model #1 | [RokuAnalyticsComponent_Model1](https://github.com/rokudev/samples/tree/master/analytics)
-Simple model #2 | [RokuAnalyticsComponent_Model2](https://github.com/rokudev/samples/tree/master/analytics)
+| Model  | Download  |
+| --- | --- |
+| Simple model #1  | [RokuAnalyticsComponent_Model1](https://github.com/rokudev/samples/tree/master/analytics)  |
+| Simple model #2  | [RokuAnalyticsComponent_Model2](https://github.com/rokudev/samples/tree/master/analytics)  |

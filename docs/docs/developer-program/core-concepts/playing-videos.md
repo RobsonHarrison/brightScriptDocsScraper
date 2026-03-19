@@ -47,6 +47,7 @@ These progress bars are configured in BrightScript by setting the fields of the 
 
 These internal ProgressBar nodes have fields for configuring their appearance, such as setting the color of the portion of the bar that indicates the amount of buffering that has been accomplished. These fields must be set in BrightScript. Other Video node fields are available for configuring other aspects of the internal ProgressBar nodes, such as setting the color of the text of the progress bar. These fields can be set in either BrightScript or XML markup.
 To set the internal node fields in BrightScript, the Video node object must be available within the scope of the BrightScript function that will set the fields. For example, if a Video node was declared and partially defined in XML markup, you must use the `findNode()` function to declare the node object and access the internal retrieving bar node fields:
+
 ```
 m.video = m.top.findNode("channel_video_node_id")
 ...
@@ -59,6 +60,7 @@ m.video.retrievingBar.internal_node_field = internal_node_field_value
 ## Fast start media playback
 Both the Audio and Video node classes also include a special control option to reduce or eliminate the apparent delay before media playback begins (_fast start_). All digital video requires some time after a video is selected to begin playback, and video (and audio) files streamed over HTTP add network transfer rates to this buffering time. You can configure your application to reduce or eliminate this apparent delay to the user by setting the Video (or Audio) node `control` field to `prebuffer`, at a time when the user has moved focus to a description of the media item, but before the user actually starts the playback. The media stream will buffer in the background while the user is reading the description of the media item. Then, if and when the user actually selects the media item to play, you can set the `control` field to `play` as usual.
 For example, if you have designed your SceneGraph application to have a screen that shows a description of a video, with a button to actually begin playback, you can use the `prebuffer` option of the `control` field in a callback function triggered by the screen focus event as follows:
+
 ```
 sub setDetailsScreenFocus()
   if m.top.isInFocusChain() and not m.buttons.hasFocus() and not m.videoPlayer.hasFocus() then
@@ -71,6 +73,7 @@ end sub
 ```
 
 Then write the callback function for the playback button press event that includes:
+
 ```
 m.videoPlayer.control = "start"
 
@@ -81,6 +84,7 @@ If the user has taken a few seconds to read the details screen, the video will s
 For MPEG-4 (mp4) video files without segmented adaptive bitrate switching files, set the ContentNode `streamformat` meta-data attribute to `mp4`, and the `url` attribute to the URL of the MPEG-4 video file.
 ## Segmented video playback
 For the most basic segmented video playback, you only need to set the `URL` and `StreamFormat` field values in a ContentNode, assign the ContentNode to the `content` field of the Video node, then set the Video node `control` field value to `play` to start the video. For example:
+
 ```
 videoContent = createObject("RoSGNode", "ContentNode")
 videoContent.url = "video_URI"
@@ -142,6 +146,7 @@ See [Content Meta-Data](https://developer.roku.com/docs/developer-program/gettin
 ### Example video Meta-Data XML Task node file reader
 The following is an example of a Task node that reads an XML file from a server containing descriptive and configuration meta-data for videos. The Task node converts the XML file attributes for each video, and builds the corresponding ContentNode with the attribute data. The Task node should be created, have an observer callback set for the `videocontent` <interface> field, configured with the URL of the server XML file as the `metadatauri` <interface> field, then run. When the ContentNode is complete, it is assigned to the `videocontent` <interface> field of the Task node, which then triggers the callback function to configure lists or grids for each video item, and allow the configuration meta-data to be assigned to a Video node that plays the video.
 **Example video Content Meta-Data Task node**
+
 ```
 <component name = "MetaDataCR" extends = "Task" >
 
@@ -190,11 +195,11 @@ The following is an example of a Task node that reads an XML file from a server 
 
 ## Sample Apps
 The table below summarizes all of the downloadable samples demonstrating the video playback features introduced in this section.
-Sample App | Description
----|---
-[Simple_Grid_and_Video](https://github.com/rokudev/samples/blob/master/ux%20components/lists%20and%20grids/Simple_Grid_and_Video) | Video player in a simple grid UI.
-[Simple_Grid_with_Details_and_Video](https://github.com/rokudev/samples/blob/master/ux%20components/lists%20and%20grids/Simple_Grid_with_Details_and_Video) | Video player in a simple grid UI with details page.
-[PanelSet_and_Video](https://github.com/rokudev/samples/blob/master/media/PanelSet_and_Video) | Video player in a simple PanelSet UI.
-[VideoList](https://github.com/rokudev/samples/blob/master/ux%20components/lists%20and%20grids/VideoList) | Video player with content selected from a LabelList.
-[FastVideoStart](https://github.com/rokudev/samples/blob/master/media/FastVideoStart) | Sample demonstrating how to use Fast Video Start.
-[SceneGraphCaptionsDemo](https://github.com/rokudev/samples/blob/master/media/SceneGraphCaptionsDemo) | Sample demonstrating how to integrate closed caption support.
+| Sample App  | Description  |
+| --- | --- |
+| [Simple_Grid_and_Video](https://github.com/rokudev/samples/blob/master/ux%20components/lists%20and%20grids/Simple_Grid_and_Video)  | Video player in a simple grid UI.  |
+| [Simple_Grid_with_Details_and_Video](https://github.com/rokudev/samples/blob/master/ux%20components/lists%20and%20grids/Simple_Grid_with_Details_and_Video)  | Video player in a simple grid UI with details page.  |
+| [PanelSet_and_Video](https://github.com/rokudev/samples/blob/master/media/PanelSet_and_Video)  | Video player in a simple PanelSet UI.  |
+| [VideoList](https://github.com/rokudev/samples/blob/master/ux%20components/lists%20and%20grids/VideoList)  | Video player with content selected from a LabelList.  |
+| [FastVideoStart](https://github.com/rokudev/samples/blob/master/media/FastVideoStart)  | Sample demonstrating how to use Fast Video Start.  |
+| [SceneGraphCaptionsDemo](https://github.com/rokudev/samples/blob/master/media/SceneGraphCaptionsDemo)  | Sample demonstrating how to integrate closed caption support.  |

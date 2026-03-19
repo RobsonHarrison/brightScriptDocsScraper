@@ -2,6 +2,7 @@
 Conditional Compilation allows boolean constants to determine whether a section of code should be compiled. Conditional compilation values are defined by the `#const` identifier and has the form:
 `#const <constant-name> = <expression>`
 **Examples of valid expressions**
+
 ```
 #const someFlag = true
 #const anotherFlag = false
@@ -29,6 +30,7 @@ More than one conditional compilation value can be specified via semi-colon sepa
 ## Uses
 There are a variety of ways Conditional compilation can be used:
 **Example demonstrating use of manifest constants**
+
 ```
 #if someFlag
 
@@ -43,6 +45,7 @@ There are a variety of ways Conditional compilation can be used:
 ```
 
 **Example demonstrating locally scoped constants**
+
 ```
 #const FeatureA = true
 #const FeatureB = false
@@ -65,6 +68,7 @@ There are a variety of ways Conditional compilation can be used:
 
 An `#error` constant can also be used to force a compilation error with an error message:
 **Example demonstrating usage of #error constant**
+
 ```
 #const FeatureAImplemented = true
 
@@ -79,6 +83,7 @@ An `#error` constant can also be used to force a compilation error with an error
 ### Block comments
 Conditional compilation can also be used to form block comments. Previously, each line of code needed to be commented out.
 **Example of code block comments**
+
 ```
 #if false
 
@@ -99,6 +104,7 @@ End Function
 ```
 
 **Example of commenting out code**
+
 ```
 #if false
 

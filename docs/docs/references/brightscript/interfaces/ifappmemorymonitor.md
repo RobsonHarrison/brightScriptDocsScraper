@@ -1,8 +1,8 @@
 # ifAppMemoryMonitor
 ## Implemented by
-Name | Description
----|---
-[roAppMemoryMonitor](https://developer.roku.com/docs/references/brightscript/components/roappmemorymonitor.md "roAppMemoryMonitor") | Subscribes channels to low-memory notifications. When an app is subscribed, it receives a [roAppMemoryNotificationEvent](https://developer.roku.com/docs/references/brightscript/events/roappmemorynotificationevent.md) when it reaches a specific percentage of the per-app memory limit (80%).
+| Name  | Description  |
+| --- | --- |
+| [roAppMemoryMonitor](https://developer.roku.com/docs/references/brightscript/components/roappmemorymonitor.md "roAppMemoryMonitor")  | Subscribes channels to low-memory notifications. When an app is subscribed, it receives a [roAppMemoryNotificationEvent](https://developer.roku.com/docs/references/brightscript/events/roappmemorynotificationevent.md) when it reaches a specific percentage of the per-app memory limit (80%).  |
 > The roAppMemoryMonitor functions are supported on all [current and updatable device models](https://developer.roku.com/docs/specs/hardware.md), except for Liberty, Austin, Mustang and Littlefield.
 > Starting October 1, 2026, all apps must integrate the ifAppMemoryMonitor functions to pass certification testing. If your app does not include these APIs, Static Analysis Testing will report an error and block the publishing of your app.
 ## Supported methods
@@ -10,9 +10,9 @@ Name | Description
 #### Description
 Enables an app to be alerted when it has reached 80% of its memory usage limit.
 #### Parameter
-Name | Type | Description
----|---|---
-enable | Boolean | A flag that enables or disables memory alerts on the app.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag that enables or disables memory alerts on the app.  |
 #### Return Values
 A flag indicating whether memory alerts have been enabled.
 ### GetMemoryLimitPercent() as Int
@@ -21,6 +21,7 @@ Returns the usage percentage of memory limit for the app.
 #### Return Values
 The usage percentage of memory limit for the app.
 #### Example
+
 ```
 m.port = CreateObject("roMessagePort")
 deviceInfo = CreateObject("roAppMemoryMonitor")
@@ -64,8 +65,8 @@ _Available since Roku OS 13.0_
 Returns the amount of foreground and background memory the app may use and the maximum amount of memory that the RokuOS may allocate on behalf of the app (the memory that shows up in the app's heap memory statistics). This helps developers debug memory issues and find out the maximum available memory for scenarios such as when their app has been suspended and is in the background, is playing a video, and so on.
 **Return Value**
 An roAssociativeArray that contains the following fields:
-Field | Kind | Description
----|---|---
-maxForegroundMemory | Integer | The maximum amount of memory that app could have when it is running in the foreground.
-maxBackgroundMemory | Integer | The maximum amount of memory that app could have when it is running in the background.
-maxRokuManagedHeapMemory | Integer | The maximum amount of memory that the RokuOS may allocate on behalf of the app that shows up in the app's heap memory stats.
+| Field  | Kind  | Description  |
+| --- | --- | --- |
+| maxForegroundMemory  | Integer  | The maximum amount of memory that app could have when it is running in the foreground.  |
+| maxBackgroundMemory  | Integer  | The maximum amount of memory that app could have when it is running in the background.  |
+| maxRokuManagedHeapMemory  | Integer  | The maximum amount of memory that the RokuOS may allocate on behalf of the app that shows up in the app's heap memory stats.  |

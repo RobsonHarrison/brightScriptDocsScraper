@@ -22,6 +22,7 @@ Apps using the [BrightScript roChannelStore node (SDK 1)](https://developer.roku
 #### SceneGraph ChannelStore node (SDK 2)
 To send a [**doOrder command**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#doorder) to upgrade or downgrade a plan with the SceneGraph ChannelStore node, follow these steps:
   1. Set the `order.action` field to `Upgrade` or `Downgrade` (the required values are case-sensitive; do not pass "upgrade" or "downgrade" in the `action` field).
+
 ```
 m.channelStore = CreateObject("roSGNode","ChannelStore")
 myOrder = CreateObject("roSGNode", "ContentNode")
@@ -33,6 +34,7 @@ myOrder.action = "Upgrade"
 ```
 
   2. Send a [**doOrder** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#doorder) to have the customer confirm the upgrade/downgrade.
+
 ```
 m.channelStore.command = "doOrder"
 
@@ -45,6 +47,7 @@ m.channelStore.command = "doOrder"
 #### BrightScript roChannelStore node (SDK 1)
 To call the [**SetOrder()** function](https://developer.roku.com/docs/references/brightscript/interfaces/ifchannelstore.md#setorderorder-as-object-orderinfo-as-object-as-void) to upgrade or downgrade a plan with the BrightScript roChannelStore node, follow these steps:
   1. Set the `orderInfo.action` field to `Upgrade` or `Downgrade` (the required values are case-sensitive; do not pass "upgrade" or "downgrade" in the `action` field).
+
 ```
 m.store = CreateObject("roChannelStore")​
 ' Populate myOrderItems
@@ -53,6 +56,7 @@ myOrderInfo.action = "Upgrade"
 ```
 
   2. Call the [**SetOrder()** function](https://developer.roku.com/docs/references/brightscript/interfaces/ifchannelstore.md#setorderorder-as-object-orderinfo-as-object-as-void) to have the customer confirm the upgrade/downgrade. The **myOrderItems** parameter specifies the in-channel product to which the customer is upgrading/downgrading; the **myOrderInfo** parameter whether the transaction is an upgrade or downgrade.
+
 ```
 m.store.setOrder(myOrderItems, myOrderInfo)
 
@@ -69,18 +73,19 @@ In order to support upgrade and downgrade transactions, the [**validate transact
   * **originalTransactionId** : The `OriginalTransactionId` field contains the new transaction ID generated for the upgraded/downgraded plan purchased.
   * **purchaseStatus** : The `purchase_status` field corresponds with definite states of the `isEntitled` and `cancelled` fields, as shown in the following chart:
 
-purchase_ status | isEntitled | cancelled
----|---|---
-Active | true | false
-Inactive | false | true
-Pending_Active | true | false
-Pending_Inactive | true | true
+| purchase_ status  | isEntitled  | cancelled  |
+| --- | --- | --- |
+| Active  | true  | false  |
+| Inactive  | false  | true  |
+| Pending_Active  | true  | false  |
+| Pending_Inactive  | true  | true  |
 Once an upgrade or downgrade has been completed on-device, apps should call the [**validate transaction** API](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#validate-transaction) with the transaction ID from the `purchaseid` field of the `doOrder` command to update their system.
 The API responses for the original purchase and upgrades/downgrades are as follows:
 #### Upgrades
 After an upgrade has been completed on-device, responses to [**validate transaction** API](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#validate-transaction) calls made with the transaction IDs of the original base plan and the upgrade will result in the following:
 **Original base plan purchase**. The `cancelled` field is set to true (no renewal will therefore happen); the `expirationDate` field remains unchanged.
 #### JSON
+
 ```
 {
    "errorCode":null,
@@ -114,6 +119,7 @@ After an upgrade has been completed on-device, responses to [**validate transact
 ```
 
 #### XML
+
 ```
 <result xmlns="http://api.roku.com/transaction" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
   <errorCode/>
@@ -150,6 +156,7 @@ In case of upgrades when _no_ free trial is offered with the upgrade subscriptio
 When a free trial _is_ offered with the upgrade subscription, the `purchase_status` of the original subscription becomes `pending_inactive`. Should the user cancel the upgrade subscription, the original subscription will be reinstated (but _will not renew_ after the entitlement period). Upon the first successful renewal of the upgraded subscription, the original subscription will be set to `Inactive`.
 **Upgrade plan purchase**. The `creditsApplied` field is set to the prorated balance from the base plan; the `expirationDate` is set to the applicable expiration date (for example, if a customer switched from a monthly to an annual plan, the expiration date would be set to one year later).
 #### JSON
+
 ```
 {
    "errorCode":null,
@@ -185,6 +192,7 @@ When a free trial _is_ offered with the upgrade subscription, the `purchase_stat
 ```
 
 #### XML
+
 ```
 <result xmlns="http://api.roku.com/transaction" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
   <errorCode/>
@@ -221,6 +229,7 @@ When a free trial _is_ offered with the upgrade subscription, the `purchase_stat
 After a downgrade has been completed on-device, responses to [**validate transaction** API](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#validate-transaction) calls made with the transaction IDs of the original plan and the downgrade will result in the following:
 **Original plan purchase**. The `cancelled` field is set to true (no renewal will therefore happen); the `expirationDate` field remains unchanged.
 #### JSON
+
 ```
 {
    "errorCode":null,
@@ -254,6 +263,7 @@ After a downgrade has been completed on-device, responses to [**validate transac
 ```
 
 #### XML
+
 ```
 <result xmlns="http://api.roku.com/transaction" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
   <errorCode/>
@@ -288,6 +298,7 @@ After a downgrade has been completed on-device, responses to [**validate transac
 
 **Downgrade plan purchase**. The `expirationDate` is based on that of the original plan; the `total` field is set to 0.00 because there is no actual charge. On the expiration date, the customer will be charged for the renewal of the downgraded plan.
 #### JSON
+
 ```
 {
    "errorCode":null,
@@ -324,6 +335,7 @@ After a downgrade has been completed on-device, responses to [**validate transac
 
 Since the "downgrade" subscription will be activated sometime in the future (i.e., the expiration date of the original plan), `purchase_status` status of the downgrade is set `pending_active`. The status will be set to `valid` at the time of activation.
 #### XML
+
 ```
 <result xmlns="http://api.roku.com/transaction" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
   <errorCode/>
@@ -360,13 +372,14 @@ Since the "downgrade" subscription will be activated sometime in the future (i.e
 When a customer upgrades or downgrades a subscription, a new purchase is made and the original one is cancelled. As a result, a pair of push notifications are sent: a sale for the new transaction (`UpgradeSale` or `DowngradeSale`), and a cancellation for the original transaction (`UpgradeCancellation` or `DowngradeCancellation`).
 The `transactionType` field in the push notification indicates the upgrade/downgrade event associated with the notification. This makes it easy to identify the reason for purchases and cancellations related to upgrades/downgrades.
 For example, if a customer upgrades from a monthly to an annual subscription, the following two notifications are sent: (1) an `UpgradeSale`notification for the purchase of the annual subscription, and (2) an `UpgradeCancellation` notification for the cancellation of the monthly subscription. The following table summarizes the transaction types for the notifications sent for upgrades and downgrades.
-| Transaction Type |
----|---|---
-**Action** | **Sale** | **Cancellation**
-**Upgrade** | UpgradeSale | UpgradeCancellation
-**Downgrade** | DowngradeSale | DowngradeCancellation
+|   | Transaction Type  |   |
+| --- | --- | --- |
+| **Action**  | **Sale**  | **Cancellation**  |
+| **Upgrade**  | UpgradeSale  | UpgradeCancellation  |
+| **Downgrade**  | DowngradeSale  | DowngradeCancellation  |
 The following sample demonstrates an **UpgradeSale** notification:
 #### JSON
+
 ```
 {
    "customerId":"ab080b5f1c5650d9ae0d7f595d0be886",
@@ -391,6 +404,7 @@ The following sample demonstrates an **UpgradeSale** notification:
 ```
 
 #### XML
+
 ```
 <result xmlns="http://api.roku.com/transaction" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <customerId>ab080b5f1c5650d9ae0d7f595d0be886</customerId>

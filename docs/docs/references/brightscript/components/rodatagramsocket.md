@@ -3,6 +3,7 @@ The roDataGramSocket component enables Brightscript apps to send and receive UDP
 This object is created without any arguments:
 `CreateObject("roDataGramSocket")`
 **Example**
+
 ```
 ' UDP 2-way peer-to-peer asynchronous comm on port 54321
 ' periodically sends out a message to a specific address and port

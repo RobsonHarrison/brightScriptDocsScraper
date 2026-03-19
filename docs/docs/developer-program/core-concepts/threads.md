@@ -36,6 +36,7 @@ Avoid excessive rendezvous to improve app performance. It is better to build an 
 ### Task node objects ownership
 Since Task nodes are owned by the Render thread, setting Task node fields from a Task thread happens via rendezvous, and all observer callbacks on the fields are executed in the Render thread. The only case where observer callbacks are executed in a Task thread is if the observed field is in a node object owned by the Task thread.
 #### Render Thread
+
 ```
 my_task = CreateObject("roSGNode", "MyTask")
 # setting fields from the Render thread WILL NOT rendezvous
@@ -46,6 +47,7 @@ my_task.ObserveField("my_field", "OnMyFieldChanged")
 ```
 
 #### Task Thread
+
 ```
 # setting fields from the Task thread WILL rendezvous
 m.top.my_field = "some value"

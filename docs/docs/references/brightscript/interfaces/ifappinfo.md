@@ -1,8 +1,8 @@
 # ifAppInfo
 ## Implemented by
-Name | Description
----|---
-[roAppInfo](https://developer.roku.com/docs/references/brightscript/components/roappinfo.md) | Returns information about the application
+| Name  | Description  |
+| --- | --- |
+| [roAppInfo](https://developer.roku.com/docs/references/brightscript/components/roappinfo.md)  | Returns information about the application  |
 ## Supported methods
 ### GetID() As String
 #### Description
@@ -34,8 +34,8 @@ App's Developer ID
 #### Description
 Returns the named manifest value, or an empty string if the entry is does not exist.
 #### Parameters
-Name | Type | Description
----|---|---
-Key | String | The manifest value to be returned.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| Key  | String  | The manifest value to be returned.  |
 #### Return Value
 Manifest value; empty string

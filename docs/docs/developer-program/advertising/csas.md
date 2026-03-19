@@ -3,6 +3,7 @@ You can combine video content and ad pods into a single playlist and then render
 ## Creating a stitched stream
 Once you have [enabled the RAF library](https://developer.roku.com/docs/developer-program/advertising/integrating-roku-advertising-framework.md) in the manifest and [instantiated it](https://developer.roku.com/docs/developer-program/advertising/raf-api.md#roku_ads-as-object) in the app, you can create a stitched stream using the [**constructStitchedStream**()](https://developer.roku.com/docs/developer-program/advertising/raf-api.md#constructstitchedstreamcontentmetadata-as-object-ads-as-object-as-object) method. This method takes two parameters: a ContentNode with the content metadata of the video to be played, and the ads in the ad pod to be rendered during playback (retrieved via the RAF [**GetAds()** method](https://developer.roku.com/docs/developer-program/advertising/raf-api.md#getadsmsg-as-string-as-object)). The method returns a single playlist, which you can then render as described in the next section.
 The following code example demonstrates how to create a stitched stream:
+
 ```
 screen = CreateObject("roSGScreen")
 scene = screen.CreateScene("MainScene")
@@ -38,6 +39,7 @@ csasStream = m.adIface.constructStitchedStream(myContentNode, m.adPods)
 
 ## Rendering a stitched stream
 You can render a stitched stream using the [**renderStitchedStream()**](https://developer.roku.com/docs/developer-program/advertising/raf-api.md#renderstitchedstreamcsasstream-as-object-view-as-object-as-boolean) method. This method takes the playlist created via the [**constructStitchedStream()**](https://developer.roku.com/docs/developer-program/advertising/raf-api.md#constructstitchedstreamcontentmetadata-as-object-ads-as-object-as-object) method and a renderable node to which the stitched stream can be attached.
+
 ```
 ' render the stitched stream
 m.adIface.renderStitchedStream(csasStream, scene)

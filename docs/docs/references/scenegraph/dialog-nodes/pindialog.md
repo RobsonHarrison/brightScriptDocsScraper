@@ -7,11 +7,11 @@ The PinDialog node class allows you to add a title (by setting the Dialog node t
 Typically, you will want to set the Dialog node title field to prompt the user to enter a PIN, and add "OK" and "Cancel" buttons by setting the Dialog node buttons field to [ "OK", "Cancel" ], then observe the Dialog node buttonSelected field to react when the user presses one of those buttons. At any time, the PinDialog node pin field can be accessed to obtain the PIN value entered by the user.
 The PinDialog node displays a privacy hint at the bottom of the dialog instructing the user how to show/hide the PinPad node focus indicator with the Options remote key. This provides more privacy for the user when entering a PIN. You should not override this default behavior of the Options remote key in the PinDialog node.
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-pin | string | "" | READ_WRITE | Can be used to explicitly set the internal PinPad node PIN value, as well as to access the PIN value entered by the user
-pinPad | PinPad node | system default | READ_ONLY | Provides access to the PinDialog node internal PinPad node. The field is read-only, but the fields of the PinPad node it refers to can be read and written, allowing you to fully customize the PinPad node appearance and behavior
-privacyHintColor | color | system default | READ_WRITE | When set, the color of the privacy hint shown at the bottom of the dialog
-pinPadFocused | boolean | true | READ_WRITE | Specifies whether or not PinPad will be focused when PinDialog is created
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| pin  | string  | ""  | READ_WRITE  | Can be used to explicitly set the internal PinPad node PIN value, as well as to access the PIN value entered by the user  |
+| pinPad  | PinPad node  | system default  | READ_ONLY  | Provides access to the PinDialog node internal PinPad node. The field is read-only, but the fields of the PinPad node it refers to can be read and written, allowing you to fully customize the PinPad node appearance and behavior  |
+| privacyHintColor  | color  | system default  | READ_WRITE  | When set, the color of the privacy hint shown at the bottom of the dialog  |
+| pinPadFocused  | boolean  | true  | READ_WRITE  | Specifies whether or not PinPad will be focused when PinDialog is created  |
 ## Sample app
 [PinDialogExample](https://github.com/rokudev/samples/tree/master/ux%20components/dialogs/PinDialogExample) is a sample app demonstrating PinDialog in action.

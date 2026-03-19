@@ -11,22 +11,23 @@ Roku sends email notifications prompting the customer to update their MOP or man
 Publishers can use the Roku Pay APIs to check whether a subscription is current, on hold, or canceled. The [ChannelStore API](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases) can be used to check the subscription status client-side upon app launch and then block access to content based on the results; the [Roku Pay web service APIs](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md) can be used server-side for regular nightly syncs to update the publisher's entitlement service.
 ### ChannelStore API
 When customers launch an app, the app should call the ChannelStore [getAllPurchases](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases) API, as part of the required on-device authentication, to determine whether to block access to content. The [getAllPurchases](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases) API returns an **inDunning** flag that can be used along with the **status** field to get the status of a subscription:
-Subscription state | **"inDunning"** | **"status"**
----|---|---
-Current | false | Valid
-In recovery (3-day grace period) | true | Valid
-Canceled | false | Invalid
+| Subscription state  | **"inDunning"**  | **"status"**  |
+| --- | --- | --- |
+| Current  | false  | Valid  |
+| In recovery (3-day grace period)  | true  | Valid  |
+| Canceled  | false  | Invalid  |
 ### Roku Pay web service APIs
 The publisher should routinely synchronize their entitlement service with the Roku Pay web services to make sure their system has up-to-date entitlement data. Publishers can call the [validate-transaction API](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#managing-subscription-recovery) as part of a nightly batch routine to get the updated status of customers' subscriptions. This API returns an **isEntitled** flag that can be used along with the **expirationDate** field and **cancelled** flag to get the status of a subscription:
-Subscription state | **"isEntitled"** | **"expirationDate"** | **"cancelled"**
----|---|---|---
-Current | true | future date | false
-In recovery (3-day grace period) | true | current or past date | false
-Canceled | false | past date | true
+| Subscription state  | **"isEntitled"**  | **"expirationDate"**  | **"cancelled"**  |
+| --- | --- | --- | --- |
+| Current  | true  | future date  | false  |
+| In recovery (3-day grace period)  | true  | current or past date  | false  |
+| Canceled  | false  | past date  | true  |
 > **Free trials:** When a free trial ends and the customer's method of payment fails, the `is_entitled` flag is set to "false", and the subscription is automatically cancelled (there is no grace period in this case).
 ## Push notifications
 Roku Pay sends a [GraceInitiated push notification](https://developer.roku.com/docs/developer-program/roku-pay/implementation/push-notifications.md#in-grace-period) when a subscription is put on hold, it sends a [GraceRecovered](https://developer.roku.com/docs/developer-program/roku-pay/implementation/push-notifications.md#in-grace-period) notification when the subscription is recovered (renewed after being put in a grace period):
 ### GraceInitiated
+
 ```
 {
     "customerId": "9aa37bd6f970578294cea4783af08560",
@@ -47,6 +48,7 @@ Roku Pay sends a [GraceInitiated push notification](https://developer.roku.com/d
 ```
 
 ### GraceRecovered
+
 ```
     "customerId": "9d425957549250dcba71e03dacf426b5",
     "transactionType": "GraceRecovered",

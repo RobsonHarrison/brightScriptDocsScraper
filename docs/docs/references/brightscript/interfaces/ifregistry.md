@@ -1,12 +1,13 @@
 # ifRegistry
 ## Implemented by
-Name | Description
----|---
-[roRegistry](https://developer.roku.com/docs/references/brightscript/components/roregistry.md "roRegistry") | The Registry is an area of non-volatile storage where a small number of persistent settings can be stored
+| Name  | Description  |
+| --- | --- |
+| [roRegistry](https://developer.roku.com/docs/references/brightscript/components/roregistry.md "roRegistry")  | The Registry is an area of non-volatile storage where a small number of persistent settings can be stored  |
 ## Supported methods
 ### GetSpaceAvailable() as Integer
 #### Description
 Returns the number of bytes available in the app's device registry (32K). This function can be used, for example, to check the remaining space and remove older entries before writing newer ones. The following code demonstrates how to do this:
+
 ```
 registry = CreateObject("roRegistry")
 buffer = 512 ' arbitrary limit based on the app
@@ -27,9 +28,9 @@ An roList with one entry for each registry section. Each registry section is an 
 #### Description
 Deletes the specified registry section.
 #### Parameters
-Name | Type | Description
----|---|---
-section | String | The registry section to be deleted.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| section  | String  | The registry section to be deleted.  |
 #### Return Value
 A flag indicating whether the registry section was successfully deleted.
 ### Flush() as Boolean

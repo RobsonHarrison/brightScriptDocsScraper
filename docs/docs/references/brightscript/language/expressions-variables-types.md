@@ -9,6 +9,7 @@ Identifiers (names of variables, functions, labels, or object member functions o
   * If a variable: may end with an optional type designator character ($ for string, % for integer, ! for float, # for double) (function names do not support a type designator character).
 
 For example:
+
 ```
 a
 boy5
@@ -70,6 +71,7 @@ Type **Function** : e.g. MyFunction
 ### Array literals
 The Array Operator [ ] can be used to declare an array. It may contain literals (constants), or expressions.
 **Example**
+
 ```
 myarray = [] ' empty array
 
@@ -81,6 +83,7 @@ myarray = [ x+5, true, 1<>2, ["a","b"] ] ' array of four members
 
 Arrays can be specified in multi-line form:
 **Example**
+
 ```
 a = [
 
@@ -93,6 +96,7 @@ a = [
 ```
 
 **OR**
+
 ```
 a = [
 
@@ -107,6 +111,7 @@ a = [
 ### Associative array literals
 The { } operator can be used to define an Associative Array. It can contain literals or expressions.
 **Example**
+
 ```
 aa = { }
 
@@ -117,6 +122,7 @@ aa = { key1: "value", key2: 55, key3: 5+3 }
 Key names must be valid identifiers.
 Key names can be specified as string literals.
 **Example**
+
 ```
 aa = { "Jane Doe": 1001, "John Doe": 1002 }
 
@@ -124,6 +130,7 @@ aa = { "Jane Doe": 1001, "John Doe": 1002 }
 
 Associative Arrays can be specified in multi-line form:
 **Example**
+
 ```
 aa = {
 
@@ -136,6 +143,7 @@ Myval1: "the value"
 ```
 
 **OR**
+
 ```
 aa = {
 
@@ -149,6 +157,7 @@ zulu: 26
 
 ## Dynamic vs. object types
 Certain functions that return objects can also return invalid (for example, in the case when there is no object to return). In which case, the variable accepting the result must be dynamic, since it may get "invalid" or it may get an "object".
+
 ```
 l=[]
 a$=l.pop()
@@ -158,13 +167,13 @@ a$=l.pop()
 This example will return a type mismatch (a$ is a string, and can not contain "invalid"). Many functions that return objects can return invalid as well.
 ## Type declaration characters
 A type declaration character may be used at the end of either a variable or a literal to fix its type. Variables with the same identifier but separate types are separate variables. For example, a, a$, and a% are all different variables.
-Character | Type | Examples | Notes
----|---|---|---
-$ | String | A$, STR$ |
-% | Integer | A%, SUM%, 125% |
-! | Float | A!, value!, 125! | Single-precision
-# | Double | A#, distance#, 125# | Double-precision
-& | LongInteger | A&, ID& | _This is available in Roku OS 7.0 or later._
+| Character  | Type  | Examples  | Notes  |
+| --- | --- | --- | --- |
+| $  | String  | A$, STR$  |   |
+| %  | Integer  | A%, SUM%, 125%  |   |
+| !  | Float  | A!, value!, 125!  | Single-precision  |
+| #  | Double  | A#, distance#, 125#  | Double-precision  |
+| &  | LongInteger  | A&, ID&  | _This is available in Roku OS 7.0 or later._  |
 ## Type conversion (promotion)
 When operations are performed on one or two numbers, the result must be typed as integer, double or single-precision (float). When a +, -, or * operation is performed, the result will have the same degree of precision as the most precise operand. For example, if one operand is integer, and the other double-precision, the result will be double precision. Only when both operands are integers will a result be integer.
 Division follows the same rules as +, * and -, except that it is never done at the integer level: when both operators are integers, the operation is done as float with a float result.
@@ -175,22 +184,23 @@ When a number is converted from double to single precision, it is "4/5 rounded" 
 When a single precision number is converted to double precision, only the seven most significant digits will be accurate.
 ## Operators
 Operations in the innermost level of parentheses are performed first, and then evaluation proceeds according to the precedence in the following table. Operations on the same precedence are left associative, except for exponentiation, which is right associative.
-() | Function call, or parentheses
----|---
-. | Dot operator
-[ ] | Array operator
-"?.", "?@", "?[", "?(" | Optional chaining operators
-^ | Exponentiation
-– , + | Negation (unary)
-* , / , MOD, \ | Multiplicative operators
-– , + | Additive operators
-<<, >> | Integer bitshift operators
-<, >, = , <>, <=, >= | Comparisons
-NOT | Unary logical NOT or bitwise
-AND | Logical or bitwise
-OR | Logical or bitwise
+| ()  | Function call, or parentheses  |
+| --- | --- |
+| .  | Dot operator  |
+| [ ]  | Array operator  |
+| "?.", "?@", "?[", "?("  | Optional chaining operators  |
+| ^  | Exponentiation  |
+| – , +  | Negation (unary)  |
+| * , / , MOD, \  | Multiplicative operators  |
+| – , +  | Additive operators  |
+| <<, >>  | Integer bitshift operators  |
+| <, >, = , <>, <=, >=  | Comparisons  |
+| NOT  | Unary logical NOT or bitwise  |
+| AND  | Logical or bitwise  |
+| OR  | Logical or bitwise  |
 ### Function call operator
 The function call operator "( )" can be used to call a function. When used on a function name, function literal, or variable containing a function reference, it calls the function.
+
 ```
 function five() as Integer
 
@@ -213,6 +223,7 @@ print array[1]()
 ### Dot operator
 The dot operator can be used on any BrightScript Component. It also has special meaning when used on any roAssociativeArray, roXMLElement or roXMLList. When used on a BrightScript Component, it refers to an interface or a member function.
 **Example**
+
 ```
 i = CreateObject("roInt")
 
@@ -225,6 +236,7 @@ i.SetInt(5)
 "ifInt" is the interface, and "SetInt" is the member function. Every member function of a BrightScript Component is part of an interface. However, specifying the interface with the dot operator is optional. If it is left out, as in the last line of the example above, each interface in the object is searched for the member function. If there is a conflict (a member function with the same name appearing in two interfaces), then the interface should be specified.
 When the dot operator is used on an Associative Array, it is the same as calling the Lookup() or AddReplace() member of the AssociativeArray Object. However the dot operator's parameters are set at compile time – they are not dynamic (unlike the Lookup() or AddReplace() functions).
 **Example**
+
 ```
 aa = CreateObject("roAssociativeArray")
 
@@ -235,18 +247,21 @@ print aa.newkey ' same as: print aa.Lookup("newkey")
 ```
 
 When used for lookups, the dot operator is always case insensitive, even if ifAssociativeArray.SetModeCaseSensitive() has been called. By convention, a statement like:
+
 ```
 aa.NewKey = 55
 
 ```
 
 will actually create the Associative Array entry in all lower case ("newkey"). Similarly, an AssociativeArray literal like this will also create the entry in lower case:
+
 ```
 aa = { NewKey: 55 }
 
 ```
 
 To create mixed case keys, use the array operator or the ifAssociativeArray.AddReplace method:
+
 ```
 aa["NewKey"] = 55
 
@@ -257,6 +272,7 @@ aa.AddReplace("NewKey", 55)
 See the section on XML support for details on using the dot operator on xml objects.
 ### Array operator
 The "[ ]" operator is used to access an Array (any BrightScript Component that has an "ifArray" interface, such as roArray and roList). It can also be used as a synonym for the dot operator to access an AssociativeArray (except that the dot operator is case insensitive as described above).
+
 ```
 array = CreateObject("roArray", 10, true)
 
@@ -273,6 +289,7 @@ print aa["newkey"]
 ```
 
 The "[ ]" operator takes expressions that are evaluated at runtime and so is different than the dot operator in this way. Thus the "[ ]" operator can be used in situations where dot cannot, such as when the value of the index contains a character which is invalid in a variable name.
+
 ```
 aa = {}
 
@@ -286,6 +303,7 @@ aa["name with spaces"] = 2 ' cannot do this with dot operator
 
 Arrays in BrightScript are one dimensional. Multi-dimensional arrays are implemented as arrays of arrays. The "[ ]" operator will automatically map a list of indexes separated by commas to the appropriate sequence of indexing. For example, the following two expressions to fetch "item" are the same:
 **Example**
+
 ```
 dim array[5,5,5]
 
@@ -302,6 +320,7 @@ Developers can use optional chaining operators, "?.", "?@", "?[", and "?(", in t
 #### Example
 The following example demonstrates how the BrightScript optional chaining operators enable developers to write concise expressions when accessing chained properties that may contain a missing reference. The following example attempts to call the `bar()` method of the `foo` member nested at index 3. With the optional chaining operators, this validation can be done in a single line of code; otherwise, it requires many additional lines.
 ##### With optional chaining operators
+
 ```
 x = array?[3]?.foo?.bar?()
 
@@ -309,6 +328,7 @@ x = array?[3]?.foo?.bar?()
 
 In this example, the `?` variant checks whether the left-hand side of the expression is `invalid`. It returns `invalid` as the result instead of giving an error.
 ##### No optional chaining operators
+
 ```
 IF array <> invalid THEN
     el = array[3]
@@ -338,6 +358,7 @@ END IF
   * The `invalid` value and its boxed version, `CreateObject("roInvalid")`, are both treated as invalid; however, no other values are.
 
   * The new operators only check whether the left-hand of the expression is `invalid`. It does not check for any other errors. For example, the following statements will still throw exceptions:
+
 ```
   s = "Hello"
   a = [1,2,3]
@@ -349,6 +370,7 @@ END IF
 ```
 
   * The `?[` and `?(` operators support short-circuiting. If the left-hand of the expression is `invalid`, the terms on the right side are not evaluated.
+
 ```
   FUNCTION explode() : THROW "Kaboom!" : END FUNCTION
   i = invalid
@@ -358,12 +380,14 @@ END IF
 ```
 
   * An `invalid` value is not considered false. The following code fails:
+
 ```
   IF aa?.foo THEN ...              ' Throws exception if aa is invalid
 
 ```
 
 This code should be written as follows:
+
 ```
   IF aa?.foo <> invalid THEN ...   ' Test if aa.foo exists
   IF aa?.foo = TRUE     THEN ...   ' Test if aa.foo is present and true
@@ -373,6 +397,7 @@ This code should be written as follows:
 
 #### Support details
   * The optional chaining operators are only supported in the context of expressions. They cannot be used directly in a standalone function call or as the target of an assignment:
+
 ```
   x = array?[12]                  ' Supported
   array?[12] = x                  ' Not supported
@@ -382,6 +407,7 @@ This code should be written as follows:
 ```
 
 However, the optional chaining operators may be used in an expression that occurs _within_ a standalone function call or assignment target:
+
 ```
   f(array?[12])                   ' Supported
   f(foo?.bar).member = 5          ' Supported
@@ -389,6 +415,7 @@ However, the optional chaining operators may be used in an expression that occur
 ```
 
   * The `?.` operator does not work with interface names:
+
 ```
   a = [1,2,3]
   PRINT a.ifArray.count()   ' Prints 3
@@ -399,6 +426,7 @@ However, the optional chaining operators may be used in an expression that occur
 ```
 
   * The `?(` operator does not work on built-in or global functions:
+
 ```
   PRINT TYPE("Hello")       ' Prints String
   PRINT TYPE?("Hello")      ' Compile-time error; misuse of the keyword TYPE
@@ -408,6 +436,7 @@ However, the optional chaining operators may be used in an expression that occur
 ```
 
   * In BrightScript, `?` is also an alias for `PRINT` . For backwards compatibility, the following statements are still supported:
+
 ```
   ?("Hello")                ' Prints Hello
   ?.1                       ' Prints 0.1
@@ -415,6 +444,7 @@ However, the optional chaining operators may be used in an expression that occur
 ```
 
 However, the following syntax is no longer supported:
+
 ```
   ' Previously:
   x = TRUE
@@ -441,6 +471,7 @@ x / y, x MOD y, and x \ y will all generate a runtime error if y is zero.
 If x and y are integer, float or double, x+y evaluates to their arithmetic sum and x-y evaluates to their difference. If x and y are strings, x+y is the concatenation of x and y.
 ### Increment and decrement operators
 Increment (++) and decrement (–) operators are available to allow integer increment and decrement to have effect on a variable. A few examples:
+
 ```
 x=1
 x++
@@ -462,6 +493,7 @@ The following assignment operators are available to support mathematical and bit
   * >>=
 
 A few examples:
+
 ```
 x=1
 x+=1
@@ -494,6 +526,7 @@ x>>=4
 Given a number value, evaluated as an integer, and a shift value in the integer range 0..32, returns the integer value bitshifted accordingly.
 A runtime error is generated if the shift value is out of range.
 Example:
+
 ```
 print 2 << 10 '= 2048
 
@@ -504,17 +537,18 @@ print 7 >> 1 '= 3
 Right shifting treats the value as an unsigned integer, e.g. &hFFFFFFFF >> 1 is equal to &h7FFFFFFF.
 ### Comparison operators
 This table describes the comparison operators. All operate on either numeric values (integer, float or double) or strings.
-Operator | Numeric | String
----|---|---
-A = B | true if A equals B | true if strings A and B are identical
-A <> B | true if A is not equal to B | true if strings A and B are different
-A < B | true if A is less than B | true if string A is lexically less than string B
-A <= B | true if (A < B) or (A = B) | true if (A < B) or (A = B)
-A > B | true if A is greater than B | true if string A is lexically greater than string B
-A >= B | true if (A > B) or (A = B) | true if (A > B) or (A = B)
+| Operator  | Numeric  | String  |
+| --- | --- | --- |
+| A = B  | true if A equals B  | true if strings A and B are identical  |
+| A <> B  | true if A is not equal to B  | true if strings A and B are different  |
+| A < B  | true if A is less than B  | true if string A is lexically less than string B  |
+| A <= B  | true if (A < B) or (A = B)  | true if (A < B) or (A = B)  |
+| A > B  | true if A is greater than B  | true if string A is lexically greater than string B  |
+| A >= B  | true if (A > B) or (A = B)  | true if (A > B) or (A = B)  |
 That string comparisons are case sensitive. For example, ("one" = "One") evaluates to false.
 ### Logical and bitwise operators
 AND, OR and NOT can be used both for constructing logical (Boolean) expressions and for bit manipulation. If the arguments to these operators are Boolean, then they perform a logical operation. If the arguments are numeric, they perform bitwise operations.
+
 ```
 x = 1 and 2 ' x is zero
 
@@ -525,12 +559,14 @@ if a = c and not (b > 40) then print "success"
 ```
 
 When AND and OR are used for logical operations, the clauses are evaluated from left to right, and only the necessary amount of the expression is executed (a feature sometimes called "minimal evaluation" or "short-circuit evaluation"). For example:
+
 ```
 if true or func()=0 then print "ok"
 
 ```
 
 The above statement will print "ok" but will not call func, since the expression is true no matter what func returns. On the other hand
+
 ```
 if false or func()=0 then print "ok"
 
@@ -538,12 +574,14 @@ if false or func()=0 then print "ok"
 
 will call func and print ok only if func returns a value of zero.
 This feature can be used to write statements such as
+
 ```
 if count > 0 and (total / count) > 33 then ...
 
 ```
 
 Because of minimal evaluation, this will work correctly even when count is zero, while the following similar expression would not:
+
 ```
 if (total / count) > 33 and count > 0 then ... ' runtime error when count = 0
 
@@ -551,6 +589,7 @@ if (total / count) > 33 and count > 0 then ... ' runtime error when count = 0
 
 ### = operator
 "=" is used for both assignment and comparison.
+
 ```
 a=5
 

@@ -161,6 +161,7 @@ You can download and install a [sample app](https://github.com/rokudev/samples/t
 The new version of the **DoOrder** API uses Roku's generic request framework, which enables developers to pass the ChannelStore command, parameters, and context into a single **request** object (an associative array). The result of the request is encapsulated in a **requestStatus** object (also an associative array), which includes the status of the request and the data returned by it. Channels must observe the **requestStatus** field to be notified of changes and fire a callback function to parse and process the Channel Store API commands.
 ### Generic Framework Request Status
 The **requestStatus** object returned by the ChannelStore generic request framework is an **roAssociativeArray** that has the following hierarchy. Observe that the products, purchase options, and entitlements returned by the ChannelStore commands are encapsulated in a nested **result.result** associative array.
+
 ```
    "requestStatus": {
        "command": "DoOrder",
@@ -197,12 +198,13 @@ The **requestStatus** object returned by the ChannelStore generic request framew
 
 ```
 
-Field | Type | Description
----|---|---
-requestStatus | associative array | Returns the request's command and parameters:  | Field | Type | Description
----|---|---
-command | string | Set to the name of the command, which is "DoOrder".
-status | associative array | The command completion status, which may be one of the following values:
+| Field  | Type  | Description  |
+| --- | --- | --- |
+| requestStatus  | associative array  | Returns the request's command and parameters:
+ | Field  | Type  | Description  |
+| --- | --- | --- |
+| command  | string  | Set to the name of the command, which is "DoOrder".  |
+| status  | associative array  | The command completion status, which may be one of the following values:
 
   * **2** Interrupted
   * **1** Success
@@ -212,23 +214,27 @@ status | associative array | The command completion status, which may be one of 
   * **-3** Unknown Error
   * **-4** Invalid
 
-statusMessage | string | A text description of the command completion status.
-context | associative array | Used to match the **requestStatus** with **request**. For example, you can set this to {"id: DoOrder_1"}.
-result | associative array | Includes the product, purchase option, purchase, and/or entitlement data returned by the command.
+ |
+| statusMessage  | string  | A text description of the command completion status.  |
+| context  | associative array  | Used to match the **requestStatus** with **request**. For example, you can set this to {"id: DoOrder_1"}.  |
+| result  | associative array  | Includes the product, purchase option, purchase, and/or entitlement data returned by the command.  |
+ |
 ### DoOrder
 Displays the Roku Pay order confirmation screen, which is populated with information about the current order (product, name, and price). The customer can then either approve and complete the purchase, or cancel the purchase.
 ![roku815px - tvod-sample-UI](https://image.roku.com/ZHZscHItMTc2/tvod-buy-2.jpg)
 #### request
-Field | Type | Description
----|---|---
-request | associative array | Includes the request's command and parameters:  | Field | Type | Description
----|---|---
-command | string | Set to "DoOrder".
-params | associative array | Include the following key-value pairs:
-| Field | Type | Description
----|---|---
-version | integer | Set to 2
-orderItems | roArray of roAssociativeArray | The list of purchase options the customer has selected. For TVOD transactions, each orderItem must have the following fields (optional fields are denoted):
+| Field  | Type  | Description  |
+| --- | --- | --- |
+| request  | associative array  | Includes the request's command and parameters:
+ | Field  | Type  | Description  |
+| --- | --- | --- |
+| command  | string  | Set to "DoOrder".  |
+| params  | associative array  | Include the following key-value pairs:
+
+ | Field  | Type  | Description  |
+| --- | --- | --- |
+| version  | integer  | Set to 2  |
+| orderItems  | roArray of roAssociativeArray  | The list of purchase options the customer has selected. For TVOD transactions, each orderItem must have the following fields (optional fields are denoted):
 
   * **sku** (string): The developer-specified SKU for the selected purchase option. For TVOD purchases, a single consumable purchase option is used for all order items.
   * **orderType** (string): Must be set to "TVOD".
@@ -239,12 +245,16 @@ orderItems | roArray of roAssociativeArray | The list of purchase options the cu
   * **couponCode** (string): An alphanumeric string entered by the customer to receive a discounted price on the TVOD order items.
   * **qty** (integer): The quantity of the item to be purchased, which should be 1 for most TVOD transactions.
 
+ |
+ |
+ |
 #### requestStatus.result
-Field | Type | Description
----|---|---
-result | associative array |  | Field | Type | Description
----|---|---
-purchases | roArray of roAssociativeArrays | Includes the purchase data returned by the DoOrder command. Each purchase includes the following set of key-value pairs:
+| Field  | Type  | Description  |
+| --- | --- | --- |
+| result  | associative array  |
+ | Field  | Type  | Description  |
+| --- | --- | --- |
+| purchases  | roArray of roAssociativeArrays  | Includes the purchase data returned by the DoOrder command. Each purchase includes the following set of key-value pairs:
 
   * **rokuCustomerId** (string): The Roku customer ID associated with the user.
   * **purchaseId** (string): The transaction ID generated for the purchase.
@@ -256,7 +266,9 @@ purchases | roArray of roAssociativeArrays | Includes the purchase data returned
   * **amount** (string): Localized amount of the item purchased (post transaction; with local currency symbol).
   * **qty** (integer): The quantity of the product purchased, which is typically 1 for TVOD purchases.
 
-status | enum | The command completion status, which may be one of the following values:
+ |
+ |
+| status  | enum  | The command completion status, which may be one of the following values:
 
   * **2** Interrupted
   * **1** Success
@@ -266,4 +278,5 @@ status | enum | The command completion status, which may be one of the following
   * **-3** Unknown Error
   * **-4** Invalid
 
-statusMessage | string | A text description of the command completion status.
+ |
+| statusMessage  | string  | A text description of the command completion status.  |

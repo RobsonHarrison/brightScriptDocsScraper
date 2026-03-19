@@ -6,19 +6,22 @@ When a customer uses their Roku remote control or Roku mobile app to enter or sa
 As of July 1, 2025, Roku supports only the JSON version of the Roku Search feed specification. Support for the legacy XML version has been sunset.
 ## JSON feed specification highlights
 The following table highlights the benefits of the JSON feed spec:
-**Format** | JSON
----|---
-**Multi-region support** | One feed for all regions.
+| **Format**  | JSON  |
+| --- | --- |
+| **Multi-region support**  | One feed for all regions.
 
-A single feed may include different languages, content availability windows, and rating systems for different regions.
-**Availability windows** | Supported
-**Multi-source support** | One feed for all content metadata sources
-**Content types supported** |
+A single feed may include different languages, content availability windows, and rating systems for different regions.  |
+| **Availability windows**  | Supported  |
+| **Multi-source support**  | One feed for all content metadata sources  |
+| **Content types supported**  |
   * movies
   * television episodes
   * short-form content
 
-**Aspect ratios for content posters and backgrounds** |
+ |
+| **Aspect ratios for content posters and backgrounds**  |
   * 16:9 (a 16:9 or 2:3 image for the content poster is required)
   * 2:3
   * 4:3
+
+ |

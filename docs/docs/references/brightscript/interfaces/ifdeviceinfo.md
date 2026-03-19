@@ -1,8 +1,8 @@
 # ifDeviceInfo
 ## Implemented by
-Name | Description
----|---
-[roDeviceInfo](https://developer.roku.com/docs/references/brightscript/components/rodeviceinfo.md) | The roDeviceInfo component provides an interface to obtain attributes about the device
+| Name  | Description  |
+| --- | --- |
+| [roDeviceInfo](https://developer.roku.com/docs/references/brightscript/components/rodeviceinfo.md)  | The roDeviceInfo component provides an interface to obtain attributes about the device  |
 ## Supported methods
 #### Device properties
 ### GetModel() as String
@@ -28,13 +28,13 @@ The device type, which may be one of the following values:
 Returns detailed information about the device model.
 #### Return Values
 An associative array containing the following information about the device model:
-Name | Type | Description
----|---|---
-VendorName | String | The model vendor.
-ModelNumber | String | The model number.
-VendorUSBName | String | The USB vendor.
-ScreenSize | String | The size of the Roku TV.
-Manufacturer | String | Manufacturer information.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| VendorName  | String  | The model vendor.  |
+| ModelNumber  | String  | The model number.  |
+| VendorUSBName  | String  | The USB vendor.  |
+| ScreenSize  | String  | The size of the Roku TV.  |
+| Manufacturer  | String  | Manufacturer information.  |
 ### GetFriendlyName() as String
 #### Description
 Returns a string describing the device that may be used for network device selection. The string is subject to change and should not be used as a persistent key or ID
@@ -45,12 +45,12 @@ A user-assigned device name or a description of the device such as model name an
 Returns an roAssociativeArray containing the **major** , **minor** , **revision** , and **build** numbers of the Roku OS running on the device.
 #### Return Values
 An roAssociativeArray containing the following fields:
-Name | Type | Description
----|---|---
-major | string | The major version number (for example, 9)
-minor | string | The minor version number (for example, 2)
-revision | string | The firmware revision number (for example, 6)
-build | string | The build number (for example, 4127)
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| major  | string  | The major version number (for example, 9)  |
+| minor  | string  | The minor version number (for example, 2)  |
+| revision  | string  | The firmware revision number (for example, 6)  |
+| build  | string  | The build number (for example, 4127)  |
 ### GetVersion() as String
 > **This method is deprecated**.
 > Developers must update their apps to use [GetOSVersion()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getosversion-as-object) method to get the current Roku OS version running on a device.
@@ -109,17 +109,17 @@ Returns the ISO 3166-1 (2-letter) country code associated with the user's Roku a
 #### Return Values
 An ISO 3166-1 (2-letter) country code.
 > If the app owner entered into an additional agreement to have the app published to a curated [Roku Powered Streaming Store](https://www.roku.com/roku-powered) instead of the user country, a Roku Powered Streaming Store Identifier will instead be returned:
-Roku Powered Streaming Store | Roku Powered Streaming Store Identifier | Country
----|---|---
-Econet | Econet | ZW
-Globe | globe | PH
-PLDT | PLDT | PH
-Sky Germany | skyde | DE
-Sky Spain | skyes | ES
-Sky Ireland | skyie | IE
-Sky Italy | skyit | IT
-Sky UK | skyuk | UK
-Telstra | Telstra | AU
+| Roku Powered Streaming Store  | Roku Powered Streaming Store Identifier  | Country  |
+| --- | --- | --- |
+| Econet  | Econet  | ZW  |
+| Globe  | globe  | PH  |
+| PLDT  | PLDT  | PH  |
+| Sky Germany  | skyde  | DE  |
+| Sky Spain  | skyes  | ES  |
+| Sky Ireland  | skyie  | IE  |
+| Sky Italy  | skyit  | IT  |
+| Sky UK  | skyuk  | UK  |
+| Telstra  | Telstra  | AU  |
 > A future enhancement to GetUserCountryCode() will return the 2-letter country code instead of the Roku Powered Streaming Store Identifier. It is therefore recommended that apps use both to avoid having to update later.
 ### GetRandomUUID() as String
 #### Description
@@ -162,9 +162,9 @@ A string representing the user's current system time zone setting. For example, 
 #### Description
 Checks if the current device/firmware supports the passed in feature string.
 #### Parameters
-Name | Type | Description
----|---|---
-feature | String | The feature to be checked, which may be one of the following values:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| feature  | String  | The feature to be checked, which may be one of the following values:
   * "5.1_surround_sound"
   * "can_output_5.1_surround_sound"
   * "sd_only_hardware"
@@ -177,6 +177,7 @@ feature | String | The feature to be checked, which may be one of the following 
   * "voice_remote" (). Checks whether a Roku device is paired with a Roku voice remote. This enables developers to tailor the in-app user experience for viewers with Roku voice remote controls.
   * "handsfree_voice" (). Checks whether a Roku device is paired with a hands-free Roku remote control such as the Roku Voice Remote Pro. This enables developers to tailor the in-app user experience for viewers with hands-free Roku remote controls (for example, displaying voice tips and tricks in the UI).
 
+ |
 > The "1080p_hardware" argument is deprecated. Apps should use the GetVideoMode() and CanDecodeVideo() functions instead
 #### Return Values
 A flag indicating whether the current device/firmware supports the passed in feature string.
@@ -185,78 +186,78 @@ A flag indicating whether the current device/firmware supports the passed in fea
 Gets the current locale value based on the user's language setting.
 #### Return Values
 A string representing the current locale based on the user's language setting. The string is an ISO 639-1 (2-letter) language code followed by an underscore and a ISO 3166-1 (2-letter) country code. This may be one of the following values:
-String | Locale
----|---
-"en_US" | US English
-"en_GB" | British English
-"en_CA" | Canadian English
-"en_AU" | Australian English
-"fr_CA" | Canadian French
-"es_ES" | International Spanish
-"es_MX" | Mexican Spanish
-"de_DE" | German
-"it_IT" | Italian
-"pt_BR" | Brazilian Portuguese
+| String  | Locale  |
+| --- | --- |
+| "en_US"  | US English  |
+| "en_GB"  | British English  |
+| "en_CA"  | Canadian English  |
+| "en_AU"  | Australian English  |
+| "fr_CA"  | Canadian French  |
+| "es_ES"  | International Spanish  |
+| "es_MX"  | Mexican Spanish  |
+| "de_DE"  | German  |
+| "it_IT"  | Italian  |
+| "pt_BR"  | Brazilian Portuguese  |
 ### GetCountryCode() as String
 #### Description
 Checks for the country code of the app.
 #### Return Values
 A value that indicates the Streaming Store associated with a user’s Roku account. Typically, the value returned will be an ISO 3166-1 (2-letter) country code representing the country. Alternatively, if the app owner entered into an additional agreement to have the app published to a curated [Roku Powered Streaming Store](https://www.roku.com/roku-powered) instead of the user country, then a Roku Powered Streaming Store Identifier will instead be returned. This may be one of the following values:
-Value | Country | Roku Powered Streaming Store (if applicable)
----|---|---
-"AR" | Argentina |
-"AU" | Australia |
-"BR" | Brazil |
-"CA" | Canada |
-"CL" | Chile |
-"CO" | Colombia |
-"CR" | Costa Rica |
-"DE" | Germany |
-"Econet" | Zimbabwe | Econet
-"FR" | France |
-"GB" | Great Britain and Northern Ireland |
-"globe" | Philippines | Globe
-"GT" | Guatemala |
-"HN" | Honduras |
-"IE" | Republic of Ireland |
-"MX" | Mexico |
-"OT" | Rest of World |
-"PA" | Panama |
-"PE" | Peru |
-"PLDT" | Philippines | PLDT
-"Telstra" | Australia | Telstra
-"skyde" | Germany | Sky Germany
-"skyes" | Spain | Sky Spain
-"skyie" | Ireland | Sky Ireland
-"skyit" | Italy | Sky Italy
-"skyuk" | United Kingdom | Sky UK
-"SV" | El Salvador |
-"US" | United States |
+| Value  | Country  | Roku Powered Streaming Store (if applicable)  |
+| --- | --- | --- |
+| "AR"  | Argentina  |   |
+| "AU"  | Australia  |   |
+| "BR"  | Brazil  |   |
+| "CA"  | Canada  |   |
+| "CL"  | Chile  |   |
+| "CO"  | Colombia  |   |
+| "CR"  | Costa Rica  |   |
+| "DE"  | Germany  |   |
+| "Econet"  | Zimbabwe  | Econet  |
+| "FR"  | France  |   |
+| "GB"  | Great Britain and Northern Ireland  |   |
+| "globe"  | Philippines  | Globe  |
+| "GT"  | Guatemala  |   |
+| "HN"  | Honduras  |   |
+| "IE"  | Republic of Ireland  |   |
+| "MX"  | Mexico  |   |
+| "OT"  | Rest of World  |   |
+| "PA"  | Panama  |   |
+| "PE"  | Peru  |   |
+| "PLDT"  | Philippines  | PLDT  |
+| "Telstra"  | Australia  | Telstra  |
+| "skyde"  | Germany  | Sky Germany  |
+| "skyes"  | Spain  | Sky Spain  |
+| "skyie"  | Ireland  | Sky Ireland  |
+| "skyit"  | Italy  | Sky Italy  |
+| "skyuk"  | United Kingdom  | Sky UK  |
+| "SV"  | El Salvador  |   |
+| "US"  | United States  |   |
 > This does not necessarily match the physical location of the device, nor does it necessarily match the last two letters of the current locale string.
 ### GetPreferredCaptionLanguage() as String
 #### Description
 Checks the two-letter ISO 639-1 language terminology code of the preferred caption language set on the Roku device.
 #### Return Values
 The two-letter ISO 639-1 language terminology code, which may be one of the following values:
-Language | Code
----|---
-English | en
-Spanish | sp
-French | fr
-German | de
-Italian | it
-Portuguese | Pt
-Russian | ru
-Turkish | tr
-Polish | Pl
-Ukranian | uk
-Romanian | Rm
-Dutch | nl
-Croatian | hr
-Hungarian | hu
-Greek | el
-Czech | cs
-Swedish | sv
+| Language  | Code  |
+| --- | --- |
+| English  | en  |
+| Spanish  | sp  |
+| French  | fr  |
+| German  | de  |
+| Italian  | it  |
+| Portuguese  | Pt  |
+| Russian  | ru  |
+| Turkish  | tr  |
+| Polish  | Pl  |
+| Ukranian  | uk  |
+| Romanian  | Rm  |
+| Dutch  | nl  |
+| Croatian  | hr  |
+| Hungarian  | hu  |
+| Greek  | el  |
+| Czech  | cs  |
+| Swedish  | sv  |
 ### TimeSinceLastKeypress() as Integer
 #### Description
 Checks for the number of seconds passed since the last remote keypress.
@@ -280,6 +281,7 @@ Checks for the DRM system used by the app.
 **Return Values**
 An associative array with the supported DRM system and features:
 **Example**
+
 ```
 PlayReady : {
     multikey: false
@@ -313,23 +315,24 @@ The current global setting for the Mode property, which may be one of the follow
 #### Description
 Sets the current global setting for the Mode property.
 #### Parameters
-Name | Type | Description
----|---|---
-mode | String | The current global setting for the Mode property, which may be one of the following values:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| mode  | String  | The current global setting for the Mode property, which may be one of the following values:
   * On
   * Off
   * Instant replay
   * When mute (Roku TVs only)
 
+ |
 #### Return Values
 A flag indicating whether the Mode property was successfully set.
 ### GetCaptionsOption(option as String) as String
 #### Description
 Checks the current value of the specified global setting property.
 #### Parameters
-Name | Type | Description
----|---|---
-Option | String | The global setting property to be checked, which may be one of the following values:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| Option  | String  | The global setting property to be checked, which may be one of the following values:
   * Mode
   * Text/Font
   * Text/Effect
@@ -345,17 +348,19 @@ Option | String | The global setting property to be checked, which may be one of
   * Track_Analog
   * Muted
 
+ |
 #### Return Values
 The value of the specified global setting property, which may be as follows:
-Queried Property | Possible Values
----|---
-Mode |
+| Queried Property  | Possible Values  |
+| --- | --- |
+| Mode  |
   * On
   * Off
   * Instant replay
   * When mute (Roku TVs only)
 
-Text style |
+ |
+| Text style  |
   * Default
   * Serif Fixed Width
   * Serif Proportional
@@ -365,7 +370,8 @@ Text style |
   * Cursive
   * Small Caps
 
-Text edge effect |
+ |
+| Text edge effect  |
   * Default
   * None
   * Raised
@@ -374,7 +380,8 @@ Text edge effect |
   * Drop shadow (left)
   * Drop shadow (right)
 
-Text size |
+ |
+| Text size  |
   * Default
   * Extra large
   * Large
@@ -382,7 +389,8 @@ Text size |
   * Small
   * Extra small
 
-Text color |
+ |
+| Text color  |
   * Default
   * White
   * Black
@@ -393,13 +401,15 @@ Text color |
   * Magenta
   * Cyan
 
-Text opacity |
+ |
+| Text opacity  |
   * Default
   * 25%
   * 75%
   * 100%
 
-Background Color |
+ |
+| Background Color  |
   * Default
   * White
   * Black
@@ -410,14 +420,16 @@ Background Color |
   * Magenta
   * Cyan
 
-Background Opacity |
+ |
+| Background Opacity  |
   * Default
   * Off
   * 25%
   * 75%
   * 100%
 
-Window Color |
+ |
+| Window Color  |
   * Default
   * White
   * Black
@@ -428,14 +440,17 @@ Window Color |
   * Magenta
   * Cyan
 
-Window Opacity |
+ |
+| Window Opacity  |
   * Default
   * Off
   * 25%
   * 75%
   * 100%
 
+ |
 #### Example
+
 ```
 di = CreateObject("roDeviceInfo")
 mode = di.GetCaptionsMode()
@@ -471,18 +486,18 @@ _Available since Roku OS 13.0_
 #### Description
 Notifies the app when the device's system clock becomes valid.
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag specifying whether to enable valid system clock events.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag specifying whether to enable valid system clock events.  |
 #### Return Values
 A flag indicating whether valid system clock events are enabled (true) or disabled (false).
 ### EnableAppFocusEvent(enable as Boolean) as Dynamic
 #### Description
 Notifies the app when a system overlay event (such as the [confirm partner button HUD](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md#special-purpose-attributes) or the caption control overlay) is displayed. This notification gives the app the opportunity to do any processing they may want to when the app loses or regains focus.
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag specifying whether to enable/disable system overlay event notifications.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag specifying whether to enable/disable system overlay event notifications.  |
 #### Return Values
 A flag indicating whether the system overlay event notifications are enabled (true) or disabled (false).
 ### EnableScreensaverExitedEvent(enable as Boolean) as Dynamic
@@ -490,9 +505,9 @@ A flag indicating whether the system overlay event notifications are enabled (tr
 Notifies the app when a screensaver exit event occurs. This function enables the sending of an [roDeviceInfoEvent](https://developer.roku.com/docs/references/brightscript/events/rodeviceinfoevent.md) when a user has exited the screensaver.
 To receive events, you must have first called [SetMessagePort](https://developer.roku.com/docs/references/brightscript/interfaces/ifsetmessageport.md) on the roDeviceInfo object specifying the message port that is to receive the events
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag specifying whether to enable/disable screensaver exit event notifications.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag specifying whether to enable/disable screensaver exit event notifications.  |
 #### Return Values
 A flag indicating whether screensaver exit event notifications are enabled (true) or disabled (false).
 ### IsHDMIConnected() as Boolean
@@ -505,9 +520,9 @@ A flag indicating whether an HDMI connection to a TV has been detected.
 ### EnableLowGeneralMemoryEvent(enabled as Boolean) as Dynamic
 #### Description
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag specifying whether to enable/disable lowGeneralMemoryLevel event notifications.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag specifying whether to enable/disable lowGeneralMemoryLevel event notifications.  |
 #### Return Values
 A flag indicating whether lowGeneralMemoryLevel event notifications are enabled (true) or disabled (false).
 ### GetGeneralMemoryLevel() as String
@@ -534,9 +549,9 @@ A flag indicating whether the device has an active connection.
 #### Description
 Notifies the app when a network connection status event occurs. This function enables the sending of an [roDeviceInfoEvent](https://developer.roku.com/docs/references/brightscript/events/rodeviceinfoevent.md) when the network connection status changes. To receive events, you must have first called [SetMessagePort](https://developer.roku.com/docs/references/brightscript/interfaces/ifsetmessageport.md) on the roDeviceInfo object specifying the message port that is to receive the events
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag specifying whether to enable/disable network connection status event notifications.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag specifying whether to enable/disable network connection status event notifications.  |
 #### Return Values
 A flag indicating whether network connection status event notifications are enabled (true) or disabled (false).
 ### GetConnectionType() as String
@@ -552,9 +567,9 @@ The type of internet connection the device is using. This may be one of the foll
 #### Description
 Notifies the app when an internet connection status event occurs. This function enables the sending of an [roDeviceInfoEvent](https://developer.roku.com/docs/references/brightscript/events/rodeviceinfoevent.md) when the network connection status changes, as indicated by `roDeviceInfoEvent.internetStatus`. To receive events, the app must have first called [SetMessagePort](https://developer.roku.com/docs/references/brightscript/interfaces/ifsetmessageport.md) on the roDeviceInfo object specifying the message port that is to receive the events.
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag specifying whether to enable/disable network connection status event notifications.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag specifying whether to enable/disable network connection status event notifications.  |
 #### Return Values
 A flag indicating whether network connection status event notifications are enabled (true) or disabled (false).
 ### GetUptimeMillisecondsAsLong() as Long
@@ -588,31 +603,31 @@ An associative array, where each key is the name of a network interface and the 
 Checks for the information associated with the hardware's connection
 #### Return Values
 An associative array with the following key-value pairs:
-Key | Value
----|---
-type | Same as the value returned from GetConnectionType(). Indicated whether the device is using a WiFiConnection or WiredConnection.
-name | Name of the connection interface.
-ip | IP address used by the connection.
-ipv6
+| Key  | Value  |
+| --- | --- |
+| type  | Same as the value returned from GetConnectionType(). Indicated whether the device is using a WiFiConnection or WiredConnection.  |
+| name  | Name of the connection interface.  |
+| ip  | IP address used by the connection.  |
+| ipv6
 
- _Available since Roku OS 12.0_ | A list of IPv6 addresses used by the connection.
-mac |  _This field is deprecated_
+ _Available since Roku OS 12.0_  | A list of IPv6 addresses used by the connection.  |
+| mac  |  _This field is deprecated_
 
-The device's MAC address is no longer returned (a string of zeros is returned in this field). Developers can use the [roDeviceInfo.GetChannelClientId ](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)method to uniquely identify devices.
-ssid | The SSID of the Access Point (present only if type = "WiFiConnection").
-gateway | IP Address of the connection gateway (usually the router).
-dns.0 | IP Address of first DNS server associated with the connection.
-dns.1 | IP Address of the second DNS server, if any (Similarly for any subsequent DNS servers).
-dns.2 | IP Address of the third DNS server, if any (Similarly for any subsequent DNS servers).
-dns.3 | IP Address of the fourth DNS server, if any (Similarly for any subsequent DNS servers).
-active | A flag indicating the network status.
-default | A flag indicating whether the default WiFi connection is being used.
-expectedThroughput | The actual speed of the connection. This rate may be significantly lower than the theoretical maximum because of interference, distance, network overhead, and other factors. In ideal conditions, a single client might achieve approximately 65-70% of the physical rate.
-protocol | The Wifi protocol name (IEEE 802.11g).
-signal | The received signal strength indicator (RSSI) on a logarithmic scale. Values closer to 0 indicate a stronger signal; values closer to -100 indicate a weaker signal.
-ssid | The service set identifier (SSID). The name of the WiFi network to which the device is connected.
-txFailed | The number of dropped frames.
-txRetries | The number of retries to send frames.
+The device's MAC address is no longer returned (a string of zeros is returned in this field). Developers can use the [roDeviceInfo.GetChannelClientId ](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)method to uniquely identify devices.  |
+| ssid  | The SSID of the Access Point (present only if type = "WiFiConnection").  |
+| gateway  | IP Address of the connection gateway (usually the router).  |
+| dns.0  | IP Address of first DNS server associated with the connection.  |
+| dns.1  | IP Address of the second DNS server, if any (Similarly for any subsequent DNS servers).  |
+| dns.2  | IP Address of the third DNS server, if any (Similarly for any subsequent DNS servers).  |
+| dns.3  | IP Address of the fourth DNS server, if any (Similarly for any subsequent DNS servers).  |
+| active  | A flag indicating the network status.  |
+| default  | A flag indicating whether the default WiFi connection is being used.  |
+| expectedThroughput  | The actual speed of the connection. This rate may be significantly lower than the theoretical maximum because of interference, distance, network overhead, and other factors. In ideal conditions, a single client might achieve approximately 65-70% of the physical rate.  |
+| protocol  | The Wifi protocol name (IEEE 802.11g).  |
+| signal  | The received signal strength indicator (RSSI) on a logarithmic scale. Values closer to 0 indicate a stronger signal; values closer to -100 indicate a weaker signal.  |
+| ssid  | The service set identifier (SSID). The name of the WiFi network to which the device is connected.  |
+| txFailed  | The number of dropped frames.  |
+| txRetries  | The number of retries to send frames.  |
 #### Video info
 ### GetDisplayType() as String
 #### Description
@@ -654,90 +669,92 @@ An associative array with the screen width and height. Specifically, the keys "w
 Checks the video playback resolution.
 #### Return Values
 The video playback resolution, which maybe one of the following values:
-String | Resolution | Aspect Ratio | Refresh Rate | Bit Depth
----|---|---|---|---
-"480i" | 720x480 | 4:3 | 60 Hz | 8 Bit
-"480p" | 720x480 | 4:3 | 60 Hz | 8 Bit
-"576i25" | 720x576 | 4:3 | 25 Hz | 8 Bit
-"576p50" | 720x576 | 4:3 | 50 Hz | 8 Bit
-"576p60" | 720x576 | 4:3 | 60 Hz | 8 Bit
-"720p50" | 1280x720 | 16:9 | 50 Hz | 8 Bit
-"720p" | 1280x720 | 16:9 | 60 Hz | 8 Bit
-"1080i50" | 1920x1080 | 16:9 | 50 Hz | 8 Bit
-"1080i" | 1920x1080 | 16:9 | 60 Hz | 8 Bit
-"1080p24" | 1920x1080 | 16:9 | 24 Hz | 8 Bit
-"1080p25" | 1920x1080 | 16:9 | 25 Hz | 8 Bit
-"1080p30" | 1920x1080 | 16:9 | 30 Hz | 8 Bit
-"1080p50" | 1920x1080 | 16:9 | 50 Hz | 8 Bit
-"1080p60b10" | 1920x1080 | 16:9 | 60 Hz | 8 Bit
-"1080p60Dv" | 1920x1080 | 16:9 | 60 Hz | 8 Bit
-"1080p" | 1920x1080 | 16:9 | 60 Hz | 8 Bit
-"2160p24" | 3840x2160 | 16:9 | 24 Hz | 8 Bit
-"2160p25" | 3840x2160 | 16:9 | 25 Hz | 8 Bit
-"2160p30" | 3840x2160 | 16:9 | 30 Hz | 8 Bit
-"2160p30Dv" | 3840x2160 | 16:9 | 30 Hz | 8 Bit
-"2160p50" | 3840x2160 | 16:9 | 50 Hz | 8 Bit
-"2160p60" | 3840x2160 | 16:9 | 60 Hz | 8 Bit
-"2160p60Dv" | 3840x2160 | 16:9 | 60 Hz | 8 Bit
-"2160p24b10" | 3840x2160 | 16:9 | 24 Hz | 10 Bit
-"2160p25b10" | 3840x2160 | 16:9 | 25 Hz | 10 Bit
-"2160p30b10" | 3840x2160 | 16:9 | 30 Hz | 10 Bit
-"2160p50b10" | 3840x2160 | 16:9 | 50 Hz | 10 Bit
-"2160p60b10" | 3840x2160 | 16:9 | 60 Hz | 10 Bit
-"4320p60" | 7680 x 4320 | 16:9 | 60 Hz | 12 Bit
-"4320p60b10" | 7680 x 4320 | 16:9 | 60 Hz | 12 Bit
+| String  | Resolution  | Aspect Ratio  | Refresh Rate  | Bit Depth  |
+| --- | --- | --- | --- | --- |
+| "480i"  | 720x480  | 4:3  | 60 Hz  | 8 Bit  |
+| "480p"  | 720x480  | 4:3  | 60 Hz  | 8 Bit  |
+| "576i25"  | 720x576  | 4:3  | 25 Hz  | 8 Bit  |
+| "576p50"  | 720x576  | 4:3  | 50 Hz  | 8 Bit  |
+| "576p60"  | 720x576  | 4:3  | 60 Hz  | 8 Bit  |
+| "720p50"  | 1280x720  | 16:9  | 50 Hz  | 8 Bit  |
+| "720p"  | 1280x720  | 16:9  | 60 Hz  | 8 Bit  |
+| "1080i50"  | 1920x1080  | 16:9  | 50 Hz  | 8 Bit  |
+| "1080i"  | 1920x1080  | 16:9  | 60 Hz  | 8 Bit  |
+| "1080p24"  | 1920x1080  | 16:9  | 24 Hz  | 8 Bit  |
+| "1080p25"  | 1920x1080  | 16:9  | 25 Hz  | 8 Bit  |
+| "1080p30"  | 1920x1080  | 16:9  | 30 Hz  | 8 Bit  |
+| "1080p50"  | 1920x1080  | 16:9  | 50 Hz  | 8 Bit  |
+| "1080p60b10"  | 1920x1080  | 16:9  | 60 Hz  | 8 Bit  |
+| "1080p60Dv"  | 1920x1080  | 16:9  | 60 Hz  | 8 Bit  |
+| "1080p"  | 1920x1080  | 16:9  | 60 Hz  | 8 Bit  |
+| "2160p24"  | 3840x2160  | 16:9  | 24 Hz  | 8 Bit  |
+| "2160p25"  | 3840x2160  | 16:9  | 25 Hz  | 8 Bit  |
+| "2160p30"  | 3840x2160  | 16:9  | 30 Hz  | 8 Bit  |
+| "2160p30Dv"  | 3840x2160  | 16:9  | 30 Hz  | 8 Bit  |
+| "2160p50"  | 3840x2160  | 16:9  | 50 Hz  | 8 Bit  |
+| "2160p60"  | 3840x2160  | 16:9  | 60 Hz  | 8 Bit  |
+| "2160p60Dv"  | 3840x2160  | 16:9  | 60 Hz  | 8 Bit  |
+| "2160p24b10"  | 3840x2160  | 16:9  | 24 Hz  | 10 Bit  |
+| "2160p25b10"  | 3840x2160  | 16:9  | 25 Hz  | 10 Bit  |
+| "2160p30b10"  | 3840x2160  | 16:9  | 30 Hz  | 10 Bit  |
+| "2160p50b10"  | 3840x2160  | 16:9  | 50 Hz  | 10 Bit  |
+| "2160p60b10"  | 3840x2160  | 16:9  | 60 Hz  | 10 Bit  |
+| "4320p60"  | 7680 x 4320  | 16:9  | 60 Hz  | 12 Bit  |
+| "4320p60b10"  | 7680 x 4320  | 16:9  | 60 Hz  | 12 Bit  |
 ### GetDisplayProperties() as Object
 #### Description
 Checks for the display properties of the screen.
 #### Return Values
 An associative array with the following key/value pairs for the display properties of the screen:
-Key | Type | Value
----|---|---
-Width | Integer | Physical width of the attached display in centimeters
-Height | Integer | Physical height of the attached display in centimeters
-Internal | Boolean | Set to true if the display is part of the Roku Player (such as a Roku TV), false otherwise
-Hdr10 | Boolean | Set to true if the attached display supports HDR10, false otherwise
-Hdr10Plus | Boolean | Set to true if the attached display supports HDR10+, false otherwise
-HdrSeamless | Boolean | Set to true if the attached display supports any type of HDR, such as HDR10, HLG, or
-Dolby Vision, false otherwise.
-Headless | Boolean | Set to true if the attached display supports being powered off while audio continues to play
-HLG | Boolean | Set to true if the attached display supports HLG, false otherwise
-DolbyVision | Boolean | Set to true if the attached display supports Dolby Vision, false otherwise
-visible | boolean | For Roku TVs only. Indicates whether the TV screen is on/off while the Roku device is actively streaming content. This is useful for checking whether customers have muted their TV screen while streaming video in order to continue listening to the audio (for example, when playing music videos, conferences, or podcasts).
+| Key  | Type  | Value  |
+| --- | --- | --- |
+| Width  | Integer  | Physical width of the attached display in centimeters  |
+| Height  | Integer  | Physical height of the attached display in centimeters  |
+| Internal  | Boolean  | Set to true if the display is part of the Roku Player (such as a Roku TV), false otherwise  |
+| Hdr10  | Boolean  | Set to true if the attached display supports HDR10, false otherwise  |
+| Hdr10Plus  | Boolean  | Set to true if the attached display supports HDR10+, false otherwise  |
+| HdrSeamless  | Boolean  | Set to true if the attached display supports any type of HDR, such as HDR10, HLG, or
+Dolby Vision, false otherwise.  |
+| Headless  | Boolean  | Set to true if the attached display supports being powered off while audio continues to play  |
+| HLG  | Boolean  | Set to true if the attached display supports HLG, false otherwise  |
+| DolbyVision  | Boolean  | Set to true if the attached display supports Dolby Vision, false otherwise  |
+| visible  | boolean  | For Roku TVs only. Indicates whether the TV screen is on/off while the Roku device is actively streaming content. This is useful for checking whether customers have muted their TV screen while streaming video in order to continue listening to the audio (for example, when playing music videos, conferences, or podcasts).  |
 ### GetSupportedGraphicsResolutions() as Object
 #### Description
 Checks the supported graphics resolutions.
 #### Return Values
 A list of associative arrays. Each associative array contains the following key/value pairs for the graphics resolutions:
-Key | Type | Value
----|---|---
-width | integer | The pixel width of the supported resolution
-height | integer | The pixel height of the supported resolution
-name | string | Either SD, HD, or FHD
-ui | boolean | True if this resolution is the current Roku UI resolution
-preferred | boolean | True if this is the preferred UI resolution, i.e., if this is the optimal resolution for the device
+| Key  | Type  | Value  |
+| --- | --- | --- |
+| width  | integer  | The pixel width of the supported resolution  |
+| height  | integer  | The pixel height of the supported resolution  |
+| name  | string  | Either SD, HD, or FHD  |
+| ui  | boolean  | True if this resolution is the current Roku UI resolution  |
+| preferred  | boolean  | True if this is the preferred UI resolution, i.e., if this is the optimal resolution for the device  |
 ### CanDecodeVideo(video_format as Object) as Object
 #### Description
 Checks whether the device can decode and play the specified video format.
 #### Parameters
-Name | Type | Description
----|---|---
-video_format | Object | An associative array with the following key/value pairs specifying the video format to be checked.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| video_format  | Object  | An associative array with the following key/value pairs specifying the video format to be checked.
 
 As of Roku OS 14.1, the keys in the associative array are fully case-insensitive. For older OS versions, use lower-case letters for the keys when specified within double quotes ("").
 
-| Key | Type | Value | Requirement
----|---|---|---
-Codec | string | Specifies the video codec:  | Codec | Profile | Level
----|---|---
-"mpeg2" | n/a | "main", "high"
-"mpeg4 avc" 1 | "main", "high" | "4.1", "4.2"
-"hevc" 1 | "main", "main 10" | "4.1", "5.0", "5.1"
-"vp9" 1 | "profile 0", "profile 2" | "4.1", "5.0", "5.1"
-Required
-Profile | string | Specifies the profile | Optional
-Level | string | Specifies the level | Optional
-Container | string | Specifies the container format: “mp4”, “hls”, “mkv”, “ism”, “dash”, “ts” | Optional
+ | Key  | Type  | Value  | Requirement  |
+| --- | --- | --- | --- |
+| Codec  | string  | Specifies the video codec:
+ | Codec  | Profile  | Level  |
+| --- | --- | --- |
+| "mpeg2"  | n/a  | "main", "high"  |
+| "mpeg4 avc" 1  | "main", "high"  | "4.1", "4.2"  |
+| "hevc" 1  | "main", "main 10"  | "4.1", "5.0", "5.1"  |
+| "vp9" 1  | "profile 0", "profile 2"  | "4.1", "5.0", "5.1"  |
+| Required  |
+| Profile  | string  | Specifies the profile  | Optional  |
+| Level  | string  | Specifies the level  | Optional  |
+| Container  | string  | Specifies the container format: “mp4”, “hls”, “mkv”, “ism”, “dash”, “ts”  | Optional  |
+ |
 > All the codecs, except "mpeg2", can provide additional display info (bit depth, refresh rate, display width, display height) if the codec, profile, and level are passed as parameters.
 > For example, if the application wants to check if the Roku Player can play an AVC stream at high profile and level 4.2, it calls [CanDecodeVideo()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#candecodevideovideo_format-as-object-as-object) with the following video_format:
 > `{Codec: "mpeg4 avc", Profile: "high", Level: "4.2"}`
@@ -753,39 +770,47 @@ The return value shows the Roku Player cannot play requested video format, shows
 Checks for the UI resolution of the screen.
 #### Return Values
 An associative array with the following key-value pairs describing the current UI resolution:
-Key | Value
----|---
-name | The possible values are:  | Value | Meaning
----|---
-SD | standard definition (720x480 screen pixel dimensions)
-HD | high-definition (1280x720 screen pixel dimensions)
-FHD | full high-definition (1920x1080 screen pixel dimensions)
-width | The possible values are:  | Value | Meaning
----|---
-720 | standard definition screen pixel width
-1280 | high-definition screen pixel width
-1920 | full high-definition screen pixel width
-height | The possible values are:  | Value | Meaning
----|---
-480 | standard definition screen pixel height
-720 | high-definition screen pixel height
-1080 | full high-definition screen pixel height
+| Key  | Value  |
+| --- | --- |
+| name  | The possible values are:
+ | Value  | Meaning  |
+| --- | --- |
+| SD  | standard definition (720x480 screen pixel dimensions)  |
+| HD  | high-definition (1280x720 screen pixel dimensions)  |
+| FHD  | full high-definition (1920x1080 screen pixel dimensions)  |
+ |
+| width  | The possible values are:
+ | Value  | Meaning  |
+| --- | --- |
+| 720  | standard definition screen pixel width  |
+| 1280  | high-definition screen pixel width  |
+| 1920  | full high-definition screen pixel width  |
+ |
+| height  | The possible values are:
+ | Value  | Meaning  |
+| --- | --- |
+| 480  | standard definition screen pixel height  |
+| 720  | high-definition screen pixel height  |
+| 1080  | full high-definition screen pixel height  |
+ |
 ### GetGraphicsFeatures() as Object
 _Available since Roku OS 14.0_
 #### Description
 Checks the graphics features supported by the device.
 #### Return Values
 An associative array containing the following key/value pairs:
-**Key** | **Type** | **Value**
----|---|---
-full_rotation | boolean |
+| **Key**  | **Type**  | **Value**  |
+| --- | --- | --- |
+| full_rotation  | boolean  |
   * true: The device supports an arbitrary rotation degree.
   * false: The device supports 90° rotations only (0, 90, 180, 270)
 
-astc_supported | boolean |
+ |
+| astc_supported  | boolean  |
   * true: The device supports [Adaptive Scalable Texture Compression(ASTC)](https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression) compressed textures and can load [.astc](https://github.com/ARM-software/astc-encoder/blob/main/Docs/FileFormat.md) image files.
   * false: The device does not support ASTC.
 
+ |
 ### GetGraphicsPlatform() as String
 #### Description
 Checks the graphics platform of the device.
@@ -805,9 +830,9 @@ An associative array with the EDID (EIA.2FCEA-861) information describing the vi
 #### Description
 Notifies the app when the audio or video codec changes. This function enables the sending of an [roDeviceInfoEvent](https://developer.roku.com/docs/references/brightscript/events/rodeviceinfoevent.md) when the codec changes. To receive events, you must have first called [SetMessagePort](https://developer.roku.com/docs/references/brightscript/interfaces/ifsetmessageport.md) on the roDeviceInfo object specifying the message port that is to receive the events
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag indicating whether to enable/disable codec change event notifications.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag indicating whether to enable/disable codec change event notifications.  |
 #### Return Values
 A flag indicating whether codec change event notifications are enabled (true) or disabled (false).
 #### Audio info
@@ -829,6 +854,7 @@ An associative array with EDID (EIA.2FCEA-861) audio decoder information for the
 For example, the name "DD+" may have the value "8:6:0:1" where there are 8 independent audio tracks (7.1 audio), 6 is the SAD1 byte, 0 is the SAD2 byte, and 1 is the binary value that indicates this is a pass-through audio device (not a Roku TV). The SAD1 and SAD2 bytes are interpreted differently for different codecs and more information about their values can be found here: <http://en.wikipedia.org/wiki/Extended_display_identification_data#CEA_EDID_Timing_Extension_Version_3_data_format>
 #### Example
 The following example demonstrates how to determine if the attached device supports Dolby Digital Plus audio:
+
 ```
 di = CreateObject("roDeviceInfo")
 audioDecoders = di.GetAudioDecodeInfo()
@@ -846,38 +872,41 @@ hasDDPlus = audioDecoders.doesexist("DD+")
 Checks if the device can decode and play the specified audio format.
 > Use this method to query the codecs every time before starting playback on content (do not cache and use the results from a previous call). In addition, use the [**roDeviceInfo.audioCodecCapabilityChanged()**](https://developer.roku.com/docs/references/brightscript/events/rodeviceinfoevent.md) event to identify any codec changes that may occur when the audio output destination is switched. This will help your app to perform well with the Roku mobile app and and private listening.
 #### Parameters
-Name | Type | Description
----|---|---
-audio_format | Object | An associative array with the audio format to be checked. The general format of the associative arrays for CanDecodeAudio() is similar to the parameter and return associative arrays used in [CanDecodeVideo()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifdeviceinfo.md#candecodevideovideo_format-as-object-as-object).
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| audio_format  | Object  | An associative array with the audio format to be checked. The general format of the associative arrays for CanDecodeAudio() is similar to the parameter and return associative arrays used in [CanDecodeVideo()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifdeviceinfo.md#candecodevideovideo_format-as-object-as-object).
 
 As of Roku OS 14.1, the keys in the associative array are fully case-insensitive. For older OS versions, use lower-case letters for the keys when specified within double quotes ("").
 
-| Key | Type | Value | Requirement
----|---|---|---
-Codec | string | Specifies the audio codec: “aac”, “ac3”, “eac3”, "alac", "flac", “mp2”, “mp3”, “vorbis”, “wma” (sunset as of Roku OS 12.5), “wma pro” (sunset as of Roku OS 12.5), “dts”, "ac4" | Required
-Profile | string | Specifies the codec profile:  | Codec | Profile
----|---
-"h.265/h.265" | "main", "high", "main 10"
-"vp9" | "profile 0", "profile 2"
-"AAC codec profiles" | "mp2 lc", "mp4 he"
-Optional
-Level | String | Specifies the codec level:  | Codec | Level
----|---
-"h.265/h.265" | 4.1, 4.2, 5.0, 5.1
-"vp9" | 3.0, 3.1, 4.0, 4.1, 5.0, 5.1
-Optional
-ChCnt | integer | Specifies the required number of audio channels | Optional
-PassThru | integer | Specifies whether the bitstream needs to be decoded on the device. By default, this reports the codec properties of both the Roku device and the attached HDMI device.
+ | Key  | Type  | Value  | Requirement  |
+| --- | --- | --- | --- |
+| Codec  | string  | Specifies the audio codec: “aac”, “ac3”, “eac3”, "alac", "flac", “mp2”, “mp3”, “vorbis”, “wma” (sunset as of Roku OS 12.5), “wma pro” (sunset as of Roku OS 12.5), “dts”, "ac4"  | Required  |
+| Profile  | string  | Specifies the codec profile:
+ | Codec  | Profile  |
+| --- | --- |
+| "h.265/h.265"  | "main", "high", "main 10"  |
+| "vp9"  | "profile 0", "profile 2"  |
+| "AAC codec profiles"  | "mp2 lc", "mp4 he"  |
+| Optional  |
+| Level  | String  | Specifies the codec level:
+ | Codec  | Level  |
+| --- | --- |
+| "h.265/h.265"  | 4.1, 4.2, 5.0, 5.1  |
+| "vp9"  | 3.0, 3.1, 4.0, 4.1, 5.0, 5.1  |
+| Optional  |
+| ChCnt  | integer  | Specifies the required number of audio channels  | Optional  |
+| PassThru  | integer  | Specifies whether the bitstream needs to be decoded on the device. By default, this reports the codec properties of both the Roku device and the attached HDMI device.
 
 You can filter the values returned by including one of the following options:
   * **0** - Reports only codecs that are supported on the Roku device itself.
   * **1** - Reports only codecs of the attached HDMI device (for example, an audio receiver).
 
-| Optional
-Atmos | Integer | Specifies whether Atmos presence is to be validated. Include 'atmos=1' to check for the presence of Atmos. Starting with Roku OS 14.1,'atmos=0' can be used to specifically check for the absence of Atmos. | Optional
-SampleRate | integer | Specifies the sample rate | Optional
-BitRate | integer | Specifies the bit rate in Kbit/sec | Optional
-Container | string | Specifies the container format | Optional
+ | Optional  |
+| Atmos  | Integer  | Specifies whether Atmos presence is to be validated. Include 'atmos=1' to check for the presence of Atmos. Starting with Roku OS 14.1,'atmos=0' can be used to specifically check for the absence of Atmos.  | Optional  |
+| SampleRate  | integer  | Specifies the sample rate  | Optional  |
+| BitRate  | integer  | Specifies the bit rate in Kbit/sec  | Optional  |
+| Container  | string  | Specifies the container format  | Optional  |
+ |
 #### Return Values
 An associative array that includes a flag indicating whether the audio format can be played, and the closest audio format supported by the device.
 ### IsPassthruCodecActive() as Boolean
@@ -903,9 +932,9 @@ A flag indicating whether the screen reader is enabled.
 #### Description
 Notifies the app when the screen reader changes. This function enables the sending of an [roDeviceInfoEvent](https://developer.roku.com/docs/references/brightscript/events/rodeviceinfoevent.md) when the screen reader changes. To receive events, you must have first called [SetMessagePort](https://developer.roku.com/docs/references/brightscript/interfaces/ifsetmessageport.md) on the roDeviceInfo object specifying the message port that is to receive the events
 #### Parameters
-Name | Type | Description
----|---|---
-enable | Boolean | A flag indicating whether to enable/disable screen reader change event notifications.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag indicating whether to enable/disable screen reader change event notifications.  |
 #### Return Values
 A flag indicating whether screen reader change event notifications are enabled (true) or disabled (false).
 ### IsAutoplayEnabled() as Boolean

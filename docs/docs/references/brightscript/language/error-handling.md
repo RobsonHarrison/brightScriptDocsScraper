@@ -7,6 +7,7 @@ _Catching_ an exception – providing a sequence of code that the system execute
 > When speaking of exceptions, "catching" and "trapping" are equivalent expressions. So are "throwing" and "raising."
 ## Catching and handling exceptions
 The code that handles an exceptional situation resides in a `TRY`/`CATCH` block. Here is an example:
+
 ```
 PRINT "I'm about to try something that might not work"
 TRY
@@ -26,13 +27,14 @@ BrightScript will treat the block as follows:
 
 ## The exception object
 When an exception is caught, information concerning the circumstances is collected within an exception object, which is then assigned to the variable named in the relevant CATCH clause. The table here lists publicly available fields of an exception object, which are further explained below.
-Name | Type | Meaning
----|---|---
-number | Integer | The BrightScript error number
-message | String | The error message text
-backtrace | roArray | The location of the error
+| Name  | Type  | Meaning  |
+| --- | --- | --- |
+| number  | Integer  | The BrightScript error number  |
+| message  | String  | The error message text  |
+| backtrace  | roArray  | The location of the error  |
 ### The error number
 The number is the same as printed when a program crashes. For example, consider this code:
+
 ```
 SUB main()
     x = 1
@@ -42,12 +44,14 @@ END SUB
 ```
 
 Execution produces the following output, due to an exception that is _not_ caught:
+
 ```
 Syntax Error. (runtime error &h02) in /tmp/dev/example.brs(3)
 
 ```
 
 Note that the system's standard error reporting format may not provide information that is most meaningful to the user, or present it in the most useful format. The following version of `main()` is written to catch exceptions and report them to the user in a form that the programmer has defined:
+
 ```
 SUB main()
     x = 1
@@ -61,6 +65,7 @@ END SUB
 ```
 
 Here is the "programmer-approved" output produced by the enhanced `main()`:
+
 ```
 2              Syntax Error.
 
@@ -68,13 +73,14 @@ Here is the "programmer-approved" output produced by the enhanced `main()`:
 
 ### The backtrace
 The backtrace associative array contains information concerning the location of the code being executed when an exception occurred; it is primarily useful during diagnosis of problems in an app. The table below lists the keys of data items, which may be found in a backtrace array.
-Name | Type | Meaning
----|---|---
-function | String | The full prototype of the function containing the error
-filename | String | The source file containing the error
-line_number | Integer | The line number within the source file
+| Name  | Type  | Meaning  |
+| --- | --- | --- |
+| function  | String  | The full prototype of the function containing the error  |
+| filename  | String  | The source file containing the error  |
+| line_number  | Integer  | The line number within the source file  |
 Element 0 of the array is the outermost function; element `count()-1` is the innermost (i.e., the function that was directly executing when the exception occurred). This ordering corresponds to that used in a debugger or crash dump backtrace display.
 The `function` prototype text ("signature") will be something like `"main() As Void"` or `"foo(x As Float, y As Float) As Float"`. Here is an example of custom error display code that extracts the function name for a more concise display:
+
 ```
 CATCH e
     prototype = e.backtrace[e.backtrace.count()-1].function
@@ -87,12 +93,14 @@ END TRY
 The collection of keys present in the backtrace array may vary. The function prototype will always be present (but, depending on the dynamic execution situation, the name may be a placeholder, e.g., the anonymous function name "`$anon_1`", which does not correspond to a programmer-chosen method name in app source code). Filename and line number will either both be present, or neither. Other items may be present, or could someday be added to this structure, but developers should only count on and use the ones documented here; others are for internal use only and their contents, meaning, and even continued existence are never guaranteed.
 ## Throwing exceptions
 The app may _throw_ an exception to indicate something unexpected has gone wrong in app code. The simplest form is:
+
 ```
 THROW "One of the cross beams has gone out of skew on the treadle."
 
 ```
 
 This causes an exception with error number `ERR_USER` (`&h28`) as the number, and the supplied string as the message. If not caught, it will reach the crash dump or debugger, as with any other error:
+
 ```
 Current Function:
 001:  SUB demo()
@@ -113,18 +121,20 @@ Brightscript Debugger>
 ```
 
 A `roAssociativeArray` that describes the exception is also an acceptable argument to `THROW`. Any missing fields will will be set with default values as shown in the table below:
-Name | Default
----|---
-number |  `ERR_USER` (`&h28`)
-message | Look up the standard error message for the number
-backtrace | The location of the `THROW`.
+| Name  | Default  |
+| --- | --- |
+| number  |  `ERR_USER` (`&h28`)  |
+| message  | Look up the standard error message for the number  |
+| backtrace  | The location of the `THROW`.  |
 Consider this example, which produces a division by zero error, along with a message that helpfully directs the user to the assumed source of fault:
+
 ```
 THROW {number: ERR_DIV_ZERO, message: "Division by zero in complex number library"}
 
 ```
 
 The ability to `THROW` an associative array, coupled with the system's default assumptions about the values of missing elements in such arrays, implies that the two following `THROW` statements are equivalent:
+
 ```
 THROW "My error message"
 THROW {message: "My error message"}
@@ -138,6 +148,7 @@ In constructing the `roAssociativeArray` to be used a `THROW` argument, one norm
 Attempts to `THROW` anything other than the acceptable arguments as defined here (including modified exception objects, which the system identifies as being improperly formed) will produce an `ERR_BAD_THROW` (`&h26`) error condition. This error is recoverable, however, and thoughtfully written code could deal intelligently with it.
 Note that execution will _never_ continue past a `THROW`; the statement will either `THROW` what it is given or `ERR_BAD_THROW`.
 The following are just a few examples of invalid throws:
+
 ```
 THROW 1
 THROW []
@@ -150,6 +161,7 @@ THROW { backtrace: [ {function: "main()", line_number: "Five"} ] }
 
 ### Custom fields in exception objects
 Custom information fields can be added to an exception without invalidating the `THROW`, so long as system-defined fields are left undisturbed. The custom fields can then be read by the `CATCH`-block that handles the exception. Roku recommends that any custom fields have names that begin with "`custom`"; fields with such names will not accidentally overwrite either existing system-defined fields, or any fields that Roku may eventually add to exception objects.
+
 ```
 TRY
     fetch_web_page()
@@ -166,6 +178,7 @@ END TRY
 ### Re-throwing an exception
 An exception object that has been caught is a valid argument to `THROW`. This is useful in some circumstances, for example:
 #### Reacting to an error without handling it
+
 ```
 TRY
     IF m.already_failed_once <> TRUE THEN do_something_which_might_fail()
@@ -177,6 +190,7 @@ END TRY
 ```
 
 #### Handling only some errors
+
 ```
 LIBRARY "v30/bslCore.brs"
 
@@ -211,6 +225,7 @@ The `rethrown` field is _always_ overwritten, so can be relied upon as an author
 Following are several code snippets that illustrate interesting aspects of BrightScript error-handling.
 For example, `TRY`/`CATCH` blocks can be nested arbitrarily to provide multiple layers of error protection and recovery.
 Below, although calling `reciprocal(0)` causes a division by zero, the function handles that exception itself, so the `TRY`/`CATCH` block in `main` _never_ catches anything:
+
 ```
 FUNCTION reciprocal(x)
     TRY
@@ -235,6 +250,7 @@ END SUB
 ```
 
 Here is an alternative that calculates the reciprocal directly in `main`:
+
 ```
 SUB main()
     PRINT "Starting"
@@ -255,6 +271,7 @@ END SUB
 ```
 
 An outer `TRY`/`CATCH` block can handle errors caused in an inner `CATCH`:
+
 ```
 SUB main()
     PRINT "Starting"
@@ -275,6 +292,7 @@ END SUB
 ```
 
 Here is a variation, in which a `CATCH` itself contains a `TRY`/`CATCH` block, which, in turn catches any errors that _it_ produces:
+
 ```
 SUB main()
     PRINT "Starting"
@@ -294,6 +312,7 @@ END SUB
 ```
 
 Extracting the diagnostic portion into a separate subroutine yields the same results:
+
 ```
 SUB diagnose(x)
     TRY

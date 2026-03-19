@@ -1,8 +1,8 @@
 # ifLongInt
 ## Implemented by
-Name | Description
----|---
-[roLongInteger](https://developer.roku.com/docs/references/brightscript/components/rolonginteger.md "roLongInteger") | Object equivalent for intrinsic type LongInteger
+| Name  | Description  |
+| --- | --- |
+| [roLongInteger](https://developer.roku.com/docs/references/brightscript/components/rolonginteger.md "roLongInteger")  | Object equivalent for intrinsic type LongInteger  |
 ## Supported methods
 ### GetLongInt() As LongInteger
 #### Description
@@ -13,6 +13,6 @@ The longinteger value stored in the calling Loninteger object.
 #### Description
 Sets the calling Longinteger object to the specified longinteger value.
 #### Parameters
-Name | Type | Description
----|---|---
-value | Longinteger | The longinteger value to be set on the calling Longinteger object.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| value  | Longinteger  | The longinteger value to be set on the calling Longinteger object.  |

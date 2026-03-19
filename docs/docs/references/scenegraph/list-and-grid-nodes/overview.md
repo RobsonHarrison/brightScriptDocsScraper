@@ -23,11 +23,11 @@ For grids, the index starts at 0 for the item at the top left corner of the grid
 SceneGraph also provides another type of list/grid node class, **RowList** , that combines aspects of both lists and grids. See [**RowList Node Class**](https://developer.roku.com/docs/references/scenegraph/list-and-grid-nodes/overview.md#rowlist-node-class) for information about this hybrid node class.
 ## Item focus and selection
 Automatic remote control focus and selection of items by the user is provided by list and grid nodes. When a list or grid has remote control focus, a specific item in the list or grid has focus at any time. A list or grid node automatically responds to remote control direction pad **Up** and **Down** key presses for lists, and **Up** , **Down** , **Right** , and **Left** key presses for grids, by moving focus to the next item in that direction in the list or grid. When an item is focused, the user can select the item by pressing the **OK** key. Read-only fields are provided by the list or grid node class to indicate the index number of the item that is focused, unfocused after being focused, or selected at any time, allowing an application response to these user actions in the list or grid. The read-only list or grid fields that provide this information are:
-Read-Only Field | Changed Value Indication
----|---
-`itemFocused` | The list or grid item is currently focused by the user.
-`itemUnfocused` | The list or grid item was focused by the user, but the user moved the focus to another item.
-`itemSelected` | The list or grid item was selected by the user by pressing the remote control **OK** key.
+| Read-Only Field  | Changed Value Indication  |
+| --- | --- |
+| `itemFocused`  | The list or grid item is currently focused by the user.  |
+| `itemUnfocused`  | The list or grid item was focused by the user, but the user moved the focus to another item.  |
+| `itemSelected`  | The list or grid item was selected by the user by pressing the remote control **OK** key.  |
 You can use the `ObserveField()` interface function for the list or grid node to trigger a callback function in response to changes in these fields. For example, the following calls a `displayepisodeinfo()` function that could provide additional information to the user as the focus moves to an item in a list of TV program episodes:
 `m.episodelist.ObserveField("itemFocused","displayepisodeinfo")`
 Likewise, if the user selects the item by pressing the remote control **OK** key, you can write a `playepisode()` callback function triggered by the `itemSelected` field event to begin playback of the selected episode:
@@ -35,14 +35,14 @@ Likewise, if the user selects the item by pressing the remote control **OK** key
 Since the index number for each item is the position of each child item in the **ContentNode** node that defines the list or grid, you can use them to retrieve data from the child **ContentNode** node associated with the item (or also from parallel arrays you have created for this purpose). This allows you retrieve the data needed to write the callback functions that are triggered by the list or grid item field changes. For example, the following accesses TV episode data in the **ContentNode** node for a list using the `getChild()` interface function taking the `itemFocused` field value as the argument, as part of a callback function to display TV episode information for the focused episode list item:
 `episodeinfo = m.episodelist.content.getChild(m.episodelist.itemFocused)`
 The list or grid node class also provides options for automatically indicating to the user that focus is on an item. The item can have a different color, or a bitmap drawn on the item, to indicate focus. The list or grid node class includes default 9-patch PNG bitmaps that surround the selected item, as well as an automatic text color change for lists of label items, but you can also customize these focus indicators for your design. The fields used to customize these options are:
-Focus Option Field | Use
----|---
-`drawFocusFeedback` | Specify whether the focus graphic image is drawn on a focused item or not
-`drawFocusFeedbackOnTop` | Specify whether the focus graphic image is drawn on top or underneath the focused item
-`focusBitmapUri` | Specify a custom graphic image to be drawn on the item to indicate focus
-`focusFootprintBitmapUri` | Specify a custom graphic image for a focused item when the list does not have currently have focus
-`focusedColor` | Sets the text color of the focused list item, for **LabelList** nodes only
-`focusedFont` | Sets the font of the focused list item, for **LabelList** nodes only
+| Focus Option Field  | Use  |
+| --- | --- |
+| `drawFocusFeedback`  | Specify whether the focus graphic image is drawn on a focused item or not  |
+| `drawFocusFeedbackOnTop`  | Specify whether the focus graphic image is drawn on top or underneath the focused item  |
+| `focusBitmapUri`  | Specify a custom graphic image to be drawn on the item to indicate focus  |
+| `focusFootprintBitmapUri`  | Specify a custom graphic image for a focused item when the list does not have currently have focus  |
+| `focusedColor`  | Sets the text color of the focused list item, for **LabelList** nodes only  |
+| `focusedFont`  | Sets the font of the focused list item, for **LabelList** nodes only  |
 If you want a custom focus indicator that cannot be defined using these fields, you should use one of the node classes described in [**Custom Item Definitions and Focus Indicators**](https://developer.roku.com/docs/references/scenegraph/list-and-grid-nodes/overview.md#custom-item-definitions-and-focus-indicators).
 ## Specifying list and grid content
 The items included, and some of their display configuration, for a list or grid node class is specified by setting a **ContentNode** node as the value of the `content` field of the list or grid node. The parameters of each item in a list or grid is specified as a child **ContentNode** node of the **ContentNode** node specified in the `content` field.

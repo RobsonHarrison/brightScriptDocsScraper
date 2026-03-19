@@ -12,28 +12,28 @@ The Roku search feed includes the following key features:
 ## Specifications
 ### Root
 The root of the JSON file contains basic information such as the Roku feed specification version, the default language, default availability for different regions, and the list of content items.
-Field | Type | Description | Required/Optional
----|---|---|---
-version | String | Roku JSON feed version (use "1"). | Required
-defaultLanguage | String | The lowercase [ISO 639-1 two-letter language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) to be used when the language is not specified for an asset. | Required (if you do not provide the language for each asset).
+| Field  | Type  | Description  | Required/Optional  |
+| --- | --- | --- | --- |
+| version  | String  | Roku JSON feed version (use "1").  | Required  |
+| defaultLanguage  | String  | The lowercase [ISO 639-1 two-letter language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) to be used when the language is not specified for an asset.  | Required (if you do not provide the language for each asset).
 
-If you do plan on providing the language for individual assets, the same language must be specified in the asset's title, description, and image.
-defaultAvailabilityCountries | String[] | The list of lowercase [ISO Alpha-2 two-letter country codes](https://www.iso.org/obp/ui/#search) to be used when **availabilityInfo.country** is not specified for an asset.
+If you do plan on providing the language for individual assets, the same language must be specified in the asset's title, description, and image.  |
+| defaultAvailabilityCountries  | String[]  | The list of lowercase [ISO Alpha-2 two-letter country codes](https://www.iso.org/obp/ui/#search) to be used when **availabilityInfo.country** is not specified for an asset.
 
-Click [here](https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md#language-and-regional-support) for the list of regions where Roku Search is currently supported. | Required (if you do not provide the available countries for each asset)
-assets | [Asset[]](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#asset) | The list of content items in the app's catalog. | Required
+Click [here](https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md#language-and-regional-support) for the list of regions where Roku Search is currently supported.  | Required (if you do not provide the available countries for each asset)  |
+| assets  | [Asset[]](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#asset)  | The list of content items in the app's catalog.  | Required  |
 ### Asset
 An asset represents a specific content item in the app's catalog. It contains all the metadata for displaying the content item in the Roku platform and deep linking directly into content when it is selected.
-Field | Type | Description | Required/Optional
----|---|---|---
-id | String | A maximum 50-character immutable unique ID for the content item.
+| Field  | Type  | Description  | Required/Optional  |
+| --- | --- | --- | --- |
+| id  | String  | A maximum 50-character immutable unique ID for the content item.
 
 Once an ID is created for a content item in Roku Search, it may not be changed.
 
 The id must be unique within the feed. If the feed contains duplicate IDs, only one of the items with the duplicated ID is preserved.
 
-If the **type** for the content item is "externalIdOnly" set this field to the ID of the external source (for example, the Gracenote TMS ID). | Required, unless the **type** for the content item is "season".
-type | Enum | The media type of the content item:
+If the **type** for the content item is "externalIdOnly" set this field to the ID of the external source (for example, the Gracenote TMS ID).  | Required, unless the **type** for the content item is "season".  |
+| type  | Enum  | The media type of the content item:
 
   * movie: Movie or long-form film (over 15 minutes).
   * tvspecial: One-time TV program that is not part of a series, or content that does not fit into any other mediaType category (for example, music, artists, sporting events, non-episodic news specials).
@@ -43,34 +43,34 @@ type | Enum | The media type of the content item:
   * shortform: Standalone content that is 15 minutes or less that is not a movie or TV show (for example, movie trailers, news clips, comedy clips, food reviews, or other clips).
   * externalIdOnly: Validates the **id** , **externalIdSource** , and **playOptions** fields only. For a linear feed, validates the **id** and **externalIdSource** fields only.
 
-This value is passed into [deep links](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md#mediatype-behavior) that are sent to the app. The app uses the value to determine how to launch the content. For example, if the type is "movie", the app will launch it directly into playback. | Required
-externalIds |  [ExternalId](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#externalid)[] | The list of external sources and IDs to be used for assigning metadata.
+This value is passed into [deep links](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md#mediatype-behavior) that are sent to the app. The app uses the value to determine how to launch the content. For example, if the type is "movie", the app will launch it directly into playback.  | Required  |
+| externalIds  |  [ExternalId](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#externalid)[]  | The list of external sources and IDs to be used for assigning metadata.
 
-Include this field if provider metadata may be used in case the specified external source does not have certain metadata. | Optional
-externalIdSource | Enum | The external source of the value specified for the content item in the ID field:
+Include this field if provider metadata may be used in case the specified external source does not have certain metadata.  | Optional  |
+| externalIdSource  | Enum  | The external source of the value specified for the content item in the ID field:
   * TMS: Gracenote is the source for the value specified in the **id** field.
   * PARTNER_TITLE_ID.
   * PARTNER_ASSET_ID.
 
-| Only if the **type** for the content item is "externalIdOnly".
-titles |  [Title](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#title)[] | A list of localized titles for the content item.
+ | Only if the **type** for the content item is "externalIdOnly".  |
+| titles  |  [Title](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#title)[]  | A list of localized titles for the content item.
 
-Titles may be a maximum of 200 characters. | Required
-shortDescriptions |  [Description](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#description)[] | A list of localized short descriptions for the content item.
+Titles may be a maximum of 200 characters.  | Required  |
+| shortDescriptions  |  [Description](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#description)[]  | A list of localized short descriptions for the content item.
 
-Short descriptions may be a maximum of 200 characters. | Required
-longDescriptions |  [Description](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#description)[] | A list of localized long descriptions for the content item.
+Short descriptions may be a maximum of 200 characters.  | Required  |
+| longDescriptions  |  [Description](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#description)[]  | A list of localized long descriptions for the content item.
 
-Long descriptions may be a maximum of 500 characters. | Optional
-releaseDate | String | The date the content item was initially released or first aired in [ISO 8601 format](http://www.iso.org/iso/home/standards/iso8601.htm): {YYYY}-{MM}-{DD}. For example, "2022-11-11".
+Long descriptions may be a maximum of 500 characters.  | Optional  |
+| releaseDate  | String  | The date the content item was initially released or first aired in [ISO 8601 format](http://www.iso.org/iso/home/standards/iso8601.htm): {YYYY}-{MM}-{DD}. For example, "2022-11-11".
 
-This field is used to sort programs chronologically and to group related content in Roku Search. | Required, unless the **releaseYear** field is provided.
+This field is used to sort programs chronologically and to group related content in Roku Search.  | Required, unless the **releaseYear** field is provided.
 
-At least one of the **releaseDate** or **releaseYear** fields must be provided.
-releaseYear | Number | The year the content item was initially released or first aired in YYYY format. For example, 2022.
+At least one of the **releaseDate** or **releaseYear** fields must be provided.  |
+| releaseYear  | Number  | The year the content item was initially released or first aired in YYYY format. For example, 2022.
 
-This field is used to sort programs chronologically and to group related content in Roku Search. | Required, unless the **releaseDate** field is provided.
-genres | String[] | A list of one or more of the following genres associated with the content item:
+This field is used to sort programs chronologically and to group related content in Roku Search.  | Required, unless the **releaseDate** field is provided.  |
+| genres  | String[]  | A list of one or more of the following genres associated with the content item:
   * action
   * action sports
   * adventure
@@ -299,73 +299,73 @@ genres | String[] | A list of one or more of the following genres associated wit
   * wrestling
   * yacht racing
 
-| Required
-tags | String[] | One or more tags (for example, “dramas”, “korean”, and so on). Each tag is a string and is limited to 20 characters. | Optional
-credits |  [Credit](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#credit)[] | A list of cast and crew members that may receive credit for the content item. | Optional
-advisoryRatings |  [AdvisoryRating](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#advisoryrating)[] | A list of parental advisory rating objects for the content item.
+ | Required  |
+| tags  | String[]  | One or more tags (for example, “dramas”, “korean”, and so on). Each tag is a string and is limited to 20 characters.  | Optional  |
+| credits  |  [Credit](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#credit)[]  | A list of cast and crew members that may receive credit for the content item.  | Optional  |
+| advisoryRatings  |  [AdvisoryRating](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#advisoryrating)[]  | A list of parental advisory rating objects for the content item.
 
 Each parental advisory rating object includes the rating authority, rating, and advisory descriptor (for example, MPAA, PG-13, AL [adult language]) for a movie in the United States).
 
-A content item may have multiple advisoryRatings objects. For example, an item to be included in search results for USA and Germany would have at least two advisoryRatings objects in the list. | Required. Omitting the **advisoryRatings** field for a content item in EU countries excludes it from Roku's search and discovery features in EU countries.
-images |  [Image](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#image)[] | A list of main poster and background images to be displayed for the content item in the Roku Search results.
+A content item may have multiple advisoryRatings objects. For example, an item to be included in search results for USA and Germany would have at least two advisoryRatings objects in the list.  | Required. Omitting the **advisoryRatings** field for a content item in EU countries excludes it from Roku's search and discovery features in EU countries.  |
+| images  |  [Image](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#image)[]  | A list of main poster and background images to be displayed for the content item in the Roku Search results.
 
 Images may have an aspect ratio of 16:9 or 2:3.
 
-Roku determines the dimensions and aspect ratio to be used after downloading the image. | A main 16:9 or 2:3 poster image is required.
-content | [Content](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#content) | Contains options for playing the content item.
+Roku determines the dimensions and aspect ratio to be used after downloading the image.  | A main 16:9 or 2:3 poster image is required.  |
+| content  | [Content](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#content)  | Contains options for playing the content item.
 
-The Content object includes a **playOptions** field that specifies the availability, pricing, licensing, quality, and playId (for deep linking into content from Roku Search) for the content item. | Required, unless the **type** field is "series" or "season".
-durationInMilliseconds | Number | The duration of content in milliseconds.
+The Content object includes a **playOptions** field that specifies the availability, pricing, licensing, quality, and playId (for deep linking into content from Roku Search) for the content item.  | Required, unless the **type** field is "series" or "season".  |
+| durationInMilliseconds  | Number  | The duration of content in milliseconds.
 
 If both the **durationInSeconds** and **durationInMilliseconds** field are provided, they must be equal. However, it is recommended that only one is provided.
 
-Use the **durationInMilliseconds** field to provide the duration with maximum precision. | Required, unless the **if durationInSeconds** field is provided.
+Use the **durationInMilliseconds** field to provide the duration with maximum precision.  | Required, unless the **if durationInSeconds** field is provided.
 
 At least one of the **durationInSeconds** or **durationInMilliseconds** fields must be provided.
 
-This field is not required if the **type** field is "series" or "season".
-durationInSeconds | Number | The duration of content in seconds.
+This field is not required if the **type** field is "series" or "season".  |
+| durationInSeconds  | Number  | The duration of content in seconds.
 
 If both the **durationInSeconds** and **durationInMilliseconds** field are provided, they must be equal. However, it is recommended that only one is provided.
 
-Use the **durationInMilliseconds** field to provide the duration with maximum precision. | Required, unless the **if durationInMilliSeconds** field is provided.
+Use the **durationInMilliseconds** field to provide the duration with maximum precision.  | Required, unless the **if durationInMilliSeconds** field is provided.
 
-This field is not required if the **type** field is "series" or "season".
-episodeInfo | [EpisodeInfo](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#episodeinfo) | Metadata related to a television episode.
-The **EpisodeInfo** object specifies the episode number, season number, and series ID of the episode. | Required only if the **type** field is "episode".
-seasonInfo | [SeasonInfo](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#seasoninfo) | Metadata related to a television season.
+This field is not required if the **type** field is "series" or "season".  |
+| episodeInfo  | [EpisodeInfo](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#episodeinfo)  | Metadata related to a television episode.
+The **EpisodeInfo** object specifies the episode number, season number, and series ID of the episode.  | Required only if the **type** field is "episode".  |
+| seasonInfo  | [SeasonInfo](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#seasoninfo)  | Metadata related to a television season.
 
-The **SeasonInfo** object specifies the season number and series ID of the season. | Required only if the **type** field is "season".
+The **SeasonInfo** object specifies the season number and series ID of the season.  | Required only if the **type** field is "season".  |
 ### Title
 Provide a localized title of the content item.
-Field | Type | Description | Required
----|---|---|---
-value | String | A maximum 200-character title for the content item in human readable text.
+| Field  | Type  | Description  | Required  |
+| --- | --- | --- | --- |
+| value  | String  | A maximum 200-character title for the content item in human readable text.
 
-This field is used for matching in Roku Search. Do not include extra information such as year, version label, and so on. | Required
-languages | String[] | A list of languages in [ISO 639-1 two-letter language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) (lowercased) format for which the title is applicable.
+This field is used for matching in Roku Search. Do not include extra information such as year, version label, and so on.  | Required  |
+| languages  | String[]  | A list of languages in [ISO 639-1 two-letter language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) (lowercased) format for which the title is applicable.
 
 > The previously listed **language** field (a String) has been deprecated and replaced by the **languages** field (a String[]) in order to reduce feed sizes.
-| Required, if the **defaultLanguage** field is not specified.
+ | Required, if the **defaultLanguage** field is not specified.
 
-If the languages for a localized title are provided, localized descriptions and images with the same languages must also be provided.
+If the languages for a localized title are provided, localized descriptions and images with the same languages must also be provided.  |
 ### Description
 Provide a localized description of the content item.
-Field | Type | Description | Required
----|---|---|---
-value | String | A description of the content item. A short description may be a maximum of 200 characters. A long description may be a maximum of 500 characters. | Required
-languages | String[] | A list of languages in [ISO 639-1 two-letter language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) (lowercased) format for which the description is applicable.
+| Field  | Type  | Description  | Required  |
+| --- | --- | --- | --- |
+| value  | String  | A description of the content item. A short description may be a maximum of 200 characters. A long description may be a maximum of 500 characters.  | Required  |
+| languages  | String[]  | A list of languages in [ISO 639-1 two-letter language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) (lowercased) format for which the description is applicable.
 
 > The previously listed **language** field (a String) has been deprecated and replaced by the **languages** field (a String[]) in order to reduce feed sizes.
-| Required, if the **defaultLanguage** field is not specified.
+ | Required, if the **defaultLanguage** field is not specified.
 
-If the languages for a localized title are provided, localized descriptions and images with the same languages must also be provided.
+If the languages for a localized title are provided, localized descriptions and images with the same languages must also be provided.  |
 ### Credit
 Provide the names and roles of cast and crew members that may receive credit for the content item.
-Field | Type | Description | Required
----|---|---|---
-name | String | Full name of the person | Required
-role | String | The role of the person:
+| Field  | Type  | Description  | Required  |
+| --- | --- | --- | --- |
+| name  | String  | Full name of the person  | Required  |
+| role  | String  | The role of the person:
   * actor
   * anchor
   * host
@@ -375,28 +375,28 @@ role | String | The role of the person:
   * producer
   * screenwriter
 
-| Required
+ | Required  |
 ### AdvisoryRating
 Provide the list of parental advisory rating objects for the content item. Each parental advisory rating object includes the rating source (the rating system or authority responsible for the ratings), the rating value (for example, a "G" rating from the MPAA in the United States), and rating descriptor (for example, MPAA adult language [AL] or mild violence [MV]).
-Field | Type | Description | Required
----|---|---|---
-source | Enum | The rating system or authority responsible for the ratings.
+| Field  | Type  | Description  | Required  |
+| --- | --- | --- | --- |
+| source  | Enum  | The rating system or authority responsible for the ratings.
 
-See the **Rating authority** column in the [Ratings](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#ratings) table for the list of supported values. | Required
-value | Enum | The rating received by the content item from the rating source (for example, a "G" rating from the MPAA in the United States).
+See the **Rating authority** column in the [Ratings](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#ratings) table for the list of supported values.  | Required  |
+| value  | Enum  | The rating received by the content item from the rating source (for example, a "G" rating from the MPAA in the United States).
 
-See the **Ratings** column in the [Ratings](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#ratings) table for the complete list of possible values per rating source. | Required
-descriptors | Enum[] (String enums) | The list of advisory ratings received by the content item (for example, adult language ["AL"] or mild violence ["MV"] from the MPAA in the United States).
+See the **Ratings** column in the [Ratings](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#ratings) table for the complete list of possible values per rating source.  | Required  |
+| descriptors  | Enum[] (String enums)  | The list of advisory ratings received by the content item (for example, adult language ["AL"] or mild violence ["MV"] from the MPAA in the United States).
 
-See the **Ratings descriptors** column in the [Ratings](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#ratings) table for the complete list of possible values per rating source. . | Optional
+See the **Ratings descriptors** column in the [Ratings](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#ratings) table for the complete list of possible values per rating source. .  | Optional  |
 #### Ratings
 For each country supported by Roku Search, the rating authorities, ratings, and advisory ratings are as follows:
-Country | Rating authority
-(source) | Ratings
-(value) | Advisory ratings
-(descriptors)
----|---|---|---
-au | ACB (Australian Classification Board) |
+| Country  | Rating authority
+(source)  | Ratings
+(value)  | Advisory ratings
+(descriptors)  |
+| --- | --- | --- | --- |
+| au  | ACB (Australian Classification Board)  |
   * NR
   * E
   * G
@@ -409,8 +409,8 @@ au | ACB (Australian Classification Board) |
   * RC
   * P
 
-|
-br | CLASSIND (Classificação Indicativa) |
+ |   |
+| br  | CLASSIND (Classificação Indicativa)  |
   * L
   * 10
   * 12
@@ -418,7 +418,7 @@ br | CLASSIND (Classificação Indicativa) |
   * 16
   * 18
 
-|
+ |
   * Violência
   * Violência Extrema
   * Conteúdo Sexual
@@ -432,7 +432,8 @@ br | CLASSIND (Classificação Indicativa) |
   * Atos Criminosos
   * onteúdo Impactante
 
-ca | CHVRS (Canadian Home Video Rating System) |
+ |
+| ca  | CHVRS (Canadian Home Video Rating System)  |
   * G
   * PG
   * 14-A (also 14A)
@@ -440,7 +441,7 @@ ca | CHVRS (Canadian Home Video Rating System) |
   * R
   * E
 
-|
+ |
   * Not Recommended For Young Children
   * Not Recommended For Children
   * Frightening Scenes
@@ -458,7 +459,8 @@ ca | CHVRS (Canadian Home Video Rating System) |
   * Sexual Violence
   * Language May Offend
 
-ca | CPR (Canadian Parental Rating) |
+ |
+| ca  | CPR (Canadian Parental Rating)  |
   * 14+
   * 18+
   * C
@@ -467,24 +469,24 @@ ca | CPR (Canadian Parental Rating) |
   * PG
   * E
 
-|
-de | FSF (Freiwillige Selbstkontrolle Fernsehen [German Association for Voluntary Self-Regulation of Television]) |
+ |   |
+| de  | FSF (Freiwillige Selbstkontrolle Fernsehen [German Association for Voluntary Self-Regulation of Television])  |
   * 0
   * 6
   * 12
   * 16
   * 18
 
-|
-de | FSK (Freiwillige Selbstkontrolle der Filmwirtschaft [German Self-Regulatory Body of the Movie Industry]) |
+ |   |
+| de  | FSK (Freiwillige Selbstkontrolle der Filmwirtschaft [German Self-Regulatory Body of the Movie Industry])  |
   * 0
   * 6
   * 12
   * 16
   * 18
 
-|
-gb | BBFC (British Board of Film Classification) |
+ |   |
+| gb  | BBFC (British Board of Film Classification)  |
   * U
   * PG
   * 12-A (also 12A)
@@ -494,7 +496,7 @@ gb | BBFC (British Board of Film Classification) |
   * R18
   * R-1
 
-|
+ |
   * Theme
   * Behaviour
   * Horror
@@ -505,7 +507,8 @@ gb | BBFC (British Board of Film Classification) |
   * Drugs
   * Sex
 
-mx | RTC (General Directorate of Radio Television and Cinematography) |
+ |
+| mx  | RTC (General Directorate of Radio Television and Cinematography)  |
   * AA
   * A
   * B
@@ -513,13 +516,14 @@ mx | RTC (General Directorate of Radio Television and Cinematography) |
   * C
   * D
 
-|
+ |
   * Violence
   * Sex
   * Language
   * Drugs
 
-us | MPAA (Motion Picture Association of America) |
+ |
+| us  | MPAA (Motion Picture Association of America)  |
   * G
   * PG
   * PG-13 (also PG13)
@@ -527,7 +531,7 @@ us | MPAA (Motion Picture Association of America) |
   * NC-17 (also NC17)
   * UR
 
-|
+ |
   * AC
   * AL
   * GL
@@ -539,7 +543,8 @@ us | MPAA (Motion Picture Association of America) |
   * SSC
   * RP
 
-us | USA_PR (USA Parental Rating) |
+ |
+| us  | USA_PR (USA Parental Rating)  |
   * TV-Y (also TVY)
   * TV-Y7 (also TVY7)
   * TV-G (also TVG)
@@ -547,108 +552,109 @@ us | USA_PR (USA Parental Rating) |
   * TV-14 (also TV14)
   * TV-MA (also TVMA)
 
-|
+ |
   * D
   * L
   * S
   * V
   * FV
 
+ |
 ### Image
 Provide the poster and background images to be displayed for the content item in the Roku Search results. Provide localized images for each region in which the item is to be made available to Roku Search. The supported image formats and aspect ratios are as follows:
   * **format** : JPEG (.jpg file extension), GIF (.gif file extension) or PNG (.png file extension)
   * **aspect ratio** : 16:9 or 2:3 required.
   * **maximum resolution** : 1920 X 1080
 
-Field | Type | Description | Required
----|---|---|---
-type | Enum | The image type:
+| Field  | Type  | Description  | Required  |
+| --- | --- | --- | --- |
+| type  | Enum  | The image type:
   * main: A poster image with title treatment. The aspect ratio of the poster may be 16:9 or 2:3.
   * background: A textless image displayed in the background. The aspect ratio of the background image may be 16:9 or 2:3.
 
-| Required
-url | String | The source url for the image. | Required
-languages | String[] | A list of languages in [ISO 639-1 two-letter language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) format for which the image is applicable. | Required, if the **defaultLanguage** field is not specified.
+ | Required  |
+| url  | String  | The source url for the image.  | Required  |
+| languages  | String[]  | A list of languages in [ISO 639-1 two-letter language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) format for which the image is applicable.  | Required, if the **defaultLanguage** field is not specified.
 
-If the language for a localized image is provided, a localized title and description with the same language must also be provided.
+If the language for a localized image is provided, a localized title and description with the same language must also be provided.  |
 ### Content
-Field | Type | Description | Required
----|---|---|---
-playOptions |  [PlayOption](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#playoptions)[] | The list of options for playing the content item. | Required
+| Field  | Type  | Description  | Required  |
+| --- | --- | --- | --- |
+| playOptions  |  [PlayOption](https://developer.roku.com/en-gb/docs/specs/search/search-feed.md#playoptions)[]  | The list of options for playing the content item.  | Required  |
 #### playOptions
 In the **playOptions** field, specify the availability, pricing, licensing, quality, and playId (for [deep linking](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) into content from Roku Search) for the content item.
-Field | Type | Description | Required
----|---|---|---
-license | Enum | The type of licensing terms for the content:
+| Field  | Type  | Description  | Required  |
+| --- | --- | --- | --- |
+| license  | Enum  | The type of licensing terms for the content:
   * free: Content is directly playable upon being deep linked.
   * subscription: Content is only playable upon being deep linked if the customer has a subscription. For customers that do not have a subscription, the app typically displays a subscription sign-up page when receiving deep links into content that is behind a paywall.
   * rental
   * purchase
 
-| Required
-price | Float | The price of the content in decimal format (for example, 1.90, 1.99, or 2.00).
+ | Required  |
+| price  | Float  | The price of the content in decimal format (for example, 1.90, 1.99, or 2.00).
 
-If the price is 0.00, set the **license** field to "subscription" or "free" instead of setting this field. This automatically sets the **price** field to 0.00 by default. | Required, if the **license** field is set to "purchase" or "rental".
-quality | Enum | The playback resolution of the content item:
+If the price is 0.00, set the **license** field to "subscription" or "free" instead of setting this field. This automatically sets the **price** field to 0.00 by default.  | Required, if the **license** field is set to "purchase" or "rental".  |
+| quality  | Enum  | The playback resolution of the content item:
   * sd
   * hd
   * hd+
   * fhd
   * uhd
 
-| Required
-currency | String | The [ISO 4217 three-letter currency code](https://www.iso.org/iso-4217-currency-codes.html#:~:text=The%20first%20two%20letters%20of,and%20the%20D%20for%20dollar) for the value specified in the **price** field:
+ | Required  |
+| currency  | String  | The [ISO 4217 three-letter currency code](https://www.iso.org/iso-4217-currency-codes.html#:~:text=The%20first%20two%20letters%20of,and%20the%20D%20for%20dollar) for the value specified in the **price** field:
   * usd (or USD) (default)
   * gbp (or GBP)
   * cad (or CAD)
   * eur (or EUR)
 
-| Required, if the **license** field is set to "purchase" or "rental".
-playId | String | A unique, immutable ID for the content item. When customers search for this content item and select your app to watch it, the **playId** is passed in a [deep link](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) back to your app.
+ | Required, if the **license** field is set to "purchase" or "rental".  |
+| playId  | String  | A unique, immutable ID for the content item. When customers search for this content item and select your app to watch it, the **playId** is passed in a [deep link](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) back to your app.
 
-The **playId** must map to the **contentid** in your app for the same content. It is therefore important to keep the Roku Search feed synchronized with the app's content feed. | Required
-availabilityStartTimeStamp | Number | The time (in epoch milliseconds) when the content item is to be made available to Roku Search. | Optional
+The **playId** must map to the **contentid** in your app for the same content. It is therefore important to keep the Roku Search feed synchronized with the app's content feed.  | Required  |
+| availabilityStartTimeStamp  | Number  | The time (in epoch milliseconds) when the content item is to be made available to Roku Search.  | Optional
 
-If you are not providing an availability start time, omit this field from your search feed.
-availabilityEndTimeStamp | Number | The time (in epoch milliseconds) when the content item is to stop being made available to Roku Search. | Optional
+If you are not providing an availability start time, omit this field from your search feed.  |
+| availabilityEndTimeStamp  | Number  | The time (in epoch milliseconds) when the content item is to stop being made available to Roku Search.  | Optional
 
-If you are not providing an availability end time or if the content is available indefinitely, omit this field from your search feed.
-availabilityStartTime | String | The time (as an ISO timestamp) when the content item is to be made available to Roku Search. | Optional
+If you are not providing an availability end time or if the content is available indefinitely, omit this field from your search feed.  |
+| availabilityStartTime  | String  | The time (as an ISO timestamp) when the content item is to be made available to Roku Search.  | Optional
 
-If you are not providing an availability start time, omit this field from your search feed.
-availabilityEndTime | String | The time (as an ISO timestamp) when the content item is to stop being made available to Roku Search. | Optional
+If you are not providing an availability start time, omit this field from your search feed.  |
+| availabilityEndTime  | String  | The time (as an ISO timestamp) when the content item is to stop being made available to Roku Search.  | Optional
 
-If you are not providing an availability end time or if the content is available indefinitely, omit this field from your search feed.
-availabilityInfo | Map<Enum, String[]> | The list of [ISO Alpha-2 two-letter country codes](https://www.iso.org/obp/ui/#search/code/) in which the content item is to be made available to Roku Search. | Required, if the **defaultAvailabilityCountries** field is not specified.
+If you are not providing an availability end time or if the content is available indefinitely, omit this field from your search feed.  |
+| availabilityInfo  | Map<Enum, String[]>  | The list of [ISO Alpha-2 two-letter country codes](https://www.iso.org/obp/ui/#search/code/) in which the content item is to be made available to Roku Search.  | Required, if the **defaultAvailabilityCountries** field is not specified.  |
 ### SeasonInfo
 If the **asset.type** field is set to "season" for a content item, provide metadata about the season.
-Field | Type | Description | Required
----|---|---|---
-seriesId | String | The series ID associated with the season. | Required
-seasonNumber | Number | The number used to identify the season. | Required
+| Field  | Type  | Description  | Required  |
+| --- | --- | --- | --- |
+| seriesId  | String  | The series ID associated with the season.  | Required  |
+| seasonNumber  | Number  | The number used to identify the season.  | Required  |
 ### EpisodeInfo
 If the **asset.type** field is set to "episode" for a content item, provide metadata about the episode.
-Field | Type | Description | Required
----|---|---|---
-seriesId | String | The ID of the series containing the episode. | Required
-seasonNumber | Number | The season number in which the episode occurs. | Optional
-episodeNumber | Number | The number used to identify the episode within the season. | Required
+| Field  | Type  | Description  | Required  |
+| --- | --- | --- | --- |
+| seriesId  | String  | The ID of the series containing the episode.  | Required  |
+| seasonNumber  | Number  | The season number in which the episode occurs.  | Optional  |
+| episodeNumber  | Number  | The number used to identify the episode within the season.  | Required  |
 ### ExternalId
 Provide a list of IDs and sources to be used for linking external metadata to the content item.
-Field | Type | Description | Required
----|---|---|---
-id | String | The third-party metadata provider ID that uniquely identifies the content item.
+| Field  | Type  | Description  | Required  |
+| --- | --- | --- | --- |
+| id  | String  | The third-party metadata provider ID that uniquely identifies the content item.
 
 For Gracenote/TMS, the ID is a 14-character string (for example, MV123456780000). The first 2 characters in the ID represent the unique ID domain applied to the program record:
   * MV: Movie (theatrical, made-for-television, direct-to-video).
   * EP: Television episode.
   * SH: Television show
 
-| Required
-source | String | The source of the specified external ID. This must be one of the following values:
+ | Required  |
+| source  | String  | The source of the specified external ID. This must be one of the following values:
   * TMS
 
-| Required
+ | Required  |
 ## Pagination
 Pagination can be used to separate a single search feed into multiple discrete pages of smaller size (250MB maximum). This reduces the payload of the feed, which improves the performance of the publisher's and Roku's servers and optimizes the download frequency.
 > If the search feed is 20MB or larger, pagination should be used.
@@ -663,6 +669,7 @@ To use pagination in your search feed, follow these steps:
 Developers can use the Roku Search feed schema to validate the format of their search feed (it, however, does not guarantee that a feed will be validated by Roku). This schema may occasionally be updated by Roku.
 > Some fields in the schema are for use by content providers onboarding content into The Roku Channel only.
 > Click [here](https://github.com/rokudev/search-feed-json) to download Roku's Search feed schema.
+
 ```
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
@@ -2336,6 +2343,7 @@ Developers can use the Roku Search feed schema to validate the format of their s
 The following examples, which pass Roku's schema validation, demonstrate the proper implementation of the various feed segments and fields. They are, however, not intended to address any particular production requirement or scenario. These examples can be used as templates for adding entries to a feed.
 ### Simple feed example (single content item)
 > Click [here](https://github.com/rokudev/search-feed-json/archive/refs/heads/main.zip) to download this sample feed.
+
 ```
 {
   "version": "1",
@@ -2428,6 +2436,7 @@ The following examples, which pass Roku's schema validation, demonstrate the pro
 
 ### Advanced feed example (series, season, episode)
 > Click [here](https://github.com/rokudev/search-feed-json/archive/refs/heads/main.zip) to download this sample feed.
+
 ```
 {
   "version": "1",
@@ -2643,6 +2652,7 @@ The following examples, which pass Roku's schema validation, demonstrate the pro
 
 ### TMS feed example (movies, series, episode)
 > Click [here](https://github.com/rokudev/search-feed-json/archive/refs/heads/main.zip) to download this sample feed. The prefixes in the IDs indicate the content type (MV=movie, SH=series, EP=episode).
+
 ```
 {
   "version": "1.0",

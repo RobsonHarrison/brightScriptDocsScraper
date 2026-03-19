@@ -11,18 +11,21 @@ The StandardKeyboardDialog is comprised of the following areas and building bloc
   * StdDlgButtonArea, which may contain zero or more StdDlgButton nodes.
 
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-title | string | "" | READ_WRITE | The title to be displayed at the top of the dialog.
-message | array of strings | [ ] | READ_WRITE | One or more blocks of text, which are typically used to describe information about the data to be entered. Each string in the array is displayed as a separate block of text with the standard amount of space left between the blocks.
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| title  | string  | ""  | READ_WRITE  | The title to be displayed at the top of the dialog.  |
+| message  | array of strings  | [ ]  | READ_WRITE  | One or more blocks of text, which are typically used to describe information about the data to be entered. Each string in the array is displayed as a separate block of text with the standard amount of space left between the blocks.
 
 > Minimize the message length to avoid having a scrollbar automatically added to the content area. If multiple strings are specified or any string is too long, the dialog may not be able to fit within the height of the display.
-buttons | array of strings | [ ] | READ_WRITE | List of buttons to be displayed in the button area at the bottom of the dialog. Each string in the buttons array adds a new button to the button area.
+ |
+| buttons  | array of strings  | [ ]  | READ_WRITE  | List of buttons to be displayed in the button area at the bottom of the dialog. Each string in the buttons array adds a new button to the button area.
 
 > Minimize the number of buttons in the dialog to ensure that all buttons are visible without the user having to scroll up and down.
-textEditBox | VoiceTextEditBox node | The keyboard item's VoiceTextEditBox node | READ | The internal VoiceTextEditBox node used by this dialog's internal keyboard. This field should be used only to access the fields of this internal node
+ |
+| textEditBox  | VoiceTextEditBox node  | The keyboard item's VoiceTextEditBox node  | READ  | The internal VoiceTextEditBox node used by this dialog's internal keyboard. This field should be used only to access the fields of this internal node
 
 > Use the **textEditBox.maxTextLength** field to limit the length of the pin to be entered.
-pin | string | "" | READ_WRITE | Displays the entered PIN number in the text edit box. As the user enters each numeric digit, this field is updated with the currently entered value.
+ |
+| pin  | string  | ""  | READ_WRITE  | Displays the entered PIN number in the text edit box. As the user enters each numeric digit, this field is updated with the currently entered value.  |
 ## Sample app
 You can download and install a [sample app](https://github.com/rokudev/standard-dialog-framework) that demonstrates how to create a standard PINPad dialog.

@@ -1,8 +1,8 @@
 # ifAppManager
 ## Implemented by
-Name | Description
----|---
-[roAppManager](https://developer.roku.com/docs/references/brightscript/components/roappmanager.md "roAppManager") | Returns information about the application
+| Name  | Description  |
+| --- | --- |
+| [roAppManager](https://developer.roku.com/docs/references/brightscript/components/roappmanager.md "roAppManager")  | Returns information about the application  |
 ## Supported methods
 ### GetUptime() as Object
 #### Description
@@ -18,34 +18,35 @@ The number of minutes set for the screensaver wait time.
 #### Description
 This method allows an app to tell Roku when the user is signed in or signed out of the appIf the app is removed, the Roku OS will call SetUserSignedIn(false) on the app's behalf.
 #### Parameters
-Name | Type | Description
----|---|---
-signedIn | Boolean | Set to true to indicate that the user is signed in; set to false to indicate the user is signed out.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| signedIn  | Boolean  | Set to true to indicate that the user is signed in; set to false to indicate the user is signed out.  |
 ### SetAutomaticAudioGuideEnabled(enabled as Boolean) as Void
 #### Description
 Enables or disables the automatic screen reader and override any manifest setting.This is useful for apps that want to temporarily turn off the automatic screen reader for specific screens.
 #### Parameters
-Name | Type | Description
----|---|---
-enabled | Boolean | A flag indicating whether to enable or disable the automatic screen reader.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enabled  | Boolean  | A flag indicating whether to enable or disable the automatic screen reader.  |
 ### IsAppInstalled(channelID as String, version As String) as Boolean
 #### Description
 This method returns true if an app with the specified channelID and the minimum version required is installed.
 #### Parameters
-Name | Type | Description
----|---|---
-channelID | String | The unique id of the app.
-version | String | The minimum version number of the app to be used for the query.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| channelID  | String  | The unique id of the app.  |
+| version  | String  | The minimum version number of the app to be used for the query.  |
 #### Return Value
 A boolean indicating whether the specified BrightScript app is installed.
 ### SetNowPlayingContentMetaData(contentMetaData as Object) as Void
 #### Description
 Updates video or audio [content metadata](https://developer.roku.com/docs/developer-program/getting-started/architecture/content-metadata.md) during playback. This method takes a subset of content metadata parameters to be updated. These values override any previously ones sent to the Roku Media Player, and they are used until this function is called again or until the [**roAppManager**](https://developer.roku.com/docs/references/brightscript/components/roappmanager.md) instance is deleted.
 #### Parameters
-Name | Type | Description
----|---|---
-contentMetaData | roAssociativeArray | The video or audio [content metadata](https://developer.roku.com/docs/developer-program/getting-started/architecture/content-metadata.md) parameters to be updated (for example, the title and contentType)
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| contentMetaData  | roAssociativeArray  | The video or audio [content metadata](https://developer.roku.com/docs/developer-program/getting-started/architecture/content-metadata.md) parameters to be updated (for example, the title and contentType)  |
 #### Example
+
 ```
 appmgr = CreateObject("roAppManager")
 appmgr.SetNowPlayingContentMetaData({
@@ -56,6 +57,7 @@ appmgr.SetNowPlayingContentMetaData({
 ```
 
 To revert an update, pass `invalid` in this method:
+
 ```
 appmgr.SetNowPlayingContentMetaData(invalid)
 
@@ -71,13 +73,15 @@ Apps can check the launch parameters to determine whether the app was launched v
 Specifies a list of text strings, such as user profile names, that can be matched to voice requests.
 When there is a match (the name uttered by the user matches the registered text string), it is provided to the app via an roInput voice command handler. Specifically, the **command** key in the associative array returned by the [**roInputEvent.GetInfo()**](https://developer.roku.com/docs/references/brightscript/events/roinputevent.md#getinfo-as-object) method is set to "action", and the **text** key is set to the matched name or other text string.
 **Parameters**
-Name | Type | Description
----|---|---
-actions | array of associative arrays | The list of text strings to be regsitered. Once a text string is registered, it can be matched to voice requests received by the app. Each text string is defined with the following attributes:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| actions  | array of associative arrays  | The list of text strings to be regsitered. Once a text string is registered, it can be matched to voice requests received by the app. Each text string is defined with the following attributes:
   * a **text** key for storing the name or word to be matched.
   * an optional **link** key for storing a deep link.
 
+ |
 #### Example
+
 ```
 appMgr = CreateObject("roAppManager")
 
@@ -97,10 +101,10 @@ _Available since Roku OS 13.0_
 Returns a roAssociativeArray that includes an exit code indicating why an app was terminated, a timestamp, the state of the app and Roku media player at the time the app was exited, and the memory limit exceeded (if applicable). This helps developers monitor and debug memory issues with their apps.
 **Return Values**
 An roAssociativeArray the following information about the most recent app exits. Invalid is returned if no app exits are recorded.
-Name | Type | Description
----|---|---
-timestamp | String | An ISO 8601 date string that specifies the time of the app exit.
-exit_code | String | The exit code, which denotes the cause of the app termination. See [lastExitOrTerminationReason](https://developer.roku.com/docs/developer-program/getting-started/architecture/dev-environment.md#lastexitorterminationreason-parameter) for the list of possible exit codes. For memory-related app exits, this value will be one of the following:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| timestamp  | String  | An ISO 8601 date string that specifies the time of the app exit.  |
+| exit_code  | String  | The exit code, which denotes the cause of the app termination. See [lastExitOrTerminationReason](https://developer.roku.com/docs/developer-program/getting-started/architecture/dev-environment.md#lastexitorterminationreason-parameter) for the list of possible exit codes. For memory-related app exits, this value will be one of the following:
   * **EXIT_CHANNEL_MEM_LIMIT_FG** : The app exceeded the per-app memory limit while running in the foreground.
   * **EXIT_CHANNEL_MEM_LIMIT_BG** : The app exceeded the per-app memory limit while running in the background.
   * **EXIT_OUT_OF_MEMORY** : The device was running under low-memory conditions.
@@ -108,18 +112,22 @@ exit_code | String | The exit code, which denotes the cause of the app terminati
   * **EXIT_SYSTEM_KILL** : The app was preemptively closed by the Roku OS.
   * **EXIT_UNKNOWN:** This is the default exit code if there was no prior exit (for example, the inital app launch after system boot) or no unusual exit reason noted (for example, a scenario other than a BrightScript crash or system resources issue).
 
-mem_limit | Integer | The applicable per-app memory limit that was exceeded (in Mb). This attribute is only included If the **exitCode** is EXIT_CHANNEL_MEM_LIMIT_FG or EXIT_CHANNEL_MEM_LIMIT_BG.
-app_state | String | The state of the app when it was terminated:
+ |
+| mem_limit  | Integer  | The applicable per-app memory limit that was exceeded (in Mb). This attribute is only included If the **exitCode** is EXIT_CHANNEL_MEM_LIMIT_FG or EXIT_CHANNEL_MEM_LIMIT_BG.  |
+| app_state  | String  | The state of the app when it was terminated:
   * **foreground** : The application was running in the foreground.
   * **background** : The application was running in the background.
 
-console_log | String | The last 20 lines of text written to the BrightScript console before termination. The console output includes BrightScript print statements, BrightScript errors and warnings, and any system messages. The availability of this attribute depends on the platform and app configuration.
-media_player_state | String | The state of the media player before the app was terminated. This attribute is included for all **exitCode** values except EXIT_CHANNEL_MEM_LIMIT_FG and EXIT_CHANNEL_MEM_LIMIT_BG:
+ |
+| console_log  | String  | The last 20 lines of text written to the BrightScript console before termination. The console output includes BrightScript print statements, BrightScript errors and warnings, and any system messages. The availability of this attribute depends on the platform and app configuration.  |
+| media_player_state  | String  | The state of the media player before the app was terminated. This attribute is included for all **exitCode** values except EXIT_CHANNEL_MEM_LIMIT_FG and EXIT_CHANNEL_MEM_LIMIT_BG:
   * **playing** : The media player was playing.
   * **stopped** : The media player was stopped.
 
+ |
 ##### Example
 The following sample demonstrates how to use the **GetLastExitInfo()** function.
+
 ```
 appManager = CreateObject("roAppManager")
 closureDump = appManager.GetLastExitInfo()

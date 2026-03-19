@@ -3,6 +3,7 @@ The roRemoteInfo component provides an interface to obtain attributes about the 
 This object is created with no parameters:
 `CreateObject("roRemoteInfo")`
 **Example**
+
 ```
 remoteInfo = CreateObject("roRemoteInfo")
 print remoteInfo.GetModel(0)
@@ -13,6 +14,7 @@ print remoteInfo.hasFeature("voicecapture", 0)
 
 **Output**
 The output from the above code could be as follows:
+
 ```
 538
 false

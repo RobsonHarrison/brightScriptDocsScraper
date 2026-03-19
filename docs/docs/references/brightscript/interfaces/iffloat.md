@@ -1,9 +1,9 @@
 # ifFloat
 Interface equivalent for intrinsic type Float
 ## Implemented by
-Name | Description
----|---
-[roFloat](https://developer.roku.com/docs/references/brightscript/components/rofloat.md "roFloat") | Object equivalent for intrinsic type 'Float'
+| Name  | Description  |
+| --- | --- |
+| [roFloat](https://developer.roku.com/docs/references/brightscript/components/rofloat.md "roFloat")  | Object equivalent for intrinsic type 'Float'  |
 ## Supported methods
 ### GetFloat() As Float
 #### Description
@@ -14,6 +14,6 @@ The float value stored in the calling Float object.
 #### Description
 Sets the calling Float object to the specified float value.
 #### Parameters
-Name | Type | Description
----|---|---
-value | Float | The float value to be set on the calling Float object.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| value  | Float  | The float value to be set on the calling Float object.  |

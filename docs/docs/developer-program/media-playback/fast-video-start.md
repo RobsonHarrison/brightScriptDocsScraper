@@ -7,6 +7,7 @@ Calling Prebuffer() starts buffering the video specified by a previous SetConten
 ## roVideoPlayer use cases
 ### Prebuffer before playback
 The following code demonstrates this use case.
+
 ```
 port = CreateObject( "roMessagePort" )
 

@@ -10,6 +10,7 @@ The web server can authenticate that the requested connection is from a Roku Str
 
 **Example**
 In order for your web server to perform the steps above to authenticate your Roku Streaming Player, your application needs to call the following functions before performing any https requests:
+
 ```
 object.SetCertificatesFile("common:/certs/ca-bundle.crt")
 object.AddHeader("X-Roku-Reserved-Dev-Id", "")

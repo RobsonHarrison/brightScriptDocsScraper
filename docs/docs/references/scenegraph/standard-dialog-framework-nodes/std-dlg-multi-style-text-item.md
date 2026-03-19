@@ -23,14 +23,15 @@ msTextItem.text = "This StdDlgMultiStyleTextItem renders the URL <url>http://www
 ```
 
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-text | string | "" | READ_WRITE | Specifies the text to be displayed
-drawingStyles | associative array of associative arrays | {} | READ_WRITE | Defines the size, URI, and color of a font style. This field may contain one or more font styles.
-audioGuideText | string | "" | READ_WRITE | Specifies the string to be spoken when the screen reader reads the text item. By default, the screen reader reads the string specified in the **text** field.
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| text  | string  | ""  | READ_WRITE  | Specifies the text to be displayed  |
+| drawingStyles  | associative array of associative arrays  | {}  | READ_WRITE  | Defines the size, URI, and color of a font style. This field may contain one or more font styles.  |
+| audioGuideText  | string  | ""  | READ_WRITE  | Specifies the string to be spoken when the screen reader reads the text item. By default, the screen reader reads the string specified in the **text** field.  |
 ## Example
 In this example, two drawing styles named "default" and "url" have been defined and assigned to the **drawingStyles** field of the **StdDlgMultiStyleTextItem** node. The roku.com URL is enclosed in tags, which renders the text with the "url" style defined in the **drawingStyles** field. The parts of the string that are not enclosed in the tags use the "default" drawing style. If no "default" **drawingStyle** had been defined, the system default drawing style would have been used.
 ![roku815px - StdDlgMultiStyleTextItemFHD](https://image.roku.com/ZHZscHItMTc2/StdDlgMultiStyleTextItemFHD.jpg)
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 

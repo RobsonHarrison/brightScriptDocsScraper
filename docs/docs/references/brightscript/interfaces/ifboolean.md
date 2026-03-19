@@ -1,9 +1,9 @@
 # ifBoolean
 Interface equivalent for intrinsic type Boolean.
 ## Implemented by
-Name | Description
----|---
-[roBoolean](https://developer.roku.com/docs/references/brightscript/components/roboolean.md "roBoolean") | Object equivalent for intrinsic type Boolean
+| Name  | Description  |
+| --- | --- |
+| [roBoolean](https://developer.roku.com/docs/references/brightscript/components/roboolean.md "roBoolean")  | Object equivalent for intrinsic type Boolean  |
 ## Supported methods
 ### GetBoolean() As Boolean
 #### Description
@@ -14,6 +14,6 @@ The boolean value stored in the calling boolean object.
 #### Description
 Sets the calling boolean object to the specified true/false value.
 #### Parameters
-Name | Type | Description
----|---|---
-value | Boolean | True/false.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| value  | Boolean  | True/false.  |

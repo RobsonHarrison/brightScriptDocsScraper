@@ -7,27 +7,29 @@ The width of the vertical column containing the [StdDlgAreaBase](https://develop
 A dialog may contain only a single **StdDlgSideCardArea** node, and that node must be a child of the dialog.
 The **StdDlgSideCardArea** node never gains key focus; therefore, it should not contain any other nodes that require direct user interaction.
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-extendToDialogEdge | boolean | true | READ_WRITE | Specifies whether the **StdDlgSideCardArea** node extends to the edge of the dialog's background image or respects the background image's 9-patch margins.
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| extendToDialogEdge  | boolean  | true  | READ_WRITE  | Specifies whether the **StdDlgSideCardArea** node extends to the edge of the dialog's background image or respects the background image's 9-patch margins.
 
   * **true** : The origin of the **StdDlgSideCardArea** node's coordinate system is set to the top/left edge of the dialog's background image.
   * **false** : The origin of the **StdDlgSideCardArea** node's coordinate system is based on the background image's 9-patch margins.
 
-horizAlign | string | "right" | READ_WRITE | Specifies on which side of the custom dialog the StdDlgSideCardArea node appears: "left" or "right".
-showDivider | boolean | false | READ_WRITE | Specifies whether a thin vertical divider line is displayed between the **StdDlgSideCardArea** and the vertical column that contains the dialog's child **StdDlgAreaBase** nodes ([TitleArea](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-title-area.md), [StdDlgContentArea(s)](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-content-area.md), and/or [StdDlgButtonArea](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-button-area.md)). The divider line, if shown, uses the **DialogSecondaryItemColor** field from the current [RSG palette](https://developer.roku.com/docs/references/scenegraph/scene.md#fields).
-width | float | 0.0f | READ_WRITE | Specifies the width of the **StdDlgSideCardArea** node.
+ |
+| horizAlign  | string  | "right"  | READ_WRITE  | Specifies on which side of the custom dialog the StdDlgSideCardArea node appears: "left" or "right".  |
+| showDivider  | boolean  | false  | READ_WRITE  | Specifies whether a thin vertical divider line is displayed between the **StdDlgSideCardArea** and the vertical column that contains the dialog's child **StdDlgAreaBase** nodes ([TitleArea](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-title-area.md), [StdDlgContentArea(s)](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-content-area.md), and/or [StdDlgButtonArea](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-button-area.md)). The divider line, if shown, uses the **DialogSecondaryItemColor** field from the current [RSG palette](https://developer.roku.com/docs/references/scenegraph/scene.md#fields).  |
+| width  | float  | 0.0f  | READ_WRITE  | Specifies the width of the **StdDlgSideCardArea** node.
 
 If this field is set to its default value (0.0), the width is set to the width of the [**StdDlgContentArea**](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-content-area.md)) node's bounding rectangle (the union of the width of all of its child nodes).
 
 If set to a value greater than 0.0, the width of the **StdDlgSideCardArea** node is fixed to that explicit value.
 
-The height of **StdDlgSideCardArea** node is based on the StandardDialog layout logic. This sets the height to a maximum of the height of the **StdDlgSideCardArea** bounding rectangle and the height of the vertical column containing the dialog's child [**StdDlgAreaBase**](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-area-base.md) nodes. This is constrained by the maximum permissible height of the dialog such that it is fully visible onscreen.
+The height of **StdDlgSideCardArea** node is based on the StandardDialog layout logic. This sets the height to a maximum of the height of the **StdDlgSideCardArea** bounding rectangle and the height of the vertical column containing the dialog's child [**StdDlgAreaBase**](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-area-base.md) nodes. This is constrained by the maximum permissible height of the dialog such that it is fully visible onscreen.  |
 ### Examples
 The following examples demonstrate how to use the **StdDlgSideCardArea** node to display decorative images or annotative text.
 #### Decorative
 In this example, the **StdDlgSideCardArea** has a child **Poster** node with its **uri** field set to the URI of a mountain lake image. The height of the dialog is computed to equal the height of the mountain lake image [800 (FHD), 300 (HD)]. The mountain lake **Poster** node has a child **SimpleLabel** node positioned at 575, 775 to show the "PhotoCredit:Jeff Anderson" text on top of the Poster.
 ![roku815px - SideCardGlamourShot](https://image.roku.com/ZHZscHItMTc2/SideCardGlamourShot.jpg)
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 
@@ -82,6 +84,7 @@ end sub
 #### Annotative
 In this example, the **StdDlgSideCardArea** has a child **Label** node ("Show the QR Code...") and a child **Poster** node to show the QR code below the Label. The height of the dialog is set to the maximum height of the bounding rectangle of the **StdDlgSideCardArea** and the vertical column that contains the dialog's child [StdDlgAreaBase](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-area-base.md) nodes ([TitleArea](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-title-area.md), [StdDlgContentArea(s)](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-content-area.md), and/or [StdDlgButtonArea](https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/std-dlg-button-area.md)). In this case, the StdDlgSideCardArea is slightly taller; therefore, it's height is used.
 ![roku815px - SideCardAnnotation](https://image.roku.com/ZHZscHItMTc2/SideCardAnnotation.jpg)
+
 ```
 <component name="SideCardAnnotationDialog" extends="StandardDialog" initialFocus="buttonArea" >
 

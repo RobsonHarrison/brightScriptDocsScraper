@@ -2,9 +2,9 @@
 _Available since Roku OS 15.0_
 The **ifArraySizeInfo()** interface includes set of functions that provide developers with more control over array capacities. These functions reduce the memory overhead when using the [**ParseJSON()** function](https://developer.roku.com/docs/references/brightscript/language/global-utility-functions.md#parsejsonjsonstring-as-string-flags---as-string-as-object) on large JSON body data sets.
 ## Implemented by
-Name | Description
----|---
-[roArray](https://developer.roku.com/docs/references/brightscript/components/roarray.md "roArray") | An array stores an indexed collection of BrightScript objects. Each entry of an array can be a different type, or they may all of the same type.
+| Name  | Description  |
+| --- | --- |
+| [roArray](https://developer.roku.com/docs/references/brightscript/components/roarray.md "roArray")  | An array stores an indexed collection of BrightScript objects. Each entry of an array can be a different type, or they may all of the same type.  |
 ## Supported methods
 ### IsResizable() As Boolean
 #### Description
@@ -22,9 +22,9 @@ An integer indicating the current storage capacity of the array.
 #### Description
 Sends a request to allocate or increase storage capacity of the array to hold at least the specified number of items.
 ### Parameters
-Name | Type | Description
----|---|---
-minSize | Integer | The specified number of items the array is to store.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| minSize  | Integer  | The specified number of items the array is to store.  |
 #### Return Value
 Returns true if the potential capacity update can hold the specified number of items. Otherwise, returns false if the array is not resizable or storage allocation fails.
 > The updated capacity of the array may be more than was requested if the extra capacity already existed or how storage was implemented.

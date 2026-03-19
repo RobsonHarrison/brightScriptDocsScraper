@@ -19,6 +19,7 @@ Also review "[SceneGraph threads](https://developer.roku.com/docs/developer-prog
 ### Example
 The following reads attributes from an XML file on a server containing the content for a PosterGrid node into a ContentNode, which can then be assigned to the content field of the PosterGrid node to configure and populate the grid.
 #### Task Node Example
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 
@@ -66,10 +67,10 @@ The following reads attributes from an XML file on a server containing the conte
 
 In addition to this example, a much simpler, complete example, including the scene that creates the Task node, can be found here: [SimpleTask example](https://github.com/rokudev/samples/tree/master/ux%20components/control). That example simply uses a Task node to increment a counter and display the current counter value on the screen.
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-functionName | string | "" | READ_WRITE | The name of the function in the Task node component to be executed when the state field changes to RUN. The function must be declared within the scope of the Task node component
-control | option string | init | WRITE_ONLY | Requests a change in the run state of the spawned task. The valid options are the same as for the state field, but case-insensitive (i.e. can set "RUN" or "run")
-state | value string | init | READ_ONLY | Inquires about the run state of the spawned task. Note that the values are in lowercase: "init", "stop", "run", "done"
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| functionName  | string  | ""  | READ_WRITE  | The name of the function in the Task node component to be executed when the state field changes to RUN. The function must be declared within the scope of the Task node component  |
+| control  | option string  | init  | WRITE_ONLY  | Requests a change in the run state of the spawned task. The valid options are the same as for the state field, but case-insensitive (i.e. can set "RUN" or "run")  |
+| state  | value string  | init  | READ_ONLY  | Inquires about the run state of the spawned task. Note that the values are in lowercase: "init", "stop", "run", "done"  |
 ## Sample app
 [TaskExample](https://github.com/rokudev/samples/tree/master/ux%20components/control/TaskExample) is a sample app demonstrating Task in action.

@@ -1,25 +1,25 @@
 # ifXMLList
 ## Implemented by
-Name | Description
----|---
-[roXMLList](https://developer.roku.com/docs/references/brightscript/components/roxmllist.md "roXMLList") | Contains a list of roXML objects
+| Name  | Description  |
+| --- | --- |
+| [roXMLList](https://developer.roku.com/docs/references/brightscript/components/roxmllist.md "roXMLList")  | Contains a list of roXML objects  |
 ## Supported methods
 ### GetNamedElements(name As String) As Object
 #### Description
 Returns a new XMLList that contains all roXMLElements that matched the passed in name (case-sensitive matching is used). This is the same as using the dot operator on an roXMLList.
 #### Parameters
-Name | Type | Description
----|---|---
-Name | String | The XML element to be used to find matches.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| Name  | String  | The XML element to be used to find matches.  |
 #### Return Value
 An XMLList that contains the matches.
 ### GetNamedElementsCi(name As String) As Object
 #### Description
 Returns a new XMLList that contains all roXMLElements that matched the passed in name (case-insensitive matching is used). This is the same as using the dot operator on an roXMLList.
 #### Parameters
-Name | Type | Description
----|---|---
-Name | String | The XML element to be used to find matches.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| Name  | String  | The XML element to be used to find matches.  |
 #### Return Value
 An XMLList that contains the matches.
 ### Simplify() As Object

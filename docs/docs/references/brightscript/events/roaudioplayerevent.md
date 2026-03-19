@@ -33,11 +33,11 @@ Specific information about the event can be obtained by calling the GetMessages(
 Returns a description of the message (for exampe, "Format Detected").
 #### GetInfo() as Object
 Returns information about the video player event. This method returns an roAssociativeArray that contains the following keys:
-Key | Value
----|---
-audio | The format of the audio stream, if any
-captions | The format of the captioning data, if any
-video | The format of the video stream, if any
+| Key  | Value  |
+| --- | --- |
+| audio  | The format of the audio stream, if any  |
+| captions  | The format of the captioning data, if any  |
+| video  | The format of the video stream, if any  |
 ### isSegmentDownloadStarted() as Boolean
 Checks whether the individual segments in an HLS or smooth stream are about to be downloaded. This method returns true if segments in the stream are going to be downloaded; otherwise, it returns false.
 Specific information about the event can be obtained by calling the GetMessages() and GetInfo() methods on the event.
@@ -45,12 +45,12 @@ Specific information about the event can be obtained by calling the GetMessages(
 Returns a description of the message (for example, "Segment download started").
 #### GetInfo() as Object
 Returns an associative array containing the following information about the segment download event:
-Key | Value
----|---
-Sequence | Stream segment sequence number
-SegBitrate | Bitrate of the segment, in kilobits per second
-StartTime | Timestamp of the start of the segment data
-EndTime | Timestamp of the end of the segment data
+| Key  | Value  |
+| --- | --- |
+| Sequence  | Stream segment sequence number  |
+| SegBitrate  | Bitrate of the segment, in kilobits per second  |
+| StartTime  | Timestamp of the start of the segment data  |
+| EndTime  | Timestamp of the end of the segment data  |
 ### isStreamSegmentInfo() as Boolean
 Checks whether playback has begun of a segment in an HLS, DASH, or smooth stream. This method returns true if the playback of a segment in an HLS, DASH, or smooth stream has begun; otherwise, it returns false. Specific information about the event can be obtained by calling the GetMessage(), GetIndex() and GetInfo() methods on the event.
 #### GetMessage() as String
@@ -59,13 +59,13 @@ Returns a description of the message (for example, "Stream segment info").
 Returns the segment start time in seconds.
 #### GetInfo() as Object
 Returns an associative array with the following information about the stream segment:
-Key | Value
----|---
-StreamBandwidth | Bandwidth of the stream being played in kbps
-SegStartTime | Segment start time (offset from start of stream) in milliseconds
-Sequence | Stream segment sequence number
-SegUrl | Stream segment URL (i.e., .ts file for HLS, stream fragment URL for smooth)
-HdrMode | Indicates the HDR format of the content, which may be one of the following values:
+| Key  | Value  |
+| --- | --- |
+| StreamBandwidth  | Bandwidth of the stream being played in kbps  |
+| SegStartTime  | Segment start time (offset from start of stream) in milliseconds  |
+| Sequence  | Stream segment sequence number  |
+| SegUrl  | Stream segment URL (i.e., .ts file for HLS, stream fragment URL for smooth)  |
+| HdrMode  | Indicates the HDR format of the content, which may be one of the following values:
   * 0: UNKNOWN
   * 1: NONE (SDR)
   * 2: HDR10
@@ -74,6 +74,7 @@ HdrMode | Indicates the HDR format of the content, which may be one of the follo
   * 5: HDR10_PLUS
   * 6: SL_HDR2
 
+ |
 ### isDownloadSegmentInfo() as Boolean
 Checks whether a segment in an adaptive stream (HLS, Smooth, or DASH) has been downloaded. This method returns true if a segment in an adaptive stream (HLS, Smooth, or DASH) has been downloaded; otherwise, it returns false. Specific information about the event can be obtained by calling the GetMessage(), GetIndex() and GetInfo() methods on the event.
 #### GetMessage() as String
@@ -82,13 +83,13 @@ Returns a description of the message (for example, "Download segment info").
 Returns the segment sequence number.
 #### GetInfo() as Object
 Returns an associative array containing the following information about the segment download:
-Key | Value
----|---
-Status | Status of the download: 0 = success, nonzero = error
-Sequence | Stream segment sequence number (same as returned by GetIndex)
-SegUrl | Stream segment URL (i.e., .ts file for HLS, stream fragment URL for smooth)
-DownloadDuration | Amount of time spent downloading the segment, in milliseconds
-SegSize | Segment size, in bytes
-SegType | Type of data in the segment: 1=audio, 2=video, 3=captions, 0=mux
-Bitrate | Bitrate of the segment, in bits per second
-SegBitrate | Bitrate of the segment, in kilobits per second (equal to Bitrate / 1000)
+| Key  | Value  |
+| --- | --- |
+| Status  | Status of the download: 0 = success, nonzero = error  |
+| Sequence  | Stream segment sequence number (same as returned by GetIndex)  |
+| SegUrl  | Stream segment URL (i.e., .ts file for HLS, stream fragment URL for smooth)  |
+| DownloadDuration  | Amount of time spent downloading the segment, in milliseconds  |
+| SegSize  | Segment size, in bytes  |
+| SegType  | Type of data in the segment: 1=audio, 2=video, 3=captions, 0=mux  |
+| Bitrate  | Bitrate of the segment, in bits per second  |
+| SegBitrate  | Bitrate of the segment, in kilobits per second (equal to Bitrate / 1000)  |

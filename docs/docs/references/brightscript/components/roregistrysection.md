@@ -3,6 +3,7 @@ A Registry Section enables the organization of settings within the registry. Dif
 This object must be supplied with a "section" name on creation. If no such section exists, it will be created. Section names are case sensitive, so sections named "Settings" and "settings" are two different sections.
 `CreateObject("roRegistrySection", section as String)`
 **Example: Get and set some user authentication in the registry**
+
 ```
 Function GetAuthData() As Dynamic
      sec = CreateObject("roRegistrySection", "Authentication")

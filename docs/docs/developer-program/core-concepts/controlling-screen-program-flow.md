@@ -22,6 +22,7 @@ The deciding factor to develop a custom component is whether it serves a discret
 This is how you might want the list to appear and behave, with the category poster appearing along with a red underline cursor under the focused item:
 ![roku815px - markuplistdesign](https://image.roku.com/ZHZscHItMTc2/markuplistdesign.jpg)
 For the VOD category list example, the first step might be to write a SceneGraph component outline similar to the following:
+
 ```
 <component name = "VODCategoriesList" extends = "MarkupList">
 
@@ -32,6 +33,7 @@ For the VOD category list example, the first step might be to write a SceneGraph
 You can then select the nodes to comprise your custom component from the SceneGraph API node classes, to either create or modify them using BrightScript in the <script> element, and/or declare/define them in XML markup in the <children> element. For example, for a list of categories, you might want to use the [LabelList](https://developer.roku.com/docs/references/scenegraph/list-and-grid-nodes/labellist.md) node class, or perhaps the [MarkupList](https://developer.roku.com/docs/references/scenegraph/list-and-grid-nodes/markuplist.md) node class, since you intend to include graphic images as part of your list. You will also use two [Poster](https://developer.roku.com/docs/references/scenegraph/renderable-nodes/poster.md) node classes somewhere in your component for your icon and poster graphic images, perhaps as part of another custom component that is the definition of the `itemComponentName` field of the MarkupList node. You complete the component by adding <interface> element fields as needed to get and set data that is either needed for the component, or passed to other components and/or the Scene node BrightScript program flow.
 For the example VOD categories list, we should use a MarkupList node, because we want to use custom graphic images as part of each list item. So we need to start work on a custom item component for the MarkupList node `itemComponentName` field. This custom item component is where we will define the individual sub-elements that make up this screen element component, their SceneGraph node type and position, size, and other attributes, and how they will appear as focus moves from item to item. So we start with the following outline:
 **MarkupList item component outline**
+
 ```
 <component name = "VODCategoriesListItem" extends = "Group" >
 
@@ -83,6 +85,7 @@ For the example VOD categories list, we should use a MarkupList node, because we
 
 The outline includes the Poster nodes we will use for graphic images, a Label node for the item string, and a Rectangle node we will use as a cursor to indicate focus on the item. It also includes the <interface> `itemContent` field to set the Poster node URIs, and the text string for the Label node, with the `showcontent()` function in the <script> element setting the required fields for those nodes when the MarkupList node creates each instance of the item component.
 To complete this component, you would need to specify the local coordinate locations of each of the renderable <children> nodes according to the design of the user interface, and any other behavior you want for each list item, such as when it becomes focused and/or unfocused. For this design, we want only the text of each item and the corresponding icon to be visible when the item is unfocused, and make the cursor appear below the item, and the corresponding poster appear to the right, when the item is focused. So, for example, we set the `itemPoster` sub-element in position in the item definition with an initial `opacity` field setting of 0.0 to make it invisible until focused:
+
 ```
 <Poster
   id = "itemPoster"
@@ -94,6 +97,7 @@ To complete this component, you would need to specify the local coordinate locat
 ```
 
 Then we can write the <script> element callback function `showfocus()` to indicate focus when the `focusPercent` <interface> field changes:
+
 ```
 sub showfocus()
   m.itemcursor.opacity = m.top.focusPercent
@@ -104,6 +108,7 @@ end sub
 
 Then you assign your item component to the `itemComponentName` field for your MarkupList node component, as part of completely defining your custom category list:
 **MarkupList custom component outline**
+
 ```
 <component name = "VODCategoriesList" extends = "MarkupList" >
   <script type="text/brightscript" >

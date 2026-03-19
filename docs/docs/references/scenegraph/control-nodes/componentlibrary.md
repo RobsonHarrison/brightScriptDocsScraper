@@ -12,6 +12,7 @@ Component libraries can be packaged and signed the same way that apps are packag
 A component library must include a separate [manifest file](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md) in addition to the one for the app. The component library's manifest must include the [**rsg_version** flag](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md#special-purpose-attributes) (`rsg_version=1.2`) to optimize app performance.
 ## Using Library Components
 Components declared in a component library can be used inside the app just like custom components. Make sure to specify it in format _libraryName_ :_componentName_. So say if a component named LoadingIndicator is defined in the SampleComponentLib library, then it may be used like this:
+
 ```
 <SampleComponentLib:LoadingIndicator imageUri="pkg:/images/loader.png" translation="[700, 200]"/>
 
@@ -26,13 +27,15 @@ Component libraries do not need to be packaged or signed with the same devid as 
 ## Example
 [ComponentLibraryTestChannel](https://github.com/rokudev/samples/tree/master/utilities) is a test app that downloads the component library implemented from the source code in [ComponentLibrary](https://github.com/rokudev/samples/tree/master/utilities). The test app then creates an instance of the component implemented in the library.
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-loadStatus | value string | "none" | READ_ONLY | Indicates the progress of the library download. The possible values are:  | Value | Meaning
----|---
-none | The default if the library is not being downloaded
-loading | Library is downloading
-ready | Library has downloaded successfully
-failed | Download of the library has failed
-id | string | no default | READ_WRITE | Set to a unique ID for the library for the application
-uri | uri | no default | READ_WRITE | The URL of the library to be downloaded
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| loadStatus  | value string  | "none"  | READ_ONLY  | Indicates the progress of the library download. The possible values are:
+ | Value  | Meaning  |
+| --- | --- |
+| none  | The default if the library is not being downloaded  |
+| loading  | Library is downloading  |
+| ready  | Library has downloaded successfully  |
+| failed  | Download of the library has failed  |
+ |
+| id  | string  | no default  | READ_WRITE  | Set to a unique ID for the library for the application  |
+| uri  | uri  | no default  | READ_WRITE  | The URL of the library to be downloaded  |

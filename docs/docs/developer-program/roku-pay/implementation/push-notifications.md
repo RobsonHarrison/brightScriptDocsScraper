@@ -6,6 +6,7 @@ This section describes how to receive and respond to Roku Pay push notifications
 #### Requests (sent by Roku)
 Roku Pay push notifications can not be redirected in any way. Requests time out after 10 seconds. If a redirect attempt is made, the request fails.
 Push notifications include transaction data and a `responseKey`.
+
 ```
 {
 ... transaction data fields
@@ -30,6 +31,7 @@ Content-Length: 36
 
 #### Text body
 Include the value of the **responseKey** sent by Roku Pay (the `responseKey` does not have cryptographic signatures in both the request and response). Roku Pay compares the size of the `responseKey` in the response to ensure it matches the one it sent before downloading the content. This helps maintain the security of the Roku Pay web services.
+
 ```
 abcdabcd6b1649f681a408f1beebabcd
 
@@ -37,60 +39,68 @@ abcdabcd6b1649f681a408f1beebabcd
 
 ## Notifications
 Roku Pay sends push notifications for the following transactions:
-Transaction Type | Description | Action Required by Publisher
----|---|---
-[Sale](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#sale) | A purchase or renewal occurs, or a free trial starts. Renewals are denoted with the **comment** field set to"Recurring subscription processed". |
+| Transaction Type  | Description  | Action Required by Publisher  |
+| --- | --- | --- |
+| [Sale](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#sale)  | A purchase or renewal occurs, or a free trial starts. Renewals are denoted with the **comment** field set to"Recurring subscription processed".  |
   * New purchase: Create account (if not already created) and add entitlement.
   * Renewal: Check entitlement and verify subscription is not marked for cancellation.
 
-[GraceInitiated](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#in-grace-period) | The payment for a subscription auto-renewal fails and the subscription was placed in a grace period. |
+ |
+| [GraceInitiated](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#in-grace-period)  | The payment for a subscription auto-renewal fails and the subscription was placed in a grace period.  |
   * Use DoRecovery API to display in-app notice prompting customer to update their method of payment.
   * Continue granting access to content in app.
 
-[GraceRecovered](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#in-grace-period) | A payment is received for a subscription that was in a grace period. |
+ |
+| [GraceRecovered](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#in-grace-period)  | A payment is received for a subscription that was in a grace period.  |
   * Stop prompting the customer to update their method of payment.
   * Maintain current billing cycle.
 
-[OnHoldInitiated](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#on-hold) | The grace period elapsed (renewal payment was still not received) and the subscription was placed on hold. This notification is only sent to publishers using [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md). |
+ |
+| [OnHoldInitiated](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#on-hold)  | The grace period elapsed (renewal payment was still not received) and the subscription was placed on hold. This notification is only sent to publishers using [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md).  |
   * Use the DoRecovery API to display an in-app notice prompting customers to update their method of payment.
   * Block access to content in app.
   * Update entitlement system to denote that access to content should be denied.
 
-[OnHoldRecovered](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#on-hold) | A payment is received for a subscription that was placed on-hold. This notification is only sent to publishers using [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md). |
+ |
+| [OnHoldRecovered](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#on-hold)  | A payment is received for a subscription that was placed on-hold. This notification is only sent to publishers using [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md).  |
   * Stop prompting the customer to update their method of payment.
   * Update billing system with the new billing period.
   * Update entitlement system to denote that access to content should be granted.
 
-[CancellationOfferIntiated](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellationoffers) | The customer accepts a [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) and its specified pricing and billing terms for the subscription go into effect. |
+ |
+| [CancellationOfferIntiated](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellationoffers)  | The customer accepts a [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) and its specified pricing and billing terms for the subscription go into effect.  |
   * New purchase: Create account (if not already created) and add entitlement.
   * Renewal: Check entitlement and verify subscription is not marked for cancellation.
 
-[CancellationOfferEnded](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellationoffers) | The pricing and billing terms specified in the [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) elapse. |
+ |
+| [CancellationOfferEnded](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellationoffers)  | The pricing and billing terms specified in the [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) elapse.  |
   * expirationDate is a future date: no action is required until the expiration date.
   * expirationDate is today's date: remove the entitlement (the customer actively canceled the subscription and today is the last day of the billing cycle).
   * expirationDate is a past date: remove entitlement (passive cancellation; subscription could not be recovered).
 
-[Cancellation](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellation) | A subscription is canceled by the customer, deactivated becuase the customer opted out of automatic renewal, or is passively canceled because payment could not be recovered.
+ |
+| [Cancellation](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#cancellation)  | A subscription is canceled by the customer, deactivated becuase the customer opted out of automatic renewal, or is passively canceled because payment could not be recovered.
 
 Active cancellations: The **expirationDate** field is set to the current or future date
 
 Deactivations: The **expirationDate** field is set to the decactivation date
 
-Passive cancellations: The **expirationDate** field is set to a past date. |
+Passive cancellations: The **expirationDate** field is set to a past date.  |
   * expirationDate is a future date: no action is required until the expiration date.
   * expirationDate is today's date: remove the entitlement (the customer actively canceled the subscription and today is the last day of the billing cycle).
   * expirationDate is a past date: remove entitlement (passive cancellation; subscription could not be recovered).
 
-[Refund](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#refund) | A refund was initiated by the publisher or Roku Pay. | If the refund was a result of an unauthorized purchase, Roku cancels the subscription. Remove the entitlement upon receiving the cancellation notification from Roku.
-[Credit](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#credit) | A service credit was issued to a Roku customer by the publisher or Roku Pay. | No action required.
-[Resubscribe](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#resubscribe) | A subscription previously canceled by the customer is reinstated during the current billing period. | Revert any action taken based on the cancellation.
-[UpgradeSale](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#upgradesdowngrades) | An upgraded subscription is purchased. | Add entitlement for upgraded product.
-[UpgradeCancellation](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#upgradesdowngrades) | An original subscription is canceled as a result of being upgraded. | Remove entitlement for original product.
-[DowngradeSale](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#upgradesdowngrades) | A downgraded subscription is purchased. | On the expiration date of the current subscription, move entitlement to the downgrade subscription.
-[DowngradeCancellation](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/upgradesdowngrades) | An original subscription is canceled as a result of being downgraded. | Remove entitlement for original subscription on the expiration date.
-[Chargeback](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#chargeback) | The customer has initiated a transaction dispute. The transaction will be deducted from the partner's payout. | No action required.
-[ChargebackReversed](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#chargebackreversed) | Roku successfully reversed the chargeback claim. The revenue share will be returned to the partner payout. | No action required.
-[SecondChargeback](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#secondchargeback) | The customer's bank has disputed the chargeback reversal on the transaction (this may occur if the customer provided new information, the chargeback reason changed, or the bank determined that the information provided by Roku was not sufficient to refute the chargeback). The transaction will be deducted from the partner's payout. | No action required.
+ |
+| [Refund](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#refund)  | A refund was initiated by the publisher or Roku Pay.  | If the refund was a result of an unauthorized purchase, Roku cancels the subscription. Remove the entitlement upon receiving the cancellation notification from Roku.  |
+| [Credit](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#credit)  | A service credit was issued to a Roku customer by the publisher or Roku Pay.  | No action required.  |
+| [Resubscribe](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#resubscribe)  | A subscription previously canceled by the customer is reinstated during the current billing period.  | Revert any action taken based on the cancellation.  |
+| [UpgradeSale](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#upgradesdowngrades)  | An upgraded subscription is purchased.  | Add entitlement for upgraded product.  |
+| [UpgradeCancellation](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#upgradesdowngrades)  | An original subscription is canceled as a result of being upgraded.  | Remove entitlement for original product.  |
+| [DowngradeSale](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#upgradesdowngrades)  | A downgraded subscription is purchased.  | On the expiration date of the current subscription, move entitlement to the downgrade subscription.  |
+| [DowngradeCancellation](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/upgradesdowngrades)  | An original subscription is canceled as a result of being downgraded.  | Remove entitlement for original subscription on the expiration date.  |
+| [Chargeback](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#chargeback)  | The customer has initiated a transaction dispute. The transaction will be deducted from the partner's payout.  | No action required.  |
+| [ChargebackReversed](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#chargebackreversed)  | Roku successfully reversed the chargeback claim. The revenue share will be returned to the partner payout.  | No action required.  |
+| [SecondChargeback](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/push-notifications.md#secondchargeback)  | The customer's bank has disputed the chargeback reversal on the transaction (this may occur if the customer provided new information, the chargeback reason changed, or the bank determined that the information provided by Roku was not sufficient to refute the chargeback). The transaction will be deducted from the partner's payout.  | No action required.  |
 > **transactionId** format: The transactionIds returned by the Roku Pay push notifications are ASCII strings of variable length that may be up to 1024 bytes.
 ##### Push notifications workflow
 The following diagram illustrates the Roku Pay push notifications workflow:
@@ -101,6 +111,7 @@ For a new purchase, publishers should create a user account and add the entitlem
 When a renewal occurs, the **comments** field in the notification is set to "Recurring subscription processed".
 > As of Roku OS 10.0, the Sale push notification includes **purchaseChannel** and **purchaseContext** fields that identify whether a Roku Pay subscription purchase originated from Instant Signup. For purchases made via Instant Signup, the **purchaseChannel** field is set to "web" and **purchaseContext** field is set to "isu". For on-device purchases, these fields are set to "device" and "iap", respectively.
 #### Purchase example
+
 ```
 {
     "customerId": "2df58f54b4f7540ca3aa31ce8bec1fe7",
@@ -127,6 +138,7 @@ When a renewal occurs, the **comments** field in the notification is set to "Rec
 ```
 
 #### Renewal example
+
 ```
 {
     "customerId": "2df58f54b4f7540ca3aa31ce8bec1fe7",
@@ -163,6 +175,7 @@ If Roku receives a payment during the 3-day grace period, it is processed and en
 
 See [Basic Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/basic-recovery.md) for more information.
 #### GraceInitiated example
+
 ```
 {
     "customerId": "9aa37bd6f970578294cea4783af08560",
@@ -183,6 +196,7 @@ See [Basic Subscription Recovery](https://developer.roku.com/docs/developer-prog
 ```
 
 #### GraceRecovered example
+
 ```
 {
     "customerId": "9d425957549250dcba71e03dacf426b5",
@@ -211,6 +225,7 @@ If Roku receives a payment, it is processed and entitlement is automatically gra
 
 See [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md) for more information.
 #### OnHoldInitiated example
+
 ```
 {
     "customerId": "8446ceff30e952349bcd9d3b78bc94a0",
@@ -231,6 +246,7 @@ See [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-p
 ```
 
 #### OnHoldRecovered example
+
 ```
 {
     "customerId": "8446ceff30e952349bcd9d3b78bc94a0",
@@ -253,6 +269,7 @@ See [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-p
 ### CancellationOffers
 A **CancellationOfferInitated** event is fired when the customer accepts a [cancellation offer](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#creating-cancellation-offers) and its specified pricing and billing terms for the subscription go into effect. A **CancellationOfferEnded** event is sent when the pricing and billing terms specified in the cancellation offer elapse.
 #### CancellationOfferInitated
+
 ```
 {
   customerId: a659926a3769514ab2292fc8d7c2da5b,
@@ -273,6 +290,7 @@ A **CancellationOfferInitated** event is fired when the customer accepts a [canc
 ```
 
 #### CancellationOfferEnded
+
 ```
 {
   customerId: a659926a3769514ab2292fc8d7c2da5b,
@@ -300,6 +318,7 @@ The publisher action required (if any) depends on the **expirationDate** field:
   * **Past date** : Remove entitlement (passive cancellation; the subscription could not be recovered).
 
 #### Active cancelation/decativation example
+
 ```
 {
     "customerId": "493d0c919a9d547086baaccd2a80daf0",
@@ -320,6 +339,7 @@ The publisher action required (if any) depends on the **expirationDate** field:
 ```
 
 #### Passive cancelation example
+
 ```
 {
     "customerId": "493d0c919a9d547086baaccd2a80daf0",
@@ -342,6 +362,7 @@ The publisher action required (if any) depends on the **expirationDate** field:
 ### Refund
 A **Refund** push notification is sent when the publisher or Roku Pay initiates a refund. If the refund was a result of an unauthorized purchase, Roku cancels the subscription. In this case, the publisher should remove the entitlement upon receipt of a subsequent **Cancellation** notification.
 #### Example
+
 ```
 {
     "customerId": "cb570816d25c547ca881cfae77dc4068",
@@ -368,6 +389,7 @@ A **Refund** push notification is sent when the publisher or Roku Pay initiates 
 ### Credit
 A **Credit** push notification is sent when the publisher or Roku Pay issues a service credit for a Roku customer. No publisher action is required upon receiving this event.
 #### Example
+
 ```
 {
     "customerId": "e54246dd10405b159f4799ef60d791ce",
@@ -392,6 +414,7 @@ A **Credit** push notification is sent when the publisher or Roku Pay issues a s
 ### Resubscribe
 A **Resubscribe** push notification is sent when a customer opts to keep a subscription they previously canceled within the current billing period. For example, during a 30-day billing period, a customer cancels a subscription on day 10, but on day 20 decides to keep it. If the customer repurchases the subscription after the billing period ends, a **Sale** notification is sent. When a customer resubscribes, service will continue for them as though they never canceled the subscription at all.
 #### Example
+
 ```
 {
     "customerId": "12d3ddf4509c5bc5bbcfee76bd97f58e",
@@ -418,13 +441,14 @@ Similar to the **Sale** notification, a `creditsApplied` field is included only 
 ### Upgrades/downgrades
 When a customer [upgrades or downgrades a subscription](https://developer.roku.com/docs/developer-program/roku-pay/implementation/on-device-upgrade-downgrade.md), a new purchase is made and the original one is canceled. As a result, a pair of notifications are sent: a sale for the new transaction (`UpgradeSale` or `DowngradeSale`), and a cancellation for the original transaction (`UpgradeCancellation` or `DowngradeCancellation` ). The `transactionType` field in the push notification indicates the upgrade/downgrade event associated with the notification. This makes it easy to identify the reason for purchases and cancellations related to upgrades/downgrades.
 For example, if a customer upgrades from a monthly to an annual subscription, the following two notifications are sent: (1) an `UpgradeSale` notification for the purchase of the annual subscription, and (2) an `UpgradeCancellation` notification for the cancellation of the monthly subscription. The following table summarizes the transaction types for the notifications sent for upgrades and downgrades.
-Action | Transaction Type
----|---
-Sale | Cancellation
-**Upgrade** | UpgradeSale | UpgradeCancellation
-**Downgrade** | DowngradeSale | DowngradeCancellation
+| Action  | Transaction Type  |
+| --- | --- |
+| Sale  | Cancellation  |
+| **Upgrade**  | UpgradeSale  | UpgradeCancellation  |
+| **Downgrade**  | DowngradeSale  | DowngradeCancellation  |
 The following samples demonstrate the `UpgradeSale` and `UpgradeCancellation` notifications sent when a customer upgrades from a monthly to an annual subscription. Samples of the `DowngradeSale` and `DowngradeCancellation` notifications are included as well.
 #### UpgradeSale example
+
 ```
 {
     "customerId": "8c805ea26be25915a6c15e4545f592a4",
@@ -448,6 +472,7 @@ The following samples demonstrate the `UpgradeSale` and `UpgradeCancellation` no
 ```
 
 #### UpgradeCancellation example
+
 ```
 {
     "customerId": "8c805ea26be25915a6c15e4545f592a4",
@@ -468,6 +493,7 @@ The following samples demonstrate the `UpgradeSale` and `UpgradeCancellation` no
 ```
 
 #### DowngradeSale example
+
 ```
 {
     "customerId": "7993a78f2922550589654e4dbe21404a",
@@ -491,6 +517,7 @@ The following samples demonstrate the `UpgradeSale` and `UpgradeCancellation` no
 ```
 
 #### DowngradeCancellation example
+
 ```
 {
     "customerId": "7993a78f2922550589654e4dbe21404a",
@@ -515,6 +542,7 @@ The following samples demonstrate the `UpgradeSale` and `UpgradeCancellation` no
 > **SEPA chargebacks (for apps in the Germany Streaming Store)** : When a customer in Germany disputes a transaction made through Roku Pay that results in a chargeback or their bank account has insufficient funds, the **transactionType** field in the refund notification is set to "Chargeback".
 A **Chargeback** push notification is sent when a customer initiates a transaction dispute. The transaction is deducted from the partner's payout.
 #### Example
+
 ```
 {
     "customerId": "cb570816d25c547ca881cfae77dc4068",
@@ -541,6 +569,7 @@ A **Chargeback** push notification is sent when a customer initiates a transacti
 A **Chargeback** push notification is sent when Roku has successfully reversed a chargeback claim. The revenue share is returned to the partner payout.
 No publisher action is required when this event occurs.
 **Example**
+
 ```
 {
     "customerId": "cb570816d25c547ca881cfae77dc4068",
@@ -566,6 +595,7 @@ No publisher action is required when this event occurs.
 A **SecondChargeback** push notification is sent when the customer's bank has disputed the chargeback reversal on a transaction (this may occur if the customer provided new information, the chargeback reason changed, or the bank determined that the information provided by Roku was not sufficient to refute the chargeback). The transaction is deducted from the partner's payout.
 No publisher action is required when this event occurs.
 **Example**
+
 ```
 {
     "customerId": "cb570816d25c547ca881cfae77dc4068",

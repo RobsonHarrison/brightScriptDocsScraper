@@ -1,15 +1,15 @@
 # ifToStr
 ## Implemented by
-Name | Description
----|---
-[roBoolean](https://developer.roku.com/docs/references/brightscript/components/roboolean.md "roBoolean") | Object equivalent for intrinsic type Boolean
-[roDouble](https://developer.roku.com/docs/references/brightscript/components/rodouble.md "roDouble") | Object equivalent for intrinsic type 'Double'
-[roFloat](https://developer.roku.com/docs/references/brightscript/components/rofloat.md "roFloat") | Object equivalent for intrinsic type 'Float'
-[roFunction](https://developer.roku.com/docs/references/brightscript/components/rofunction.md "roFunction") | Object equivalent for intrinsic type Function
-[roInt](https://developer.roku.com/docs/references/brightscript/components/roint.md "roInt") | Object equivalent for intrinsic type Integer
-[roInvalid](https://developer.roku.com/docs/references/brightscript/components/roinvalid.md "roInvalid") | Object equivalent for intrinsic type 'Invalid'
-[roLongInteger](https://developer.roku.com/docs/references/brightscript/components/rolonginteger.md "roLongInteger") | Object equivalent for intrinsic type LongInteger
-[roString](https://developer.roku.com/docs/references/brightscript/components/rostring.md "roString") | Object equivalent for intrinsic type 'String'
+| Name  | Description  |
+| --- | --- |
+| [roBoolean](https://developer.roku.com/docs/references/brightscript/components/roboolean.md "roBoolean")  | Object equivalent for intrinsic type Boolean  |
+| [roDouble](https://developer.roku.com/docs/references/brightscript/components/rodouble.md "roDouble")  | Object equivalent for intrinsic type 'Double'  |
+| [roFloat](https://developer.roku.com/docs/references/brightscript/components/rofloat.md "roFloat")  | Object equivalent for intrinsic type 'Float'  |
+| [roFunction](https://developer.roku.com/docs/references/brightscript/components/rofunction.md "roFunction")  | Object equivalent for intrinsic type Function  |
+| [roInt](https://developer.roku.com/docs/references/brightscript/components/roint.md "roInt")  | Object equivalent for intrinsic type Integer  |
+| [roInvalid](https://developer.roku.com/docs/references/brightscript/components/roinvalid.md "roInvalid")  | Object equivalent for intrinsic type 'Invalid'  |
+| [roLongInteger](https://developer.roku.com/docs/references/brightscript/components/rolonginteger.md "roLongInteger")  | Object equivalent for intrinsic type LongInteger  |
+| [roString](https://developer.roku.com/docs/references/brightscript/components/rostring.md "roString")  | Object equivalent for intrinsic type 'String'  |
 ## Supported methods
 ### ToStr() As String
 #### Description
@@ -34,6 +34,7 @@ Format-string support (the `ifToStr` interface) is implemented by the following 
 
 #### Examples
 ##### Integer (Decimal)
+
 ```
 print 123.ToStr("%d")
 '=> "123"
@@ -57,6 +58,7 @@ print month.ToStr("%-4d")
 ```
 
 ##### Integer (Hexadecimal)
+
 ```
 hexy = 32767 - 1
 print hexy.ToStr("%08X")
@@ -72,6 +74,7 @@ print big_num.ToStr("%d = 0x%0X")
 ```
 
 ##### Float
+
 ```
 f = 3.141592
 print f.ToStr("%f")
@@ -86,6 +89,7 @@ print f.ToStr("%4.2f")
 ```
 
 ##### String
+
 ```
 s = "123"
 print s.ToStr("[%s]")

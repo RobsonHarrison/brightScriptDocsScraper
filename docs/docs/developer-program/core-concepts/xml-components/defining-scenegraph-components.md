@@ -23,6 +23,7 @@ There are some limitations in defining node field values in the **< children>** 
 A typical XML file will include one or more SceneGraph node elements inside the [**< component>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/component.md) element. These nodes are instantiated when the XML is parsed, and added as children of the XML **< component> **element top-level node.
 Nodes are defined using an XML element that matches the node type. Field values of the node are specified as attributes of the node element. The following example shows how to define a [**< Poster>**](https://developer.roku.com/docs/references/scenegraph/renderable-nodes/poster.md) node, and set its `id`, `uri` and `translation` fields.
 **Defining a Node in XML**
+
 ```
 <Poster
   id = "myPoster"
@@ -33,6 +34,7 @@ Nodes are defined using an XML element that matches the node type. Field values 
 
 Nodes can include children by simply including them in the body of a node XML element. The follow example shows how to declare a **Poster** node that includes a **Label** draw on top of it.
 **Adding a Child Node in XML**
+
 ```
 <Poster
   id = "myPoster"
@@ -49,6 +51,7 @@ Nodes can include children by simply including them in the body of a node XML el
 
 By default, if a node includes one or more node elements in the body of its XML definition, the nodes defined in the body are added as children of the node. In a few cases, nodes defined in the body of another node serve a special purpose, and should not be added as children. In that case, the nodes defined in the body should have an XML `role` attribute specified to indicate which field of the parent node should be set to their value. For example, a [**< Label>**](https://developer.roku.com/docs/references/scenegraph/label-nodes/label.md) node could have a [**< Font>**](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/font.md) node defined in its body. If you specify the role attribute as `font` for the **< Font> **node, it causes the parent **< Label> **node `font` field to be set to the **< Font> **node.
 **Defining the role Attribute of a Node**
+
 ```
 <Label text = "John Doe" >
   <Font
@@ -62,6 +65,7 @@ By default, if a node includes one or more node elements in the body of its XML 
 
 An instance of a node can be used in more than place in the scene, using a field attribute value that begins with `dictionary:`. For example, if the **< Label> **node is defined as above in an XML file, another **< Label> **node can be defined that uses the same **< Font> **node as follows:
 **Using dictionary to Set an Attribute Value**
+
 ```
 <Label
   text = "John Doe"
@@ -73,6 +77,7 @@ An instance of a node can be used in more than place in the scene, using a field
 Roku SceneGraph includes a wide variety of node classes that are built into the SceneGraph API. These built-in node classes are described in the [**SceneGraph XML Reference**](https://developer.roku.com/docs/developer-program/core-concepts/scenegraph-xml/overview.md).
 But Roku SceneGraph allows you to extend these built-in node classes with your own custom node classes, with unique fields, appearance, behaviors, and interfaces. The key to writing SceneGraph applications is to define your own custom node classes, then create and use them as needed for your application.
 For example, the starting point of any SceneGraph application is a custom node class extended from one of the built-in **Scene** node classes, such as [**Scene**](https://developer.roku.com/docs/references/scenegraph/scene.md) or [**OverhangPanelSetScene**](https://developer.roku.com/docs/references/scenegraph/sliding-panels-nodes/overhangpanelsetscene.md). These **Scene** node classes are _abstract_ node classes, you _must_ extend them in order to use them. So every SceneGraph application _must_ include an XML component file in the following format:
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 <component name = "MyApplicationScene" extends = "Scene" >
@@ -86,6 +91,7 @@ customized_scene_definitions
 The built-in abstract **Scene** node is extended by setting the `name` and `extends` attributes of the [**< component>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/component.md) XML element. After this custom extended **Scene** node is defined in an XML component file in the `pkg:/components` directory, you can then start the application by creating the custom **Scene** node component in the `pkg:/source` /`main.brs` file using the **Scene** node component name as the `CreateScene()` argument for a BrightScript `roSGScreen` object:
 `scene = screen.CreateScene("MyApplicationScene")`
 Likewise, you define custom components for your entire application that are created and added to your SceneGraph node tree as needed. For example, you could add a custom scrollable row list component to your application by extending the built-in [**RowList**](https://developer.roku.com/docs/references/scenegraph/list-and-grid-nodes/rowlist.md) node class component in an XML component file:
+
 ```
 <?xml version = "1.0" encoding = "utf-8" ?>
 
@@ -96,6 +102,7 @@ customized_rowlist_definitions
 ```
 
 Once this XML component file is created, you can now add the custom row list component to your **Scene** component, or any other SceneGraph component in your application. For example, the following adds the custom row list to the application **Scene** component using the `createChild()` function using BrightScript in a **< script>** element:
+
 ```
 <?xml version = "1.0" encoding = "utf-8" ?>
 
@@ -116,6 +123,7 @@ Once this XML component file is created, you can now add the custom row list com
 ```
 
 Or you can add the custom component using XML markup in the [**< children>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/children.md) element of the XML component file:
+
 ```
 <?xml version = "1.0" encoding = "utf-8" ?>
 

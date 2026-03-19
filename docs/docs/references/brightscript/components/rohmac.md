@@ -4,6 +4,7 @@ The HMAC component provides an interface to the OpenSSL HMAC functions. These fu
 **Supported Digest Algorithms**
 The supported digest algorithms are the same as those supported by [roEVPDigest](https://developer.roku.com/docs/references/brightscript/components/roevpdigest.md "roEVPDigest").
 **Example**
+
 ```
 hmac = CreateObject("roHMAC")
 signature_key = CreateObject("roByteArray")

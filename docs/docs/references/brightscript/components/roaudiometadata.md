@@ -5,6 +5,7 @@ _requires_audiometadata=1_
 This object is created without any arguments:
 `CreateObject("roAudioMetadata")`
 **Example**
+
 ```
 REM printAA() is from generalUtils.brs in our sample apps
 REM and used to print an associative Array

@@ -1,18 +1,21 @@
 # Program statements
 ## DIM name (dim1, dim2, …, dimK)
 DIM ("dimension") is a statement that provides a short cut to creating roArray objects. It sets variable _name_ to type "roArray", and creates Arrays of Arrays as needed for multi-dimensional arrays. The dimension passed to Dim is the index of the maximum entry to be allocated (the array initial size = dimension+1); the array will be resized larger automatically if needed.
+
 ```
 Dim array[5]
 
 ```
 
 Is the same as:
+
 ```
 array=CreateObject("roArray",6,true)
 
 ```
 
 Note that x[a,b] is the same as x[a][b].
+
 ```
  Dim c[5, 4, 6]
  For x = 1 To 5
@@ -40,6 +43,7 @@ Note that x[a,b] is the same as x[a][b].
 ## variable = expression
 Assigns a variable to a new value.
 **Example**
+
 ```
 a$="a rose is a rose"
 b1=1.23
@@ -55,6 +59,7 @@ Interrupts execution return a STOP error. Invokes the debugger. Use "cont" at th
 ## GOTO label
 Transfers program control to the specified line number. GOTO _label_ results in an branch. A label is an identifier terminated with a colon, on a line by itself.
 For example:
+
 ```
 mylabel:
 print "Anthony was here!"
@@ -73,6 +78,7 @@ In the FOR statement, _initial value, final value_ and _increment_ can be any ex
 At the top of the loop, the counter is compared with the _final value_ specified in the FOR statement. If the counter is greater than the _final value_ , the loop is completed and execution continues with the statement following the END FOR statement. (If _increment_ was a negative number, loop ends when counter is less than _final value_.) If the counter has not yet exceeded the _final value_ , control passes to the first statement after the FOR statement.
 When program flow reaches the END FOR statement, the counter is incremented by the amount specified in the STEP _increment_. (If the _increment_ has a negative value, then the counter is actually decremented.) If STEP _increment_ is not used, an increment of 1 is assumed.
 For example:
+
 ```
 For i=10 To 1 Step -1
     print i
@@ -86,6 +92,7 @@ The FOR EACH statement iterates through each item in any object that has an "ifE
 "EXIT FOR" is used to exit a FOR block prematurely.
 The following objects can be enumerated: roList, roArray, roAssociativeArray, roMessagePort.
 For example:
+
 ```
 aa = { joe: 10, fred: 11, sue:9 }
 
@@ -99,6 +106,7 @@ End For
 ## WHILE expression / EXIT WHILE / END WHILE
 The While loop executes until expression is false. The "exit while" statement can be used to terminate a while loop prematurely.
 For example:
+
 ```
 k = 0
 while k = 0
@@ -116,6 +124,7 @@ end while
 ## CONTINUE FOR / CONTINUE WHILE
 The "continue" statement terminates the execution of the statements in the current iteration of the loop, and continues execution of the loop with the next iteration
 For example:
+
 ```
 fruits = ["orange", "lemon", "lime"]
 for each fruit in fruits
@@ -137,6 +146,7 @@ end while
 
 ## TRY / CATCH variable / END TRY
 Use to trap exceptions, which enables the implementation of error handling in BrightScript programs. Schematically, the syntax is as follows:
+
 ```
 TRY
     ' Zero or more statements ("TRY block")
@@ -150,6 +160,7 @@ END TRY
 The TRY block of statements is executed. If and only if an error occurs, the CATCH block of statements is executed, and the named variable is assigned the information about the triggering exception. If no error occurs during execution of the TRY block, the CATCH block is skipped.
 > It is illegal to put a GOTO label within a TRY block (i.e., between TRY and CATCH). A GOTO label may exist exist between CATCH and END TRY, however.
 The variable name specified as the _exception object_ in the CATCH clause must refer to a _simple variable_. It cannot be an array element, for example. The following are **not** legal as exception object references in the CATCH clause:
+
 ```
 CATCH                ' no object variable at all -- an object must always be specified
 CATCH someArray[23]  ' array element is bad exception object
@@ -160,21 +171,22 @@ CATCH a+wave         ' expression is bad exception object
 ```
 
 Information about the exception is contained within an exception object that is assigned to the CATCH-clause variable. This exception object can contain the following elements:
-Name | Type | Meaning
----|---|---
-number | Integer | The classic BrightScript error number
-message | String | A textual interpretation of the error number
-backtrace | roArray | A backtrace, normally, to the location (origin) of the problem, even if the exception is subsequently caught and "re-thrown."
-rethrown | boolean | False: This is the first time that this exception has been caught. True: The exception has been caught and re-thrown; the backtrace is therefore _not_ to the location of the most recent THROW.
-rethrow_backtrace | roArray | A second backtrace, to the location of a re-thrown exception.
+| Name  | Type  | Meaning  |
+| --- | --- | --- |
+| number  | Integer  | The classic BrightScript error number  |
+| message  | String  | A textual interpretation of the error number  |
+| backtrace  | roArray  | A backtrace, normally, to the location (origin) of the problem, even if the exception is subsequently caught and "re-thrown."  |
+| rethrown  | boolean  | False: This is the first time that this exception has been caught. True: The exception has been caught and re-thrown; the backtrace is therefore _not_ to the location of the most recent THROW.  |
+| rethrow_backtrace  | roArray  | A second backtrace, to the location of a re-thrown exception.  |
 A backtrace is an array of associative arrays, each of which includes at least the following elements:
-Name | Type | Meaning
----|---|---
-filename | String | The URI-formatted filename
-line_number | Integer | The line number within that file
-function | String | The prototype/signature (name, arguments, return type) of the function
+| Name  | Type  | Meaning  |
+| --- | --- | --- |
+| filename  | String  | The URI-formatted filename  |
+| line_number  | Integer  | The line number within that file  |
+| function  | String  | The prototype/signature (name, arguments, return type) of the function  |
 **Example code**
 The following example sends an error message, including the contents of the exception record, to the debug console.
+
 ```
 TRY
     PRINT 1/0
@@ -188,6 +200,7 @@ END TRY
 > TRY and CATCH were introduced into BrightScript with Roku OS version 9.4, and any app that uses them must declare a minimum OS version of 9.4 in the Package Upload Developer Dashboard page during app submission.
 ### Nested TRY/CATCH statements
 TRY/CATCH statements can be nested within TRY or CATCH blocks, as needed. Here is an example:
+
 ```
 PRINT "Starting"
 x = "I'm not an array"
@@ -211,6 +224,7 @@ The expression given in the THROW statement should evaluate to an exception obje
 > THROW is a keyword in BrightScript.
 > THROW was introduced into BrightScript with Roku OS version 9.4, and any app that uses it must declare a minimum OS version of 9.4 in the Package Upload Developer Dashboard page during app submission.
 **Example code**
+
 ```
 FUNCTION reciprocal(x)
     RETURN 1/x
@@ -241,6 +255,7 @@ END SUB
 ## REM
 Instructs the compiler to ignore the rest of the program line. This allows you to insert comments (REMarks) into your program for documentation. An ' (apostrophe) may be used instead of REM.
 For example:
+
 ```
 Rem ** this remark introduces the program **
 ' this too is a remark
@@ -250,6 +265,7 @@ Rem ** this remark introduces the program **
 ## IF expression THEN statements [ELSE statements]
 There are two forms of the IF THEN ELSE statement. The single line form (this one), and the multi-line or block form (see next section). The IF instructs the Interpreter to test the following _expression_. If the _expression_ is true, control will proceed to the statements immediately following the expression. If the expression is False, control will jump to the matching ELSE statement (if there is one) or down to the next program line.
 For example:
+
 ```
 if x > 127 then print "out of range"
 If caveman = "fred" then print "flintstone" else print "rubble"
@@ -259,6 +275,7 @@ If caveman = "fred" then print "flintstone" else print "rubble"
 THEN is optional in the above and similar statements.
 ## Block IF, ELSEIF, THEN, ENDIF
 The multi-line or block form of IF THEN ELSE is more flexible. It has the form:
+
 ```
  if BooleanExpression then
    statements
@@ -272,6 +289,7 @@ The multi-line or block form of IF THEN ELSE is more flexible. It has the form:
 
 There may be any number of elseif statements, or there may be none. The else statement may also be omitted. "elseif" can also be written as two words: "else if".
 For example:
+
 ```
 msg = wait(0, p)
 if type(msg) = "roVideoPlayerEvent" then
@@ -295,6 +313,7 @@ Prints an item or a list of items on the console. The items may be either string
 The items to be PRINTed may be separated by commas or semi-colons. If commas are used, the cursor automatically advances to the next print zone before printing the next item. If semi-colons are used, no space is inserted between the items printed.
 Positive numbers are printed with a leading blank (instead of a plus sign); floating point numbers are printed with a trailing blank; and no blanks are inserted before or after strings.
 For example:
+
 ```
 x=5:print 25; " is equal to"; x^2
  25 is equal to 25
@@ -308,12 +327,14 @@ zone 1          zone 2          zone 3          zone 4
 ```
 
 > `?` is a short cut for the `print` statement. For example:
-> ```
+>
+```
 x=5:? 25; " is equal to"; x^2
 
 ```
 
 Each print zone is 16 char wide. The cursor moves to the next print zone each time a comma is encountered.
+
 ```
 print "print statement #1 "; "print statement #2"
 
@@ -322,6 +343,7 @@ Output: print statement #1 print statement #2
 ```
 
 Semi-colons can be dropped in some cases. For example, this is legal:
+
 ```
 Print "this is a five " 5 "!!"
 
@@ -330,6 +352,7 @@ Print "this is a five " 5 "!!"
 A trailing semi-colon over-rides the cursor-return so that the next PRINT begins where the last one left off. If no trailing punctuation is used with print, the cursor drops down to the beginning of the next line.
 A few examples of printing enumerable objects:
 **Printing Enumerable Objects**
+
 ```
 Print {}
 ' this will print: <Component: roAssociativeArray> =  { }
@@ -347,6 +370,7 @@ Print [5]
 
 **TAB (expression)**
 Moves the cursor to the specified position on the current line (modulo the width of your console if you specify TAB positions greater than the console width). TAB may be used several times in a PRINT list.
+
 ```
 print tab(5)"tabbed 5";tab(25)"tabbed 25"
 
@@ -355,6 +379,7 @@ print tab(5)"tabbed 5";tab(25)"tabbed 25"
 No punctuation is required after a TAB modifier. Numerical expressions may be used to specify a TAB position. TAB cannot be used to move the cursor to the left. If the cursor is beyond the specified position, the TAB is ignored.
 **POS ( x )**
 Returns a number from 0 to window width, indicating the current cursor position on the cursor. Requires a "dummy argument" (any numeric expression).
+
 ```
 print tab(40) pos(0) 'prints 40 at position 40
 print "these" tab(pos(0)+5)"words" tab(pos(0)+5)"are"; tab(pos(0)+5)"evenly" tab(pos(0)+5)"spaced"
@@ -377,6 +402,7 @@ In addition to the above types, the return type can be:
 
 Each parameter can have a default value, which is used if the parameter is not included in the call. The default parameter is declared by following the parameter name with an equal sign and the default value. If any parameter has a default value, then each following parameter must also have a default value. In the following examples, the functions add2 and add3 can be called with either one or two parameters.
 For example:
+
 ```
 Function cat(a, b)
     Return a+b 'a, b could be numbers or strings
@@ -404,6 +430,7 @@ Functions have their own scope.
 The statement "Sub" can be used instead of "function" as a shortcut to a function of Void return Type.
 If a function is called from an associative array, then a local variable "m" is set to the AssociativeArray that the function is stored in.
 For example:
+
 ```
 Sub main()
     obj={
@@ -425,6 +452,7 @@ End Function
 If a function is not called from an AssociativeArray, then its "m" is set to an AssociativeArray that is global to the module, and persists across calls.
 ## Anonymous functions
 A function is anonymous if it does not have a name. Note that Anonymous Functions do not currently create closures. An Anonymous Function can be declared like this:
+
 ```
 myfunc = Function (a, b)
     Return a+b
@@ -435,6 +463,7 @@ print myfunc(1,2)
 ```
 
 They can be used with associative array literals like this:
+
 ```
 q = {
     starring : Function(o, e)

@@ -44,17 +44,17 @@ From you added, you must select one and launch it. Refer to the [blocks](https:/
 The Roku Remote Tools records button press and text entry sequences as "steps" in a script editor window. These steps can then be used to simulate end-user operation of the device by the Roku TV remote.
 ### params
 Begin by specifying your app information in the `params` section. You must use **[Add Channel](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#AddChannel)** to add at least one app before continuing.
-Keyword | Graphic or Label | Description | Example (in `params` section)
----|---|---|---
-`rasp_version` | none | Define the scripting version; default is inserted for you. | **`rasp_version: 1`**
-`default_`
-`keypress_wait` | [![roku200px - rremote-advanced-mode-gear](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-gear.png?version=3&modificationDate=1626142003000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#Configure) | Use the gear button to set the integer value of global delay between button presses.
+| Keyword  | Graphic or Label  | Description  | Example (in `params` section)  |
+| --- | --- | --- | --- |
+| `rasp_version`  | none  | Define the scripting version; default is inserted for you.  | **`rasp_version: 1`** |
+|  `default_`
+`keypress_wait`  | [![roku200px - rremote-advanced-mode-gear](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-gear.png?version=3&modificationDate=1626142003000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#Configure)  | Use the gear button to set the integer value of global delay between button presses.
 For non-integer values:
 - Manually position the cursor at the end of the line
 - Backspace to delete the old value
-- Type in the new value and hit Enter. |  **`default_keypress_wait: 2`**
-**`default_keypress_wait: 0.25`**
-`channels` | **[Add Channel](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#AddChannel)** | Use the **[Add Channel](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#AddChannel)** macro as a convenient way of entering app listings in the script.
+- Type in the new value and hit Enter.  |  **`default_keypress_wait: 2`**
+**`default_keypress_wait: 0.25`**  |
+| `channels`  | **[Add Channel](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#AddChannel)**  | Use the **[Add Channel](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#AddChannel)** macro as a convenient way of entering app listings in the script.
 (You could instead type the entries in manually.) To add app(s) using the macro, repeat these steps as needed:
 
 1. Provide a Channel Name
@@ -62,62 +62,66 @@ For non-integer values:
 3. Click **Add to table**
 then click the ![roku815px - \(plus\)](https://confluence.portal.roku.com:8443/s/i0p0pk/8502/1ef1526ca6e62f10d6a1c5f77fccb30527d7d4d1/_/images/icons/emoticons/add.svg) next to each table entry to be inserted.
 
-![roku400px - rremote-advanced-mode-add-channel-roku700px](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-add-channel.png) |  **`channels:`**
+![roku400px - rremote-advanced-mode-add-channel-roku700px](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-add-channel.png)  |  **`channels:`**
 **`'My First Channel': 12345`**
 **`'My Second Channel': 12346`**
-**`'My Third Channel': 12347`**
+**`'My Third Channel': 12347`**  |
 ### steps
 Continue by creating operational steps, using a concise set of commands. Steps can be typed manually into the editor, but are more rapidly created by clicking the emulated remote keys.
-Step | Graphic | Description | Example
----|---|---|---
-`press` |  ![roku200px - rremote-keypad](https://image.roku.com/ZHZscHItMTc2/rremote-keypad.png?version=2&modificationDate=1626301445000&api=v2)
-Keypad | Button press | ```
+| Step  | Graphic  | Description  | Example  |
+| --- | --- | --- | --- |
+| `press`  |  ![roku200px - rremote-keypad](https://image.roku.com/ZHZscHItMTc2/rremote-keypad.png?version=2&modificationDate=1626301445000&api=v2)
+Keypad  | Button press  |
+```
 - press: home
 - press: up
 - press: reverse
 
 ```
-
-`text` |  [![roku200px - rremote-keyboard-input](https://image.roku.com/ZHZscHItMTc2/rremote-keyboard-input.png?version=1&modificationDate=1626301445000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#Keyboardinput)
-Text entry box below keypad | Alphanumeric keystroke entry, where permitted by the Roku TV device interface
+ |
+| `text`  |  [![roku200px - rremote-keyboard-input](https://image.roku.com/ZHZscHItMTc2/rremote-keyboard-input.png?version=1&modificationDate=1626301445000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#Keyboardinput)
+Text entry box below keypad  | Alphanumeric keystroke entry, where permitted by the Roku TV device interface
 
 Static input
 – Checked: Keystrokes withheld until the adjacent **[ >]** button is clicked
-– Unchecked: Each keystroke is sent out as it is entered |  **`Developer`**
-(typed in box)
-`pause` | [![roku200px - rremote-advanced-mode-sleep](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-sleep.png?version=3&modificationDate=1626141994000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#Pause/Sleep) | A pause (or delay or sleep) may be inserted at a specified point between steps.
+– Unchecked: Each keystroke is sent out as it is entered  |  **`Developer`**
+(typed in box)  |
+| `pause`  | [![roku200px - rremote-advanced-mode-sleep](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-sleep.png?version=3&modificationDate=1626141994000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#Pause/Sleep)  | A pause (or delay or sleep) may be inserted at a specified point between steps.
 1. Position the cursor in the script where the pause should occur.
 2. Click the lower-right corner of Sleep and set the number of seconds to pause.
 3. Click the main part of Sleep to insert the command.
 
-You may need to insert a pause step for any action in the UI that takes time to be completed before another step in the script can be executed. For example, it may take a few seconds for the app UI to be populated after being launched. This ensures that the subsequent steps are actually navigating the UI. Do not include more than 10 pause steps in a script. | ```
+You may need to insert a pause step for any action in the UI that takes time to be completed before another step in the script can be executed. For example, it may take a few seconds for the app UI to be populated after being launched. This ensures that the subsequent steps are actually navigating the UI. Do not include more than 10 pause steps in a script.  |
+```
 - press: reverse
 - pause: 3
 - press: play
 
 ```
-
-`loop` | [![roku200px - rremote-advanced-mode-loop](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-loop.png?version=3&modificationDate=1626143345000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#AddLoop) | One or more steps can be made into a loop. This button remains grayed-out until more than one line of code has been highlighted.Using the mouse, select a two or more steps in the editor.
+ |
+| `loop`  | [![roku200px - rremote-advanced-mode-loop](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-loop.png?version=3&modificationDate=1626143345000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#AddLoop)  | One or more steps can be made into a loop. This button remains grayed-out until more than one line of code has been highlighted.Using the mouse, select a two or more steps in the editor.
 1. Click the lower right corner of the Add Loop button and select the number of iterations.
-2. Click the main part of Add Loop to surround the steps with the appropriate `loop` commands. | ```
+2. Click the main part of Add Loop to surround the steps with the appropriate `loop` commands.  |
+```
 - loop:
     iterations: 2
     steps:
     (loop steps go here)
 
 ```
-
-`wait_for_`
-`player_state` | [![roku200px - rremote-advanced-mode-slate](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-slate.png?version=3&modificationDate=1626143323000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#WaitforPlayerState) | Pause to wait on player state to be selected by user press of Play, Stop, or Pause.Put the cursor in the script where the wait should occur.Click the Wait for Player State button.Select Play, Stop, or Pause. | ```
+ |
+|  `wait_for_`
+`player_state`  | [![roku200px - rremote-advanced-mode-slate](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-slate.png?version=3&modificationDate=1626143323000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#WaitforPlayerState)  | Pause to wait on player state to be selected by user press of Play, Stop, or Pause.Put the cursor in the script where the wait should occur.Click the Wait for Player State button.Select Play, Stop, or Pause.  |
+```
 wait_for_player_state: play
 
 ```
-
+ |
 ### blocks
 Creation of the following blocks is aided by macros. Click on each label for details.
-Step | Label | Description | Example
----|---|---|---
-`launch` | **[Launch Channel](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#LaunchChannel)** | Launch one of entered with Add Channel in the `params` section.
+| Step  | Label  | Description  | Example  |
+| --- | --- | --- | --- |
+| `launch`  | **[Launch Channel](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#LaunchChannel)**  | Launch one of entered with Add Channel in the `params` section.
 
 To launch an app, repeat these steps as needed to enter channel information for you plan to use:
 1. Select an app
@@ -125,7 +129,8 @@ To launch an app, repeat these steps as needed to enter channel information for 
 3. Click **Add**
 then click **Add to script** ![roku815px - \(plus\)](https://confluence.portal.roku.com:8443/s/i0p0pk/8502/1ef1526ca6e62f10d6a1c5f77fccb30527d7d4d1/_/images/icons/emoticons/add.svg) on the app(s) to be launched.
 
-![roku400px - rremote-advanced-mode-launch-channel-roku700px](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-launch-channel.png) | ```
+![roku400px - rremote-advanced-mode-launch-channel-roku700px](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-launch-channel.png)  |
+```
 - launch:
     channel_name: My Test Channel
     content_id: 12345
@@ -134,15 +139,16 @@ then click **Add to script** ![roku815px - \(plus\)](https://confluence.portal.r
     timeout: 35
 
 ```
-
-`validate_streaming` | **[Validate Streaming](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#ValidateStreaming)** | Verify that the specified stream functions as expected.
+ |
+| `validate_streaming`  | **[Validate Streaming](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#ValidateStreaming)**  | Verify that the specified stream functions as expected.
 Select:
 - the desired Video codec
 - the audio codec in use
 - the DRM method
 then click **Add to script** to insert script commands to validate the indicated stream type.
 
-![roku400px - rremote-advanced-mode-validate-streaming-roku700px](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-validate-streaming-v1.png) | ```
+![roku400px - rremote-advanced-mode-validate-streaming-roku700px](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-validate-streaming-v1.png)  |
+```
 - validate_streaming:
     audio_codec: ac3
     video_codec: mpeg4_2
@@ -151,51 +157,54 @@ then click **Add to script** to insert script commands to validate the indicated
       - press: right
 
 ```
+ |
+| `channel_tile_order`  | **[Channel Tile Order](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#ChannelTileOrder)**  | Set how the displayed channel tiles are ordered on the screen
 
-`channel_tile_order` | **[Channel Tile Order](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#ChannelTileOrder)** | Set how the displayed channel tiles are ordered on the screen
-
-![roku400px - rremote-advanced-mode-channel-tile-order-roku700px](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-channel-tile-order.png) | ```
+![roku400px - rremote-advanced-mode-channel-tile-order-roku700px](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-channel-tile-order.png)  |
+```
 - channel_tile_order:
     1: My Test Channel
     2: Roku Developer Channel
     3: My Other Test Channel
 
 ```
-
+ |
 #### Defining your own blocks of steps for re-use
 For sequences of steps that you have to follow in multiple places within your script, define the sequence once and then label it for re-use.
-Step | On-screen label | Description | Example
----|---|---|---
-`step: &idxxxx` |  [![roku200px - rremote-advanced-mode-block](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-block.png?version=3&modificationDate=1626143354000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#AddBlock)
-**[Add Block](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#BlockIDs)** | Two or more steps can be defined as a block with an identifier.
+| Step  | On-screen label  | Description  | Example  |
+| --- | --- | --- | --- |
+| `step: &idxxxx`  |  [![roku200px - rremote-advanced-mode-block](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-block.png?version=3&modificationDate=1626143354000&api=v2)](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#AddBlock)
+**[Add Block](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#BlockIDs)**  | Two or more steps can be defined as a block with an identifier.
 Using the mouse or cursor control keys, highlight a step or group of steps in the editor.
-Click the **[Add Block](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#BlockIDs)** button to create the block and generate its ID in the form **`&id`**`1234` | ```
+Click the **[Add Block](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#BlockIDs)** button to create the block and generate its ID in the form **`&id`**`1234`  |
+```
 - step: &id9027
     - press: up
     - press: right
 
 ```
-
-`*idxxxx` | **[Block IDs](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#BlockIDs)** | Steps defined as blocks are reusable throughout the code by referring to the identifier.
+ |
+| `*idxxxx`  | **[Block IDs](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#BlockIDs)**  | Steps defined as blocks are reusable throughout the code by referring to the identifier.
 Place the cursor elsewhere in the code.
-Click **[Block IDs](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#BlockIDs)** and pick from the list, which will insert the chosen block as `*id1234` | ```
+Click **[Block IDs](https://developer.roku.com/en-gb/docs/developer-program/dev-tools/roku-remote-tool.md#BlockIDs)** and pick from the list, which will insert the chosen block as `*id1234`  |
+```
 - *id9027
 
 ```
-
+ |
 ## Running a script
 To play back scripts, use the control buttons shown below. Notice that as each command completes, its status changes from `running` to `done`.
-Action | Graphic | Description
----|---|---
-Play | ![roku200px - rremote-advanced-mode-play](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-play.png?version=3&modificationDate=1626141958000&api=v2) | The script in the Script Editor pane is run once by clicking the **Play** button.Clicking the lower right corner and selecting **Play all** runs all scripts loaded to the Automation pane.Click this same button to stop a running script.
-Repeat | ![roku200px - rremote-advanced-mode-repeat](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-repeat.png?version=3&modificationDate=1626141968000&api=v2) | The script in the Script Editor pane can be set to run multiple times by clicking **Repeat** .Click the lower-right corner of Repeat and set the number of iterationsClick the main part of Repeat to toggle Repeat mode (gray when active)Click **Play** to start the repeated run.
+| Action  | Graphic  | Description  |
+| --- | --- | --- |
+| Play  | ![roku200px - rremote-advanced-mode-play](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-play.png?version=3&modificationDate=1626141958000&api=v2)  | The script in the Script Editor pane is run once by clicking the **Play** button.Clicking the lower right corner and selecting **Play all** runs all scripts loaded to the Automation pane.Click this same button to stop a running script.  |
+| Repeat  | ![roku200px - rremote-advanced-mode-repeat](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-repeat.png?version=3&modificationDate=1626141968000&api=v2)  | The script in the Script Editor pane can be set to run multiple times by clicking **Repeat** .Click the lower-right corner of Repeat and set the number of iterationsClick the main part of Repeat to toggle Repeat mode (gray when active)Click **Play** to start the repeated run.  |
 ## Editing a script
 Like most text editors, the script editor can use both mouse and keyboard cursor positioning techniques to insert, highlight, and delete code. Note that the emulated keypad and macros always add to the **end** of the script, not at the current cursor location. If you need those lines inserted elsewhere, you'll need to then cut and paste them.
 Two additional buttons are provided to expedite editing.
-Graphic | Description
----|---
-![roku400px - rremote-advanced-mode-trash](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-trash.png?version=3&modificationDate=1626143335000&api=v2) | The **Trash can** button is used to immediately remove all steps in the procedure (the `params` section is not affected).To clear a syntax error, click this button following it with an Undo command (for example, Ctrl-Z for Windows) to reinstate all of the correct code but leave off the syntax in error.For removal of specific lines, simply select them with the mouse and use the Delete key.
-![roku400px - rremote-advanced-mode-comment](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-comment.png?version=3&modificationDate=1626141978000&api=v2) | The **Comments** button serves two purposes:Comments-out (and un-comments) selected blocks of code by adding `#` to the beginning of the line.Removes displayed comments such as `done` after a run, and `error` for certain error conditions.
+| Graphic  | Description  |
+| --- | --- |
+| ![roku400px - rremote-advanced-mode-trash](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-trash.png?version=3&modificationDate=1626143335000&api=v2)  | The **Trash can** button is used to immediately remove all steps in the procedure (the `params` section is not affected).To clear a syntax error, click this button following it with an Undo command (for example, Ctrl-Z for Windows) to reinstate all of the correct code but leave off the syntax in error.For removal of specific lines, simply select them with the mouse and use the Delete key.  |
+| ![roku400px - rremote-advanced-mode-comment](https://image.roku.com/ZHZscHItMTc2/rremote-advanced-mode-comment.png?version=3&modificationDate=1626141978000&api=v2)  | The **Comments** button serves two purposes:Comments-out (and un-comments) selected blocks of code by adding `#` to the beginning of the line.Removes displayed comments such as `done` after a run, and `error` for certain error conditions.  |
 ## Saving a script
 Exporting (saving) a script. Once you have written a script, saving it for future use involves Exporting the script in the RASP format.
 Using **New script** ![roku815px - rremote-dots](https://image.roku.com/ZHZscHItMTc2/rremote-dots.png) – but clicking on the **dots** – displays three Export options.

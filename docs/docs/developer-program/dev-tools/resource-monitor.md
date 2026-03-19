@@ -60,14 +60,14 @@ As of RRM 4.0, the tool automatically saves the graph and session settings and u
 The Roku Resource Monitor displays app events (red) and media events (blue) on the x-axis of the graphs. An event is represented by a bar indicating the duration of the event and a pair of _initiate_ and _complete_ [beacons](https://developer.roku.com/docs/developer-program/performance-guide/measuring-channel-performance.md) that denote the start and end of the event (for example, the compiling of the app, the playback of video content, and so on). You can hover your mouse pointer over an event to display an information box with the name and timestamp of the event, and the metrics at the time the event occurred.
 ![roku815px - rrm-beacons](https://image.roku.com/ZHZscHItMTc2/rrm4-beacons.png)
 The following app and media events are displayed:
-App events/beacons | Media events
----|---
-splash screen display (AppSplashInitiate/AppSplashComplete) | video playback (VODStartInitiate/VODStartComplete)
-compilation (AppCompileInitiate/AppCompileComplete) | channel change (LiveChannelChangeInitiate/LiveChannelChangeComplete)
-suspension (AppSuspendInitiate/AppSuspendComplete) | time grid (EPG) launch (EPGLaunchInitiate/EPGLaunchComplete)
-resumption (AppResumeInitiate/AppResumeComplete _)
-_ The appResumeComplete beacon must be fired by the app* |
-exit (AppExitInitiated/AppExitComplete) |
+| App events/beacons  | Media events  |
+| --- | --- |
+| splash screen display (AppSplashInitiate/AppSplashComplete)  | video playback (VODStartInitiate/VODStartComplete)  |
+| compilation (AppCompileInitiate/AppCompileComplete)  | channel change (LiveChannelChangeInitiate/LiveChannelChangeComplete)  |
+| suspension (AppSuspendInitiate/AppSuspendComplete)  | time grid (EPG) launch (EPGLaunchInitiate/EPGLaunchComplete)  |
+| resumption (AppResumeInitiate/AppResumeComplete _)
+_ The appResumeComplete beacon must be fired by the app*  |   |
+| exit (AppExitInitiated/AppExitComplete)  |   |
 ## Monitoring resource usage
 The Roku Resource Monitor tracks the following metrics, which are displayed in individual panels:
   * **System memory usage** : The amount of resident and swap memory used by the app.
@@ -87,34 +87,36 @@ You can save the currently visible portion of a graph to an image file. To do th
 The System memory usage graph tracks the amount of **resident** and **swap** memory used by the app (in MB). The **used** value is the sum of these two values.
 ![roku815px - rrm3-system-memory](https://image.roku.com/ZHZscHItMTc2/rrm4-system-memory.png)
 Each of the values listed in the graph is described as follows:
-Value | Description
----|---
-Used | The total amount of memory used by the app process; this is the sum of the **resident** and **swap** values.
-Resident | The total amount of memory that is mapped into the address space of the app process; this is the sum of the **anonymous** , **file-backed** , and **shared** values.
-Swap | The total amount of app process memory swapped out to 'disk' (RokuOS uses ZRAM 'disk'). This value varies for different Roku device models.
-Anonymous | The total amount of anonymous memory (for example, the stack and heap); this value also includes the demux allocation during media playback. Developers can control the amount of anonymous memory used by their app.
-File backed | The amount of file-backed memory used by the app (for example, BrightScript code). Developers cannot directly control the amount of the file-backed memory used by their app; however, high anonymous memory consumption results in more swapping and paging.
-Shared | The amount of shared memory used by the app process (for example, media player buffers and IPC channels). Developers cannot control the amount of shared memory used by their app.
-|
-Foreground limit | The maximum amount of DRAM that may be used by the app when browsing and selecting content in the app UI and during playback. If an app exceeds the limit displayed in the app system memory usage pane while running in the foreground, the Roku OS terminates the app. The foreground limit varies by device, and it is subject to change.
+| Value  | Description  |
+| --- | --- |
+| Used  | The total amount of memory used by the app process; this is the sum of the **resident** and **swap** values.  |
+| Resident  | The total amount of memory that is mapped into the address space of the app process; this is the sum of the **anonymous** , **file-backed** , and **shared** values.  |
+| Swap  | The total amount of app process memory swapped out to 'disk' (RokuOS uses ZRAM 'disk'). This value varies for different Roku device models.  |
+| Anonymous  | The total amount of anonymous memory (for example, the stack and heap); this value also includes the demux allocation during media playback. Developers can control the amount of anonymous memory used by their app.  |
+| File backed  | The amount of file-backed memory used by the app (for example, BrightScript code). Developers cannot directly control the amount of the file-backed memory used by their app; however, high anonymous memory consumption results in more swapping and paging.  |
+| Shared  | The amount of shared memory used by the app process (for example, media player buffers and IPC channels). Developers cannot control the amount of shared memory used by their app.  |
+|   |   |
+| Foreground limit  | The maximum amount of DRAM that may be used by the app when browsing and selecting content in the app UI and during playback. If an app exceeds the limit displayed in the app system memory usage pane while running in the foreground, the Roku OS terminates the app. The foreground limit varies by device, and it is subject to change.
 
 On devices that do not support per-app memory limits, the Roku Resource Monitor displays "N/A". The Roku OS, however, does terminate apps running in the foreground when specific system memory levels are reached on those devices.
 
 > The foreground limit may be decreased in the near future; therefore, apps should consume only 75% of the displayed limit. The reduced limit will be enforced by the Roku OS in the near future.
-Background limit | The maximum amount of DRAM that may be used by the app while running in the background (this limit is also applicable for apps that have integrated Instant Resume). If an app exceeds the limit displayed in the app system memory usage pane while running in the background, the Roku OS terminates the app. The Roku OS also terminates apps running in the background when specific system memory levels are reached.
+ |
+| Background limit  | The maximum amount of DRAM that may be used by the app while running in the background (this limit is also applicable for apps that have integrated Instant Resume). If an app exceeds the limit displayed in the app system memory usage pane while running in the background, the Roku OS terminates the app. The Roku OS also terminates apps running in the background when specific system memory levels are reached.
 
 On devices that do not support per-app memory limits, the Roku Resource Monitor displays "N/A". The Roku OS, however, does terminate apps running in the background when specific system memory levels are reached on those devices.
 
 > The background limit may be decreased in the near future; therefore, apps should consume a maximum of 100 MB of DRAM while running in the background. The reduced limit will be enforced by the Roku OS in the near future. See [Data management](https://developer.roku.com/docs/developer-program/performance-guide/data-management.md) and [Memory management](https://developer.roku.com/docs/developer-program/performance-guide/memory-management.md) for best practices on allocating resources.
+ |
 ### CPU usage
 The CPU memory usage graph tracks the percentage of total CPU processing (across all device cores) used by the app in the user and kernel spaces.
 ![roku815px - rrmcpu](https://image.roku.com/ZHZscHItMTc2/rrm4-cpu-usage.png)
 Each of the values listed in the graph is described as follows:
-Value | Description
----|---
-Total | The sum of user and kernel CPU usage.
-User | The percentage of CPU used by the app process in the user space.
-Kernel | The percentage of CPU used by the app process in the kernel space.
+| Value  | Description  |
+| --- | --- |
+| Total  | The sum of user and kernel CPU usage.  |
+| User  | The percentage of CPU used by the app process in the user space.  |
+| Kernel  | The percentage of CPU used by the app process in the kernel space.  |
 ### Frame rate
 The Frame rate graph tracks the number of graphics frames rendered by the app per second.
 ![roku815px - rrm-frame-rate](https://image.roku.com/ZHZscHItMTc2/rrm4-frame-rate.png)
@@ -133,22 +135,22 @@ You can select the check boxes for up to 10 objects to plot and track on the gra
 The SceneGraph rendezvous graph tracks the number of rendezvous events that have occurred on the app, the total time spent in rendezvous events, and the number of dropped events (displayed on the graph only).
 ![roku600px - rrm-rendezvous](https://image.roku.com/ZHZscHItMTc2/rrm4-rendezvous.png)
 Each of the values listed in the graph is described as follows:
-Value | Description
----|---
-Total time spent | The total amount of time spent executing and completing thread rendezvous on the app.
-Count | The number of thread rendezvous events on the app.
-Drop-count | The number of rendezvous events that were dropped because the event queue was full. This value is only displayed on the graph; it is not listed in the metrics pane on the left.
+| Value  | Description  |
+| --- | --- |
+| Total time spent  | The total amount of time spent executing and completing thread rendezvous on the app.  |
+| Count  | The number of thread rendezvous events on the app.  |
+| Drop-count  | The number of rendezvous events that were dropped because the event queue was full. This value is only displayed on the graph; it is not listed in the metrics pane on the left.  |
 #### Viewing rendezvous details
 You can click on a rendezvous (denoted with a red dot on the graph) to view the timestamp of the event and the following details:
 ![roku600px - rrm-rendezvous](https://image.roku.com/ZHZscHItMTc2/rrm4-rendezvous-details.png)
-**Field** | **Description**
----|---
-Source file | The file where the rendezvous event was generated.
-Line | The line of code in the source file where the rendezvous event was generated.
-Events | The number of rendezvous events during the sampling period.
-Duration in current sample | The total time spent in the rendezvous event (in milliseconds).
-Cumulative events | The total number of all instances of the events from the start, including all the instances in the current time sample.
-Cumulative duration | The total time spent across all instances of the rendezvous events, including all the instances in the current time sample (in milliseconds).
+| **Field**  | **Description**  |
+| --- | --- |
+| Source file  | The file where the rendezvous event was generated.  |
+| Line  | The line of code in the source file where the rendezvous event was generated.  |
+| Events  | The number of rendezvous events during the sampling period.  |
+| Duration in current sample  | The total time spent in the rendezvous event (in milliseconds).  |
+| Cumulative events  | The total number of all instances of the events from the start, including all the instances in the current time sample.  |
+| Cumulative duration  | The total time spent across all instances of the rendezvous events, including all the instances in the current time sample (in milliseconds).  |
 You can click the copy icon in the upper right-hand corner of the dialog and paste the rendezvous data to a text file or other document.
 #### Viewing rendezvous timestamps
 You can click on a row in the rendezvous dialog to view the start and end times of an event (unix timestamps) and the duration of the event (in milliseconds). You can click the copy icon in the upper right-hand corner of the dialog and paste the rendezvous data to a text file or other document.
@@ -168,20 +170,20 @@ You can click the **Node configuration** setting to view the count/memory usage 
 The Graphics memory usage graph tracks the amount of **texture** and **system** memory (in MB) used by the app and the bitmaps. You can select the bitmap collection interval, which is set to **1** minute by default.
 ![roku815px - rrmgraphics](https://image.roku.com/ZHZscHItMTc2/rrm4-graphics-memory.png)
 Each of the values listed in the graph is described as follows:
-Value | Description
----|---
-Texture | The total amount of r2d2 (graphical asset) memory in the GPU domain. These bitmaps have been used by the GPU.
-System | The total amount of rd2d memory in the system domain. These bitmaps have not been used by the GPU, which indicates potentially wasted memory.
+| Value  | Description  |
+| --- | --- |
+| Texture  | The total amount of r2d2 (graphical asset) memory in the GPU domain. These bitmaps have been used by the GPU.  |
+| System  | The total amount of rd2d memory in the system domain. These bitmaps have not been used by the GPU, which indicates potentially wasted memory.  |
 You can click on a bitmap icon on the graph to open the **Bitmaps details** dialog, which lists the dimensions, bits per pixel (bpp), and size (KB) of the assets being used by the app. You can click on truncated file names (indicated with ellipsis) to display the full path. You can click the copy icon in the upper right-hand corner of the dialog and paste the bitmap data to a text file or other document.
 ![roku600px - rrmbitmaps](https://image.roku.com/ZHZscHItMTc2/rrm4-bitmaps-stats.png)
 ### Registry usage
 The Registry usage graph tracks the amount of registry space used by the app.
 ![roku815px - rrm-registry-usage](https://image.roku.com/ZHZscHItMTc2/rrm-registry-usage.png)
 Each of the values listed in the graph is described as follows:
-Value | Description
----|---
-Registry used | The amount of data stored by the app in the device registry.
-Registry limit | The maximum amount of data that the app may store in the device registry, which is 32KB.
+| Value  | Description  |
+| --- | --- |
+| Registry used  | The amount of data stored by the app in the device registry.  |
+| Registry limit  | The maximum amount of data that the app may store in the device registry, which is 32KB.  |
 You can click a blue bar in the graph, which denotes a change in the registry, to view the registry sections and their keys and values at the time of the change. You can click the copy icon in the upper right-hand corner of the dialog and paste the registry section data to a text file or other document.
 ![roku600px - rrm-registry-details](https://image.roku.com/ZHZscHItMTc2/rrm-registry-details.png)
 ## Using File mode

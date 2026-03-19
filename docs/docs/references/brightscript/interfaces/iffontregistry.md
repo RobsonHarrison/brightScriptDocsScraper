@@ -1,8 +1,8 @@
 # ifFontRegistry
 ## Implemented by
-Name | Description
----|---
-[roFontRegistry](https://developer.roku.com/docs/references/brightscript/components/rofontregistry.md "roFontRegistry") | The roFontRegistry object allows you to create roFont objects, either using the default font or using fonts in TrueType or OpenType files packaged with your application
+| Name  | Description  |
+| --- | --- |
+| [roFontRegistry](https://developer.roku.com/docs/references/brightscript/components/rofontregistry.md "roFontRegistry")  | The roFontRegistry object allows you to create roFont objects, either using the default font or using fonts in TrueType or OpenType files packaged with your application  |
 ## Supported methods
 ### Register(path as String) as Boolean
 #### Description
@@ -19,12 +19,12 @@ An [roArray](https://developer.roku.com/docs/references/brightscript/components/
 #### Description
 Returns a font from the specified family, selected from the fonts previously registered via the [Register()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/iffontregistry.md#registerpath-as-string-as-boolean) method.
 #### Parameters
-Name | Type | Description
----|---|---
-family | String | The font family name.
-size | Integer | The requested font size, in pixels, not points.
-bold | Boolean | "bold" specifies a font variant that may be (but is not always) supported by the font file.
-italic | Boolean | "italic" specifies a font variant that may be (but is not always) supported by the font file.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| family  | String  | The font family name.  |
+| size  | Integer  | The requested font size, in pixels, not points.  |
+| bold  | Boolean  | "bold" specifies a font variant that may be (but is not always) supported by the font file.  |
+| italic  | Boolean  | "italic" specifies a font variant that may be (but is not always) supported by the font file.  |
 #### Return Value
 An [roFont](https://developer.roku.com/docs/references/brightscript/components/rofont.md "roFont") object representing a font from the specified family.
 ### GetDefaultFont() as Object
@@ -36,11 +36,11 @@ The system font as its default size.
 #### Description
 Returns the system font. The system font is always available, even if the [Register()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/iffontregistry.md#registerpath-as-string-as-boolean) method has not been called
 #### Parameters
-Name | Type | Description
----|---|---
-size | Integer | The requested font size, in pixels, not points.
-bold | Boolean | "bold" specifies a font variant that may be (but is not always) supported by the font file.
-italic | Boolean | "italic" specifies a font variant that may be (but is not always) supported by the font file.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| size  | Integer  | The requested font size, in pixels, not points.  |
+| bold  | Boolean  | "bold" specifies a font variant that may be (but is not always) supported by the font file.  |
+| italic  | Boolean  | "italic" specifies a font variant that may be (but is not always) supported by the font file.  |
 #### Return Value
 An roFont object representing the system font.
 ### GetDefaultFontSize() as Integer
@@ -52,11 +52,11 @@ The default font size.
 #### Description
 Returns a valid font string.
 #### Parameters
-Name | Type | Description
----|---|---
-family | String | The font family name.
-size | Integer | The requested font size, in pixels, not points.
-bold | Boolean | "bold" specifies a font variant that may be (but is not always) supported by the font file.
-italic | Boolean | "italic" specifies a font variant that may be (but is not always) supported by the font file.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| family  | String  | The font family name.  |
+| size  | Integer  | The requested font size, in pixels, not points.  |
+| bold  | Boolean  | "bold" specifies a font variant that may be (but is not always) supported by the font file.  |
+| italic  | Boolean  | "italic" specifies a font variant that may be (but is not always) supported by the font file.  |
 #### Return Value
 A valid font string.

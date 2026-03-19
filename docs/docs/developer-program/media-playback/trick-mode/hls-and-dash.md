@@ -8,6 +8,7 @@ The DASH Industry Forum describes standard thumbnail tiles in ["Guidelines for I
 > Roku's support for the DASH-IF is comprehensive, but not complete. For a list of known discrepancies between the full DASH standard and Roku's support for it, see [Roku OS support for DASH-IF](https://developer.roku.com/docs/specs/media/dash-if.md).
 > As specified in Section 6.2.6 of the DASH Interop Guidelines, the maximum tile width or height pixel limit is 1080 for high-end devices and 720 for low-end devices. Developers are cautioned to use the _minimum_ dimensions necessary to retain the desired image quality. Roku will scale thumbnail images as necessary. Practical experience suggests that an original thumbnail image width at or near 308 pixels provides an optimal balance of performance vs. image quality in typical situations where scaling is employed.
 ### DASH manifest example
+
 ```
 <MPD mediaPresentationDuration="PT634.566S" minBufferTime="PT2.00S" profiles="urn:hbbtv:dash:profile:isoff-live:2012,urn:mpeg:dash:profile:isoff-live:2011" type="static" xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 DASH-MPD.xsd">
  <BaseURL>.</BaseURL>
@@ -49,13 +50,13 @@ The EXT-X-IMAGE-STREAM-INF tag identifies an Image Media Playlist file containin
 #EXT-X-IMAGE-STREAM-INF:
 ##### Attributes:
 > All attributes defined for the EXT-X-I-FRAME-STREAM-INF tag are also defined for the EXT-XIMAGE-STREAM-INF tag, except for HDCP-LEVEL and VIDEO-RANGE, which are not applicable.
-Name | Required? | Description/Notes | Example
----|---|---|---
-URI | REQUIRED | The URI attribute value of EXT-X-IMAGE-STREAM-INF is a quoted-string containing a resource URI that identifies the Image Media Playlist file. That Playlist file MUST contain an EXT-XIMAGES-ONLY tag. | `"hd-tn.m3u8"``"640x360_5x4/640x360_5x4.m3u8"`
-BANDWIDTH | REQUIRED | The value is a decimal-integer of bits per second. It represents the peak segment bit rate of the Variant Stream. If all the Media Segments in a Variant Stream have already been created, the BANDWIDTH value MUST be the largest sum of peak segment bit rates that is produced by any playable combination of Renditions. (For a Variant Stream with a single Media Playlist, this is just the peak segment bit rate of that Media Playlist.) An inaccurate value can cause playback stalls or prevent clients from playing the variant. If the Master Playlist is to be made available before all Media Segments in the presentation have been encoded, the BANDWIDTH value SHOULD be the BANDWIDTH value of a representative period of similar content, encoded using the same settings. | `BANDWIDTH=29729`
-CODECS | REQUIRED | A quoted-string containing a comma-separated list of compressed graphic image formats present in the Image Media Playlist. Clients MUST ignore EXT-X-IMAGE-STREAM-INF tags that include unsupported CODECS attribute values. |  `"jpeg``"`(if the Media Playlist file references JPEG images)`"ac-3,mp4a.40.2"`See <https://tools.ietf.org/html/rfc6381> for a formal, detailed description of this attribute.
-RESOLUTION | REQUIRED | declares a Target Resolution for the Image Media Playlist, to assist clients with Playlist selection. The resolution of Images referenced in an Image Media Playlist MUST NOT exceed the respective horizontal or vertical pixel dimension specified by RESOLUTION; otherwise, display errors can occur. When using the EXT-X-TILES tag in the Image Media Playlist, Target Resolution refers to the size of individual Image Tiles in the Grid. | `RESOLUTION=240×135`
-VIDEO | OPTIONAL | The provisions in HLS Section 4.3.4.2.1 also apply to EXT-X-IMAGE-STREAM-INF tags with a VIDEO attribute. A Master Playlist that specifies alternative VIDEO Renditions and Image Media Playlists SHOULD include an alternative Image VIDEO Rendition for each regular VIDEO Rendition, with the same NAME and LANGUAGE attributes. |
+| Name  | Required?  | Description/Notes  | Example  |
+| --- | --- | --- | --- |
+| URI  | REQUIRED  | The URI attribute value of EXT-X-IMAGE-STREAM-INF is a quoted-string containing a resource URI that identifies the Image Media Playlist file. That Playlist file MUST contain an EXT-XIMAGES-ONLY tag.  | `"hd-tn.m3u8"``"640x360_5x4/640x360_5x4.m3u8"`  |
+| BANDWIDTH  | REQUIRED  | The value is a decimal-integer of bits per second. It represents the peak segment bit rate of the Variant Stream. If all the Media Segments in a Variant Stream have already been created, the BANDWIDTH value MUST be the largest sum of peak segment bit rates that is produced by any playable combination of Renditions. (For a Variant Stream with a single Media Playlist, this is just the peak segment bit rate of that Media Playlist.) An inaccurate value can cause playback stalls or prevent clients from playing the variant. If the Master Playlist is to be made available before all Media Segments in the presentation have been encoded, the BANDWIDTH value SHOULD be the BANDWIDTH value of a representative period of similar content, encoded using the same settings.  | `BANDWIDTH=29729`  |
+| CODECS  | REQUIRED  | A quoted-string containing a comma-separated list of compressed graphic image formats present in the Image Media Playlist. Clients MUST ignore EXT-X-IMAGE-STREAM-INF tags that include unsupported CODECS attribute values.  |  `"jpeg``"`(if the Media Playlist file references JPEG images)`"ac-3,mp4a.40.2"`See <https://tools.ietf.org/html/rfc6381> for a formal, detailed description of this attribute.  |
+| RESOLUTION  | REQUIRED  | declares a Target Resolution for the Image Media Playlist, to assist clients with Playlist selection. The resolution of Images referenced in an Image Media Playlist MUST NOT exceed the respective horizontal or vertical pixel dimension specified by RESOLUTION; otherwise, display errors can occur. When using the EXT-X-TILES tag in the Image Media Playlist, Target Resolution refers to the size of individual Image Tiles in the Grid.  | `RESOLUTION=240×135`  |
+| VIDEO  | OPTIONAL  | The provisions in HLS Section 4.3.4.2.1 also apply to EXT-X-IMAGE-STREAM-INF tags with a VIDEO attribute. A Master Playlist that specifies alternative VIDEO Renditions and Image Media Playlists SHOULD include an alternative Image VIDEO Rendition for each regular VIDEO Rendition, with the same NAME and LANGUAGE attributes.  |   |
 ### Tags for image media playlist
 #### EXT-X-IMAGES-ONLY
 The EXT-X-IMAGES-ONLY tag indicates that each resource URI in an Image Media Playlist is an Image Resource. By default, each Image Resource describes a single Image in a compressed graphic image format. If an Image Archive tag is present in the Playlist, the next Image Resource MAY contain multiple Images and require additional information for timing and display. Therefore, the client MUST use processing logic specific to the Image Archive type to ensure proper display.
@@ -72,11 +73,11 @@ The EXT-X-TILES tag indicates the Image Resource is an Image Archive that contai
 ##### Format:
 #EXT-X-TILES:
 Attributes:
-Name | Required? | Description/Notes | Example
----|---|---|---
-RESOLUTION | REQUIRED | The value is a decimal-resolution describing the pixel dimensions of a single Image in the Grid. | `RESOLUTION=320x180`
-LAYOUT | REQUIRED | The value is a grid-item-dimension consisting of two positive decimal integers in the format: column-x-row (“4x3”). It describes the arrangement of Images in a Grid. The minimum valid LAYOUT is “1x1”. The maximum valid LAYOUT will depend on RESOLUTION and the maximum valid pixel dimensions allowed by the compressed graphic image format. | `LAYOUT=5x4`
-DURATION | REQUIRED | The value is a decimal-floating-point or decimal-integer number of seconds indicating the display duration of a single Image Tile. | `DURATION=3.003`
+| Name  | Required?  | Description/Notes  | Example  |
+| --- | --- | --- | --- |
+| RESOLUTION  | REQUIRED  | The value is a decimal-resolution describing the pixel dimensions of a single Image in the Grid.  | `RESOLUTION=320x180`  |
+| LAYOUT  | REQUIRED  | The value is a grid-item-dimension consisting of two positive decimal integers in the format: column-x-row (“4x3”). It describes the arrangement of Images in a Grid. The minimum valid LAYOUT is “1x1”. The maximum valid LAYOUT will depend on RESOLUTION and the maximum valid pixel dimensions allowed by the compressed graphic image format.  | `LAYOUT=5x4`  |
+| DURATION  | REQUIRED  | The value is a decimal-floating-point or decimal-integer number of seconds indicating the display duration of a single Image Tile.  | `DURATION=3.003`  |
 The Time Remaining for an Image Resource is the EXTINF duration minus the Total Elapsed Time of the Image Archive. Tiles are selected from the Grid in a specific Sequence starting top-left, moving left-to-right and top-to-bottom, following the Grid Layout. Each Tile from the Sequence is displayed for DURATION seconds or Time Remaining seconds, whichever is less. If Time Remaining is greater than zero when the Sequence completes, the last Image is displayed until Time Remaining is zero.
 > Experimental results suggest that durations of around 10 seconds offer good performance vs. viewer convenience. As a general rule, the duration of each thumbnail should be be as long as the I-Frame, which it represents.
 ## Standard-thumbnail file creation
@@ -99,18 +100,21 @@ Three Roku-provided scripts each do one task to build playlists.
 
 All three scripts must be run in sequence, which the `run_scripts_hls.sh` file does.
 The following command generates 320x180 thumbnails and 5x4 tiles with 10 second intervals:
+
 ```
 $ ./run_scripts_hls.sh master.m3u8 thumb-tile 320x180 5 4 10
 
 ```
 
 Here is a command that generates 640x360 thumbnails and 5x4 tiles with 10 seconds intervals:
+
 ```
 $ ./run_scripts_hls.sh master.m3u8 thumb-tile 640x360 5 4 10
 
 ```
 
 Finally, the playlists generated by the two `run_scripts` commands should be entered into the master playlist, as so:
+
 ```
 #EXT-X-IMAGE-STREAM-INF:BANDWIDTH=16460,RESOLUTION=320x180,CODECS="jpeg",URI="5x4_320x180/320x180-5x4.m3u8"
 #EXT-X-IMAGE-STREAM-INF:BANDWIDTH=32920,RESOLUTION=640x360,CODECS="jpeg",URI="5x4_640x360/640x360-5x4.m3u8"
@@ -141,12 +145,14 @@ Three Roku-provided scripts each do one task to build playlists.
 
 All three scripts must be run in sequence, a process that is automated by the `run_scripts_dash.sh` file.
 The following command generates 256x144 thumbnails and 5x2 tiles with 10-second intervals.
+
 ```
 $ ./run_scripts_dash.sh master.mpd tile 256x144 5 2 10
 
 ```
 
 After the thumbnails manifest snippet(s) are generated, they should be entered into the master manifest, as in the example below:
+
 ```
 <AdaptationSet id="3" mimeType="image/jpeg" contentType="image">
     <SegmentTemplate media="$RepresentationID$/tile_$Number$.jpg" duration="100" startNumber="1"/>
@@ -160,6 +166,7 @@ After the thumbnails manifest snippet(s) are generated, they should be entered i
 > All the materials mentioned in this section are available on GitHub, [here](https://github.com/rokudev/samples/tree/master/media/TrickPlayThumbnailsDASH).
 ### Example Playlists
 #### Master playlist sample 1
+
 ```
 #EXTM3U
 #EXT-X-VERSION:7
@@ -192,6 +199,7 @@ URI="hd-tn.m3u8"
 ```
 
 #### Master playlist sample 2
+
 ```
 #EXTM3U
 #EXT-X-VERSION:5
@@ -234,6 +242,7 @@ layer8/layer8_cl_0.m3u8
 ```
 
 #### VOD image media playlist sample 1a
+
 ```
 #EXTM3U
 #EXT-X-TARGETDURATION:6
@@ -299,6 +308,7 @@ content-39.jpg
 ```
 
 #### VOD image media playlist sample 1b
+
 ```
 #EXTM3U
 #EXT-X-TARGETDURATION:6
@@ -352,6 +362,7 @@ credits_2_1.jpg
 ```
 
 #### VOD image media playlist sample 2a
+
 ```
 #EXTM3U
 #EXT-X-TARGETDURATION:60
@@ -403,6 +414,7 @@ credits_2_1.jpg
 ```
 
 #### VOD image media playlist sample 2b
+
 ```
 #EXTM3U
 #EXT-X-TARGETDURATION:60
@@ -454,6 +466,7 @@ credits_2_1.jpg
 ```
 
 #### VOD image media playlist sample 2c
+
 ```
 #EXTM3U
 #EXT-X-TARGETDURATION:60
@@ -505,6 +518,7 @@ credits_2_1.jpg
 ```
 
 #### Live image media playlist sample 1
+
 ```
 #EXTM3U
 #EXT-X-TARGETDURATION:6
@@ -550,6 +564,7 @@ content-131.jpg
 #### ASSOC-LANGUAGE audio rendition attribute
 As of Roku OS 10.0, the HLS **ASSOC-LANGUAGE** audio rendition attribute is supported. This optional attribute is used, for example, to specify that a particular rendition's audio, provided in a given spoken language dialect, is represented in forced subtitles by a different but associated language.
 In the following example manifest, Cantonese audio (language=yue) should use Traditional Chinese (LANGUAGE=zh_HANT) forced subtitles. This is indicated by an ASSOC-LANGUAGE=zh_HANT on the audio track.
+
 ```
 #EXTM3U
 #EXT-X-INDEPENDENT-SEGMENTS

@@ -63,12 +63,12 @@ Once you have validated your search feed, you can submit your feed following the
 
   2. The **Search feeds** page opens. It lists the following information for all of your search feeds.
 ![roku600px - search-status](https://image.roku.com/ZHZscHItMTc2/search-status-validated-v4.png)
-Field | Description
----|---
-App | The app associated with the search feed.
-Validated content | The percentage of the feed that has been successfully indexed without error. This number is updated approximately every 4 hours. You can click this field to view the current **Feed ingestion report**.
-Last feed ingestion | A UTC timestamp indicating when the feed was last ingested.
-Status | The current state of the feed ingestion, which may be one of the following values:
+| Field  | Description  |
+| --- | --- |
+| App  | The app associated with the search feed.  |
+| Validated content  | The percentage of the feed that has been successfully indexed without error. This number is updated approximately every 4 hours. You can click this field to view the current **Feed ingestion report**.  |
+| Last feed ingestion  | A UTC timestamp indicating when the feed was last ingested.  |
+| Status  | The current state of the feed ingestion, which may be one of the following values:
 
      * **Submitted** : The feed has been submitted for validation. It takes up to 15 minutes for feed validation to begin; therefore, the status will not change during this initial period. Once the validation check has been completed, you will receive an email message with the results.
      * **Feed Validated** : The feed has passed validation, and it is now undergoing deep linking certification testing.
@@ -76,20 +76,21 @@ Status | The current state of the feed ingestion, which may be one of the follow
      * **Expired** : The feed has no ingestion results available from the past week or longer. This typically occurs for feeds that have never been published to production and have been pending for some time. However, it may also occur when a previously-published feed has become unreachable and therefore has failed validation for over a week. In either scenario, you must manually re-submit the app to ingest the feed again.
      * **Rejected** : The feed failed validation during the initial setup.
      * **Error** : A previously published feed is now failing validation. Existing content in the feed may still be available in production, but any updates to the feed are not being successfully ingested and are therefore not available in production (new content items do not appear in search).
-Refresh icon | Re-validate your feed.
-Next (rIght-arrow) icon | Vew the details of your search feed, including validation results, vanity code for installing the search beta version of your app, and UI for [adding deep linking parameters for testing your app's search integration](https://developer.roku.com/en-gb/docs/developer-program/discovery/search/implementing-search.md#testingandsubmittingtheapp), click the right arrow icon.
+ |
+| Refresh icon  | Re-validate your feed.  |
+| Next (rIght-arrow) icon  | Vew the details of your search feed, including validation results, vanity code for installing the search beta version of your app, and UI for [adding deep linking parameters for testing your app's search integration](https://developer.roku.com/en-gb/docs/developer-program/discovery/search/implementing-search.md#testingandsubmittingtheapp), click the right arrow icon.  |
   3. Click **New search feed**. In the **New search feed** page, enter the following information:
 
 ![roku600px - roku-search-feed-validation-ui-v2](https://image.roku.com/ZHZscHItMTc2/roku-search-feed-validation-ui-v3a.png)
-Item | Description
----|---
-Channel | Select the app to be linked to your search feed. Only public apps that have been published can be selected.To publish your search feed at the same time you publish your app, contact [Partner Success](https://developer.roku.com/contact).
-Feed URL | Enter the URL where your search feed is hosted. The search feed is a JSON file with content metadata from one or more sources. See the [**Roku Search feed**](https://developer.roku.com/docs/specs/search/search-feed.md) specification for how to create your feed.
+| Item  | Description  |
+| --- | --- |
+| Channel  | Select the app to be linked to your search feed. Only public apps that have been published can be selected.To publish your search feed at the same time you publish your app, contact [Partner Success](https://developer.roku.com/contact).  |
+| Feed URL  | Enter the URL where your search feed is hosted. The search feed is a JSON file with content metadata from one or more sources. See the [**Roku Search feed**](https://developer.roku.com/docs/specs/search/search-feed.md) specification for how to create your feed.
 
-Optionally, you can protect your search feed with basic HTTP authentication and provide the username and password credentials. If your search feed uses basic HTTP authentication, select **Basic Authentication** from the **Feed Authentication Type** field, and then enter the **Username** and **Password** for the feed.
-Provider list logo | Upload a 143X113 PNG of your app logo with rounded corners.
-Teaser logo | Upload a 165X60 PNG of your app logo with rounded corners.
-Email | Enter the email address to receive the search feed validation results.
+Optionally, you can protect your search feed with basic HTTP authentication and provide the username and password credentials. If your search feed uses basic HTTP authentication, select **Basic Authentication** from the **Feed Authentication Type** field, and then enter the **Username** and **Password** for the feed.  |
+| Provider list logo  | Upload a 143X113 PNG of your app logo with rounded corners.  |
+| Teaser logo  | Upload a 165X60 PNG of your app logo with rounded corners.  |
+| Email  | Enter the email address to receive the search feed validation results.  |
   4. Click **Submit**. The **Search feeds** page displays the status of the feed submission.
 ![roku600px - roku-search-feed-validation-ui-v2](https://image.roku.com/ZHZscHItMTc2/feed-validation-row.png)
 
@@ -148,13 +149,13 @@ a. Click **Add deep link** (or **Add** if at least one deep link is already list
 
 b. Enter the following information in the **Add new deep link parameter** dialog, and then click **Save**.
 ![roku600px - add-deep-link-dialog](https://image.roku.com/ZHZscHItMTc2/add-deep-link-dialog.png)
-Field | Description
----|---
-Media type | Select the media type of the content item from the list of choices (for example, movie, television episode, or television series). Custom types are not available.
-Content ID | Enter the [content ID](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) of the item (this should be the same as the **PlayId** in the app's [search feed](https://developer.roku.com/docs/specs/search/search-feed.md#playoptions)).
-Content title | Enter a descriptive name that makes it easy to identify the content associated with the deep link parameters.
-Asset ID | Enter the ID specified for the content item in the **assets.Id** field of the app's [search feed](https://developer.roku.com/docs/specs/search/search-feed.md#playoptions).
-Valid until | Once an ID is created for a content item in Roku Search, it may not be changed.Enter the last date when the deep linking parameters will be used in your app. Notice that, for a new parameter set, this field is pre-populated with a date that is one year in the future. You can change this date as needed. If the deep linking parameters do not expire, you can select the **Valid indefinitely** check box.
+| Field  | Description  |
+| --- | --- |
+| Media type  | Select the media type of the content item from the list of choices (for example, movie, television episode, or television series). Custom types are not available.  |
+| Content ID  | Enter the [content ID](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) of the item (this should be the same as the **PlayId** in the app's [search feed](https://developer.roku.com/docs/specs/search/search-feed.md#playoptions)).  |
+| Content title  | Enter a descriptive name that makes it easy to identify the content associated with the deep link parameters.  |
+| Asset ID  | Enter the ID specified for the content item in the **assets.Id** field of the app's [search feed](https://developer.roku.com/docs/specs/search/search-feed.md#playoptions).  |
+| Valid until  | Once an ID is created for a content item in Roku Search, it may not be changed.Enter the last date when the deep linking parameters will be used in your app. Notice that, for a new parameter set, this field is pre-populated with a date that is one year in the future. You can change this date as needed. If the deep linking parameters do not expire, you can select the **Valid indefinitely** check box.  |
 c. The deep linking parameters are added to the list. You can edit and delete deep linking parameters in the list.
   10. Once you have verified that the search integration is working correctly, submit your unpublished feed for review following these steps:
 a. Click **Submit for Review**.
@@ -204,28 +205,28 @@ When customers search for content, they can add the movies and TV shows that the
 ![roku815px - savelist](https://image.roku.com/ZHZscHItMTc2/save-list-populated.png)
 ## Language and regional support
 The following table lists each region where Roku Search is available and the primary language:
-Region | Primary language
----|---
-**North America** |
-United States | English
-Canada | English
-**Europe** |
-United Kingdom | English
-Ireland | English
-Germany | German
-**Latin America** |
-Argentina | Spanish
-Brazil | Portuguese
-Chile | Spanish
-Colombia | Spanish
-Costa Rica | Spanish
-El Salvador | Spanish
-Guatemala | Spanish
-Honduras | Spanish
-Mexico | Spanish
-Nicaragua | Spanish
-Panama | Spanish
-Peru | Spanish
-**Asia Pacific** |
-Australia | English
+| Region  | Primary language  |
+| --- | --- |
+| **North America**  |   |
+| United States  | English  |
+| Canada  | English  |
+| **Europe**  |   |
+| United Kingdom  | English  |
+| Ireland  | English  |
+| Germany  | German  |
+| **Latin America**  |   |
+| Argentina  | Spanish  |
+| Brazil  | Portuguese  |
+| Chile  | Spanish  |
+| Colombia  | Spanish  |
+| Costa Rica  | Spanish  |
+| El Salvador  | Spanish  |
+| Guatemala  | Spanish  |
+| Honduras  | Spanish  |
+| Mexico  | Spanish  |
+| Nicaragua  | Spanish  |
+| Panama  | Spanish  |
+| Peru  | Spanish  |
+| **Asia Pacific**  |   |
+| Australia  | English  |
 For more information on participating in Roku Search in multiple regions and multiple languages, see the [Roku Search feed specification](https://developer.roku.com/docs/specs/search/search-feed.md#multiregion-and-multilanguage-support).

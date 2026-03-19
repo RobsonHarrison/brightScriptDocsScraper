@@ -1,14 +1,15 @@
 # ifFunction
 Interface equivalent for intrinsic type Function.
 ## Implemented by
-Name | Description
----|---
-[roFunction](https://developer.roku.com/docs/references/brightscript/components/rofunction.md "roFunction") | Object equivalent for intrinsic type Function
+| Name  | Description  |
+| --- | --- |
+| [roFunction](https://developer.roku.com/docs/references/brightscript/components/rofunction.md "roFunction")  | Object equivalent for intrinsic type Function  |
 ## Supported methods
 ### GetSub() As Function
 You can get a plain (non-referenced) version of the value by calling the this method.
 ### SetSub(value As Function) As Void
 This method can be used for in/out function parameters. If you have a boxed object, you can change the value in the object via this method, without changing the variable reference itself.
+
 ```
 Function Main()
     f1 = Foo

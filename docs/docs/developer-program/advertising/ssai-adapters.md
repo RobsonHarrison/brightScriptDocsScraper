@@ -32,6 +32,7 @@ These are the high level instructions on how to playback server-side ads content
 ### 1. Loading the adapter
 The following entry loads the adapter into your task:
 > At the beginning of the playback Task, instantiate the adapter with proper parameters and then initialize it. The valid values of the parameter name are uplynk, adobe, onceux, yospace, awsemt, and ggldai.
+
 ```
 adapter = RAFX_SSAI({name:"uplynk"})  ' Supported: uplynk, adobeonceux, yospace, awsemt, ggldai
 adapter.init()
@@ -39,6 +40,7 @@ adapter.init()
 ```
 
 ### 2. Make an initial request to SSAI manifest server getting Ad metadata: Request Ad Metadata
+
 ```
 request = {
 
@@ -55,6 +57,7 @@ The value of the parameter URL depends on which SSAI manifest servers to integra
 
 ### 3. Read stream info
 The initial request to SSAI manifest servers returns content URL (like Adobe and Verizon Media Services). The following entry gets the content URL:
+
 ```
 streamInfo = adapter.getStreamInfo()
 url = streamInfo["playURL"]
@@ -63,6 +66,7 @@ url = streamInfo["playURL"]
 
 ### 4. Enable ads
 Once the content playback URL is known, the adapter is ready to track Ads. Pass the adapter player object and observe the position event on the video node. The value of params.player is given to RAF internally as the second parameter of RAF.stitchedAdHandledEvent(). adapter.enableAds() parses Ad metadata and/or configure additional settings such as observing timedMetadata2 of given video node. It then calls RAF.stitchedAdsInit() when valid Ad metadata was found in the initial response from the SSAI manifest servers.
+
 ```
 port = CreateObject("roMessagePort")
 params = {player: {sgnode:m.top.video, port:port}}
@@ -82,6 +86,7 @@ By default, params.useStitched is set to true. In this case:
   * Interactive Ads are running and managed by the adapter and RAF
 
 #### **a) Optional: enable ads without stitchedAdHandledEvent**
+
 ```
     params = {
         player: {sgnode:m.top.video, port:port},
@@ -109,6 +114,7 @@ Supported callbacks are:
 Note: When params.useStiched = true or, not provided in the param (this is the default), setting callbacks is optional and for informational purposes only. The app MUST NOT call RAF.fireTrackingEvents() in such a case.
 When params.useStitched = false, it is required to set callbacks and the app MUST call RAF.fireTrackingEvents().
 **Setting the callback functions to the Adapter:**
+
 ```
 ' Set adapter callback functions
 
@@ -143,6 +149,7 @@ end function
 ### 5) Enable ad measurements
 When you are ready to start playback, you need to configure RAF by enabling ad measurements:
 Note: It is recommended to use [enableAdMeasurements](https://developer.roku.com/docs/developer-program/advertising/raf-api.md#general-audience-measurement).
+
 ```
 adIface = Roku_Ads()
 
@@ -158,6 +165,7 @@ adIface.setContentId(...) ' Set app/content specific info
 
 ### 6) Playback Loop
 The developer can now start the playback and run the message loop:
+
 ```
 video.control = "play"  ' start playback
 
@@ -208,9 +216,9 @@ Before using the adapter samples, the developer must be familiar with the SSAI p
 
 **Note:** The SSAI providers may have undocumented formats, parameters and API behaviors.
 ### Verizon Media Services Adapter
-**Verizon Media Services** | **File**
----|---
-RAFX SSAI Adapter for Verizon Media Services Preplay and Ping mode, showing ad rendering via stitchedAdsInit()/stitchedAdHandledEvent().
+| **Verizon Media Services**  | **File**  |
+| --- | --- |
+| RAFX SSAI Adapter for Verizon Media Services Preplay and Ping mode, showing ad rendering via stitchedAdsInit()/stitchedAdHandledEvent().
 
 The Verizon Media Services Adapter provides the following services:
 
@@ -225,13 +233,13 @@ When Live-Ping
 When VOD-Preplay
 - Request preplay and parse ads object
 - Configure RAF stitchedAdsInit()
-- Track all ad events through stitchedAdHandledEvent() |  [rsgupl](https://github.com/rokudev/samples/tree/master/advertising/rsgupl)
+- Track all ad events through stitchedAdHandledEvent()  |  [rsgupl](https://github.com/rokudev/samples/tree/master/advertising/rsgupl)
 
-See UplynkTask.brs to find out how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.
+See UplynkTask.brs to find out how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.  |
 ### Adobe Adapter
-Adobe Adapter | File
----|---
-RAFX SSAI Adapter for Adobe Manifest Server simple and x-marker mode, showing ad rendering via stitchedAdsInit()/stitchedAdHandledEvent().
+| Adobe Adapter  | File  |
+| --- | --- |
+| RAFX SSAI Adapter for Adobe Manifest Server simple and x-marker mode, showing ad rendering via stitchedAdsInit()/stitchedAdHandledEvent().
 
 Adobe Adapter provides the following services:
 
@@ -245,24 +253,24 @@ When VOD-simple
 - Request ad metadata with pttrackingposition=1, pttrackingmode=simple
 - Supported pttrackingversion=vmap and v2 JSON
 - Parse ad metadata and configure RAF stitchedAdsInit()
-- Track ad events through stitchedAdHandledEvent() |  [rsgadb](https://github.com/rokudev/samples/tree/master/advertising/rsgadb/)
+- Track ad events through stitchedAdHandledEvent()  |  [rsgadb](https://github.com/rokudev/samples/tree/master/advertising/rsgadb/)
 
-See AdobeTask.brs to find out how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.
+See AdobeTask.brs to find out how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.  |
 ### OTTera AdNet+ Adapter
-OTTera AdNet+ Adapter | File
----|---
-- RAFX SSAI Adapter for OTTera AdNet+ x-marker, showing ad rendering via stitchedAdsInit()/stitchedAdHandledEvent().
+| OTTera AdNet+ Adapter  | File  |
+| --- | --- |
+| - RAFX SSAI Adapter for OTTera AdNet+ x-marker, showing ad rendering via stitchedAdsInit()/stitchedAdHandledEvent().
 
 OTTera AdNet+ Adapter provides the following services:
 - Observe ID3 tag: #EXT-X-MARKER
 - Parse ad metadata and configure RAF stitchedAdsInit()
-- Track ad events through stitchedAdHandledEvent() |  [rsgottera](https://github.com/rokudev/samples/tree/master/advertising/rsgottera)
+- Track ad events through stitchedAdHandledEvent()  |  [rsgottera](https://github.com/rokudev/samples/tree/master/advertising/rsgottera)
 
-See OTTeraTask.brs to find out how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.
+See OTTeraTask.brs to find out how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.  |
 ### Brightcove/OnceUX Adapter
-Brightcove/OnceUX Adapter | File
----|---
-RAFX SSAI Adapter for OnceUX VOD mode, showing ad rendering via stitchedAdInit()/stitchedAdHandledEvent().
+| Brightcove/OnceUX Adapter  | File  |
+| --- | --- |
+| RAFX SSAI Adapter for OnceUX VOD mode, showing ad rendering via stitchedAdInit()/stitchedAdHandledEvent().
 
 OnceUX Adapter provides the following services:
 
@@ -298,13 +306,13 @@ if "Impression" = evt.event
 adIface.util.getNoResponseFromUrl(evt.url) ' send beacon to OnceUX
 end if
 end for
-~~~~ |  [rsgoux](https://github.com/rokudev/samples/tree/master/advertising/rsgoux/)
+~~~~  |  [rsgoux](https://github.com/rokudev/samples/tree/master/advertising/rsgoux/)
 
-See OnceUXTask.brs to find how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.
+See OnceUXTask.brs to find how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.  |
 ### Yospace Adapter
-Yospace Adapter | File
----|---
-RAFX SSAI Adapter for Yospace server, showing ad rendering via stitchedAdInit()/stitchedAdHandledEvent().
+| Yospace Adapter  | File  |
+| --- | --- |
+| RAFX SSAI Adapter for Yospace server, showing ad rendering via stitchedAdInit()/stitchedAdHandledEvent().
 
 Yospace Adapter provides the following services:
 
@@ -317,13 +325,13 @@ Yospace Adapter provides the following services:
 - Request masterURL, parse XML(DASH) or manifest(HLS), extract playbackURL and analyticsURL
 - Observe timed metadata
 - As playback stream, ping Yospace server and parse XML
-- Match timed metadata YMID and ad metadata, configure RAF stitchedAdsInit() and stitchedAdHandledEvent() |  [rsgyspc](https://github.com/rokudev/samples/tree/master/advertising/rsgyspc/)
+- Match timed metadata YMID and ad metadata, configure RAF stitchedAdsInit() and stitchedAdHandledEvent()  |  [rsgyspc](https://github.com/rokudev/samples/tree/master/advertising/rsgyspc/)
 
-See YospaceTask.brs to find how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.
+See YospaceTask.brs to find how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.  |
 ### AWS Adapter
-AWS Elemental MediaTailor Adapter | File
----|---
-RAFX SSAI Adapter for AWS Elemental MediaTailor(AWSEMT), showing ad rendering via stitchedAdInit()/stitchedAdHandledEvent() .
+| AWS Elemental MediaTailor Adapter  | File  |
+| --- | --- |
+| RAFX SSAI Adapter for AWS Elemental MediaTailor(AWSEMT), showing ad rendering via stitchedAdInit()/stitchedAdHandledEvent() .
 
 AWSEMT Adapter provides following services:
 
@@ -347,9 +355,9 @@ end if
 
 - Poll ad metadata, parse JSON and configure RAF stitchedAdsInit()
 - Track ad events through RAF stitchedAdHandledEvent() masterURL may require GET or POST. When POST request is required, fill request.body with {"adParams":{}}
-- See AEMTTask.brs, function loadStream(). |  [rsgemt](https://github.com/rokudev/samples/tree/master/advertising/rsgemt/)
+- See AEMTTask.brs, function loadStream().  |  [rsgemt](https://github.com/rokudev/samples/tree/master/advertising/rsgemt/)
 
-See AEMTTask.brs to find how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.
+See AEMTTask.brs to find how to use the adapter. Copy rafxssai.brs to your project and integrate it with the content playback Task.  |
 ### Google Dynamic Ad Insertion (DAI)
 You can use the Google's Interactive Media Ads (IMA) SDK for Roku to integrate multimedia ads into your app. This DAI solution combines ad and content video on the Ad Manager servers, and then returns a single video stream to your app for playback.
 See the [IMA DAI SDK for Roku](https://developers.google.com/interactive-media-ads/docs/sdks/roku) guide for instructions on integrating Google DAI.

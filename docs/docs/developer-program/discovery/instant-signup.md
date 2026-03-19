@@ -53,18 +53,20 @@ Apps must complete the following steps (in addition to completing the [prerequis
 > It is recommended that both the **images** and **products** APIs use the same domain (for example, <https://mychannel.com/api/offers/rsb/images> and <https://mychannel.com/api/offers/rsb/products>).
 ### Implementing images API
 Apps must implement an API that retrieves the images and description of the app to be displayed to customers. The following table lists the requirements for implementing the Images API:
-Item | Description
----|---
-**Endpoint** | /api/offers/rsb/images
-**Method** | GET
-**Header** | The HTTP header of the GET requests includes a JSON Web Token (JWT) for verifying that the API call is from Roku and the customer's locale for determining which offer image to display to the customer.
-| Field | Type | Description
----|---|---
-Authorization: Bearer | String | A JWT token that enables apps to verify that API calls are from Roku. The JWT is signed with the partner's [Roku Pay API Key](https://developer.roku.com/api/settings) using the [HS512 (HMAC using SHA-512)](https://tools.ietf.org/html/rfc7518#section-3.2) algorithm. To generate the JWT, use the following algorithm, payload, and secret key:
+| Item  | Description  |
+| --- | --- |
+| **Endpoint**  | /api/offers/rsb/images  |
+| **Method**  | GET  |
+| **Header**  | The HTTP header of the GET requests includes a JSON Web Token (JWT) for verifying that the API call is from Roku and the customer's locale for determining which offer image to display to the customer.
+
+ | Field  | Type  | Description  |
+| --- | --- | --- |
+| Authorization: Bearer  | String  | A JWT token that enables apps to verify that API calls are from Roku. The JWT is signed with the partner's [Roku Pay API Key](https://developer.roku.com/api/settings) using the [HS512 (HMAC using SHA-512)](https://tools.ietf.org/html/rfc7518#section-3.2) algorithm. To generate the JWT, use the following algorithm, payload, and secret key:
 
 - **Algorithm** : HS512.
 
-- **Payload** :```
+- **Payload** :
+```
 "iss": "roku_instant_signup",
 "sub": "instant_signup_metadata",
 "exp": 1616010343 (1 hour from the current time, in epoch unix timestamp format)
@@ -75,15 +77,17 @@ Authorization: Bearer | String | A JWT token that enables apps to verify that AP
 
 - **Secret key** : [Roku Pay API Key](https://developer.roku.com/api/settings) (see the following [document](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/setting-up-web-services.md#roku-pay-api-key) for more information).
 
-Apps can use [JWT debugger](https://jwt.io/) or other online tool to verify generated JWTs.
-locale | String | The location of the customer in language-country format (en-us or es-mx, for example).
-**Response** | The API returns the following:
+Apps can use [JWT debugger](https://jwt.io/) or other online tool to verify generated JWTs.  |
+| locale  | String  | The location of the customer in language-country format (en-us or es-mx, for example).  |
+ |
+| **Response**  | The API returns the following:
 
 - An **images** array. This array contains between 5 to 15 image URLs specifying the app content posters to be displayed. The first image returned must be the app logo (a 160X120 JPG with 72ppi minimum resolution). Other images must be 213X120 JPG with 72ppi minimum resolution, per the [Image specifications](https://developer.roku.com/en-gb/docs/developer-program/discovery/instant-signup.md#channel-image-specifications).
 
 - A **description** string. This is a maximum 200-character string summarizing the app. The description may not include any pricing information.
 
-**Syntax** :```
+**Syntax** :
+```
   {
     "images": "Array.<String>",
     "description": "string"
@@ -91,7 +95,8 @@ locale | String | The location of the customer in language-country format (en-us
 
 ```
 
-**Example** : ```
+**Example** :
+```
   {
     "images": [ "https://myChannelImage/item1.jpg",
                 "https://myChannelContentPosterImages/item2.jpg",
@@ -100,30 +105,32 @@ locale | String | The location of the customer in language-country format (en-us
   }
 
 ```
-
-**Error** |
+ |
+| **Error**  |
   * 200: OK
   * 400: Bad request
   * 500: Error
 
+ |
 #### Image specifications
 The images used for the app must meet the requirements for width, height, minimum resolution, and format.
-Specification | Requirement
----|---
-Width | 213px
-Height | 120px
-Minimum resolution | 72ppi
-File format | JPG
+| Specification  | Requirement  |
+| --- | --- |
+| Width  | 213px  |
+| Height  | 120px  |
+| Minimum resolution  | 72ppi  |
+| File format  | JPG  |
 #### Poster/artwork specifications
 The posters/artwork with the content or networks featured in the app are used to highlight the app's offerings. The posters/artwork must meet the following requirements:
-Specification | Requirements
----|---
-File format | JPG
-Aspect ratio | 4:3
+| Specification  | Requirements  |
+| --- | --- |
+| File format  | JPG  |
+| Aspect ratio  | 4:3
   * **Content-oriented apps** (apps that promote movies, TV shows, music, and other content): A minimum of 10 posters must be included with an offer.
   * **vMVPD apps** (apps that promote multiple networks/channels): A minimum of 5 artwork images must be included with an offer.
 
-Licensing | Posters/artwork must be licensed for usage. Dates that posters may be used must be specified
+ |
+| Licensing  | Posters/artwork must be licensed for usage. Dates that posters may be used must be specified  |
 > The displaying of up-to-date content images in the device activation workflow may be delayed because of Roku's caching and approval policy.
 ### Implementing products API
 Apps must implement an API that retrieves the product offers to be displayed to the customer when they click an app image. Apps may return offers for up to three unique products (for example, for example, an ad-supported plan, monthly limited-ads plan, and monthly premium ad-free plan). Apps may not return different offers for the same product (for example, returning 7-day and 30-day free trials for the same product is not allowed).
@@ -132,17 +139,19 @@ Each product will include its associated name and description, which were entere
 > * * *
 > Apps can use the [ChannelStore.GetCatalog](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) command to get a list of products associated with the app, including whether a free trial period or introductory pricing is offered.
 The following table lists the requirements for implementing the personalized product display API:
-Item | Description
----|---
-**Endpoint** | /api/offers/rsb/products
-**Method** | GET
-**Headers** | The HTTP header of the GET requests includes a JWT token for verifying that the API call is from Roku, and the customer's email hash, locale, and activation date for determining which offers the customer is eligible for:  | Field | Type | Description
----|---|---
-Authorization: Bearer | String | A JWT token that enables apps to verify that API calls are from Roku. The JWT is signed with the partner's [Roku Pay API Key](https://developer.roku.com/api/settings) using the [HS512 (HMAC using SHA-512)](https://tools.ietf.org/html/rfc7518#section-3.2) algorithm. To generate the JWT, use the following algorithm, payload, and secret key:
+| Item  | Description  |
+| --- | --- |
+| **Endpoint**  | /api/offers/rsb/products  |
+| **Method**  | GET  |
+| **Headers**  | The HTTP header of the GET requests includes a JWT token for verifying that the API call is from Roku, and the customer's email hash, locale, and activation date for determining which offers the customer is eligible for:
+ | Field  | Type  | Description  |
+| --- | --- | --- |
+| Authorization: Bearer  | String  | A JWT token that enables apps to verify that API calls are from Roku. The JWT is signed with the partner's [Roku Pay API Key](https://developer.roku.com/api/settings) using the [HS512 (HMAC using SHA-512)](https://tools.ietf.org/html/rfc7518#section-3.2) algorithm. To generate the JWT, use the following algorithm, payload, and secret key:
 
 - **Algorithm** : HS512.
 
-- **Payload** :```
+- **Payload** :
+```
 "iss": "roku_instant_signup",
 "sub": "instant_signup_elegibility",
 "exp": 1616010343 (1 hour from the current time, in epoch unix timestamp format)
@@ -153,22 +162,25 @@ Authorization: Bearer | String | A JWT token that enables apps to verify that AP
 
 - **Secret key** : [Roku Pay API Key](https://developer.roku.com/api/settings) (see the following [document](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/setting-up-web-services.md#roku-pay-api-key) for more information).
 
-Apps can use [JWT debugger](https://jwt.io/) or other online tool to verify generated JWTs.
-roku-reserved-email-hash | String | The unsalted SHA-512 hash of the customer's email address. This can be used to determine which offers customers are eligible. See [Using email hashes to determine offer eligibility](https://developer.roku.com/en-gb/docs/developer-program/discovery/instant-signup.md#using-email-hashes-to-determine-offer-eligibility) for more information.
-locale | String | The location of the customer in language-country format (en-us or es-mx, for example).
-activation-date | String | A timestamp in UTC format indicating when the device was originally activated (for example, 2021-07-01T17:04:33Z).
-**Response** | The API returns a **Products** array, which contains a list of product objects. The following information is included for each product in the array:
-| Field | Type | Description
----|---|---
-Id | String | Identifies the product to be purchased, as entered in the **Product Identifier** field on the [In-Channel Product page in the Developer Dashboard](https://developer.roku.com/products) when the product was created. The name of the in-app product must include the app name.
-desc | String | A brief (maximum 100 character) description of the product.
+Apps can use [JWT debugger](https://jwt.io/) or other online tool to verify generated JWTs.  |
+| roku-reserved-email-hash  | String  | The unsalted SHA-512 hash of the customer's email address. This can be used to determine which offers customers are eligible. See [Using email hashes to determine offer eligibility](https://developer.roku.com/en-gb/docs/developer-program/discovery/instant-signup.md#using-email-hashes-to-determine-offer-eligibility) for more information.  |
+| locale  | String  | The location of the customer in language-country format (en-us or es-mx, for example).  |
+| activation-date  | String  | A timestamp in UTC format indicating when the device was originally activated (for example, 2021-07-01T17:04:33Z).  |
+ |
+| **Response**  | The API returns a **Products** array, which contains a list of product objects. The following information is included for each product in the array:
 
-Do not include any billing information such as pricing and billing cycle in the description. Roku automatically populates this information from the [in-app products you've created in the Developer Dashboard](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md).
-details | String | Optional. App lineup images in markdown format (for example, `"![img](https://www.roku.com/images/roku-developers.svg)"`)
-name | String | Optional. The name of the offer (for example, "Roku Developers annual subscription")
-images | Array of Strings | Optional. An array of images that may be shown in the offer card once an offer is selected.
+ | Field  | Type  | Description  |
+| --- | --- | --- |
+| Id  | String  | Identifies the product to be purchased, as entered in the **Product Identifier** field on the [In-Channel Product page in the Developer Dashboard](https://developer.roku.com/products) when the product was created. The name of the in-app product must include the app name.  |
+| desc  | String  | A brief (maximum 100 character) description of the product.
 
-**Syntax** :```
+Do not include any billing information such as pricing and billing cycle in the description. Roku automatically populates this information from the [in-app products you've created in the Developer Dashboard](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md).  |
+| details  | String  | Optional. App lineup images in markdown format (for example, `"![img](https://www.roku.com/images/roku-developers.svg)"`)  |
+| name  | String  | Optional. The name of the offer (for example, "Roku Developers annual subscription")  |
+| images  | Array of Strings  | Optional. An array of images that may be shown in the offer card once an offer is selected.  |
+
+**Syntax** :
+```
   {
     "products": "Array.<Product>"
   }
@@ -183,7 +195,8 @@ images | Array of Strings | Optional. An array of images that may be shown in th
 
 ```
 
-**Example** : ```
+**Example** :
+```
   {
       "products": [
           {
@@ -199,12 +212,13 @@ images | Array of Strings | Optional. An array of images that may be shown in th
 
 ```
 
-If the customer is not eligible for any offers, return an empty array.
-**Error** |
+If the customer is not eligible for any offers, return an empty array.  |
+| **Error**  |
   * 200: OK
   * 400: Bad request
   * 500: Error
 
+ |
 #### Using email hashes to determine offer eligibility
 Apps should leverage the email hash included in the Products API GET requests to verify whether a customer is eligible for a specific offer during activation before returning an offer to Roku (the email hash is based on the email address provided and verified by the customer prior to entering the offers flow).
   * If the user is not in your system or they already are in your system but not a current subscriber, they are eligible for a free trial, discount offer, or, direct-to-paid product. In this case, send the eligible products to Roku in the Products API response.
@@ -223,6 +237,7 @@ Additionally, apps can use the [ChannelStore APIs](https://developer.roku.com/do
 #### Creating user accounts upon activation
 Apps can provide an **account** endpoint that accepts POST requests. This enables apps to receive the customer's information that is collected during device activation and use it to create new user accounts in their backend system automatically.
 When a customer selects a subscription, they are prompted to grant Roku permission to share their information with the app. If the customer consents, the [sale notification](https://developer.roku.com/docs/developer-program/roku-pay/implementation/push-notifications.md#sale) will additionally include the customer's name, email address, billing zip code, and app-specific unique id. The following sample purchase notification demonstrates this:
+
 ```
  {
     "customerId": "168c2bda168854bb805f24ab296390a3",
@@ -258,7 +273,8 @@ When a customer selects a subscription, they are prompted to grant Roku permissi
 ```
 
 > If the user subscribes to your app via an Instant Signup on-device offer, the **purchaseChannel** and **purchaseContext** fields are set to "DEVICE" and "ISU", respectively.
-> ```
+>
+```
 ...
 "purchaseChannel": "DEVICE",
 "purchaseContext": "ISU",
@@ -272,12 +288,14 @@ Upon launch, apps may only display a single dialog for entering a password. The 
 #### Creating user accounts upon app launch
 Apps can leverage the [ChannelStore](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md) APIs and [Roku Pay web services](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#validate-transaction) to create user accounts when customers launch their app. This ensures that user accounts have been created before customers can access content. Creating user accounts with these APIs entails getting the purchase data, validating the subscription, and storing access tokens in the device registry and in the Roku cloud. The following steps describe how to do this:
   1. Call the [**ChannelStore.getPurchases**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getpurchases) command. This causes the **purchases** field to be set to a **ContentNode** containing the results of the command. The **purchases** contentNode contains a child content node for each purchase.
+
 ```
   myChannelStore.command = "getPurchases"
 
 ```
 
   2. Get the transaction ID from the **purchaseId** field of the child content node. Find the subscription to be validated using the **code** or **productType** fields of the child content node.
+
 ```
   if (myChannelStore.purchases <> invalid)
       count = myChannelStore.purchases.GetChildCount()
@@ -291,12 +309,14 @@ Apps can leverage the [ChannelStore](https://developer.roku.com/docs/references/
 ```
 
   3. Pass the transaction ID into a [**validate-transaction**](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#validate-transaction) Roku Pay Web Service API call.
+
 ```
   transactionId = myChannelStore.purchases.getChild(x).purchaseId
 
 ```
 
   4. Check the **isEntitled** field in the response to verify that the user is entitled to the content.
+
 ```
   <result>
       <transactionId>aa3f3a2479ea4e0c88d9a2d500f33e74</transactionId>
@@ -311,6 +331,7 @@ Apps can leverage the [ChannelStore](https://developer.roku.com/docs/references/
 
   5. Check the access token in your entitlement server to verify whether it is still valid. If the access token is valid, generate a refresh token in your system and store it in the device registry and in the Roku cloud, and then grant the customer access to the content. In this case, no additional steps are required and authentication is complete.
      * Call the [**roRegistrySection.write()**](https://developer.roku.com/docs/references/brightscript/interfaces/ifregistrysection.md#writekey-as-string-value-as-string-as-boolean) and [**roRegistrySection.flush()**](https://developer.roku.com/docs/references/brightscript/interfaces/ifregistrysection.md#deletekey-as-string-value-as-string-as-boolean) methods to permanently store the refresh token on the device:
+
 ```
  reg_sec.write("access_token_key_name", "access_token_value")
  reg_sec.flush()
@@ -318,6 +339,7 @@ Apps can leverage the [ChannelStore](https://developer.roku.com/docs/references/
 ```
 
      * Call the [**ChannelStore.storeChannelCredData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#storechannelcreddata) command to store the access token in the Roku cloud. You can use the **status** and **response** fields of the **storeChannelCredDataStatus** content node to verify that the command was successful and that the access token stored in the Roku cloud has the specified value.
+
 ```
   myChannelStore.channelCredData = "your access token"
   myChannelStore.command = "storeChannelCredData "
@@ -351,34 +373,34 @@ The following process is used to test and verify the app's Instant Signup integr
 ## Measuring Instant Signup
 Apps can identify whether Roku Pay subscription purchase originated from Instant Signup (a customer signing up for a free trial offer is considered a purchase). This may be useful, for example, for publishers to compare the number of subscription purchases made via Instant Signup versus on-device.
 The ChannelStore node [**getPurchases**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getpurchases) and [**getAllPurchases**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases) commands, [**roChannelStore.getPurchases**](https://developer.roku.com/docs/references/brightscript/interfaces/ifchannelstore.md#getpurchases-as-void) function, [Roku Pay **validate-transaction** web service](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#validate-transaction), and [Roku Pay **Sale** push notification](https://developer.roku.com/docs/developer-program/roku-pay/implementation/push-notifications.md#sale) include **purchaseChannel** and **purchaseContext** fields that indicate the source of the purchase.
-Source | purchaseChannel | purchaseContext
----|---|---
-Instant Signup Web (my.roku.com) | "ISU" | "WEB"
-Instant Signup (on-device) | "ISU" | "DEVICE"
-In-app purchase | "IAP" | "DEVICE"
+| Source  | purchaseChannel  | purchaseContext  |
+| --- | --- | --- |
+| Instant Signup Web (my.roku.com)  | "ISU"  | "WEB"  |
+| Instant Signup (on-device)  | "ISU"  | "DEVICE"  |
+| In-app purchase  | "IAP"  | "DEVICE"  |
 In addition, the [Roku Pay Transaction Report](https://developer.roku.com/docs/features/analytics/transaction-report.md) includes a **purchase_context** column indicating the origin of the sign-up ('isu" or "iap").
 ## Appendix A: Instant Signup user experience
 The Instant Signup user experience slightly varies based on whether a free trial, promotional pricing, or standard pricing is offered and whether the offer includes a single plan or multiple plans. The following images illustrate the workflows for each of these scenarios:
 #### Free trial offer - single plan
-Offer | Confirm selection | Success
----|---|---
-![img - roku400px](https://image.roku.com/ZHZscHItMTc2/Free-trial.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Free-trial---confirmation-dialog.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Free-trial---post-acceptance.png?version=1&modificationDate=1613586217000&api=v2)
+| Offer  | Confirm selection  | Success  |
+| --- | --- | --- |
+| ![img - roku400px](https://image.roku.com/ZHZscHItMTc2/Free-trial.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Free-trial---confirmation-dialog.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Free-trial---post-acceptance.png?version=1&modificationDate=1613586217000&api=v2)  |
 #### Free trial offer - multiple plans
-Offer | Plan selection | Confirm selection | Success
----|---|---|---
-![img - roku400px](https://image.roku.com/ZHZscHItMTc2/Multiple-trials.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Multiple-trials---expanded.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Multiple-trials---confirmation-dialog.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Multiple-trials---post-acceptance.png)
+| Offer  | Plan selection  | Confirm selection  | Success  |
+| --- | --- | --- | --- |
+| ![img - roku400px](https://image.roku.com/ZHZscHItMTc2/Multiple-trials.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Multiple-trials---expanded.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Multiple-trials---confirmation-dialog.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Multiple-trials---post-acceptance.png)  |
 #### Promotional pricing
-Offer | Confirm selection | Success
----|---|---
-![img roku400px](https://image.roku.com/ZHZscHItMTc2/Promo-pricing.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Promo-pricing---confirmation-dialog.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Promo-pricing---post-acceptance.png)
+| Offer  | Confirm selection  | Success  |
+| --- | --- | --- |
+| ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Promo-pricing.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Promo-pricing---confirmation-dialog.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Promo-pricing---post-acceptance.png)  |
 #### Standard pricing - single plan
-Offer | Confirm selection | Success
----|---|---
-![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---confirmation-dialog.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---post-acceptance.png)
+| Offer  | Confirm selection  | Success  |
+| --- | --- | --- |
+| ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---confirmation-dialog.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---post-acceptance.png)  |
 #### Standard pricing - multiple plans
-Offer | Plan selection | Confirm selection | Success
----|---|---|---
-![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---multiple-plans-annual.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---multiple-plans-annual---expanded.jpg) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---multiple-plans-annual---confirmation-dialog.png) | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---multiple-plans-annual---post-acceptance.png)
+| Offer  | Plan selection  | Confirm selection  | Success  |
+| --- | --- | --- | --- |
+| ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---multiple-plans-annual.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---multiple-plans-annual---expanded.jpg)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---multiple-plans-annual---confirmation-dialog.png)  | ![img roku400px](https://image.roku.com/ZHZscHItMTc2/Direct-to-pay---multiple-plans-annual---post-acceptance.png)  |
 ## Appendix B: Subscription terms
 The subscription terms presented in the subscription confirmation dialog, which are fixed and cannot be modified, differ based on whether the offer is a free trial, promotional price, or standard price. This appendix provides the text displayed for each of these scenarios.
 #### Free trial subscription terms

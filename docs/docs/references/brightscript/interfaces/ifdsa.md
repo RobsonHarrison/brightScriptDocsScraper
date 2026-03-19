@@ -1,16 +1,16 @@
 # ifDsa
 ## Implemented by
-Name | Description
----|---
-[roDsa](https://developer.roku.com/docs/references/brightscript/components/rodsa.md) | The **roDSA** component provides support for the ECDSA and EdDSA (with Ed25519 form) digital signature algorithms. It is used to provide cryptographically signed evidence that an ad request originated from an actual Roku device.
+| Name  | Description  |
+| --- | --- |
+| [roDsa](https://developer.roku.com/docs/references/brightscript/components/rodsa.md)  | The **roDSA** component provides support for the ECDSA and EdDSA (with Ed25519 form) digital signature algorithms. It is used to provide cryptographically signed evidence that an ad request originated from an actual Roku device.  |
 ## Supported methods
 ### SetPrivateKey(keyFileName as String) as Integer
 #### Description
 Specifies the private key to be used for signing.
 #### Parameters
-Name | Type | Description
----|---|---
-keyFileName | String | Specifies the ECDSA or Ed25519 private key to be used for signing. Provide the key as a path, either in the package or a temporary path.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| keyFileName  | String  | Specifies the ECDSA or Ed25519 private key to be used for signing. Provide the key as a path, either in the package or a temporary path.  |
 #### Return Value
 An integer indicating whether the operation was successful:
   * 1 = The key is valid.
@@ -21,9 +21,9 @@ An integer indicating whether the operation was successful:
 #### Description
 Specifies the private key to be used for signing.
 #### Parameters
-Name | Type | Description
----|---|---
-key | roByteArray Object | Specifies the ECDSA or Ed25519 private key to be used for signing.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| key  | roByteArray Object  | Specifies the ECDSA or Ed25519 private key to be used for signing.  |
 #### Return Value
 An integer indicating whether the operation was successful:
   * 1 = The key is valid.
@@ -33,9 +33,9 @@ An integer indicating whether the operation was successful:
 #### Description
 Specifies the public key to be used for verification.
 #### Parameters
-Name | Type | Description
----|---|---
-keyFileName | String | Specifies the ECDSA or Ed25519 public key to be used for signing. Provide the key as a path, either in the package or a temporary path.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| keyFileName  | String  | Specifies the ECDSA or Ed25519 public key to be used for signing. Provide the key as a path, either in the package or a temporary path.  |
 #### Return Value
 An integer indicating whether the operation was successful:
   * 1 = The key is valid.
@@ -45,9 +45,9 @@ An integer indicating whether the operation was successful:
 ### SetDigestAlgorithm(algorithm as String) as Boolean
 #### Description
 Specifies the digest algorithm to be used for signing and verification.
-Name | Type | Description
----|---|---
-algorithim | String | An OpenSSL string with the algorithm to be used: "sha1""sha224""sha256" (default)"sha384""sha512". When using Ed25519 signing, the only supported digest algorithm is "sha512".
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| algorithim  | String  | An OpenSSL string with the algorithm to be used: "sha1""sha224""sha256" (default)"sha384""sha512". When using Ed25519 signing, the only supported digest algorithm is "sha512".  |
 #### Return Value
 A flag indicating whether the operation was successful:
   * true = algorithm was successfully set
@@ -56,9 +56,9 @@ A flag indicating whether the operation was successful:
 ### SetSignAlgorithm(algorithm as String) as Boolean
 Specifies the signing algorithm to be used for signing and verification.
 #### Parameters
-Name | Type | Description
----|---|---
-algorithm | String | An OpenSSL string with the algorithm to be used:"ECDSA" (default)."Ed25519".
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| algorithm  | String  | An OpenSSL string with the algorithm to be used:"ECDSA" (default)."Ed25519".  |
 #### Return Value
 A flag indicating whether the operation was successful:
   * true = algorithm was successfully set.
@@ -68,9 +68,9 @@ A flag indicating whether the operation was successful:
 #### Description
 Generates a signature based on the specified message.
 #### Parameters
-Name | Type | Description
----|---|---
-message | roByteArray Object | The roByteArray to be signed.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| message  | roByteArray Object  | The roByteArray to be signed.  |
 #### Return Value
 An roByteArray containing the signature. If an error occurs, "invalid" is returned.
 Errors are printed to the BrightScript Debug Console. Common errors include:
@@ -83,10 +83,10 @@ Errors are printed to the BrightScript Debug Console. Common errors include:
 #### Description
 Verifies the given message and signature. The message and the signature should both be roByteArrays.
 #### Parameters
-Name | Type | Description
----|---|---
-message | roByteArray Object | The message to be verified.
-signature | roByteArray Object | The signature to be verified.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| message  | roByteArray Object  | The message to be verified.  |
+| signature  | roByteArray Object  | The signature to be verified.  |
 #### Return Value
 Indicates the result of the validation. This may be one of the following values:
   * 1 = The signature matches.
@@ -99,6 +99,7 @@ Indicates the result of the validation. This may be one of the following values:
 ## Examples
 ### Using ECDSA signing with SHA256 digest
 #### Signing
+
 ```
 msg_ba = CreateObject("roByteArray")
 
@@ -117,6 +118,7 @@ signature = dsa.Sign(msg_ba)
 ```
 
 #### Verification
+
 ```
 msg_ba = CreateObject("roByteArray")
 
@@ -146,6 +148,7 @@ end if
 
 ### Using Ed25519 signing with SHA512 digest
 #### Signing
+
 ```
 msg_ba = CreateObject("roByteArray")
 
@@ -164,6 +167,7 @@ signature = dsa.Sign(msg_ba)
 ```
 
 #### Verification
+
 ```
 msg_ba = CreateObject("roByteArray")
 

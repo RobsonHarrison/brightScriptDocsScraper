@@ -12,15 +12,16 @@ By default, the Roku OS handles supports for the basic commands. However, apps m
 In order for your app to support the enhanced voice controls, which include "seek", "start over", and "next", you must update the [manifest](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md) and implement the [roInput](https://developer.roku.com/docs/references/brightscript/components/roinput.md) object to listen for and handle voice commands.
 ## Updating the manifest
 To support the voice controls, add the following flags in the [manifest](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md):
-Feature | Manifest Entry
----|---
-App supports voice controls. | supports_voice_roinput=1
-App handles the "seek" and "start over" voice commands. | supports_etc_seek=1
-App handles the "next" voice command. | supports_etc_next=1
+| Feature  | Manifest Entry  |
+| --- | --- |
+| App supports voice controls.  | supports_voice_roinput=1  |
+| App handles the "seek" and "start over" voice commands.  | supports_etc_seek=1  |
+| App handles the "next" voice command.  | supports_etc_next=1  |
 If you do not enable the **supports_etc_seek** and **supports_etc_next** manifest flags, an error message will be displayed when users try to use the "seek", "start over", and "next" voice commands on your app.
 ## Handling voice commands
 To handle voice commands in your app, your application needs to use the [**roInput**](https://developer.roku.com/docs/references/brightscript/components/roinput.md) object to listen for transport control events and process them. To do this, follow these steps:
   1. Create an **roInput** object, and set the [**roMessagePort**](https://developer.roku.com/docs/references/brightscript/components/romessageport.md) for receiving events.
+
 ```
 input = CreateObject("roInput")
 port = CreateObject("roMessagePort")
@@ -29,6 +30,7 @@ input.SetMessagePort(port)
 ```
 
   2. Register the **roInput** component for voice commands by calling its [**EnableTransportEvents()**](https://developer.roku.com/en-gb/docs/developer-program/media-playback/voice-controls/docs/references/brightscript/interfaces/ifinput.md#enabletransportevents-as-boolean) function. This tells the Roku OS that your app can handle voice commands sent to the **roInput** object. Once this is set, your app will receive **roInput** events for every voice command on this **roInput** object.
+
 ```
 input.enableTransportEvents()
 
@@ -43,6 +45,7 @@ b. Call the [**roInput.EventResponse()**](https://developer.roku.com/docs/refere
      * This method takes an AssociativeArray with two fields: **id** and **status**. The **id** field specifies the transport ID event; the **status** specifies whether the event was handled, handled with an error, or unhandled.
      * This method should be called immediately after a voice command is received. If your application does not handle a transport event (or the command is unknown or not implemented in your app), mark it as "error.generic" or "unhandled". See [Error handling](https://developer.roku.com/en-gb/docs/developer-program/media-playback/voice-controls/transport-controls.md#error-handling) for the complete list of error messages to which the **status** field can be set.
 c. Optionally, for better modularization, you can pass the captured voice command to a function for handing.
+
 ```
      while m.isPlaying
          msg = wait(0, port)
@@ -65,6 +68,7 @@ c. Optionally, for better modularization, you can pass the captured voice comman
 ```
 
   4. Add business logic for handling each voice command. In this example, a function is used to receive the voice command and implement the required behavior. As a best practice, set the **ret.status** field to "unhandled" by default, and then update it to "success" if your app handles the command, or "error.generic" if the app cannot fulfill it. Setting the status to "error.generic" displays "That is not available" in the Roku Voice heads-up display. The default "unhandled" status results in the Roku OS executing the default behavior.
+
 ```
 function handleTransport(evt)
     cmd = evt.command
@@ -181,39 +185,42 @@ During ad breaks, apps may only handle “pause” and “play” voice commands
 If your app is using a custom trick mode or it is using a server-side ad insertion (SSAI) implementation of the Roku Advertising Framework (RAF), it must explicitly [handle enhanced voice commands](https://developer.roku.com/en-gb/docs/developer-program/media-playback/voice-controls/transport-controls.md#handling-voice-commands) in order for customers to use "seek", "start over", and "next" commands when watching content.
 If your app has content organized in a playlist, and it is using standard trick mode and a client-side RAF implementation, it only must handle the "next" command to play the next clip in the list.
 The following table summarizes which apps need to implement handling for enhanced voice commands:
-App implementation | Handling "seek" and "start over" commands required? | Handling "next" command required (content is in a playlist)?
----|---|---
-Standard trick mode | no | yes
-Custom trick mode | yes | yes
-Client-side RAF integration | no | yes
-SSAI RAF integration | yes | Yes
+| App implementation  | Handling "seek" and "start over" commands required?  | Handling "next" command required (content is in a playlist)?  |
+| --- | --- | --- |
+| Standard trick mode  | no  | yes  |
+| Custom trick mode  | yes  | yes  |
+| Client-side RAF integration  | no  | yes  |
+| SSAI RAF integration  | yes  | Yes  |
 ## Using ECP commands for testing voice controls
 You can test voice controls in an app by sending [External Control Protocol (ECP)](https://developer.roku.com/docs/developer-program/dev-tools/external-control-api.md) commands via cURL to your Roku device. Specifically, send an HTTP POST request to port 8060 on your Roku device using the following syntax:
+
 ```
 curl -d '' 'http://<roku-device-ip-address>:8060/input/<channelId>?id=<longInteger>&type=transport&command=<commandValue>'
 
 ```
 
-Parameter | Description | Example
----|---|---
-input | Use the **input** command for passing transport events. |
-channelId | Enter one of the following:
+| Parameter  | Description  | Example  |
+| --- | --- | --- |
+| input  | Use the **input** command for passing transport events.  |   |
+| channelId  | Enter one of the following:
   * **dev**. Sideloaded app.
   * <**id** >. Public or [beta](https://developer.roku.com/docs/developer-program/publishing/channel-publishing-guide.md#beta-channel-guidelines) apps. To find your app ID, use the preview page on the [Developer Dashboard](https://developer.roku.com/developer).
 
-| dev
-id | Assign a unique ID (as a LongInteger) to the transport event. | 5
-type | Enter "transport" to specify that you are sending a transport event. | "transport"
-command | Enter the type of transport event.
+ | dev  |
+| id  | Assign a unique ID (as a LongInteger) to the transport event.  | 5  |
+| type  | Enter "transport" to specify that you are sending a transport event.  | "transport"  |
+| command  | Enter the type of transport event.
 
-If you are sending a "seek" command, you must pass two additional fields: **direction** and **duration**. | "seek"
-direction | For the "seek" command only. Enter "forward" or "backward". | "backward"
-duration | For the "seek" command only. Enter how many seconds to skip forward or backward. | "10"
+If you are sending a "seek" command, you must pass two additional fields: **direction** and **duration**.  | "seek"  |
+| direction  | For the "seek" command only. Enter "forward" or "backward".  | "backward"  |
+| duration  | For the "seek" command only. Enter how many seconds to skip forward or backward.  | "10"  |
 The following examples show how to send ECP commands via cURL HTTP POST requests. The examples are based on a sideloaded app handling forward and seek commands.
+
 ```
 curl -d '' 'http://192.168.1.114:8060/input/dev?id=5&type=transport&command=forward'
 
 ```
+
 ```
 curl -d '' 'http://192.168.1.114:8060/input/dev?id=8&type=transport&command=seek&direction=backward&duration=10'
 
@@ -230,78 +237,84 @@ For a video demonstration of voice controls, see the [Voice overview guide](http
 The following table summarizes the different voice controls, how they may be invoked, and their required behavior:
 > If your app does not handle one of the listed voice controls (or it is unknown or not implemented in your app), [mark it as "error.generic" or "unhandled"](https://developer.roku.com/en-gb/docs/developer-program/media-playback/voice-controls/transport-controls.md#errror-handling).
 ### Basic voice controls
-Voice control | Voice command examples | Required behavior (in menu) | Required behavior (VOD/Music) | Required behavior (live linear)
----|---|---|---|---
-play | "play"
-"resume" (if paused) |
+| Voice control  | Voice command examples  | Required behavior (in menu)  | Required behavior (VOD/Music)  | Required behavior (live linear)  |
+| --- | --- | --- | --- | --- |
+| play  | "play"
+"resume" (if paused)  |
   * Content in focus: start playback.
   * Unable to start playback: show details screen.
 
-|
+ |
   * Video paused: resume media.
   * Video fast forwarding or rewinding: resume media.
   * Video playing: acknowledge command as handled; the Roku OS will display "Playing".
 
-|
+ |
   * App supports command: display appropriate message.
   * App does not support command: acknowledge command as unhandled; the Roku OS will display “Command not available”.
 
-ok | "OK"
-"yes" |
+ |
+| ok  | "OK"
+"yes"  |
   * Content in focus: show details screen.
   * In profile section screen: select profile.
 
-| Take one of the following actions:
+ | Take one of the following actions:
 
   * show title
   * pause playback
   * display timeline (a second “ok” command typically pauses content while the timeline is shown)
   * ignore command
 
-|
+ |
   * App supports command: display appropriate message.
   * App does not support command: acknowledge command as unhandled; the Roku OS will display “Command not available”.
 
-pause | "pause"
-"stop" | Acknowledge command as unhandled; the Roku OS will display “Command not available”. |
+ |
+| pause  | "pause"
+"stop"  | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  |
   * Video playing: pause media.
   * Video fast forwarding or rewinding: pause media.
   * Video paused: acknowledge command as unhandled; the Roku OS will display “Command not available”.
 
-|
+ |
   * App supports command: display appropriate message.
   * App does not support command: acknowledge command as unhandled; the Roku OS will display “Command not available”.
 
-replay | "replay"
+ |
+| replay  | "replay"
 "instant replay"
-| Acknowledge command as unhandled; the Roku OS will display “Command not available”. | Rewind media 10 to 25 seconds (actual rewind time depends on your application's implementation of Roku instant replay feature). |
+ | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  | Rewind media 10 to 25 seconds (actual rewind time depends on your application's implementation of Roku instant replay feature).  |
   * App supports command: display appropriate message.
   * App does not support command: acknowledge command as unhandled; the Roku OS will display “Command not available”.
 
-rewind | "rewind"
+ |
+| rewind  | "rewind"
 "start rewinding"
-"can you rewind?" | Acknowledge command as unhandled; the Roku OS will display “Command not available”. | Rewind media until another command is received and processed. Alternatively, app can revert playback position by a fixed number of seconds. |
+"can you rewind?"  | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  | Rewind media until another command is received and processed. Alternatively, app can revert playback position by a fixed number of seconds.  |
   * App supports command: display appropriate message (for example, display "cannot rewind" if at end of buffer).
   * App does not support command: acknowledge command as unhandled; the Roku OS will display “Command not available”.
 
-forward | "fast forward"
+ |
+| forward  | "fast forward"
 "forward"
 "start forwarding"
 "can you forward?"
-"can you fast forward?" | Acknowledge command as unhandled; the Roku OS will display “Command not available”. |
+"can you fast forward?"  | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  |
   * Fast forward media until another command is received and processed. Alternatively, app can advance playback a fixed number of seconds.
   * If media is already fast forwarding, speed up the fast forwarding or acknowledge command as unhandled (the Roku OS will display “Fast forwarding...)”.
 
-|
+ |
   * App supports command: display appropriate message (for example, display "cannot fast forward any further").
   * App does not support command: acknowledge command as unhandled; the Roku OS will display “Command not available”.
 
+ |
 ### Enhanced voice controls
-Voice control | Voice command examples | Required behavior (in menu) | Required behavior (VOD/Music) | Required behavior (live linear)
----|---|---|---|---
-start over | "start over"
-"go to beginning" | Acknowledge command as unhandled; the Roku OS will display “Command not available”. | Play media from the beginning. | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.
-seek |  **Forwards**
+| Voice control  | Voice command examples  | Required behavior (in menu)  | Required behavior (VOD/Music)  | Required behavior (live linear)  |
+| --- | --- | --- | --- | --- |
+| start over  | "start over"
+"go to beginning"  | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  | Play media from the beginning.  | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.  |
+| seek  |  **Forwards**
 "Forward 10 minutes"
 "Fast forward half an hour"
 "Skip 30 seconds"
@@ -310,27 +323,27 @@ seek |  **Forwards**
 **Backwards**
 "Rewind 10 minutes"
 "Go back 30 minutes"
-"Go backward 15 seconds" | Acknowledge command as unhandled; the Roku OS will display “Command not available”. | Skip media forwards or backwards by the specified time. | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.
-next | "next" | If in profile selection screen, advance focus to next profile. Otherwise, acknowledge command as unhandled; the Roku OS will display “Command not available”. |
+"Go backward 15 seconds"  | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  | Skip media forwards or backwards by the specified time.  | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.  |
+| next  | "next"  | If in profile selection screen, advance focus to next profile. Otherwise, acknowledge command as unhandled; the Roku OS will display “Command not available”.  |
   * Video: If in an episode of a series, play the next video clip or acknowledge as unhandled (the Roku OS will display message “Command not available).
   * Music: If in a playlist, play the next song.
 
-| Unless unsupported, acknowledge command as unhandled; the Roku OS will display “Command not available”.
+ | Unless unsupported, acknowledge command as unhandled; the Roku OS will display “Command not available”.  |
 ### Additional enhanced voice controls
-Voice control | Voice command examples | Required behavior (in menu) | Required behavior (VOD/Music) | Required behavior (live linear)
----|---|---|---|---
-nowplaying | "what's playing?"
-"what am I watching?" | Acknowledge command as success; the Roku OS will display app name as playing. |
+| Voice control  | Voice command examples  | Required behavior (in menu)  | Required behavior (VOD/Music)  | Required behavior (live linear)  |
+| --- | --- | --- | --- | --- |
+| nowplaying  | "what's playing?"
+"what am I watching?"  | Acknowledge command as success; the Roku OS will display app name as playing.  |
   * Content playing is known to the app: Create an [**roAppManager**](https://developer.roku.com/docs/references/brightscript/components/roappmanager.md) node, and then pass the item's title and contentType into a call to the [**roAppManager.SetNowPlayingContentMetaData()**](https://developer.roku.com/docs/references/brightscript/interfaces/ifappmanager.md#setnowplayingcontentmetadatacontentmetadata-as-object-as-void) method. Mark the event as successfully handled.
   * No content playing or content playing is unknown to the app: Pass `invalid` into a call to the [**roAppManager.SetNowPlayingContentMetaData()**](https://developer.roku.com/docs/references/brightscript/interfaces/ifappmanager.md#setnowplayingcontentmetadatacontentmetadata-as-object-as-void) method, and mark the event as "error.generic" or "unhandled".
 
-| Use content metadata to display title of content.
-skip | "skip intro"
-"skip recap" | Acknowledge command as unhandled; the Roku OS will display “Command not available”. | If the content has an introduction or recap, handle the "skip" command; otherwise, handle it like a "next" command. | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.
-shuffle | "shuffle" | Acknowledge command as unhandled; the Roku OS will display “Command not available”. | Shuffle the content in a playlist. | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.
-loop | "loop this video" | Acknowledge command as unhandled; the Roku OS will display “Command not available”. | Repeat playback. Start playback over when finished (for example, loop song, album, playlist). | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.
-like | "I like this song"
-"I like this video" | Acknowledge command as unhandled; the Roku OS will display “Command not available”. | Execute app-specific action.
+ | Use content metadata to display title of content.  |
+| skip  | "skip intro"
+"skip recap"  | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  | If the content has an introduction or recap, handle the "skip" command; otherwise, handle it like a "next" command.  | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.  |
+| shuffle  | "shuffle"  | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  | Shuffle the content in a playlist.  | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.  |
+| loop  | "loop this video"  | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  | Repeat playback. Start playback over when finished (for example, loop song, album, playlist).  | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.  |
+| like  | "I like this song"
+"I like this video"  | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  | Execute app-specific action.
 
 When handling the "like" and "unlike" commands, you can optionally set one of the following variables to display a song's artist, genre, or track, or playlist title in the Roku heads-up display:
   * "music_artist"
@@ -338,6 +351,6 @@ When handling the "like" and "unlike" commands, you can optionally set one of th
   * "music_track"
   * "playlist_title"
 
-| Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.
-dislike | "I hate this"
-"never play this again" | Acknowledge command as unhandled; the Roku OS will display “Command not available”. | Execute app-specific action. | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.
+ | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.  |
+| dislike  | "I hate this"
+"never play this again"  | Acknowledge command as unhandled; the Roku OS will display “Command not available”.  | Execute app-specific action.  | Unless supported, acknowledge command as unhandled; the Roku OS will display “Command not available”.  |

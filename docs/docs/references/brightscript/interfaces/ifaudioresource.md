@@ -1,24 +1,24 @@
 # ifAudioResource
 ## Implemented by
-Name | Description
----|---
-[roAudioResource](https://developer.roku.com/docs/references/brightscript/components/roaudioresource.md "roAudioResource") | The roAudioResouce allows .wav files to be cached to memory and quickly played at any time
+| Name  | Description  |
+| --- | --- |
+| [roAudioResource](https://developer.roku.com/docs/references/brightscript/components/roaudioresource.md "roAudioResource")  | The roAudioResouce allows .wav files to be cached to memory and quickly played at any time  |
 ## Supported methods
 ### Trigger(volume as Integer) as Void
 #### Description
 This method triggers the start of the audio resource sound playback. The effect of Trigger(volume) is identical to Trigger(volume, 0).
 #### Parameters
-Name | Type | Description
----|---|---
-volume | Integer | The volume is a number between 0 and 100 (percentage of full volume). A value of 50 should be used for normal volume.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| volume  | Integer  | The volume is a number between 0 and 100 (percentage of full volume). A value of 50 should be used for normal volume.  |
 ### Trigger(volume as Integer, index as Integer) as Void
 #### Description
 Triggers the start of the audio resource sound playback. This method will interrupt any playing sound when the index is the same. It will mix with any playing sound if the index is different.
 #### Parameters
-Name | Type | Description
----|---|---
-volume | Integer | The volume is a number between 0 and 100 (percentage of full volume). 50 should be used for normal volume.
-index | Integer | The index is a value between 0 and [MaxSimulStreams()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifaudioresource.md#maxsimulstreams-as-integer) allowing for multiple sounds to be mixed.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| volume  | Integer  | The volume is a number between 0 and 100 (percentage of full volume). 50 should be used for normal volume.  |
+| index  | Integer  | The index is a value between 0 and [MaxSimulStreams()](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifaudioresource.md#maxsimulstreams-as-integer) allowing for multiple sounds to be mixed.  |
 ### IsPlaying() as Boolean
 #### Description
 Checks whether this audio resource is currently playing.

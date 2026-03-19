@@ -4,6 +4,7 @@ On Roku "Classic" models, roAudioResource does not support mixing of sounds. So 
 This object is created with a filename parameter that is a path to the sound resource file:
 `CreateObject("roAudioResource", filename)`
 The filename must be the name of a local file and cannot be a URL. To use a URL, you may download the file to the application's "tmp:" file system using [roUrlTransfer](https://developer.roku.com/docs/references/brightscript/components/rourltransfer.md) and pass a filename of the form "tmp:/file.wav" to CreateObject.
+
 ```
 sound = CreateObject("roAudioResource", "pkg:/sounds/beep1.wav")
 sound.Trigger(75)
@@ -17,6 +18,7 @@ An object can also be created using the name of a system sound effect:
   * "deadend" - the sound effect to be played when a button press could not be processed.
 
 Note that system sound effects are played at the volume selected in the user's settings, or not played at all if the user has turned sound effects off, regardless of the volume value passed to Trigger.
+
 ```
 sound = CreateObject("roAudioResource", "select")
 sound.Trigger(50)
@@ -24,6 +26,7 @@ sound.Trigger(50)
 ```
 
 Mult iple sounds can be mixed and played at the same time:
+
 ```
 sound1 = CreateObject("roAudioResource", "pkg:/sounds/beep1.wav")
 sound2 = CreateObject("roAudioResource", "select")

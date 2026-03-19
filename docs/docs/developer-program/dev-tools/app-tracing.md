@@ -15,12 +15,14 @@ To record a trace, developers need the following:
 You can enable and record a Perfetto trace with ECP following these steps:
 ### Enabling Perfetto
 To enable tracing for an app, send the enable Perfetto command with the channel ID:
+
 ```
 curl -X POST "http://192.168.1.86:8060/perfetto/enable/dev"
 
 ```
 
 The ECP response will have the following syntax:
+
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
 <perfetto-enable>
@@ -38,6 +40,7 @@ Once enabled, tracing starts automatically each time the app is launched
 > ECP does not have a corresponding disable Perfetto command. The list of enabled apps is cleared on reboot.
 ### Recording a Perfetto trace
 To record trace data for a session, using a websocket client to connect to the device (for example, [websocat](https://github.com/vi/websocat)). The websocket emits a stream of bytes, which is the Protobuf-encoded Perfetto trace from the device.
+
 ```
 websocat --binary ws://$ip:8060/perfetto-session > perfetto_data.trace
 
@@ -49,16 +52,18 @@ Data stops streaming when the client disconnects. If the client reconnects, the 
 
 ## Adding custom trace data
 You can use the roPerfetto BrightScript component to capture custom events in a Perfetto trace. The types of events you can record include instantaneous, duration, scoped, and flow events.
-**Event** | **Description** | **Example** | **Snippet**
----|---|---|---
-Instantaneous | Events without a duration | keypress | ```
+| **Event**  | **Description**  | **Example**  | **Snippet**  |
+| --- | --- | --- | --- |
+| Instantaneous  | Events without a duration  | keypress  |
+```
 tracer = CreateObject("roPerfetto")
 tracer.instantEvent("my_instant_event")
 tracer.instantEvent("my_instant_event", {debug_1: 42, debug_2: "hello"})
 
 ```
-
-Duration | Events with a beginning and an end | long function | ```
+ |
+| Duration  | Events with a beginning and an end  | long function  |
+```
 sub myfunc()
     tracer = CreateObject("roPerfetto")
     params = {debug_1: 42, debug_2: "hello"}
@@ -68,8 +73,9 @@ sub myfunc()
 end sub
 
 ```
-
-Scoped | Similar to duration events, but the end-event is generated automatically when the object returned from the call is released. |  | ```
+ |
+| Scoped  | Similar to duration events, but the end-event is generated automatically when the object returned from the call is released.  |   |
+```
 sub myfunc()
     tracer = CreateObject("roPerfetto")
     params = {debug_1: 42, debug_2: "hello"}
@@ -79,8 +85,9 @@ sub myfunc()
 end sub
 
 ```
-
-Flow | Creation of a “flow” of events from one piece of code to another. | A Task thread to the Render thread. | ```
+ |
+| Flow  | Creation of a “flow” of events from one piece of code to another.  | A Task thread to the Render thread.  |
+```
 sub func1()
     flowId = 42   ' A user-selected unique unsigned integer identifier
     tracer = CreateObject("roPerfetto")
@@ -98,7 +105,7 @@ sub func3()
 end sub
 
 ```
-
+ |
 ## Visualizing trace files in Perfetto
 You can open trace files with the [Perfetto UI](https://ui.perfetto.dev/) to anaylze them and pinpoint potential optimizations. Perfetto features a timeline view that provides a visual representation of the trace.
 You can use the W,A,S,D keys on your keyboard to zoom and pan, and your mouse to expand process tracks (rows) into their constituent thread tracks.
@@ -110,24 +117,24 @@ You can query the data in a trace using [PerfettoSQL](https://perfetto.dev/docs/
   3. Click **Run Query**.![perfetto-sql](https://image.roku.com/ZHZscHItMTc2/perfetto-sql.png)
 
 The following examples demonstrate some of the use cases for querying your trace data:
-**Use case** | **Query**
----|---
-Find all rendezvous in order of duration (long rendezvous often cause dropped frames and may indicate inefficient observer functions). | `SELECT * FROM slices WHERE name = 'rendezvous' ORDER BY dur DESC;`
-Find long executions of swapBuffers which indicate places where the channel may be dropping frames | `SELECT * FROM slice WHERE name = 'swapBuffers' ORDER BY dur DESC;`
-Find places where the channel is handling a key press with `OnKeyEvent()` | `SELECT * FROM slice WHERE name = 'keyEvent' ORDER BY dur DESC;`
-Find all of the observers being called in the app. | `SELECT * FROM slice WHERE name = 'observer.callback' ORDER BY dur DESC;`
-Find all of the places where the channel is calling `setField`. | `SELECT * FROM slice WHERE name = 'roSGNode.setField' ORDER BY dur DESC;`
+| **Use case**  | **Query**  |
+| --- | --- |
+| Find all rendezvous in order of duration (long rendezvous often cause dropped frames and may indicate inefficient observer functions).  | `SELECT * FROM slices WHERE name = 'rendezvous' ORDER BY dur DESC;`  |
+| Find long executions of swapBuffers which indicate places where the channel may be dropping frames  | `SELECT * FROM slice WHERE name = 'swapBuffers' ORDER BY dur DESC;`  |
+| Find places where the channel is handling a key press with `OnKeyEvent()`  | `SELECT * FROM slice WHERE name = 'keyEvent' ORDER BY dur DESC;`  |
+| Find all of the observers being called in the app.  | `SELECT * FROM slice WHERE name = 'observer.callback' ORDER BY dur DESC;`  |
+| Find all of the places where the channel is calling `setField`.  | `SELECT * FROM slice WHERE name = 'roSGNode.setField' ORDER BY dur DESC;`  |
 ## Glossary
 Roku's Perfetto-based app tracing solution exposes a number of terms that Roku developers may be unfamiliar with:
-Term | Defintion
----|---
-SdkLauncher | A Roku OS plugin that provides an environment for running SDK apps in a sandboxed process.
-PR_ui | The main BrightScript thread.
-RenderThread | The primary SceneGraph render thread.
-AuxRenderThread | A Roku OS thread used to offload some rendering tasks from the main UI thread. This helps improve the responsiveness and smoothness of the user interface.
-TN:[function name] | A Task thread spawned by a [**Task** node](https://developer.roku.com/docs/references/scenegraph/control-nodes/task.md) . The function name represents the name of the Task function defined by the app.
-ExecBrightScript | A slice representing the BrightScript engine processing app code.
-render | A slice representing the process of drawing or composing a frame for display.
-swapBuffers | A slice representing the operation of presenting a newly rendered frame to the display.
-consumeAllTasks | A slice representing the render thread as it is processing messages from the Render Thread Queue that are waiting. These can include rendezvous as well as messages sent using the [**roRenderThreadQueue** component](https://developer.roku.com/docs/references/brightscript/components/rorenderthreadqueue.md).
-bscCopyToDomainEx | A slice representing data being copied. For example, when getting or setting a field on a [**Task** node](https://developer.roku.com/docs/references/scenegraph/control-nodes/task.md) from the Render thread.
+| Term  | Defintion  |
+| --- | --- |
+| SdkLauncher  | A Roku OS plugin that provides an environment for running SDK apps in a sandboxed process.  |
+| PR_ui  | The main BrightScript thread.  |
+| RenderThread  | The primary SceneGraph render thread.  |
+| AuxRenderThread  | A Roku OS thread used to offload some rendering tasks from the main UI thread. This helps improve the responsiveness and smoothness of the user interface.  |
+| TN:[function name]  | A Task thread spawned by a [**Task** node](https://developer.roku.com/docs/references/scenegraph/control-nodes/task.md) . The function name represents the name of the Task function defined by the app.  |
+| ExecBrightScript  | A slice representing the BrightScript engine processing app code.  |
+| render  | A slice representing the process of drawing or composing a frame for display.  |
+| swapBuffers  | A slice representing the operation of presenting a newly rendered frame to the display.  |
+| consumeAllTasks  | A slice representing the render thread as it is processing messages from the Render Thread Queue that are waiting. These can include rendezvous as well as messages sent using the [**roRenderThreadQueue** component](https://developer.roku.com/docs/references/brightscript/components/rorenderthreadqueue.md).  |
+| bscCopyToDomainEx  | A slice representing data being copied. For example, when getting or setting a field on a [**Task** node](https://developer.roku.com/docs/references/scenegraph/control-nodes/task.md) from the Render thread.  |

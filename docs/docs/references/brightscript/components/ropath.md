@@ -4,6 +4,7 @@ The roPath component is a convenience class that implements [ifString](https://d
 This object is created with a string that represents the initial path:
 `CreateObject("roPath", "ext1:/vid")`
 **Example**
+
 ```
 path = CreateObject("roPath", filename)
 parts = path.Split()

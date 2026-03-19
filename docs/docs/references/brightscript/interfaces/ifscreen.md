@@ -1,7 +1,7 @@
 # ifScreen
-Name | Description
----|---
-[roScreen](https://developer.roku.com/docs/references/brightscript/components/roscreen.md "roScreen") | The roScreen component provides a full screen drawing surface that can be stacked and that you can receive input events from
+| Name  | Description  |
+| --- | --- |
+| [roScreen](https://developer.roku.com/docs/references/brightscript/components/roscreen.md "roScreen")  | The roScreen component provides a full screen drawing surface that can be stacked and that you can receive input events from  |
 ## Supported methods
 ### SwapBuffers() as Void
 #### Description

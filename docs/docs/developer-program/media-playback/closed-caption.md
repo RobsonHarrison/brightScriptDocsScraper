@@ -19,6 +19,7 @@ In accordance with our certification requirements, Roku’s Video node automatic
 ![roku815px - CCSupport](https://image.roku.com/ZHZscHItMTc2/CCSupport.png)
 Unless the app overrides it, all Roku players will launch an **Options overlay menu** when the ![roku815px - CCSupport2](https://image.roku.com/ZHZscHItMTc2/CCSupport2.png)key is pressed during playback of full-screen videos.
 However, this only works if the app does not have its [OnKeyEvent()](https://developer.roku.com/docs/references/scenegraph/component-functions/onkeyevent.md) handler fired, and the **[Video node](https://developer.roku.com/docs/references/scenegraph/media-playback-nodes/video.md)** is playing full screen and setFocus is enabled i.e., the Video node is in focus, as displayed in the following code example:
+
 ```
 sub init()
     m.top.setFocus(true)
@@ -98,12 +99,12 @@ Roku supports WebVTT captions if embedded in HLS streams or manifests. As with t
 Roku also supports WebVTT captions in DASH as per the DASH-IF IOP guidelines. The WebVTT content can be specified as mimetype “application/mp4” and codecs parameter “wvtt” for Fragmented MP4 content. For WebVTT captions carried as text, mimetype “text/vtt” is supported.
 ## Closed caption support summary
 Below is a summary of the closed caption formats supported by the various video streaming technologies on Roku devices.
-| SMPTE-TT | EIA-608 | WebVTT
----|---|---|---
-MP4 VOD | Yes (external file only) | Yes (in stream only for all manifests containing AVC streams) | No
-HLS VOD | Yes (external file only) | Yes (in stream only for all manifests containing AVC streams) | Yes (in a separate stream described in the manifest (playlist for hls)
-HLS Live | No | Yes (in stream only for all manifests containing AVC streams) | Yes (in a separate stream described in the manifest (playlist for hls)
-Smooth VOD | Yes (in stream or external file) | Yes (in stream only for all manifests containing AVC streams) | No
-Smooth Live | Yes (in stream only) | Yes (in stream only for all manifests containing AVC streams) | No
-DASH VOD | Yes (external file only) | Yes (in stream only for all manifests containing AVC streams) | Yes
-DASH Live | Yes (in stream or external file) | Yes (in stream only for all manifests containing AVC streams) | Yes
+|   | SMPTE-TT  | EIA-608  | WebVTT  |
+| --- | --- | --- | --- |
+| MP4 VOD  | Yes (external file only)  | Yes (in stream only for all manifests containing AVC streams)  | No  |
+| HLS VOD  | Yes (external file only)  | Yes (in stream only for all manifests containing AVC streams)  | Yes (in a separate stream described in the manifest (playlist for hls)  |
+| HLS Live  | No  | Yes (in stream only for all manifests containing AVC streams)  | Yes (in a separate stream described in the manifest (playlist for hls)  |
+| Smooth VOD  | Yes (in stream or external file)  | Yes (in stream only for all manifests containing AVC streams)  | No  |
+| Smooth Live  | Yes (in stream only)  | Yes (in stream only for all manifests containing AVC streams)  | No  |
+| DASH VOD  | Yes (external file only)  | Yes (in stream only for all manifests containing AVC streams)  | Yes  |
+| DASH Live  | Yes (in stream or external file)  | Yes (in stream only for all manifests containing AVC streams)  | Yes  |

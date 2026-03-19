@@ -1,8 +1,8 @@
 # ifRegion
 ## Implemented by
-Name | Description
----|---
-[roRegion](https://developer.roku.com/docs/references/brightscript/components/roregion.md "roRegion") | The roRegion component is used to represent a subsection of a bitmap
+| Name  | Description  |
+| --- | --- |
+| [roRegion](https://developer.roku.com/docs/references/brightscript/components/roregion.md "roRegion")  | The roRegion component is used to represent a subsection of a bitmap  |
 ## Supported methods
 ### GetBitmap() as Object
 #### Description
@@ -33,19 +33,19 @@ The height of the region.
 #### Description
 Adds the passed parameters x,y, w, and h to the values of those roRegion fields. Respects the wrap setting when adjusting the fields by the offsets.
 #### Parameters
-Name | Type | Description
----|---|---
-x | Dynamic | The x-coordinate of the region.
-y | Dynamic | The y-coordinate of the region.
-w | Dynamic | The width of the region.
-h | Dynamic | The height of the region.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| x  | Dynamic  | The x-coordinate of the region.  |
+| y  | Dynamic  | The y-coordinate of the region.  |
+| w  | Dynamic  | The width of the region.  |
+| h  | Dynamic  | The height of the region.  |
 ### Set(srcRegion as Object) as Void
 #### Description
 Initializes the fields of this region to be the same as the values of the fields in the srcRegion.
 #### Parameters
-Name | Type | Description
----|---|---
-srcRegion | Object | An roRegion object.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| srcRegion  | Object  | An roRegion object.  |
 ### Copy() as Object
 #### Description
 Returns a newly created copy of the region as a new [roRegion](https://developer.roku.com/docs/references/brightscript/components/roregion.md "roRegion") object.
@@ -55,9 +55,9 @@ An roRegion Object.
 #### Description
 Wraps any part of a region that extends beyond the bounds of its bitmap to the other side of the bitmap and renders it there.
 #### Parameters
-Name | Type | Description
----|---|---
-wrap | Boolean | A flag specifying whether wrapping of the region is enabled. If this flag is set to false, the part of the region beyond the bounds of its bitmap is not rendered.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| wrap  | Boolean  | A flag specifying whether wrapping of the region is enabled. If this flag is set to false, the part of the region beyond the bounds of its bitmap is not rendered.  |
 ### GetWrap() as Boolean
 #### Description
 Returns if the region can be wrapped.
@@ -68,21 +68,21 @@ A flag indicating whether wrapping of the region is enabled.
 Sets the duration of each frame of any animated sprite that uses this region.
 #### Parameters
 A flag indicating whether wrapping of region is enabled.
-Name | Type | Description
----|---|---
-time | Integer | The "frame hold time" in milliseconds.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| time  | Integer  | The "frame hold time" in milliseconds.  |
 ### GetTime() as Integer
-Name | Return Type | Return Value | Description
----|---|---|---
-GetTime | Integer | Milliseconds - Integer | Returns the "frame hold time" in milliseconds
+| Name  | Return Type  | Return Value  | Description  |
+| --- | --- | --- | --- |
+| GetTime  | Integer  | Milliseconds - Integer  | Returns the "frame hold time" in milliseconds  |
 ### SetPretranslation(x as Integer, y as Integer) as Void
 #### Description
 Sets the pre-translation for DrawObject, DrawRotatedObject, and DrawScaledObject.
 #### Parameters
-Name | Type | Description
----|---|---
-x | Integer | The pre-translation x-value.
-y | Integer | The pre-translation y-value.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| x  | Integer  | The pre-translation x-value.  |
+| y  | Integer  | The pre-translation y-value.  |
 ### GetPretranslationX() as Integer
 #### Description
 Returns the pre-translation x value.
@@ -97,12 +97,13 @@ The pre-translation y value.
 #### Description
 Sets the scaling mode used for DrawScaledObject.
 #### Parameters
-Name | Type | Description
----|---|---
-mode | Integer | The scaling mode, which may be one of the following values:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| mode  | Integer  | The scaling mode, which may be one of the following values:
   * 0 = fast scaling operation (may have jaggies)
   * 1 = smooth scaling operation (may be slow)
 
+ |
 ### GetScaleMode() as Integer
 #### Description
 Returns the scaling mode.
@@ -115,13 +116,14 @@ The scaling mode, which may be one of the following values:
 #### Description
 Sets the type of region to be used for collision tests with this sprite.
 #### Parameters
-Name | Type | Description
----|---|---
-collisiontype | Integer | The collision type, which may be one of the following values:
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| collisiontype  | Integer  | The collision type, which may be one of the following values:
   * Type 0– Use the entire defined region of the sprite. Type 0 is the default
   * Type 1 – Use the defined rectangular region specified by the SetCollisionRectangle() method
   * Type 2 – Use a circular region specified by the SetCollisionCircle() method
 
+ |
 ### GetCollisionType() as Integer
 #### Description
 Returns the collision type.
@@ -135,18 +137,18 @@ The collision type, which may be one of the following values:
 #### Description
 Sets the collision rectangle used for type-1 collision tests. The upper left corner of the rectangle is the (x,y) position of the sprite plus the specified offsets. The width and height specify the size of the rectangle.
 #### Parameters
-Name | Type | Description
----|---|---
-xOffset | Integer | The offset for the x position of the sprite.
-yOffset | Integer | The offset for the y position of the sprite.
-width | Integer | The width of the rectangle.
-height | Integer | The height of the rectangle.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| xOffset  | Integer  | The offset for the x position of the sprite.  |
+| yOffset  | Integer  | The offset for the y position of the sprite.  |
+| width  | Integer  | The width of the rectangle.  |
+| height  | Integer  | The height of the rectangle.  |
 ### SetCollisionCircle(xOffset as Integer, yOffset as Integer, Radius as Integer) as Void
 #### Description
 Sets the collision circle used for type-2 collision tests. The center of the circle is the (x,y) position of the sprite plus the specified offsets. The radius specifies the size of the circle.
 #### Parameters
-Name | Type | Description
----|---|---
-xOffset | Integer | The offset for the x position of the sprite.
-yOffset | Integer | The offset for the y position of the sprite.
-Radius | Integer | The size of the circle.
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| xOffset  | Integer  | The offset for the x position of the sprite.  |
+| yOffset  | Integer  | The offset for the y position of the sprite.  |
+| Radius  | Integer  | The size of the circle.  |

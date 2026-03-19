@@ -6,17 +6,17 @@ For example, suppose the PanelSet node has two Panel nodes as children, panel A 
 At this point, if the user presses the **Left** key (or **Back** key), the panels will slide one position to the _right_ , _back_ towards the original home position, so panel D will slide offscreen to the right, panel C will slide to the right position, and panel B will slide to the left position (panel A is still offscreen to the left). When the sliding animation ends, since panel D is offscreen to the right, it is automatically removed as a child node of the PanelSet node.
 #### Panel Layout
 For consistency, it is recommended that panels be set to the default height. Similarly, panels should be set to one of four default width sizes. For each panel width, the default defines a corresponding left position for the panel. This is summarized in the table below, along with the default values for each of these fields:
-Panel Field | Panel Size | SD Value | HD Value
----|---|---|---
-height | all | 403 | 605
-width | narrow | 218 | 388
-| medium | 292 | 520
-| wide | 363 | 645
-| full | 520 | 940
-leftPosition | narrow | 60 | 105
-| medium | 60 | 105
-| wide | 63 | 112
-| full | 100 | 170
+| Panel Field  | Panel Size  | SD Value  | HD Value  |
+| --- | --- | --- | --- |
+| height  | all  | 403  | 605  |
+| width  | narrow  | 218  | 388  |
+|   | medium  | 292  | 520  |
+|   | wide  | 363  | 645  |
+|   | full  | 520  | 940  |
+| leftPosition  | narrow  | 60  | 105  |
+|   | medium  | 60  | 105  |
+|   | wide  | 63  | 112  |
+|   | full  | 100  | 170  |
 Narrow panels should be paired with wide panels, so that both panels fit in the alloted region without overlapping the PanelSet node previous and next arrow indicators. Similarly, medium panels should be paired with medium panels. Only one full-screen width panel can be displayed at a time, so full-screen cause both left and right panels to slide on/offscreen when they are added to the PanelSet node.
 When two panels are onscreen, a default gap is added between the left and right panels. For SD, the spacing is set to 20 pixels. For HD, the spacing is 30 pixels. The PanelSet node positions the left panel so that the panel origin is at (`leftPosition, 0`) in the PanelSet node coordinate system, where `leftPosition` is the value of the left Panel node `leftPosition` field. The PanelSet node positions the right panel so that the panel origin is at (`leftPosition leftWidth + spacing`), where `leftPosition` and `leftWidth` are the left panel `leftPosition` and `width` fields, and spacing is the default horizontal spacing attribute.
 Note that the PanelSet node positions the origin of each Panel node coordinate system by setting the Panel node `translation` field, but it does not clip the panel to the rectangle defined by the Panel node `width` and `height` fields, so if the Panel node contains a child node with translation set to (`-10, -5`), that child will be rendered 10 pixels to the right and 5 pixels above the panel origin.
@@ -32,12 +32,12 @@ The PanelSet node assumes that:
   * The `insertChild()` and `removeChild()` roSGNode functions are never used.
 
 ## Fields
-Field | Type | Default | Access Permission | Description
----|---|---|---|---
-width | float | 1280 | READ_WRITE | Specifies the width of the PanelSet node. In most cases, this is set to the display width (such as 1280 for HD).
-height | float | 605 | READ_WRITE | Specifies the height of the PanelSet node. In most cases, this is set to the the display height minus the overhang height.
-slideDuration | integer | 500 | READ_WRITE | Milliseconds of the slide transition. The default is 1/2 second.
-numPanels | integer | 0 | READ_ONLY | Contains the current number of Panel nodes that are children of the PanelSet node.
-isGoingBack | Boolean | false | READ_ONLY | Set to true when the PanelSet node panels are sliding right, _back_ towards the original home position, as a result of a **Left** or **Back** key press.
+| Field  | Type  | Default  | Access Permission  | Description  |
+| --- | --- | --- | --- | --- |
+| width  | float  | 1280  | READ_WRITE  | Specifies the width of the PanelSet node. In most cases, this is set to the display width (such as 1280 for HD).  |
+| height  | float  | 605  | READ_WRITE  | Specifies the height of the PanelSet node. In most cases, this is set to the the display height minus the overhang height.  |
+| slideDuration  | integer  | 500  | READ_WRITE  | Milliseconds of the slide transition. The default is 1/2 second.  |
+| numPanels  | integer  | 0  | READ_ONLY  | Contains the current number of Panel nodes that are children of the PanelSet node.  |
+| isGoingBack  | Boolean  | false  | READ_ONLY  | Set to true when the PanelSet node panels are sliding right, _back_ towards the original home position, as a result of a **Left** or **Back** key press.  |
 ## Sample app
 [PanelSetExample](https://github.com/rokudev/samples/tree/master/ux%20components/sliding%20panels/PanelSetExample) is a sample app demonstrating PanelSet in action.

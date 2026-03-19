@@ -6,18 +6,21 @@ This object is created without any arguments:
 `CreateObject("roInput")`
 **Example**
 The following prints information received from an external device in JSON format. If the external device sends the following input command:
+
 ```
 curl -d '' '<roku_target_device>:8060/input?my_event=My%20Test&x=100&y=200&action=start'
 
 ```
 
 The following will be printed:
+
 ```
 {"action":"start","my_event":"My Test","x":"100","y":"200"}
 
 ```
 
 **roInput Example**
+
 ```
 msgPort = CreateObject("roMessagePort")
 
