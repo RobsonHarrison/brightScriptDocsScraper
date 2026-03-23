@@ -28,6 +28,7 @@ All traffic is communicated over a Server authenticated TLS connection unless ex
 #### Request Partner Unique Customer Identifier (roku_pucid)
 This request must be executed in the context of the app. This should occur at app launch whenever the app’s proprietary authentication credential is not in the app’s local registry AND the user has not explicitly signed out of the app.
 The BrightScript appStore API is invoked to initiate this protocol interaction.
+
 ```
 store  = CreateObject(“roChannelStore”)
 cred   = store.GetChannelCred()
@@ -38,6 +39,7 @@ The interaction MUST use TLS Mutual Authentication between the Roku player and t
 #### Response examples
 ##### Successful response URI
 A successful response to the request must be encoded as a JSON object. The token_type for this response must be the URI:
+
 ```
 urn:roku:pucid:token_type:pucid_token
 
@@ -45,6 +47,7 @@ urn:roku:pucid:token_type:pucid_token
 
 ##### Roku_pucid UUID
 The roku_pucid should be represented as a UUID derived from well-defined Roku Namespace UUID. The URI-Template follows:
+
 ```
 urn:roku:pucid:<channel-id>:<user-id>:<random>
 
@@ -52,6 +55,7 @@ urn:roku:pucid:<channel-id>:<user-id>:<random>
 
 ##### Associative array contents
 An informative example of the contents in the associative array “cred” from a successful response follows:
+
 ```
 {
     channelID: "12345"
@@ -69,6 +73,7 @@ An informative example of the contents in the associative array “cred” from 
 ##### Request error
 An error response returns and empty JSON object and additional status information.
 An informative example of a failed response follows:
+
 ```
 {
     channelID: "12345"
@@ -90,16 +95,16 @@ A: No. The user would remain signed in on the other devices with the previous us
 A: This is up to you. We will return the PUCID (**P** artner **U** nique **C** ustomer **Id** entifier), but this is your decision if you want to associate more than one PUCID with a customer account.
 
 ### Glossary of terms
-Term | Description
----|---
-Account Linking | An association between a Roku Customer account and a Partner User account. Account Linking enables the RF SSO service to request Partner Artifacts for any of the Roku Players linked to a given Roku Customer account.
-API | RF SSO endpoint that services Roku Player interactions.
-artifact | A Partner proprietary authorization credential.
-client_id | An identifier that identifies Roku or Partner as the caller to a service.
-device_info | See: roku_pucid
-Device Linking | An association of a specific Roku Streaming Player to a Partner User account. Device Linking may also refer to the association of a specific Roku Player to a Roku Customer account.
-Partner | Used in sequence diagrams to refer to the Partner Services such as Account Login Service, Federation Service and token endpoints. In the figures these services are depicted as one entity only to simplify the diagram. It is likely that a publisher will have independent instances of these services (i.e., an account service, federation service and token endpoint).
-Player | Roku Device, such as a Roku Streaming Stick, Roku 3, or Roku TV.
-Roku SSO | Used in sequence diagram to refer to the web service Roku implements to support identity federation. This service specifically manages the binding of a Roku Customer Account with either a VoD Service Account or a VoD Login Account Roku TV.
-roku_pucid | A Roku-defined Partner Unique Customer IDentifier. This identifier is represented as a UUID.
-User | The entity with a Roku Login Account and optionally a pre-existing Publisher App Login Account.
+| Term  | Description  |
+| --- | --- |
+| Account Linking  | An association between a Roku Customer account and a Partner User account. Account Linking enables the RF SSO service to request Partner Artifacts for any of the Roku Players linked to a given Roku Customer account.  |
+| API  | RF SSO endpoint that services Roku Player interactions.  |
+| artifact  | A Partner proprietary authorization credential.  |
+| client_id  | An identifier that identifies Roku or Partner as the caller to a service.  |
+| device_info  | See: roku_pucid  |
+| Device Linking  | An association of a specific Roku Streaming Player to a Partner User account. Device Linking may also refer to the association of a specific Roku Player to a Roku Customer account.  |
+| Partner  | Used in sequence diagrams to refer to the Partner Services such as Account Login Service, Federation Service and token endpoints. In the figures these services are depicted as one entity only to simplify the diagram. It is likely that a publisher will have independent instances of these services (i.e., an account service, federation service and token endpoint).  |
+| Player  | Roku Device, such as a Roku Streaming Stick, Roku 3, or Roku TV.  |
+| Roku SSO  | Used in sequence diagram to refer to the web service Roku implements to support identity federation. This service specifically manages the binding of a Roku Customer Account with either a VoD Service Account or a VoD Login Account Roku TV.  |
+| roku_pucid  | A Roku-defined Partner Unique Customer IDentifier. This identifier is represented as a UUID.  |
+| User  | The entity with a Roku Login Account and optionally a pre-existing Publisher App Login Account.  |
