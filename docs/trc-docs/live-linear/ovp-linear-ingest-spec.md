@@ -1,5 +1,5 @@
 # The Roku Channel live linear ingest specifications (OVP)
-_Version 3.2_
+_Version 3.3_
 ## Overview
 This specification describes the ingest specifications and EPG requirements required for your channel's content catalog to be included in [The Roku Channel](https://www.roku.com/whats-on/the-roku-channel). A catalog is the set of movies, series, TV specials, short-form videos or linear stream your channel provides, along with the artwork that represents it in the UI. A catalog feed (JSON) or Gracenote channel ID (aka ProgSrvID) includes the metadata that describes each asset so Roku can index it, categorize it, and present it to users. **Note: Gracenote channel id support is currently limited to linear channels with live sports only.**
 The Roku Channel feed format follows the JSON-Schema Draft 4. All the properties in the schema are case sensitive. Before submitting a feed, make sure it is a valid JSON file. You can do that by using an IDE or free online tools, such as [JSON Schema Validator](https://www.jsonschemavalidator.net/) or [JSON Schema Lint](https://jsonschemalint.com/#!/version/draft-07/markup/json).
@@ -18,14 +18,14 @@ Our systems use a combination of methods to match a title its correct Gracenote 
 ## Inclusion in The Roku Channel
 In order for your content to be surfaced in The Roku Channel, you must adhere to this specification. If you already have a channel powered by Direct Publisher and you want its content to appear in The Roku Channel, you must ensure your feed meets the requirements described in this specification. Likewise, if you've built a channel using our developer program, then you must provide Roku with a separate feed adhering to this specification. The new feed must contain only assets that are available for display in The Roku Channel.
 *_Note that participation in The Roku Channel is currently limited to select partners. Configuring your feed to meet this specification is a prerequisite to be reviewed for inclusion. To submit a feed for approval into The Roku Channel, contact your Roku representative._
-All Linear Partners must utilize one of the **Linear** **Certified Partners** for their stream and EPG distribution: **Amagi, Wurl, Frequency, OTTera,** **Xumo, Akta, or Zype**. Exceptions will only be considered if the partner can agree to abiding by all rules and requirements as outlined in the linear certification agreement which can be provided if such an exemption is necessary.
+All Linear Partners must utilize one of the **Linear Certified Partners** for their stream and EPG distribution: **Amagi, Wurl, Frequency, OTTera, Xumo, Akta, Zype, Evrideo, or Stenna**. Exceptions will only be considered if the partner can agree to abiding by all rules and requirements as outlined in the linear certification agreement which can be provided if such an exemption is necessary.
 ### Error Reporting
 Stream and EPG issue reports go directly to the LCPs. Stream issues and high priority EPG issues are reported as needed. Comprehensive EPG issue reports go out weekly to all LCPs.
 ## Roku OVP
 Roku now requires all live linear channels on TRC to run through their Online Video Platform (OVP). Below are the ingest specifications and input data template that needs to be filled out and provided to Roku Live Operations for all new live linear channels.
 ### Collection of Linear Channel Input Data
-Please fill out the Excel template located here:
-<https://roku.box.com/v/roku-linear-channel-input-data>
+Roku Live Operations team provides templates to LCPs for channel acquisition details.
+For Live events and Special integrations, a custom ingest document will be provided.
 ### **Supported Video and Audio Tech Specs**
 The following outlines what we support. A preferred video set up is outlined in the referenced column.
 | **Description**  | **Specification**  | **Preferred**  |
@@ -89,6 +89,13 @@ The following outlines what we support. A preferred video set up is outlined in 
   * SD - 4:3
 
  | HD - 16:9  |
+| Other video details  | Content should be free of the following technical errors:
+
+  * Windowboxing and stretching
+  * Excess video content such as excessive black screen and color bars
+  * Visible interlacing and artifacts/macroblocking
+
+ |   |
 | Ad Insertion Points (if applicable)  | SCTE-35 Markers In Stream via any of the following:
 
   * **Splice_Insertion**
@@ -104,8 +111,8 @@ The following outlines what we support. A preferred video set up is outlined in 
       * 0x36 (distributor placement opportunity start)
 
  | Splice_Insertion  |
-| Special ad support  | Squeezebacks* (coming soon)
-***Requires Roku approval**  |   |
+| Special ad support  | TripleLift DRI support*
+*_Requires Roku approval_  |   |
 | Ad policy  |
   * Partners should not serve any ads in the channel other than the ones returned by the Roku SSAI, unless explicitly agreed in the contract.
 
@@ -116,17 +123,21 @@ _** Do not include pixels, third-party tags, or Software Development Kits of any
   * Ad breaks should be placed with frame accuracy in logical ad break points (ex. fades to black, scene transitions, etc)
 
  |   |
+| Blackouts and Regional restrictions  |
+  * Roku supports regional restrictions on a channel level basis
+    * Currently US ZIP codes only
+  * SCTE 224 support for program level blackouts and restrictions (coming soon)
+
+ |   |
   * Partners should adhere to the below ad length requirements:
     * General Audience
       * 8 minutes of ads per hour
       * Minimum 4 ads and maximum of 6 ads per pod
       * Ad pod length of 2 minutes
-      * Duration between ad breaks of at least 10 minutes
     * Kids
       * 6 minutes of ads per hour
       * Minimum 3 ads and maximum of 6 ads per pods
       * Ad pod length of 90 seconds
-      * Duration between ad breaks of at least 10 minutes
       * Bumper/lead-in identifying ad break before AND after ad pods occur (6 second maximum)
         * Example: "We'll be right back after this break", "Now back to the show"
     * Flexibility around the ad policy is provided during live events. Please discuss this with your Roku rep.
@@ -268,7 +279,7 @@ This object represents a movie.
 
 | **Field**  | **Type**  | **Required**  | **Description**  |
 | --- | --- | --- | --- |
-| id  | string  | Required  | Your immutable string reference ID for the movie. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
+| id  | string  | Required  | Your immutable string reference ID for the movie. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales and feeds from the same provider.
 **Note** : The ID for an asset must not exceed 50 characters and must be alphanumeric.  |
 | title  | string  | Required  | Movie title. Roku uses this value for matching in Roku Search. Please use plain text and do not include extra information like year, version label, etc. No Emojis. Mixed case.  |
 | genres  | string  | Required  | Array of genre strings for the movie. Must be one or more of the values listed in [genres](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
@@ -300,7 +311,7 @@ Child object of root property `series`.
 This object represents a series, such as a season of a TV show or a mini-series.
 | **Field**  | **Type**  | **Required**  | **Description**  |
 | --- | --- | --- | --- |
-| id  | string  | Required  | Your immutable string reference ID for the series. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
+| id  | string  | Required  | Your immutable string reference ID for the series. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales and feeds from the same provider.
 **Note** : The ID for an asset must not exceed 50 characters and must be alphanumeric.  |
 | title  | string  | Required  | The title of the series. Roku uses this field for matching in Roku Search. No Emojis. Mixed case.  |
 | seasons  | [Season Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#season-content-type)  | Required*  | One or more seasons of the series. Seasons should be used if episodes are grouped by seasons.  |
@@ -367,7 +378,7 @@ Content length longer than 15 minutes:
 
 | **Field**  | **Type**  | **Required**  | **Description**  |
 | --- | --- | --- | --- |
-| id  | string  | Required  | Your immutable string reference ID for the episode. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
+| id  | string  | Required  | Your immutable string reference ID for the episode. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales and feeds from the same provider.
 **Note** : The ID for an asset must not exceed 50 characters and must be alphanumeric.  |
 | title  | string  | Required  | Episode title. Roku uses this value for matching in Roku Search. Please don’t include extra information like year, version label, etc. No Emojis. Mixed case.  |
 | thumbnail  | string  | Required  | The URL of the thumbnail for the episode. This is used within your channel as a backup to series artwork and in search results where applicable.
@@ -399,7 +410,7 @@ Child object of root property `shortFormVideos`.
 Short-form videos are generally less than 15 minutes long, and are not TV Shows or Movies. Must be included in a composite EPG block of 15 mins or greater.
 | **Field**  | **Type**  | **Required**  | **Description**  |
 | --- | --- | --- | --- |
-| id  | string  | Required  | Your immutable string reference ID for the video. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
+| id  | string  | Required  | Your immutable string reference ID for the video. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales and feeds from the same provider.
 **Note** : The ID for an asset must not exceed 50 characters and must be alphanumeric.  |
 | title  | string  | Required  | Video title. Roku uses this value for matching in Roku Search. Please don’t include extra information like year, version label, etc. No Emojis. Mixed case.  |
 | thumbnail  | string  | Required  | The URL of the primary thumbnail for the live stream. This is used within your channel and in search results.
@@ -438,7 +449,7 @@ Content length longer than 15 minutes:
 
 | **Field**  | **Type**  | **Required**  | **Description**  |
 | --- | --- | --- | --- |
-| id  | string  | Required  | Your immutable string reference ID for the TV Special. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales.
+| id  | string  | Required  | Your immutable string reference ID for the TV Special. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales and feeds from the same provider.
 **Note** : The ID for an asset must not exceed 50 characters and must be alphanumeric.  |
 | title  | string  | Required  | Episode title. Roku uses this value for matching in Roku Search. Please don’t include extra information like year, version label, etc. No Emojis. Mixed case.  |
 | thumbnail  | string  | Required  | The URL of the primary thumbnail for the live stream. This is used within your channel and in search results.
@@ -487,7 +498,7 @@ Schedule object example
 
     "times": [
 
-        "21:30"
+        "21:30:00"
 
     ],
 
@@ -552,7 +563,7 @@ Feed Example:
                         "isLive": false,
                         "date": "2018-04-05",
                         "times": [
-                            "10:00"
+                            "10:00:00"
                         ]
                     },
                     {
@@ -561,8 +572,8 @@ Feed Example:
                         "isLive": false,
                         "date": "2018-04-05",
                         "times": [
-                            "12:00",
-                            "16:00"
+                            "12:00:00",
+                            "16:00:00"
                         ]
                     },
                     {
@@ -571,7 +582,7 @@ Feed Example:
                         "isLive": false,
                         "date": "2018-04-05",
                         "times": [
-                            "14:00"
+                            "14:00:00"
                         ]
                     },
                     {
@@ -580,7 +591,7 @@ Feed Example:
                         "isLive": true,
                         "date": "2018-04-05",
                         "times": [
-                            "18:00"
+                            "18:00:00"
                         ]
                     },
                     {
@@ -589,7 +600,7 @@ Feed Example:
                         "isLive": false,
                         "date": "2018-04-05",
                         "times": [
-                            "20:00"
+                            "20:00:00"
                         ]
                     },
                     {
@@ -598,7 +609,7 @@ Feed Example:
                         "isLive": false,
                         "date": "2018-04-05",
                         "times": [
-                            "21:00"
+                            "21:00:00"
                         ]
                     }
                 ]
@@ -624,6 +635,7 @@ Feed Example:
             "title": "Between Worlds 2",
             "thumbnail": "https://<imageUrl>.jpg",
             "shortDescription": "A truck driver whose life spirals out of control after the spirit of his deceased wife comes to life.",
+            "releaseDate": "1999-02-13",
             "advisoryRatings": [
                 {
                 "source": "MPAA",
