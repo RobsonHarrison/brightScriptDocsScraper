@@ -60,16 +60,16 @@ Example:
 NION_101_AIR_1_TXTD_enUS_UHD_SDR_FN_2CH_23976p_20190701-v2.mov
 Production Number = As listed on Post Grids
 Air Order = Please list even if the Air Order is the same as the Production Number
-**File Name Segment** | **File Name Abbreviation**
----|---
-Version | TXTD (Texted), TXLS (Textless), or PROXY
-Language | enUS (American English) or esMX (Mexican Spanish)
-Resolution | UHD or HD + Color Space = SDR or HDR
-Forced Narratives | FN (Present), NC (none present)
-Audio | 2CH (Interleaved) or 8CH (5.1 and Stereo) - **7.1 audio not permitted on any masters at this time**
-Frame Rate | 23976p, 24p, 25p, 2997p, 30p, 50p, 5994p, 60p
-Revision Date | Please list in the following format: YYYYMMDD
-Version Number | To indicate the current or previous passes of QC and track the latest version for delivery
+| **File Name Segment**  | **File Name Abbreviation**  |
+| --- | --- |
+| Version  | TXTD (Texted), TXLS (Textless), or PROXY  |
+| Language  | enUS (American English) or esMX (Mexican Spanish)  |
+| Resolution  | UHD or HD + Color Space = SDR or HDR  |
+| Forced Narratives  | FN (Present), NC (none present)  |
+| Audio  | 2CH (Interleaved) or 8CH (5.1 and Stereo) - **7.1 audio not permitted on any masters at this time**  |
+| Frame Rate  | 23976p, 24p, 25p, 2997p, 30p, 50p, 5994p, 60p  |
+| Revision Date  | Please list in the following format: YYYYMMDD  |
+| Version Number  | To indicate the current or previous passes of QC and track the latest version for delivery  |
 *See 4.3.6 for Proxy file naming.
 #### 4.2.3 Master audio deliverables
 Audio materials should be named to include all appropriate information:
@@ -78,25 +78,25 @@ ShowCode_ProdNumber_Vers_Date_LangCode_MaterialType_Channel#_SampleRate_BitRate_
 MAMA_102_v04_20220919_enUS_PM_Nearfield_2ch_48k_24b_23976.L.wav
 MAMA_102_v03_20220919_esMX_FXSTEM_6ch_48k_24b_23976.R.wav
 MAMA_102_v02_20220919_esMX_ME_Nearfield_6ch_48k_24b_23976.C.wav
-**Material Type** | **Abbreviation**
----|---
-Printmaster | PM
-Music & Effects | ME
-Audio Stem | FXStem, MXStem, DIAStem, FFFXStem
-Optional Tracks | OPT, OPTA, OPTB, GRP
-Add’l Detail (Dialogue Guide Track, ADR, etc) | GUIDE, ADR
-|
-**Channel Type** | **Abbreviation**
-Mono | Mono
-Stereo | 2CH
-5.1 Surround | 6CH
-7.1 Surround | 8CH
-Atmos | Atmos
-|
-**Track Assignment** | **Abbreviation**
-Mono | N/A
-Stereo | LT, RT
-5.1 Surround | L, R, C, LFE, LS, RS
+| **Material Type**  | **Abbreviation**  |
+| --- | --- |
+| Printmaster  | PM  |
+| Music & Effects  | ME  |
+| Audio Stem  | FXStem, MXStem, DIAStem, FFFXStem  |
+| Optional Tracks  | OPT, OPTA, OPTB, GRP  |
+| Add’l Detail (Dialogue Guide Track, ADR, etc)  | GUIDE, ADR  |
+|   |   |
+| **Channel Type**  | **Abbreviation**  |
+| Mono  | Mono  |
+| Stereo  | 2CH  |
+| 5.1 Surround  | 6CH  |
+| 7.1 Surround  | 8CH  |
+| Atmos  | Atmos  |
+|   |   |
+| **Track Assignment**  | **Abbreviation**  |
+| Mono  | N/A  |
+| Stereo  | LT, RT  |
+| 5.1 Surround  | L, R, C, LFE, LS, RS  |
 ### 4.3 VOD video deliverables
 All video masters should be delivered at specification unless agreed to with the Roku production team ahead of production.
 If your image capture settings are not at the same data rate or higher of the export settings mentioned in 8.4.3, please reach out to Roku Post or let your Post Manager know. In order to prevent up-sampling, your final export should match the data rate that was captured (for example, if the camera captured ProRes 422, then final export should be ProRes 422 or equivalent).
@@ -122,27 +122,27 @@ Mixing Specifications:
 
 #### 4.3.4 VOD texted video masters
 The formatting requested below is a subset of [The Roku Channel Ingest Specifications](https://developer.roku.com/trc-docs/video-on-demand/ingest-specifications.md).
-**Video Codec** | **ProRes**
----|---
-Container | MOV
-Profile | 422 HQ
-Minimum Bitrate | 175 mbit/s or higher
-Landscape aspect ratio | 16:9 (1.77:1) - (no black bars)
-W1920 x H1080 (HD)
-Pixel aspect ratio | Square pixels (1:1)
-Scan type | Progressive scan type
-Chroma Subsampling | 4:2:2
-Color Space | BT.709 Legal Video Range (16 to 940)
-Bit depth | 10-bit or 12-bit
-Constant Frame Rate | 23.976p, 24p, 25p, 29.97p, 30p, 50p, 59.94p, 60p
-Native frame rate | No 3:2 pulldown flags
-**Audio Codec** | **PCM**
-Format | 1 Interleaved Track or 2 Mono Tracks
-Track Layout | Interleaved: Track 1: Stereo, LT/RT
+| **Video Codec**  | **ProRes**  |
+| --- | --- |
+| Container  | MOV  |
+| Profile  | 422 HQ  |
+| Minimum Bitrate  | 175 mbit/s or higher  |
+| Landscape aspect ratio  | 16:9 (1.77:1) - (no black bars)
+W1920 x H1080 (HD)  |
+| Pixel aspect ratio  | Square pixels (1:1)  |
+| Scan type  | Progressive scan type  |
+| Chroma Subsampling  | 4:2:2  |
+| Color Space  | BT.709 Legal Video Range (16 to 940)  |
+| Bit depth  | 10-bit or 12-bit  |
+| Constant Frame Rate  | 23.976p, 24p, 25p, 29.97p, 30p, 50p, 59.94p, 60p  |
+| Native frame rate  | No 3:2 pulldown flags  |
+| **Audio Codec**  | **PCM**  |
+| Format  | 1 Interleaved Track or 2 Mono Tracks  |
+| Track Layout  | Interleaved: Track 1: Stereo, LT/RT
 Mono: Track 1: Stereo LT, Track 2: Stereo RT
-**7.1 audio is not permitted on any masters at this time**
-Sample Rate/Bit Depth | 48000Hz/24-bit
-Channel Mapping & Metadata Tagging | See 2.4.2 -Verify correct audio channel mapping and metadata tagging.
+**7.1 audio is not permitted on any masters at this time**  |
+| Sample Rate/Bit Depth  | 48000Hz/24-bit  |
+| Channel Mapping & Metadata Tagging  | See 2.4.2 -Verify correct audio channel mapping and metadata tagging.  |
 #### 4.3.5 Textless delivery
 Textless Reels/Masters are a Roku Original-specific deliverable. They provide our Marketing team with clean assets to use in preparation for the VOD launch (where applicable).
 If your content includes burned-in on screen text, you will be required to deliver a separate Textless Reel or Full Episode. This reel should include clean, text-free versions of any shots that contain burned-in subtitles or graphic text elements. If the show contains a comprehensive graphics package, please strip all graphics and supply the graphics package or elements in Archival. Video and Audio specs should mirror the Texted Masters noted above.
@@ -151,21 +151,21 @@ Additionally, if foreign language subtitles cover 30% or more of a given episode
 #### 4.3.6 VOD final proxy files (clean & visible timecode)
 Proxy files are a Roku Original-specific deliverable. They are utilized by multiple internal teams both pre and post launch.
 From each Texted Master created, please export following proxy files:
-**Video Codec** | **H.264**
----|---
-Container | MOV or MP4
-Picture | (1) Clean & (1) w/Vis.TC UR
-Bitrate | 5mbit/s (total file size < 1gb to 2gb)
-Dimensions | W1920 x H1080 (HD)
-Scan Type | Progressive scan type
-Color Space | BT.709 Legal Video Range
-Bit Depth | 10-bit or 12-bit
-Constant Frame Rate | Should Match Master
-Native Frame Rate | Should Match Master
-Audio | Ch.1 Stereo Left, Ch.2 Stereo Right
-Filename | ShowCode _ProdNumber_AirOrder_Language_Proxy_HD_ FN(if applicable)_Audio _Timecode(Clean or VisTC)_RevisionDate-v#_(Final or Pre-QC).mov
+| **Video Codec**  | **H.264**  |
+| --- | --- |
+| Container  | MOV or MP4  |
+| Picture  | (1) Clean & (1) w/Vis.TC UR  |
+| Bitrate  | 5mbit/s (total file size < 1gb to 2gb)  |
+| Dimensions  | W1920 x H1080 (HD)  |
+| Scan Type  | Progressive scan type  |
+| Color Space  | BT.709 Legal Video Range  |
+| Bit Depth  | 10-bit or 12-bit  |
+| Constant Frame Rate  | Should Match Master  |
+| Native Frame Rate  | Should Match Master  |
+| Audio  | Ch.1 Stereo Left, Ch.2 Stereo Right  |
+| Filename  | ShowCode _ProdNumber_AirOrder_Language_Proxy_HD_ FN(if applicable)_Audio _Timecode(Clean or VisTC)_RevisionDate-v#_(Final or Pre-QC).mov
 
-THAM_101_AIR_1_PROXY_enUS_HD_FN_2CH_CLEAN_20200916_V4_FINAL.mov
+THAM_101_AIR_1_PROXY_enUS_HD_FN_2CH_CLEAN_20200916_V4_FINAL.mov  |
 ### 4.4 VOD audio delivery
 Audio stems are a Roku Original-specific deliverable. Full audio stem delivery may not be required for each series. Please reach out to Roku Post Production to determine if your series will be required to delivery these materials. As content, formatting, and style will differ from one series to the next, Roku understands that stem delivery may also vary.
 #### 4.4.1 Domestic episode stems

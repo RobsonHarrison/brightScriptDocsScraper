@@ -1,9 +1,8 @@
 # New to The Roku Channel - getting started
 ## Content submissions
-If you have content that you would like to submit for The Roku Channel, please fill out our avails template (series and feature/movies on separate templates) and send to trc-avod-submissions@roku.com. Avails templates are available in the [Title Avails Specifications](https://developer.roku.com/trc-docs/video-on-demand/title-avail-specifications.md). If you own or control the necessary rights for only a small volume of VOD titles, please consider working with one of Roku’s Preferred Aggregators.
+If you have content that you would like to submit for The Roku Channel, please fill out our avails template (series and feature/movies on separate templates) and send to trc-avod-submissions@roku.com. Avails templates are available in the [Title Avails Specifications](https://go.roku.com/rokuchannel-avails). If you own or control the necessary rights for only a small volume of VOD titles, please consider working with one of Roku’s Preferred Aggregators.
 ## Specifications
-  * [Roku-Hosted (Ingest) Specs](https://developer.roku.com/trc-docs/video-on-demand/ingest-specifications.md)
-  * [Partner-Hosted (Feed) Specs](https://developer.roku.com/trc-docs/live-linear/live-feed-specifications.md)
+  * [Roku-Hosted (Ingest) Specs](https://go.roku.com/rokuchannel-ingest-vod)
 
 ## Analytics & reporting
 ### Analytics dashboard
