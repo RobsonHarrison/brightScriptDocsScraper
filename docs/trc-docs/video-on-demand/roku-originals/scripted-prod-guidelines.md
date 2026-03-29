@@ -137,7 +137,7 @@ Please reach out to Roku Production to provide the Roku Assumptions Template. Pl
 Roku Production asks that the following information, when applicable, be included/considered when budgeting:
   * Include the budget as a PDF of the Movie Magic Budget (MMB) using Roku’s provided Chart of Accounts
   * Include title, version #, ‘as of’ date and page numbers
-  * Include Budget Top Sheet header information as noted in [Section 4.1.1](https://developer.roku.com/fr-fr/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md#411-chart-of-accounts)
+  * Include Budget Top Sheet header information as noted in [Section 4.1.1](https://developer.roku.com/en-gb/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md#411-chart-of-accounts)
   * Avoid large flat allowances. Provide details instead (cost per day/week/month etc.)
   * Fringes should be by category and broken out -- avoid lump sum fringe rates
   * Include a variance column between your last budget and current budget
@@ -237,7 +237,7 @@ Calendar should cover all phases of production (i.e., casting, pre-production, p
   * Key VFX design review, as applicable
   * Production
   * Prep, shoot, and wrap dates – including set build, rehearsal(s), and travel days
-  * Please identify on your calendar when you plan to shoot and deliver your camera test (see [Section 4.2.3](https://developer.roku.com/fr-fr/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md#423-camera-test-milestone), Camera Test Milestone)
+  * Please identify on your calendar when you plan to shoot and deliver your camera test (see [Section 4.2.3](https://developer.roku.com/en-gb/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md#423-camera-test-milestone), Camera Test Milestone)
   * Post
   * Start and wrap, finishing (i.e., audio and color), delivery of cuts and when notes are due, and master delivery dates
   * Please refer to your Scripted Media Delivery Specs, Review Cut Process, as you build out your schedule
@@ -464,7 +464,7 @@ Upload completed cue sheets to the Hub. If you have specific questions about Rok
 ## 8. Paper deliverables
 Roku uses a Deliverables Hub (“Hub”) to receive and retain specific production documents. The Hub is project specific and will serve as the portal for key paper deliverables. Please remember the materials and folders are confidential and may not be shared beyond authorized parties. With a few exceptions, the Hub is used in lieu of emailing various Roku teams’ relevant documentation.
 Prior to pre-production you will receive an email with instructions for accessing the Hub.
-Due to the **confidential** nature of the required paper deliverables, access to the Hub will be limited to four (4) key project personnel. Only those who are responsible for uploading deliverables noted in [Section 8.1](https://developer.roku.com/fr-fr/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md#81-required-paper-deliverables), should have access.
+Due to the **confidential** nature of the required paper deliverables, access to the Hub will be limited to four (4) key project personnel. Only those who are responsible for uploading deliverables noted in [Section 8.1](https://developer.roku.com/en-gb/trc-docs/video-on-demand/roku-originals/scripted-prod-guidelines.md#81-required-paper-deliverables), should have access.
 ### 8.1 Required paper deliverables
 Productions should upload documents to the Hub on an ongoing basis throughout all phases of production, starting with pre-production and concluding with uploading final documents during wrap.
 Below you’ll find a list of **paper** deliverables for Production, Post, and Production Legal. Please be aware, this list is subject to amendment (within reason) at any time. Make sure to follow the specific instructions for each document and upload accordingly. Please note other departments may have additional required deliverables.
