@@ -134,7 +134,7 @@ The posters/artwork with the content or networks featured in the app are used to
 > The displaying of up-to-date content images in the device activation workflow may be delayed because of Roku's caching and approval policy.
 ### Implementing products API
 Apps must implement an API that retrieves the product offers to be displayed to the customer when they click an app image. Apps may return offers for up to three unique products (for example, for example, an ad-supported plan, monthly limited-ads plan, and monthly premium ad-free plan). Apps may not return different offers for the same product (for example, returning 7-day and 30-day free trials for the same product is not allowed).
-Each product will include its associated name and description, which were entered in the **Product Name** field on the [**Manage In-app Products** page](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md) within the Developer Dashboard.
+Each product will include its associated name and description, which were entered in the **Product Name** field on the [**Manage In-app Products** page](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) within the Developer Dashboard.
 > To change the product offers that are displayed to customers, apps must contact the [Roku Partner Success team](https://developer.roku.com/contact "https://developer.roku.com/contact") before making any updates.
 > * * *
 > Apps can use the [ChannelStore.GetCatalog](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) command to get a list of products associated with the app, including whether a free trial period or introductory pricing is offered.
@@ -174,7 +174,7 @@ Apps can use [JWT debugger](https://jwt.io/) or other online tool to verify gene
 | Id  | String  | Identifies the product to be purchased, as entered in the **Product Identifier** field on the [In-Channel Product page in the Developer Dashboard](https://developer.roku.com/products) when the product was created. The name of the in-app product must include the app name.  |
 | desc  | String  | A brief (maximum 100 character) description of the product.
 
-Do not include any billing information such as pricing and billing cycle in the description. Roku automatically populates this information from the [in-app products you've created in the Developer Dashboard](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md).  |
+Do not include any billing information such as pricing and billing cycle in the description. Roku automatically populates this information from the [in-app products you've created in the Developer Dashboard](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md).  |
 | details  | String  | Optional. App lineup images in markdown format (for example, `"![img](https://www.roku.com/images/roku-developers.svg)"`)  |
 | name  | String  | Optional. The name of the offer (for example, "Roku Developers annual subscription")  |
 | images  | Array of Strings  | Optional. An array of images that may be shown in the offer card once an offer is selected.  |

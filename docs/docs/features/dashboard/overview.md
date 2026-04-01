@@ -7,7 +7,7 @@ Clicking on any of these apps will take the user to the Preview & Publish page f
 ## Scheduled releases
 The **Scheduled releases** section of the main panel lists app releases, product updates, or offers that were previously scheduled by the developer, ordered by date.
 ![roku815px - Scheduled releases screen shot](https://image.roku.com/ZHZscHItMTc2/Scheduled-Releases.png)
-For an overview on in-app products, promotions, and product groups, see [Adding in-channel products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md).
+For an overview on in-app products, promotions, and product groups, see [Adding in-channel products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md).
 ## What's new
 The **What's new** section highlights important Roku platform news such as platform policy changes, app certification updates, and app publishing blackout dates.
 ![roku815px - What's new screen shot](https://image.roku.com/ZHZscHItMTc2/Whats-New.png)
@@ -20,7 +20,7 @@ The app section allows developers to manage their apps, Streaming Store listings
 
 ### Monetization
 The monetization section provides essential tools for Roku Pay, including the ability to configure your Roku Pay products, offers, web services, and test users.
-  * **Product catalog –** This is the primary page for creating new in-app products for purchases in apps using Roku Pay, as well as their corresponding offers and intro pricing deals. Read the documentation on [Adding in-channel products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md) for more information.
+  * **Product catalog –** This is the primary page for creating new in-app products for purchases in apps using Roku Pay, as well as their corresponding offers and intro pricing deals. Read the documentation on [Adding in-channel products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) for more information.
   * **Test users –** Here, developers can manage any Roku accounts that should have "test user" permissions for their apps, meaning these users will not be charged for any products they purchase within the designated app using Roku Pay. A valid payment method is required but purchases will not be charged. Read the documentation on [Creating test users](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/test-users.md) for more information.
   * **Roku Pay Web Services –** Enables developers to configure:
     * the security key, and an allowed source IP address range, to be used when making Roku Pay billing API calls
@@ -35,7 +35,7 @@ The financial reports section makes available Roku Pay reports, containing infor
 
 ### Engage
 This section provides tools that enable developers to promote their apps to Roku end-users to help grow their audience and drive engagement.
-  * **Display ads –** Developers can use [Roku's self-serve promotion tool](https://admanager.roku.com/) to programmatically purchase Roku home screen banner ads, Roku screensaver ads, and video ads in order to reach users across the Roku platform. Refer to the [documentation](https://developer.roku.com/docs/features/engagement/self-serve-promotions.md) article for more information.
+  * **Display ads –** Developers can use [Roku's self-serve promotion tool](https://ad.roku.com/) to programmatically purchase Roku home screen banner ads, Roku screensaver ads, and video ads in order to reach users across the Roku platform. Refer to the [documentation](https://developer.roku.com/docs/features/engagement/self-serve-promotions.md) article for more information.
 
 ### Account
 The Account section to is used to configure personal and business account information, share payout information with Roku so you can collect revenues due to you, and grant account access to other users.

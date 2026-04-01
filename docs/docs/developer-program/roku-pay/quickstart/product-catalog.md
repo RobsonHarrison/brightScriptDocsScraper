@@ -1,9 +1,4 @@
 # Creating the product catalog
-> This document covers the new version of the in-app products UI, which is referred to as Catalog 2.0.
->   * If your developer account was created before April 30, 2025, Roku may upgrade your account to Catalog 2.0 to take advantage of the new complex products and improved workflow. If you are selected, you will receive a notification from Roku. If you have not been selected to upgrade to Catalog 2.0, continue to use the [legacy in-product catalog UI](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md).
->   * If your developer account was created after April 30, 2025, it uses Catalog 2.0. Continue reading this document for how to use Catalog 2.0.
->
-
 ## What's new in Catalog 2.0
 ###### New features
 Roku has updated the product catalog feature with an improved, flexible structure that includes several key new features and supports more complex products:
@@ -46,7 +41,7 @@ Limited-time offers (active or scheduled) created in Catalog 1.0 cannot be updat
 In Catalog 2.0, when you schedule a price change for a purchase option, it is always applied to new subscribers (you can apply price changes to new subscribers only or both new and existing subscribers). As a result, price changes applied to only existing customers in Catalog 1.0 are applied to both existing and new customers after you upgrade to Catalog 2.0.
 To maintain separate pricing for new and existing customers, schedule a price change for new customers at the new price (the earliest price changes can go into effect is the next calendar day after you upgrade to Catalog 2.0).
 **15-day notice required for price increases to existing subscribers**
-If you increase the price of a purchase option for existing subscribers, you must give them a 30-day notice.
+If you increase the price of a purchase option for existing subscribers, you must give them a 15-day notice.
 **Purchase options for deleted products are in the Purchases >Ended tab**
 The purchase options for products that were deleted before the migration are listed in the **Purchase Options >Ended** tab. Existing subscriptions associated with this purchase options will continue to renew. if you no longer want any subscribers to access the product via the given purchase option, you need to [archive the purchase option](https://roku.atlassian.net/wiki/spaces/DR/pages/148500544/Creating+the+product+catalog#Creatingtheproductcatalog-archive).
 **SKUs for archived purchase options cannot be reused**
@@ -269,8 +264,8 @@ To create a cancellation offer, follow these steps:
   10. if you are publishing the cancellation offer, click Yes to confirm its publishing. If you are using offer variations, the confirmation dialog includes the variation ID, offer ID, and price for each one.
 
 ### Scheduling a price change for a purchase option
-You can schedule a price increase/decrease of a purchase option. The price change may be applied to new subscribers only or both new and existing subscribers. If you increase the price for existing subscribers, you must give them 30-days notice.
-> The price change goes into effect based on the the location associated with your developer account; therefore, you may need to consider time zones for when you want the price change to start.
+You can schedule a price increase/decrease of a purchase option. The price change may be applied to new subscribers only or both new and existing subscribers. If you increase the price for existing subscribers, you must give them 15-days notice.
+> The price change goes into effect based on the location associated with your developer account; therefore, you may need to consider time zones for when you want the price change to start.
 To schedule a price change for a purchase option, follow these steps:
   1. Click the action button for the purchase option, and then click **Schedule** **price change** on the shortcut menu.
 ![img -  roku815px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-shortcut.png)

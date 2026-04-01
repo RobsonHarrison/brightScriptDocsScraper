@@ -264,7 +264,7 @@ To use this test method, create a **csFake** folder and add the following XML fi
 
 See the [SimpleChannelStore sample app](https://github.com/rokudev/samples/tree/master/roku%20pay/SimpleChannelStore/csfake) for how to use this testing method.
 
-The **fakeServer** field must be set to false in a published app to allow actual [In-App Product](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md) purchases by users.It is recommended that developers use [billing testing](https://developer.roku.com/docs/developer-program/roku-pay/testing/billing-testing.md) instead of the fakeServer.  |
+The **fakeServer** field must be set to false in a published app to allow actual [In-App Product](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) purchases by users.It is recommended that developers use [billing testing](https://developer.roku.com/docs/developer-program/roku-pay/testing/billing-testing.md) instead of the fakeServer.  |
 ## Commands
 Each of the actions associated with a command string are described in detail below.
 ### getUserData
@@ -333,7 +333,7 @@ When this command is invoked, the ContentNode stored in the **userRegionData** f
 | zip  | string  | The zip code associated with the customer's Roku account.  |
 | country  | String  | The country associated with the customer's Roku account.  |
 ### getCatalog
-Lists the [In-App Products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md) that are linked to the running app. When this command completes, the **catalog** the completion status:
+Lists the [In-App Products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) that are linked to the running app. When this command completes, the **catalog** the completion status:
 | Field  | Type  | Description  |
 | --- | --- | --- |
 | status  | integer  | Contains the command completion status. which may be one of the following values:
@@ -364,7 +364,7 @@ If the command is successful, the **catalog** or **storeCatalog** ContentNode co
 | status  | string  | Indicates whether the product has been "saved" or "approved for sale".  |
 | purchaseDate  | String  | The subscription purchase date  |
 ### getStoreCatalog
-Lists the globally available [In-App Products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md), which are available to all apps. When the command completes, the **storeCatalog** field is set to a ContentNode containing completion status. If successful, the **storeCatalog** field ContentNode has child **ContentNodes** for each available item. See the [**getCatalog**](https://developer.roku.com/en-gb/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) command for the fields related to the product that are available in the child ContentNode.
+Lists the globally available [In-App Products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md), which are available to all apps. When the command completes, the **storeCatalog** field is set to a ContentNode containing completion status. If successful, the **storeCatalog** field ContentNode has child **ContentNodes** for each available item. See the [**getCatalog**](https://developer.roku.com/en-gb/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) command for the fields related to the product that are available in the child ContentNode.
 ### doOrder
 Displays the Roku Pay order confirmation screen, which is populated with information about the current order (product name, price, any free trial or discount offer). The customer can then either approve and complete the purchase, or cancel the purchase.
 ![roku815px - signup-order-confirmation-do-order](https://image.roku.com/ZHZscHItMTc2/signup-order-confirmation-do-order.jpg)

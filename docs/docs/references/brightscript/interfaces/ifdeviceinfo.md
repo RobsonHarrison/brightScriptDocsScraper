@@ -577,7 +577,7 @@ _Available since Roku OS 15.0_
 #### Description
 Returns the system's uptime since the last reboot (in milliseconds as a Long). This function is similar to the [global utility Uptime function](https://developer.roku.com/docs/references/brightscript/language/global-utility-functions.md#uptimedummy-as-integer-as-float), but makes it easier for developers to handle monotonic milliseconds.
 #### Return Value
-A Long indicating the the system's uptime since the last reboot (in milliseconds).
+A Long indicating the system's uptime since the last reboot (in milliseconds).
 ### GetInternetStatus() as Boolean
 #### Description
 Checks the internet connection status of the device.
@@ -622,7 +622,7 @@ The device's MAC address is no longer returned (a string of zeros is returned in
 | dns.3  | IP Address of the fourth DNS server, if any (Similarly for any subsequent DNS servers).  |
 | active  | A flag indicating the network status.  |
 | default  | A flag indicating whether the default WiFi connection is being used.  |
-| expectedThroughput  | The actual speed of the connection. This rate may be significantly lower than the theoretical maximum because of interference, distance, network overhead, and other factors. In ideal conditions, a single client might achieve approximately 65-70% of the physical rate.  |
+| expectedThroughput  | The actual speed of the connection. This rate may be significantly lower than theoretical maximum because of interference, distance, network overhead, and other factors. In ideal conditions, a single client might achieve approximately 65-70% of the physical rate.  |
 | protocol  | The Wifi protocol name (IEEE 802.11g).  |
 | signal  | The received signal strength indicator (RSSI) on a logarithmic scale. Values closer to 0 indicate a stronger signal; values closer to -100 indicate a weaker signal.  |
 | ssid  | The service set identifier (SSID). The name of the WiFi network to which the device is connected.  |

@@ -163,7 +163,7 @@ myChannelStore.command = "getUserData"
 
 ```
 
-  2. When you call the the **ChannelStore.getUserData** command, a "Request for information" (RFI) screen is displayed automatically. It guides the customer to create an account in your system using their Roku account information.
+  2. When you call the **ChannelStore.getUserData** command, a "Request for information" (RFI) screen is displayed automatically. It guides the customer to create an account in your system using their Roku account information.
 ![roku815px - signup-2-rfi](https://image.roku.com/ZHZscHItMTc2/signup-rfi-getuserdata-v2.jpg)
 
   3. If the customer clicks **Continue** , the `userData` field is automatically set to a **ContentNode** that contains a string field with the customer's email address and name. In step 5, you will use the email address to verify whether the customer already has an active subscription that is billed through your services. You will send all the information stored in this ContentNode to your system when the order is completed.
@@ -250,7 +250,7 @@ myChannelStore.command = "getUserData"
 
 ```
 
-  3. When you call the the **ChannelStore.getUserData** command, a "Request for information" (RFI) screen is displayed automatically. It guides the customer to share the email address and/or phone number in their Roku customer account with the app in order to sign in.
+  3. When you call the **ChannelStore.getUserData** command, a "Request for information" (RFI) screen is displayed automatically. It guides the customer to share the email address and/or phone number in their Roku customer account with the app in order to sign in.
 ![roku815px - signin-2-rfi-splash](https://image.roku.com/ZHZscHItMTc2/signin-2-rfi-splash-v2.jpg)
 
   4. If the customer clicks **Continue** , the `userData` field is automatically set to a **ContentNode** that contains **email** and/or **phone** fields, which are strings set to the customer's email address and phone number.

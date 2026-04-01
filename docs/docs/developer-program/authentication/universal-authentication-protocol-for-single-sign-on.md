@@ -72,7 +72,7 @@ If both the device registry and Roku cloud do not contain a valid access token, 
 
 ```
 
-  2. When you call the the **ChannelStore.getUserData** command, a "Request for information" screen is displayed automatically. It asks the customer whether your app can access the account information linked to their email address and name.
+  2. When you call the **ChannelStore.getUserData** command, a "Request for information" screen is displayed automatically. It asks the customer whether your app can access the account information linked to their email address and name.
 
   3. If the customer clicks **Allow** , the `userData` field is automatically set to a **ContentNode** that contains a string field with the customer's email address and name. If the customer is signing up, you will send all the information stored in this ContentNode to your system after they submit their account information.
 

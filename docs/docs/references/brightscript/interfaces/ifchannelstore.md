@@ -16,7 +16,7 @@ Requests the list of in-app products that are linked to the running app.
 If successful, a subsequent [roChannelStoreEvent](https://developer.roku.com/docs/references/brightscript/events/rochannelstoreevent.md "roChannelStoreEvent") will be received that contains an roList of roAssociativeArray items. Each associative array will contain the following parameter names with specified value type:
 | Parameter  | Type  | Description  |
 | --- | --- | --- |
-| code  | string  | The **Product Identifier** that was entered in the [In-App Products page in the Developer Dashboard](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md#product-basics).  |
+| code  | string  | The **Product Identifier** that was entered in the [In-App Products page in the Developer Dashboard](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#product-basics).  |
 | name  | string  | The item name (this name will also be set as the description).  |
 | quantity  | Integer  | For one-time purchase/consumable products only. The number of the product purchased (for example "1000" game points, "3" viewings of a movie rental).  |
 | productType  | string  | The product type (ex. "MonthlySub")  |
@@ -46,7 +46,7 @@ Requests the list of purchases associated with the current user account.
 If successful, a subsequent [roChannelStoreEvent](https://developer.roku.com/docs/references/brightscript/events/rochannelstoreevent.md "roChannelStoreEvent") will be received that contains an roList of roAssociativeArray items. Each associative array will contain the following parameter names with specified value type:
 | Parameter  | Type  | Description  |
 | --- | --- | --- |
-| code  | string  | The **Product Identifier** that was entered in the [In-app Products page in the Developer Dashboard](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md#product-basics).  |
+| code  | string  | The **Product Identifier** that was entered in the [In-app Products page in the Developer Dashboard](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#product-basics).  |
 | cost  | string  | Localized cost of the item (prior to purchase) with local currency symbol  |
 | expirationDate  | string  | The subscription expiration date ([ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format)  |
 | freeTrialQuantity  | integer  | The free trial amount associated with the freeTrialType. For example, **1** for a 1-month free trial or **7** for a 7-day free trial.  |

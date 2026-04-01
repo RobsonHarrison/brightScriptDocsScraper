@@ -10,11 +10,11 @@ If you want to offer a specific in-app product in multiple countries, currency c
   * **Publisher handles currency conversion** : Create in-app products for each country and filter out the product by the country in the app using the [**ifDeviceInfo.GetCountryCode()**](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getcountrycode-as-string) method.
 
  | [ChannelStore](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getuserregionaldata)  |
-| Add free trials and discount offers to subscription products instead of creating separate products  | The [In-App Products page](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md) in the Developer Dashboard enables publishers to offer free trials and discount offers on in-app subscription products for a specific number of days or months.
+| Add free trials and discount offers to subscription products instead of creating separate products  | The [In-App Products page](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) in the Developer Dashboard enables publishers to offer free trials and discount offers on in-app subscription products for a specific number of days or months.
 
 Roku Pay then automatically renews the subscription at the regular base price once the free trial or discount period ends. This makes it easy to provide customers with introductory pricing incentives.
 
-Separate products do not need to be created for free-trial or discounted subscription products.  | [Adding in-app products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md#trials-and-offers)  |
+Separate products do not need to be created for free-trial or discounted subscription products.  | [Adding in-app products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#trials-and-offers)  |
 ### Sign-in and sign-ups
 | Tip  | Explanation  | Documentation  |
 | --- | --- | --- |

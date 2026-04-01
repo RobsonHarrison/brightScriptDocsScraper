@@ -26,6 +26,6 @@ See [How to effectively grow an audience](https://developer.roku.com/docs/featur
 | Ad impression reporting  | Not currently supported.  | Available upon request.  |
 ## How to effectively grow an audience
 Roku encourages the growth of all apps on our platform. To help enable this end goal, Roku offers a [robust promotional tool set](https://advertising.roku.com/content-publishers) to our publishers.
-The quickest and easiest way to get started promoting your app on our platform is our [self-serve app promotion tool](https://admanager.roku.com/) tool. This tool enables publishers to purchase display ads for their app on Roku's home screen UI. For more information, visit [admanager.roku.com](https://admanager.roku.com/).
+The quickest and easiest way to get started promoting your app on our platform is our [self-serve app promotion tool](https://ad.roku.com/) tool. This tool enables publishers to purchase display ads for their app on Roku's home screen UI. For more information, visit [ad.roku.com](https://ad.roku.com/).
 Publishers with larger advertising budgets can also engage our Audience Development team. This team consists of campaign managers who use a more advanced toolset, and can help develop an on- and off-device advertising campaign that is tailored to your engagement goals on the platform. To learn more, reach out to our advertising team here: <https://advertising.roku.com/content-publishers>
 Effectively growing an audience on the Roku platform typically requires consistent, ongoing publication of high-quality content.

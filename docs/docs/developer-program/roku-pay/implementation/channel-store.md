@@ -3,7 +3,7 @@ The SceneGraph ChannelStore node is used to manage the on-device user experience
 > See the [On-device authentication guide](https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md) for the complete steps on using the ChannelStore node to implement the Roku Pay workflow. Refer to the [ChannelStore reference](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md) for more detailed information on each command.
 ## Purchasing
 ### getCatalog
-The [**getCatalog** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) gets the [subscription and one-time purchase products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md) in the app's catalog.
+The [**getCatalog** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) gets the [subscription and one-time purchase products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) in the app's catalog.
 This command is used to populate SceneGraph components with products' metadata such as the product name, price, and description.
 ![roku815px - rsg-channelstore-getcatalog](https://image.roku.com/ZHZscHItMTc2/rsg-channelstore-getcatalog.jpg)
 ### getUserData

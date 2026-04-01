@@ -11,7 +11,7 @@ Publishers can review this basic pre-publishing checklist provided to help ensur
   * Review and comply with [local legal regulations](https://developer.roku.com/docs/features/legal/compliance.md), such as any relevant laws pertaining to data privacy or restricting targeted advertisements to children. Note, this is not intended to be a comprehensive list of applicable laws and regulations applicable in each new territory.
   * Apply [local content ratings](https://developer.roku.com/docs/developer-program/getting-started/architecture/content-metadata.md#descriptive-attributes) to the content metadata.
   * Ensure any [video advertisements](https://developer.roku.com/docs/developer-program/advertising/integrating-roku-advertising-framework.md) running within the app are relevant to the audience.
-  * Ensure any [subscription pricing models](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/in-channel-products.md) have been adjusted for the territory.
+  * Ensure any [subscription pricing models](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) have been adjusted for the territory.
 
 #### Discovery and support
   * [Enable the app for inclusion in Roku Search](https://developer.roku.com/docs/specs/search/search-feed.md#multiregion-and-multilanguage-support) in the region, if applicable. This may include providing a dedicated feed for content available in the region or localizing the metadata to the relevant language.

@@ -76,7 +76,7 @@ As of Roku OS 15.0, this command returns the following fields that indicate whet
 
 - supports-tv-power-control
 - supports-audio-volume-control  |   |
-| query/icon/<APP_ID>  | supports-tv-power-control supports-audio-volume-controlReturns an icon corresponding to the application identified by appID. The binary data with an identifying MIME-type header is returned. This command is accessed using an HTTP GET. Example: GET /query/icon/1  |  **Control by mobile apps** setting “Enabled”  |
+| query/icon/<APP_ID>  | Returns an icon corresponding to the application identified by appID. The binary data with an identifying MIME-type header is returned. This command is accessed using an HTTP GET. Example: GET /query/icon/1  |  **Control by mobile apps** setting “Enabled”  |
 | query/chanperf
 
 query/chanperf/<_channelld_ >?duration-seconds=<_seconds_ >  | Returns the current memory and CPU utilization of the app running in the foreground (RAM usage is reported bytes). The foreground app may either be a sideloaded app or an app from the Streaming Store. To output the results for an app in the app store, the device must be keyed with the same developer ID/key that was used to generate the package file.

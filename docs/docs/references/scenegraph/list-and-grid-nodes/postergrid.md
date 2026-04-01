@@ -140,7 +140,7 @@ For example, if the numColumns field is set to 3, Y would be set to 0, 1 or 2.  
 For example, if the numColumns field were set to 3 and a grid item is to occupy the rightmost two columns, X would be set to 1 and W would be set to 2.  |
 | H  | integer  | When the fixedLayout field is set to true, this specifies how many rows the grid item occupies. If not specified, the default value of 1 is used.
 
-For example, if a grid item is to occupy the the third, fourth and fifth rows, Y would be set to 2 and W would be set to 3.  |
+For example, if a grid item is to occupy the third, fourth and fifth rows, Y would be set to 2 and W would be set to 3.  |
 **List items grouped into sections**
 If the grid items are to be grouped into sections, one child ContentNode should be added to the root node for each section in the grid (these child nodes can be thought of as _section roots_). Each section root should contain one child ContentNode for each item in the section (that is, _item nodes_). Each item ContentNode uses the same attributes as the item nodes when there are no sections, as shown in the table above.
 The section root ContentNodes use the following attributes:

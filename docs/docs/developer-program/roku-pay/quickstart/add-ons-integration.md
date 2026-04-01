@@ -476,7 +476,7 @@ To update your app with the new Channel Store APIs, follow these steps:
 ```
 
 ## Sample app
-The provided sample app demonstrates how to integrate add-ons and bundles in your app to offer customers premium content, additional channels, bundled packages, and other upgrades and features. It lets you purchase base subscription products and bundles in your product catalog, and then purchase any eligible add-ons.
+The [add-ons sample app](https://github.com/rokudev/samples/tree/master/roku%20pay/add-ons) demonstrates how to integrate add-ons and bundles in your app to offer customers premium content, additional channels, bundled packages, and other upgrades and features. It lets you purchase base subscription products and bundles in your product catalog, and then purchase any eligible add-ons.
 ## Appendix A: Catalog 2.0 APIs
 The **requestStatus** object returned by the ChannelStore generic request framework is an **roAssociativeArray** that has the following hierarchy. Observe that the products, purchase options, and entitlements returned by the ChannelStore commands are encapsulated in a nested **result.result** associative array.
 

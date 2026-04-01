@@ -47,7 +47,7 @@ Always test your app on the low end platforms (Roku Express = Littlefield) to en
   * When creating an ad, follow [Roku's ad guidelines](https://docs.roku.com/doc/advertisingguidelines/en-us) to make big beautiful content images with minimal text and standard call-to-action.
   * Expose your app as much as possible by offering as many doorways from Roku's main UI to your app (E.g., Roku Search, My Feed, Ads, etc.).
   * When running on-device promotional ads, ensure that you use relevant targeting to show the right promotional ad to the right user.
-  * Once the app is ready to be promoted, the app can purchase their own ad campaigns at <https://admanager.roku.com/>.
+  * Once the app is ready to be promoted, the app can purchase their own ad campaigns at <https://ad.roku.com/>.
 
 ### 7. Try before you buy
   * For apps requiring payment or purchase, at minimum, let users browse your content in front of the paywall so that they can see or sample what they would be buying.

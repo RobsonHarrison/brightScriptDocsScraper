@@ -19,8 +19,6 @@ If this field is set to greater than 0, and the layout of the dialog for the spe
 
 By default, no palette is specified; therefore, the dialog inherits the color palette from the nodes higher in the scene graph (typically, from the dialog's [Scene](https://developer.roku.com/docs/references/scenegraph/scene.md) node, which has a **palette** field that can be used to consistently color the standard dialogs and keyboards in the app).
 
-The RSGPalette color values used by the StandardDialog node are as follows:
-
  | Palette Color Name  | Usages  |
 | --- | --- |
 | DialogBackgroundColor  | Blend color for dialog's background bitmap.  |

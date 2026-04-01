@@ -9,8 +9,7 @@ When an app enabled for "billing testing" is sideloaded, calls to the ChannelSto
 >   * The app must be sideloaded on the Roku device.
 >
 
-## Enabling billing testing with new app publishing workflow
-To enable billing testing on an app with the new app builder UI, follow these steps:
+To enable billing testing on an app, follow these steps:
   1. In the [Developer Dashboard](https://developer.roku.com/developer), click **Public apps** or **Beta apps** for whichever app type you want to use for billing testing. You can only use one public or beta app at a time for billing testing.
 
   2. Confirm that no other app is currently being used for billing testing. An app designated for billing testing is a tagged with a "Billing Test" label and it is listed at the top.
@@ -24,14 +23,3 @@ To enable billing testing on an app with the new app builder UI, follow these st
 
   5. The selected app is tagged with the "Billing Test" label and is ready to be used for testing.
 ![roku815px - stop-billing-testing](https://image.roku.com/ZHZscHItMTc2/billing-testing-enable-label.png)
-
-## Enabling billing testing with legacy app publishing workflow
-To enable billing testing on an app with the legacy app builder UI, follow these steps:
-  1. In the [Developer Dashboard](https://developer.roku.com/developer), select **My Channels**.
-![roku815px - manage-my-channels](https://image.roku.com/ZHZscHItMTc2/manage-my-channels-v2a.png)
-
-  2. Confirm that no other apps are currently being used for billing testing ("designated for billing testing" is displayed in the app summary if billing testing is enabled on an app). If another app is being used for billing testing, click **Options** to the right of the app summary, and then click **Stop using for billing testing**.
-![roku815px - stop-billing-testing](https://image.roku.com/ZHZscHItMTc2/stop-billing-testing-v4b.png)
-
-  3. On the app to be used for billing testing, click **Options** , and then click **Use for billing testing**.
-![roku815px - use-billing-testing](https://image.roku.com/ZHZscHItMTc2/use-billing-testing-v2a.png)

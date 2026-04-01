@@ -200,6 +200,6 @@ For example, if the numColumns field is set to 3, Y would be set to 0, 1 or 2.  
 For example, if the numColumns field were set to 3 and a grid item is to occupy the rightmost two columns, X would be set to 1 and W would be set to 2.  |
 | `H`  | integer  | When the fixedLayout field is set to true, this specifies how many rows the grid item occupies. If not specified, the default value of 1 is used.
 
-For example, if a grid item is to occupy the the third, fourth and fifth rows, Y would be set to 2 and W would be set to 3.  |
+For example, if a grid item is to occupy the third, fourth and fifth rows, Y would be set to 2 and W would be set to 3.  |
 ## Sample app
 [MarkupGridExample](https://github.com/rokudev/samples/tree/master/ux%20components/lists%20and%20grids/MarkupGridExample) is a sample app demonstrating MarkupGrid in action.

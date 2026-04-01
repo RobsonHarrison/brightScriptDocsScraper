@@ -4,6 +4,7 @@ Instant Resume enables apps to save their current state upon exit and then conti
 
   * **VOD**. A user is watching a movie and then exits the app (by saying "Home" on their Roku Voice remote). When they re-launch the app later, it can display a Details Screen in just a few seconds The Details Screen gives the user the choice to either resume the video or play it from the beginning.
 
+> **Certification requirement:** Effective October 1, 2026, apps in the U.S. Roku Streaming Store that have streamed more than an average of 5 million hours per month over the last three months must implement Instant Resume.
 The following video demonstrates how Instant Resume works for live linear and VOD apps:
 <img src='https://image.roku.com/ZHZscHItMTc2/instant-resume-demo-v2.jpg' alt='Instant Resume Demo'
 ## Pre-requisites

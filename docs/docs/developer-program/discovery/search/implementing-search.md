@@ -184,7 +184,7 @@ If the Deep Linking Tester launches content into the correct playback experience
 SVOD and TVE apps must [send authentication events](https://developer.roku.com/docs/developer-program/discovery/search/prioritizing-authenticated-channels-in-roku-search.md) to Roku to communicate the authentication status of customers when their app is launched. This is a [certification requirement](https://developer.roku.com/docs/developer-program/certification/certification.md#4-channel-operation), and it drives engagement because it ensures that your SVOD or TVE app is listed above non-authenticated apps in the Roku Search content providers list.
 ### Updating search feeds
 #### Metadata updates
-If you need to update the the URL, logos, or validation email for your feed, click the more (...) icon in the upper right-hand corner of the **Test & Submit** page and make changes.
+If you need to update the URL, logos, or validation email for your feed, click the more (...) icon in the upper right-hand corner of the **Test & Submit** page and make changes.
 ![roku600px - feed-submission-checklist](https://image.roku.com/ZHZscHItMTc2/edit-feed-option.png)
 #### Feed updates
 You can upload changes to your search feed and resubmit your feed to update Roku Search with your current content (changes are not processed unless you resubmit your feed in the Developer Dashboard). Search feed updates may take up to 24 hours to be propagated to Roku Search.

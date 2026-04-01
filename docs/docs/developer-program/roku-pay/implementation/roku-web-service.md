@@ -424,65 +424,6 @@ POST https://apipub.roku.com/listen/transaction-service.svc/refund-subscription
 
 ```
 
-### Update billing cycle
-The `update-bill-cycle` API updates the billing cycle of the subscription corresponding to the specified `transactionId`.
-Set the `newBillCycleDate` to the updated date on which the user should be billed (for example, the user can be billed on the 6th instead of the 4th). The updated date should be within the next billing period (the current expiration date plus the billing interval year or month).
-**Request syntax:**
-**Method/URL**
-
-```
-POST https://apipub.roku.com/listen/transaction-service.svc/update-bill-cycle
-
-```
-
-**XML body**
-
-```
-<billCycleUpdate>
-    <partnerAPIKey>F05447A57F8DF275FC30EC835FCAD10A19B6</partnerAPIKey>
-    <newBillCycleDate>2020-02-12T08:17:09</newBillCycleDate>
-    <transactionId>de054ad85a454db38800ab3e014687a6</transactionId>
-</billCycleUpdate>
-
-```
-
-**JSON body**
-
-```
-{
-    "transactionId": "fc51c9b9ba324923ae6dab3e01449eb5",
-    "newBillCycleDate": "2020-02-12T08:17:09",
-    "partnerAPIKey": "F05447A57F8DF275FC30EC835FCAD10A19B6"
-
-}
-
-```
-
-**Response example:**
-**XML** :
-
-```
-<result xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-    <errorCode i:nil="true"/>
-    <errorDetails i:nil="true"/>
-    <errorMessage/>
-    <status>Success</status>
-</result>
-
-```
-
-**JSON** :
-
-```
-{
-    "errorCode": null,
-    "errorDetails": null,
-    "errorMessage": "",
-    "status": 0
-}
-
-```
-
 ### Issue service credit
 The `issue-service-credit` API is used to issue a service credit to the specified Roku account. A service credit functions as the customer's method of payment until its balance reaches $0.00. Once this occurs, the method of payment on file is charged. For example, when a customer makes a purchase, the service credit is first subtracted from the product's price. Any remaining amount due is charged to the method of payment on file.
 Service credits may be issued for:

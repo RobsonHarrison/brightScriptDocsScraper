@@ -1,7 +1,218 @@
 {
   "new": [],
-  "updated": [],
-  "unchanged": 1015,
+  "updated": [
+    {
+      "path": "docs/docs/developer-program/getting-started/roku-dev-prog.md",
+      "url": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md",
+      "found_on": null
+    },
+    {
+      "path": "docs/docs/developer-program/authentication/universal-authentication-protocol-for-single-sign-on.md",
+      "url": "https://developer.roku.com/docs/developer-program/authentication/universal-authentication-protocol-for-single-sign-on.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/certification/cert-tests/static-analysis-tool.md",
+      "url": "https://developer.roku.com/docs/developer-program/certification/cert-tests/static-analysis-tool.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/authentication/on-device-authentication.md",
+      "url": "https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/dev-tools/app-tracing.md",
+      "url": "https://developer.roku.com/docs/developer-program/dev-tools/app-tracing.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/design/general-tv-ui-philosophy.md",
+      "url": "https://developer.roku.com/docs/developer-program/design/general-tv-ui-philosophy.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/dev-tools/external-control-api.md",
+      "url": "https://developer.roku.com/docs/developer-program/dev-tools/external-control-api.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/discovery/search/implementing-search.md",
+      "url": "https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/discovery/instant-signup.md",
+      "url": "https://developer.roku.com/docs/developer-program/discovery/instant-signup.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/getting-started/channel-localization.md",
+      "url": "https://developer.roku.com/docs/developer-program/getting-started/channel-localization.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/media-playback/instant-resume.md",
+      "url": "https://developer.roku.com/docs/developer-program/media-playback/instant-resume.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/publishing/pre-publishing-checklist.md",
+      "url": "https://developer.roku.com/docs/developer-program/publishing/pre-publishing-checklist.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/implementation/tvod-channel.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/implementation/tvod-channel.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/implementation/roku-web-service.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/implementation/channel-store.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/implementation/channel-store.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/implementation/on-device-upgrade-downgrade.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/implementation/on-device-upgrade-downgrade.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/quickstart/add-ons-integration.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/add-ons-integration.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/quickstart/getting-started.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/getting-started.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/quickstart/monetization-in-developer-dashboard.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/monetization-in-developer-dashboard.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/quickstart/product-catalog.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/roku-pay-best-practices.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/roku-pay-best-practices.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/roku-pay-requirements.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/roku-pay-requirements.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/testing/testing-roku-pay.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/testing/testing-roku-pay.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/roku-pay/testing/billing-testing.md",
+      "url": "https://developer.roku.com/docs/developer-program/roku-pay/testing/billing-testing.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/features/dashboard/overview.md",
+      "url": "https://developer.roku.com/docs/features/dashboard/overview.md",
+      "found_on": "https://developer.roku.com/docs/features/features-overview.md"
+    },
+    {
+      "path": "docs/docs/features/engagement/self-serve-promotions.md",
+      "url": "https://developer.roku.com/docs/features/engagement/self-serve-promotions.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md"
+    },
+    {
+      "path": "docs/docs/features/monetization/video-advertisements.md",
+      "url": "https://developer.roku.com/docs/features/monetization/video-advertisements.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/advertising/ad-requirements.md"
+    },
+    {
+      "path": "docs/docs/references/brightscript/components/rochannelstore.md",
+      "url": "https://developer.roku.com/docs/references/brightscript/components/rochannelstore.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
+    },
+    {
+      "path": "docs/docs/references/brightscript/interfaces/ifdeviceinfo.md",
+      "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/advertising/ad-requirements.md"
+    },
+    {
+      "path": "docs/docs/references/brightscript/interfaces/ifchannelstore.md",
+      "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifchannelstore.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/discovery/instant-signup.md"
+    },
+    {
+      "path": "docs/docs/references/brightscript/interfaces/ifregistry.md",
+      "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifregistry.md",
+      "found_on": "https://developer.roku.com/docs/references/references-overview.md"
+    },
+    {
+      "path": "docs/docs/references/brightscript/interfaces/ifsgnodedict.md",
+      "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifsgnodedict.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/core-concepts/handling-application-events.md"
+    },
+    {
+      "path": "docs/docs/references/scenegraph/animation-nodes/vector2Dfieldinterpolator.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/animation-nodes/vector2Dfieldinterpolator.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
+    },
+    {
+      "path": "docs/docs/references/scenegraph/control-nodes/channelstore.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/advertising/ad-requirements.md"
+    },
+    {
+      "path": "docs/docs/references/scenegraph/animation-nodes/vector2dfieldinterpolator.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/animation-nodes/vector2dfieldinterpolator.md",
+      "found_on": "https://developer.roku.com/docs/references/references-overview.md"
+    },
+    {
+      "path": "docs/docs/references/scenegraph/animation-nodes/floatfieldinterpolator.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/animation-nodes/floatfieldinterpolator.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
+    },
+    {
+      "path": "docs/docs/references/scenegraph/layout-group-nodes/group.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/group.md",
+      "found_on": "https://developer.roku.com/docs/references/references-overview.md"
+    },
+    {
+      "path": "docs/docs/references/scenegraph/list-and-grid-nodes/postergrid.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/list-and-grid-nodes/postergrid.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/core-concepts/controlling-screen-program-flow.md"
+    },
+    {
+      "path": "docs/docs/references/scenegraph/list-and-grid-nodes/overview.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/list-and-grid-nodes/overview.md",
+      "found_on": "https://developer.roku.com/docs/references/references-overview.md"
+    },
+    {
+      "path": "docs/docs/references/scenegraph/list-and-grid-nodes/markupgrid.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/list-and-grid-nodes/markupgrid.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/core-concepts/transitioning-to-scenegraph.md"
+    },
+    {
+      "path": "docs/docs/references/scenegraph/sliding-panels-nodes/panelset.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/sliding-panels-nodes/panelset.md",
+      "found_on": "https://developer.roku.com/docs/developer-program/core-concepts/scenegraph-xml/coordinate-systems.md"
+    },
+    {
+      "path": "docs/docs/references/scenegraph/standard-dialog-framework-nodes/standard-dialog.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/standard-dialog-framework-nodes/standard-dialog.md",
+      "found_on": "https://developer.roku.com/docs/references/references-overview.md"
+    }
+  ],
+  "unchanged": 971,
   "failed": [
     {
       "url": "https://developer.roku.com/docs/developer-program/release-notes/eclipse-plugin-release-notes.md",
@@ -34,14 +245,14 @@
       "found_on": "https://developer.roku.com/docs/developer-program/advertising/raf-api.md"
     },
     {
-      "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifcaptionrenderer.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
-    },
-    {
       "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifchannelinfo.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/certification/cert-tests/certification-testing.md"
+    },
+    {
+      "url": "https://developer.roku.com/docs/references/brightscript/interfaces/ifcaptionrenderer.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
     {
       "url": "https://developer.roku.com/docs/references/brightscript/interfaces/iftuner.md",
@@ -54,12 +265,12 @@
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
     {
-      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/targetset.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/markuplist.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
     {
-      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/markuplist.md",
+      "url": "https://developer.roku.com/docs/references/scenegraph/layout-group-nodes/targetset.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
@@ -79,6 +290,11 @@
       "found_on": "https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md"
     },
     {
+      "url": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/ide-support.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/docs/developer-program/getting-started/ide-support.md"
+    },
+    {
       "url": "https://developer.roku.com/en-gb/docs/developer-program/roku-pay/quickstart/monetization-method.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/quickstart/monetization-method.md"
@@ -87,11 +303,6 @@
       "url": "https://developer.roku.com/en-gb/docs/developer-program/roku-pay/roku-web-service.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/developer-program/roku-pay/roku-web-service.md"
-    },
-    {
-      "url": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/ide-support.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/developer-program/getting-started/ide-support.md"
     },
     {
       "url": "https://developer.roku.com/en-gb/docs/references/brightscript/components/roslideshow.md",
@@ -104,14 +315,14 @@
       "found_on": "https://developer.roku.com/docs/references/brightscript/components/rovideoscreen.md"
     },
     {
-      "url": "https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifchannelinfo.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/docs/references/brightscript/interfaces/ifchannelinfo.md"
-    },
-    {
       "url": "https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifcaptionrenderer.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/docs/references/brightscript/interfaces/ifcaptionrenderer.md"
+    },
+    {
+      "url": "https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifchannelinfo.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/docs/references/brightscript/interfaces/ifchannelinfo.md"
     },
     {
       "url": "https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/iftuner.md",
@@ -144,14 +355,14 @@
       "found_on": "https://developer.roku.com/trc-docs/faqs.md"
     },
     {
-      "url": "https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md",
-      "reason": "Document not found - likely broken link",
-      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/avail/title-avail-specifications.md"
-    },
-    {
       "url": "https://developer.roku.com/trc-docs/video-on-demand/ingest-specifications.md",
       "reason": "Document not found - likely broken link",
       "found_on": "https://developer.roku.com/trc-docs/video-on-demand/roku-originals/acquisitions-specs.md"
+    },
+    {
+      "url": "https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md",
+      "reason": "Document not found - likely broken link",
+      "found_on": "https://developer.roku.com/trc-docs/video-on-demand/avail/title-avail-specifications.md"
     },
     {
       "url": "https://developer.roku.com/en-ot/trc-docs/live-linear/epg-on-trc.md",
