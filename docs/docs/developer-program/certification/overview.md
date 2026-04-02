@@ -1,5 +1,5 @@
 # Channel certification overview
-All public channels must meet Roku's [certification criteria](https://developer.roku.com/docs/developer-program/certification/certification.md#certification-criteria-1) to be published to the Roku Channel Store. This ensures that all channels in the Roku Channel Store have properly integrated required platform features in order to provide viewers a consistent user experience.
+All public channels must meet Roku's [certification criteria](https://developer.roku.com/docs/developer-program/certification/certification.md#certification-criteria-1) to be published to the Roku Streaming Store. This ensures that all channels in the Roku Streaming Store have properly integrated required platform features in order to provide viewers a consistent user experience.
 ## Channel testing
 Roku provides a suite of tools and tests to help developers check whether their channel complies with the [certification criteria](https://developer.roku.com/docs/developer-program/certification/certification.md):
   * [Static Analysis tool](https://developer.roku.com/docs/developer-program/certification/cert-tests/static-analysis-tool.md): Checks the channel's code for certification-related errors.
