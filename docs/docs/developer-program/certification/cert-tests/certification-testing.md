@@ -111,7 +111,7 @@ To verify the monetization model for the channel:
   6. Verify that the content is no longer available for playing, but can be re-rented or bought.
 
 **Expected Result** Roku Pay works properly for in-channel purchases, such as subscriptions and rentals.
-**2.2** Apps must integrate [On-device authentication](https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md). Sign-up/sign-in workflows are prohibited from using external webpages, links to off-device promotional or marketing materials, or any other 1st or 3rd-party sign-up/sign-in/authentication mechanism.
+**2.2** Apps must integrate [On-device authentication](https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md). Sign-up/sign-in workflows are prohibited from using external webpages, links to off-device promotional or marketing materials, or any other 1st or 3rd-party off-device sign-up/sign-in/authentication/activation mechanism.
 Apps must complete upgrades and downgrades on the device using [On-device upgrade and downgrade](https://developer.roku.com/docs/developer-program/roku-pay/implementation/on-device-upgrade-downgrade.md). The upgrade/downgrade workflows are prohibited from including external webpages.
 **Tests** :
   1. Confirm you can successfully log in to your channel on your device, without visiting an external webpage.
@@ -362,7 +362,7 @@ Apps must adhere to [Roku’s autoplay policy](https://developer.roku.com/docs/d
 
 **Expected Result:**
 App displays a voice keyboard when customers need to enter an email address, PIN, or password.
-**4.13** Apps in the U.S. Roku Streaming Store that have streamed more than an average of 5 million hours per month over the last three months and apps outside the U.S. Streaming Store that have streamed more than an average of 1million hours per month over the last three months (effective October 1, 2026) must implement Roku’s [Continue Watching](https://developer.roku.com/docs/developer-program/discovery/continue-watching.md) feature. This requirement is also applicbale to new channels projected to reach the specified streaming hours threshold shortly after launch. TVOD, live linear, and made-for-kids channels are excluded from this requirement.
+**4.13** Apps in the U.S. Roku Streaming Store that have streamed more than an average of 5 million hours per month over the last three months and apps outside the U.S. Streaming Store that have streamed more than an average of 1 million hours per month over the last three months (effective October 1, 2026) must implement Roku’s [Continue Watching](https://developer.roku.com/docs/developer-program/discovery/continue-watching.md) feature. This requirement is also applicbale to new channels projected to reach the specified streaming hours threshold shortly after launch. TVOD, live linear, and made-for-kids channels are excluded from this requirement.
 **Tests** : App is meeting the criteria specified in 4.13.
 **Expected Result:**
 App has properly implemented the Continue Watching feature per the integration guide.
