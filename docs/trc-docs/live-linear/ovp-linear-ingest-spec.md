@@ -111,7 +111,7 @@ The following outlines what we support. A preferred video set up is outlined in 
       * 0x36 (distributor placement opportunity start)
 
  | Splice_Insertion  |
-| Special ad support  | TripleLift DRI support*
+| Special ad support  | TripleLift DBI support*
 *_Requires Roku approval_  |   |
 | Ad policy  |
   * Partners should not serve any ads in the channel other than the ones returned by the Roku SSAI, unless explicitly agreed in the contract.
