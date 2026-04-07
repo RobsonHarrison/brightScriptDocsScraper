@@ -89,7 +89,7 @@ Once you have configured and tested your push notification integration, you can 
   3. Click **Save**.
 
 > See the [Roku Pay push notifications reference](https://developer.roku.com/docs/developer-program/roku-pay/implementation/push-notifications.md) for more information on the contents of the Roku Pay push notification messages.
-> If the endpoint fails for a specific message for three consecutive days (72 hours), Roku stops sending that notification. If the endpoint fails to acknowledge 100 notifications within 10 days, the endpoint is considered invalid and placed on a deny list.
+> If the endpoint fails for a specific message for 36 hours, Roku stops sending that notification. If the endpoint fails to acknowledge 100 notifications within 10 days, the endpoint is considered invalid and placed on a deny list.
 ### Replay notifications
 Publishers can resend Roku Pay push notification messages for a specific 14-day timeframe within the past 90 days. This enables publishers to receive messages that may have been missed because their endpoint had a misconfiguration, service outage, or other error.
 To resend Roku Pay push notifications, follow the steps:
