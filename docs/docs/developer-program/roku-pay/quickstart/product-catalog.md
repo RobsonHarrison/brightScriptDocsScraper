@@ -284,7 +284,7 @@ b. For existing subscribers, the selected date must be 15 days in advance of the
 
 ![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-v2.png)
   7. Review and select the acknowledge check box and then click **Confirm** to schedule the price change.
-![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-dialog-confirm-v2.png)
+![img -  roku600px](https://image.roku.com/ZHZscHItMTc2/product-catalog-price-change-dialog-confirm.png)
 
 ## Managing product groups
 You can use the **Product groups** tab to manage the product groups in your catalog. The tab lists the name and associated products for each purchase group. You can filter the product groups by entering a name in the search box. By default, the product groups are listed by name in alphabetical order, and you can sort the product groups by clicking the headers. You can click anywhere in a row to view the details of a product group and edit it.
