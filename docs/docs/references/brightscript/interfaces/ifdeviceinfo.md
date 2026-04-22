@@ -263,6 +263,31 @@ The two-letter ISO 639-1 language terminology code, which may be one of the foll
 Checks for the number of seconds passed since the last remote keypress.
 #### Return Values
 The number of seconds since the last remote keypress was received.
+### GetRemoteRepeatDelay() as Integer
+_Available since Roku OS 15.2_
+#### Description
+Returns the current remote key repeat delay in seconds (0–5). 0 is the default behavior.
+#### Return Values
+An integer indicating the current remote key repeat delay (0–5s).
+### GetRemoteRepeatRate() as String
+_Available since Roku OS 15.2_
+#### Description
+Returns the current remote key repeat rate as a string: “slow“, “medium” (default) or “fast”.
+#### Return Values
+A string indicating the current remote key repeat rate (“slow“, “medium”, or “fast”).
+### EnableRemoteRepeatSettingsChangedEvent(enable as Boolean) as Boolean
+_Available since Roku OS 15.2_
+#### Description
+Toggles whether a notification event is sent when the user changes the remote repeat delay or remote repeat rate settings. When enabled, the event is delivered via the message port as a [**roDeviceInfoEvent**](https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/docs/references/brightscript/events/rodeviceinfoevent.md#isstatusmessage-as-boolean) with the following fields in the info associative array:
+  * remoteRepeatDelay(Integer): Returns the updated repeat delay value
+  * remoteRepeatRate(String): Returns the updated repeat rate value.
+
+#### Parameters
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| enable  | Boolean  | A flag specifying whether to enable events for remote repeat setting changes.  |
+#### Return Values
+This function returns true on success; false if no message port is set or the framework is unavailable.
 ### GetDrmInfo() as Object
 > **This method is deprecated**.
 > Developers must update their apps to use the replacement API [GetDrmInfoEx()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getdrminfoex-as-object) to return the supported DRM system and features.

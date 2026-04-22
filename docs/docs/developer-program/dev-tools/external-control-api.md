@@ -79,7 +79,11 @@ As of Roku OS 15.0, this command returns the following fields that indicate whet
 | query/icon/<APP_ID>  | Returns an icon corresponding to the application identified by appID. The binary data with an identifying MIME-type header is returned. This command is accessed using an HTTP GET. Example: GET /query/icon/1  |  **Control by mobile apps** setting “Enabled”  |
 | query/chanperf
 
-query/chanperf/<_channelld_ >?duration-seconds=<_seconds_ >  | Returns the current memory and CPU utilization of the app running in the foreground (RAM usage is reported bytes). The foreground app may either be a sideloaded app or an app from the Streaming Store. To output the results for an app in the app store, the device must be keyed with the same developer ID/key that was used to generate the package file.
+query/chanperf/<_channelld_ >?duration-seconds=<_seconds_ >  | Returns the current memory and CPU utilization of the app running in the foreground (RAM usage is reported bytes). The foreground app may either be a sideloaded app or an app from the Streaming Store.
+
+To output the results for an app in the app store, the device must be keyed with the same developer ID/key that was used to generate the package file.
+
+As of Roku OS 15.2, the command response includes a new **proc-stat** field that reports the raw Linux CPU and processing status information ([/proc/pid/stat](https://www.man7.org/linux/man-pages//man5/proc_pid_stat.5.html)). Developers can use this data in their own monitoring and debugging tools to optimize app performance.
 
   * Including the **channelId** option in the path outputs statistics for a specific app from the Streaming Store. To use this command, the device must be keyed with the same developer ID/key that was used to generate the package file. The app's process ID (pid) is added to the output of this command.
 
@@ -384,6 +388,19 @@ The response includes the following fields:
             <user>12.2</user>
             <sys>5.5</sys>
         </cpu-percent>
+    <proc-stat>
+      <utime>1459</utime>
+      <stime>216</stime>
+      <cutime>0</cutime>
+      <cstime>0</cstime>
+      <minflt>32616</minflt>
+      <majflt>3584</majflt>
+      <cminflt>0</cminflt>
+      <cmajflt>0</cmajflt>
+      <state>S</state>
+      <starttime>63109</starttime>
+      <clk-tck>100</clk-tck>
+    </proc-stat>
         <memory>
             <used>87785472</used>
             <res>87785472</res>

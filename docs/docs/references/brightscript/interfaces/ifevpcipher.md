@@ -17,6 +17,37 @@ Configures and initializes a new cipher context.
 | padding  | Integer  | 1 to use standard padding; 0 for no padding)  |
 #### Return Value
 Returns 0 on success or non-zero on failure.
+### setTag (tag as roByteArray) as Boolean
+_Available since Roku OS 15.2_
+#### Description
+AES-GCM is an authenticated encryption mode. It generates an authentication tag during encryption that must be verified during decryption. This tag ensures data integrity and authenticity. To support GCM, the **setTag()** function is used to set the expected tag.
+#### Parameters
+| Name  | Type  | Description  |
+| --- | --- | --- |
+| tag  | roByteArray  | The expected tag to be set.  |
+#### Return Value
+A boolean indicating whether the operation was successful.
+#### Example:
+
+```
+cipher = CreateObject("roEVPCipher")
+cipher.Setup(true, "aes-128-gcm", key, iv, false)
+ciphertext = cipher.Process(plaintext)
+tag = cipher.GetTag()  ' Retrieve the authentication tag
+
+... decryption
+cipher.Setup(false, "aes-128-gcm", key, iv, false)  ' false = decrypt mode
+cipher.SetTag(expectedTag)  ' Set the expected tag
+plaintext = cipher.Process(ciphertext)  ' Decryption will verify the tag
+
+```
+
+### getTag() as roByteArray
+_Available since Roku OS 15.2_
+#### Description
+Gets the expected AES-GCM tag.
+#### Return Value
+A roByteArray indicating the expected AES-GCM tag to be retrieved.
 ### Reinit() as Integer
 #### Description
 Reinitializes an existing cipher context. This can be called to reuse an existing [roEVPCipher](https://developer.roku.com/docs/references/brightscript/components/roevpdigest.md "roEVPCipher") object to encrypt new data

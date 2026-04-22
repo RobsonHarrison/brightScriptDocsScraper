@@ -1003,13 +1003,31 @@ struct ExceptionBreakpointInfo {
  |
 ## Virtual Variables
 _Available since Roku OS 14.1_
-Virtual variables are values that can be retrieved with a VARIABLES request but do not correspond to actual variables (for example, the length of a container). By convention, variables start with a `$` character. The following virtual variables are supported:
+Virtual variables are values that can be retrieved with a VARIABLES request but do not correspond to actual variables (for example, the length of a container). By convention, variables start with a `$` character.
+> As of Roku OS 15.2, developers can use virtal variables to retrieve **roInputEvent** , **roUrlEvent** , and **roDateTime** values. This improves stepping performance when these virtual variables are expanded.
+The following virtual variables are supported:
 | Object Type  | Name  | Type  | Description  |
 | --- | --- | --- | --- |
 | roSGNode  | $children  | roArray  | The SceneGraph children of the given node. This is equivalent to calling `node.getChildren(-1, 0)`.  |
 | roSGNode  | $parent  | roSGNode  | The SceneGraph parent of the given node. This is equivalent to calling `node.getParent()`.  |
 | roSGNode  | $threadinfo  | roAssociativeArray  | The threadInfo of the given node. This is equivalent to calling `node.threadInfo()`.  |
 | Container types  | $count  | Integer  | The number of elements in the container. This is equivalent to calling `var.Count()`.  |
+| roInputEvent  | $isInput  | .IsInput()  | Returns a flag indicating whether an input event was received  |
+| roInputEvent  | $info  | .GetInfo()  | Returns an roAssociativeArray describing the input event.  |
+| roUrlEvent  | $int  | .GetInt()  | Returns the type of event  |
+| roUrlEvent  | $responseCode  | .GetResponseCode()  | Returns the protocol response code associated with this event.  |
+| roUrlEvent  | $failureReason  | .GetFailureReason()  | Returns a description of the failure that occurred.  |
+| roUrlEvent  | $string  | .GetString()  | For transfer complete AsyncGetToString, AsyncPostFromString and AsnycPostFromFile requests this will be the actual response body from the server. This method returns the string associated with the event.  |
+| roUrlEvent  | $sourceIdentity  | .GetSourceIdentity()  | Returns a magic number that can be matched with the value returned by the [roUrlTransfer.GetIdentity()](https://developer.roku.com/docs/references/brightscript/interfaces/ifurltransfer.md#getidentity-as-integer) method to determine the source of the roUrlTransfer event.  |
+| roUrlEvent  | $responseHeaders  | .GetResponseHeaders()  | Return an roAssociativeArray containing all the headers returned by the server for appropriate protocols (such as HTTP). Headers are only returned when the status code is greater than or equal to 200 and less than 300  |
+| roUrlEvent  | $targetIpAddress  | .GetTargetIpAddress()  | Returns the IP address of the destination.  |
+| roUrlEvent  | $responseHeadersArray  | .GetResponseHeadersArray()  | Returns an roArray of roAssociativeArrays, where each associative array contains a single header name/value pair. Use this function if you need access to duplicate headers, since GetResponseHeaders() returns only the last name/value pair for a given name. All headers are returned regardless of the status code  |
+| roDateTime  | $asSecondLong  | .GetAsSecondLong()  | Returns a LongInteger representing the date/time as the number of seconds from the Unix epoch (00:00:00 1/1/1970 GMT).  |
+| roDateTime  | $date  | .GetDate()  | Returns the localized date of the device.  |
+| roDateTime  | $iso  | .GetIso()  | Returns an ISO 8601 representation of the date/time value with milliseconds precision.  |
+| roDateTime  | $milliseconds  | .GetMilliseconds()  | Returns the date/time value's millisecond within the second.  |
+| roDateTime  | $lastDayOfMonth  | .GetLastDayOfMonth()  | Returns the date/time value's last day of the month.  |
+| roDateTime  | $dayOfWeek  | .GetDayOfWeek()  | Returns the date/time value's day of week.  |
 Virtual variables are only returned if both GET_VIRTUAL_KEYS and GET_CHILD_KEYS are set in the VARIABLES request. Variable paths may include multiple virtual keys. For example, to get the first grandchild node's thread info, the client can send a request with the following path: `node.$children.0.$children.0.$threadinfo`.
 ## Sample remote debugger
 You can [download the Roku Remote Debugger](https://github.com/rokudev/remote-debugger), which is a Python-based sample command-line remote debugger for testing and debugging Roku apps under development. The Roku Remote Debugger (**rokudebug.py**) provides the same functionality as the [BrightScript debug console](https://developer.roku.com/docs/developer-program/debugging/debugging-channels.md#brightscript-console-port-8085-commands); however, it demonstrates how the BrightScript network debug protocol could be used to integrate a debug tool into an IDE.

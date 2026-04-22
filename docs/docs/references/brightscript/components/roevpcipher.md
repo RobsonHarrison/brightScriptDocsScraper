@@ -13,6 +13,8 @@ Some of the ciphers do not have large keys and others have security implications
 | aes-[128/192/256]-cfb8  | 128/192/256 bit AES in 8 bit CFB mode  | 128,192,256  | 128  |
 | aes-[128/192/256]-ecb  | 128/192/256 bit AES in ECB mode  | 128,192,256  | 128  |
 | aes-[128/192/256]-ofb  | 128/192/256 bit AES in OFB mode  | 128,192,256  | 128  |
+| aes-gcm-128
+ _Available since Roku OS 15.2_  | 128 bit AES in GCM mode  | 128  | 128  |
 | bf-cbc  | Blowfish in CBC mode
 
 > Blowfish (bf*) ciphers are obsolete. Support for these ciphers may be removed in future Roku OS releases.
