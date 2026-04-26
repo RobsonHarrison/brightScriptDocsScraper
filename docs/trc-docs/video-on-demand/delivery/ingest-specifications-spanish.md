@@ -5,7 +5,7 @@ Como alternativa a esta especificación, Roku Channel admite la entrega de conte
   * **MMC y MEC:** el servicio MovieLabs de Roku Channel se desarrolló con la versión 2.9 de MEC y la versión 1.10 de MMC, tal y como se define en el sitio web de MovieLabs: <https://www.movielabs.com/md/>
   * **EMA Avails:** Roku Channel admite la última versión de la [especificación de EMA](https://movielabs.com/md/avails/) a través del archivo entregable en formato xlsx
 
-Roku prefiere los entregables de MovieLabs de todas las empresas socias de suscripción prémium (SVOD). Consulta los detalles adicionales de entrega de MovieLabs específicos para Roku Channel [aquí](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#entrega-de-contenido-de-movielabs)
+Roku prefiere los entregables de MovieLabs de todas las empresas socias de suscripción prémium (SVOD). Consulta los detalles adicionales de entrega de MovieLabs específicos para Roku Channel [aquí](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#entrega-de-contenido-de-movielabs)
 ## Políticas de contenido de Roku
 ### Política de anuncios
 Roku mostrará hasta 8 minutos de anuncios por hora de visualización. La política de anuncios de Roku está sujeta a cambios.
@@ -35,10 +35,10 @@ El “contenido dirigido a niños” es contenido que: (i) está dirigido a niñ
   * Cuando Roku aprueba el envío o la distribución de contenido dirigido a niños, todos los metadatos del contenido deben incluir lo que se detalla a continuación:
     * Para contenido de películas:
       * La leyenda `<tag>` “kidsdirected” (todo en minúscula) debe incluirse como una de las etiquetas para cada película
-      * Debe incluirse una [clasificación](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) por edades válida de MPAA, USA_PR o TV. Las clasificaciones “UNRATED” y “Not Rated” no son aceptables para el contenido dirigido a niños.
+      * Debe incluirse una [clasificación](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) por edades válida de MPAA, USA_PR o TV. Las clasificaciones “UNRATED” y “Not Rated” no son aceptables para el contenido dirigido a niños.
     * Para contenido de series por episodios:
       * La leyenda `<tag>` “kidsdirected” (todo en minúscula) debe incluirse como una de las etiquetas de la serie y los episodios para cada serie y episodio
-      * Debe incluirse una [clasificación](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) por edades de TV válida. Las clasificaciones “UNRATED” y “Not Rated” no son aceptables para el contenido dirigido a niños.
+      * Debe incluirse una [clasificación](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) por edades de TV válida. Las clasificaciones “UNRATED” y “Not Rated” no son aceptables para el contenido dirigido a niños.
 
 Consulta [aquí](https://docs.roku.com/published/madeforkids) para obtener más información y asesoramiento sobre contenido “creado para niños”
 ### Marcas y llamadas a la acción (CTA) externas
@@ -75,7 +75,7 @@ Las empresas socias pueden ayudar en la selección de su contenido en Roku Chann
     * no más de 2 segundos de negro tras la finalización del programa
 
   * Los archivos de video deben tener muy poco texto (lo que también se conoce como “con texto sin subtítulos” o “sin texto con texto principal, final y gráfico”). El video puede incluir los crédito iniciales y finales, pero deben eliminarse todos los subtítulos de los diálogos en idioma extranjero.
-  * No deben incluirse anuncios en el video. Todos los puntos de inserción de anuncios para el contenido financiado con anuncios se proporcionarán en el archivo de metadatos según las [pautas de la Política de anuncios de Roku.](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#pol%C3%ADtica-de-anuncios)
+  * No deben incluirse anuncios en el video. Todos los puntos de inserción de anuncios para el contenido financiado con anuncios se proporcionarán en el archivo de metadatos según las [pautas de la Política de anuncios de Roku.](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#pol%C3%ADtica-de-anuncios)
   * Pueden incluirse fotogramas en negro para comerciales en el video siempre que no duren más de 2 segundos.
   * Pueden incluirse fotogramas en negro para comerciales en el contenido de TV por episodios, pero no en el contenido de películas.
   * Los archivos de video deben entregarse como un único archivo de video sin interrupciones.
@@ -157,7 +157,7 @@ A continuación, se enumeran los formatos de audio sidecar compatibles. Entrega 
 #### Audio descriptivo
 El audio descriptivo es una pista de audio alternativa para las personas con discapacidad visual. Puedes consultar la documentación oficial de la FCC sobre descripción de audio en el siguiente enlace:
 <https://www.fcc.gov/audio-description>
-Roku prefiere recibir pistas de audio descriptivo siempre que sea posible. El material de audio descriptivo debe entregarse de acuerdo con las pautas indicadas en la sección anterior de [Entregables de audio secundario](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#entregables-de-audio-secundario)
+Roku prefiere recibir pistas de audio descriptivo siempre que sea posible. El material de audio descriptivo debe entregarse de acuerdo con las pautas indicadas en la sección anterior de [Entregables de audio secundario](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#entregables-de-audio-secundario)
 #### Consejos para el diseño de los canales de audio
 En caso de que los archivos de video no puedan crearse para incluir etiquetas de canal de audio adecuadas, se debe proporcionar un consejo de diseño de audio en los metadatos para los archivos de video que se entreguen. A continuación, se definen los consejos disponibles.
 ##### Consejos de diseño de audio
@@ -393,7 +393,7 @@ El orden de entrega es importante. El servicio MovieLabs de Roku requerirá que 
   * Las series procesadas por el sistema de Roku antes que una temporada y un episodio perteneciente a esa serie se mantendrán en un estado de ingesta pendiente hasta que una temporada y un episodio se hayan entregado correctamente.
 
 ### Metadatos y archivos multimedia específicos de Roku
-[Los archivos de video](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#requisitos-de-video), [archivos de audio](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#requisitos-de-audio), [archivos de subtítulos descriptivos](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#subt%C3%ADtulos-descriptivos), [archivos de subtítulos](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#subt%C3%ADtulos), [archivos de imágenes](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones), [requisitos mínimos de metadatos](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#metadatos-m%C3%ADnimos-requeridos-por-tipo-de-contenido), [géneros](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) y [clasificaciones y fuentes de clasificación](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) deben adherirse a los formatos y requisitos compatibles definidos en esta especificación
+[Los archivos de video](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#requisitos-de-video), [archivos de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#requisitos-de-audio), [archivos de subtítulos descriptivos](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#subt%C3%ADtulos-descriptivos), [archivos de subtítulos](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#subt%C3%ADtulos), [archivos de imágenes](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones), [requisitos mínimos de metadatos](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#metadatos-m%C3%ADnimos-requeridos-por-tipo-de-contenido), [géneros](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) y [clasificaciones y fuentes de clasificación](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) deben adherirse a los formatos y requisitos compatibles definidos en esta especificación
 #### Tags
 Las etiquetas para merchandising/curación se pueden enviar a través del nodo de palabras clave compatible con el XML de MovieLabs MEC. Consulte [el esquema MEC de MovieLabs](https://movielabs.com/md/mec/v2.9/mdmec-v2.9/mdmec-v2.9.html#Link116) para la correcta colocación del nodo de palabra clave.
 Ejemplo:
@@ -601,7 +601,7 @@ Ciertos caracteres en un XML harán que el documento sea ilegible para la plataf
 | Mayor de  | >  | `&gt;`  |
 | Comillas  | "  | `&quot;`  |
 | Apóstrofe  | '  | `'`  |
-Nunca deben utilizarse caracteres especiales en los nombres de archivo ni en las referencias a nombres de archivo dentro de los metadatos en formato XML o Excel. [Consulta las Pautas de denominación de archivos](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#entrega-de-archivos) para obtener más información al respecto.
+Nunca deben utilizarse caracteres especiales en los nombres de archivo ni en las referencias a nombres de archivo dentro de los metadatos en formato XML o Excel. [Consulta las Pautas de denominación de archivos](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#entrega-de-archivos) para obtener más información al respecto.
 ### Formatos de metadatos compatibles
 Se prefiere el formato XML. Se debe entregar un XML completo por cada archivo de video de película, clip o episodio de TV entregado. Los metadatos se deben entregar a través de Aspera en la misma carpeta que los archivos de video, subtítulos descriptivos e ilustraciones.
 **Formatos de metadatos compatibles**
@@ -613,7 +613,7 @@ tv1.0
 Cablelabs ADI 1.1
 
 ** _La compatibilidad de esquemas XML adicionales se define caso por caso_**  |
-| Excel  | .xlsx  | Consulta [las plantillas de metadatos de Excel](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#pautas-y-plantillas-de-metadatos-de-excel-de-roku) y [las pautas de metadatos de Excel de Roku](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#pautas-y-plantillas-de-metadatos-de-excel-de-roku) más adelante  |   |
+| Excel  | .xlsx  | Consulta [las plantillas de metadatos de Excel](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#pautas-y-plantillas-de-metadatos-de-excel-de-roku) y [las pautas de metadatos de Excel de Roku](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#pautas-y-plantillas-de-metadatos-de-excel-de-roku) más adelante  |   |
 ### Actualización de metadatos (MDU) y reemplazos de archivos
 Las actualizaciones son automatizadas y pueden enviarse si hay necesidad de modificar metadatos o archivos de activos para cualquier programa que haya sido previamente entregado a Roku Channel. Todas las actualizaciones de metadatos o reemplazos de archivos deben incluir el **Provider** , el **asset_id** y el **Content Type** del programa tal como se entregó originalmente a Roku para que la actualización resulte exitosa. Roku gestionará el control de versiones, no hay necesidad de proporcionar información de versiones en los metadatos.
 Roku actualmente admite la actualización de los siguientes campos de metadatos a través de la MDU automatizada:
@@ -675,7 +675,7 @@ Los reemplazos y las adiciones de archivos están automatizados y se procesarán
 
 _Se recomienda proporcionar archivos de reemplazo con un nombre único, tanto en los metadatos como en el mismo archivo. Agregar un número de versión (_v2, _v3, etc.) es suficiente. Por ejemplo:_ `título de_película_v2.mov`
 **Eliminación de contenido**
-Si los derechos cambian desde el momento en que el contenido se entregó originalmente a Roku y es necesario retirarlo de Roku Channel, ya sea de forma inmediata o programada, la fecha de finalización de la disponibilidad se puede cambiar mediante una actualización de metadatos como se define [más adelante](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#actualizaci%C3%B3n-de-metadatos-mdu-y-reemplazos-de-archivos). Se deben proporcionar actualizaciones explícitas para todos los territorios en los que se debe eliminar el contenido. Ten en cuenta que las fechas de finalización proporcionadas sin valores de tiempo específicos caducarán a las 11:59:59 p. m. de dicha fecha.
+Si los derechos cambian desde el momento en que el contenido se entregó originalmente a Roku y es necesario retirarlo de Roku Channel, ya sea de forma inmediata o programada, la fecha de finalización de la disponibilidad se puede cambiar mediante una actualización de metadatos como se define [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#actualizaci%C3%B3n-de-metadatos-mdu-y-reemplazos-de-archivos). Se deben proporcionar actualizaciones explícitas para todos los territorios en los que se debe eliminar el contenido. Ten en cuenta que las fechas de finalización proporcionadas sin valores de tiempo específicos caducarán a las 11:59:59 p. m. de dicha fecha.
 ### Requisitos, muestras y esquemas de metadatos XML de Roku
 | Esquema XML de Roku  | Enlace de descarga  |
 | --- | --- |
@@ -718,10 +718,10 @@ Ejemplo:
 ```
 
 **language**
-Idioma principal de los metadatos del paquete. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
+Idioma principal de los metadatos del paquete. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/language`  |  [Valor de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
+| `/package/language`  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -814,10 +814,10 @@ Ejemplo:
 ```
 
 **original_spoken_language**
-Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
+Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/original_spoken_language`  |  [Valor de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
+| `/package/video/original_spoken_language`  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -887,10 +887,10 @@ Ejemplo:
 ```
 
 **genre**
-Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.
+Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/genres/genre`  | Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | Obligatorio  |
+| `/package/video/genres/genre`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -905,7 +905,7 @@ Ejemplo:
 Clasificación por edades o de contenido de la película según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada. Valor de clasificación múltiple
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-|  `/package/video/ratings/rating` `debe incluir el atributo del sistema`  | Consulta [más adelante](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación Se permiten múltiples pares de clasificación y sistemas de clasificación  | Obligatorio  |
+|  `/package/video/ratings/rating` `debe incluir el atributo del sistema`  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación Se permiten múltiples pares de clasificación y sistemas de clasificación  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -934,7 +934,7 @@ Ejemplo:
 ```
 
 **adBreak** **start_time**
-Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.
+Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
 | `/package/video/adBreaks/adBreak/start_time`  | HH:MM:SS.sss  | Preferiblemente para el contenido AVOD  |
@@ -1036,10 +1036,10 @@ Ejemplo:
 ```
 
 **role**
-Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
+Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
+| `/package/video/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
 
 ```
@@ -1060,10 +1060,10 @@ Ejemplo:
 ```
 
 **localization name attribute**
-Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
+Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
+| `/package/video/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -1244,7 +1244,7 @@ Ejemplo:
 ```
 
 **artwork**
-El bloque que describe los archivos de ilustración. El atributo de la etiqueta del activo debe ser type="artwork". También se requieren los nodos y <file_name>. Consulta [Ilustraciones](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones) para conocer las especificaciones completas sobre la entrega de imágenes.
+El bloque que describe los archivos de ilustración. El atributo de la etiqueta del activo debe ser type="artwork". También se requieren los nodos y <file_name>. Consulta [Ilustraciones](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones) para conocer las especificaciones completas sobre la entrega de imágenes.
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
 | `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="artwork"`  | Obligatorio  |
@@ -1261,10 +1261,10 @@ Ejemplos
 ```
 
 **locale**
-Identifica el idioma del data_file. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Aplica para las funciones del data_file: fuente, subtítulos descriptivos, audio, subtítulos y para el tipo de activo de ilustración.
+Identifica el idioma del data_file. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Aplica para las funciones del data_file: fuente, subtítulos descriptivos, audio, subtítulos y para el tipo de activo de ilustración.
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/assets/asset/data_file/locale`  | [Código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
+| `/package/video/assets/asset/data_file/locale`  | [Código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -1290,7 +1290,7 @@ Ejemplo:
 ```
 
 **audio**
-[Descriptor de diseño de audio](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. Consulta las pautas más adelante
+[Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. Consulta las pautas más adelante
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
 | `/package/video/assets/asset/data_file/audio`  | Valores permitidos: stereoOnly surroundOnly stereoPlusSurround surroundPlusStereo  | Opcional  |
@@ -1328,10 +1328,10 @@ Ejemplo:
 ```
 
 **language**
-Idioma principal de los metadatos del paquete. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
+Idioma principal de los metadatos del paquete. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/language`  | [Código de idioma válido](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
+| `/package/language`  | [Código de idioma válido](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -1489,7 +1489,7 @@ Ejemplo:
 Clasificación por edades o de contenido del episodio según una fuente de clasificación. Se facilitará para cada episodio una clasificación válida de TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada. Valor de clasificación múltiple
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-|  `/package/video/ratings/rating` `debe incluir el atributo del sistema`  | Consulta [más adelante](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. Se permiten múltiples pares de clasificación y sistemas de clasificación  | Obligatorio  |
+|  `/package/video/ratings/rating` `debe incluir el atributo del sistema`  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. Se permiten múltiples pares de clasificación y sistemas de clasificación  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -1518,7 +1518,7 @@ Ejemplo:
 ```
 
 **adBreak start_time**
-Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.
+Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
 | `/package/video/adBreaks/adBreak`  | HH:MM:SS.sss  | Preferiblemente para el contenido AVOD  |
@@ -1620,10 +1620,10 @@ Ejemplo:
 ```
 
 **role**
-Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
+Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
+| `/package/video/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
 
 ```
@@ -1644,10 +1644,10 @@ Ejemplo:
 ```
 
 **localization name attribute**
-Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
+Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
+| `/package/video/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -1752,10 +1752,10 @@ Ejemplo:
 ```
 
 **original_spoken_language**
-Define el idioma original de producción del episodio que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
+Define el idioma original de producción del episodio que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/series/original_spoken_language`  |  [Código de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
+| `/package/video/series/original_spoken_language`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -1788,10 +1788,10 @@ Ejemplo:
 ```
 
 **genre**
-Clasificación del contenido por género. Roku requiere que cada episodio se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.
+Clasificación del contenido por género. Roku requiere que cada episodio se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/series/genres/genre`  | Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | Obligatorio  |
+| `/package/video/series/genres/genre`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -1848,10 +1848,10 @@ Ejemplo:
 ```
 
 **role**
-Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
+Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/series/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
+| `/package/video/series/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
 
 ```
@@ -1872,10 +1872,10 @@ Ejemplo:
 ```
 
 **localization name attribute**
-Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
+Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/series/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
+| `/package/video/series/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -2092,7 +2092,7 @@ Ejemplo:
 ```
 
 **artwork**
-El bloque que describe los archivos de ilustración. El atributo de la etiqueta del activo debe ser type="artwork". El atributo de la etiqueta data_file puede ser type="episode" para la entrega de imágenes al nivel del episodio, o type="series" para la entrega de imágenes al nivel de la serie. También se requieren los nodos y <file_name>. Consulta [Ilustraciones](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones) para conocer las especificaciones completas sobre la entrega de imágenes.
+El bloque que describe los archivos de ilustración. El atributo de la etiqueta del activo debe ser type="artwork". El atributo de la etiqueta data_file puede ser type="episode" para la entrega de imágenes al nivel del episodio, o type="series" para la entrega de imágenes al nivel de la serie. También se requieren los nodos y <file_name>. Consulta [Ilustraciones](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones) para conocer las especificaciones completas sobre la entrega de imágenes.
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
 | `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="artwork"` `data_file type="episode"`  | Preferido  |
@@ -2108,10 +2108,10 @@ Ejemplo:
 ```
 
 **locale**
-Identifica el idioma del data_file. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Aplica para las funciones del data_file: fuente, subtítulos descriptivos, audio, subtítulos y para el tipo de activo de ilustración.
+Identifica el idioma del data_file. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Aplica para las funciones del data_file: fuente, subtítulos descriptivos, audio, subtítulos y para el tipo de activo de ilustración.
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/assets/asset/data_file/locale`  | [Código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
+| `/package/video/assets/asset/data_file/locale`  | [Código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -2137,7 +2137,7 @@ Ejemplo:
 ```
 
 **audio**
-[Descriptor de diseño de audio](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. Consulta las pautas más adelante
+[Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. Consulta las pautas más adelante
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
 | `/package/video/assets/asset/data_file/audio`  | Valores permitidos: stereoOnly surroundOnly stereoPlusSurround surroundPlusStereo  | Opcional  |
@@ -2175,10 +2175,10 @@ Ejemplo:
 ```
 
 **language**
-Idioma principal de los metadatos del paquete. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
+Idioma principal de los metadatos del paquete. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/language`  | [Código de idioma válido](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
+| `/package/language`  | [Código de idioma válido](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -2293,10 +2293,10 @@ Ejemplo:
 ```
 
 **original_spoken_language**
-Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
+Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/original_spoken_language`  |  [Código de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
+| `/package/video/original_spoken_language`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -2367,10 +2367,10 @@ Ejemplo:
 ```
 
 **genre**
-Clasificación del contenido por género. Roku requiere que cada clip de formato corto se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.
+Clasificación del contenido por género. Roku requiere que cada clip de formato corto se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/genres/genre`  | Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | Obligatorio  |
+| `/package/video/genres/genre`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -2385,7 +2385,7 @@ Ejemplo:
 Clasificación por edades o de contenido del clip de formato corto según una fuente de clasificación. Se facilitará para cada clip de formato corto una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada. Valor de clasificación múltiple
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-|  `/package/video/ratings/rating` `debe incluir el atributo del sistema`  | Consulta [más adelante](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. Se permiten múltiples pares de clasificación y sistemas de clasificación  | Obligatorio  |
+|  `/package/video/ratings/rating` `debe incluir el atributo del sistema`  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. Se permiten múltiples pares de clasificación y sistemas de clasificación  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -2443,10 +2443,10 @@ Ejemplo:
 ```
 
 **role**
-Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
+Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
+| `/package/video/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
 
 ```
@@ -2467,10 +2467,10 @@ Ejemplo:
 ```
 
 **localization name attribute**
-Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
+Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
+| `/package/video/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -2651,7 +2651,7 @@ Ejemplo:
 ```
 
 **artwork**
-El bloque que describe los archivos de ilustración. El atributo de la etiqueta del activo debe ser type="artwork". También se requieren los nodos y <file_name>. Consulta [Ilustraciones](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones) para conocer las especificaciones completas sobre la entrega de imágenes.
+El bloque que describe los archivos de ilustración. El atributo de la etiqueta del activo debe ser type="artwork". También se requieren los nodos y <file_name>. Consulta [Ilustraciones](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones) para conocer las especificaciones completas sobre la entrega de imágenes.
 | Xpath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
 | `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="artwork"`  | Obligatorio  |
@@ -2663,10 +2663,10 @@ Ejemplo:
 
 ```
 
-**locale** Identifica el idioma del data_file. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Aplica para las funciones del data_file: fuente, subtítulos descriptivos, audio y subtítulos, y para el tipo de activo de ilustración.
+**locale** Identifica el idioma del data_file. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Aplica para las funciones del data_file: fuente, subtítulos descriptivos, audio y subtítulos, y para el tipo de activo de ilustración.
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
-| `/package/video/assets/asset/data_file/locale`  | [Código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
+| `/package/video/assets/asset/data_file/locale`  | [Código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
 Ejemplo:
 
 ```
@@ -2687,7 +2687,7 @@ Ejemplo:
 ```
 
 **audio**
-[Descriptor de diseño de audio](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. Consulta las pautas más adelante
+[Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. Consulta las pautas más adelante
 | XPath XML  | Valores aceptados  | Obligatorio  |
 | --- | --- | --- |
 | `/package/video/assets/asset/data_file/audio`  | Valores permitidos: stereoOnly surroundOnly stereoPlusSurround surroundPlusStereo  | Opcional  |
@@ -2870,7 +2870,7 @@ Los metadatos de Excel solo se aceptarán si se entregan en los formatos aprobad
 | Plantilla de metadatos de Excel para clips  | [Descargar aquí](https://go.roku.com/clip-excel-template)  |
 La plantilla de metadatos de Excel de Roku debe enviarse con todos los campos obligatorios completos. Roku incluyó consejos en la fila 2 de cada plantilla de metadatos en los que se indica qué celdas se deben resaltar y el formato especial necesario para cada celda. Consulta estos consejos al momento de completar la plantilla de metadatos de Excel. Otras cuestiones a tener en cuenta a la hora de completar una plantilla incluyen:
   * Las fechas deben proporcionarse en formato AAAA-MM-DD (cambia el formato de la celda a “Texto” de ser necesario).
-  * Los nombres de los archivos no deben tener [caracteres especiales ni espacios](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#caracteres-especiales)
+  * Los nombres de los archivos no deben tener [caracteres especiales ni espacios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#caracteres-especiales)
   * Las fórmulas utilizadas deben convertirse en texto antes del envío. Si se incluye una fórmula, las entregas serán rechazadas y se producirán retrasos o fallos en el procesamiento del contenido
   * No incluyas enlaces a datos o libros de Excel externos. Todos los datos deben estar incluidos en el libro de Excel entregado a Roku.
   * No agregues hojas adicionales al libro.
@@ -2888,18 +2888,18 @@ La plantilla de metadatos de Excel de Roku debe enviarse con todos los campos ob
 | --- | --- | --- | --- |
 | provider  | Nombre del estudio, cadena o propietario del contenido  | Ejemplo: Roku Originals  | obligatorio  |
 | contentType  | Define el tipo de contenido del paquete  | film  | obligatorio  |
-| language  | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma.  |  [Valor de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
-| original_spoken_language  | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).  |  [Valor de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| language  | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma.  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| original_spoken_language  | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
 | country_of_origin  | Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html).  | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html)  | preferido  |
 | asset_id  | Identificador único e inalterable de una película. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID del título proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | obligatorio  |
 | title  | Título de la película en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)  | Ejemplo:
 Título de película  | obligatorio  |
-| genres  | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.  | Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | obligatorio  |
+| genres  | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | obligatorio  |
 | tags  | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.  | cualquier cadena de menos de 50 caracteres  | MUY recomendado  |
 | runtime  | Tiempo de duración total del contenido en minutos enteros  | Solo números enteros.
 Ejemplo: 90  | obligatorio  |
 | release_date  | Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno  | Conforme al formato ISO 8601: AAAA-MM-DD  | obligatorio  |
-| adBreaks  | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.  | HH:MM:SS.sss  | preferido  |
+| adBreaks  | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.  | HH:MM:SS.sss  | preferido  |
 | cuePoints  | Se utiliza para identificar los horarios de inicio y de finalización de los créditos iniciales, los resúmenes de contenido, los créditos finales y el material de detrás de escena. Los valores de los horarios de inicio y finalización de cuePoint deben tener una precisión de milisegundos. lista separada por comas con el siguiente formato: `type`=`startTime`>`endTime` Ejemplo: intro=00:05:10.253>00:07:15:123, recap=00:01:12.456>00:03:12.052  | Formato:
 type=HH:MM:SS.sss
 HH:MM:SS.sss
@@ -2909,8 +2909,8 @@ Valores de tipos permitidos:
 `intro`
 `recap`
 `end`  | opcional  |
-| ratingSystem  | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido.  | Consulta [más adelante](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
-| ratings  | Clasificación por edades o de contenido de la película según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada.  | Consulta [más adelante](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
+| ratingSystem  | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
+| ratings  | Clasificación por edades o de contenido de la película según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
 | cast  | Nombres de los miembros del reparto  | Lista de nombres y apellidos separados por comas  | preferido  |
 | director  | Nombre(s) del director de la película. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel.  | Lista de nombres y apellidos separados por comas  | preferido  |
 | short_synopsis  | Una sinopsis breve del contenido en el idioma definido en la columna de idioma. Límite de 250 caracteres.  | sinopsis de 250 caracteres  | obligatorio  |
@@ -2921,7 +2921,7 @@ Valores de tipos permitidos:
 | closed_captions_exemption  | Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es necesario si el valor `closedCaptions` = “N” 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido.  |   | obligatorio en EE. UU. si closed_captions = N  |
 | video_file_name  | El nombre de archivo del video en el idioma definido en la columna de idioma que se entregó a través de Aspera. Solo se permite 1 video por asset_id. El video_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
 movieVideoFile.mov  | obligatorio  |
-| audio_layout  |  [Descriptor de diseño de audio](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado.  | Valores permitidos:
+| audio_layout  |  [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado.  | Valores permitidos:
 stereoOnly
 surroundOnly
 stereoPlusSurround
@@ -2958,15 +2958,15 @@ avod,svod  | preferido  |
 | provider  | Nombre del estudio, cadena o propietario del contenido  | Ejemplo:
 Roku Originals  | obligatorio  |
 | contentType  | Define el tipo de contenido del paquete  | episodio  | obligatorio  |
-| Language  | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma.  | Un [valor de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
-| original_spoken_language  | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).  | Un [valor de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| Language  | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma.  | Un [valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| original_spoken_language  | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).  | Un [valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
 | country_of_origin  | Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html).  | Un código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html)  | preferido  |
 | series_id  | Identificador único e inalterable de una serie. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID de la serie proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | obligatorio  |
 | series_title  | Título de la serie en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)  | Ejemplo:
 Título de la serie  | obligatorio  |
 | series_tmsId  | ID de Gracenote si existe uno  | Cualquier ID de TMS de programa válido  | opcional  |
 | series_release_date  | Fecha original en que la serie estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno  | Conforme al formato ISO 8601: AAAA-MM-DD  | obligatorio  |
-| series_genres  | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.  | Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | obligatorio  |
+| series_genres  | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | obligatorio  |
 | series_tags  | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.  | cualquier cadena de menos de 50 caracteres  | MUY recomendado  |
 | series_cast  | Nombres de los miembros del reparto de la serie  | Lista de nombres y apellidos separados por comas  | preferido  |
 | series_directors  | Nombre(s) del director de la serie. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel.  | Lista de nombres y apellidos separados por comas  | preferido  |
@@ -2982,7 +2982,7 @@ Título de película  | obligatorio  |
 | episode_release_date  | Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno  | Conforme al formato ISO 8601: AAAA-MM-DD  | obligatorio  |
 | episode_runtime  | Tiempo de duración total del contenido en minutos enteros  | Solo números enteros.
 Ejemplo: 22  | obligatorio  |
-| episode_adBreaks  | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.  | HH:MM:SS.sss  | preferido  |
+| episode_adBreaks  | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.  | HH:MM:SS.sss  | preferido  |
 | episode_cuePoints  | Se utiliza para identificar los horarios de inicio y de finalización de los créditos iniciales, los resúmenes de contenido, los créditos finales y el material de detrás de escena. Los valores de los horarios de inicio y finalización de cuePoint deben tener una precisión de milisegundos. lista separada por comas con el siguiente formato: `type`=`startTime`>`endTime` Ejemplo: intro=00:05:10.253>00:07:15:123, recap=00:01:12.456>00:03:12.052  | Formato:
 type=HH:MM:SS.sss
 HH:MM:SS.sss
@@ -2992,8 +2992,8 @@ Valores de tipos permitidos:
 `intro`
 `recap`
 `end`  | opcional  |
-| ratingSystem  | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido.  | Consulta [más adelante](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | Obligatorio  |
-| episode_ratings  | Clasificación por edades o de contenido para el contenido según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada.  | Consulta [más adelante](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
+| ratingSystem  | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | Obligatorio  |
+| episode_ratings  | Clasificación por edades o de contenido para el contenido según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
 | episode_tags  | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.  | cualquier cadena de menos de 50 caracteres  | MUY recomendado  |
 | episode_cast  | Nombres de los miembros del reparto  | Lista de nombres y apellidos separados por comas  | preferido  |
 | episode_director  | Nombre(s) del director del episodio. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel.  | Lista de nombres y apellidos separados por comas  | preferido  |
@@ -3005,7 +3005,7 @@ Valores de tipos permitidos:
 | closed_captions_exemption  | Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es necesario si el valor `closedCaptions` = “N” 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido.  |   | obligatorio en EE. UU. si closed_captions = N  |
 | video_file_name  | El nombre de archivo del video en el idioma definido en la columna de idioma que se entregó a través de Aspera. Solo se permite 1 video por asset_id. El video_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
 episodeVideoFile.mov  | obligatorio  |
-| audio_layout  |  [Descriptor de diseño de audio](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado.  | Valores permitidos:
+| audio_layout  |  [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado.  | Valores permitidos:
 stereoOnly
 surroundOnly
 stereoPlusSurround
@@ -3061,21 +3061,21 @@ interview
 related
 recap
 extra  | opcional  |
-| language  | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma.  |  [Valor de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
-| original_spoken_language  | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).  |  [Valor de idioma](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| language  | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma.  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| original_spoken_language  | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
 | country_of_origin  | Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html).  | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html)  | preferido  |
 | asset_id  | Identificador único e inalterable de una película. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID del título proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | obligatorio  |
 | title  | Título del clip en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)  | Ejemplo:
 Título de película  | obligatorio  |
-| genres  | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.  | Consulta la [enumeración](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | obligatorio  |
+| genres  | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | obligatorio  |
 | tags  | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.  | cualquier cadena de menos de 50 caracteres  | MUY recomendado  |
 | runtime  | Tiempo de duración total del contenido en minutos enteros  | Solo números enteros.
 Ejemplo: 90  | obligatorio  |
 | release_date  | Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno  | Conforme al formato ISO 8601: AAAA-MM-DD  | obligatorio  |
-| adBreaks  | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.  | HH:MM:SS.sss  | preferido  |
+| adBreaks  | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.  | HH:MM:SS.sss  | preferido  |
 | cuePoints  |   |   | opcional  |
-| ratingSystem  | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido.  | Consulta [más adelante](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
-| ratings  | Clasificación por edades o de contenido de la película según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada.  | Consulta [más adelante](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
+| ratingSystem  | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
+| ratings  | Clasificación por edades o de contenido de la película según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
 | cast  | Nombres de los miembros del reparto  | Lista de nombres y apellidos separados por comas  | preferido  |
 | director  | Nombre(s) del director de la película. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel.  | Lista de nombres y apellidos separados por comas  | preferido  |
 | short_synopsis  | Una sinopsis breve del contenido en el idioma definido en la columna de idioma. Límite de 250 caracteres.  | sinopsis de 250 caracteres  | obligatorio  |
@@ -3086,7 +3086,7 @@ Ejemplo: 90  | obligatorio  |
 | closed_captions_exemption  | Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es necesario si el valor `closedCaptions` = “N” 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido.  |   | obligatorio en EE. UU. si closed_captions = N  |
 | video_file_name  | El nombre de archivo del video en el idioma definido en la columna de idioma que se entregó a través de Aspera. Solo se permite 1 video por asset_id. El video_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
 movieVideoFile.mov  | obligatorio  |
-| audio_layout  |  [Descriptor de diseño de audio](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado.  | Valores permitidos:
+| audio_layout  |  [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado.  | Valores permitidos:
 stereoOnly
 surroundOnly
 stereoPlusSurround
@@ -3547,7 +3547,7 @@ La siguiente lista contiene todos los códigos de idioma que Roku admite actualm
 | Término  | Definición  |
 | --- | --- |
 | Paquete / Paquete completo / Paquete de activos / Paquete de activos completo  | Entrega completa de una película, episodio o video de formato corto. Un paquete está compuesto por: video, subtítulos descriptivos (si están disponibles), ilustraciones y metadatos. Cuando se entregan títulos en varios idiomas, el paquete también puede incluir: doblaje de audio, subtítulos, ilustraciones localizadas y metadatos localizados.  |
-| MDU  | [Actualización de metadatos](https://developer.roku.com/en-gb/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#actualizaci%C3%B3n-de-metadatos-mdu-y-reemplazos-de-archivos)  |
+| MDU  | [Actualización de metadatos](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#actualizaci%C3%B3n-de-metadatos-mdu-y-reemplazos-de-archivos)  |
 * * *
 ## Recursos
 | Recurso  | Enlace  |

@@ -90,57 +90,57 @@ Las empresas socias pueden ayudar en la selección de su contenido en Roku Chann
 #### Velocidad de fotogramas del video
 Roku admite una gran variedad de velocidades de fotogramas y tipos de escaneo. Todos los archivos de video deben entregarse con su velocidad de fotogramas y tipo de escaneo originales.
 #### Resolución de video
-Tipo | Ancho | Alto | Relación de aspecto de pixeles
----|---|---|---
-SD | 720 | 480 | 4:3 o 16:9 (pixeles anamórficos)
-SD | 640 | 480 | 1:1 (pixeles cuadrados)
-SD | 853 | 480 | 1:1 (pixeles cuadrados)
-SD | 720 | 576 | 4:3 o 16:9 (pixeles anamórficos)
-SD | 768 | 576 | 1:1 (pixeles cuadrados)
-SD | 1024 | 576 | 1:1 (pixeles cuadrados)
-HD | 1280 | 720 | 1:1 (pixeles cuadrados)
-FHD | 1920 | 1080 | 1:1 (pixeles cuadrados)
-UHD** | 3840 | 2160 | 1:1 (pixeles cuadrados)
+| Tipo  | Ancho  | Alto  | Relación de aspecto de pixeles  |
+| --- | --- | --- | --- |
+| SD  | 720  | 480  | 4:3 o 16:9 (pixeles anamórficos)  |
+| SD  | 640  | 480  | 1:1 (pixeles cuadrados)  |
+| SD  | 853  | 480  | 1:1 (pixeles cuadrados)  |
+| SD  | 720  | 576  | 4:3 o 16:9 (pixeles anamórficos)  |
+| SD  | 768  | 576  | 1:1 (pixeles cuadrados)  |
+| SD  | 1024  | 576  | 1:1 (pixeles cuadrados)  |
+| HD  | 1280  | 720  | 1:1 (pixeles cuadrados)  |
+| FHD  | 1920  | 1080  | 1:1 (pixeles cuadrados)  |
+| UHD**  | 3840  | 2160  | 1:1 (pixeles cuadrados)  |
 _**La resolución UHD solo se admite como resolución de entrada. Actualmente, Roku no codifica ni muestra video en formato 4K UHD en Roku Channel._
 #### Formatos de video
-Nombre | Códecs | Extensión | Tasa de bits
----|---|---|---
-Apple® ProRes | ProRes 444 (todos los perfiles)
+| Nombre  | Códecs  | Extensión  | Tasa de bits  |
+| --- | --- | --- | --- |
+| Apple® ProRes  | ProRes 444 (todos los perfiles)
 ProRes 4444 (todos los perfiles)
-ProRes 422 (todos los perfiles) | .mov | 50 Mbps o más
-XDCam |  | .mxf | 50 Mbps o más
-MPEG-2 |  | .ts.mpg | HD = 15 Mbps o más SD= 3.75 Mbps o más
-MPEG-4 | H.264 | .mp4 | 5 Mbps o más
+ProRes 422 (todos los perfiles)  | .mov  | 50 Mbps o más  |
+| XDCam  |   | .mxf  | 50 Mbps o más  |
+| MPEG-2  |   | .ts.mpg  | HD = 15 Mbps o más SD= 3.75 Mbps o más  |
+| MPEG-4  | H.264  | .mp4  | 5 Mbps o más  |
 ### Requisitos de audio
 _La configuración de audio de los archivos debe ser la estándar de la industria, con todos los canales claramente etiquetados por posición e idioma_ (según el formato del archivo)
   * Es preferible el audio PCM de 16 bits o 24 bits a 48 kHz con la tasa de bits más alta.
   * El audio Dolby AC3 es compatible.
 
 **Roku prefiere recibir audio 5.1 y estéreo siempre que sea posible.**
-Sonido envolvente 5.1 y sonido estéreo 2.0 | Etiqueta del canal
----|---
-Canal 1 | Frontal izquierdo (L)
-Canal 2 | Frontal derecho (R)
-Canal 3 | Central (C)
-Canal 4 | LFE (Lfe)
-Canal 5 | Envolvente izquierdo (Ls)
-Canal 6 | Envolvente derecho (Rs)
-Canal 7 | Estéreo izquierdo (SL)
-Canal 8 | Estéreo derecho (SR)
+| Sonido envolvente 5.1 y sonido estéreo 2.0  | Etiqueta del canal  |
+| --- | --- |
+| Canal 1  | Frontal izquierdo (L)  |
+| Canal 2  | Frontal derecho (R)  |
+| Canal 3  | Central (C)  |
+| Canal 4  | LFE (Lfe)  |
+| Canal 5  | Envolvente izquierdo (Ls)  |
+| Canal 6  | Envolvente derecho (Rs)  |
+| Canal 7  | Estéreo izquierdo (SL)  |
+| Canal 8  | Estéreo derecho (SR)  |
 **Solo se acepta sonido envolvente 5.1 si no se dispone de 5.1 y estéreo**
-Solo sonido envolvente 5.1 | Etiqueta del canal
----|---
-Canal 1 | Frontal izquierdo (L)
-Canal 2 | Frontal derecho (R)
-Canal 3 | Central (C)
-Canal 4 | LFE (Lfe)
-Canal 5 | Envolvente izquierdo (Ls)
-Canal 6 | Envolvente derecho (Rs)
+| Solo sonido envolvente 5.1  | Etiqueta del canal  |
+| --- | --- |
+| Canal 1  | Frontal izquierdo (L)  |
+| Canal 2  | Frontal derecho (R)  |
+| Canal 3  | Central (C)  |
+| Canal 4  | LFE (Lfe)  |
+| Canal 5  | Envolvente izquierdo (Ls)  |
+| Canal 6  | Envolvente derecho (Rs)  |
 **Solo se acepta sonido estéreo si no se dispone de 5.1 y estéreo o sonido envolvente 5.1 solo.**
-Estéreo 2.0 | Etiqueta del canal
----|---
-Canal 1 | Estéreo izquierdo (SL)
-Canal 2 | Estéreo derecho (SR)
+| Estéreo 2.0  | Etiqueta del canal  |
+| --- | --- |
+| Canal 1  | Estéreo izquierdo (SL)  |
+| Canal 2  | Estéreo derecho (SR)  |
 ### Entregables de audio secundario
 El contenido que se entregue con audio en un idioma que no sea el principal del territorio de distribución debe entregarse con un archivo de doblaje de audio o subtítulos que traduzcan el contenido al idioma principal de ese territorio. Las pistas de audio secundarias pueden multiplexarse con el archivo de video entregable o entregarse en un único archivo de audio sidecar entrelazado. Todas las pistas de audio secundarias, ya sea que estén multiplexadas en el video o entregadas como un archivo sidecar entrelazado, deben entregarse como una mezcla de audio completa. Roku no admite pistas de doblaje que solo contengan diálogo.
 #### Audio secundario sidecar
@@ -149,11 +149,11 @@ El contenido que se entregue con audio en un idioma que no sea el principal del 
   * Roku admite un archivo de doblaje de audio sidecar por idioma.
 
 A continuación, se enumeran los formatos de audio sidecar compatibles. Entrega audio sidecar con la mayor tasa de bits y frecuencia de muestreo disponibles.
-Contenedor | Códecs | Extensión
----|---|---
-WAV (preferido) | PCM | .wav
-MPEG-1 Layer 3 | MP3 | .mp3
-OGA | Opus, Vorbis | .ogg
+| Contenedor  | Códecs  | Extensión  |
+| --- | --- | --- |
+| WAV (preferido)  | PCM  | .wav  |
+| MPEG-1 Layer 3  | MP3  | .mp3  |
+| OGA  | Opus, Vorbis  | .ogg  |
 #### Audio descriptivo
 El audio descriptivo es una pista de audio alternativa para las personas con discapacidad visual. Puedes consultar la documentación oficial de la FCC sobre descripción de audio en el siguiente enlace:
 <https://www.fcc.gov/audio-description>
@@ -161,12 +161,12 @@ Roku prefiere recibir pistas de audio descriptivo siempre que sea posible. El ma
 #### Consejos para el diseño de los canales de audio
 En caso de que los archivos de video no puedan crearse para incluir etiquetas de canal de audio adecuadas, se debe proporcionar un consejo de diseño de audio en los metadatos para los archivos de video que se entreguen. A continuación, se definen los consejos disponibles.
 ##### Consejos de diseño de audio
-Descriptor | Definición
----|---
-stereoOnly | Solo audio en estéreo de 2 canales. Puede entregarse en una sola pista o en 2 pistas discretas.
-surroundOnly | Solo audio envolvente 5.1 de 6 canales. Puede entregarse en una sola pista o en 6 pistas discretas.
-stereoPlusSurround | Audio de 8 canales con sonido estéreo en los canales 1 y 2 seguido de sonido envolvente 5.1 en los canales 3 al 8
-surroundPlusStereo | Audio de 8 canales con 5.1 del canal 1 al 6 seguido de sonido estéreo en los canales 7 y 8
+| Descriptor  | Definición  |
+| --- | --- |
+| stereoOnly  | Solo audio en estéreo de 2 canales. Puede entregarse en una sola pista o en 2 pistas discretas.  |
+| surroundOnly  | Solo audio envolvente 5.1 de 6 canales. Puede entregarse en una sola pista o en 6 pistas discretas.  |
+| stereoPlusSurround  | Audio de 8 canales con sonido estéreo en los canales 1 y 2 seguido de sonido envolvente 5.1 en los canales 3 al 8  |
+| surroundPlusStereo  | Audio de 8 canales con 5.1 del canal 1 al 6 seguido de sonido estéreo en los canales 7 y 8  |
 ### Subtítulos descriptivos
 Roku prefiere recibir los subtítulos descriptivos de todo el contenido para brindar la mejor experiencia de uso posible.
 Para el contenido destinado a los EE. UU., Roku se adhiere a las normas de subtitulado descriptivo de la FCC en lo que respecta a la programación de video por internet. Puedes encontrar dichas normas en el siguiente enlace:
@@ -190,15 +190,15 @@ _Solo se admiten los siguientes estilos de texto para los subtítulos descriptiv
   * _posicionamiento del texto_
 
 _Los archivos de video de Quicktime deben ir acompañados de un archivo de subtítulos descriptivos sidecar. Roku no admite la pista de texto de Quicktime._
-**Nombre del formato** - | Admite datos de posición | **Extensión del archivo** | Codificación |  **Tipo de entrega** - |  **Idiomas** -
----|---|---|---|---|---
-Timed Text Markup Language (TTML) | SÍ | .ttml | UTF-8 | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
-Web Video Text Track (WebVTT) | SÍ | .vtt o .webvtt | UTF-8 | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
-Distribution Format Exchange Profile (DFXP) | NO | .dfxp | UTF-8 | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
-EBU Subtitle Data Exchange Format (STL) | NO | .stl | UTF-8 | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
-SubRip Text (SRT) | NO | .srt | UTF-8 | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
-EIA-608 o CEA-708 | NO | no disponible | no disponible | Incrustado en el flujo MPEG | incrustado en el archivo de video
-SCC | NO | .scc | ASCII | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
+|  **Nombre del formato** -  | Admite datos de posición  | **Extensión del archivo**  | Codificación  |  **Tipo de entrega** -  |  **Idiomas** -  |
+| --- | --- | --- | --- | --- | --- |
+| Timed Text Markup Language (TTML)  | SÍ  | .ttml  | UTF-8  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
+| Web Video Text Track (WebVTT)  | SÍ  | .vtt o .webvtt  | UTF-8  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
+| Distribution Format Exchange Profile (DFXP)  | NO  | .dfxp  | UTF-8  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
+| EBU Subtitle Data Exchange Format (STL)  | NO  | .stl  | UTF-8  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
+| SubRip Text (SRT)  | NO  | .srt  | UTF-8  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
+| EIA-608 o CEA-708  | NO  | no disponible  | no disponible  | Incrustado en el flujo MPEG  | incrustado en el archivo de video  |
+| SCC  | NO  | .scc  | ASCII  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
 ### Subtítulos
 El contenido que se entregue con audio en un idioma que no sea el principal del territorio de distribución debe entregarse con un archivo de doblaje de audio o subtítulos que traduzcan el contenido al idioma principal de ese territorio.
   * Los subtítulos completos NO deben grabarse en el video.
@@ -214,60 +214,63 @@ _Solo se admiten los siguientes estilos de texto para los subtítulos:_
   * _color del texto_
   * _posicionamiento del texto_
 
-**Nombre del formato** | Admite datos de posición | **Extensión delarchivo** | Codificación | **Tipo de entrega** | **Idiomas**
----|---|---|---|---|---
-Timed Text Markup Language (TTML) | SÍ | .ttml | UTF-8 | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
-Web Video Text Track (WebVTT) | SÍ | .vtt o .webvtt | UTF-8 | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
-Distribution Format Exchange Profile (DFXP) | NO | .dfxp | UTF-8 | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
-EBU Subtitle Data Exchange Format (STL) | NO | .stl | UTF-8 | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
-SubRip Text (SRT) | NO | .srt | UTF-8 | sidecar | sigue el idioma de audio del archivo de video o del archivo de doblaje
+| **Nombre del formato**  | Admite datos de posición  | **Extensión delarchivo**  | Codificación  | **Tipo de entrega**  | **Idiomas**  |
+| --- | --- | --- | --- | --- | --- |
+| Timed Text Markup Language (TTML)  | SÍ  | .ttml  | UTF-8  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
+| Web Video Text Track (WebVTT)  | SÍ  | .vtt o .webvtt  | UTF-8  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
+| Distribution Format Exchange Profile (DFXP)  | NO  | .dfxp  | UTF-8  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
+| EBU Subtitle Data Exchange Format (STL)  | NO  | .stl  | UTF-8  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
+| SubRip Text (SRT)  | NO  | .srt  | UTF-8  | sidecar  | sigue el idioma de audio del archivo de video o del archivo de doblaje  |
 ### Ilustraciones
 Roku admite tres tipos de imagen para cada contenido. Cada tipo de imagen se utilizará en una ubicación diferente dentro de Roku Channel. Roku prefiere recibir los tres tamaños de la ilustración, siempre que sea posible. Cada imagen debe entregarse en formato JPEG o PNG. Proporciona las imágenes en la resolución de imagen preferida de Roku para evitar retrasos en la publicación. Las imágenes _deben_ tener al menos la resolución mínima y _entregarse_ en la relación de aspecto _exacta_ definida para cada tipo de imagen.
 #### Definiciones de tipo de imagen
-Formato | Extensión | Tipo de imagen | Resolución mínima | Resolución preferida | Relación de aspecto
----|---|---|---|---|---
+| Formato  | Extensión  | Tipo de imagen  | Resolución mínima  | Resolución preferida  | Relación de aspecto  |
+| --- | --- | --- | --- | --- | --- |
+|
   * JPEG o PNG
   * RGB
   * 72 ppp
 
-| .jpg
+ | .jpg
 .jpeg
-.png | Arte clave Imagen con tratamiento de título | 800x450 | 1920x1080 | 16:9
+.png  | Arte clave Imagen con tratamiento de título  | 800x450  | 1920x1080  | 16:9  |
+|
   * JPEG o PNG
   * RGB
   * 72 ppp
 
-| .jpg
+ | .jpg
 .jpeg
-.png | Fondo Imagen sin texto utilizada en el fondo de la página del programa | 800x450 | 1920x1080 | 16:9
+.png  | Fondo Imagen sin texto utilizada en el fondo de la página del programa  | 800x450  | 1920x1080  | 16:9  |
+|
   * JPEG o PNG
   * RGB
   * 72 ppp
 
-| .jpg
+ | .jpg
 .jpeg
-.png | Portada Imagen de póster vertical con tratamiento del título | 534x801 | 2000x3000 | 2:3
+.png  | Portada Imagen de póster vertical con tratamiento del título  | 534x801  | 2000x3000  | 2:3  |
 #### Requisitos de ilustración mínimos por tipo de contenido
 **Requisitos de ilustración para contenido de clips**
-Ilustración | Obligatorio o preferido | Notas
----|---|---
-Arte clave en 16:9 | Obligatorio | Solo se necesita la imagen con texto en 16:9 para los clips
+| Ilustración  | Obligatorio o preferido  | Notas  |
+| --- | --- | --- |
+| Arte clave en 16:9  | Obligatorio  | Solo se necesita la imagen con texto en 16:9 para los clips  |
 **Requisitos de ilustración para contenido de películas**
-Ilustración | Obligatorio o preferido | Notas
----|---|---
-Arte clave en 16:9 | Obligatorio | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una película. Se prefieren los 3 tipos de imágenes.
-Portada en 2:3 | Preferido | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una película. Se prefieren los 3 tipos de imágenes.
-Fondo en 16:9 | Preferido | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una película. Se prefieren los 3 tipos de imágenes.
+| Ilustración  | Obligatorio o preferido  | Notas  |
+| --- | --- | --- |
+| Arte clave en 16:9  | Obligatorio  | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una película. Se prefieren los 3 tipos de imágenes.  |
+| Portada en 2:3  | Preferido  | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una película. Se prefieren los 3 tipos de imágenes.  |
+| Fondo en 16:9  | Preferido  | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una película. Se prefieren los 3 tipos de imágenes.  |
 **Requisitos de ilustración para contenido de TV**
-**_Tipo de contenido de series_** |  |
----|---|---
-**Ilustración** | **Obligatorio o preferido** | **Notas**
-Arte clave en 16:9 | Obligatorio | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una serie. Se prefieren los 3 tipos de imágenes.
-Portada en 2:3 | Preferido | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una serie. Se prefieren los 3 tipos de imágenes.
-Fondo en 16:9 | Preferido | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una serie. Se prefieren los 3 tipos de imágenes.
-**_Tipo de contenido de episodios_** |  |
-**Ilustración** | **Obligatorio o preferido** | **Notas**
-Fondo en 16:9 | Obligatorio | La imagen de los episodios puede estar en formato letterbox o pillarbox según el video fuente. Las imágenes en formato windowbox serán rechazadas. Las imágenes de los episodios deben ser únicas para cada episodio y representar el contenido de este.
+| **_Tipo de contenido de series_**  |   |   |
+| --- | --- | --- |
+| **Ilustración**  | **Obligatorio o preferido**  | **Notas**  |
+| Arte clave en 16:9  | Obligatorio  | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una serie. Se prefieren los 3 tipos de imágenes.  |
+| Portada en 2:3  | Preferido  | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una serie. Se prefieren los 3 tipos de imágenes.  |
+| Fondo en 16:9  | Preferido  | Como mínimo, Roku requiere el arte clave en 16:9 para todos los activos de una serie. Se prefieren los 3 tipos de imágenes.  |
+| **_Tipo de contenido de episodios_**  |   |   |
+| **Ilustración**  | **Obligatorio o preferido**  | **Notas**  |
+| Fondo en 16:9  | Obligatorio  | La imagen de los episodios puede estar en formato letterbox o pillarbox según el video fuente. Las imágenes en formato windowbox serán rechazadas. Las imágenes de los episodios deben ser únicas para cada episodio y representar el contenido de este.  |
 #### Pautas de las ilustraciones de contenido
   * Arte clave (gráfico con el título completo del activo visible).
   * Sin ilustraciones explícitas ni violencia gráfica.
@@ -348,33 +351,35 @@ Los archivos de video fuente, subtítulos descriptivos e ilustraciones entregado
   * Puede utilizarse la misma imagen para cada episodio de una serie, pero no es lo ideal. Si se utiliza la misma imagen para cada episodio, esa imagen debe entregarse varias veces y con un nombre único para cada episodio. Por ejemplo, “episode.jpg” debe entregarse como “episode_01.jpg”, “episode_02.jpg”, etc.
 
 ##### Caracteres permitidos en los nombres de archivo
-Conjuntos de caracteres
----
+| Conjuntos de caracteres  |
+| --- |
+|
   * 0-9
   * a-z
   * A-Z
 
-Nombre del carácter | Carácter
----|---
-Guion | -
-Punto | .
-Guion bajo | _
+ |
+| Nombre del carácter  | Carácter  |
+| --- | --- |
+| Guion  | -  |
+| Punto  | .  |
+| Guion bajo  | _  |
 ##### Caracteres prohibidos en los nombres de archivo
-Nombre del carácter | Carácter | Nombre del carácter | Carácter
----|---|---|---
-Símbolo arroba | @ | Corchete izquierdo | [
-Ampersand | & | Menos de | <
-Asterisco | * | Porcentaje | %
-Barra inversa | \  | Más | +
-Caret | ^ | Numeral o etiqueta | #
-Dos puntos | : | Signo de interrogación | ?
-Coma | , | Comillas o comillas dobles | "
-Dólar | $ | Llave derecha | }
-Igual a | = | Corchete derecho | ]
-Barra | / | Punto y coma | ;
-Acento grave | ` | Espacio |
-Mayor de | > | Tilde | ~
-Llave izquierda | { | Barra vertical | |
+| Nombre del carácter  | Carácter  | Nombre del carácter  | Carácter  |
+| --- | --- | --- | --- |
+| Símbolo arroba  | @  | Corchete izquierdo  | [  |
+| Ampersand  | &  | Menos de  | <  |
+| Asterisco  | *  | Porcentaje  | %  |
+| Barra inversa  | \   | Más  | +  |
+| Caret  | ^  | Numeral o etiqueta  | #  |
+| Dos puntos  | :  | Signo de interrogación  | ?  |
+| Coma  | ,  | Comillas o comillas dobles  | "  |
+| Dólar  | $  | Llave derecha  | }  |
+| Igual a  | =  | Corchete derecho  | ]  |
+| Barra  | /  | Punto y coma  | ;  |
+| Acento grave  | `  | Espacio  |   |
+| Mayor de  | >  | Tilde  | ~  |
+| Llave izquierda  | {  | Barra vertical  | |  |
 _Tanto la ubicación correcta como la cadencia adecuada al momento de la entrega de los archivos, así como la denominación adecuada de estos, es responsabilidad de nuestras empresas socias, ya que estas son las expertas en su propio contenido y no siempre tenemos conocimiento de los plazos de entrega de cada empresa socia particular._
 ## Entrega de contenido de MovieLabs
 El orden de entrega es importante. El servicio MovieLabs de Roku requerirá que el archivo MMC XML se entregue después de completarse la entrega de todos los archivos multimedia a los que se hace referencia en él. Roku no puede procesar el contenido si no se entregaron correctamente los archivos MMC y MEC XML. Consulta los ejemplos a continuación:
@@ -392,6 +397,7 @@ El orden de entrega es importante. El servicio MovieLabs de Roku requerirá que 
 #### Tags
 Las etiquetas para merchandising/curación se pueden enviar a través del nodo de palabras clave compatible con el XML de MovieLabs MEC. Consulte [el esquema MEC de MovieLabs](https://movielabs.com/md/mec/v2.9/mdmec-v2.9/mdmec-v2.9.html#Link116) para la correcta colocación del nodo de palabra clave.
 Ejemplo:
+
 ```
 <md:LocalizedInfo language=“en”>
 <md:TitleDisplayUnlimited>Gran título de mi programa</md:TitleDisplayUnlimited>
@@ -406,6 +412,7 @@ Ejemplo:
 #### IDs TMS
 Los TMS IDs de Gracenote se pueden enviar a través del XML de MovieLabs MEC como un identificador con el Namespace TMSID en el nodo AltIdentifier. Consulte [el esquema MEC de MovieLabs](https://movielabs.com/md/mec/v2.9/mdmec-v2.9/mdmec-v2.9.html#Link121) para conocer la estructura adecuada del nodo AltIdentifier
 Ejemplo:
+
 ```
 <md:AltIdentifier>
     <md:Namespace>TMSID</md:Namespace>
@@ -416,6 +423,7 @@ Ejemplo:
 
 #### Entrega MMC XML adBreak and cuePoint
 adBreak, intro credit, and end credit cuePoints pueden ser entregado en MovieLabs MMC XML in el nodo marcado, Por favor revise la siguiente información [MovieLabs MMC Schema](https://movielabs.com/md/manifest/v1.10/manifest-v1.10/manifest-v1.10.html#Link184) para una apropiada estructura de los nodos de Markeres Ejemplo:
+
 ```
       <manifest:Markers>
 
@@ -485,12 +493,14 @@ Roku utiliza Apache [xmlbeans](https://xmlbeans.apache.org/download/index.html) 
   6. A partir del resultado de la línea de comandos, puedes saber si ese xml es válido o no.
 
 **Uso de ejemplo**
+
 ```
 ./validate ~/dev/movielabsSpec/schema/mdmec-v2.9.xsd /path/to/file/directory/MEC_SAMPLE_123456789.xml
 
 ```
 
 **Respuesta de ejemplo**
+
 ```
 XMLBEANS_LIB=./../lib
 ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
@@ -501,8 +511,9 @@ ERROR StatusLogger Log4j2 could not find a logging implementation. Please add lo
 ## Requisitos de metadatos
 Roku utiliza un motor de transformación que puede “normalizar” diferentes formatos de metadatos para adaptarlos a las necesidades de ingesta de Roku. Los nombres exactos de los elementos o campos no son tan importantes como la entrega consistente de los nombres acordados de los elementos o campos. Los datos dentro de cualquier campo deben ajustarse a la Especificación de ingesta de Roku Channel, independientemente del nombre del elemento o del campo. Si utilizas un formato XML para entregar tu contenido a otras plataformas, puedes reutilizarlo para entregarlo a Roku. Puedes proporcionar una muestra de este formato de metadatos existente durante la incorporación para que Roku evalúe su validez para la ingesta en Roku Channel. Independientemente del formato utilizado, el entregable de metadatos debe incluir todos los elementos y campos obligatorios.
 ### Metadatos mínimos requeridos por tipo de contenido
-Requisitos de películas y clips | Requisitos de TV
----|---
+| Requisitos de películas y clips  | Requisitos de TV  |
+| --- | --- |
+|
   * provider
   * content type
   * asset_id
@@ -517,7 +528,7 @@ Requisitos de películas y clips | Requisitos de TV
   * captions file_name (si se requieren subtítulos descriptivos)
   * key art file_name
 
-|
+ |
   * provider
   * content type
   * asset_id
@@ -540,6 +551,7 @@ Requisitos de películas y clips | Requisitos de TV
   * episode thumbnail file_name
   * series key art file_name
 
+ |
 ### Definiciones del tipo de contenido
 Roku Channel admite 3 tipos de contenido: tv, películas y clips. Todo el contenido debe entregarse como uno de estos 3 tipos. Los títulos deben entregarse a Roku Channel en el mismo tipo de contenido en el que el programa estaba disponible originalmente. Las siguientes definiciones pueden ser útiles para clasificar el contenido destinado a Roku Channel.
 **TV**
@@ -550,17 +562,17 @@ Los títulos completos, de formato largo e independientes deben entregarse segú
 Los títulos de formato corto independientes que duran menos de 15 minutos deben entregarse según las especificaciones de clips.
 ### Requisitos y expectativas para los ID
 Roku no proporciona ID para el contenido. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. Todos los clips y películas deben entregarse con un asset_id. Todos los episodios deben entregarse con 3 ID: un asset_id, un series_id y un season_id. Los ID deben ser significativos para tu equipo, ya que son la forma en que identificamos positivamente un título en nuestro sistema. El asset id en los metadatos de ingesta debe coincidir con el title id proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Cualquier actualización del título una vez introducido en nuestro sistema DEBE ir acompañada del asset id. A continuación, figuran las pautas y definiciones de los ID:
-**ID** | Definiciones
----|---
-asset_id | Identificador único e inalterable de un clip, un episodio o una película. Obligatorio para todo el contenido. 50 caracteres como máximo. Solo caracteres alfanuméricos, guiones y guiones bajos: **LOS ESPACIOS O CARACTERES ESPECIALES EN CUALQUIER ID PROVOCARÁN UN ERROR EN LA INGESTA**
-series_id | Identificador único e inalterable de una serie. No puede ser igual al ID de temporada o episodio único. Debe entregarse con todos los episodios de una serie y debe ser consistente para todos los episodios de una serie. Obligatorio para el contenido de TV. 50 caracteres como máximo. Solo caracteres alfanuméricos, guiones y guiones bajos: **LOS ESPACIOS O CARACTERES ESPECIALES EN CUALQUIER ID PROVOCARÁN UN ERROR EN LA INGESTA**
-season_id | Identificador único e inalterable de una temporada. No puede ser igual al ID de serie o episodio único. Debe entregarse con todos los episodios de una temporada de una serie y debe ser consistente para todos los episodios de una temporada. Obligatorio para el contenido de TV. 50 caracteres como máximo. Solo caracteres alfanuméricos, guiones y guiones bajos: **LOS ESPACIOS O CARACTERES ESPECIALES EN CUALQUIER ID PROVOCARÁN UN ERROR EN LA INGESTA**
+| **ID**  | Definiciones  |
+| --- | --- |
+| asset_id  | Identificador único e inalterable de un clip, un episodio o una película. Obligatorio para todo el contenido. 50 caracteres como máximo. Solo caracteres alfanuméricos, guiones y guiones bajos: **LOS ESPACIOS O CARACTERES ESPECIALES EN CUALQUIER ID PROVOCARÁN UN ERROR EN LA INGESTA**  |
+| series_id  | Identificador único e inalterable de una serie. No puede ser igual al ID de temporada o episodio único. Debe entregarse con todos los episodios de una serie y debe ser consistente para todos los episodios de una serie. Obligatorio para el contenido de TV. 50 caracteres como máximo. Solo caracteres alfanuméricos, guiones y guiones bajos: **LOS ESPACIOS O CARACTERES ESPECIALES EN CUALQUIER ID PROVOCARÁN UN ERROR EN LA INGESTA**  |
+| season_id  | Identificador único e inalterable de una temporada. No puede ser igual al ID de serie o episodio único. Debe entregarse con todos los episodios de una temporada de una serie y debe ser consistente para todos los episodios de una temporada. Obligatorio para el contenido de TV. 50 caracteres como máximo. Solo caracteres alfanuméricos, guiones y guiones bajos: **LOS ESPACIOS O CARACTERES ESPECIALES EN CUALQUIER ID PROVOCARÁN UN ERROR EN LA INGESTA**  |
 ### Hojas y planificadores de disponibilidad
 Roku solicita una lista de lanzamiento inicial de títulos, episodios o clips de la biblioteca actual que estén disponibles para Roku al momento de la incorporación y un calendario al momento de actualización del contenido. Para una producción en curso, Roku solicita que la información de Avails se proporcione 60 días antes del inicio del período de licencias y que el contenido se entregue al menos 30 días antes de su inclusión en el canal. De este modo, habrá tiempo suficiente para procesar y controlar la calidad del contenido antes de que se publique en Roku Channel. La capacidad de entrega se coordinará después de la firma
-Documentos |
----|---
-Especificaciones de avails de Roku | Consulta la página de las especificaciones de avails [aquí](https://go.roku.com/trc-avail-spec)
-Plantilla de avails de Roku | Descarga la plantilla de avails de Roku [aquí](https://go.roku.com/trc-avail-template)
+| Documentos  |   |
+| --- | --- |
+| Especificaciones de avails de Roku  | Consulta la página de las especificaciones de avails [aquí](https://go.roku.com/trc-avail-spec)  |
+| Plantilla de avails de Roku  | Descarga la plantilla de avails de Roku [aquí](https://go.roku.com/trc-avail-template)  |
 ### Períodos de disponibilidad
 Roku permite que el contenido se muestre en el dispositivo y que la persona usuaria lo reproduzca a una hora de inicio determinada. De forma predeterminada, el contenido pasará a estar disponible a las 12:00 a. m. (medianoche) y caducará a las 11:59:59 p. m. en la zona horaria de la persona usuaria.
 Si el contenido debe publicarse a una hora que no sea a medianoche o caducar a una hora que no sea las 11:59:59 p. m., los valores de inicio o fin del periodo de licencia en los metadatos de entrada deben incluir los horarios deseados.
@@ -582,26 +594,26 @@ Roku utiliza secciones CDATA para permitir caracteres especiales (p. ej., !@#$%^
   * display_name
 
 Ciertos caracteres en un XML harán que el documento sea ilegible para la plataforma de ingesta de Roku, a menos que se manipulen (escapen) adecuadamente. Los siguientes caracteres deben proporcionarse en su formato de escape para todos los valores de nodo que no admitan secciones CDATA:
-Nombre del carácter | Carácter | Formato de escape
----|---|---
-Ampersand | & | `&amp;`
-Menos de | < | `&lt;`
-Mayor de | > | `&gt;`
-Comillas | " | `&quot;`
-Apóstrofe | ' | `'`
+| Nombre del carácter  | Carácter  | Formato de escape  |
+| --- | --- | --- |
+| Ampersand  | &  | `&amp;`  |
+| Menos de  | <  | `&lt;`  |
+| Mayor de  | >  | `&gt;`  |
+| Comillas  | "  | `&quot;`  |
+| Apóstrofe  | '  | `'`  |
 Nunca deben utilizarse caracteres especiales en los nombres de archivo ni en las referencias a nombres de archivo dentro de los metadatos en formato XML o Excel. [Consulta las Pautas de denominación de archivos](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#entrega-de-archivos) para obtener más información al respecto.
 ### Formatos de metadatos compatibles
 Se prefiere el formato XML. Se debe entregar un XML completo por cada archivo de video de película, clip o episodio de TV entregado. Los metadatos se deben entregar a través de Aspera en la misma carpeta que los archivos de video, subtítulos descriptivos e ilustraciones.
 **Formatos de metadatos compatibles**
-Nombre del formato | Extensión del formato | Codificación | Versión del paquete
----|---|---|---
-XML (preferido) | .xml | UTF-8 | clip1.0
+| Nombre del formato  | Extensión del formato  | Codificación  | Versión del paquete  |
+| --- | --- | --- | --- |
+| XML (preferido)  | .xml  | UTF-8  | clip1.0
 film5.0
 tv1.0
 Cablelabs ADI 1.1
 
-** _La compatibilidad de esquemas XML adicionales se define caso por caso_**
-Excel | .xlsx | Consulta [las plantillas de metadatos de Excel](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#pautas-y-plantillas-de-metadatos-de-excel-de-roku) y [las pautas de metadatos de Excel de Roku](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#pautas-y-plantillas-de-metadatos-de-excel-de-roku) más adelante |
+** _La compatibilidad de esquemas XML adicionales se define caso por caso_**  |
+| Excel  | .xlsx  | Consulta [las plantillas de metadatos de Excel](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#pautas-y-plantillas-de-metadatos-de-excel-de-roku) y [las pautas de metadatos de Excel de Roku](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#pautas-y-plantillas-de-metadatos-de-excel-de-roku) más adelante  |   |
 ### Actualización de metadatos (MDU) y reemplazos de archivos
 Las actualizaciones son automatizadas y pueden enviarse si hay necesidad de modificar metadatos o archivos de activos para cualquier programa que haya sido previamente entregado a Roku Channel. Todas las actualizaciones de metadatos o reemplazos de archivos deben incluir el **Provider** , el **asset_id** y el **Content Type** del programa tal como se entregó originalmente a Roku para que la actualización resulte exitosa. Roku gestionará el control de versiones, no hay necesidad de proporcionar información de versiones en los metadatos.
 Roku actualmente admite la actualización de los siguientes campos de metadatos a través de la MDU automatizada:
@@ -665,28 +677,29 @@ _Se recomienda proporcionar archivos de reemplazo con un nombre único, tanto en
 **Eliminación de contenido**
 Si los derechos cambian desde el momento en que el contenido se entregó originalmente a Roku y es necesario retirarlo de Roku Channel, ya sea de forma inmediata o programada, la fecha de finalización de la disponibilidad se puede cambiar mediante una actualización de metadatos como se define [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#actualizaci%C3%B3n-de-metadatos-mdu-y-reemplazos-de-archivos). Se deben proporcionar actualizaciones explícitas para todos los territorios en los que se debe eliminar el contenido. Ten en cuenta que las fechas de finalización proporcionadas sin valores de tiempo específicos caducarán a las 11:59:59 p. m. de dicha fecha.
 ### Requisitos, muestras y esquemas de metadatos XML de Roku
-Esquema XML de Roku | Enlace de descarga
----|---
-Esquema XML para películas | [Descargar aquí](https://go.roku.com/film-xml-schema)
-Esquema XML para TV | [Descargar aquí](https://go.roku.com/tv-xml-schema)
-Esquema XML para clips | [Descargar aquí](https://go.roku.com/clip-xml-schema)
-**Muestras XML de Roku** | **Enlace de descarga**
-XML anotado para películas de Roku | [Descargar aquí](https://go.roku.com/film-xml-example)
-XML anotado para Roku TV | [Descargar aquí](https://go.roku.com/tv-xml-example)
-XML anotado para clips de Roku | [Descargar aquí](https://go.roku.com/clip-xml-example)
-**Muestra de metadatos ADI de Cablelabs** | **Enlace de descarga**
-Ejemplo de XML ADI para películas de Cablelabs | [Descargar aquí](https://go.roku.com/film-adi-xml-example)
-Ejemplo de XML ADI para TV de Cablelabs | [Descargar aquí](https://go.roku.com/tv-adi-xml-example)
-Ejemplo de XML ADI para clips de Cablelabs | [Descargar aquí](https://go.roku.com/clip-adi-xml-example)
+| Esquema XML de Roku  | Enlace de descarga  |
+| --- | --- |
+| Esquema XML para películas  | [Descargar aquí](https://go.roku.com/film-xml-schema)  |
+| Esquema XML para TV  | [Descargar aquí](https://go.roku.com/tv-xml-schema)  |
+| Esquema XML para clips  | [Descargar aquí](https://go.roku.com/clip-xml-schema)  |
+| **Muestras XML de Roku**  | **Enlace de descarga**  |
+| XML anotado para películas de Roku  | [Descargar aquí](https://go.roku.com/film-xml-example)  |
+| XML anotado para Roku TV  | [Descargar aquí](https://go.roku.com/tv-xml-example)  |
+| XML anotado para clips de Roku  | [Descargar aquí](https://go.roku.com/clip-xml-example)  |
+| **Muestra de metadatos ADI de Cablelabs**  | **Enlace de descarga**  |
+| Ejemplo de XML ADI para películas de Cablelabs  | [Descargar aquí](https://go.roku.com/film-adi-xml-example)  |
+| Ejemplo de XML ADI para TV de Cablelabs  | [Descargar aquí](https://go.roku.com/tv-adi-xml-example)  |
+| Ejemplo de XML ADI para clips de Cablelabs  | [Descargar aquí](https://go.roku.com/clip-adi-xml-example)  |
 **NOTA:** Las muestras de ADI de Cablelabs tienen fines ilustrativos y no deben tomarse necesariamente como plantillas. Los datos requeridos deben suministrarse en un nodo estático en cada XML.
 * * *
 ### XML: campos de metadatos de películas
 **package**
 Define el tipo de versión del paquete
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/@version` | film5.0 | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/@version`  | film5.0  | Obligatorio  |
 Ejemplo
+
 ```
 <package version="film5.0">
 
@@ -694,10 +707,11 @@ Ejemplo
 
 **provider**
 Nombre del estudio, cadena o propietario del contenido
-Xpath XML | Ejemplo | Obligatorio
----|---|---
-`/package/provider` | Roku Originals | Obligatorio
+| Xpath XML  | Ejemplo  | Obligatorio  |
+| --- | --- | --- |
+| `/package/provider`  | Roku Originals  | Obligatorio  |
 Ejemplo:
+
 ```
 <provider>Roku Originals</provider>
 
@@ -705,10 +719,11 @@ Ejemplo:
 
 **language**
 Idioma principal de los metadatos del paquete. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/language` |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.) | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/language`  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
+
 ```
 <language>en</language>
 
@@ -716,10 +731,11 @@ Ejemplo:
 
 **type**
 Define el tipo de contenido del paquete
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/type` | film | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/type`  | film  | Obligatorio  |
 Ejemplo:
+
 ```
 <type>film</type>
 
@@ -727,10 +743,11 @@ Ejemplo:
 
 **asset_id**
 Identificador único e inalterable de una película. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/asset_id` | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/asset_id`  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | Obligatorio  |
 Ejemplo:
+
 ```
 <asset_id>movieAssetIdHere</asset_id>
 
@@ -738,10 +755,11 @@ Ejemplo:
 
 **eidr**
 ID de EIDR si existe uno
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/eidr` | Cualquier ID de EIDR válido | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/eidr`  | Cualquier ID de EIDR válido  | Opcional  |
 Ejemplo:
+
 ```
 <eidr></eidr>
 
@@ -749,10 +767,11 @@ Ejemplo:
 
 **tmsId**
 ID de Gracenote si existe uno
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/tmsId` | Cualquier ID de TMS válido | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/tmsId`  | Cualquier ID de TMS válido  | Opcional  |
 Ejemplo:
+
 ```
 <tmsId></tmsId>
 
@@ -760,10 +779,11 @@ Ejemplo:
 
 **title**
 Título de la película. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)
-Xpath XML | Ejemplo | Obligatorio
----|---|---
-`/package/video/title` | Título de la película | Obligatorio
+| Xpath XML  | Ejemplo  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/title`  | Título de la película  | Obligatorio  |
 Ejemplo:
+
 ```
 <title><![CDATA[Título de la película. Obligatorio.]]></title>
 
@@ -771,10 +791,11 @@ Ejemplo:
 
 **short_synopsis**
 Una breve sinopsis del contenido. Sección CDATA compatible. Límite de 250 caracteres.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/short_synopsis` | sinopsis de 250 caracteres | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/short_synopsis`  | sinopsis de 250 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <short_synopsis><![CDATA[Resumen breve de la película. 250 caracteres como máximo. Obligatorio]]></short_synopsis>
 
@@ -782,10 +803,11 @@ Ejemplo:
 
 **long_synopsis**
 Una sinopsis larga del contenido. Sección CDATA compatible. Límite de 500 caracteres.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/long_synopsis` | sinopsis de 500 caracteres | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/long_synopsis`  | sinopsis de 500 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <long_synopsis><![CDATA[Resumen largo de la película. 500 caracteres como máximo. Obligatorio.]]></long_synopsis>
 
@@ -793,10 +815,11 @@ Ejemplo:
 
 **original_spoken_language**
 Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/original_spoken_language` |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.) | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/original_spoken_language`  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
+
 ```
 <original_spoken_language>en</original_spoken_language>
 
@@ -804,10 +827,11 @@ Ejemplo:
 
 **country_of_origin**
 Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html).
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/country_of_origin` | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html) | Preferido
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/country_of_origin`  | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html)  | Preferido  |
 Ejemplo:
+
 ```
 <country_of_origin>en</ country_of_origin >
 
@@ -815,10 +839,11 @@ Ejemplo:
 
 **closedCaptions**
 Indica si el título entregado contiene subtítulos descriptivos. Los valores aceptados son Y o N. Este campo es obligatorio para todo el contenido destinado a Roku Channel en EE. UU.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/closedCaptions` | Y o N | Obligatorio para el contenido en EE. UU.
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/closedCaptions`  | Y o N  | Obligatorio para el contenido en EE. UU.  |
 Ejemplo:
+
 ```
 <closedCaptions>Y</closedCaptions>
 
@@ -827,10 +852,11 @@ Ejemplo:
 **closedCaptionsExemption**
 Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es obligatorio si el valor `closedCaptions` = “N”
 Valores permitidos y sus definiciones:
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/closedCaptionsExemption` | 1, 2, 3, 4, 5, 6 | Obligatorio si closedCaptions = N
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/closedCaptionsExemption`  | 1, 2, 3, 4, 5, 6  | Obligatorio si closedCaptions = N  |
 Ejemplo:
+
 ```
 <closedCaptionsExemption>1</closedCaptionsExemption>
 
@@ -838,10 +864,11 @@ Ejemplo:
 
 **release_date**
 Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/release_date` | Conforme al formato ISO 8601: AAAA-MM-DD | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/release_date`  | Conforme al formato ISO 8601: AAAA-MM-DD  | Obligatorio  |
 Ejemplo:
+
 ```
 <release_date>AAAA-MM-DD</release_date>
 
@@ -849,10 +876,11 @@ Ejemplo:
 
 **runtime**
 Tiempo de duración total del contenido en minutos enteros
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/runtime` | Solo números enteros | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/runtime`  | Solo números enteros  | Obligatorio  |
 Ejemplo:
+
 ```
 <runtime>120</runtime>
 
@@ -860,10 +888,11 @@ Ejemplo:
 
 **genre**
 Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/genres/genre` | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/genres/genre`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | Obligatorio  |
 Ejemplo:
+
 ```
 <genres>
 <genre>drama</genre>
@@ -874,10 +903,11 @@ Ejemplo:
 
 **rating**
 Clasificación por edades o de contenido de la película según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada. Valor de clasificación múltiple
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/ratings/rating` `debe incluir el atributo del sistema` | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación Se permiten múltiples pares de clasificación y sistemas de clasificación | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+|  `/package/video/ratings/rating` `debe incluir el atributo del sistema`  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación Se permiten múltiples pares de clasificación y sistemas de clasificación  | Obligatorio  |
 Ejemplo:
+
 ```
 <ratings>
 <rating system="mpaa" reason="For drug content, some sensuality and war violence.">PG-13</rating>
@@ -889,10 +919,11 @@ Ejemplo:
 
 **tag**
 La etiqueta es un campo de formato libre que puede utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/tags/tag` | cualquier cadena de menos de 50 caracteres | Opcional, pero MUY recomendable
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/tags/tag`  | cualquier cadena de menos de 50 caracteres  | Opcional, pero MUY recomendable  |
 Ejemplo:
+
 ```
 <tags>
 <tag>energy</tag>
@@ -904,10 +935,11 @@ Ejemplo:
 
 **adBreak** **start_time**
 Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/adBreaks/adBreak/start_time` | HH:MM:SS.sss | Preferiblemente para el contenido AVOD
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/adBreaks/adBreak/start_time`  | HH:MM:SS.sss  | Preferiblemente para el contenido AVOD  |
 Ejemplo:
+
 ```
 <adBreaks>
 <adBreak>
@@ -923,11 +955,12 @@ Ejemplo:
 
 **start_time y end_time de cuePoint**
 Se utiliza para identificar los puntos de entrada y salida de los créditos iniciales, los resúmenes de contenido, los créditos finales y el material de detrás de escena. Las etiquetas cuePoint deben incluir el atributo de tipo. Los valores start_time y end_time de cuePoint deben tener una precisión de milisegundos.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/cuePoints/cuePoint/start_time` | HH:MM:SS.sss | Preferido
-`/package/video/cuePoints/cuePoint/end_time` | HH:MM:SS.sss | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/cuePoints/cuePoint/start_time`  | HH:MM:SS.sss  | Preferido  |
+| `/package/video/cuePoints/cuePoint/end_time`  | HH:MM:SS.sss  | Preferido  |
 Ejemplo:
+
 ```
 <cuePoints>
     <cuePoint type="ad overlay">
@@ -956,17 +989,18 @@ Ejemplo:
 
 **Atributo de tipo de cuePoint**
 Define el tipo de cuePoint del cuePoint proporcionado dentro del bloque de cuePoints. El atributo de la etiqueta de cuePoint debe ser de tipo y el valor proporcionado debe ser uno de los siguientes valores:
-Valor del tipo | Descripción
----|---
-`ad overlay` | Identifica el cuePoint como el punto dentro del video para anuncios de posicionamiento de productos dentro del programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time
-`behind the scenes` | Identifica el cuePoint como material de detrás de escena, normalmente al final de un video. En caso de proporcionarse, es obligatorio incluir start_time y end_time
-`intro` | Identifica el cuePoint como los créditos iniciales de un programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time
-`recap` | Identifica el cuePoint como un resumen de contenido anterior, típico de los programas de televisión por episodios. En caso de proporcionarse, es obligatorio incluir start_time y end_time
-`end` | Identifica el cuePoint como los créditos finales de un programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time
-Xpath XML | Valores aceptados
----|---
-`/package/video/cuePoints/cuePoint` | Uno de los valores de la enumeración anterior
+| Valor del tipo  | Descripción  |
+| --- | --- |
+| `ad overlay`  | Identifica el cuePoint como el punto dentro del video para anuncios de posicionamiento de productos dentro del programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time  |
+| `behind the scenes`  | Identifica el cuePoint como material de detrás de escena, normalmente al final de un video. En caso de proporcionarse, es obligatorio incluir start_time y end_time  |
+| `intro`  | Identifica el cuePoint como los créditos iniciales de un programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time  |
+| `recap`  | Identifica el cuePoint como un resumen de contenido anterior, típico de los programas de televisión por episodios. En caso de proporcionarse, es obligatorio incluir start_time y end_time  |
+| `end`  | Identifica el cuePoint como los créditos finales de un programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time  |
+| Xpath XML  | Valores aceptados  |
+| --- | --- |
+| `/package/video/cuePoints/cuePoint`  | Uno de los valores de la enumeración anterior  |
 Ejemplo:
+
 ```
 <cuePoint type="intro">
 
@@ -974,10 +1008,11 @@ Ejemplo:
 
 **cast display_name**
 Nombre de un miembro del reparto**.** Sección CDATA compatible.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/cast/cast_member/display_name` | Nombre y apellido | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/cast/cast_member/display_name`  | Nombre y apellido  | Opcional  |
 Ejemplo:
+
 ```
 <cast>
 <cast_member>
@@ -990,10 +1025,11 @@ Ejemplo:
 
 **crew display_name**
 Nombre de un miembro del equipo de filmación. Sección CDATA compatible. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/crew/crew_member/display_name` | Nombre y apellido | Obligatorio si se proporciona crew_member
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/crew/crew_member/display_name`  | Nombre y apellido  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
+
 ```
 <display_name><![CDATA[George Lucas]]></display_name>
 
@@ -1001,10 +1037,11 @@ Ejemplo:
 
 **role**
 Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/crew/crew_member/role` | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante | Obligatorio si se proporciona crew_member
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
+
 ```
 <role>director</role>
 
@@ -1012,10 +1049,11 @@ Ejemplo:
 
 **localizations**
 Inicia el bloque de activos que proporciona metadatos localizados para paquetes con múltiples idiomas. Las localizaciones definen el idioma y proporcionan el título, la short_synopsis y la long_synopsis traducidos del paquete.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations` |  | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations`  |   | Obligatorio  |
 Ejemplo:
+
 ```
 <localizations>
 
@@ -1023,10 +1061,11 @@ Ejemplo:
 
 **localization name attribute**
 Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization` |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.) | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
+
 ```
 <localization name="es">
 
@@ -1034,10 +1073,11 @@ Ejemplo:
 
 **localized title**
 Título localizado de la película en el idioma especificado en el atributo de nombre de la etiqueta de localización. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD). El `title` localizado debe estar acompañado de una `short_synopsis` localizada y una `long_synopsis` localizada
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization/title` | Título localizado de la película | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization/title`  | Título localizado de la película  | Obligatorio  |
 Ejemplo:
+
 ```
 <title><![CDATA[Título localizado de la película. Obligatorio.]]></title>
 
@@ -1045,10 +1085,11 @@ Ejemplo:
 
 **localized short_synopsis**
 Una sinopsis breve localizada del contenido en el idioma especificado en el atributo de nombre de la etiqueta de localización. Sección CDATA compatible. Límite de 250 caracteres. La `short_synopsis` localizada debe estar acompañada de un `title` localizado y una `long_synopsis` localizada
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization/short_synopsis` | 250 caracteres | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization/short_synopsis`  | 250 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <short_synopsis><![CDATA[Sinopsis breve localizada de la película. 250 caracteres como máximo. Obligatorio]]></short_synopsis>
 
@@ -1056,10 +1097,11 @@ Ejemplo:
 
 **localized long_synopsis**
 Una sinopsis larga localizada del contenido en el idioma especificado en el atributo de nombre de la etiqueta de localización. Sección CDATA compatible. Límite de 500 caracteres. La `long_synopsis` localizada debe estar acompañada de un `title` localizado y una `short_synopsis` localizada
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization/long_synopsis` | 500 caracteres | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization/long_synopsis`  | 500 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <long_synopsis><![CDATA[Sinopsis larga localizada de la película. 500 caracteres como máximo. Obligatorio.]]></long_synopsis>
 
@@ -1067,10 +1109,11 @@ Ejemplo:
 
 **playOptions**
 Inicia el bloque de activos que proporciona la información de disponibilidad del paquete. playOptions consiste en la disponibilidad por país o territorio, el tipo de monetización y las fechas de inicio y fin de la disponibilidad del título en el paquete.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions` |  | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions`  |   | Obligatorio  |
 Ejemplo:
+
 ```
 <playOptions>
 
@@ -1078,10 +1121,11 @@ Ejemplo:
 
 **country**
 Código de país del territorio en el que está disponible el contenido. Se pueden proporcionar varios nodos de países, siempre que el vodType y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los países.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/country` | US CA GB MX | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/country`  | US CA GB MX  | Preferido  |
 Ejemplo:
+
 ```
 <playOption>
 <country>US</country>
@@ -1092,10 +1136,11 @@ Ejemplo:
 
 **vodType**
 Tipo de monetización de la película. Se pueden proporcionar varios nodos vodType, siempre que el país y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los vodType.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/vodType` | AVOD SVOD | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/vodType`  | AVOD SVOD  | Preferido  |
 Ejemplo:
+
 ```
 <playOption>
 <vodType>AVOD</vodType>
@@ -1106,10 +1151,11 @@ Ejemplo:
 
 **licensePeriodStart**
 Fecha de inicio de la disponibilidad del contenido para las personas usuarias de Roku Channel. Se permite una fecha de licensePeriodStart por playOption. Las fechas de licensePeriodStart deben ser cronológicamente anteriores a las de licensePeriodEnd. Las fechas de licensePeriodStart y licensePeriodEnd no deben ser idénticas
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/licensePeriodStart` | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/licensePeriodStart`  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | Opcional  |
 Ejemplo:
+
 ```
 <playOption>
 <licensePeriodStart>AAAA-MM-DDTHH:MM:SS</licensePeriodStart>
@@ -1119,10 +1165,11 @@ Ejemplo:
 
 **licensePeriodEnd**
 Fecha de finalización de la disponibilidad del contenido para las personas usuarias de Roku Channel. Se permite una fecha de licensePeriodEnd por playOption. Las fechas de licensePeriodEnd deben ser cronológicamente posteriores a las de licensePeriodStart. Las fechas de licensePeriodStart y licensePeriodEnd no deben ser idénticas
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/licensePeriodEnd` | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/licensePeriodEnd`  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | Opcional  |
 Ejemplo:
+
 ```
 <playOption>
 <licensePeriodEnd>AAAA-MM-DDTHH:MM:SS</licensePeriodEnd>
@@ -1132,10 +1179,11 @@ Ejemplo:
 
 **assets**
 Inicia el bloque de activos que hace referencia a los archivos entregados en el paquete
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets` | media_type="video" | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets`  | media_type="video"  | Obligatorio  |
 Ejemplo:
+
 ```
 <assets media_type="video">
 
@@ -1143,10 +1191,11 @@ Ejemplo:
 
 **data_file** **full source**
 El bloque que describe el archivo de video fuente. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="source". También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="source"` | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="source"`  | Obligatorio  |
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="source">
@@ -1155,10 +1204,11 @@ Ejemplo:
 
 **full captions**
 El bloque que describe los subtítulos descriptivos del archivo de video fuente. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="captions". También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="captions"` | Obligatorio en EE. UU.
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="captions"`  | Obligatorio en EE. UU.  |
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="captions">
@@ -1167,11 +1217,12 @@ Ejemplo:
 
 **full audio**
 El bloque que describe el audio sidecar del archivo de video fuente. El archivo de audio puede ser un doblaje completo para la traducción lingüística o una pista de audio descriptivo para fines de accesibilidad. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="audio" para el doblaje de traducción o role=”audio.descriptive” para fines de accesibilidad. También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="audio"` `data_file role="audio.descriptive"` | Opcional* se prefiere audio.descriptive
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="audio"` `data_file role="audio.descriptive"`  | Opcional* se prefiere audio.descriptive  |
 *_el audio sidecar puede requerirse si se necesitan activos localizados cuando el audio original del archivo fuente no es nativo del territorio de distribución o para cumplir con las normativas de la FCC_
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="audio">
@@ -1180,11 +1231,12 @@ Ejemplo:
 
 **full subtitles**
 El bloque que describe los subtítulos sidecar del archivo de video fuente. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="subtitles". También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="subtitles"` | Opcional*
-* _los subtítulos sidecar pueden requerirse si se necesitan activos localizados cuando el audio original del archivo fuente no es nativo del territorio de distribución._ |  |
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="subtitles"`  | Opcional*  |
+| * _los subtítulos sidecar pueden requerirse si se necesitan activos localizados cuando el audio original del archivo fuente no es nativo del territorio de distribución._  |   |   |
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="subtitles">
@@ -1193,10 +1245,11 @@ Ejemplo:
 
 **artwork**
 El bloque que describe los archivos de ilustración. El atributo de la etiqueta del activo debe ser type="artwork". También se requieren los nodos y <file_name>. Consulta [Ilustraciones](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones) para conocer las especificaciones completas sobre la entrega de imágenes.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="artwork"` | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="artwork"`  | Obligatorio  |
 Ejemplos
+
 ```
 <asset type="artwork">
 <data_file>
@@ -1209,10 +1262,11 @@ Ejemplos
 
 **locale**
 Identifica el idioma del data_file. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Aplica para las funciones del data_file: fuente, subtítulos descriptivos, audio, subtítulos y para el tipo de activo de ilustración.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file/locale` | [Código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file/locale`  | [Código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
 Ejemplo:
+
 ```
 <locale name="en"/>
 
@@ -1220,15 +1274,16 @@ Ejemplo:
 
 **file_name**
 Nombre de archivo del activo indicado en el atributo de tipo o función del data_file. Todos los valores de file_name distinguen entre mayúsculas y minúsculas y deben tener la extensión de archivo adecuada.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file/file_name` | Consulta las especificaciones para la entrega de activos más adelante | Obligatorio para cada activo entregado
-`/package/video/assets/asset/data_file/file_name` |  | Obligatorio
-`/package/video/assets/asset/data_file/file_name` | Valores de atributos:
-`type="background_image"` | Preferido
-`/package/video/assets/asset/data_file/file_name` | Valores de atributos:
-`type="thumbnail_boxcover"` | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file/file_name`  | Consulta las especificaciones para la entrega de activos más adelante  | Obligatorio para cada activo entregado  |
+| `/package/video/assets/asset/data_file/file_name`  |   | Obligatorio  |
+| `/package/video/assets/asset/data_file/file_name`  | Valores de atributos:
+`type="background_image"`  | Preferido  |
+| `/package/video/assets/asset/data_file/file_name`  | Valores de atributos:
+`type="thumbnail_boxcover"`  | Preferido  |
 Ejemplo:
+
 ```
 <file_name>VideoFilename.mxf</file_name>
 
@@ -1236,10 +1291,11 @@ Ejemplo:
 
 **audio**
 [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. Consulta las pautas más adelante
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file/audio` | Valores permitidos: stereoOnly surroundOnly stereoPlusSurround surroundPlusStereo | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file/audio`  | Valores permitidos: stereoOnly surroundOnly stereoPlusSurround surroundPlusStereo  | Opcional  |
 Ejemplo:
+
 ```
 <audio>stereoOnly</audio>
 
@@ -1249,10 +1305,11 @@ Ejemplo:
 ### XML: campos de metadatos de TV por episodios
 **package**
 Define el tipo de versión del paquete
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/@version` | tv1.0 | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/@version`  | tv1.0  | Obligatorio  |
 Ejemplo:
+
 ```
 <package version="tv1.0">
 
@@ -1260,10 +1317,11 @@ Ejemplo:
 
 **provider**
 Nombre del estudio, cadena o propietario del contenido
-Xpath XML | Ejemplo | Obligatorio
----|---|---
-`/package/provider` | Roku Originals | Obligatorio
+| Xpath XML  | Ejemplo  | Obligatorio  |
+| --- | --- | --- |
+| `/package/provider`  | Roku Originals  | Obligatorio  |
 Ejemplo:
+
 ```
 <provider>Roku Originals</provider>
 
@@ -1271,10 +1329,11 @@ Ejemplo:
 
 **language**
 Idioma principal de los metadatos del paquete. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/language` | [Código de idioma válido](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/language`  | [Código de idioma válido](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
 Ejemplo:
+
 ```
 <language>en</language>
 
@@ -1282,10 +1341,11 @@ Ejemplo:
 
 **type**
 Define el tipo de contenido del paquete
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/type` | tv | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/type`  | tv  | Obligatorio  |
 Ejemplo:
+
 ```
 <type>tv</type>
 
@@ -1293,10 +1353,11 @@ Ejemplo:
 
 **asset_id**
 Identificador único e inalterable de un episodio. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/asset_id` | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/asset_id`  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | Obligatorio  |
 Ejemplo:
+
 ```
 <asset_id>episodeAssetIdHere</asset_id>
 
@@ -1304,10 +1365,11 @@ Ejemplo:
 
 **eidr**
 ID de EIDR si existe uno
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/eidr` | Cualquier ID de EIDR válido | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/eidr`  | Cualquier ID de EIDR válido  | Opcional  |
 Ejemplo:
+
 ```
 <eidr></eidr>
 
@@ -1315,10 +1377,11 @@ Ejemplo:
 
 **tmsId**
 ID de Gracenote si existe uno
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/tmsId` | Cualquier ID de TMS válido | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/tmsId`  | Cualquier ID de TMS válido  | Opcional  |
 Ejemplo:
+
 ```
 <tmsId></tmsId>
 
@@ -1326,10 +1389,11 @@ Ejemplo:
 
 **title**
 Título del episodio. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)
-Xpath XML | Ejemplo | Obligatorio
----|---|---
-`/package/video/title` | Título del episodio | Obligatorio
+| Xpath XML  | Ejemplo  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/title`  | Título del episodio  | Obligatorio  |
 Ejemplo:
+
 ```
 <title><![CDATA[Título del episodio. Obligatorio.]]></title>
 
@@ -1337,10 +1401,11 @@ Ejemplo:
 
 **episodeNumber**
 Posición numérica del episodio dentro de una temporada de una serie. Este valor determinará el orden en que se verán los episodios en la plataforma. Los valores de episodeNumber deben entregarse tal y como se emitieron o exhibieron originalmente en cualquier plataforma. No deben proporcionarse números de producción. Solo se permiten valores numéricos (enteros).
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/episodeNumber` | Solo números enteros | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/episodeNumber`  | Solo números enteros  | Obligatorio  |
 Ejemplo:
+
 ```
 <episodeNumber>2</episodeNumber>
 
@@ -1348,10 +1413,11 @@ Ejemplo:
 
 **short_synopsis**
 Una breve sinopsis del episodio. Sección CDATA compatible. Límite de 250 caracteres.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/short_synopsis` | sinopsis de 250 caracteres | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/short_synopsis`  | sinopsis de 250 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <short_synopsis><![CDATA[Resumen breve del episodio. 250 caracteres como máximo. Obligatorio]]></short_synopsis>
 
@@ -1359,10 +1425,11 @@ Ejemplo:
 
 **long_synopsis**
 Una sinopsis larga del episodio. Sección CDATA compatible. Límite de 500 caracteres.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/long_synopsis` | sinopsis de 500 caracteres | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/long_synopsis`  | sinopsis de 500 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <long_synopsis><![CDATA[Resumen largo del episodio. 500 caracteres como máximo. Obligatorio.]]></long_synopsis>
 
@@ -1370,10 +1437,11 @@ Ejemplo:
 
 **closedCaptions**
 Indica si el episodio entregado contiene subtítulos descriptivos. Los valores aceptados son Y o N. Este campo es obligatorio para todo el contenido destinado a Roku Channel en EE. UU.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/closedCaptions` | Y o N | Obligatorio para el contenido en EE. UU.
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/closedCaptions`  | Y o N  | Obligatorio para el contenido en EE. UU.  |
 Ejemplo:
+
 ```
 <closedCaptions>Y</closedCaptions>
 
@@ -1383,10 +1451,11 @@ Ejemplo:
 Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es obligatorio si el valor `closedCaptions` = “N”
 Valores permitidos y sus definiciones:
 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/closedCaptionsExemption` | 1, 2, 3, 4, 5, 6 | Obligatorio si closedCaptions = N
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/closedCaptionsExemption`  | 1, 2, 3, 4, 5, 6  | Obligatorio si closedCaptions = N  |
 Ejemplo:
+
 ```
 <closedCaptionsExemption>1</closedCaptionsExemption>
 
@@ -1394,10 +1463,11 @@ Ejemplo:
 
 **release_date**
 Fecha original en la que el episodio estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/release_date` | Conforme al formato ISO 8601: AAAA-MM-DD | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/release_date`  | Conforme al formato ISO 8601: AAAA-MM-DD  | Obligatorio  |
 Ejemplo:
+
 ```
 <release_date>AAAA-MM-DD</release_date>
 
@@ -1405,10 +1475,11 @@ Ejemplo:
 
 **runtime**
 Tiempo de duración total del contenido en minutos enteros
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/runtime` | Solo números enteros | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/runtime`  | Solo números enteros  | Obligatorio  |
 Ejemplo:
+
 ```
 <runtime>120</runtime>
 
@@ -1416,10 +1487,11 @@ Ejemplo:
 
 **rating**
 Clasificación por edades o de contenido del episodio según una fuente de clasificación. Se facilitará para cada episodio una clasificación válida de TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada. Valor de clasificación múltiple
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/ratings/rating` `debe incluir el atributo del sistema` | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. Se permiten múltiples pares de clasificación y sistemas de clasificación | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+|  `/package/video/ratings/rating` `debe incluir el atributo del sistema`  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. Se permiten múltiples pares de clasificación y sistemas de clasificación  | Obligatorio  |
 Ejemplo:
+
 ```
 <ratings>
 <rating system="mpaa" reason="For drug content, some sensuality and war violence.">PG-13</rating>
@@ -1431,10 +1503,11 @@ Ejemplo:
 
 **tag**
 La etiqueta es un campo de formato libre que puede utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/tags/tag` | cualquier cadena de menos de 50 caracteres | Opcional, pero MUY recomendable
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/tags/tag`  | cualquier cadena de menos de 50 caracteres  | Opcional, pero MUY recomendable  |
 Ejemplo:
+
 ```
 <tags>
 <tag>energy</tag>
@@ -1446,10 +1519,11 @@ Ejemplo:
 
 **adBreak start_time**
 Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/adBreaks/adBreak` | HH:MM:SS.sss | Preferiblemente para el contenido AVOD
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/adBreaks/adBreak`  | HH:MM:SS.sss  | Preferiblemente para el contenido AVOD  |
 Ejemplo:
+
 ```
 <adBreaks>
 <adBreak>
@@ -1465,11 +1539,12 @@ Ejemplo:
 
 **start_time y end_time de cuePoint**
 Se utiliza para identificar los puntos de entrada y salida de los créditos iniciales, los resúmenes de contenido, los créditos finales y el material de detrás de escena. Las etiquetas cuePoint deben incluir el atributo de tipo. Los valores start_time y end_time de cuePoint deben tener una precisión de milisegundos.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/cuePoints/cuePoint/start_time` | HH:MM:SS.sss | Preferido
-`/package/video/cuePoints/cuePoint/end_time` | HH:MM:SS.sss | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/cuePoints/cuePoint/start_time`  | HH:MM:SS.sss  | Preferido  |
+| `/package/video/cuePoints/cuePoint/end_time`  | HH:MM:SS.sss  | Preferido  |
 Ejemplo:
+
 ```
 <cuePoints>
     <cuePoint type="ad overlay">
@@ -1498,17 +1573,18 @@ Ejemplo:
 
 **Atributo de tipo de cuePoint**
 Define el tipo de cuePoint del cuePoint proporcionado dentro del bloque de cuePoints. El atributo de la etiqueta de cuePoint debe ser de tipo y el valor proporcionado debe ser uno de los siguientes valores:
-Valor del tipo | Descripción
----|---
-`ad overlay` | Identifica el cuePoint como el punto dentro del video para anuncios de posicionamiento de productos dentro del programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time
-`behind the scenes` | Identifica el cuePoint como material de detrás de escena, normalmente al final de un video. En caso de proporcionarse, es obligatorio incluir start_time y end_time
-`intro` | Identifica el cuePoint como los créditos iniciales de un programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time
-`recap` | Identifica el cuePoint como un resumen de contenido anterior, típico de los programas de televisión por episodios. En caso de proporcionarse, es obligatorio incluir start_time y end_time
-`end` | Identifica el cuePoint como los créditos finales de un programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/cuePoints/cuePoint` | Uno de los valores de la enumeración anterior | Obligatorio si se proporcionan puntos de referencia
+| Valor del tipo  | Descripción  |
+| --- | --- |
+| `ad overlay`  | Identifica el cuePoint como el punto dentro del video para anuncios de posicionamiento de productos dentro del programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time  |
+| `behind the scenes`  | Identifica el cuePoint como material de detrás de escena, normalmente al final de un video. En caso de proporcionarse, es obligatorio incluir start_time y end_time  |
+| `intro`  | Identifica el cuePoint como los créditos iniciales de un programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time  |
+| `recap`  | Identifica el cuePoint como un resumen de contenido anterior, típico de los programas de televisión por episodios. En caso de proporcionarse, es obligatorio incluir start_time y end_time  |
+| `end`  | Identifica el cuePoint como los créditos finales de un programa. En caso de proporcionarse, es obligatorio incluir start_time y end_time  |
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/cuePoints/cuePoint`  | Uno de los valores de la enumeración anterior  | Obligatorio si se proporcionan puntos de referencia  |
 Ejemplo:
+
 ```
 <cuePoint type="intro">
 
@@ -1516,10 +1592,11 @@ Ejemplo:
 
 **cast display_name**
 Nombre de un miembro del reparto del episodio**.** Sección CDATA compatible.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/cast/cast_member/display_name` | Nombre Apellido | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/cast/cast_member/display_name`  | Nombre Apellido  | Opcional  |
 Ejemplo:
+
 ```
 <cast>
 <cast_member>
@@ -1532,10 +1609,11 @@ Ejemplo:
 
 **crew display_name**
 Nombre de un miembro del equipo de filmación del episodio. Sección CDATA compatible. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/crew/crew_member/display_name` | Nombre Apellido | Obligatorio si se proporciona crew_member
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/crew/crew_member/display_name`  | Nombre Apellido  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
+
 ```
 <display_name><![CDATA[George Lucas]]></display_name>
 
@@ -1543,10 +1621,11 @@ Ejemplo:
 
 **role**
 Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/crew/crew_member/role` | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante | Obligatorio si se proporciona crew_member
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
+
 ```
 <role>director</role>
 
@@ -1554,10 +1633,11 @@ Ejemplo:
 
 **localizations**
 Inicia el bloque de activos que proporciona metadatos localizados del episodio para paquetes con múltiples idiomas. Las localizaciones definen el idioma y proporcionan el título, la short_synopsis y la long_synopsis traducidos del paquete.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations` |  | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations`  |   | Obligatorio  |
 Ejemplo:
+
 ```
 <localizations>
 
@@ -1565,10 +1645,11 @@ Ejemplo:
 
 **localization name attribute**
 Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization` |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.) | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
+
 ```
 <localization name="es">
 
@@ -1576,10 +1657,11 @@ Ejemplo:
 
 **localized title**
 Título localizado del episodio en el idioma especificado en el atributo de nombre de la etiqueta de localización. Incluye únicamente el nombre del episodio tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD). El `title` localizado debe estar acompañado de una `short_synopsis` localizada y una `long_synopsis` localizada
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization/title` | Título del episodio localizado | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization/title`  | Título del episodio localizado  | Obligatorio  |
 Ejemplo:
+
 ```
 <title><![CDATA[Título del episodio localizado. Obligatorio.]]></title>
 
@@ -1587,10 +1669,11 @@ Ejemplo:
 
 **localized short_synopsis**
 Una sinopsis breve localizada del episodio en el idioma especificado en el atributo de nombre de la etiqueta de localización. Sección CDATA compatible. Límite de 250 caracteres. La `short_synopsis` localizada debe estar acompañada de un `title` localizado y una `long_synopsis` localizada
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization/short_synopsis` | 250 caracteres | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization/short_synopsis`  | 250 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <short_synopsis><![CDATA[Resumen breve localizado del episodio. 250 caracteres como máximo. Obligatorio]]></short_synopsis>
 
@@ -1598,10 +1681,11 @@ Ejemplo:
 
 **localized long_synopsis**
 Una sinopsis larga localizada del episodio en el idioma especificado en el atributo de nombre de la etiqueta de localización. Sección CDATA compatible. Límite de 500 caracteres. La `long_synopsis` localizada debe estar acompañada de un `title` localizado y una `short_synopsis` localizada
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization/long_synopsis` | 500 caracteres | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization/long_synopsis`  | 500 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <long_synopsis><![CDATA[Resumen largo localizado del episodio. 500 caracteres como máximo. Obligatorio.]]></long_synopsis>
 
@@ -1609,10 +1693,11 @@ Ejemplo:
 
 **series**
 Inicia el bloque de la serie que hace referencia a los metadatos del programa al que pertenece el episodio. Roku sigue la definición de serie de EE. UU. Los episodios están anidados dentro de una temporada de una serie con la siguiente jerarquía: serie -> temporada -> episodio
-Xpath XML | Ejemplo | Obligatorio
----|---|---
-`/package/video/series` |  | Obligatorio
+| Xpath XML  | Ejemplo  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series`  |   | Obligatorio  |
 Ejemplo:
+
 ```
 <series>
 
@@ -1620,10 +1705,11 @@ Ejemplo:
 
 **series_id**
 Identificador único e inalterable de una serie. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/series_id` | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/series_id`  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | Obligatorio  |
 Ejemplo:
+
 ```
 <series_id>seriesIdHere</series_id>
 
@@ -1631,10 +1717,11 @@ Ejemplo:
 
 **title**
 Título de la serie. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)
-Xpath XML | Ejemplo | Obligatorio
----|---|---
-`/package/video/series/title` | Título del episodio | Obligatorio
+| Xpath XML  | Ejemplo  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/title`  | Título del episodio  | Obligatorio  |
 Ejemplo:
+
 ```
 <title><![CDATA[Título del episodio. Obligatorio.]]></title>
 
@@ -1642,10 +1729,11 @@ Ejemplo:
 
 **short_synopsis**
 Una breve sinopsis de la serie. Sección CDATA compatible. Límite de 250 caracteres.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/short_synopsis` | sinopsis de 250 caracteres | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/short_synopsis`  | sinopsis de 250 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <short_synopsis><![CDATA[Resumen breve del episodio. 250 caracteres como máximo. Obligatorio]]></short_synopsis>
 
@@ -1653,10 +1741,11 @@ Ejemplo:
 
 **long_synopsis**
 Una sinopsis larga de la serie. Sección CDATA compatible. Límite de 500 caracteres.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/long_synopsis` | sinopsis de 500 caracteres | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/long_synopsis`  | sinopsis de 500 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <long_synopsis><![CDATA[Resumen largo del episodio. 500 caracteres como máximo. Obligatorio.]]></long_synopsis>
 
@@ -1664,10 +1753,11 @@ Ejemplo:
 
 **original_spoken_language**
 Define el idioma original de producción del episodio que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/original_spoken_language` |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.) | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/original_spoken_language`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
+
 ```
 <original_spoken_language>en</original_spoken_language>
 
@@ -1675,10 +1765,11 @@ Ejemplo:
 
 **country_of_origin**
 Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html).
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/country_of_origin` | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html) | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/country_of_origin`  | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html)  | Preferido  |
 Ejemplo:
+
 ```
 <country_of_origin>US</ country_of_origin>
 
@@ -1686,10 +1777,11 @@ Ejemplo:
 
 **release_date**
 Fecha original en la que la serie estuvo disponible por primera vez en cualquier presentación. Suele coincidir con la fecha del primer episodio de la serie. Debe incluir, como mínimo, el año correcto del estreno
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/release_date` | Conforme al formato ISO 8601: AAAA-MM-DD | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/release_date`  | Conforme al formato ISO 8601: AAAA-MM-DD  | Obligatorio  |
 Ejemplo:
+
 ```
 <release_date>AAAA-MM-DD</release_date>
 
@@ -1697,10 +1789,11 @@ Ejemplo:
 
 **genre**
 Clasificación del contenido por género. Roku requiere que cada episodio se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/genres/genre` | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/genres/genre`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | Obligatorio  |
 Ejemplo:
+
 ```
 <genres>
 <genre>drama</genre>
@@ -1711,10 +1804,11 @@ Ejemplo:
 
 **tag**
 La etiqueta es un campo de formato libre que puede utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/tags/tag` | cualquier cadena de menos de 50 caracteres | Opcional, pero MUY recomendable
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/tags/tag`  | cualquier cadena de menos de 50 caracteres  | Opcional, pero MUY recomendable  |
 Ejemplo:
+
 ```
 <tags>
 <tag>energy</tag>
@@ -1726,10 +1820,11 @@ Ejemplo:
 
 **cast display_name**
 Nombre de un miembro del reparto de la serie**.** Sección CDATA compatible.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/cast/cast_member/display_name` | Nombre Apellido | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/cast/cast_member/display_name`  | Nombre Apellido  | Opcional  |
 Ejemplo:
+
 ```
 <cast>
 <cast_member>
@@ -1742,10 +1837,11 @@ Ejemplo:
 
 **crew display_name**
 Nombre de un miembro del equipo de filmación de la serie. Sección CDATA compatible. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/crew/crew_member/display_name` | Nombre Apellido | Obligatorio si se proporciona crew_member
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/crew/crew_member/display_name`  | Nombre Apellido  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
+
 ```
 <display_name><![CDATA[George Lucas]]></display_name>
 
@@ -1753,10 +1849,11 @@ Ejemplo:
 
 **role**
 Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/crew/crew_member/role` | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante | Obligatorio si se proporciona crew_member
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
+
 ```
 <role>director</role>
 
@@ -1764,10 +1861,11 @@ Ejemplo:
 
 **localizations**
 Inicia el bloque de activos que proporciona metadatos localizados para la serie en paquetes con múltiples idiomas. Las localizaciones definen el idioma y proporcionan el título, la short_synopsis y la long_synopsis traducidos del paquete.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/localizations` |  | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/localizations`  |   | Obligatorio  |
 Ejemplo:
+
 ```
 <localizations>
 
@@ -1775,10 +1873,11 @@ Ejemplo:
 
 **localization name attribute**
 Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/localizations/localization` |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.) | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
+
 ```
 <localization name="es">
 
@@ -1786,10 +1885,11 @@ Ejemplo:
 
 **localized title**
 Título localizado de la serie en el idioma especificado en el atributo de nombre de la etiqueta de localización. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD). El `title` localizado debe estar acompañado de una `short_synopsis` localizada y una `long_synopsis` localizada
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/localizations/localization/title` | Título del episodio localizado | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/localizations/localization/title`  | Título del episodio localizado  | Obligatorio  |
 Ejemplo:
+
 ```
 <title><![CDATA[Título del episodio localizado. Obligatorio.]]></title>
 
@@ -1797,10 +1897,11 @@ Ejemplo:
 
 **localized short_synopsis**
 Una sinopsis breve localizada de la serie en el idioma especificado en el atributo de nombre de la etiqueta de localización. Sección CDATA compatible. Límite de 250 caracteres. La `short_synopsis` localizada debe estar acompañada de un `title` localizado y una `long_synopsis` localizada
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/localizations/localization/short_synopsis` | 250 caracteres | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/localizations/localization/short_synopsis`  | 250 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <short_synopsis><![CDATA[Resumen breve localizado del episodio. 250 caracteres como máximo. Obligatorio]]></short_synopsis>
 
@@ -1808,10 +1909,11 @@ Ejemplo:
 
 **localized long_synopsis**
 Una sinopsis larga localizada de la serie en el idioma especificado en el atributo de nombre de la etiqueta de localización. Sección CDATA compatible. Límite de 500 caracteres. La `long_synopsis` localizada debe estar acompañada de un `title` localizado y una `short_synopsis` localizada
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/series/localizations/localization/long_synopsis` | 500 caracteres | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/series/localizations/localization/long_synopsis`  | 500 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <long_synopsis><![CDATA[Resumen largo localizado del episodio. 500 caracteres como máximo. Obligatorio.]]></long_synopsis>
 
@@ -1819,10 +1921,11 @@ Ejemplo:
 
 **season**
 Inicia el bloque de la temporada que hace referencia a los metadatos para la temporada de la serie a la que pertenece el episodio. Roku sigue la definición de serie de EE. UU. Los episodios están anidados dentro de una temporada de una serie con la siguiente jerarquía: serie -> temporada -> episodio
-Xpath XML | Ejemplo | Obligatorio
----|---|---
-`/package/video/season` |  | Obligatorio
+| Xpath XML  | Ejemplo  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/season`  |   | Obligatorio  |
 Ejemplo:
+
 ```
 <season>
 
@@ -1830,10 +1933,11 @@ Ejemplo:
 
 **season_id**
 Identificador único e inalterable de una temporada. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/season/season_id` | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/season/season_id`  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | Obligatorio  |
 Ejemplo:
+
 ```
 <season_id>seasonIdHere</season_id>
 
@@ -1841,10 +1945,11 @@ Ejemplo:
 
 **seasonNumber**
 Posición numérica de la temporada dentro de una serie. Este valor determinará el orden en que se verán los episodios subyacentes en la plataforma. Los valores de seasonNumber deben entregarse tal y como se emitieron o exhibieron originalmente en cualquier plataforma. Solo se permiten valores numéricos (enteros).
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/season/seasonNumber` | Solo números enteros | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/season/seasonNumber`  | Solo números enteros  | Obligatorio  |
 Ejemplo:
+
 ```
 <seasonNumber>2</seasonNumber>
 
@@ -1852,10 +1957,11 @@ Ejemplo:
 
 **playOptions**
 Inicia el bloque de activos que proporciona la información de disponibilidad del paquete. playOptions consiste en la disponibilidad por país o territorio, el tipo de monetización y las fechas de inicio y fin de la disponibilidad del título en el paquete.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions` |  | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions`  |   | Obligatorio  |
 Ejemplo:
+
 ```
 <playOptions>
 
@@ -1863,10 +1969,11 @@ Ejemplo:
 
 **country**
 Código de país del territorio en el que está disponible el contenido. Se pueden proporcionar varios nodos de países, siempre que el vodType y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los países.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/country` | US CA GB MX | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/country`  | US CA GB MX  | Preferido  |
 Ejemplo:
+
 ```
 <playOption>
 <country>US</country>
@@ -1877,10 +1984,11 @@ Ejemplo:
 
 **vodType**
 Tipo de monetización del episodio. Se pueden proporcionar varios nodos vodType, siempre que el país y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los vodType.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/vodType` | AVOD SVOD | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/vodType`  | AVOD SVOD  | Preferido  |
 Ejemplo:
+
 ```
 <playOption>
 <vodType>AVOD</vodType>
@@ -1891,10 +1999,11 @@ Ejemplo:
 
 **licensePeriodStart**
 Fecha de inicio de la disponibilidad del contenido para las personas usuarias de Roku Channel. Se permite una fecha de licensePeriodStart por playOption. Las fechas de licensePeriodStart deben ser cronológicamente anteriores a las de licensePeriodEnd. Las fechas de licensePeriodStart y licensePeriodEnd no deben ser idénticas
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/licensePeriodStart` | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/licensePeriodStart`  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | Opcional  |
 Ejemplo:
+
 ```
 <playOption>
 <licensePeriodStart>AAAA-MM-DDTHH:MM:SS</licensePeriodStart>
@@ -1904,10 +2013,11 @@ Ejemplo:
 
 **licensePeriodEnd**
 Fecha de finalización de la disponibilidad del contenido para las personas usuarias de Roku Channel. Se permite una fecha de licensePeriodEnd por playOption. Las fechas de licensePeriodEnd deben ser cronológicamente posteriores a las de licensePeriodStart. Las fechas de licensePeriodStart y licensePeriodEnd no deben ser idénticas
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/licensePeriodEnd` | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/licensePeriodEnd`  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | Opcional  |
 Ejemplo:
+
 ```
 <playOption>
 <licensePeriodEnd>AAAA-MM-DDTHH:MM:SS</licensePeriodEnd>
@@ -1917,10 +2027,11 @@ Ejemplo:
 
 **assets**
 Inicia el bloque de activos que hace referencia a los archivos entregados en el paquete
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets` | media_type="video" | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets`  | media_type="video"  | Obligatorio  |
 Ejemplo:
+
 ```
 <assets media_type="video">
 
@@ -1928,10 +2039,11 @@ Ejemplo:
 
 **data_file** **full source**
 El bloque que describe el archivo de video fuente. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="source". También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="source"` | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="source"`  | Obligatorio  |
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="source">
@@ -1940,10 +2052,11 @@ Ejemplo:
 
 **full captions**
 El bloque que describe los subtítulos descriptivos del archivo de video fuente. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="captions". También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="captions"` | Obligatorio en EE. UU.
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="captions"`  | Obligatorio en EE. UU.  |
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="captions">
@@ -1952,11 +2065,12 @@ Ejemplo:
 
 **full audio**
 El bloque que describe el audio sidecar del archivo de video fuente. El archivo de audio puede ser un doblaje completo para la traducción lingüística o una pista de audio descriptivo para fines de accesibilidad. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="audio" para el doblaje de traducción o role=”audio.descriptive” para fines de accesibilidad. También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="audio"` `data_file role="audio.descriptive"` | Opcional *se prefiere audio.descriptive
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="audio"` `data_file role="audio.descriptive"`  | Opcional *se prefiere audio.descriptive  |
 **el audio sidecar puede requerirse si se necesitan activos localizados cuando el audio original del archivo fuente no es nativo del territorio de distribución o para cumplir con las normativas de la FCC**
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="audio">
@@ -1965,11 +2079,12 @@ Ejemplo:
 
 **full subtitles**
 El bloque que describe los subtítulos sidecar del archivo de video fuente. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="subtitles". También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full` `data_file role="subtitles"` | Opcional*
-* _los subtítulos sidecar pueden requerirse si se necesitan activos localizados cuando el audio original del archivo fuente no es nativo del territorio de distribución._ |  |
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full` `data_file role="subtitles"`  | Opcional*  |
+| * _los subtítulos sidecar pueden requerirse si se necesitan activos localizados cuando el audio original del archivo fuente no es nativo del territorio de distribución._  |   |   |
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="subtitles">
@@ -1978,11 +2093,12 @@ Ejemplo:
 
 **artwork**
 El bloque que describe los archivos de ilustración. El atributo de la etiqueta del activo debe ser type="artwork". El atributo de la etiqueta data_file puede ser type="episode" para la entrega de imágenes al nivel del episodio, o type="series" para la entrega de imágenes al nivel de la serie. También se requieren los nodos y <file_name>. Consulta [Ilustraciones](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones) para conocer las especificaciones completas sobre la entrega de imágenes.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="artwork"` `data_file type="episode"` | Preferido
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="artwork"` `data_file type="series"` | Preferido
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="artwork"` `data_file type="episode"`  | Preferido  |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="artwork"` `data_file type="series"`  | Preferido  |
 Ejemplo:
+
 ```
 <asset type="artwork">
 <data_file role="episode">
@@ -1993,10 +2109,11 @@ Ejemplo:
 
 **locale**
 Identifica el idioma del data_file. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Aplica para las funciones del data_file: fuente, subtítulos descriptivos, audio, subtítulos y para el tipo de activo de ilustración.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file/locale` | [Código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file/locale`  | [Código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
 Ejemplo:
+
 ```
 <locale name="en"/>
 
@@ -2004,15 +2121,16 @@ Ejemplo:
 
 **file_name**
 Nombre de archivo del activo indicado en el atributo de tipo o función del data_file. Todos los valores de file_name distinguen entre mayúsculas y minúsculas y deben tener la extensión de archivo adecuada. En el caso de los archivos de ilustraciones, el atributo de la etiqueta file_name puede omitirse (para indicar arte clave), o ser type="background_image" o type="thumbnail_boxcover".
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file/file_name` | Consulta las especificaciones para la entrega de activos más adelante | Obligatorio para cada activo entregado
-`/package/video/assets/asset/data_file/file_name` |  | Obligatorio
-`/package/video/assets/asset/data_file/file_name` | Valores de atributos:
-`type="background_image"` | Preferido
-`/package/video/assets/asset/data_file/file_name` | Valores de atributos:
-`type="thumbnail_boxcover"` | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file/file_name`  | Consulta las especificaciones para la entrega de activos más adelante  | Obligatorio para cada activo entregado  |
+| `/package/video/assets/asset/data_file/file_name`  |   | Obligatorio  |
+| `/package/video/assets/asset/data_file/file_name`  | Valores de atributos:
+`type="background_image"`  | Preferido  |
+| `/package/video/assets/asset/data_file/file_name`  | Valores de atributos:
+`type="thumbnail_boxcover"`  | Preferido  |
 Ejemplo:
+
 ```
 <file_name>VideoFilename.mxf</file_name>
 
@@ -2020,10 +2138,11 @@ Ejemplo:
 
 **audio**
 [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. Consulta las pautas más adelante
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file/audio` | Valores permitidos: stereoOnly surroundOnly stereoPlusSurround surroundPlusStereo | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file/audio`  | Valores permitidos: stereoOnly surroundOnly stereoPlusSurround surroundPlusStereo  | Opcional  |
 Ejemplo:
+
 ```
 <audio>stereoOnly</audio>
 
@@ -2033,10 +2152,11 @@ Ejemplo:
 ### XML: campos de metadatos de clips de formato corto
 **package**
 Define el tipo de versión del paquete
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/@version` | clip1.0 | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/@version`  | clip1.0  | Obligatorio  |
 Ejemplo:
+
 ```
 <package version="clip1.0">
 
@@ -2044,10 +2164,11 @@ Ejemplo:
 
 **provider**
 Nombre del estudio, cadena o propietario del contenido
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/provider` | Ejemplo: Roku Originals | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/provider`  | Ejemplo: Roku Originals  | Obligatorio  |
 Ejemplo:
+
 ```
 <provider>Roku Originals</provider>
 
@@ -2055,10 +2176,11 @@ Ejemplo:
 
 **language**
 Idioma principal de los metadatos del paquete. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/language` | [Código de idioma válido](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/language`  | [Código de idioma válido](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
 Ejemplo:
+
 ```
 <language>en</language>
 
@@ -2066,10 +2188,11 @@ Ejemplo:
 
 **type**
 Define el tipo de contenido del paquete
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/type` | clip | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/type`  | clip  | Obligatorio  |
 Ejemplo:
+
 ```
 <type>clip</type>
 
@@ -2077,9 +2200,9 @@ Ejemplo:
 
 **subType**
 Define el subType (subtipo) de contenido del paquete. Actualmente Roku no admite conexiones principales y secundarias de forma nativa. El contenido auxiliar o relacionado puede entregarse e identificarse con uno de los siguientes subtipos (subTypes). _No existe ningún vínculo entre los activos principales y secundarios_
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/subType` |
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/subType`  |
   * trailer
   * highlight
   * making_of
@@ -2089,8 +2212,9 @@ Xpath XML | Valores aceptados | Obligatorio
   * recap
   * extra
 
-| Opcional
+ | Opcional  |
 Ejemplo:
+
 ```
 <subType>trailer</subType>
 
@@ -2098,10 +2222,11 @@ Ejemplo:
 
 **asset_id**
 Identificador único e inalterable de un clip de formato corto La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/asset_id` | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/asset_id`  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | Obligatorio  |
 Ejemplo:
+
 ```
 <asset_id>clipAssetIdHere</asset_id>
 
@@ -2109,10 +2234,11 @@ Ejemplo:
 
 **eidr**
 ID de EIDR si existe uno
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/eidr` | Cualquier ID de EIDR válido | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/eidr`  | Cualquier ID de EIDR válido  | Opcional  |
 Ejemplo:
+
 ```
 <eidr></eidr>
 
@@ -2120,10 +2246,11 @@ Ejemplo:
 
 **tmsId**
 ID de Gracenote si existe uno
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/tmsId` | Cualquier ID de TMS válido | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/tmsId`  | Cualquier ID de TMS válido  | Opcional  |
 Ejemplo:
+
 ```
 <tmsId></tmsId>
 
@@ -2131,10 +2258,11 @@ Ejemplo:
 
 **title**
 Título de clip de formato corto Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)
-Xpath XML | Ejemplo | Obligatorio
----|---|---
-`/package/video/title` | Título del clip | Obligatorio
+| Xpath XML  | Ejemplo  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/title`  | Título del clip  | Obligatorio  |
 Ejemplo:
+
 ```
 <title><![CDATA[Título del clip. Obligatorio.]]></title>
 
@@ -2142,10 +2270,11 @@ Ejemplo:
 
 **short_synopsis**
 Una breve sinopsis del contenido. Sección CDATA compatible. Límite de 250 caracteres.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/short_synopsis` | sinopsis de 250 caracteres | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/short_synopsis`  | sinopsis de 250 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <short_synopsis><![CDATA[Resumen breve del clip. 250 caracteres como máximo. Obligatorio]]></short_synopsis>
 
@@ -2153,10 +2282,11 @@ Ejemplo:
 
 **long_synopsis**
 Una sinopsis larga del contenido. Sección CDATA compatible. Límite de 500 caracteres.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/long_synopsis` | sinopsis de 500 caracteres | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/long_synopsis`  | sinopsis de 500 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <long_synopsis><![CDATA[Resumen largo del clip. 500 caracteres como máximo. Obligatorio.]]></long_synopsis>
 
@@ -2164,10 +2294,11 @@ Ejemplo:
 
 **original_spoken_language**
 Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/original_spoken_language` |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.) | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/original_spoken_language`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
+
 ```
 <original_spoken_language>en</original_spoken_language>
 
@@ -2175,10 +2306,11 @@ Ejemplo:
 
 **country_of_origin**
 Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html).
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/country_of_origin` | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html) | Preferido
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/country_of_origin`  | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html)  | Preferido  |
 Ejemplo:
+
 ```
 <country_of_origin>en</country_of_origin >
 
@@ -2186,10 +2318,11 @@ Ejemplo:
 
 **closedCaptions**
 Indica si el título entregado contiene subtítulos descriptivos. Los valores aceptados son Y o N. Este campo es obligatorio para todo el contenido destinado a Roku Channel en EE. UU.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/closedCaptions` | Y o N | Obligatorio para el contenido en EE. UU.
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/closedCaptions`  | Y o N  | Obligatorio para el contenido en EE. UU.  |
 Ejemplo:
+
 ```
 <closedCaptions>Y</closedCaptions>
 
@@ -2199,10 +2332,11 @@ Ejemplo:
 Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es obligatorio si el valor `closedCaptions` = “N”
 Valores permitidos y sus definiciones:
 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/closedCaptionsExemption` | 1, 2, 3, 4, 5, 6 | Obligatorio si closedCaptions = N
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/closedCaptionsExemption`  | 1, 2, 3, 4, 5, 6  | Obligatorio si closedCaptions = N  |
 Ejemplo:
+
 ```
 <closedCaptionsExemption>1</closedCaptionsExemption>
 
@@ -2210,10 +2344,11 @@ Ejemplo:
 
 **release_date**
 Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/release_date` | Conforme al formato ISO 8601: AAAA-MM-DD | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/release_date`  | Conforme al formato ISO 8601: AAAA-MM-DD  | Obligatorio  |
 Ejemplo:
+
 ```
 <release_date>AAAA-MM-DD</release_date>
 
@@ -2221,10 +2356,11 @@ Ejemplo:
 
 **runtime**
 Tiempo de duración total del contenido en minutos enteros
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/runtime` | Solo números enteros | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/runtime`  | Solo números enteros  | Obligatorio  |
 Ejemplo:
+
 ```
 <runtime>120</runtime>
 
@@ -2232,10 +2368,11 @@ Ejemplo:
 
 **genre**
 Clasificación del contenido por género. Roku requiere que cada clip de formato corto se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/genres/genre` | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/genres/genre`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | Obligatorio  |
 Ejemplo:
+
 ```
 <genres>
 <genre>drama</genre>
@@ -2246,10 +2383,11 @@ Ejemplo:
 
 **rating**
 Clasificación por edades o de contenido del clip de formato corto según una fuente de clasificación. Se facilitará para cada clip de formato corto una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada. Valor de clasificación múltiple
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/ratings/rating` `debe incluir el atributo del sistema` | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. Se permiten múltiples pares de clasificación y sistemas de clasificación | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+|  `/package/video/ratings/rating` `debe incluir el atributo del sistema`  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. Se permiten múltiples pares de clasificación y sistemas de clasificación  | Obligatorio  |
 Ejemplo:
+
 ```
 <ratings>
 <rating system="mpaa" reason="For drug content, some sensuality and war violence.">PG-13</rating>
@@ -2261,10 +2399,11 @@ Ejemplo:
 
 **tag**
 La etiqueta es un campo de formato libre que puede utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/tags/tag` | cualquier cadena de menos de 50 caracteres | Opcional, pero MUY recomendable
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/tags/tag`  | cualquier cadena de menos de 50 caracteres  | Opcional, pero MUY recomendable  |
 Ejemplo:
+
 ```
 <tags>
 <tag>energy</tag>
@@ -2276,10 +2415,11 @@ Ejemplo:
 
 **cast display_name**
 Nombre de un miembro del reparto**.** Sección CDATA compatible.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/cast/cast_member/display_name` | Nombre Apellido | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/cast/cast_member/display_name`  | Nombre Apellido  | Opcional  |
 Ejemplo:
+
 ```
 <cast>
 <cast_member>
@@ -2292,10 +2432,11 @@ Ejemplo:
 
 **crew display_name**
 Nombre de un miembro del equipo de filmación. Sección CDATA compatible. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/crew/crew_member/display_name` | Nombre Apellido | Obligatorio si se proporciona crew_member
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/crew/crew_member/display_name`  | Nombre Apellido  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
+
 ```
 <display_name><![CDATA[George Lucas]]></display_name>
 
@@ -2303,10 +2444,11 @@ Ejemplo:
 
 **role**
 Función del miembro del equipo de filmación que figura en el display_name. Roku requiere que los metadatos incluyan no solo el miembro del equipo de filmación, sino también su función. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) de las funciones del equipo de filmación que admite Roku. Las funciones distinguen entre mayúsculas y minúsculas. *NOTA: Por el momento, director es el único miembro del equipo de filmación (crew_member) que se admite para la ingesta en formato Excel
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/crew/crew_member/role` | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante | Obligatorio si se proporciona crew_member
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/crew/crew_member/role`  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#funciones-del-equipo-de-filmaci%C3%B3n) más adelante  | Obligatorio si se proporciona crew_member  |
 Ejemplo:
+
 ```
 <role>director</role>
 
@@ -2314,10 +2456,11 @@ Ejemplo:
 
 **localizations**
 Inicia el bloque de activos que proporciona metadatos localizados para paquetes con múltiples idiomas. Las localizaciones definen el idioma y proporcionan el título, la short_synopsis y la long_synopsis traducidos del paquete.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations` |  | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations`  |   | Obligatorio  |
 Ejemplo:
+
 ```
 <localizations>
 
@@ -2325,10 +2468,11 @@ Ejemplo:
 
 **localization name attribute**
 Define el idioma del título localizado, la short_synopsis y la long_synopsis que se proporcionan dentro del bloque de localización. El atributo de la etiqueta de localización debe ser el nombre y el valor proporcionado en el nombre debe, como mínimo, ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization` |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.) | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization`  |  [Código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido (en, es, etc.) También puede incluir códigos de región (en-US, es-MX, etc.)  | Obligatorio  |
 Ejemplo:
+
 ```
 <localization name="es">
 
@@ -2336,10 +2480,11 @@ Ejemplo:
 
 **localized title**
 Título localizado del clip de formato corto en el idioma especificado en el atributo de nombre de la etiqueta de localización. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)
-XPath XML | Ejemplo | Obligatorio
----|---|---
-`/package/video/localizations/localization/title` | Título localizado del clip | Obligatorio
+| XPath XML  | Ejemplo  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization/title`  | Título localizado del clip  | Obligatorio  |
 Ejemplo:
+
 ```
 <title><![CDATA[Título localizado del clip. Obligatorio.]]></title>
 
@@ -2347,10 +2492,11 @@ Ejemplo:
 
 **localized short_synopsis**
 Una sinopsis breve localizada del contenido en el idioma especificado en el atributo de nombre de la etiqueta de localización. Sección CDATA compatible. Límite de 250 caracteres.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization/short_synopsis` | 250 caracteres | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization/short_synopsis`  | 250 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <short_synopsis><![CDATA[Resumen breve localizado del clip. 250 caracteres como máximo. Obligatorio]]></short_synopsis>
 
@@ -2358,10 +2504,11 @@ Ejemplo:
 
 **localized long_synopsis**
 Una sinopsis larga localizada del contenido en el idioma especificado en el atributo de nombre de la etiqueta de localización. Sección CDATA compatible. Límite de 500 caracteres.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/localizations/localization/long_synopsis` | 500 caracteres | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/localizations/localization/long_synopsis`  | 500 caracteres  | Obligatorio  |
 Ejemplo:
+
 ```
 <long_synopsis><![CDATA[Resumen largo localizado del clip. 500 caracteres como máximo. Obligatorio.]]></long_synopsis>
 
@@ -2369,10 +2516,11 @@ Ejemplo:
 
 **playOptions**
 Inicia el bloque de activos que proporciona la información de disponibilidad del paquete. playOptions consiste en la disponibilidad por país o territorio, el tipo de monetización y las fechas de inicio y fin de la disponibilidad del título en el paquete.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions` |  | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions`  |   | Obligatorio  |
 Ejemplo:
+
 ```
 <playOptions>
 
@@ -2380,10 +2528,11 @@ Ejemplo:
 
 **country**
 Código de país del territorio en el que está disponible el contenido. Se pueden proporcionar varios nodos de países, siempre que el vodType y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los países.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/country` | US CA GB MX | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/country`  | US CA GB MX  | Preferido  |
 Ejemplo:
+
 ```
 <playOption>
 <country>US</country>
@@ -2394,10 +2543,11 @@ Ejemplo:
 
 **vodType**
 Tipo de monetización del clip de formato corto Se pueden proporcionar varios nodos vodType, siempre que el país y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los vodType.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/vodType` | AVOD SVOD | Preferido
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/vodType`  | AVOD SVOD  | Preferido  |
 Ejemplo:
+
 ```
 <playOption>
 <vodType>AVOD</vodType>
@@ -2408,10 +2558,11 @@ Ejemplo:
 
 **licensePeriodStart**
 Fecha de inicio de la disponibilidad del contenido para las personas usuarias de Roku Channel. Se permite una fecha de `licensePeriodStart` por playOption. Las fechas de licensePeriodStart deben ser cronológicamente anteriores a las de licensePeriodEnd. Las fechas de licensePeriodStart y licensePeriodEnd no deben ser idénticas
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/licensePeriodStart` | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/licensePeriodStart`  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | Opcional  |
 Ejemplo:
+
 ```
 <playOption>
 <licensePeriodStart>AAAA-MM-DDTHH:MM:SS</licensePeriodStart>
@@ -2421,10 +2572,11 @@ Ejemplo:
 
 **licensePeriodEnd**
 Fecha de finalización de la disponibilidad del contenido para las personas usuarias de Roku Channel. Se permite una fecha de `licensePeriodEnd` por playOption. Las fechas de licensePeriodEnd deben ser cronológicamente posteriores a las de licensePeriodStart. Las fechas de licensePeriodStart y licensePeriodEnd no deben ser idénticas
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/playOptions/playOption/licensePeriodEnd` | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/playOptions/playOption/licensePeriodEnd`  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | Opcional  |
 Ejemplo:
+
 ```
 <playOption>
 <licensePeriodEnd>AAAA-MM-DDTHH:MM:SS</licensePeriodEnd>
@@ -2434,10 +2586,11 @@ Ejemplo:
 
 **assets**
 Inicia el bloque de activos que hace referencia a los archivos entregados en el paquete
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets` | media_type="video" | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets`  | media_type="video"  | Obligatorio  |
 Ejemplo:
+
 ```
 <assets media_type="video">
 
@@ -2445,10 +2598,11 @@ Ejemplo:
 
 **data_file** **full source**
 El bloque que describe el archivo de video fuente. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="source". También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="source"` | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="source"`  | Obligatorio  |
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="source">
@@ -2457,10 +2611,11 @@ Ejemplo:
 
 **full captions**
 El bloque que describe los subtítulos descriptivos del archivo de video fuente. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="captions". También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="captions"` | Obligatorio en EE. UU.
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="captions"`  | Obligatorio en EE. UU.  |
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="captions">
@@ -2469,11 +2624,12 @@ Ejemplo:
 
 **full audio**
 El bloque que describe el audio sidecar del archivo de video fuente. El archivo de audio puede ser un doblaje completo para la traducción lingüística o una pista de audio descriptivo para fines de accesibilidad. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="audio" para el doblaje de traducción o role=”audio.descriptive” para fines de accesibilidad. También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="audio"` `data_file role="audio.descriptive"` | Opcional *se prefiere audio.descriptive
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="audio"` `data_file role="audio.descriptive"`  | Opcional *se prefiere audio.descriptive  |
 _el audio sidecar puede requerirse si se necesitan activos localizados cuando el audio original del archivo fuente no es nativo del territorio de distribución o para cumplir con las normativas de la FCC_
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="audio">
@@ -2482,11 +2638,12 @@ Ejemplo:
 
 **full subtitles**
 El bloque que describe los subtítulos sidecar del archivo de video fuente. El atributo de la etiqueta del activo debe ser type="full" y el atributo de la etiqueta data_file debe ser role="subtitles". También se requieren los nodos y <file_name>
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="full"` `data_file role="subtitles"` | Opcional*
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="full"` `data_file role="subtitles"`  | Opcional*  |
 _los subtítulos sidecar pueden requerirse si se necesitan activos localizados cuando el audio original del archivo fuente no es nativo del territorio de distribución._
 Ejemplo:
+
 ```
 <asset type="full">
 <data_file role="subtitles">
@@ -2495,10 +2652,11 @@ Ejemplo:
 
 **artwork**
 El bloque que describe los archivos de ilustración. El atributo de la etiqueta del activo debe ser type="artwork". También se requieren los nodos y <file_name>. Consulta [Ilustraciones](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#ilustraciones) para conocer las especificaciones completas sobre la entrega de imágenes.
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file` | Valores de atributos: `asset type="artwork"` | Obligatorio
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file`  | Valores de atributos: `asset type="artwork"`  | Obligatorio  |
 Ejemplo:
+
 ```
 <asset type="artwork">
 <data_file>
@@ -2506,10 +2664,11 @@ Ejemplo:
 ```
 
 **locale** Identifica el idioma del data_file. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Aplica para las funciones del data_file: fuente, subtítulos descriptivos, audio y subtítulos, y para el tipo de activo de ilustración.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file/locale` | [Código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) | Obligatorio
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file/locale`  | [Código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma)  | Obligatorio  |
 Ejemplo:
+
 ```
 <locale name="en"/>
 
@@ -2517,10 +2676,11 @@ Ejemplo:
 
 **file_name**
 Nombre de archivo del activo indicado en el atributo de tipo o función del data_file. Todos los valores de file_name distinguen entre mayúsculas y minúsculas y deben tener la extensión de archivo adecuada.
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file/file_name` | Consulta las especificaciones para la entrega de activos más adelante | Obligatorio para cada activo entregado
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file/file_name`  | Consulta las especificaciones para la entrega de activos más adelante  | Obligatorio para cada activo entregado  |
 Ejemplo:
+
 ```
 <file_name>VideoFilename.mxf</file_name>
 
@@ -2528,10 +2688,11 @@ Ejemplo:
 
 **audio**
 [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. Consulta las pautas más adelante
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/assets/asset/data_file/audio` | Valores permitidos: stereoOnly surroundOnly stereoPlusSurround surroundPlusStereo | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/assets/asset/data_file/audio`  | Valores permitidos: stereoOnly surroundOnly stereoPlusSurround surroundPlusStereo  | Opcional  |
 Ejemplo:
+
 ```
 <audio>stereoOnly</audio>
 
@@ -2539,20 +2700,22 @@ Ejemplo:
 
 **parentInfo**
 Inicia el bloque de activos que proporciona la información principal del paquete. parentInfo consta del contentType, título del episodio o película, duración del episodio o película, releaseDate, ID de TMS, seriesTitle, seasonNumber y episodeNumber del contenido principal. Se utiliza en combinación con un subType válido
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/parentInfo` |  | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/parentInfo`  |   | Opcional  |
 Ejemplo:
+
 ```
 <parentInfo>
 
 ```
 
 **contentType** Tipo de contenido del contenido principal del cual se deriva o describe el clip
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/parentInfo/contentType` | episode movie series | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/parentInfo/contentType`  | episode movie series  | Opcional  |
 Ejemplo:
+
 ```
 <parentInfo>
 <contentType>episode</contentType>
@@ -2562,10 +2725,11 @@ Ejemplo:
 
 **title**
 Título del programa principal si este es una película o un episodio
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/parentInfo/title` | Título de la película o serie principal | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/parentInfo/title`  | Título de la película o serie principal  | Opcional  |
 Ejemplo:
+
 ```
 <parentInfo>
 <title>Título de la película o serie principal</title>
@@ -2575,10 +2739,11 @@ Ejemplo:
 
 **runtime**
 Duración del programa principal si este es una película o episodio
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/parentInfo/runtime` | Números enteros | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/parentInfo/runtime`  | Números enteros  | Opcional  |
 Ejemplo:
+
 ```
 <parentInfo>
 <runtime>45</runtime>
@@ -2588,10 +2753,11 @@ Ejemplo:
 
 **releaseDate**
 Fecha de estreno de la película, episodio o serie principal
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/parentInfo/releaseDate` | Conforme al formato ISO 8601: AAAA-MM-DD | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/parentInfo/releaseDate`  | Conforme al formato ISO 8601: AAAA-MM-DD  | Opcional  |
 Ejemplo:
+
 ```
 <parentInfo>
 <releaseDate>AAAA-MM-DD</releaseDate>
@@ -2601,10 +2767,11 @@ Ejemplo:
 
 **tmsId**
 ID de TMS de la película, episodio o serie principal
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/parentInfo/tmsId` | ID de TMS válido | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/parentInfo/tmsId`  | ID de TMS válido  | Opcional  |
 Ejemplo:
+
 ```
 <parentInfo>
 <tmsId>TMSID</tmsId>
@@ -2614,10 +2781,11 @@ Ejemplo:
 
 **seriesTitle**
 Título de la serie del programa principal si este es un episodio
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/parentInfo/seriesTitle` | Título de la serie principal | Opcional
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/parentInfo/seriesTitle`  | Título de la serie principal  | Opcional  |
 Ejemplo:
+
 ```
 <parentInfo>
 <seriesTitle>Título de la serie principal</seriesTitle>
@@ -2627,10 +2795,11 @@ Ejemplo:
 
 **seasonNumber**
 Número de temporada del programa principal si este es un episodio
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/parentInfo/seasonNumber` | Números enteros | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/parentInfo/seasonNumber`  | Números enteros  | Opcional  |
 Ejemplo:
+
 ```
 <parentInfo>
 <seasonNumber>2</seasonNumber>
@@ -2640,10 +2809,11 @@ Ejemplo:
 
 **episodeNumber**
 Número de episodio del programa principal si este es un episodio
-XPath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/parentInfo/episodeNumber` | Números enteros | Opcional
+| XPath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/parentInfo/episodeNumber`  | Números enteros  | Opcional  |
 Ejemplo:
+
 ```
 <parentInfo>
 <episodeNumber>14</episodeNumber>
@@ -2653,10 +2823,11 @@ Ejemplo:
 
 **sportType**
 Nombre del deporte que aparece en el clip o momento destacado
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/sportType` | Nombre del deporte | Obligatorio para clips de deportes
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/sportType`  | Nombre del deporte  | Obligatorio para clips de deportes  |
 Ejemplo:
+
 ```
 <sportType>Baseball</sportType>
 
@@ -2664,10 +2835,11 @@ Ejemplo:
 
 **sportLeague**
 Nombre de la liga deportiva que aparece en el clip o momento destacado
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/sportLeague` | Nombre de la liga deportiva | Obligatorio para clips de deportes
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/sportLeague`  | Nombre de la liga deportiva  | Obligatorio para clips de deportes  |
 Ejemplo:
+
 ```
 <sportLeague>MLB</sportLeague>
 
@@ -2675,10 +2847,11 @@ Ejemplo:
 
 **teams**
 Equipos que aparecen en el clip o momento destacado deportivo. Las condiciones de local y visitante de los equipos se definirán en el atributo de Ubicación _En este momento, Roku solo admite metadatos de participantes basados en equipos. Los deportes individuales serán compatibles en el futuro_
-Xpath XML | Valores aceptados | Obligatorio
----|---|---
-`/package/video/teams/team` | Valores de atributos: `team location="away"` `team location="home"` | Obligatorio para clips de deportes
+| Xpath XML  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- |
+| `/package/video/teams/team`  | Valores de atributos: `team location="away"` `team location="home"`  | Obligatorio para clips de deportes  |
 Ejemplo:
+
 ```
 <teams>
     <team location="away">Chicago Cubs</team>
@@ -2690,11 +2863,11 @@ Ejemplo:
 * * *
 ### Pautas y plantillas de metadatos de Excel de Roku
 Los metadatos de Excel solo se aceptarán si se entregan en los formatos aprobados por ROKU que se indican a continuación:
-Metadatos de Excel | Enlace de descarga
----|---
-Plantilla de metadatos de Excel para películas | [Descargar aquí](https://go.roku.com/film-excel-template)
-Plantilla de metadatos de Excel para TV | [Descargar aquí](https://go.roku.com/tv-excel-template)
-Plantilla de metadatos de Excel para clips | [Descargar aquí](https://go.roku.com/clip-excel-template)
+| Metadatos de Excel  | Enlace de descarga  |
+| --- | --- |
+| Plantilla de metadatos de Excel para películas  | [Descargar aquí](https://go.roku.com/film-excel-template)  |
+| Plantilla de metadatos de Excel para TV  | [Descargar aquí](https://go.roku.com/tv-excel-template)  |
+| Plantilla de metadatos de Excel para clips  | [Descargar aquí](https://go.roku.com/clip-excel-template)  |
 La plantilla de metadatos de Excel de Roku debe enviarse con todos los campos obligatorios completos. Roku incluyó consejos en la fila 2 de cada plantilla de metadatos en los que se indica qué celdas se deben resaltar y el formato especial necesario para cada celda. Consulta estos consejos al momento de completar la plantilla de metadatos de Excel. Otras cuestiones a tener en cuenta a la hora de completar una plantilla incluyen:
   * Las fechas deben proporcionarse en formato AAAA-MM-DD (cambia el formato de la celda a “Texto” de ser necesario).
   * Los nombres de los archivos no deben tener [caracteres especiales ni espacios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#caracteres-especiales)
@@ -2711,23 +2884,23 @@ La plantilla de metadatos de Excel de Roku debe enviarse con todos los campos ob
   * Los metadatos de Excel deben guardarse con la extensión .xlsx y exportarse desde Microsoft Excel. Si utilizas otro programa, expórtalos como CSV.
 
 ### Excel: campos de metadatos de películas
-Campo | Descripción | Valores aceptados | Obligatorio
----|---|---|---
-provider | Nombre del estudio, cadena o propietario del contenido | Ejemplo: Roku Originals | obligatorio
-contentType | Define el tipo de contenido del paquete | film | obligatorio
-language | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma. |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido | obligatorio
-original_spoken_language | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido | obligatorio
-country_of_origin | Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html). | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html) | preferido
-asset_id | Identificador único e inalterable de una película. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID del título proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo | obligatorio
-title | Título de la película en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD) | Ejemplo:
-Título de película | obligatorio
-genres | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku. | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título | obligatorio
-tags | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente. | cualquier cadena de menos de 50 caracteres | MUY recomendado
-runtime | Tiempo de duración total del contenido en minutos enteros | Solo números enteros.
-Ejemplo: 90 | obligatorio
-release_date | Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno | Conforme al formato ISO 8601: AAAA-MM-DD | obligatorio
-adBreaks | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles. | HH:MM:SS.sss | preferido
-cuePoints | Se utiliza para identificar los horarios de inicio y de finalización de los créditos iniciales, los resúmenes de contenido, los créditos finales y el material de detrás de escena. Los valores de los horarios de inicio y finalización de cuePoint deben tener una precisión de milisegundos. lista separada por comas con el siguiente formato: `type`=`startTime`>`endTime` Ejemplo: intro=00:05:10.253>00:07:15:123, recap=00:01:12.456>00:03:12.052 | Formato:
+| Campo  | Descripción  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- | --- |
+| provider  | Nombre del estudio, cadena o propietario del contenido  | Ejemplo: Roku Originals  | obligatorio  |
+| contentType  | Define el tipo de contenido del paquete  | film  | obligatorio  |
+| language  | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma.  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| original_spoken_language  | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| country_of_origin  | Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html).  | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html)  | preferido  |
+| asset_id  | Identificador único e inalterable de una película. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID del título proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | obligatorio  |
+| title  | Título de la película en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)  | Ejemplo:
+Título de película  | obligatorio  |
+| genres  | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | obligatorio  |
+| tags  | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.  | cualquier cadena de menos de 50 caracteres  | MUY recomendado  |
+| runtime  | Tiempo de duración total del contenido en minutos enteros  | Solo números enteros.
+Ejemplo: 90  | obligatorio  |
+| release_date  | Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno  | Conforme al formato ISO 8601: AAAA-MM-DD  | obligatorio  |
+| adBreaks  | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.  | HH:MM:SS.sss  | preferido  |
+| cuePoints  | Se utiliza para identificar los horarios de inicio y de finalización de los créditos iniciales, los resúmenes de contenido, los créditos finales y el material de detrás de escena. Los valores de los horarios de inicio y finalización de cuePoint deben tener una precisión de milisegundos. lista separada por comas con el siguiente formato: `type`=`startTime`>`endTime` Ejemplo: intro=00:05:10.253>00:07:15:123, recap=00:01:12.456>00:03:12.052  | Formato:
 type=HH:MM:SS.sss
 HH:MM:SS.sss
 Valores de tipos permitidos:
@@ -2735,82 +2908,82 @@ Valores de tipos permitidos:
 `behind the scenes`
 `intro`
 `recap`
-`end` | opcional
-ratingSystem | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. | obligatorio
-ratings | Clasificación por edades o de contenido de la película según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada. | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. | obligatorio
-cast | Nombres de los miembros del reparto | Lista de nombres y apellidos separados por comas | preferido
-director | Nombre(s) del director de la película. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel. | Lista de nombres y apellidos separados por comas | preferido
-short_synopsis | Una sinopsis breve del contenido en el idioma definido en la columna de idioma. Límite de 250 caracteres. | sinopsis de 250 caracteres | obligatorio
-long_synopsis | Una sinopsis larga del contenido en el idioma definido en la columna de idioma. Límite de 500 caracteres. | sinopsis de 500 caracteres | opcional
-eidr | ID de EIDR si existe uno | Cualquier ID de EIDR válido | opcional
-tms_id | ID de Gracenote si existe uno | Cualquier ID de TMS válido | opcional
-closed_captions | Indica si el título entregado contiene subtítulos descriptivos. Los valores aceptados son Y o N. Este campo es obligatorio para todo el contenido destinado a Roku Channel en EE. UU. | Y o N | obligatorio
-closed_captions_exemption | Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es necesario si el valor `closedCaptions` = “N” 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido. |  | obligatorio en EE. UU. si closed_captions = N
-video_file_name | El nombre de archivo del video en el idioma definido en la columna de idioma que se entregó a través de Aspera. Solo se permite 1 video por asset_id. El video_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieVideoFile.mov | obligatorio
-audio_layout |  [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. | Valores permitidos:
+`end`  | opcional  |
+| ratingSystem  | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
+| ratings  | Clasificación por edades o de contenido de la película según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
+| cast  | Nombres de los miembros del reparto  | Lista de nombres y apellidos separados por comas  | preferido  |
+| director  | Nombre(s) del director de la película. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel.  | Lista de nombres y apellidos separados por comas  | preferido  |
+| short_synopsis  | Una sinopsis breve del contenido en el idioma definido en la columna de idioma. Límite de 250 caracteres.  | sinopsis de 250 caracteres  | obligatorio  |
+| long_synopsis  | Una sinopsis larga del contenido en el idioma definido en la columna de idioma. Límite de 500 caracteres.  | sinopsis de 500 caracteres  | opcional  |
+| eidr  | ID de EIDR si existe uno  | Cualquier ID de EIDR válido  | opcional  |
+| tms_id  | ID de Gracenote si existe uno  | Cualquier ID de TMS válido  | opcional  |
+| closed_captions  | Indica si el título entregado contiene subtítulos descriptivos. Los valores aceptados son Y o N. Este campo es obligatorio para todo el contenido destinado a Roku Channel en EE. UU.  | Y o N  | obligatorio  |
+| closed_captions_exemption  | Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es necesario si el valor `closedCaptions` = “N” 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido.  |   | obligatorio en EE. UU. si closed_captions = N  |
+| video_file_name  | El nombre de archivo del video en el idioma definido en la columna de idioma que se entregó a través de Aspera. Solo se permite 1 video por asset_id. El video_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieVideoFile.mov  | obligatorio  |
+| audio_layout  |  [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado.  | Valores permitidos:
 stereoOnly
 surroundOnly
 stereoPlusSurround
 surroundPlusStereo
-| opcional
-sidecar_audio_file_name | El nombre del archivo de audio sidecar en el idioma definido en la columna de idioma que se entregó a través de Aspera. El sidecar_audio_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieDubFile.wav | opcional Para la entrega de archivos de audio sidecar con fines de traducción o accesibilidad
-sidecar_audio_label | Para uso exclusivo con archivos de descripción de audio. Dejar esta columna en blanco para doblajes de audio. | Valor permitido:
-descripción de audio | obligatorio para archivos de audio descriptivo
-caption_file_name | El nombre de archivo de los subtítulos descriptivos en el idioma definido en la columna de idioma que se entregó a través de Aspera. El caption_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieCaptions.srt | obligatorio
-subtitle_file_name | El nombre de archivo de los subtítulos completos en el idioma definido en la columna de idioma que se entregó a través de Aspera. El localized_subtitle_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieSubtitle.srt | obligatorio al proporcionar metadatos localizados o activos localizados
-keyart_file_name | El nombre de archivo de la imagen de arte clave con texto en el idioma definido en la columna de idioma que se entregó a través de Aspera. El keyart_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieKeyArt.jpg | obligatorio
-background_file_name | El nombre de archivo de la imagen de fondo sin texto que se entregó a través de Aspera. El background_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieBGimage.jpg | preferido
-boxcover_file_name | El nombre de archivo de la imagen de la portada en el idioma definido en la columna de idioma que se entregó a través de Aspera. boxcover_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieBoxArt.jpg | preferido
-territory | Los códigos de país del territorio en el que está disponible el contenido. Se pueden proporcionar varios nodos de países separados por comas, siempre que el vodType y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los países. | Valores permitidos:
+ | opcional  |
+| sidecar_audio_file_name  | El nombre del archivo de audio sidecar en el idioma definido en la columna de idioma que se entregó a través de Aspera. El sidecar_audio_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieDubFile.wav  | opcional Para la entrega de archivos de audio sidecar con fines de traducción o accesibilidad  |
+| sidecar_audio_label  | Para uso exclusivo con archivos de descripción de audio. Dejar esta columna en blanco para doblajes de audio.  | Valor permitido:
+descripción de audio  | obligatorio para archivos de audio descriptivo  |
+| caption_file_name  | El nombre de archivo de los subtítulos descriptivos en el idioma definido en la columna de idioma que se entregó a través de Aspera. El caption_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieCaptions.srt  | obligatorio  |
+| subtitle_file_name  | El nombre de archivo de los subtítulos completos en el idioma definido en la columna de idioma que se entregó a través de Aspera. El localized_subtitle_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieSubtitle.srt  | obligatorio al proporcionar metadatos localizados o activos localizados  |
+| keyart_file_name  | El nombre de archivo de la imagen de arte clave con texto en el idioma definido en la columna de idioma que se entregó a través de Aspera. El keyart_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieKeyArt.jpg  | obligatorio  |
+| background_file_name  | El nombre de archivo de la imagen de fondo sin texto que se entregó a través de Aspera. El background_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieBGimage.jpg  | preferido  |
+| boxcover_file_name  | El nombre de archivo de la imagen de la portada en el idioma definido en la columna de idioma que se entregó a través de Aspera. boxcover_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieBoxArt.jpg  | preferido  |
+| territory  | Los códigos de país del territorio en el que está disponible el contenido. Se pueden proporcionar varios nodos de países separados por comas, siempre que el vodType y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los países.  | Valores permitidos:
 US
 CA
 GB
-MX | preferido
-vodType | Tipo de monetización de la película. Se pueden proporcionar varios nodos vodType separados por comas, siempre que el país y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los vodType. | Ejemplo: avod
+MX  | preferido  |
+| vodType  | Tipo de monetización de la película. Se pueden proporcionar varios nodos vodType separados por comas, siempre que el país y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los vodType.  | Ejemplo: avod
 svod
-avod,svod | preferido
-license_start_date | Fecha de inicio de la disponibilidad del contenido para las personas usuarias de Roku Channel. La license_start_date debe ser cronológicamente anterior a la license_end_date. Las license_start_date y license_end_date no deben ser idénticas. | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | preferido
-license_end_date | Fecha de finalización de la disponibilidad del contenido para las personas usuarias de Roku Channel. La license_end_date debe ser cronológicamente posterior a la license_start_date. Las license_start_date y license_end_date no deben ser idénticas. | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | preferido
+avod,svod  | preferido  |
+| license_start_date  | Fecha de inicio de la disponibilidad del contenido para las personas usuarias de Roku Channel. La license_start_date debe ser cronológicamente anterior a la license_end_date. Las license_start_date y license_end_date no deben ser idénticas.  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | preferido  |
+| license_end_date  | Fecha de finalización de la disponibilidad del contenido para las personas usuarias de Roku Channel. La license_end_date debe ser cronológicamente posterior a la license_start_date. Las license_start_date y license_end_date no deben ser idénticas.  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | preferido  |
 * * *
 ### Excel: campos de metadatos de TV por episodios
-Campo | Descripción | Valores aceptados | Obligatorio
----|---|---|---
-provider | Nombre del estudio, cadena o propietario del contenido | Ejemplo:
-Roku Originals | obligatorio
-contentType | Define el tipo de contenido del paquete | episodio | obligatorio
-Language | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma. | Un [valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido | obligatorio
-original_spoken_language | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). | Un [valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido | obligatorio
-country_of_origin | Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html). | Un código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html) | preferido
-series_id | Identificador único e inalterable de una serie. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID de la serie proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo | obligatorio
-series_title | Título de la serie en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD) | Ejemplo:
-Título de la serie | obligatorio
-series_tmsId | ID de Gracenote si existe uno | Cualquier ID de TMS de programa válido | opcional
-series_release_date | Fecha original en que la serie estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno | Conforme al formato ISO 8601: AAAA-MM-DD | obligatorio
-series_genres | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku. | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título | obligatorio
-series_tags | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente. | cualquier cadena de menos de 50 caracteres | MUY recomendado
-series_cast | Nombres de los miembros del reparto de la serie | Lista de nombres y apellidos separados por comas | preferido
-series_directors | Nombre(s) del director de la serie. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel. | Lista de nombres y apellidos separados por comas | preferido
-series_short_synopsis | Una sinopsis breve de la serie en el idioma definido en la columna de idioma. Límite de 250 caracteres. | sinopsis de 250 caracteres | obligatorio
-series_long_synopsis | Una sinopsis larga de la serie en el idioma definido en la columna de idioma. Límite de 500 caracteres. | sinopsis de 500 caracteres | Opcional
-season_id | Identificador único e inalterable de una temporada. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. Límite de 50 caracteres | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo | obligatorio
-season_number | Posición numérica de la temporada dentro de una serie. Este valor determinará el orden en que se verán los episodios subyacentes en la plataforma. Los valores de seasonNumber deben entregarse tal y como se emitieron o exhibieron originalmente en cualquier plataforma. Solo se permiten valores numéricos (enteros). | Solo números enteros | obligatorio
-season_tmsIdo | ID de Gracenote si existe uno | Cualquier ID de TMS de temporada válido | opcional
-asset_id | Identificador único e inalterable de un episodio. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID del título proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo | obligatorio
-episode_title | Título del episodio en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD) | Ejemplo:
-Título de película | obligatorio
-episode_number | Posición numérica del episodio dentro de una temporada de una serie. Este valor determinará el orden en que se verán los episodios en la plataforma. Los valores de episodeNumber deben entregarse tal y como se emitieron o exhibieron originalmente en cualquier plataforma. No deben proporcionarse números de producción. Solo se permiten valores numéricos (enteros). | Solo números enteros | obligatorio
-episode_release_date | Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno | Conforme al formato ISO 8601: AAAA-MM-DD | obligatorio
-episode_runtime | Tiempo de duración total del contenido en minutos enteros | Solo números enteros.
-Ejemplo: 22 | obligatorio
-episode_adBreaks | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles. | HH:MM:SS.sss | preferido
-episode_cuePoints | Se utiliza para identificar los horarios de inicio y de finalización de los créditos iniciales, los resúmenes de contenido, los créditos finales y el material de detrás de escena. Los valores de los horarios de inicio y finalización de cuePoint deben tener una precisión de milisegundos. lista separada por comas con el siguiente formato: `type`=`startTime`>`endTime` Ejemplo: intro=00:05:10.253>00:07:15:123, recap=00:01:12.456>00:03:12.052 | Formato:
+| Campo  | Descripción  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- | --- |
+| provider  | Nombre del estudio, cadena o propietario del contenido  | Ejemplo:
+Roku Originals  | obligatorio  |
+| contentType  | Define el tipo de contenido del paquete  | episodio  | obligatorio  |
+| Language  | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma.  | Un [valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| original_spoken_language  | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).  | Un [valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| country_of_origin  | Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html).  | Un código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html)  | preferido  |
+| series_id  | Identificador único e inalterable de una serie. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID de la serie proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | obligatorio  |
+| series_title  | Título de la serie en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)  | Ejemplo:
+Título de la serie  | obligatorio  |
+| series_tmsId  | ID de Gracenote si existe uno  | Cualquier ID de TMS de programa válido  | opcional  |
+| series_release_date  | Fecha original en que la serie estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno  | Conforme al formato ISO 8601: AAAA-MM-DD  | obligatorio  |
+| series_genres  | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | obligatorio  |
+| series_tags  | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.  | cualquier cadena de menos de 50 caracteres  | MUY recomendado  |
+| series_cast  | Nombres de los miembros del reparto de la serie  | Lista de nombres y apellidos separados por comas  | preferido  |
+| series_directors  | Nombre(s) del director de la serie. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel.  | Lista de nombres y apellidos separados por comas  | preferido  |
+| series_short_synopsis  | Una sinopsis breve de la serie en el idioma definido en la columna de idioma. Límite de 250 caracteres.  | sinopsis de 250 caracteres  | obligatorio  |
+| series_long_synopsis  | Una sinopsis larga de la serie en el idioma definido en la columna de idioma. Límite de 500 caracteres.  | sinopsis de 500 caracteres  | Opcional  |
+| season_id  | Identificador único e inalterable de una temporada. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. Límite de 50 caracteres  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | obligatorio  |
+| season_number  | Posición numérica de la temporada dentro de una serie. Este valor determinará el orden en que se verán los episodios subyacentes en la plataforma. Los valores de seasonNumber deben entregarse tal y como se emitieron o exhibieron originalmente en cualquier plataforma. Solo se permiten valores numéricos (enteros).  | Solo números enteros  | obligatorio  |
+| season_tmsIdo  | ID de Gracenote si existe uno  | Cualquier ID de TMS de temporada válido  | opcional  |
+| asset_id  | Identificador único e inalterable de un episodio. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID del título proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | obligatorio  |
+| episode_title  | Título del episodio en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)  | Ejemplo:
+Título de película  | obligatorio  |
+| episode_number  | Posición numérica del episodio dentro de una temporada de una serie. Este valor determinará el orden en que se verán los episodios en la plataforma. Los valores de episodeNumber deben entregarse tal y como se emitieron o exhibieron originalmente en cualquier plataforma. No deben proporcionarse números de producción. Solo se permiten valores numéricos (enteros).  | Solo números enteros  | obligatorio  |
+| episode_release_date  | Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno  | Conforme al formato ISO 8601: AAAA-MM-DD  | obligatorio  |
+| episode_runtime  | Tiempo de duración total del contenido en minutos enteros  | Solo números enteros.
+Ejemplo: 22  | obligatorio  |
+| episode_adBreaks  | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si el video proporcionado incluye fotogramas en negro para comerciales, proporciona el código de tiempo igual al punto medio de dichos fotogramas. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.  | HH:MM:SS.sss  | preferido  |
+| episode_cuePoints  | Se utiliza para identificar los horarios de inicio y de finalización de los créditos iniciales, los resúmenes de contenido, los créditos finales y el material de detrás de escena. Los valores de los horarios de inicio y finalización de cuePoint deben tener una precisión de milisegundos. lista separada por comas con el siguiente formato: `type`=`startTime`>`endTime` Ejemplo: intro=00:05:10.253>00:07:15:123, recap=00:01:12.456>00:03:12.052  | Formato:
 type=HH:MM:SS.sss
 HH:MM:SS.sss
 Valores de tipos permitidos:
@@ -2818,58 +2991,58 @@ Valores de tipos permitidos:
 `behind the scenes`
 `intro`
 `recap`
-`end` | opcional
-ratingSystem | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. | Obligatorio
-episode_ratings | Clasificación por edades o de contenido para el contenido según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada. | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. | obligatorio
-episode_tags | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente. | cualquier cadena de menos de 50 caracteres | MUY recomendado
-episode_cast | Nombres de los miembros del reparto | Lista de nombres y apellidos separados por comas | preferido
-episode_director | Nombre(s) del director del episodio. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel. | Lista de nombres y apellidos separados por comas | preferido
-episode_short_synopsis | Una sinopsis breve del episodio en el idioma definido en la columna de idioma. Límite de 250 caracteres. | sinopsis de 250 caracteres | obligatorio
-episode_long_synopsis | Una sinopsis larga del episodio en el idioma definido en la columna de idioma. Límite de 500 caracteres. | sinopsis de 500 caracteres | opcional
-episode_eidr | ID de EIDR si existe uno | Cualquier ID de EIDR de episodio válido | opcional
-episode_tmsId | ID de Gracenote si existe uno | Cualquier ID de TMS de episodio válido | opcional
-closed_captions | Indica si el título entregado contiene subtítulos descriptivos. Los valores aceptados son Y o N. Este campo es obligatorio para todo el contenido destinado a Roku Channel en EE. UU. | Y o N | obligatorio
-closed_captions_exemption | Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es necesario si el valor `closedCaptions` = “N” 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido. |  | obligatorio en EE. UU. si closed_captions = N
-video_file_name | El nombre de archivo del video en el idioma definido en la columna de idioma que se entregó a través de Aspera. Solo se permite 1 video por asset_id. El video_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-episodeVideoFile.mov | obligatorio
-audio_layout |  [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. | Valores permitidos:
+`end`  | opcional  |
+| ratingSystem  | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | Obligatorio  |
+| episode_ratings  | Clasificación por edades o de contenido para el contenido según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
+| episode_tags  | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.  | cualquier cadena de menos de 50 caracteres  | MUY recomendado  |
+| episode_cast  | Nombres de los miembros del reparto  | Lista de nombres y apellidos separados por comas  | preferido  |
+| episode_director  | Nombre(s) del director del episodio. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel.  | Lista de nombres y apellidos separados por comas  | preferido  |
+| episode_short_synopsis  | Una sinopsis breve del episodio en el idioma definido en la columna de idioma. Límite de 250 caracteres.  | sinopsis de 250 caracteres  | obligatorio  |
+| episode_long_synopsis  | Una sinopsis larga del episodio en el idioma definido en la columna de idioma. Límite de 500 caracteres.  | sinopsis de 500 caracteres  | opcional  |
+| episode_eidr  | ID de EIDR si existe uno  | Cualquier ID de EIDR de episodio válido  | opcional  |
+| episode_tmsId  | ID de Gracenote si existe uno  | Cualquier ID de TMS de episodio válido  | opcional  |
+| closed_captions  | Indica si el título entregado contiene subtítulos descriptivos. Los valores aceptados son Y o N. Este campo es obligatorio para todo el contenido destinado a Roku Channel en EE. UU.  | Y o N  | obligatorio  |
+| closed_captions_exemption  | Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es necesario si el valor `closedCaptions` = “N” 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido.  |   | obligatorio en EE. UU. si closed_captions = N  |
+| video_file_name  | El nombre de archivo del video en el idioma definido en la columna de idioma que se entregó a través de Aspera. Solo se permite 1 video por asset_id. El video_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+episodeVideoFile.mov  | obligatorio  |
+| audio_layout  |  [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado.  | Valores permitidos:
 stereoOnly
 surroundOnly
 stereoPlusSurround
-surroundPlusStereo | opcional
-sidecar_audio_file_name | El nombre del archivo de audio sidecar en el idioma definido en la columna de idioma que se entregó a través de Aspera. El sidecar_audio_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieDubFile.wav | opcional Para la entrega de archivos de audio sidecar con fines de traducción o accesibilidad
-sidecar_audio_label | Para uso exclusivo con archivos de descripción de audio. Dejar esta columna en blanco para doblajes de audio. | Valor permitido:
-descripción de audio | obligatorio para archivos de audio descriptivo
-closed_caption_file_name | El nombre de archivo de los subtítulos descriptivos en el idioma definido en la columna de idioma que se entregó a través de Aspera. El caption_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-episodeCaptions.srt | obligatorio
-series_keyart_file_name | El nombre de archivo de la imagen de arte clave con texto en el idioma definido en la columna de idioma que se entregó a través de Aspera. El keyart_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-episodeKeyArt.jpg | obligatorio
-series_boxcover_file_name | El nombre de archivo de la imagen de la portada en el idioma definido en la columna de idioma que se entregó a través de Aspera. boxcover_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-episodeBoxArt.jpg | preferido
-series_background_file_name | El nombre de archivo de la imagen de fondo sin texto que se entregó a través de Aspera. El background_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-episodeBGimage.jpg | preferido
-episode_background_file_name | El nombre de archivo de la imagen de fondo sin texto que se entregó a través de Aspera. El background_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-episodeBGimage.jpg | preferido
-vodType | Tipo de monetización de la película. Se pueden proporcionar varios nodos vodType separados por comas, siempre que el país y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los vodType. | Ejemplo:
+surroundPlusStereo  | opcional  |
+| sidecar_audio_file_name  | El nombre del archivo de audio sidecar en el idioma definido en la columna de idioma que se entregó a través de Aspera. El sidecar_audio_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieDubFile.wav  | opcional Para la entrega de archivos de audio sidecar con fines de traducción o accesibilidad  |
+| sidecar_audio_label  | Para uso exclusivo con archivos de descripción de audio. Dejar esta columna en blanco para doblajes de audio.  | Valor permitido:
+descripción de audio  | obligatorio para archivos de audio descriptivo  |
+| closed_caption_file_name  | El nombre de archivo de los subtítulos descriptivos en el idioma definido en la columna de idioma que se entregó a través de Aspera. El caption_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+episodeCaptions.srt  | obligatorio  |
+| series_keyart_file_name  | El nombre de archivo de la imagen de arte clave con texto en el idioma definido en la columna de idioma que se entregó a través de Aspera. El keyart_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+episodeKeyArt.jpg  | obligatorio  |
+| series_boxcover_file_name  | El nombre de archivo de la imagen de la portada en el idioma definido en la columna de idioma que se entregó a través de Aspera. boxcover_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+episodeBoxArt.jpg  | preferido  |
+| series_background_file_name  | El nombre de archivo de la imagen de fondo sin texto que se entregó a través de Aspera. El background_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+episodeBGimage.jpg  | preferido  |
+| episode_background_file_name  | El nombre de archivo de la imagen de fondo sin texto que se entregó a través de Aspera. El background_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+episodeBGimage.jpg  | preferido  |
+| vodType  | Tipo de monetización de la película. Se pueden proporcionar varios nodos vodType separados por comas, siempre que el país y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los vodType.  | Ejemplo:
 avod
 svod
-avod,svod | preferido
-territory | Los códigos de país del territorio en el que está disponible el contenido. Se pueden proporcionar varios nodos de países separados por comas, siempre que el vodType y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los países. | Valores permitidos:
+avod,svod  | preferido  |
+| territory  | Los códigos de país del territorio en el que está disponible el contenido. Se pueden proporcionar varios nodos de países separados por comas, siempre que el vodType y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los países.  | Valores permitidos:
 US
 CA
 GB
-MX | preferido
-episode_startDate | Fecha de inicio de la disponibilidad del contenido para las personas usuarias de Roku Channel. La episode_startDate debe ser cronológicamente anterior a la episode_endDate. Las episode_startDate y episode_endDate no deben ser idénticas. | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | preferido
-episode_endDate | Fecha de finalización de la disponibilidad del contenido para las personas usuarias de Roku Channel. La episode_endDate debe ser cronológicamente posterior a la episode_startDate. Las episode_startDate y episode_endDate no deben ser idénticas. | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | preferido
+MX  | preferido  |
+| episode_startDate  | Fecha de inicio de la disponibilidad del contenido para las personas usuarias de Roku Channel. La episode_startDate debe ser cronológicamente anterior a la episode_endDate. Las episode_startDate y episode_endDate no deben ser idénticas.  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | preferido  |
+| episode_endDate  | Fecha de finalización de la disponibilidad del contenido para las personas usuarias de Roku Channel. La episode_endDate debe ser cronológicamente posterior a la episode_startDate. Las episode_startDate y episode_endDate no deben ser idénticas.  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | preferido  |
 * * *
 ### Excel: campos de metadatos de clips de formato corto
-Campo | Descripción | Valores aceptados | Obligatorio
----|---|---|---
-provider | Nombre del estudio, cadena o propietario del contenido | Ejemplo:
-Roku Originals | obligatorio
-contentType | Define el tipo de contenido del paquete | clip | obligatorio
-subType | Define el subType (subtipo) de contenido del paquete. Actualmente Roku no admite conexiones principales y secundarias de forma nativa. El contenido auxiliar o relacionado puede entregarse e identificarse con uno de los siguientes subtipos (subTypes). _No existe ningún vínculo entre los activos principales y secundarios_ subTypes compatibles:
+| Campo  | Descripción  | Valores aceptados  | Obligatorio  |
+| --- | --- | --- | --- |
+| provider  | Nombre del estudio, cadena o propietario del contenido  | Ejemplo:
+Roku Originals  | obligatorio  |
+| contentType  | Define el tipo de contenido del paquete  | clip  | obligatorio  |
+| subType  | Define el subType (subtipo) de contenido del paquete. Actualmente Roku no admite conexiones principales y secundarias de forma nativa. El contenido auxiliar o relacionado puede entregarse e identificarse con uno de los siguientes subtipos (subTypes). _No existe ningún vínculo entre los activos principales y secundarios_ subTypes compatibles:
   * trailer
   * highlight
   * making_of
@@ -2879,7 +3052,7 @@ subType | Define el subType (subtipo) de contenido del paquete. Actualmente Roku
   * recap
   * extra
 
-| Valores permitidos:
+ | Valores permitidos:
 trailer
 highlight
 making_of
@@ -2887,74 +3060,74 @@ behind_scenes
 interview
 related
 recap
-extra | opcional
-language | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma. |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido | obligatorio
-original_spoken_language | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido | obligatorio
-country_of_origin | Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html). | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html) | preferido
-asset_id | Identificador único e inalterable de una película. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID del título proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo | obligatorio
-title | Título del clip en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD) | Ejemplo:
-Título de película | obligatorio
-genres | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku. | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título | obligatorio
-tags | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente. | cualquier cadena de menos de 50 caracteres | MUY recomendado
-runtime | Tiempo de duración total del contenido en minutos enteros | Solo números enteros.
-Ejemplo: 90 | obligatorio
-release_date | Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno | Conforme al formato ISO 8601: AAAA-MM-DD | obligatorio
-adBreaks | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles. | HH:MM:SS.sss | preferido
-cuePoints |  |  | opcional
-ratingSystem | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. | obligatorio
-ratings | Clasificación por edades o de contenido de la película según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada. | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación. | obligatorio
-cast | Nombres de los miembros del reparto | Lista de nombres y apellidos separados por comas | preferido
-director | Nombre(s) del director de la película. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel. | Lista de nombres y apellidos separados por comas | preferido
-short_synopsis | Una sinopsis breve del contenido en el idioma definido en la columna de idioma. Límite de 250 caracteres. | sinopsis de 250 caracteres | obligatorio
-long_synopsis | Una sinopsis larga del contenido en el idioma definido en la columna de idioma. Límite de 500 caracteres. | sinopsis de 500 caracteres | obligatorio
-eidr | ID de EIDR si existe uno | Cualquier ID de EIDR válido | opcional
-tms_id | ID de Gracenote si existe uno | Cualquier ID de TMS válido | opcional
-closed_captions | Indica si el título entregado contiene subtítulos descriptivos. Los valores aceptados son Y o N. Este campo es obligatorio para todo el contenido destinado a Roku Channel en EE. UU. | Y o N | obligatorio
-closed_captions_exemption | Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es necesario si el valor `closedCaptions` = “N” 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido. |  | obligatorio en EE. UU. si closed_captions = N
-video_file_name | El nombre de archivo del video en el idioma definido en la columna de idioma que se entregó a través de Aspera. Solo se permite 1 video por asset_id. El video_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieVideoFile.mov | obligatorio
-audio_layout |  [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado. | Valores permitidos:
+extra  | opcional  |
+| language  | Idioma del título, las sinopsis, el video, los subtítulos descriptivos, los subtítulos, los doblajes de audio y las ilustraciones que se enumeran en la fila. El valor debe ajustarse a un [código de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) compatible. Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES). Solo se permite un idioma.  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| original_spoken_language  | Define el idioma original de producción del título que se entrega. Como mínimo, el valor debe ajustarse a un [código de idioma compatible](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma). Se recomienda que, al proporcionar el idioma, incluyas también un código de región para brindar información útil, como la distinción entre el español que se habla en México (es-MX) y el que se habla en España (es-ES).  |  [Valor de idioma](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#c%C3%B3digos-de-idioma) válido  | obligatorio  |
+| country_of_origin  | Define el país principal donde se produjo la película y donde están establecidos los principales creadores, el equipo de filmación y los productores. El valor debe ajustarse a uno de los códigos de país compatibles definidos en la lista de códigos de país de 2 caracteres [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html).  | Código de país válido de 2 caracteres según [ISO 3166-1 alfa 2](https://www.iso.org/iso-3166-country-codes.html)  | preferido  |
+| asset_id  | Identificador único e inalterable de una película. La empresa socia debe generar y suministrar los ID para el contenido que se entrega a Roku. El ID en los metadatos de ingesta debe coincidir con el ID del título proporcionado en el documento de avails. Esto será de gran ayuda en el seguimiento del contenido a lo largo de todo el proceso de Roku, desde el envío de Avails hasta su publicación en Roku Channel. Límite de 50 caracteres  | Solo caracteres alfanuméricos, guiones y guiones bajos. 50 caracteres como máximo  | obligatorio  |
+| title  | Título del clip en el idioma definido en la columna de idioma. Incluye únicamente el nombre del contenido tal y como debe aparecer en la plataforma. No incluyas datos aparte del título entre paréntesis, como un indicador de versión original o nueva, el año de estreno, la temporada o el formato de video, por ejemplo: (Clásica), (1987), (Temporada 1) o (HD)  | Ejemplo:
+Título de película  | obligatorio  |
+| genres  | Clasificación del contenido por género. Roku requiere que cada película se entregue con al menos un género compatible. Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) de los géneros que admite Roku.  | Consulta la [enumeración](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#g%C3%A9neros) más adelante. Pueden enviarse hasta 10 géneros por título  | obligatorio  |
+| tags  | Las etiquetas son campos de formato libre que pueden utilizarse para categorizar el contenido más allá del número limitado de valores de género compatibles. El equipo editorial y el motor de recomendaciones de Roku Channel utilizarán las etiquetas proporcionadas para ayudar a mostrar el contenido en la interfaz de uso de la plataforma de Roku Channel. Cuantas más etiquetas se incluyan en un clip, episodio o película, más formas habrá de seleccionar el contenido y mostrarlo a la persona usuaria final. No hay límite para el número de etiquetas que pueden entregarse con un título y no hay un conjunto definido de etiquetas. Las etiquetas distinguen entre mayúsculas y minúsculas. Por ejemplo, las etiquetas “Rom-Com” y “rom-com” se considerarían dos etiquetas únicas. Asegúrate de que todas las etiquetas se entreguen de forma consistente.  | cualquier cadena de menos de 50 caracteres  | MUY recomendado  |
+| runtime  | Tiempo de duración total del contenido en minutos enteros  | Solo números enteros.
+Ejemplo: 90  | obligatorio  |
+| release_date  | Fecha original en la que el contenido estuvo disponible por primera vez en cualquier presentación. Debe incluir, como mínimo, el año correcto del estreno  | Conforme al formato ISO 8601: AAAA-MM-DD  | obligatorio  |
+| adBreaks  | Se utiliza para determinar[los cortes publicitarios del contenido financiado con anuncios](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#cortes-publicitarios). Los valores de adBreak deben tener una precisión de milisegundos. Si bien no es necesario para el contenido SVOD, se pueden ingerir datos adBreak con precisión de fotogramas si están disponibles.  | HH:MM:SS.sss  | preferido  |
+| cuePoints  |   |   | opcional  |
+| ratingSystem  | Para cada película, se proporcionará la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
+| ratings  | Clasificación por edades o de contenido de la película según una fuente de clasificación. Se facilitará para cada película una clasificación válida de película o TV de parte de la autoridad de clasificación (ratingSystem) del territorio en el cual estará disponible el contenido. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, incluye una clasificación válida del USA_PR ratingSystem. No existe ningún organismo oficial que asigne clasificaciones para el USA_PR ratingSystem. Toma como referencia las pautas que se enumeran en <http://tvguidelines.org/> para asignar la clasificación adecuada.  | Consulta [más adelante](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#valores-de-clasificaci%C3%B3n-por-sistema-de-clasificaci%C3%B3n-y-pa%C3%ADs) las clasificaciones permitidas por el sistema de clasificación.  | obligatorio  |
+| cast  | Nombres de los miembros del reparto  | Lista de nombres y apellidos separados por comas  | preferido  |
+| director  | Nombre(s) del director de la película. Por el momento, director es la única función dentro del equipo de filmación que se admite para la ingesta de metadatos de Excel.  | Lista de nombres y apellidos separados por comas  | preferido  |
+| short_synopsis  | Una sinopsis breve del contenido en el idioma definido en la columna de idioma. Límite de 250 caracteres.  | sinopsis de 250 caracteres  | obligatorio  |
+| long_synopsis  | Una sinopsis larga del contenido en el idioma definido en la columna de idioma. Límite de 500 caracteres.  | sinopsis de 500 caracteres  | obligatorio  |
+| eidr  | ID de EIDR si existe uno  | Cualquier ID de EIDR válido  | opcional  |
+| tms_id  | ID de Gracenote si existe uno  | Cualquier ID de TMS válido  | opcional  |
+| closed_captions  | Indica si el título entregado contiene subtítulos descriptivos. Los valores aceptados son Y o N. Este campo es obligatorio para todo el contenido destinado a Roku Channel en EE. UU.  | Y o N  | obligatorio  |
+| closed_captions_exemption  | Código de exención de la FCC para el requisito de subtítulos descriptivos. Este nodo es necesario si el valor `closedCaptions` = “N” 1 - El contenido nunca se emitió por televisión en Estados Unidos. 2 - El contenido solo se emitió por televisión en Estados Unidos sin subtítulos descriptivos. 3 - El contenido no se emite por televisión en Estados Unidos con subtítulos descriptivos desde el 30 de septiembre de 2012. 4 - El contenido no consiste en programación de video de larga duración. 5 - El contenido no pertenece a una categoría de programación en línea que requiera subtítulos descriptivos según la normativa de la FCC (49 C.F.R. § 79.4(b)). 6 - La FCC o el Congreso de EE. UU. concedieron una exención de los requisitos de subtítulos descriptivos para este contenido.  |   | obligatorio en EE. UU. si closed_captions = N  |
+| video_file_name  | El nombre de archivo del video en el idioma definido en la columna de idioma que se entregó a través de Aspera. Solo se permite 1 video por asset_id. El video_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieVideoFile.mov  | obligatorio  |
+| audio_layout  |  [Descriptor de diseño de audio](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#audio-descriptivo) para el archivo de video entregado.  | Valores permitidos:
 stereoOnly
 surroundOnly
 stereoPlusSurround
-surroundPlusStereo | opcional
-sidecar_audio_file_name | El nombre del archivo de audio sidecar en el idioma definido en la columna de idioma que se entregó a través de Aspera. El sidecar_audio_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieDubFile.wav | opcional Para la entrega de archivos de audio sidecar con fines de traducción o accesibilidad
-sidecar_audio_label | Para uso exclusivo con archivos de descripción de audio. Dejar esta columna en blanco para doblajes de audio. | Valor permitido:
-descripción de audio | obligatorio para archivos de audio descriptivo
-caption_file_name | El nombre de archivo de los subtítulos descriptivos en el idioma definido en la columna de idioma que se entregó a través de Aspera. El caption_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieCaptions.srt | obligatorio
-keyart_file_name | El nombre de archivo de la imagen de arte clave con texto en el idioma definido en la columna de idioma que se entregó a través de Aspera. El keyart_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieKeyArt.jpg | obligatorio
-background_file_name | El nombre de archivo de la imagen de fondo sin texto que se entregó a través de Aspera. El background_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieBGimage.jpg | preferido
-boxcover_file_name | El nombre de archivo de la imagen de la portada en el idioma definido en la columna de idioma que se entregó a través de Aspera. boxcover_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales | Ejemplo:
-movieBoxArt.jpg | preferido
-territory | Los códigos de país del territorio en el que está disponible el contenido. Se pueden proporcionar varios nodos de países separados por comas, siempre que el vodType y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los países. | Valores permitidos:
+surroundPlusStereo  | opcional  |
+| sidecar_audio_file_name  | El nombre del archivo de audio sidecar en el idioma definido en la columna de idioma que se entregó a través de Aspera. El sidecar_audio_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieDubFile.wav  | opcional Para la entrega de archivos de audio sidecar con fines de traducción o accesibilidad  |
+| sidecar_audio_label  | Para uso exclusivo con archivos de descripción de audio. Dejar esta columna en blanco para doblajes de audio.  | Valor permitido:
+descripción de audio  | obligatorio para archivos de audio descriptivo  |
+| caption_file_name  | El nombre de archivo de los subtítulos descriptivos en el idioma definido en la columna de idioma que se entregó a través de Aspera. El caption_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieCaptions.srt  | obligatorio  |
+| keyart_file_name  | El nombre de archivo de la imagen de arte clave con texto en el idioma definido en la columna de idioma que se entregó a través de Aspera. El keyart_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieKeyArt.jpg  | obligatorio  |
+| background_file_name  | El nombre de archivo de la imagen de fondo sin texto que se entregó a través de Aspera. El background_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieBGimage.jpg  | preferido  |
+| boxcover_file_name  | El nombre de archivo de la imagen de la portada en el idioma definido en la columna de idioma que se entregó a través de Aspera. boxcover_file_name debe coincidir exactamente con el archivo entregado. Los nombres de archivo distinguen entre mayúsculas y minúsculas y no deben contener espacios en blanco ni caracteres especiales  | Ejemplo:
+movieBoxArt.jpg  | preferido  |
+| territory  | Los códigos de país del territorio en el que está disponible el contenido. Se pueden proporcionar varios nodos de países separados por comas, siempre que el vodType y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los países.  | Valores permitidos:
 US
 CA
 GB
-MX | preferido
-vodType | Tipo de monetización de la película. Se pueden proporcionar varios nodos vodType separados por comas, siempre que el país y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los vodType. | Ejemplo:
+MX  | preferido  |
+| vodType  | Tipo de monetización de la película. Se pueden proporcionar varios nodos vodType separados por comas, siempre que el país y las fechas de licensePeriodStart y licensePeriodEnd sean iguales en todos los vodType.  | Ejemplo:
 avod
 svod
-avod,svod | preferido
-license_start_date | Fecha de inicio de la disponibilidad del contenido para las personas usuarias de Roku Channel. La license_start_date debe ser cronológicamente anterior a la license_end_date. Las license_start_date y license_end_date no deben ser idénticas. | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | preferido
-license_end_date | Fecha de finalización de la disponibilidad del contenido para las personas usuarias de Roku Channel. La license_end_date debe ser cronológicamente posterior a la license_start_date. Las license_start_date y license_end_date no deben ser idénticas. | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS | preferido
-parent_type | Tipo de contenido del contenido principal del cual se deriva o describe el clip | Valores permitidos: episode movie series | opcional
-parent_title | Título del programa principal si se trata de contenido principal | Ejemplo:
-Título de la película o serie principal | opcional
-parent_runtime | Duración del programa principal si este es una película o episodio | Números enteros | opcional
-parent_release_date | Fecha de estreno de la película, episodio o serie principal | Conforme al formato ISO 8601: AAAA-MM-DD | opcional
-parent_tms_id | ID de TMS de la película, episodio o serie principal | Cualquier ID de TMS válido | opcional
-parent_series | Título de la serie del programa principal si este es un episodio | Ejemplo:
-Título de la serie principal | opcional
-parent_season | Número de temporada del programa principal si este es un episodio | Números enteros | opcional
-parent_episode | Número de episodio del programa principal si este es un episodio | Números enteros | opcional
-sport_type | Nombre del deporte que aparece en el clip o momento destacado | Nombre del deporte | obligatorio para clips de deportes
-sport_league | Nombre de la liga deportiva que aparece en el clip o momento destacado | Nombre de la liga deportiva | obligatorio para clips de deportes
-sport_teams | Equipos que aparecen en el clip o momento destacado deportivo. Pueden proporcionarse varios equipos separados por comas. _En este momento, Roku solo admite metadatos de participantes basados en equipos. Los deportes individuales serán compatibles en el futuro._ | Lista separada por comas. Ejemplo:
-Chicago Cubs,St. Louis Cardinals | obligatorio para clips de deportes
+avod,svod  | preferido  |
+| license_start_date  | Fecha de inicio de la disponibilidad del contenido para las personas usuarias de Roku Channel. La license_start_date debe ser cronológicamente anterior a la license_end_date. Las license_start_date y license_end_date no deben ser idénticas.  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | preferido  |
+| license_end_date  | Fecha de finalización de la disponibilidad del contenido para las personas usuarias de Roku Channel. La license_end_date debe ser cronológicamente posterior a la license_start_date. Las license_start_date y license_end_date no deben ser idénticas.  | Conforme al formato ISO 8601: AAAA-MM-DDTHH:MM:SS  | preferido  |
+| parent_type  | Tipo de contenido del contenido principal del cual se deriva o describe el clip  | Valores permitidos: episode movie series  | opcional  |
+| parent_title  | Título del programa principal si se trata de contenido principal  | Ejemplo:
+Título de la película o serie principal  | opcional  |
+| parent_runtime  | Duración del programa principal si este es una película o episodio  | Números enteros  | opcional  |
+| parent_release_date  | Fecha de estreno de la película, episodio o serie principal  | Conforme al formato ISO 8601: AAAA-MM-DD  | opcional  |
+| parent_tms_id  | ID de TMS de la película, episodio o serie principal  | Cualquier ID de TMS válido  | opcional  |
+| parent_series  | Título de la serie del programa principal si este es un episodio  | Ejemplo:
+Título de la serie principal  | opcional  |
+| parent_season  | Número de temporada del programa principal si este es un episodio  | Números enteros  | opcional  |
+| parent_episode  | Número de episodio del programa principal si este es un episodio  | Números enteros  | opcional  |
+| sport_type  | Nombre del deporte que aparece en el clip o momento destacado  | Nombre del deporte  | obligatorio para clips de deportes  |
+| sport_league  | Nombre de la liga deportiva que aparece en el clip o momento destacado  | Nombre de la liga deportiva  | obligatorio para clips de deportes  |
+| sport_teams  | Equipos que aparecen en el clip o momento destacado deportivo. Pueden proporcionarse varios equipos separados por comas. _En este momento, Roku solo admite metadatos de participantes basados en equipos. Los deportes individuales serán compatibles en el futuro._  | Lista separada por comas. Ejemplo:
+Chicago Cubs,St. Louis Cardinals  | obligatorio para clips de deportes  |
 * * *
 ## Valores que admite Roku
 ### Funciones del equipo de filmación
@@ -2968,9 +3141,9 @@ Chicago Cubs,St. Louis Cardinals | obligatorio para clips de deportes
   * Screenwriter
 
 ### Géneros
-|  |
----|---|---
-3x3 basketball
+|   |   |   |
+| --- | --- | --- |
+| 3x3 basketball
 action
 action sports
 adventure
@@ -3045,7 +3218,7 @@ dog racing
 dog show
 dog sled
 drag racing
-drama | educational
+drama  | educational
 entertainment
 environment
 equestrian
@@ -3120,7 +3293,7 @@ olympics
 opera
 outdoors
 parade
-paranormal | parenting
+paranormal  | parenting
 performing arts
 playoff sports
 poker
@@ -3194,13 +3367,13 @@ weather
 weightlifting
 western
 wrestling
-yacht racing
+yacht racing  |
 ### Valores de clasificación por sistema de clasificación y país
 Se facilitará para cada película, episodio o video de formato corto una clasificación válida de cine o TV de parte de la autoridad de clasificación (fuente de clasificación) del territorio en el cual estará disponible el título. Si el título no ha sido clasificado por la autoridad oficial de clasificación de ese territorio, se puede proporcionar una clasificación NR (sin clasificar). Sin embargo, ten en cuenta que Roku prefiere una clasificación más específica para todo el contenido. Los títulos con calificación NR (sin clasificar) estarán sujetos a verificación manual, lo que puede retrasar el proceso de selección y publicación en Roku Channel. La visibilidad en Roku Channel también puede verse afectada en el caso de títulos con clasificación NR (sin clasificar) y se prohibirá su inclusión en la experiencia para toda la familia. En lugar de la clasificación NR (sin clasificar), el título debe autoclasificarse con el sistema de clasificación USA_PR. Las pautas relativas a las calificaciones USA_PR pueden consultarse [aquí](http://tvguidelines.org)
-**Autoridades de clasificación y territorio** | **País** | **ratingSystem** | **Valor de clasificación**
----|---|---|---
-British Board of Film Classification
-Reino Unido | GB | BBFC | U
+| **Autoridades de clasificación y territorio**  | **País**  | **ratingSystem**  | **Valor de clasificación**  |
+| --- | --- | --- | --- |
+| British Board of Film Classification
+Reino Unido  | GB  | BBFC  | U
 PG
 12A
 12-A
@@ -3209,27 +3382,27 @@ PG
 18
 NR
 R18
-R-1
-Canadian Home Video Rating System
-Canadá | CA | CHVRS | G
+R-1  |
+| Canadian Home Video Rating System
+Canadá  | CA  | CHVRS  | G
 PG
 14A
 14-A
 18A
 18-A
 NR
-RE
-Motion Picture Associate of America
-Estados Unidos | US | MPAA | G
+RE  |
+| Motion Picture Associate of America
+Estados Unidos  | US  | MPAA  | G
 PG
 PG13
 PG-13
 R
 NC-17
 NC17
-NR
-Canadian Parental Rating
-Canadá | CA | CPR | 14+
+NR  |
+| Canadian Parental Rating
+Canadá  | CA  | CPR  | 14+
 18+
 C
 C8
@@ -3237,9 +3410,9 @@ C-8
 G
 NR
 PG
-E
-Dirección General de Radio, Televisión y Cinematografía
-México | MX | RTC | AA
+E  |
+| Dirección General de Radio, Televisión y Cinematografía
+México  | MX  | RTC  | AA
 A
 B
 B-15
@@ -3247,9 +3420,9 @@ B15
 C
 DD
 D
-NR
-USA Parental Rating (V-Chip)
-Estados Unidos | US | USA_PR | TV-Y
+NR  |
+| USA Parental Rating (V-Chip)
+Estados Unidos  | US  | USA_PR  | TV-Y
 TVY
 TV-Y7
 TVY7
@@ -3261,145 +3434,145 @@ TV-14
 TV14
 TV-MA
 TVMA
-NR
+NR  |
 ### Códigos de idioma
 La siguiente lista contiene todos los códigos de idioma que Roku admite actualmente para la ingesta de contenido. Esta lista es una versión simplificada de la especificación [RFC 5646](https://datatracker.ietf.org/doc/html/rfc5646).
-Código de idioma | Language | Código de idioma | Language
----|---|---|---
-af | Afrikáans | km | Jemer
-sq | Albanés | rw | Kinyarwanda
-am | Amhárico | ko | Coreano
-ar | Árabe | ko-kr | Coreano (Corea)
-ar-dz | Árabe (Algeria) | ku | Kurdo
-ar-bh | Árabe (Baréin) | ky | Kirguís
-ar-eg | Árabe (Egipto) | lo | Lao
-ar-iq | Árabe (Irak) | la | Latín
-ar-jo | Árabe (Jordania) | lv | Letón
-ar-kw | Árabe (Kuwait) | lt | Lituano
-ar-lb | Árabe (Líbano) | mk | Macedonio
-ar-ly | Árabe (Libia) | mg | Malgache
-ar-ma | Árabe (Marruecos) | ms | Malayo
-ar-om | Árabe (Omán) | ms-my | Malayo (Malasia)
-ar-qa | Árabe (Catar) | ml | Malabar
-ar-sa | Árabe (Arabia Saudita) | mt | Maltés
-ar-sy | Árabe (Siria) | mr | Maratí
-ar-tn | Árabe (Túnez) | mn | Mongol
-ar-ae | Árabe (E.A.U.) | nd | Ndebele
-ar-ye | Árabe (Yemen) | ne | Nepalí
-hy | Armenio | no | Noruego
-as | Asamés | no-no | Noruego (Noruega)
-az | Azerí | or | Oriya
-eu | Vasco | om | Oromo
-be | Bielorruso | ps | Pastún
-bn | Bengalí | fa | Persa (Farsi)
-bh | Bihari | pl | Polaco
-bs | Bosnio | pl-pl | Polaco (Polonia)
-bg | Búlgaro | pt | Portugués
-bg-bg | Búlgaro (Bulgaria) | pt-br | Portugués (Brasil)
-my | Birmano | pt-pt | Portugués (Portugal)
-ca | Catalán | pa | Panyabí
-zh | Chino | qu | Quechua
-zh-hk | Chino (Hong Kong) | rm | Retorrománico
-zh-cn | Chino (RPC) | ro | Rumano
-zh-sg | Chino (Singapur) | ro-md | Rumano (Moldavia)
-zh-tw | Chino (Taiwán) | ro-ro | Rumano (Rumania)
-zh-hans | Chino (simplificado) | rn | Kirundi
-zh-hant | Chino (tradicional) | ru | Ruso
-hr | Croata | ru-md | Ruso (Moldavia)
-hr-hr | Croata (Croacia) | ru-ru | Ruso (Rusia)
-cs | Checo | se | Sami
-cs-cz | Checo (República Checa) | sa | Sánscrito
-da | Danés | gd | Escocés (gaélico)
-da-dk | Danés (Dinamarca) | sr | Serbio
-dv | Divehi | sn | Shona
-nl | Neerlandés | ii | Yi de Sichuan
-nl-be | Neerlandés (Bélgica) | sd | Sindi
-nl-nl | Neerlandés (Países Bajos) | si | Singalés
-dz | Dzongkha | sk | Eslovaco
-en | Inglés | sl | Esloveno
-en-au | Inglés (Australia) | sl-si | Esloveno (Eslovenia)
-en-bz | Inglés (Belice) | so | Somalí
-en-ca | Inglés (Canadá) | st | Sesoto
-en-ie | Inglés (Irlanda) | es | Español
-en-jm | Inglés (Jamaica) | es-ar | Español (Argentina)
-en-nz | Inglés (Nueva Zelanda) | es-bo | Español (Bolivia)
-en-za | Inglés (Sudáfrica) | es-cl | Español (Chile)
-en-tt | Inglés (Trinidad) | es-co | Español (Colombia)
-en-gb | Inglés (Reino Unido) | es-cr | Español (Costa Rica)
-en-us | Inglés (Estados Unidos) | es-do | Español (República Dominicana)
-et | Estonio | es-ec | Español (Ecuador)
-fo | Feroés | es-sv | Español (El Salvador)
-fi | Finlandés | es-gt | Español (Guatemala)
-fr | Francés | es-hn | Español (Honduras)
-fr-be | Francés (Bélgica) | es-mx | Español (México)
-fr-ca | Francés (Canadá) | es-ni | Español (Nicaragua)
-fr-lu | Francés (Luxemburgo) | es-pa | Español (Panamá)
-fr-ch | Francés (Suiza) | es-py | Español (Paraguay)
-fy | Frisón | es-pe | Español (Perú)
-ff | Fulfulfe (Fula) | es-pr | Español (Puerto Rico)
-gl | Gallego | es-es | Español (España)
-ka | Georgiano | es-uy | Español (Uruguay)
-de | Alemán | es-ve | Español (Venezuela)
-de-at | Alemán (Austria) | sw | Suajili
-de-de | Alemán (Alemania) | sv | Sueco
-de-li | Alemán (Liechtenstein) | sv-fi | Sueco (Finlandia)
-de-lu | Alemán (Luxemburgo) | sv-se | Sueco (Suecia)
-de-ch | Alemán (Suiza) | tl | Tagalo
-el | Griego | ty | Tahitiano
-el-gr | Griego (Grecia) | tg | Tayiko
-gn | Guaraní | ta | Tamil
-gu | Guyarati | tt | Tártaro
-ht | Haitiano (criollo) | te | Télugu
-ha | Hausa | th | Tailandés
-he | Hebreo | th-th | Tailandés (Tailandia)
-hi | Hindi | bo | Tibetano
-hu | Húngaro | ti | Tigriña
-hu-hu | Húngaro (Hungría) | ts | Tsonga
-is | Islandés | tn | Setsuana
-ig | Igbo | tr | Turco
-id | Indonesio | tr-tr | Turco (Turquía)
-iu | Inuit | tk | Turcomano
-ik | Iñupiaq | uk | Ucraniano
-ga | Irlandés | ur | Urdu
-it | Italiano | uz | Uzbeko
-it-it | Italiano (Italia) | ve | Venda
-it-ch | Italiano (Suiza) | vi | Vietnamita
-ja | Japonés | vi-vn | Vietnamita (Vietnam)
-ja-jp | Japonés (Japón) | cy | Galés
-kn | Canarés | xh | Xhosa
-kr | Kanuri | yi | Yidis
-ks | Cachemiro | yo | Yoruba
-kk | Kazajo | zu | Zulú
+| Código de idioma  | Language  | Código de idioma  | Language  |
+| --- | --- | --- | --- |
+| af  | Afrikáans  | km  | Jemer  |
+| sq  | Albanés  | rw  | Kinyarwanda  |
+| am  | Amhárico  | ko  | Coreano  |
+| ar  | Árabe  | ko-kr  | Coreano (Corea)  |
+| ar-dz  | Árabe (Algeria)  | ku  | Kurdo  |
+| ar-bh  | Árabe (Baréin)  | ky  | Kirguís  |
+| ar-eg  | Árabe (Egipto)  | lo  | Lao  |
+| ar-iq  | Árabe (Irak)  | la  | Latín  |
+| ar-jo  | Árabe (Jordania)  | lv  | Letón  |
+| ar-kw  | Árabe (Kuwait)  | lt  | Lituano  |
+| ar-lb  | Árabe (Líbano)  | mk  | Macedonio  |
+| ar-ly  | Árabe (Libia)  | mg  | Malgache  |
+| ar-ma  | Árabe (Marruecos)  | ms  | Malayo  |
+| ar-om  | Árabe (Omán)  | ms-my  | Malayo (Malasia)  |
+| ar-qa  | Árabe (Catar)  | ml  | Malabar  |
+| ar-sa  | Árabe (Arabia Saudita)  | mt  | Maltés  |
+| ar-sy  | Árabe (Siria)  | mr  | Maratí  |
+| ar-tn  | Árabe (Túnez)  | mn  | Mongol  |
+| ar-ae  | Árabe (E.A.U.)  | nd  | Ndebele  |
+| ar-ye  | Árabe (Yemen)  | ne  | Nepalí  |
+| hy  | Armenio  | no  | Noruego  |
+| as  | Asamés  | no-no  | Noruego (Noruega)  |
+| az  | Azerí  | or  | Oriya  |
+| eu  | Vasco  | om  | Oromo  |
+| be  | Bielorruso  | ps  | Pastún  |
+| bn  | Bengalí  | fa  | Persa (Farsi)  |
+| bh  | Bihari  | pl  | Polaco  |
+| bs  | Bosnio  | pl-pl  | Polaco (Polonia)  |
+| bg  | Búlgaro  | pt  | Portugués  |
+| bg-bg  | Búlgaro (Bulgaria)  | pt-br  | Portugués (Brasil)  |
+| my  | Birmano  | pt-pt  | Portugués (Portugal)  |
+| ca  | Catalán  | pa  | Panyabí  |
+| zh  | Chino  | qu  | Quechua  |
+| zh-hk  | Chino (Hong Kong)  | rm  | Retorrománico  |
+| zh-cn  | Chino (RPC)  | ro  | Rumano  |
+| zh-sg  | Chino (Singapur)  | ro-md  | Rumano (Moldavia)  |
+| zh-tw  | Chino (Taiwán)  | ro-ro  | Rumano (Rumania)  |
+| zh-hans  | Chino (simplificado)  | rn  | Kirundi  |
+| zh-hant  | Chino (tradicional)  | ru  | Ruso  |
+| hr  | Croata  | ru-md  | Ruso (Moldavia)  |
+| hr-hr  | Croata (Croacia)  | ru-ru  | Ruso (Rusia)  |
+| cs  | Checo  | se  | Sami  |
+| cs-cz  | Checo (República Checa)  | sa  | Sánscrito  |
+| da  | Danés  | gd  | Escocés (gaélico)  |
+| da-dk  | Danés (Dinamarca)  | sr  | Serbio  |
+| dv  | Divehi  | sn  | Shona  |
+| nl  | Neerlandés  | ii  | Yi de Sichuan  |
+| nl-be  | Neerlandés (Bélgica)  | sd  | Sindi  |
+| nl-nl  | Neerlandés (Países Bajos)  | si  | Singalés  |
+| dz  | Dzongkha  | sk  | Eslovaco  |
+| en  | Inglés  | sl  | Esloveno  |
+| en-au  | Inglés (Australia)  | sl-si  | Esloveno (Eslovenia)  |
+| en-bz  | Inglés (Belice)  | so  | Somalí  |
+| en-ca  | Inglés (Canadá)  | st  | Sesoto  |
+| en-ie  | Inglés (Irlanda)  | es  | Español  |
+| en-jm  | Inglés (Jamaica)  | es-ar  | Español (Argentina)  |
+| en-nz  | Inglés (Nueva Zelanda)  | es-bo  | Español (Bolivia)  |
+| en-za  | Inglés (Sudáfrica)  | es-cl  | Español (Chile)  |
+| en-tt  | Inglés (Trinidad)  | es-co  | Español (Colombia)  |
+| en-gb  | Inglés (Reino Unido)  | es-cr  | Español (Costa Rica)  |
+| en-us  | Inglés (Estados Unidos)  | es-do  | Español (República Dominicana)  |
+| et  | Estonio  | es-ec  | Español (Ecuador)  |
+| fo  | Feroés  | es-sv  | Español (El Salvador)  |
+| fi  | Finlandés  | es-gt  | Español (Guatemala)  |
+| fr  | Francés  | es-hn  | Español (Honduras)  |
+| fr-be  | Francés (Bélgica)  | es-mx  | Español (México)  |
+| fr-ca  | Francés (Canadá)  | es-ni  | Español (Nicaragua)  |
+| fr-lu  | Francés (Luxemburgo)  | es-pa  | Español (Panamá)  |
+| fr-ch  | Francés (Suiza)  | es-py  | Español (Paraguay)  |
+| fy  | Frisón  | es-pe  | Español (Perú)  |
+| ff  | Fulfulfe (Fula)  | es-pr  | Español (Puerto Rico)  |
+| gl  | Gallego  | es-es  | Español (España)  |
+| ka  | Georgiano  | es-uy  | Español (Uruguay)  |
+| de  | Alemán  | es-ve  | Español (Venezuela)  |
+| de-at  | Alemán (Austria)  | sw  | Suajili  |
+| de-de  | Alemán (Alemania)  | sv  | Sueco  |
+| de-li  | Alemán (Liechtenstein)  | sv-fi  | Sueco (Finlandia)  |
+| de-lu  | Alemán (Luxemburgo)  | sv-se  | Sueco (Suecia)  |
+| de-ch  | Alemán (Suiza)  | tl  | Tagalo  |
+| el  | Griego  | ty  | Tahitiano  |
+| el-gr  | Griego (Grecia)  | tg  | Tayiko  |
+| gn  | Guaraní  | ta  | Tamil  |
+| gu  | Guyarati  | tt  | Tártaro  |
+| ht  | Haitiano (criollo)  | te  | Télugu  |
+| ha  | Hausa  | th  | Tailandés  |
+| he  | Hebreo  | th-th  | Tailandés (Tailandia)  |
+| hi  | Hindi  | bo  | Tibetano  |
+| hu  | Húngaro  | ti  | Tigriña  |
+| hu-hu  | Húngaro (Hungría)  | ts  | Tsonga  |
+| is  | Islandés  | tn  | Setsuana  |
+| ig  | Igbo  | tr  | Turco  |
+| id  | Indonesio  | tr-tr  | Turco (Turquía)  |
+| iu  | Inuit  | tk  | Turcomano  |
+| ik  | Iñupiaq  | uk  | Ucraniano  |
+| ga  | Irlandés  | ur  | Urdu  |
+| it  | Italiano  | uz  | Uzbeko  |
+| it-it  | Italiano (Italia)  | ve  | Venda  |
+| it-ch  | Italiano (Suiza)  | vi  | Vietnamita  |
+| ja  | Japonés  | vi-vn  | Vietnamita (Vietnam)  |
+| ja-jp  | Japonés (Japón)  | cy  | Galés  |
+| kn  | Canarés  | xh  | Xhosa  |
+| kr  | Kanuri  | yi  | Yidis  |
+| ks  | Cachemiro  | yo  | Yoruba  |
+| kk  | Kazajo  | zu  | Zulú  |
 ## Glosario
-Término | Definición
----|---
-Paquete / Paquete completo / Paquete de activos / Paquete de activos completo | Entrega completa de una película, episodio o video de formato corto. Un paquete está compuesto por: video, subtítulos descriptivos (si están disponibles), ilustraciones y metadatos. Cuando se entregan títulos en varios idiomas, el paquete también puede incluir: doblaje de audio, subtítulos, ilustraciones localizadas y metadatos localizados.
-MDU | [Actualización de metadatos](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#actualizaci%C3%B3n-de-metadatos-mdu-y-reemplazos-de-archivos)
+| Término  | Definición  |
+| --- | --- |
+| Paquete / Paquete completo / Paquete de activos / Paquete de activos completo  | Entrega completa de una película, episodio o video de formato corto. Un paquete está compuesto por: video, subtítulos descriptivos (si están disponibles), ilustraciones y metadatos. Cuando se entregan títulos en varios idiomas, el paquete también puede incluir: doblaje de audio, subtítulos, ilustraciones localizadas y metadatos localizados.  |
+| MDU  | [Actualización de metadatos](https://developer.roku.com/en-ca/trc-docs/video-on-demand/delivery/ingest-specifications-spanish.md#actualizaci%C3%B3n-de-metadatos-mdu-y-reemplazos-de-archivos)  |
 * * *
 ## Recursos
-Recurso | Enlace
----|---
-Plantilla de metadatos de Excel para películas | <https://go.roku.com/film-excel-template>
-Plantilla de metadatos de Excel para TV | <https://go.roku.com/tv-excel-template>
-Plantilla de metadatos de Excel para clips | <https://go.roku.com/clip-excel-template>
-Esquema XML para películas | <https://go.roku.com/film-xml-schema>
-Esquema XML para TV | <https://go.roku.com/tv-xml-schema>
-Esquema XML para clips | <https://go.roku.com/clip-xml-schema>
-XML anotado para películas | <https://go.roku.com/film-xml-example>
-XML anotado para TV | <https://go.roku.com/tv-xml-example>
-XML anotado para clips | <https://go.roku.com/clip-xml-example>
-Ejemplo de XML ADI para películas | <https://go.roku.com/film-adi-xml-example>
-Ejemplo de XML ADI para TV | <https://go.roku.com/tv-adi-xml-example>
-Ejemplo de XML ADI para clips | <https://go.roku.com/clip-adi-xml-example>
-Todas las plantillas, ejemplos y esquemas de metadatos | <https://go.roku.com/metadata-docs>
-Prácticas recomendadas: etiquetas y metadatos del contenido | <https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md>
-Envío de hojas de referencia musical | <https://go.roku.com/music-cue-sheet-submission>
-Aspera Client | [https://www.ibm.com/support/fixcentral/swg/selectFixes?parent=ibm~Other%20software&product=ibm/Other%20software/IBM%20Aspera%20Desktop%20Client&release=All&platform=All&function=all](https://www.ibm.com/support/fixcentral/swg/selectFixes?parent=ibm~Other%20software&product=ibm/Other%20software/IBM%20Aspera%20Desktop%20Client&release=All&platform=All&function=all)
-Sistema de clasificaciones de la MPAA de EE. UU. | <https://www.filmratings.com/>
-Sistema de clasificaciones de TV de EE. UU. | <http://tvguidelines.org/>
-Sistema de clasificaciones de la BBFC del Reino Unido | <https://bbfc.co.uk/>
-Sistema de clasificaciones de cine canadiense | <https://www.mpa-canada.org/film-ratings/>
-Sistema de clasificaciones de TV canadiense | <https://www.cbsc.ca/tools/for-english-ca-and-third-language-broadcasters/>
+| Recurso  | Enlace  |
+| --- | --- |
+| Plantilla de metadatos de Excel para películas  | <https://go.roku.com/film-excel-template>  |
+| Plantilla de metadatos de Excel para TV  | <https://go.roku.com/tv-excel-template>  |
+| Plantilla de metadatos de Excel para clips  | <https://go.roku.com/clip-excel-template>  |
+| Esquema XML para películas  | <https://go.roku.com/film-xml-schema>  |
+| Esquema XML para TV  | <https://go.roku.com/tv-xml-schema>  |
+| Esquema XML para clips  | <https://go.roku.com/clip-xml-schema>  |
+| XML anotado para películas  | <https://go.roku.com/film-xml-example>  |
+| XML anotado para TV  | <https://go.roku.com/tv-xml-example>  |
+| XML anotado para clips  | <https://go.roku.com/clip-xml-example>  |
+| Ejemplo de XML ADI para películas  | <https://go.roku.com/film-adi-xml-example>  |
+| Ejemplo de XML ADI para TV  | <https://go.roku.com/tv-adi-xml-example>  |
+| Ejemplo de XML ADI para clips  | <https://go.roku.com/clip-adi-xml-example>  |
+| Todas las plantillas, ejemplos y esquemas de metadatos  | <https://go.roku.com/metadata-docs>  |
+| Prácticas recomendadas: etiquetas y metadatos del contenido  | <https://developer.roku.com/trc-docs/video-on-demand/content-tags-and-metadata.md>  |
+| Envío de hojas de referencia musical  | <https://go.roku.com/music-cue-sheet-submission>  |
+| Aspera Client  | [https://www.ibm.com/support/fixcentral/swg/selectFixes?parent=ibm~Other%20software&product=ibm/Other%20software/IBM%20Aspera%20Desktop%20Client&release=All&platform=All&function=all](https://www.ibm.com/support/fixcentral/swg/selectFixes?parent=ibm~Other%20software&product=ibm/Other%20software/IBM%20Aspera%20Desktop%20Client&release=All&platform=All&function=all)  |
+| Sistema de clasificaciones de la MPAA de EE. UU.  | <https://www.filmratings.com/>  |
+| Sistema de clasificaciones de TV de EE. UU.  | <http://tvguidelines.org/>  |
+| Sistema de clasificaciones de la BBFC del Reino Unido  | <https://bbfc.co.uk/>  |
+| Sistema de clasificaciones de cine canadiense  | <https://www.mpa-canada.org/film-ratings/>  |
+| Sistema de clasificaciones de TV canadiense  | <https://www.cbsc.ca/tools/for-english-ca-and-third-language-broadcasters/>  |
 ## Registro de cambios
 **v2.3 - 03-02-2025**
   * Se actualizaron todas las referencias a The Roku Channel a Roku Channel.

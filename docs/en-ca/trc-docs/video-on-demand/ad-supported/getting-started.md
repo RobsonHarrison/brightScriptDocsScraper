@@ -1,9 +1,8 @@
 # New to The Roku Channel - getting started
 ## Content submissions
-If you have content that you would like to submit for The Roku Channel, please fill out our avails template (series and feature/movies on separate templates) and send to trc-avod-submissions@roku.com. Avails templates are available in the [Title Avails Specifications](https://developer.roku.com/trc-docs/video-on-demand/title-avail-specifications.md). If you own or control the necessary rights for only a small volume of VOD titles, please consider working with one of Roku’s Preferred Aggregators.
+If you have content that you would like to submit for The Roku Channel, please fill out our avails template (series and feature/movies on separate templates) and send to trc-avod-submissions@roku.com. Avails templates are available in the [Title Avails Specifications](https://go.roku.com/rokuchannel-avails). If you own or control the necessary rights for only a small volume of VOD titles, please consider working with one of Roku’s Preferred Aggregators.
 ## Specifications
-  * [Roku-Hosted (Ingest) Specs](https://developer.roku.com/trc-docs/video-on-demand/ingest-specifications.md)
-  * [Partner-Hosted (Feed) Specs](https://developer.roku.com/trc-docs/live-linear/live-feed-specifications.md)
+  * [Roku-Hosted (Ingest) Specs](https://go.roku.com/rokuchannel-ingest-vod)
 
 ## Analytics & reporting
 ### Analytics dashboard
@@ -24,7 +23,6 @@ In order to enroll in the Roku Partner Payout Program, you will need to provide 
   * Contact information
   * Bank information
   * Tax forms (W9, W8-BEN, or W8-BEN-E)
-  * You can come back and edit this information at any time.
 
 #### The Roku Channel partner payouts & revenue reports
 Partners can select between three payout methods when enrolling in the Roku Partner Payouts Program:
@@ -36,10 +34,10 @@ Partners can select between three payout methods when enrolling in the Roku Part
   * With PayPal, there is no payment fee. With wire transfers and ACH payments, your bank will charge you bank fees.
 
 Payments and revenue reports are sent out quarterly, 60 days post-quarter closing. See table below. Payments will be sent directly to the payout method in your Developer Dashboard. Revenue reports will be sent via e-mail. If you would like to be included in the revenue report distribution list, please contact trcpartnersupport@roku.com.
-Quarter | Date
----|---
-Q1 | By May 31st
-Q2 | By August 31st
-Q3 | By November 30th
-Q4 | By February 28th
+| Quarter  | Date  |
+| --- | --- |
+| Q1  | By May 31st  |
+| Q2  | By August 31st  |
+| Q3  | By November 30th  |
+| Q4  | By February 28th  |
 Not that partners will not be paid until the aggregate sums due are equal to or exceed $100.00. Detailed payout terms are found in the Commercial Terms Exhibit of the [Roku Distribution Agreement](https://docs.roku.com/doc/developerdistribution/en-us).
