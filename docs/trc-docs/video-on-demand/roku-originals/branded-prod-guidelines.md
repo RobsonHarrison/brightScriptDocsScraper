@@ -237,7 +237,7 @@ Your calendar should cover all phases of production (i.e., casting, pre-producti
     * Set design milestones, tech scout
   * Production
     * Prep, set-build/load in, ESU, rehearsal(s), shoot, and wrap dates
-    * Please identify on your calendar when you plan to shoot and deliver your camera test (see [Section 4.2.3](https://developer.roku.com/en-ca/trc-docs/video-on-demand/roku-originals/branded-prod-guidelines.md#423-camera-test-milestone), Camera Test Milestone)
+    * Please identify on your calendar when you plan to shoot and deliver your camera test (see [Section 4.2.3](https://developer.roku.com/en-gb/trc-docs/video-on-demand/roku-originals/branded-prod-guidelines.md#423-camera-test-milestone), Camera Test Milestone)
   * Post
     * Start and wrap, finishing (i.e., audio and color), delivery of cuts and when notes are due, and master delivery dates
     * Please refer to your Branded Media Delivery Specs, Review Cut Process, as you build out your schedule

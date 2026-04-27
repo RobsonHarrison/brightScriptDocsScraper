@@ -167,12 +167,12 @@ The format of the feed is a comma-separated list with each property enclosed in 
 | providerName  | string  | Required  | The name of the feed provider. For instance, “Acme Productions” as shown in the template below.  |
 | lastUpdated  | string  | Required  | The date that the feed was last modified in the [ISO 8601 ](http://www.iso.org/iso/home/standards/iso8601.htm)format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. For instance, "2015-11-11T22:21:37+00:00" as shown in the template below.  |
 | language  | string  | Required  | The language the channel uses for all its information and descriptions in an ISO 639 alpha-2 or alpha-3 language code string. For instance, “en-US” as shown in the template below.  |
-| liveFeeds  | [LiveFeed Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#livefeed-content-type)  | Required  | A list of one or more live linear schedules.
+| liveFeeds  | [LiveFeed Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#livefeed-content-type)  | Required  | A list of one or more live linear schedules.
 **_Generally, only one liveFeed schedule per channel delivery should be present in the JSON. For bulk channel deliveries, please consult your Roku rep._**  |
-| movies  | [Movie Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#movie-content-type)  | Required*  | A list of one or more movies.  |
-| series  | [Series Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#series-content-type)  | Required*  | A list of one or more series. Series are episodic in nature and would include TV shows and daily or weekly ongoing shows.  |
-| shortFormVideos  | [ShortFormVideo Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#shortformvideo-content-type)  | Required*  | A list of one or more short-form videos. Short-form videos are usually less than 20 minutes long and are not TV shows or movies.  |
-| tvSpecials  | [TV Special Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#tvspecial-content-type)  | Required*  | A list of one or more TV specials. TV specials are one-time TV programs that are not part of a series.  |
+| movies  | [Movie Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#movie-content-type)  | Required*  | A list of one or more movies.  |
+| series  | [Series Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#series-content-type)  | Required*  | A list of one or more series. Series are episodic in nature and would include TV shows and daily or weekly ongoing shows.  |
+| shortFormVideos  | [ShortFormVideo Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#shortformvideo-content-type)  | Required*  | A list of one or more short-form videos. Short-form videos are usually less than 20 minutes long and are not TV shows or movies.  |
+| tvSpecials  | [TV Special Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#tvspecial-content-type)  | Required*  | A list of one or more TV specials. TV specials are one-time TV programs that are not part of a series.  |
 > *_At least one of these content types is required_
 The Roku Channel Feed Root Object Template:
 
@@ -223,7 +223,7 @@ thumbnail: "http://thumbnail.jpg"
   * Foreign Language Programming
     * _On English-language channels, subtitles**must** be included._
     * _No foreign-language (subtitled) programming allowed on Kids & Family channels._
-  * **Every program must have a rating**. If a program has an MPAA rating, the partner must use the MPAA rating for the program. If the program does not have an MPAA rating, the partner must use a TV Ratings (USA_PR) rating. See [Advisory Ratings object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)
+  * **Every program must have a rating**. If a program has an MPAA rating, the partner must use the MPAA rating for the program. If the program does not have an MPAA rating, the partner must use a TV Ratings (USA_PR) rating. See [Advisory Ratings object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)
 
 #### Slate Requirements
   * Must be animated & have audio
@@ -246,7 +246,7 @@ This object represents a live linear stream. Please contact your Roku representa
 | --- | --- | --- | --- |
 | id  | string  | Required  | Your immutable string reference ID for the live linear stream. THIS CANNOT CHANGE. This should serve as a unique identifier for the live stream across different locales. **Note** : The ID for an asset must not exceed 50 characters.  |
 | title  | string  | Required  | The live stream's title. Roku uses this value for matching in Roku Search. Please don’t include extra information like year, version label, etc.  |
-| content  | [Content Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#content-properties)  | Required  | Additional details about the livefeed, including the **program schedule**.  |
+| content  | [Content Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#content-properties)  | Required  | Additional details about the livefeed, including the **program schedule**.  |
 | thumbnail  | string  | Required  | The URL of the primary thumbnail for the live stream. This is used within your channel and in search results.
 
 Landscape key art with the full title of the asset visible in a JPEG file. Image dimensions must be 1920x1080 (width x height, 16x9 aspect ratio)
@@ -261,10 +261,10 @@ Landscape key art with the full title of the asset visible in a JPEG file. Image
 | longDescription  | string  | Required  | A longer live stream description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription. No emojis.  |
 | validityPeriodStart  | string  | Optional  | The date when the content should become available in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2018-11-11T22:21:37+00:00  |
 | validityPeriodEnd  | string  | Optional  | The date when the content is no longer available in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2018-11-11T22:21:37+00:00 (set to a perpetuity date if possible)  |
-| advisoryRatings  | [Advisory Ratings object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | An array of parental ratings for the content.
-*See [Kids-Directed content](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content) for rating requirements  |
-| genres  | string  | Required  | Array of genre strings for the channel. Must be one or more of the values listed in [genres](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
-| tags  | string  | Optional  | One or more optional tags. Each tag is a string and is limited to 20 characters.*See [Kids-Directed content](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content) for tag requirements  |
+| advisoryRatings  | [Advisory Ratings object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | An array of parental ratings for the content.
+*See [Kids-Directed content](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content) for rating requirements  |
+| genres  | string  | Required  | Array of genre strings for the channel. Must be one or more of the values listed in [genres](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
+| tags  | string  | Optional  | One or more optional tags. Each tag is a string and is limited to 20 characters.*See [Kids-Directed content](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content) for tag requirements  |
 Live Feed Object Example:
 { "id": "1509428502953", "title": "Sample Stream", "content": { ... }, "language": { "en" }, "thumbnail": "[https://example.org/cdn/thumbnails/1509428502952/1](https://example.org/cdn/thumbnails/1509428502952/2)", "shortDescription": "A live description", "longDescription": "A longer description of a live stream","genres": [ "drama", "comedy", "horror" ],"tags": [ "kidsdirected" ] }
 ### Movie content type
@@ -282,7 +282,7 @@ This object represents a movie.
 | id  | string  | Required  | Your immutable string reference ID for the movie. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales and feeds from the same provider.
 **Note** : The ID for an asset must not exceed 50 characters and must be alphanumeric.  |
 | title  | string  | Required  | Movie title. Roku uses this value for matching in Roku Search. Please use plain text and do not include extra information like year, version label, etc. No Emojis. Mixed case.  |
-| genres  | string  | Required  | Array of genre strings for the movie. Must be one or more of the values listed in [genres](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
+| genres  | string  | Required  | Array of genre strings for the movie. Must be one or more of the values listed in [genres](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
 | thumbnail  | string  | Required  | The URL of the primary thumbnail for the live stream. This is used within your channel and in search results.
 
 Landscape key art with the full title of the asset visible in a JPEG file. Image dimensions must be 1920x1080 (width x height, 16x9 aspect ratio)
@@ -295,10 +295,10 @@ Landscape key art with the full title of the asset visible in a JPEG file. Image
  |
 | releaseDate  | string  | Required  | The date the movie was initially released or first aired. Used to sort programs chronologically and grouping related content in Roku Search. Conforms to the [ISO 8601 ](http://www.iso.org/iso/home/standards/iso8601.htm)format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11  |
 | shortDescription  | string  | Required  | A movie description that does not exceed 110 characters. The text will be clipped if longer. No emojis.  |
-| credits  | [Credit Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#credit-property)  | Optional  | One or more credits. The cast and crew of the movie.  |
-| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | An array of parental ratings for the content.
-*See [Kids-Directed content](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content) for rating requirements  |
-| externalIds  | [External IDs Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#externalids-property)  | Optional  | One or more third-party metadata provider IDs.  |
+| credits  | [Credit Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#credit-property)  | Optional  | One or more credits. The cast and crew of the movie.  |
+| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | An array of parental ratings for the content.
+*See [Kids-Directed content](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content) for rating requirements  |
+| externalIds  | [External IDs Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#externalids-property)  | Optional  | One or more third-party metadata provider IDs.  |
 Movie Object Example:
 
 ```
@@ -314,9 +314,9 @@ This object represents a series, such as a season of a TV show or a mini-series.
 | id  | string  | Required  | Your immutable string reference ID for the series. THIS CANNOT CHANGE. This should serve as a unique identifier for the movie across different locales and feeds from the same provider.
 **Note** : The ID for an asset must not exceed 50 characters and must be alphanumeric.  |
 | title  | string  | Required  | The title of the series. Roku uses this field for matching in Roku Search. No Emojis. Mixed case.  |
-| seasons  | [Season Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#season-content-type)  | Required*  | One or more seasons of the series. Seasons should be used if episodes are grouped by seasons.  |
-| episodes  | [Episode Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#episode-content-type)  | Required*  | One or more episodes of the series. Episodes should be used if they are not grouped by seasons (e.g., a mini-series).  |
-| genres  | string  | Required  | Array of genre strings for the series. Must be one or more of the values listed in [genres](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
+| seasons  | [Season Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#season-content-type)  | Required*  | One or more seasons of the series. Seasons should be used if episodes are grouped by seasons.  |
+| episodes  | [Episode Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#episode-content-type)  | Required*  | One or more episodes of the series. Episodes should be used if they are not grouped by seasons (e.g., a mini-series).  |
+| genres  | string  | Required  | Array of genre strings for the series. Must be one or more of the values listed in [genres](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
 | thumbnail  | string  | Required  | The URL of the primary thumbnail for the live stream. This is used within your channel and in search results.
 
 Landscape key art with the full title of the asset visible in a JPEG file. Image dimensions must be 1920x1080 (width x height, 16x9 aspect ratio)
@@ -329,10 +329,10 @@ Landscape key art with the full title of the asset visible in a JPEG file. Image
  |
 | releaseDate  | string  | Required  | The date the series first aired. Used to sort programs chronologically and grouping related content in Roku Search. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11  |
 | shortDescription  | string  | Required  | A description of the series that does not exceed 110 characters. The text will be clipped if longer. No emojis.  |
-| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | An array of parental ratings for the content.
-*See [Kids-Directed content](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content) for rating requirements  |
-| credits  | [Credit Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#credit-property)  | Optional  | One or more credits. The cast and crew of the series.  |
-| externalIds  | [External IDs Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#externalids-property)  | Optional  | One or more third-party metadata provider IDs.  |
+| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | An array of parental ratings for the content.
+*See [Kids-Directed content](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content) for rating requirements  |
+| credits  | [Credit Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#credit-property)  | Optional  | One or more credits. The cast and crew of the series.  |
+| externalIds  | [External IDs Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#externalids-property)  | Optional  | One or more third-party metadata provider IDs.  |
 > *_Must have either_ _`seasons`__or_ _`episodes`_
 Series Object Example (seasons):
 
@@ -354,7 +354,7 @@ This object represents a single season of a series.
 | **Field**  | **Type**  | **Required**  | **Description**  |
 | --- | --- | --- | --- |
 | seasonNumber  | integer  | Required  | Sequential season number. e.g.: 3 or 2015.  |
-| episodes  | [Episode Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#episode-content-type)  | Required  | One or more episodes of this particular season.  |
+| episodes  | [Episode Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#episode-content-type)  | Required  | One or more episodes of this particular season.  |
 Season Object Example:
 
 ```
@@ -394,10 +394,10 @@ Landscape untitled key art in a JPEG file. Recommended image dimensions: 1920x10
 | releaseDate  | string  | Required  | The date the episode first aired. Used to match program data to Gracenote counterpart. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11  |
 | episodeNumber  | integer  | Required  | Sequential episode number. e.g.: 3  |
 | shortDescription  | string  | Required  | An episode description that does not exceed 110 characters. The text will be clipped if longer. No emojis.  |
-| credits  | [Credit Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#credit-property)  | Optional  | One or more credits. The cast and crew of the episode.  |
-| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | An array of parental ratings for the content.
-*See [Kids-Directed content](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content) for rating requirements  |
-| externalIds  | [External Property](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#externalids-property)  | Optional  | One or more third-party metadata provider IDs.  |
+| credits  | [Credit Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#credit-property)  | Optional  | One or more credits. The cast and crew of the episode.  |
+| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | An array of parental ratings for the content.
+*See [Kids-Directed content](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content) for rating requirements  |
+| externalIds  | [External Property](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#externalids-property)  | Optional  | One or more third-party metadata provider IDs.  |
 Episode Object Example:
 
 ```
@@ -426,10 +426,10 @@ Landscape key art with the full title of the asset visible in a JPEG file. Image
 | shortDescription  | string  | Required  | A description of the video that does not exceed 110 characters. The text will be clipped if longer. No emojis.  |
 | releaseDate  | string  | Required  | The date the video first became available. Used to sort programs chronologically and grouping related content in Roku Search.
 Conforms to the [ISO 8601 ](http://www.iso.org/iso/home/standards/iso8601.htm)format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11  |
-| genres  | string  | Optional  | Array of genre strings for the video. Must be one or more of the values listed in [genres](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
-| credits  | [Credit Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#credit-property)  | Optional  | One or more credits. The cast and crew of the video.  |
-| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | A parental rating for the content.
-*See [Kids-Directed content ](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content)for rating requirements  |
+| genres  | string  | Optional  | Array of genre strings for the video. Must be one or more of the values listed in [genres](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
+| credits  | [Credit Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#credit-property)  | Optional  | One or more credits. The cast and crew of the video.  |
+| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | A parental rating for the content.
+*See [Kids-Directed content ](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content)for rating requirements  |
 Short-form Video Object Example:
 
 ```
@@ -462,13 +462,13 @@ Landscape key art with the full title of the asset visible in a JPEG file. Image
   * image/jpg
 
  |
-| genres  | string  | Required  | Array of genre strings for the special. Must be one or more of the values listed in [genres](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
+| genres  | string  | Required  | Array of genre strings for the special. Must be one or more of the values listed in [genres](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#genres-property).  |
 | releaseDate  | string  | Required  | The date the TV Special first aired. Used to sort programs chronologically and grouping related content in Roku Search. Conforms to the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format: {YYYY}-{MM}-{DD}. E.g.: 2015-11-11  |
 | shortDescription  | string  | Required  | A description of the special that does not exceed 110 characters. The text will be clipped if longer. No emojis.  |
-| credits  | [Credit Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#credit-property)  | Optional  | One or more credits. The cast and crew of the TV special.  |
-| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | A parental rating for the content.
-*See [Kids-Directed content ](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content)for rating requirements  |
-| externalIds  | [External IDs Property](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#externalids-property)  | Optional  | One or more third-party metadata provider IDs.  |
+| credits  | [Credit Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#credit-property)  | Optional  | One or more credits. The cast and crew of the TV special.  |
+| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required*  | A parental rating for the content.
+*See [Kids-Directed content ](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#kids-directed-content)for rating requirements  |
+| externalIds  | [External IDs Property](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#externalids-property)  | Optional  | One or more third-party metadata provider IDs.  |
 TV Special Object Example:
 
 ```
@@ -700,14 +700,14 @@ The following additional obligations apply to all Kids-Directed Content:
   * Do not include this tag in non-Kids-Directed Content
 
  |
-| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required  | A parental rating for the content. (MPAA or TV Rating).
+| advisoryRatings  | [Advisory Ratings Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#advisoryratings-property)  | Required  | A parental rating for the content. (MPAA or TV Rating).
 
   * 'Unrated' and "Not Rated" are not accepted ratings for Kids-Directed Content
 
  |
 The following additional obligations apply to all live linear streams that include Kids-Directed Content:
   * You will only include Kids-Directed Content in a live linear stream if that live linear stream is (and will always be) comprised exclusively of Kids-Directed Content. Do not mingle Kids-Directed Content and non-Kids-Directed Content in a live linear feed.
-  * You will provide a single TV content rating in the [Rating Object ](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#rating-property)reflecting the most restrictive rating of all Kids-Directed Content that will be available on the live linear feed.
+  * You will provide a single TV content rating in the [Rating Object ](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#rating-property)reflecting the most restrictive rating of all Kids-Directed Content that will be available on the live linear feed.
 
 **Additional kidsdirected guidelines**
 A `kidsdirected` tag should be inserted for any channel that is directed to children, based on a variety of factors, including the following:
@@ -738,7 +738,7 @@ This object represents the details about the liveFeed
 | language  | string  | Required  | The language in which the feed is intended (e.g., “en”, “en-US”, “es”, etc). ISO 639 alpha-2 or alpha-3 language code string.  |
 | validityPeriodStart  | string  | Optional  | The date when the content should become available in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm)format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00  |
 | validityPeriodEnd  | string  | Optional  | The date when the content is no longer available in the [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm)format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. E.g.: 2015-11-11T22:21:37+00:00  |
-| schedule  | [Schedule Object](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#schedule-object)  | Required  | A chronological listing of program start times and durations referencing objects in other content type sections (movies, series, shortFormVideos, tvSpecials)  |
+| schedule  | [Schedule Object](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#schedule-object)  | Required  | A chronological listing of program start times and durations referencing objects in other content type sections (movies, series, shortFormVideos, tvSpecials)  |
 Content Object Example:
 
 ```
@@ -1033,7 +1033,7 @@ Child object of property:
 This object represents the ratings across multiple territories for the video content. You can define the parental rating, as well as the source (USA Parental Rating, UK Content Provider, etc). See Parental Ratings and Rating Sources for acceptable values.
 | Field  | Type  | Required  | Description  |
 | --- | --- | --- | --- |
-| value  | enum  | Required  | Must be a value listed in [Parental Ratings](https://developer.roku.com/en-ca/trc-docs/live-linear/ovp-linear-ingest-spec.md#parental-ratings-property).
+| value  | enum  | Required  | Must be a value listed in [Parental Ratings](https://developer.roku.com/en-gb/trc-docs/live-linear/ovp-linear-ingest-spec.md#parental-ratings-property).
 Do not include any content targeted specifically to children.  |
 | source  | enum  | Required  | Must be one or more of the following:
 
