@@ -1,18 +1,29 @@
-# Sign-in requirements and best practices
-SVOD and TVOD apps (and other subscription services) participating in Roku Pay can streamline subscriber logins by minimizing the number of screens and keypresses in the on-device sign-in workflow. For example, customers may abandon the sign-in workflow when prompted to enter their email address because it requires too many keypresses.
-The following graphic demonstrates the standard Roku on-device sign-in workflow, which includes just a maximum of three screens: the landing page, the request for information (RFI) screen, and the password keyboard dialog/log-in screen.
-![roku815px - sign-in-flow-optimal.gif](https://image.roku.com/ZHZscHItMTc2/sign-in-flow-optimal.gif)
-> **Certification requirement** : For SVOD and TVOD apps (and other subscription services) to pass certification, they must use an on-device Roku Pay billing flow. The Request for Information (RFI) screen must be displayed during the on-device sign-in flow to enable customers to share the email address and/or phone number in their Roku customer account with apps. Only if the user declines the request, may apps require the customer to manually enter this information.
-Implementing this streamlined user experience involves two different aspects: the on-device sign-in UI and the on-device authentication integration, which provides the APIs for the sign-in user experience. This document explains both of these areas.
-## On-device sign-in UI
-The on-device sign-in workflow should typically have a maximum of three screens (listed in the recommended order):
-  1. **Landing page**. Provides call-to-action for subscribing. Includes entry to the sign-up and sign-in flows.
-
-  2. **RFI screen** (Roku Pay built-in). Enables customers to grant the app access to their Roku account information (email address and/or phone number). This eliminates the need for customers to enter their information in a separate keyboard dialog, which speeds up sign-ins and helps ensure that customers complete the process. The RFI screen is typically overlaid on top of the landing page.
-
-> **Certification requirement** : Apps must display the RFI screen in the sign-in flow to pass certification.
-  3. **Password keyboard/log-in screen**. Enables the customer to enter their password. Publishers can display a StandardKeyboardDialog for entering the password via text entry or a voice-enabled keyboard for entering the password via text or voice entry. The password keyboard dialog is typically overlaid on top of the log-in screen. The log-in screen enables customers who didn't grant the app access to their personal information to manually enter their email/phone and navigate to the password keyboard dialog.
-
-## On-device authentication
-For customers who already have a valid subscription for an app, [on-device authentication](https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md#signing-in-existing-subscribers) enables them to sign in to the app directly on-device. This integration uses the [ChannelStore APIs](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases) to manage the on-device sign-in experience through Roku Pay. It includes a complete suite of APIs for implementing the entitlement and authentication workflows.
-> **Certification requirement** : All authenticated apps must implement on-device authentication to pass [certification](https://developer.roku.com/docs/developer-program/certification/certification.md#2-purchases). Account sign-ins must be completed on-device, without visiting an external webpage. The sign-in workflow may not include links to off-device promotional or marketing materials, nor may it utilize off-device sign-in mechanisms such as rendezvous linking.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

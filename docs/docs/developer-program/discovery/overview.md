@@ -1,28 +1,21 @@
-# Overview
-Roku offers several free programs to apps for increasing their discoverability, including [Roku Search](https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md), and [Instant Signup](https://developer.roku.com/docs/developer-program/discovery/instant-signup.md). These programs provide a high ROI as they typically require a simple integration without any economics. Participating in these free discovery programs enables apps to maximize the value of their content by increasing installations, engagement, and revenue via subscriptions, purchases/rentals, and ads.
-The following table summarizes these content discovery programs, provides links to their implementation guides, and lists their requirements.
-| Content Discovery Program  | Description  | Opportunity  | Requirements  |
-| --- | --- | --- | --- |
-| [Roku Search](https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md)  | Match content in your app to users' search queries.  | Convert searches into subscriptions and rentals, drive users to your app, and increase engagement.
-
-Participating in Roku Search makes your app eligible for two additional content discovery programs: [Visual Search Results for Roku Voice](https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md#visual-search-results-for-roku-voice), [Roku Zones](https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md#roku-zones) and [Save List](https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md#save-list).  |
-  * [search feed](https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md)
-  * [deep linking](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md)
-  * [sending authentication events](https://developer.roku.com/docs/developer-program/discovery/search/prioritizing-authenticated-channels-in-roku-search.md) (SVOD and TVE apps)
-
- |
-| [Direct to Play](https://developer.roku.com/docs/developer-program/discovery/direct-to-play.md)  | Launch app directly into playback when users tell their device to play content.  | Increase engagement by allowing customers to take advantage of the convenience and speed of voice commands to find and start watching content faster.  |
-  * [Roku Search](https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md)
-  * [deep linking](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md)
-  * [roInput event handling](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md#implementing-deep-linking)
-  * [sending authentication events](https://developer.roku.com/docs/developer-program/discovery/search/prioritizing-authenticated-channels-in-roku-search.md) (SVOD and TVE apps)
-
- |
-| [Instant Signup](https://developer.roku.com/docs/developer-program/discovery/instant-signup.md)  | Offer free trials and related promotions to customers for subscription services.  | Drive conversions to paid subscriptions.  |
-  * [Roku Pay](https://developer.roku.com/docs/developer-program/roku-pay/implementation/overview.md)
-  * [On-device authentication](https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md)
-  * [Web service endpoints](https://developer.roku.com/docs/developer-program/discovery/instant-signup.md#integrating-instant-signup) (for offers images, products, and user account creation).
-
- |
-> Roku also provides publishers with audience development programs to further increase their exposure such as [self-serve Roku home screen display ads](https://developer.roku.com/docs/features/engagement/self-serve-promotions.md#display-ads-on-roku), on-device promotions, and off-device marketing messages.
-> For more information on Roku's free and paid content discovery features, see [Content engagement overview](https://developer.roku.com/docs/features/engagement/overview.md).
+The Roku platform provides a suite of content discovery features designed to drive app engagement, increase user retention, and reduce churn. By integrating with these features, publishers can leverage the ecosystem to surface titles directly to customers through search results, personalized recommendations, and specialized navigation rows.
+##
+Roku Search
+[](https://developer.roku.com/dev/docs/discovery#roku-search)
+Roku Search allows customers to discover movies, TV shows, and other content across various apps using the global search interface or voice commands.
+##
+Deep Linking
+[](https://developer.roku.com/dev/docs/discovery#deep-linking)
+Deep linking enables external discovery features—such as search results or home screen banners—to launch an app directly into a specific content springboard or playback session.
+##
+Instant Signup (ISU)
+[](https://developer.roku.com/dev/docs/discovery#instant-signup-isu)
+Instant Signup allows apps using Roku Pay to offer subscription services to customers during the initial device activation process. Customers can subscribe to an app off-device with minimal interaction. Once the app is accessed, the customer is automatically signed in and granted immediate access to content without further signup steps. The program supports free trials, promotional pricing, and standard pricing models, ensuring publishers can capture and convert potential subscribers at the earliest possible touchpoint.
+##
+Continue Watching
+[](https://developer.roku.com/dev/docs/discovery#continue-watching)
+The Continue Watching row is a specialized content category located within the **What to Watch** navigation on the device and mobile app. It serves as a centralized hub where customers can resume titles they have previously started. Content progress is tracked across all devices linked to a user's account, providing a seamless transition between different viewing environments. By providing a single location to resume content from multiple participating apps, publishers can significantly increase re-engagement and reduce the likelihood of subscriber churn.
+##
+Direct to Play
+[](https://developer.roku.com/dev/docs/discovery#direct-to-play)
+Direct to Play enhances the search experience by accelerating content delivery. When a user issues a voice command to play a specific title, the device identifies the app where the customer is entitled to the content, launches that app, and initiates playback immediately. This bypasses the home screen and app menus for an "instant-on" experience.

@@ -1,64 +1,29 @@
-# Building your first app
-You can build your first Roku app by modifying Roku's Hello World sample. After you sideload the app, you can use the Roku debug console to view the app's runtime output.
-## Viewing the directory structure
-To get started, [download the Hello World sample app](https://github.com/rokudev/hello-world/archive/refs/heads/master.zip) and unzip it if you have not done so already. Expand the **/hello-world-master/dist/apps/hello-world** folder to view the app's directory structure. The directory of a Roku app typically contains the following folders and files:
-  * The **components** folder contains the SceneGraph XML files that define the app's layout.
-  * The **source** folder contains the main entry point for launching the app.
-  * The **images** folder contains the splash screen image and other artwork for the app.
-  * The **manifest** file defines the app attributes and versioning.
-  * The **makefile** is an optional utility for installing the app. See Using a makefile for more information.
-
-> The maximum number of files inside a single directory should be less than 100 to avoid performance issues.
-## Editing the Hello World app
-To edit the text displayed on your television screen by the sample app, follow these steps:
-  1. Browse to the /**hello-world-master/dist/apps/hello-world.zip** file and extract the archive.
-
-  2. Expand the **/hello-world-master/dist/apps/hello-world/components** folder and then open the **helloworld.xml** file.
-
-  3. In the [SceneGraph **Label** node](https://developer.roku.com/docs/references/scenegraph/label-nodes/label.md), update the **text** field (line 5) to the string you want displayed on your television screen (for example, "My first Roku app!").
-
-  4. In the [init() function](https://developer.roku.com/docs/references/scenegraph/component-functions/init.md), you can also set the **label.color** field (line 27) to a different hex code (for example, white, which is 0xFFFFFF).
-
-  5. Save the file.
-
-  6. Zip the contents of the **hello-world** directory; do not zip the directory itself or the development application installer will report an error when you try to upload the app. Name the zip file something that makes it easy to find (for example, my-hello-world.zip).
-
-## Sideloading the updated sample app
-To sideload the updated Hello World sample app, follow these steps:
-  1. In your web browser, enter the URL of your Roku device, and then log in (the **User Name** is "rokudev"; the password is the one you created when you activated developer mode on your Roku device.
-
-  2. In the Development Application Installer, click **Upload** , and then select the **/hello-world-master/dist/apps/hello-world/my-hello-world.zip** file.
-
-  3. The updated Hello World app launches on your Roku device and displays "My first Roku app!" in white on the screen.
-![roku600px my-first-roku-app](https://image.roku.com/ZHZscHItMTc2/my-first-roku-channel.jpg)
-
-## Using the debug console
-You can use the [Roku debug console](https://developer.roku.com/docs/developer-program/debugging/debugging-channels.md) to view the output of a Roku app during runtime. If the app fails during runtime, the debug console displays the line number of the error, as well as the contents of variables at the time of the failure. If the app has compilation errors, the debug console displays them as well. It is recommended to have the debug console open whenever you are running a sideloaded app.
-To open the debug console, follow these steps:
-  1. Using a shell application such as [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/) for Windows or terminal on Mac and Linux, enter the following telnet command:
-
-```
-telnet roku-ip-address 8085
-
-```
-
-  2. Return to the Development Application Installer, click **Delete** , **Upload** , select the **/hello-world-master/dist/apps/hello-world/my-hello-world.zip** file again, and then click **Replace**.
-
-  3. In the debug console, view the output from the sample app.
-![roku600px debug-console](https://image.roku.com/ZHZscHItMTc2/debug-console.png)
-
-> The [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript), which is maintained by the Roku developer community, also contains a built-in debug console (this VSCode extension is used by many Roku developers and it is well-reviewed; however, it is not built or maintained by Roku and its continued maintenance and support are not guaranteed).
-## Using a makefile to sideload apps
-To use a makefile to automate the sideloading of an app, follow these steps:
-  1. Verify that the **makefile** and the **app.mk** file are in the same directory as the manifest. Optionally, you can modify the "ZIP_EXCLUDE" line in the makefile to exclude certain files. You can use the makefile in the **/hello-world-master/makefile** directory as a template.
-
-  2. Set the ROKU_DEV_TARGET and DEVPASSWORD environment variables.
-     * ROKU_DEV_TARGET is the IP address of your Roku device.
-     * DEVPASSWORD is the password you set when you activated developer mode.
-
-  3. Run “make install”.
-
-```
-% export ROKU_DEV_TARGET=192.168.1.140 % export DEVPASSWORD=1234 % cd<sdk>/examples/source/videoplayer % make install
-
-```
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

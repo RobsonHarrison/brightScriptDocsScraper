@@ -1,116 +1,29 @@
-# SceneGraph data scoping
-SceneGraph applications have data object scoping rules that are similar to traditional programming languages. You have:
-  * _function scope_ : objects that can only be accessed within the function in which they were defined
-  * _component scope_ : objects that can be accessed anywhere within a component XML file, similar to _file scope_ in traditional programming languages
-  * _global scope_ : objects that can be accessed anywhere within a SceneGraph application
-
-These different levels of scoping are identified by the use of the `m` object reference which can be used to disambiguate and access objects at different levels, similar to the use of `m` in BrightScript.
-* * *
-## Function scope
-For creating objects with function scope, do not use the `m` object reference. For example, the following creates and defines several fields for a `dialog` object that can only be accessed within the function in which it is created and defined:
-
-```
-dialog = createObject("RoSGNode","Dialog")
-dialog.backgroundUri = "pkg:/images/sgetdialogbg.9.png"
-dialog.title = "Example Dialog"
-dialog.optionsDialog = true
-dialog.message = "Press * To Dismiss"
-
-```
-
-## Component scope
-For creating objects with component scope, use the `m` object reference to identify objects that can be accessed anywhere within a component XML file. For example, if you wanted to create the same `dialog` object above in one function, but define it, or otherwise access it, in another function in the same component XML file:
-
-```
-sub createdialog()
-
-    m.dialog = createObject("RoSGNode","Dialog")
-
-end sub
-
-sub definedialog()
-
-    m.dialog.backgroundUri = "pkg:/images/sgetdialogbg.9.png"
-
-    m.dialog.title = "ExampleDialog"
-
-    m.dialog.optionsDialog = true
-
-    m.dialog.message = "Press * To Dismiss" end sub
-
-```
-
-## m.top component scope reference
-There is a special use of the `m` object reference in SceneGraph for identifying the _top_ of the SceneGraph tree for a component XML file. To do this, use the `m.top` object reference, which refers to the component itself. For example, to create the `dialog` object and assign it to the `dialog` field of a Scene node defined in a component XML file (which is the required usage of the Dialog node class), assign the `dialog` object to the `dialog` field using the `m.top` object reference:
-
-```
-dialog = createObject("RoSGNode","Dialog")
-
-dialog.backgroundUri = "pkg:/images/sgetdialogbg.9.png"
-
-dialog.title = "Example Dialog"
-
-dialog.optionsDialog = true
-
-dialog.message = "Press * To Dismiss"
-
-m.top.dialog = dialog`
-
-```
-
-Likewise, if you want to use `findNode()` to find a SceneGraph node object anywhere in the SceneGraph tree for a component XML file, use the `m.top` reference to start at the top of the tree:
-
-```
-m.categorieslist = m.top.findNode("categorieslist")
-
-```
-
-## Global scope
-**Rules**
-  * To declare a **data object** at **global scope** , store it in a field or child of the global node. This global node may be accessed from the entire SceneGraph application.
-  * To access the **global node** in **components** , use the predefined `m.global`, much like `m.top`.
-  * For access to the **global node** from **non-component** **script** as in `source/main.brs`, use **`getGlobalNode()`**called on the**`roSGScreen`**object.
-  * In **non-component script** , where the global node is obtained using **`getGlobalNode()`**, you can store it in**`m.global`**so that the syntax for subsequent references to it matches that for components.
-
-For example:
-
-```
-screen = CreateObject("roSGScreen")
-
-m.port = CreateObject("roMessagePort")
-
-screen.setMessagePort(m.port)
-
-m.global = screen.getGlobalNode()
-
-m.global.id = "GlobalNode"
-
-```
-
-As noted, this is not necessary in component script, as `m.global` is predefined.
-You can access and set the fields, or the children nodes, of the global node from anywhere in the SceneGraph application. In the non-component example above, the global node **`id`field** value is set to **`Global node`**. Likewise, you can access and set the fields for the global node from components by accessing the component**`m`**to get its special global element:
-> Note that you cannot edit elements within [associative arrays](https://developer.roku.com/docs/references/brightscript/components/roassociativearray.md).
-You will need to take the associative array, modify it and save it back into the field.
-
-```
-m.global.addFields( {red: &hff0000ff, green: &h00ff00ff, blue: &h0000ffff} )
-...
-
-m.rect = m.top.findNode("Rect1")
-m.rect.color = m.global.red
-...
-
-color = m.rect.color
-
-if m.rect.color = m.global.red
-  m.rect.color = m.global.green
-
-else if m.rect.color = m.global.green
-  m.rect.color = m.global.blue
-
-else
-  m.rect.color = m.global.red
-
-end if
-
-```
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

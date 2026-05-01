@@ -1,25 +1,29 @@
-# Getting started
-Integrating Roku Pay in an app is seamless. Roku Pay includes a SceneGraph ChannelStore component that contains a complete suite of APIs for managing on-device authentication, purchases, free trial offers, upgrades/downgrades, and access to content. In addition, Roku Pay includes a RESTful API and push notifications that are integrated into an app's backend system for validating, refunding, and canceling purchases.
-To get started with a Roku Pay integration and test it in an app without incurring any actual charges, you first need to login to the [Developer Dashboard](https://developer.roku.com/developer) and do the following:
-  * [Enroll in the Roku Partner Payouts Program](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/quickstart/getting-started.md#roku-partner-payouts-program)
-  * [Specify the monetization methods for the app](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/quickstart/getting-started.md#monetization)
-  * [Add in-app products](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/quickstart/getting-started.md#in-channel-products)
-  * [Create test users](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/quickstart/getting-started.md#test-users)
-  * [Set up Roku Pay web services](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/quickstart/getting-started.md#roku-pay-web-services)
-
-> Make sure you have [created a Roku account](https://my.roku.com/signup) and [enrolled in the Roku Developer Program](https://developer.roku.com/enrollment/standard) before completing this quickstart.
-## Roku Partner Payouts Program
-To monetize content in an app by offering subscriptions and one-time purchases, you need to provide contact information, a payout method (direct deposit/ACH, wire transfer, or PayPal), and tax forms. See [Publisher payouts](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/partner-payouts.md) for more information.
-![roku815px - payout-contact-info](https://image.roku.com/ZHZscHItMTc2/payout-contact-info-v2.png)
-## Monetization
-Specify the monetization methods for your app by selecting which in-app products it will contain: **in-channel subscriptions** and/or **in-channel one-time purchases**. See [Setting the monetization method](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/monetization-method.md) for more information.
-![roku815px - monetization-method](https://image.roku.com/ZHZscHItMTc2/monetization-method-v4c.png)
-## In-app products
-Once your app is enabled for billing testing, you need subscription and one-time purchase products to test with. You can add one or more products to your app in a few steps. Provide basic information such as the name, unique code, and app for the product, and configure its pricing. You can also offer free trial periods and discounts for subscription products. See [Adding in-app products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) for more information.
-![roku815px - in-channel-product.jpg](https://image.roku.com/ZHZscHItMTc2/in-channel-product-v3.png)
-## Test Users
-Test Users can purchase in-app products on development apps without generating charges. Enter the email address of the Roku account linked to the device used for billing testing and then select the app being tested. When your testing Roku Pay in your development app, a payment method will still be required at the time of purchase; however, no charges will actually be made to the test user's method of payment. See [Creating test users](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/test-users.md) for more information.
-![roku815px - manage-test-users](https://image.roku.com/ZHZscHItMTc2/manage-test-users-v2.png)
-## Roku Pay web services
-Roku Pay includes web services that developers can integrate into their publisher's backend system for validating, refunding, and canceling transactions related to subscriptions and one-time purchases. Validating transactions is especially critical because it enables apps to check whether customers are entitled to content. The Roku Pay web services make this easy by returning a single `isEntitled` flag that indicates whether to grant access. In addition to pulling transactions via the Roku Pay web services, publishers can receive metadata about the transactions in near real-time via push notifications. See [Setting up Roku Pay web services](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/setting-up-web-services.md) to get your Roku Pay API Key and provide a push notification URL.
-![roku815px - web-api-settings](https://image.roku.com/ZHZscHItMTc2/roku-pay-api-key-v4.png)
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

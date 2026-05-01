@@ -1,14 +1,29 @@
-# Channel behavior analysis tests
-> Subscription (SVOD), ad-supported (AVOD), and free apps must pass automated certification testing in order to published to the Streaming Store. Apps cannot be submitted for publishing without passing automated certification testing.
-The [Channel Behavior Analysis tool](https://developer.roku.com/docs/developer-program/publishing/channel-publishing-guide.md#channel-behavior-analysis-window), which is a part of the app builder flow in the Developer Dashboard, enables developers to run self-serve automated certification tests on their apps. The tool verifies whether apps meet the following [performance](https://developer.roku.com/docs/developer-program/certification/certification.md#3-performance) and [deep linking](https://developer.roku.com/docs/developer-program/certification/certification.md#5-deep-linking) certification requirements:
-| Test case  | Certification requirement tested  | Date added  |
-| --- | --- | --- |
-| App launch performance  | The app launches to a **fully rendered** homescreen within 15 seconds on the Roku Streaming Stick+ (Amarillo-2019 3810X) or 20 seconds on the Roku Express (Littlefield 37XXX).
-
-You must add a signal beacon to your application to measure launch times. Once you add the beacon, you can use the debug console to verify that your app's launch time is meeting this requirement.  | July 2020  |
-| Deep linking  | App supports deep linking for all media types (including "series"), per [Roku's deep linking policy](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md). When the app is already running, app uses [roInputEvent](https://developer.roku.com/docs/references/brightscript/events/roinputevent.md) to send [direct playback commands](https://developer.roku.com/docs/developer-program/discovery/direct-to-play.md) to the app and [deep link](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) to content.  | July 2020  |
-| Content playback performance  | Content starts playing within 8 seconds of initiation on the Roku Streaming Stick+ (Amarillo-2019 3810X) or 10 seconds on the Roku Express (Littlefield 37XXX).
-
-If your app is using the Roku video player, the Roku OS automatically fires beacons to measure and record the video start time; therefore, no additional implementation work for your application is required. If your app is using a custom video player, your application must fire the video start beacons.  | July 2020  |
-| Focused Full-Screen Video Playback  | App keeps focus on the Video node during full-screen video playback when there are no active UI components over the video.  | August 2023  |
-| Screensaver policy  | App does not override or interfere with Roku's system screensaver. See [Roku’s Screensaver Policy](https://developer.roku.com/docs/developer-program/media-playback/screensavers.md).  | December 2023  |
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](doc:hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](doc:overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](doc:legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

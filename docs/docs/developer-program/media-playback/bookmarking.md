@@ -1,59 +1,29 @@
-# Bookmarking
-Bookmarking refers to saving a user's playback position in the content on your app so that they can continue watching later on from precisely where they left off.
-It is recommended that all services with content longer than 15 minutes build bookmarking functionality into their service, as it will enhance the end-user's experience — not just on Roku, but across all interactions they have with your service on any platform. For example, if your service implements bookmarks, then users who begin watching a television show on Roku before switching over to their mobile device can pick up where they left off. In addition, bookmarks must be saved for a minimum of 30 days.
-> Channels must implement bookmarking in VOD content that is longer that 15 minutes to pass [certification](https://developer.roku.com/docs/developer-program/certification/certification.md#4-channel-operation).
-This guide provides simple instructions on two different ways to bookmark media content, either in your service's backend or locally in the device's registry.
-## Retrieving playback position
-It is important to know that video playback position (or "timestamp") can be retrieved via the position field in the video node.
-
-```
-  m.video = m.top.findNode("MyVideo")
-  TimeStamp = m.video.position
-
-```
-
-## Storing timestamps for cross-platform retrieval
-It is best practice to store the timestamp of a user's bookmark position in the service's backend, so that it can be retrieved on any platform, not just Roku.
-To do this, the app must first retrieve the timestamp as outlined above, then make a request to store the timestamp on the service's backend. This ensures that when starting media playback on other platforms, the developer can load the previously-saved timestamp.
-It is recommended that the app makes the request to store this timestamp on the backend once every 30 seconds, but the frequency can be increased on devices with more memory. This concept is very similar to beacons fired by the Roku Ad Framework. The best way to approach this is through roUrlTransfer.
-
-```
-  url = ('url with timestamp to send to developer end')
-  curl = createObject("roUrlTransfer")
-  curl.setUrl(url)
-  curl.postFromString(TimeStamp as String)
-
-```
-
-This should be done on a 30 second timer to ensure functionality across all devices.
-## Storing timestamps on-device for local retrieval
-While it is ideal to store timestamps in your backend service, it is also possible to store it locally on a Roku device's registry. With this approach, a user will only be able to resume watching from their last playback position if they use the same Roku device. The timestamp won't be accessible on other platforms.
-To write to the registry, use the [roRegistrySection](https://developer.roku.com/docs/references/brightscript/components/roregistrysection.md) component.
-
-```
-  sec = createObject("roRegistrySection", "MySection")
-  if sec.Exists("PlaybackBookmark")
-    BookmarkTime =  sec.Read("PlaybackBookmark")
-  end if
-
-```
-
-If the roku device has a previously stored value that matches the PlaybackBookmark key, then it will return the value stored inside the registry. The function below shows how to create a key value pair to store the timestamp of a bookmark. The timestamp must be done in seconds.
-
-```
-  TimeStamp = 360
-  sec = createObject("roRegistrySection", "MySection")
-  sec.Write("PlaybackBookmark", TimeStamp)
-  sec.Flush()
-
-```
-
-This will save the media playback position inside the registry and the Flush() method will save it to persistent storage in the case of a reboot. Note that if you are running this multiple times on a timer, it will overwrite any previous value associated with the same key. Once this is done, all that's left is to find run the seek() function from the video node to resume playback from the last point.
-
-```
-  m.video = m.top.findNode("MyVideo")
-  m.video.content = videoContent
-  m.video.control = "play"
-  m.video.seek = BookmarkTime
-
-```
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

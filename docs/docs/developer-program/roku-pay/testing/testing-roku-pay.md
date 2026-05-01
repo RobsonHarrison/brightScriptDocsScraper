@@ -1,67 +1,29 @@
-# Testing a Roku Pay app
-Testing the purchase and entitlement workflows in your Roku Pay workflow entails three major steps:
-  1. Verifying that content cannot be accessed without a subscription.
-  2. A subscription can be purchased.
-  3. Access to content is granted with a valid subscription.
-
-These steps are based on the Roku Pay workflows specified in the [On-device authentication guide](https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md).
-> Before running any Roku Pay tests on an app, make sure to add one or more in-app products to the app, enable the app for billing testing, add yourself as a Test User to the app, and then [sideload the app](https://developer.roku.com/docs/developer-program/getting-started/developer-setup.md).
->   * **In-app products** : Developers must [add one or more in-app products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) to the app being tested. If the app has one or more sets of mutually exclusive products, [create product groups ](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#adding-product-groups)for each set. To test entitlements after a free trial expires, create a product that includes a 1-day [free trial](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#adding-product-groups#trials-and-offers).
->   * **Billing Testing** : Developers can [designate an app for "billing testing"](https://developer.roku.com/docs/developer-program/roku-pay/testing/billing-testing.md) to observe output from the SceneGraph ChannelStore node in the debug console when the app is sideloaded. The billing testing feature provides developers with visibility into the confirmations, error codes, and other transactional metadata related to purchases made with Roku Pay.
->   * **Test Users**. Developers can [add themselves as a Test User](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/test-users.md) to the app being tested in order to execute ChannelStore purchases without being billed for the transactions.
->
-
-## Verifying no entitlement without a Roku Pay subscription
-To verify that a customer cannot be entitled to content without a subscription purchased through Roku Pay, follow these steps:
-  1. Launch app and select content behind paywall.
-
-  2. Send the [**getAllPurchases** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getpurchases). Verify that it does not return any active subscription products.
-
-  3. Call the **[roRegistrySection.read()](https://developer.roku.com/docs/references/brightscript/interfaces/ifregistrysection.md#readkey-as-string-as-string)** function on the device registry section for the app. Verify that it does not return an access token from device registry.
-
-  4. Send the [**getChannelCred** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getchannelcred). Verify that it does not return an access token from Roku cloud.
-
-## Verifying Roku Pay purchase workflow
-To verify that a customer can purchase a subscription product and upgrade/downgrade their plan through Roku Pay, follow these steps:
-  1. Send the [**getCatalog** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog). Verify that the SceneGraph components used to display in-app products are populated with product metadata.
-
-  2. Select a subscription product. Verify that the [**getUserData** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getuserdata) is sent and the request for information (RFI) screen is displayed.
-
-  3. Press **Continue** on the RFI screen. Verify that the [order is created](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#creating-an-order) and the [**doOrder** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#doorder) is executed.
-
-  4. Verify that the order confirmation screen displays any free trial offers or discounts included with the subscription product.
-
-  5. Confirm the order of the subscription product. Verify that the `orderStatus` field confirms that the order was successfully completed.
-
-  6. Verify that an access token is generated in the publisher's backend system and passed into:
-a. The [**storeChannelCredData** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#storechannelcreddata) to store the access token in the Roku cloud.
-b. The **[roRegistrySection.write()](https://developer.roku.com/docs/references/brightscript/interfaces/ifregistrysection.md#writekey-as-string-value-as-string-as-boolean)** function to store the access token in the device registry.
-  7. If your app includes a [product group](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/monetization-in-developer-dashboard.md#product-groups), select another in-app product that is in the same product group as the previously ordered one. Verify that the "You're already subscribed" dialog is displayed.
-
-  8. Call the [**validate-transaction** API](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#validate-transaction) with purchase ID included in the `orderStatus` field. Verify that the `isEntitled` flag is set to "true".
-
-  9. If your app includes multiple subscription plans, upgrade or downgrade the subscription plan, and then do the following:
-a. Verify that the `order.action` field is set to the correct string.
-b. Call the `validate-transaction` API with purchase ID included in the `orderStatus` field. Confirm the following:
-     * The `purchase_type` is set to `UPGRADE` or `DOWNGRADE`.
-     * The `cancelled_transaction_ids` field is set to the transaction ID of the original subscription purchase.
-     * The `purchase_status` field is set to `active`.
-
-  10. Close the app.
-
-## Verifying Roku Pay entitlement workflow
-To verify that a customer is entitled to content after purchasing a subscription through Roku Pay, follow these steps:
-  1. Re-launch app.
-
-  2. Send the [**getAllPurchases** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getpurchases). Verify that it returns the purchased subscription product.
-
-  3. Call the [**validate-transaction** API](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#validate-transaction) with purchase ID included in the `purchases` field. Verify that the `isEntitled` flag is set to "true".
-
-  4. Call the **[roRegistrySection.read()](https://developer.roku.com/docs/references/brightscript/interfaces/ifregistrysection.md#readkey-as-string-as-string)** function on the device registry section for the app. Verify that it returns an access token from the device registry.
-
-  5. Send the [**getChannelCred** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getchannelcred). Verify that it returns an access token from Roku cloud.
-
-  6. To test that customers are not entitled to subscription products after a free trial ends, do the following:
-a. Order a subscription product that has a 1-day free trial.
-b. After the trial expires the next day, cancel the subscription.
-c. Complete steps 1-3. Verify that the `isEntitled` flag is set to "false".
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

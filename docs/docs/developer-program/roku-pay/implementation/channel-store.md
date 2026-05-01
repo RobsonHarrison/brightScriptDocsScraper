@@ -1,34 +1,29 @@
-# SceneGraph ChannelStore
-The SceneGraph ChannelStore node is used to manage the on-device user experience of the purchase flow through Roku Pay. It includes a complete suite of APIs (referred to as commands) for implementing the on-device purchasing, entitlement, and authentication workflows. This document summarizes these ChannelStore commands.
-> See the [On-device authentication guide](https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md) for the complete steps on using the ChannelStore node to implement the Roku Pay workflow. Refer to the [ChannelStore reference](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md) for more detailed information on each command.
-## Purchasing
-### getCatalog
-The [**getCatalog** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) gets the [subscription and one-time purchase products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) in the app's catalog.
-This command is used to populate SceneGraph components with products' metadata such as the product name, price, and description.
-![roku815px - rsg-channelstore-getcatalog](https://image.roku.com/ZHZscHItMTc2/rsg-channelstore-getcatalog.jpg)
-### getUserData
-The [**getUserData** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getuserdata) gets the customer's Roku account information such as their name, email address, and phone number. This command enables publishers to select which information to return. For example, if only the customer's email address is needed, the command can be configured to only return that information. Only the information needed to create an account should be requested.
-When this command is executed, a Request for Information (RFI) screen is displayed. The RFI screen allows customers to grant access to the publisher to their Roku account information. This enables the publisher to create an account in their system without the customer entering any information. This is a critical component in the Roku Pay workflow, which is designed to minimize or completely eliminate the need for customer keypresses in order to reduce friction and maximize conversions.
-![roku815px - roku-developers-getUserData](https://image.roku.com/ZHZscHItMTc2/roku-developers-getUserData.jpg)
-### doOrder
-The [**doOrder** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#doorder) completes the transaction for the customer's purchase.
-When this command is executed, the Roku Pay order confirmation screen is displayed. This publisher-branded screen summarizes the product being purchased, including the price, product name, and any trial period/discount. It enables the customer to confirm their purchase and update their method of payment if neccessary.
-![roku815px - img](https://image.roku.com/ZHZscHItMTc2/rsg-channelstore-doorder.jpg)
-If the customer requires a PIN for making purchases, the dialog displays a PIN pad for the customer to enter their 4-digit pin and then confirm the order.
-![roku815px - img](https://image.roku.com/ZHZscHItMTc2/rsg-channelstore-doorder-pin.jpg?version=1&modificationDate=1600366404000&api=v2)
-### requestPartnerOrder
-_TVOD only_
-The [**requestPartnerOrder** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#requestpartnerorder) checks whether the customer's billing status is valid. It is used to verify that the customer is eligible to order a movie rental, sporting event, pay-per-view, or other one-time purchase product. See [Creating TVOD channels](https://developer.roku.com/docs/developer-program/roku-pay/implementation/tvod-channel.md) for more information on using this command in the Roku Pay workflow.
-### confirmPartnerOrder
-_TVOD only_
-The [**confirmPartnerOrder** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#confirmpartnerorder) completes the transaction for the customer's purchase. Similar to the **doOrder** command for subscription purchases, the Roku Pay order confirmation screen is displayed after this command is executed. See [Creating TVOD channels](https://developer.roku.com/docs/developer-program/roku-pay/implementation/tvod-channel.md) for more information on using this command in the Roku Pay workflow.
-## Entitlements and authentication
-**getPurchases**
-The [**getPurchases** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getpurchases) gets all of the customer's current active subscriptions. It is used in conjunction with the [Roku Pay **validate-transaction** API](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#validate-transaction) to verify that a customer is entitled to a subscription or one-time purchase product.
-The **[getAllPurchases](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases)** command is similar to **getPurchases** , except that it returns expired and canceled subscription in addition to active ones.
-### storeChannelCredData
-The [**storeChannelCredData** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#storechannelcreddata) stores the publisher's access token for an in-channel product in the Roku cloud. This command is used to implement [Automatic Account Link](https://developer.roku.com/docs/developer-program/authentication/universal-authentication-protocol-for-single-sign-on.md), which enables customers to access their entitled content on all the devices linked to their Roku customer account—without requiring any additional authentication.
-### getChannelCred
-The [**getChannelCred** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getchannelcred) retrieves the publisher's access token for an in-channel product from the Roku cloud. It is used to verify whether the customer is entitled to an in-app product.
-## Testing the ChannelStore implementation
-The [Roku Pay testing and troubleshooting](https://developer.roku.com/docs/developer-program/roku-pay/testing/testing-roku-pay.md) document lists the steps for testing the purchase and authentication/entitlement workflows. Developers can also [add themselves as a Test User](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/test-users.md) to the app being tested in order to execute ChannelStore purchases without being billed for the transactions, and they can [designate an app for "billing testing"](https://developer.roku.com/docs/developer-program/roku-pay/testing/billing-testing.md) to view the confirmations, error codes, and other transactional metadata related to purchases made with Roku Pay in the debug console.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

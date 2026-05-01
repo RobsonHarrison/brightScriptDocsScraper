@@ -1,47 +1,29 @@
-# App localization
-Publishers can distribute their content across the world through the [Streaming Store](https://channelstore.roku.com/). The Streaming Store includes all of North America, many countries in Latin America, and several countries in Europe. The Roku development platform makes it easy to broadly disseminate content; however, publishers should consider localization in the development, distribution, engagement, and monetization of their apps.
-Roku has Streaming Stores in the following countries:
-| North America  | Europe  | Latin America  | Asia Pacific  |
-| --- | --- | --- | --- |
-|
-  * United States
-  * Canada
-
- |
-  * United Kingdom
-  * Ireland
-  * Germany
-
- |
-  * Argentina
-  * Brazil
-  * Chile
-  * Colombia
-  * Costa Rica
-  * El Salvador
-  * Guatemala
-  * Honduras
-  * Mexico
-  * Nicaragua
-  * Panama
-  * Peru
-
- | Australia  |
-## Development
-The Roku platform supports the distribution of a single package file across multiple streaming stores. This means that developers only need to build and maintain one app and then handle localization in the application's code. For example, the app can be programmed to have a localized user experience, including multi-language support for the UI (labels, menus, and dialogs) and content metadata (titles and descriptions), and it can control the availability of content for different regions. In addition, the app UI can link to a privacy policy URL corresponding to the country associated with the user's Roku customer account.
-To do this, developers can [get the external IP address of a Roku device](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getexternalip-as-string) client-side, and return it back to the app's backend server. In the backend, the app can get the country ranges mapped to the IP address in order to present a localized experience and determine which content to show and allow access to customers.
-## Distribution
-The [Roku Developer Dashboard](https://developer.roku.com/developer) is the central hub for creating, configuring, certification testing, and distributing apps. The dashboard enables publishers to select in which countries to distribute an app. In addition, the dashboard presents a number of options that enable the app to be localized in the Streaming Store. Aspects of a Streaming Store listing that may be localized include metadata such as the app name and description, the app poster, and screenshots. Providing localized version of this application metadata will offer users of all language preferences the opportunity to learn more about your app before installing it.
-## Engagement
-### Roku Search multi-language and multi-regional support
-[Roku Search](https://developer.roku.com/docs/developer-program/discovery/search/implementing-search.md) supports English, Spanish, Portuguese, and German. Apps participating in Roku Search can provide [localized search feeds](https://developer.roku.com/docs/specs/search/search-feed.md#multiregion-and-multilanguage-support) to further increase the discoverability of their content. For example, providing a search feed in Spanish makes the app's content available in queries made on devices with their language set to Spanish, as well as devices located in Streaming Stores where Spanish is the primary language (for example, most countries in Latin America).
-### Multi-regional display and video ad targeting
-Apps can be further promoted globally with Roku home screen banner ads, Roku screensaver ads, and video ads. Roku's [self-serve promotion tool](https://developer.roku.com/docs/features/engagement/self-serve-promotions.md) lets apps programmatically purchase ads in order to drive installs, increase viewership, and reach more users. Apps may run home screen banner ads and Roku screensaver ads in a gowing number of countries (see the [documentation](https://developer.roku.com/docs/features/engagement/self-serve-promotions.md) for the list of eligible countries).
-## Monetization
-### Regional availability of in-app products
-Apps offering subscriptions and one-time purchases (movie rentals, pay-per-views, special events, and so on) can program the app to control the availability of in-app products in different regions. For example, an app may only be able to legally distribute content in a specific set of countries. To do this, apps can use the ChannelStore [**getUserRegionData**](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getuserregiondata) command to determine the country associated with the user's Roku account, and then implement business logic to filter the results of the ChannelStore [**getCatalog** command](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getcatalog) to only display products that should be available for that country.
-### Localized in-app product names
-Apps can also localize the names of their [in-app products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md) (the name that is displayed to customers in the app's on-device purchasing workflow and in subscription emails sent by Roku). This helps customers identify the subscriptions and content they have purchased and reduces potential refund requests from unrecognizable charges.
-### Currency conversions
-Apps need to independently handle currency conversion. To do this, developers can create in-app products for each country and filter out products based on the country in which the device is located (using the [ifDeviceInfo.GetCountryCode()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getcountrycode-as-string) method).
-In the Roku platform UI, Roku Pay displays prices in the currency associated with the Streaming Store in which the device is located. For example, if a device is located in Brazil, the price of an in-app product that is $9.99 USD is displayed as R$24.9 BRL (Brazilan Real).
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

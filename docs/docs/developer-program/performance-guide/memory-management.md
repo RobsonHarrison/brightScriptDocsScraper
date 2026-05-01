@@ -1,31 +1,29 @@
-# Memory management
-## Texture memory
-A common offense is simply using too much texture memory. It's important to realize that simply using a larger image does not necessarily ensure a higher quality end result. Rather, using unnecessarily large images will more often than not result in performance issues. All Roku devices have a dedicated amount of texture memory, which varies from device to device. Each _unique_ image you would like to display on your app will take up a certain amount of the limited texture memory (however, reusing the same image on multiple nodes will not take up more memory). More specifically, the **size in bytes** of the image file does not matter (so compressing your images is inconsequential), rather, the **pixel dimension** of the image is important. Images are loaded into texture memory in the form of bitmaps, taking up 4 bytes per pixel (RGBA). A quick calculation (width x height x 4B) can help you approximate how much texture memory your images will be taking up.
-If your app ends up going over any of these limits by trying to display more than what the texture memory can allow for, then your app will run into unexpected behavior on those devices. A common symptom is flickering images or slow content loading, as bitmaps will be constantly unloaded and reloaded onto memory in an effort to manage the excess images. Even if your images do not use up all the texture memory on a device, your app will load slower in general if it contains larger images.
-### How to see texture memory
-  1. Side load your app using one of the normal methods
-  2. Run your app and navigate in the UI to where you think there might be an issue.
-  3. telnet to your roku at port 8080.
-  4. If your app is SceneGraph run this command: "loaded_textures". Be aware that there is a texture cache, so images that are not visible can be cleared automatically.
-  5. if your app is pre-SceneGraph, 2D API or template, run this command: "r2d2_bitmaps."
-
-### How to avoid going over memory limits
-#### Make images smaller
-The simplest solution! If you're planning on displaying an image on a 200x200 Poster node, don't load in and render a 1920x1080 image. It will work, but it'll be a waste of system resources for no real benefit. A quick calculation puts a 1920x1080 image at using a whopping (1920•1080•4 = **~8.3MB**) of memory, while the appropriately sized 200x200 image will only take up **~0.16MB**. Using the loadWidth and loadHeight fields of a Poster node would be an equivalent solution to resizing the images themselves.
-#### Use minimalistic item renderers
-The fewer elements, the better. Use [Rectangle](https://developer.roku.com/docs/references/scenegraph/renderable-nodes/rectangle.md) nodes, which do not require a bitmap loaded into memory, over [Poster](https://developer.roku.com/docs/references/scenegraph/renderable-nodes/poster.md) nodes whenever possible. Keep in mind that even bitmaps for elements like focus rings and keyboard backgrounds take up texture memory - so take care to not use unnecessarily large images for these.
-### Debugging texture memory performance
-Using r2d2 _bitmaps to check the amount of texture memory available:_
-![roku815px - texturememory](https://image.roku.com/ZHZscHItMTc2/texturememory.png)
-You can check your texture memory usage by telnetting to port 8080 on your Roku device and running the command “r2d2_bitmaps”. This command will output a list of memory addresses representing the assets loaded into texture memory, their width and height, as well as their size in bytes. At the bottom, it also shows the available memory you have on your device left, the amount used, and the amount that the device has in total. If your app uses multiple high resolution images (e.g. more than two 1920 x 1080 images), you will notice that the available memory will hit a peak somewhere less than the max amount and keep fluctuating between values as the texture memory manager tries offloading assets and reloading them back in to manage memory. Make sure to use the performance techniques listed in this guide so that your app doesn't run into these problems!
-## System memory (DRAM)
-  * Roku devices have anywhere from **512 MB DRAM** on the lowest end devices, to **2.0 GB DRAM**.
-  * While many applications like **image processing or 3D modeling software** benefit greatly from a large amount of RAM, this is usually not the case for apps running on Roku OS.
-  * For well-written apps, **RAM will not be a bottleneck for performance**.
-  * An app is far more likely to hit the texture memory or CPU ceiling than to ever run out of RAM, and your app is sandboxed such that the Roku device will always allocate and save enough RAM for video buffering. In addition, if your app uses a large amount of RAM it will simply be killed before performance hits are noticeable.
-
-### Viewing system memory
-You can view system memory usage multiple ways:
-  * Use the [Roku Resource Monitor](https://devtools.web.roku.com/roku-resource-monitor)
-  * Ttelnet to `port 8080`and run `sgnodes all`
-  * Telnet to port 8085, press **^C** to break into the debugger, and run `bcs` or `bscs`.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

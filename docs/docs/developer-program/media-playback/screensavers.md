@@ -1,35 +1,29 @@
-# Screensavers
-> Only standalone screensaver apps are permitted. Non-screensaver apps, including but not limited to video/audio streaming apps, games, and utilities, are prohibited from including screensavers.
-## Overview
-A screensaver is automatically invoked when either a video, game, utility, or application has been idle. The screensaver starts according to a user specified period of time. The main operational difference between a screensaver and a streaming app is that screensavers do not accept any user input (e.g., remote button push, etc). When a screensaver is running, any user input terminates the screensaver and returns the user to the streaming app.
-Screensavers **cannot** include:
-  * [DynamicComponent libraries](https://developer.roku.com/docs/references/scenegraph/control-nodes/componentlibrary.md)
-  * Ad insertion
-  * In-app purchases
-  * Deep links
-  * Any type of user-initiated, interactive functionality
-
-## Screensaver context
-When a screensaver is run, a new Brightscript context is created for screensaver execution. The screensaver does not share Brightscript data objects with the streaming app.
-The screensaver's [BrightScript Debugger](https://developer.roku.com/docs/developer-program/debugging/debugging-channels.md) uses port 8087.
-## Discovery
-All screensavers in the Roku environment use the **`RunScreenSaver()`**function. Note that**`RunUserInterface()`**or**`Main()`**are prohibited for screensavers.
-You can access the list of available screensavers in the screensaver store or menu that is discoverable on your device (in the Roku UI) by going to **Settings > Theme > Screensavers**. This is where you can go to get, set, or remove screensavers. Note that once a screensaver is purchased and added the screensaver is not displayed on the Roku Home screen.
-![roku815px - screensavers menu](https://image.roku.com/ZHZscHItMTc2/screensavers-menu.png)
-## Settings
-The **`RunScreenSaverSettings()`**function stores screensaver data in the device's registry. If a screensaver implements the**`RunScreenSaverSettings()`**function a new context menu, called**Change screensaver settings** is available under the given screensaver detail menu.
-![roku815px - change screensaver settings](https://image.roku.com/ZHZscHItMTc2/change-screensaver-settings.png)
-After clicking **Change screensaver settings** the **`RunScreenSaverSettings()`**entry point is invoked allowing you to change developer specified screensaver options.
-## Manifest entries
-A screensaver must have an entry in its [manifest file](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md) named **`screensaver_title`**whose value is the title of the screensaver (usually the same as the title of the app).
-> The **`screensaver_title`**manifest entry may only be used for screensaver applications. Other apps may not use this manifest entry; app publishing will be blocked if it is provided.
-## Usable components
-Normally a screensaver uses roScreen or roImageCanvas to display images on the screen. Components which accept user input are not supported in a screensaver. This is a list of components which **cannot** be used in a screensaver.
-  * **`roAudioPlayer`**
-  * **`roChannelStore`**
-  * **`roVideoPlayer`**
-
-## SceneGraph screensavers
-You can also create screensavers in Roku SceneGraph. You should **not** create SceneGraph screensavers that require any type of user input (such as a keyboard), or have video playback.
-### Screensaver examples
-See the [screensaver sample channels](https://github.com/rokudev/samples/tree/master/screen%20savers) for examples.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

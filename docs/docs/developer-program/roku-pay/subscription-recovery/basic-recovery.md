@@ -1,68 +1,29 @@
-# Basic Subscription Recovery
-When payment for a subscription auto-renewal fails, Roku's basic subscription recovery feature gives customers a 3-day grace period where they can continue accessing content, while Roku Pay notifies them daily via email to update their method of payment (MOP). Once the 3-day grace period expires, the subscription is canceled. This solution helps the publisher improve the chance of recovering payments and thereby reduce passive cancelations.
-> Effective October 1, 2024, all apps using Roku Pay must implement Enhanced Subscription Recovery to pass [certification](https://developer.roku.com/docs/developer-program/certification/certification.md#4-channel-operation). As a result, apps using basic subscription recovery solution must migrate to [Enhanced Subscription Recovery](https://developer.roku.com/docs/developer-program/roku-pay/subscription-recovery/subscription-on-hold.md).
-## Overview
-When the auto-renewal of a customer's subscription fails, Roku Pay automatically places the subscription in recovery. When a subscription is in recovery, the customer is given a grace period where they may continue accessing content for 3 days. During this 3-day grace period, the customer is notified daily via email to update their MOP.
-If Roku receives a payment during the 3-day grace period, it is processed and entitlement is maintained (the billing period also remains the same). If no payment is received by the end of the 3-day grace period, the subscription is canceled.
-## Email renewal notifications
-Roku sends email notifications prompting the customer to update their MOP or manage their subscription online at [my.roku.com](http://my.roku.com/).
-![roku600px - email-hold-notification](https://image.roku.com/ZHZscHItMTc2/email-hold-notification.jpg)
-## Entitlement checks
-Publishers can use the Roku Pay APIs to check whether a subscription is current, on hold, or canceled. The [ChannelStore API](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases) can be used to check the subscription status client-side upon app launch and then block access to content based on the results; the [Roku Pay web service APIs](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md) can be used server-side for regular nightly syncs to update the publisher's entitlement service.
-### ChannelStore API
-When customers launch an app, the app should call the ChannelStore [getAllPurchases](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases) API, as part of the required on-device authentication, to determine whether to block access to content. The [getAllPurchases](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getallpurchases) API returns an **inDunning** flag that can be used along with the **status** field to get the status of a subscription:
-| Subscription state  | **"inDunning"**  | **"status"**  |
-| --- | --- | --- |
-| Current  | false  | Valid  |
-| In recovery (3-day grace period)  | true  | Valid  |
-| Canceled  | false  | Invalid  |
-### Roku Pay web service APIs
-The publisher should routinely synchronize their entitlement service with the Roku Pay web services to make sure their system has up-to-date entitlement data. Publishers can call the [validate-transaction API](https://developer.roku.com/docs/developer-program/roku-pay/implementation/roku-web-service.md#managing-subscription-recovery) as part of a nightly batch routine to get the updated status of customers' subscriptions. This API returns an **isEntitled** flag that can be used along with the **expirationDate** field and **cancelled** flag to get the status of a subscription:
-| Subscription state  | **"isEntitled"**  | **"expirationDate"**  | **"cancelled"**  |
-| --- | --- | --- | --- |
-| Current  | true  | future date  | false  |
-| In recovery (3-day grace period)  | true  | current or past date  | false  |
-| Canceled  | false  | past date  | true  |
-> **Free trials:** When a free trial ends and the customer's method of payment fails, the `is_entitled` flag is set to "false", and the subscription is automatically cancelled (there is no grace period in this case).
-## Push notifications
-Roku Pay sends a [GraceInitiated push notification](https://developer.roku.com/docs/developer-program/roku-pay/implementation/push-notifications.md#in-grace-period) when a subscription is put on hold, it sends a [GraceRecovered](https://developer.roku.com/docs/developer-program/roku-pay/implementation/push-notifications.md#in-grace-period) notification when the subscription is recovered (renewed after being put in a grace period):
-### GraceInitiated
-
-```
-{
-    "customerId": "9aa37bd6f970578294cea4783af08560",
-    "transactionType": "GraceInitiated",
-    "transactionId": "024d4e1fc7b611eeafbe0a58a9feaca8",
-    "channelId": "3605562",
-    "productCode": "0fCsu09EGS5C6OHlEUnz_MonthlySub",
-    "productName": "0fCsu09EGS5C6OHlEUnz_MonthlySub",
-    "originalTransactionId": "024d4e1fc7b611eeafbe0a58a9feaca8",
-    "originalPurchaseDate": "2024-01-12T01:45:36Z",
-    "eventDate": "2024-02-10T01:45:39Z",
-    "expirationDate": "2024-02-10T01:45:36Z",
-    "comments": "Subscription is in dunning state",
-    "responseKey": "163792dbc7b611eeafbe0a58a9feaca8",
-    "isFreeTrial": false
-}
-
-```
-
-### GraceRecovered
-
-```
-    "customerId": "9d425957549250dcba71e03dacf426b5",
-    "transactionType": "GraceRecovered",
-    "transactionId": "f0864331c7b611eea3c40a58a9fead9c",
-    "channelId": "3193830",
-    "productCode": "PPfCfuZMf3TOXBBl3Ttu_MonthlySub",
-    "productName": "PPfCfuZMf3TOXBBl3Ttu_MonthlySub",
-    "originalTransactionId": "d4c4da85c7b611eea3c40a58a9fead9c",
-    "originalPurchaseDate": "2024-01-12T01:51:39Z",
-    "eventDate": "2024-02-10T01:51:46Z",
-    "expirationDate": "2024-03-10T01:51:39Z",
-    "comments": "Subscription recovered from dunning state.",
-    "responseKey": "d915ab762a3752e7bf112e7903958f52",
-    "isFreeTrial": false
-}
-
-```
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

@@ -1,83 +1,29 @@
-# Static Analysis tests
-> Apps must pass Static Analysis testing in order to published to the Streaming Store. Apps cannot be submitted for publishing without passing static analysis testing.
-The [Static Analysis tool](https://developer.roku.com/docs/developer-program/dev-tools/static-analysis-tool/static-analysis-tool.md), which is a part of the app builder flow in the Developer Dashboard, enables developers to verify that their app's BrightScript source code complies with Roku certification criteria. The tool checks whether the app's code contains any of the following certification-related errors:
-| Test case  | Date added  |
-| --- | --- |
-| Manifest attributes validation  | February 2018  |
-| Deprecated components detection  | February 2018  |
-| Deprecated APIs detection  | February 2018  |
-| Existence of required package files  | February 2018  |
-| Check for UTF-8 Manifest encoding  | February 2018  |
-| Extraneous directories detection  | February 2018  |
-| Extraneous files detection  | February 2018  |
-| Check for package size  | February 2018  |
-| STOP commands detection  | February 2018  |
-| RSG app identification  | February 2018  |
-| Check for TimeGrid usage  | February 2018  |
-| Check for roProgramGuide usage  | February 2018  |
-| Proper RAF integration tests  | May 2019  |
-| Proper Roku Pay integration tests  | May 2019  |
-| Proper RED integration tests  | May 2019  |
-| Proper Automatic Account Link integration  | May 2019  |
-| Proper Deep Linking integration  | May 2019  |
-| Proper General Audience Measurements integration  | May 2019  |
-| Application nesting tests  | May 2019  |
-| App/screensaver entry point detection  | May 2019  |
-| Manifest libs detection  | May 2019  |
-| Eval usage  | May 2019  |
-| App name in manifest is different from app metadata in Streaming Store  | May 2019  |
-| App version in manifest is different from app metadata in Streaming Store  | May 2019  |
-| App version was updated for submitted package  | May 2019  |
-| Developer ID of submitted package matches Developer ID of previously-submitted package  | May 2019  |
-| Roku Pay usage was found in BrightScript code but was not specified during app publishing  | May 2019  |
-| Roku Pay usage was specified during app publishing but was not found in BrightScript code  | May 2019  |
-| Ads revenue usage was specified during app publishing but RAF was not found in BrightScript code  | May 2019  |
-| RAF usage was found in BrightScript code but ads revenue was not specified during app publishing  | May 2019  |
-| Proper Server-Side Ad Insertion (SSAI) RAF integration.  | May 2019  |
-| Check whether contentId and mediaType parameters in deep link requests are being handled.  | May 2019  |
-| Check for the supports_input_launch attribute in the manifest (required for handling deep link requests while your app is running)  | May 2019  |
-| Check whether the setAdUrl() method is called in RAF implementations, and whether the ad server URL is specified in the method.  | June 2019  |
-| Check for usage of deprecated methods:
-
-  * roDeviceInfo.GetVideoDecodeInfo()
-  * roDeviceInfo.GetAudioDecodeInfo()
-  * roDeviceInfo.isHDMIConnected()
-  * roDeviceInfo.GetConnectionInfo()
-
- | February 2020  |
-| Check for usage of deprecated content metadata attribute: AudioLanguageSelected  | February 2020  |
-| Check app type (for example, SDK, screensaver, and so on).  | February 2020  |
-| Deprecated rsg_version (older than 1.2) detection  | March 2020  |
-| ECP or roAppManager command detection  | March 2020  |
-| Check for missing entry point ("sub RunUserInterface(args as Object)" or "sub Main()" for apps; "sub RunScreenSaver(args as Object)" for screensavers).  | April 2020  |
-| Check for Roku Pay upgrade/downgrade implementation  | May 2020  |
-| Check that apps using SGDEX have implemented Billing and RAF  | September 2020  |
-| Check for components that cannot be used in a screensaver  | July 2020  |
-| Remind apps with RAF implementation to pass kidsContent flag in calls to setContentGenre() method.  | September 2020  |
-| Check whether apps are firing AppDialog signal beacons from log-in or user selection dialogs.  | September 2020  |
-| roTuner node detection  | September 2020  |
-| Check for "Roku" within app name or names of in-app products, including names with localized characters  | November 2020  |
-| Check for usage of roAppManager.LaunchApp() function, which is prohibited  | December 2020  |
-| Check that SGDEX billing apps have implemented upgrade/downgrade  | December 2020  |
-| Extraneous packages file detection.  | December 2020  |
-| Third-party oAuth provider detection  | January 2021  |
-| Third-party ad library detection  | January 2021  |
-| Check for deprecated [AudioLanguageSelected](https://developer.roku.com/docs/developer-program/getting-started/architecture/content-metadata.md) content metadata track ID attribute selected  | March 2021  |
-| Check for deprecated **mac** field of [ifDeviceInfo.GetConnectionInfo()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getconnectioninfo-as-object) method for getting the MAC address of a device.  | March 2021  |
-| Check for deprecated [SteadyMaxMemPoints](https://developer.roku.com/docs/references/deprecated-apis.md#signal-beacon-steadymaxmempoints) signal beacon metric.  | Match 2021  |
-| Check for deprecated [Adobe and Verimatrix DRMs](https://developer.roku.com/docs/specs/media/content-protection.md)  | March 2021  |
-| Check for usage of deprecated [roDeviceInfo.getVersion()](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getversion-as-string) function  | March 2021  |
-| Check for usage of deprecated Video node [manifestData fields: mpd and periods](https://developer.roku.com/docs/references/scenegraph/media-playback-nodes/video.md#trickplay-fields)  | March 2021  |
-| Check for file:// protocol usage from [roUrlTransfer](https://developer.roku.com/docs/references/brightscript/interfaces/ifurltransfer.md)  | April 2021  |
-| Check that [in-app product names](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#product-basics) do not include "Roku"  | May 2021  |
-| Check that [in-app products](https://developer.roku.com/docs/developer-program/roku-pay/quickstart/product-catalog.md#product-basics) are not priced over $300  | May 2021  |
-| Check that authenticated apps integrate the Request for Information (RFI) screen (via a call to the ChannelStore [getUserData API](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getuserdata))  | September 2021  |
-| Check that authenticated apps integrate a voice keyboard for email and PIN entry (via calls to the [Voice Keyboard APIs](https://developer.roku.com/docs/references/scenegraph/dynamic-voice-keyboard-nodes/dynamic-keyboard-base.md))  | September 2021  |
-| Check for [Automatic Account Link](https://developer.roku.com/docs/developer-program/authentication/universal-authentication-protocol-for-single-sign-on.md) integration (via calls to the ChannelStore [StoreChannelCredData](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#storechannelcreddata) and [GetChannelCred](https://developer.roku.com/docs/references/scenegraph/control-nodes/channelstore.md#getchannelcred) APIs)  | September 2021  |
-| Check whether app is firing [ad measurement beacons](https://developer.roku.com/docs/developer-program/advertising/ad-watermark.md) via RAF  | December 2022  |
-| Check whether app is a Theme  | November 2023  |
-| For apps meeting the streaming hours threshold, check that [Automatic Account Link](https://developer.roku.com/docs/developer-program/authentication/universal-authentication-protocol-for-single-sign-on.md) has been implemented (error if not)  | January 2024  |
-| For apps meeting the streaming hours threshold, check that [Continue Watching](https://developer.roku.com/docs/developer-program/discovery/continue-watching.md) has been implemented  | January 2024  |
-| For apps offering subscription products, check that product groups have been created for any set of products to which customer cannot be simultaneously subscribed.  | February 2024  |
-| Check that manifest entries are less than 255 characters  | February 2024  |
-| Check whether app is using the [roAppMemoryMonitor](https://developer.roku.com/docs/references/brightscript/interfaces/ifappmemorymonitor.md) node to track prior exit information.  | February 2024  |
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](doc:hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](doc:overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](doc:legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

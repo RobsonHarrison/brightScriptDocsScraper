@@ -1,42 +1,29 @@
-# Samples
-The [Roku Developers GitHub repo](https://github.com/rokudev) provides a large selection of sample app code. Repos from SceneGraph nodes and implementations, to full integrated master sample apps, are briefly described below.
-> After mastering the basics, you might want to look next at the following SceneGraph examples.
->   * Roku SceneGraph (RSG) components: Building block components for configuring and rendering the app UI from scratch (refer to the [scenegraph-master-sample](https://github.com/rokudev/scenegraph-master-sample))
->   * SceneGraph Developer Extensions (SGDEX) views: Full screen components to save the effort of building from scratch (refer to the [SceneGraphDeveloperExtensions](https://github.com/rokudev/SceneGraphDeveloperExtensions))
->
-
-## Featured Samples
-| Category  | GitHub link  | Description  |
-| --- | --- | --- |
-| Basic  | [hello-world](https://github.com/rokudev/hello-world)  | Simple sample app to try out sideloading  |
-|   | [samples](https://github.com/rokudev/samples)  | More elaborate sample apps for learning  |
-| SceneGraph  | [scenegraph-master-sample](https://github.com/rokudev/scenegraph-master-sample)  | Guide to building a basic, high-performance Roku app that passes certification  |
-|   | [SceneGraphDeveloperExtensions](https://github.com/rokudev/SceneGraphDeveloperExtensions)  | Pre-built, reusable Roku SceneGraph (RSG) components to enable rapid development of apps that follow a consistent UX paradigm  |
-|   | [RAF4RSG-sample](https://github.com/rokudev/RAF4RSG-sample)  | Sample demonstrating the Roku Advertising Framework in SceneGraph  |
-|   | [tv-safe-zone-overlay](https://github.com/rokudev/tv-safe-zone-overlay)  | Function to overlay the current UI in a SceneGraph scene with a transparent safety zone overlay  |
-|   | [simple-videoplayer-channel](https://github.com/rokudev/simple-videoplayer-channel)  | SimpleVideoPlayer app remastered in SceneGraph  |
-|   | [sgnodes-all-demo](https://github.com/rokudev/sgnodes-all-demo)  | Demonstrates how the `sgnodes all` SceneGraph debug console command (port 8080) returns the reference counts held by the Roku OS (osref) and the app itself (bscref); used in conjunction with the [console debugger](https://developer.roku.com/docs/developer-program/debugging/debugging-channels.md)  |
-| Advanced  | [hero-grid-channel](https://github.com/rokudev/hero-grid-channel)  | Sample app with sliding hero row and a grid of content below  |
-|   | [tv-safe-zone-channel](https://github.com/rokudev/tv-safe-zone-channel)  | App that demonstrates the TV safe zones for Titles and Action in the UI  |
-|   | [trickplay-samples](https://github.com/rokudev/trickplay-samples)  | Samples that use BIF/thumbnails during trick play  |
-|   | [custom-playback-channel](https://github.com/rokudev/custom-playback-channel)  | List of content displayed with video continuously playing  |
-|   | [multi-live-channel](https://github.com/rokudev/multi-live-channel)  | App example of live TV in addition to multiple live streams support  |
-| Authentication  | [on-device-authentication](https://github.com/rokudev/on-device-authentication)  | Authenticate customers and validate their access to content when they sign in to an app from their Roku devices, without requiring them to visit an external webpage  |
-| Voice  | [transport-control](https://github.com/rokudev/transport-control)  | Handle voice commands in an app  |
-|   | [dynamic-voice-enabled-keyboards](https://github.com/rokudev/dynamic-voice-enabled-keyboards)  | Create and configure dynamic voice-enabled keyboards  |
-| Dialogs  | [standard-dialog-framework](https://github.com/rokudev/standard-dialog-framework)  | Create built-in and custom dialogs with Roku's Standard Dialog Framework  |
-| Deep Linking  | [deep-Linking-samples](https://github.com/rokudev/deep-Linking-samples)  | Learn about Deep Linking and roInput Messaging  |
-| Podcast  | [podcast-player-channel](https://github.com/rokudev/podcast-player-channel)  | Fully working podcast player app - accepts an MRSS feed and parses artwork and playlist  |
-| ChannelStore  | [channelstore-node-tvod-sample](https://github.com/rokudev/channelstore-node-tvod-sample)  | Sample demonstrating how to set up transactional purchases using the ChannelStore node  |
-|   | [rochannelstore-tvod-sample](https://github.com/rokudev/rochannelstore-tvod-sample)  | Sample demonstrating how to set up transactional purchases using the roChannelStore component  |
-| Audio  | [dolby-audio-sample](https://github.com/rokudev/dolby-audio-sample)  | Collection of Dolby test content available in different streaming protocols  |
-| Screensaver  | [animated-screensaver](https://github.com/rokudev/animated-screensaver)  | Screensaver demonstrating poster animations across the screen  |
-|   | [home-screensaver](https://github.com/rokudev/home-screensaver)  | Screensaver that displays the icons of installed apps  |
-|   | [fading-screensaver](https://github.com/rokudev/fading-screensaver)  | Screensaver demonstrating fading animations  |
-|   | [quadrant-screensaver](https://github.com/rokudev/quadrant-screensaver)  | Screensaver demonstrating a quadrant transition animation  |
-| Testing  | [unit-testing-framework](https://github.com/rokudev/unit-testing-framework)  | Tool for automating and testing Roku apps  |
-|   | [automated-channel-testing](https://github.com/rokudev/automated-channel-testing)  | Roku Automated App Testing: Selenium-based WebDriver + Robot Framework + JS Framework + Samples  |
-|   | [notification-receiver-sample](https://github.com/rokudev/notification-receiver-sample)  | Sample application in Java for receiving notifications from Roku  |
-|   | [remote-debugger](https://github.com/rokudev/remote-debugger)  | Python-based remote debugger demonstrating the BrightScript debug protocol  |
-|   | [debug-protocol-vscode-ext-beta](https://github.com/rokudev/debug-protocol-vscode-ext-beta)  | VSCode extension for debugging apps with the BrightScript remote network debug protocol  |
-|   | [manifestData-sample](https://github.com/rokudev/manifestData-sample)  | Sample showing how to use the Video node's manifestData field to detect the periods in a DASH manifest before they are played back  |
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

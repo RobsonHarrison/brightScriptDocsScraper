@@ -1,49 +1,29 @@
-# Roku's master UI
-While developers have the ability to build and design their app to meet nearly any aesthetics they prefer, users will still be experiencing your app within the Roku UI experience. This Roku Master UI has its own set of conventions and system controls. Creating a level of harmony between these two linked spaces will benefit the user. Below is a list of considerations.
-## Pathways to the app
-There are several ways users can launch into your app from the Roku UI. Not all pathways lead users to your app's home page. This means your app's overall navigation scheme must be flexible enough to enable users to effectively start at any layer of your UI and move around from there.
-  * **If your app is not already installed:**
-    * All pathways to your app will always lead to a sign-up/in flow first
-  * **Ads:**
-    * Can launch and [deep link](https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md) to almost any level of your app
-      * For example, launch and jump straight to a home page, a category or collection page, or a details page for a specific item
-  * **Search and Follow:**
-    * If launching the app takes the user to the sign-up/in flow first, then immediately afterward the app should still remember to take users to the specific content that was selected and kicked off this whole process.
-    * Otherwise, Search and Follow can launch and deep-link to a specific piece of content.
-      * For example, a movie or TV episode details page, or a TV show season/episode collection page
-  * **Streaming Store:**
-    * Can launch your app to its home page.
-  * **Partner buttons:**
-    * Can launch your app to its home page.
-
-## Exiting the app
-There are several ways users can exit the app. Some are immediate and beyond your control, and a few are more controlled. All forms of exit fall into one of two categories:
-  1. Exit and take me to a new place (E.g., Home button).
-  2. Exit and return me to where I was prior to launching your app (E.g., Back button).
-
-* * *
-  * RokuTVs may auto-power off after a certain amount of time of no user-activity.
-  * Roku will launch a screensaver when there is no video playing and there is no user-activity.
-  * Users can activate any of the following, which will immediately exit your app regardless of where the user was or what the user was doing:
-    * Roku remote's Home button
-    * Roku remote's Partner buttons (E.g., Netflix button)
-    * Selection of any app from Roku mobile app's "My Apps"
-    * Selection of any Roku mobile app function that will take over the TV screen (E.g., Miracast, Play on Roku, selection of a movie trailer, etc.)
-  * Users can take any explicit exits you offer through your app's own UI.
-  * Users must also be able to implicitly signal a desire to exit your app via the Roku remote's Back button:
-    * While Back is also a mechanism to navigate within your UI, there are specific conditions in which Back should exit.
-    * If users deep-link into your app, pressing Back could either exit your app back to the referring screen, or navigate them to your Home screen.
-    * From your app's home screen, pressing Back should either exit or offer a menu/opportunity for users to explicitly confirm and choose to exit.
-  * On occasion, it's quite possible that users may accidentally exit your app. Hence, it's important for your app to save its state to make recovery easy for the returning user (E.g., Video-playback resume, recently watched, watchlist, etc.).
-
-## Settings
-  * There are values within Roku's settings that should be queried and leveraged by your app.
-    * **For example:**
-      * Closed Captions
-      * Language/Localization
-
-## Star/Options button
-Star/Options button is a great button to reveal menus and popup dialogs with contextual options. However, there is a restriction for this button:
-  * Within your app, during full screen video playback, pressing the Roku remote's Star/Option button will reveal a Roku popup dialog offering users various standardized options (E.g, Closed captioning, audio tracks).
-    * This is necessary in part to comply with various regulations.
-  * Do not design your app to use the Star/Option button during video playback.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](doc:hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](doc:overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](doc:legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

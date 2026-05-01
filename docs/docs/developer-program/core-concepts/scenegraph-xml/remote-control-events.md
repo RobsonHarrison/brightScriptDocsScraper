@@ -1,7 +1,29 @@
-# Remote control events
-The SceneGraph architecture supports a notion of remote control key focus. At any time, any node in the SceneGraph node tree can be assigned the remote control key focus. The node with key focus is unique, so when focus is assigned to a node, the currently focused node loses the key focus.
-![roku815px - remote-control-events-1](https://image.roku.com/ZHZscHItMTc2/remote-control-events-1-v2.png)
-The node with the key focus is given the first opportunity to handle a key event. If that node does not handle the key event, the event is passed up the SceneGraph node tree to the node parent. This continues until a parent node handles the event, or the event moves up to the root of the SceneGraph node tree (that is, a [**Scene**](https://developer.roku.com/docs/references/scenegraph/scene.md) node). The path from the node that has the remote control key focus up to the root of the SceneGraph node tree is referred to as the _focus chain_.
-![roku815px - remote-control-events-2](https://image.roku.com/ZHZscHItMTc2/remote-control-events-2-v2.png)
-In many cases, there are default remote key event handlers built into the node classes supplied by Roku, and there are default event handlers that are not accessible by application developers as part of the Roku player firmware. If these default event handlers are called at any time as the event moves up the focus chain, the event is considered to have been handled, and a message to that effect is returned to the Roku OS, and no further action to handle the event will take place. For other events that are not handled by default, you have the option of handling the event, or allowing the event to move up the focus chain, and possibly not be handled at all.
-Since they are derived from [**roSGNode**](https://developer.roku.com/docs/references/brightscript/components/rosgnode.md), each node includes the [**ifSGNodeFocus**](https://developer.roku.com/docs/references/brightscript/interfaces/ifsgnodefocus.md) interface functions for querying and manipulating the current remote control key focus status of the node. A special function is included in the SceneGraph API, **`onKeyEvent()`**, that allows you handle events, and return a message to the Roku OS that the event has been handled. These two features of the SceneGraph API allow you to selectively control the remote control key focus, and handle remote key press events, as needed for your application. See[**Handling Remote Control Key Presses**](https://developer.roku.com/docs/developer-program/core-concepts/handling-application-events.md#handling-remote-control-key-presses) for complete information on using these features to handle remote control key events.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

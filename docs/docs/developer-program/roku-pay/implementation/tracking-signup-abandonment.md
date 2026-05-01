@@ -1,106 +1,29 @@
-# Tracking signup abandonment
-You can track customers' progress through your app's signup workflow to identify where users may be abandoning the process. For example, customers may successfully enter their login credentials to create an account, but exit the flow when prompted to enter their payment information. By firing events on each page, the generated feedback can be used to minimize friction in the sign-up workflow and thus reduce abandonment.
-> Subscription apps that have streamed more than an average of 5 million hours per month over the last three months (and new subscription apps expected to reach the threshold shortly after launch) must fire events on each page in their signup workflow to pass [certification](https://developer.roku.com/docs/developer-program/certification/certification.md#2-purchases).
-> Event names must use unique, sequential page numbering and clearly identify the type of page from which the event is being fired. See [Signup pages](https://developer.roku.com/en-gb/docs/developer-program/roku-pay/implementation/tracking-signup-abandonment.md#signup-pages) for more information.
-## Requirements
-A signup event must be sent upon loading each page within the signup flow and submission of the final page to help track where users are abandoning the process. If the app's sign up flow is contained within a form that covers one or more pages, a signup event must be fired when each element in the form is completed.
-The name of a given signup event will differ depending on whether your signup flow consists of separate pages or a form.
-### Signup pages
-If your app's signup flow is contained within a series of pages, fire a signup event upon the loading of each page. Pages requiring signup events include, but are not limited to, the following: initial sign-up landing page, account creation/registration, device activation, subscription selection, payment, and cancellation. In addition, a signup event must be fired upon the submission of the final page within the flow.
-The names of the signup events must include two elements:
-  * **Page Number**. A unique page number that identifies the page's sequence within the sign-up flow.
-  * **Page Type**. A label that clearly describes the page's functionality.
-
-#### Syntax
-When firing the signup event, pass in "Sign_Up|" along with pipe-separated key-value pairs for the page number and page type.
-The syntax is therefore as follows:
-"Sign_Up"|pageNumber={_int_}|pageType={_type_}.
-You can use a hierarchal page numbering system to identify different pages in the signup flow at the same level. This is useful in case your signup flow forks based on different options. For example, you may have separate monthly and annual plan pages that you could number 3.1 and 3.2. If you use hierarchal numbering, the pages must still be uniquely numbered across the sign-up flow. The syntax in this case is therefore as follows:
-"Sign_Up"|pageNumber={_int_}.{_int_}|pageType={_type_}.
-#### Examples
-Developers should use the following syntax for naming signup events:
-  * "Sign_Up|pageNumber=1|pageType=landing"
-  * "Sign_Up|pageNumber=2|pageType=offer_selection"
-  * "Sign_Up|pageNumber=3.1|pageType=basic_plan_cadence sign_up_offer_monthly"
-  * "Sign_Up|pageNumber=3.2|pageType=premium_plan_cadence sign_up_offer_annual"
-  * "Sign_Up|pageNumber=3|pageType=offer_confirmation"
-  * "Sign_Up|pageNumber=4|pageType=registration"
-  * "Sign_Up|pageNumber=5|pageType=registration_complete"
-  * "Sign_Up|pageNumber=6|pageType=sign_up_complete"
-
-#### Including form elements
-Optionally, you can add form element data in the signup event to generate more granular feedback on your app's signup flow. To do this, append a key-value pair with the name of the field. For example, you could fire the following event when a user enters their email address on the sign-in page:
-"Sign_Up|pageNumber=2|pageType=registration|field=emailAddress"
-### Signup form
-If your app's signup flow is contained within a form that covers one or more pages, fire a signup event after each field in the form has been completed. When firing the signup event, include **Sign_Up|** and the name of the element as a key-value pair.
-#### Syntax
-"Sign_Up"|field={_string_}.
-#### Examples
-"Sign_Up"|field=emailAddress
-"Sign_Up"|field=creditCardNumber
-> The indexes and types you use to number and classify the pages and fields are arbitrary. However, pages in the signup flow should be uniquely and sequentially numbered and types should clearly identify the corresponding page or field.
-## Sending signup events
-Signup events can be sent using the Roku Event Dispatcher (RED) library or the **fireRokuMarketingPixel()** method in the Roku Advertising Framework (RAF) library. Using the RED library is the recommended approach; however, if you are already integrating RAF and want to avoid incorporating multiple libraries in the app, you can use the **fireRokuMarketingPixel()** method.
-### Integrating the Roku Event Dispatcher in the signup workflow
-To use the Roku Event Dispatcher in your app's signup workflow to send events, follow these steps:
-  1. Enable the RED library in your app by adding the following line to the [manifest](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md) file:
-
-```
-sg_component_libs_required=roku_analytics
-
-```
-
-  2. Use the [Roku Analytics Component](https://developer.roku.com/docs/developer-program/libraries/roku-analytics-component.md) to send signup events from your app following these steps:
-a. When `roSGScreen` is active, create a "Roku_Analytics:AnalyticsNode" node and persist it by storing in the global node.
-b. To add the RED library as a provider, include `RED: {}` when assigning to its `.init` field.
-c. To dispatch a signup event, assign `{RED: {eventName: "Sign_Up|pageNumber=int|pageType=type"}` or `{RED: {eventName: "Sign_Up_Form"|field=string"}` to the `.trackEvent` field.
-The following example demonstrates how to send signup events:
-
-```
- sub Notify_Roku_UserIsLoggedIn(rsgScreen = invalid as Object)
-     ' get the global node
-     if type(m.top) = "roSGNode"  ' was called from a component script
-         globalNode = m.global
-     else ' must pass roSGScreen when calling from main() thread
-         globalNode = rsgScreen.getGlobalNode()
-     end if
-
-     ' get the Roku Analytics Component Library used for RED
-     RAC = globalNode.roku_event_dispatcher
-     if RAC = invalid then
-         RAC = createObject("roSGNode", "Roku_Analytics:AnalyticsNode")
-         RAC.debug = true ' for verbose output to BrightScript console, optional
-         RAC.init = {RED: {}} ' activate RED as a provider
-         globalNode.addFields({roku_event_dispatcher: RAC})
-     end if
-
-     ' dispatch an event to Roku
-     RAC.trackEvent = {RED: {eventName: "Sign_Up|pageNumber=1|pageType=landing"}}
-     end sub
-
-```
-
-  3. Use the [debug console](https://developer.roku.com/docs/developer-program/debugging/debugging-channels.md) to verify that your app is sending signup events.
-
-### Integrating the RAF fireRokuMarketingPixel() method in the signup workflow
-To use the RAF **fireRokuMarketingPixel()** method to send authentication events to Roku, follow these steps:
-  1. Enable the RAF library in your app by adding the following line to the [manifest](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md) file:
-
-```
-bs_libs_required=roku_ads_lib
-
-```
-
-  2. Instantiate the RAF library in the app:
-
-```
-adIface = Roku_Ads()
-
-```
-
-  3. When an authenticated customer launches your app, call the **fireRokuMarketingPixel()** method using the following syntax:
-
-```
-adIface.fireRokuMarketingPixel("Sign_Up|pageNumber=1|pageType=landing")
-
-```
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

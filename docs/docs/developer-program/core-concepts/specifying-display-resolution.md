@@ -1,25 +1,29 @@
-# Specifying display resolution
-SceneGraph applications allow you to specify an intended display screen resolution for your user interface application. But SceneGraph applications also automatically scale the screen elements for screen displays and Roku players that do not support the intended screen resolution. This gives you greater control of the appearance quality of your application than in previous Roku firmware, and allows you to design your application for full high-definition display resolution.
-## SceneGraph display resolution scaling support
-The following describes how SceneGraph applications support different display screen resolutions.
-### Supported screen resolutions
-Roku players support up to three screen resolutions for the application user interface, depending on the specific Roku player. Please note that SD-only apps are not supported on Roku.
-| Resolution  | Pixel Dimensions  | Pixel Shape  |
-| --- | --- | --- |
-| Full high-definition  | 1920 x 1080  | square  |
-| High-definition  | 1280 x 720  | square  |
-| Standard definition  | 720 x 480  | non-square  |
-### Automatic screen element scaling
-SceneGraph applications can automatically scale screen elements, such as fonts and rectangles, to any specified supported resolution. This scaling is controlled by specifying the screen resolutions the application is intended to support. If support is only specified for high-definition, and not full high-definition, then the screen elements are scaled from 720 resolution to 1080 resolution if needed for the display resolution. If support is only specified for full high-definition, and not high definition, then the screen elements are scaled from 1080 resolution to 720 resolution if needed for the display resolution.
-#### Automatic selection of supported graphical image resolutions
-SceneGraph applications can automatically select graphical images based on the supported resolution. The Roku OS can modify a special URI string with a variable that gets the correct graphical image for each supported and specified resolution. If this special URI string is not specified, the Roku OS will automatically scale graphical images to the display resolution from the specified intended resolution.
-#### Recommended intended resolution
-For SceneGraph applications, Roku recommends you design and develop for an intended 1080 screen resolution. But for performance reasons, for Roku players and display screens that do not support full high-definition resolution, you should supply both 1080 and 720 graphical images for your application. The SceneGraph application will scale the design elements and the graphical images for the actual supported resolution, but you can achieve the best appearance for all supported resolutions if you provide both resolutions of graphical images. If you can only provide one resolution of graphical images, provide 720 graphical images.
-### Manifest file screen resolution specification
-You specify the intended support for various screen display resolutions in special manifest file attributes for SceneGraph applications. The following describes the manifest file attributes to specify the supported screen resolutions for SceneGraph applications.
-### Autoscaling guidelines
-When creating layouts of visual components that take advantage of the Roku SceneGraph ability to autoscale layouts from one screen resolution to another (such as, from FHD/1080p to HD/720p), the best results will be obtained if you use the following simple rule.
-When designing for FHD, positioning items on 3-pixel boundaries, and specifying width, height, and spacing values that are divisible by three will produce the best results. This allows each of those values to be autoscaled to integer values in HD, since the FHD to HD scaling factor is 2/3. This minimizes visual anomalies due to floating point rounding errors.
-Similarly, when designing for HD, positioning items on 2-pixel boundaries, and specifying width, height, and spacing values that are divisible by two will produce the best results. This allows each those values to be autoscaled to integer values in FHD, since the HD to FHD scaling factor is 1.5.
-Failing to follow these rules may result in some minor visual artifacts during animations when running at the autoscaled screen resolution. This is most noticeable when a user scrolls through grids by holding down a remote control direction pad key. The sizes and spacing between adjacent items may vary by one pixel as the grid items scroll across the screen.
-In general, these visual anomalies are minimal, but following these simple guidelines will lead to better results. And of course, if you want precise control of the screen layouts in both resolutions, you can create separate layouts for HD and FHD, and set `ui_resolutions=HD,FHD` in the application `manifest` file.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

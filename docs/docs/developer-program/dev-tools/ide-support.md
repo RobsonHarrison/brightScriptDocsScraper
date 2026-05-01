@@ -1,65 +1,29 @@
-# Eclipse IDE support
-> Roku has discontinued support for its Eclipse IDE plug-in. Developers will still be able to [download the Roku plug-in for the Eclipse IDE](https://devtools.web.roku.com/ide/eclipse/plugin) and use it to program, sideload, and test their Roku apps. However, Roku will no longer release software updates or fix bugs for the tool.
-> Alternatively, developers can use IDE extensions maintained by the Roku developer community. One of the most popular community-supported tools is the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). Many Roku developers use this VSCode extension, which is well-reviewed. However, the tool is not built or maintained by Roku and its continued maintenance and support are not guaranteed. Developers can review the library of community-supported tools on the [Roku developer community GitHub site](https://github.com/rokucommunity).
-**Sample screen for the plugin** ![roku600px -  - eclipse1](https://image.roku.com/ZHZscHItMTc2/eclipse1.png)
-> The Roku developer community maintains a [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). Many Roku developers use this VSCode extension and it is well-reviewed; however, it is not built or maintained by Roku and its continued maintenance and support are not guaranteed.
-## Key features
-Building apps require several items to work together in unison:
-  * A Roku device
-  * Your app code
-  * Hosted media content (video, audio, games, etc.)
-
-To make this happen, developers set up various ways to get rapid coding installed quickly on a device. With the Roku plugin for Eclipse, within several minutes you’ll have the power of a fully functioning Integrated Development Environment and the customizations needed to develop, test, package, and install apps on Roku devices.
-### Code highlight/syntax coloring
-![roku600px -  - eclipse2](https://image.roku.com/ZHZscHItMTc2/eclipse2.png)
-Quickly find errors in your app with our built in color coding for BrightScript and Roku SceneGraph syntax.
-![roku600px -  - eclipse3](https://image.roku.com/ZHZscHItMTc2/eclipse3.png)
-### Code completion and hints
-The plugin checks the reference guides for BrightScript and Roku SceneGraph, allowing for auto completion and details for parameters, methods, and nodes.
-![roku600px -  - eclipse4](https://image.roku.com/ZHZscHItMTc2/eclipse4.png)
-### Built-in telnet console for BrightScript and SceneGraph
-All the available Roku device telnet ports are built into the plugin, allowing for fast feedback on bugs, stack traces, and break points in your app code.
-![roku600px -  - eclipse5](https://image.roku.com/ZHZscHItMTc2/eclipse5.png)
-## Installing Eclipse and the plugin
-**Workspace:** We encourage you to start your Roku projects in a fresh workspace. You can copy your projects back in afterwards.
-**Perform the following steps:**
-  1. Download Java version 8: [oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
-  2. Download the latest version of the Eclipse Installer _(currently version “2020-12/R”)_ for Java IDE Developers: <https://www.eclipse.org/downloads/packages/installer>
-  3. Install the Eclipse Dynamic Languages Toolkit via Eclipse > Help > Install New Software > Add...
-     * Name: DLTK
-     * Location: <http://download.eclipse.org/technology/dltk/updates-dev/5.6/>
-     * Follow the instructions and click **Next**... then **Finish**
-  4. Add the Roku Plugin package via Eclipse > Help > Install New Software > Add...
-     * Name: Roku Plugin
-     * Location: <https://devtools.web.roku.com/ide/eclipse/plugin>
-     * Follow the instructions and click **Next**... then **Finish**
-
-### Updating the plugin
-Add the Roku Plugin package using this path: **Eclipse** > **Help** > **Install New Software** > **Add**...
-  *     * Name: Roku Plugin
-    * Location: <https://devtools.web.roku.com/ide/eclipse/plugin/>
-    * Follow the instructions and click Next.
-    * You will receive a message saying that "'BrightScript Core'" is already installed, so an update will be performed instead." Click **Finish**.
-    * Restart Eclipse.
-
-## Creating a new BrightScript project
-Quickly have all required assets and files setup through Eclipse. In addition, reference sample apps are provided in a simple drop down for testing. The manifest, components, source, images, locale, and related directories are handled instantly.
-![roku600px -  - eclipse5](https://image.roku.com/ZHZscHItMTc2/eclipse5.png)
-## Installing and packaging apps
-Using the standard export option for projects, the Roku plugin for Eclipse enables developers to install their current app code onto Roku devices within seconds. In addition, developers can package and key their applications for preparing the Streaming Store required assets. ![roku600px -  - eclipse6](https://image.roku.com/ZHZscHItMTc2/eclipse6.png)
-Packaging an app can be done in Eclipse. Publishing an app on the Streaming Store requires several items for the app, such as its source code, images, and fonts, to be "packaged" into a bundle that gets encrypted. This enables developers to publish apps while keeping all intellectual property safely encrypted. The process of “packaging an app” uses cryptographic hardware built into Roku devices and creates a package that can be safely distributed on Roku devices.
-  1. In an existing BrightScript project, select **File** > **Export** > **BrightScript Deployment**.
-![roku600px -  - packagingapps1](https://image.roku.com/ZHZscHItMTc2/packagingchannels1.png)
-  2. In the following dialog: click the check-box next to **Install on Roku Box** , and **Create Package (.pkg) file.** Click **Finish** and the package will be available in the out folder of the current BrightScript project in the Eclipse workspace.
-
-> If the genkey utility has not been run previously, click **New Keys** to generate a signing key.
-
-```
-![roku600px -  - packagingchannels2](https://image.roku.com/ZHZscHItMTc2/packagingchannels2.png "packagingchannels2")
-
-```
-
-## Documentation generator
-Like many other development environments, the BrightScript Eclipse plugin can produce in-line documentation through the simple use of special tags in source code comments. An example of the kind of hover help documentation that can be generated is shown below.
-![roku600px -  - eclipse7](https://image.roku.com/ZHZscHItMTc2/eclipse7.png)
-The complete specification and comment syntax for the documentation generation system, called BrightScriptDoc, [can be found here](https://developer.roku.com/docs/developer-program/dev-tools/brightscript-doc.md).
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

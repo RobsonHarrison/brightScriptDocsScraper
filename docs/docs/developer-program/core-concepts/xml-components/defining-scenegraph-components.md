@@ -1,139 +1,29 @@
-# Defining SceneGraph components
-A Roku SceneGraph application consists of one or more SceneGraph components. These SceneGraph components are defined in XML files, which consist of a required **< component>** XML element, that contains the other possible XML elements to fully define the component. The Roku SceneGraph application can then create an object instance of any defined SceneGraph component as needed.
-## <component> XML element
-The component XML files consist of a [**< component>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/component.md) XML element, which contains the other XML elements that can further define the component. The **< component>** element has two required attributes:
-  * `name`
-A unique name for the component
-  * `extends`
-The name of the built-in node class, or extended component, that the component _extends_
-
-All components in a SceneGraph application are defined by extending the component from a built-in node class or extended component, and setting the field values of the nodes included in the component, which may be built-in node classes or extended components. When you extend a component, the extended component includes all of the previously declared or defined characteristics of the original component, plus the new characteristics you declare and define for the new component.
-## <interface> XML Element
-Roku SceneGraph components allow (but do not enforce), encapsulation of internal component behavior, by providing an [**< interface>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/interface.md) XML element. The **< interface>** element can contain several **< field>** elements, which define custom fields for the components. These custom fields can be written and read by the application in the same way as the fields of the built-in node classes. This allows the application to set a field value to control the component operation, and read a field value to get the results of the component operation, without writing and reading the internal fields of the component.
-## <script> XML Element
-Component behavior is controlled using BrightScript in a [**< script>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/script.md) XML element. The **< script>** element provides two methods of including BrightScript code in the component:
-  * directly, using a `CDATA` element section
-  * by reference, using the `uri` attribute of the **< script>** element to specify the location of the BrightScript code to be included
-
-## <children> XML Element
-You can create the component SceneGraph nodes entirely in BrightScript in the [**< script>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/script.md) element. But Roku SceneGraph also supplies a [**< children>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/children.md) XML element to allow nodes to be defined in XML markup. These SceneGraph nodes are then created automatically when the component is created (see [**Component Initialization Order**](https://developer.roku.com/docs/developer-program/core-concepts/xml-components/component-initialization-order.md) for important details on this process).
-Defining SceneGraph nodes in the **< children>** element is particularly useful when the component will have a relatively fixed number and types of nodes, rather than a number of different node types that may be created (and removed) dynamically as part of component operation. Field values of the nodes declared and defined in the **< children>** element can still be set dynamically in the [**< script>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/script.md) element, by first using the **ifSGNodeDict** **`findNode()`**method to find the object reference.
-There are some limitations in defining node field values in the **< children>** element. You cannot use expressions and otherwise manipulate variables and object references in the XML markup to set field values. You are restricted to fixed values that can be expressed only as strings assigned to the field. And you should not start or stop or otherwise control the operation of certain nodes, such as media playback or animation nodes, by setting the values of those types of fields in the XML markup definition of the node in the **< children>** element. Rather you should find the object reference using the **ifSGNodeDict** **`findNode()`**method in the[**< script>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/script.md) element, then set those fields there, as part of your scripting to control component behavior.
-## Node Definition Examples
-A typical XML file will include one or more SceneGraph node elements inside the [**< component>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/component.md) element. These nodes are instantiated when the XML is parsed, and added as children of the XML **< component> **element top-level node.
-Nodes are defined using an XML element that matches the node type. Field values of the node are specified as attributes of the node element. The following example shows how to define a [**< Poster>**](https://developer.roku.com/docs/references/scenegraph/renderable-nodes/poster.md) node, and set its `id`, `uri` and `translation` fields.
-**Defining a Node in XML**
-
-```
-<Poster
-  id = "myPoster"
-  uri = "pkg:/images/myPoster.jpg"
-  translation = "[ 200, 100 ]" />
-
-```
-
-Nodes can include children by simply including them in the body of a node XML element. The follow example shows how to declare a **Poster** node that includes a **Label** draw on top of it.
-**Adding a Child Node in XML**
-
-```
-<Poster
-  id = "myPoster"
-  uri = "pkg:/images/myPoster.jpg"
-  translation = "[ 200, 100 ]" >
-
-  <Label
-    id = "FirstName"
-    text = "John" />
-
-</Poster>
-
-```
-
-By default, if a node includes one or more node elements in the body of its XML definition, the nodes defined in the body are added as children of the node. In a few cases, nodes defined in the body of another node serve a special purpose, and should not be added as children. In that case, the nodes defined in the body should have an XML `role` attribute specified to indicate which field of the parent node should be set to their value. For example, a [**< Label>**](https://developer.roku.com/docs/references/scenegraph/label-nodes/label.md) node could have a [**< Font>**](https://developer.roku.com/docs/references/scenegraph/typographic-nodes/font.md) node defined in its body. If you specify the role attribute as `font` for the **< Font> **node, it causes the parent **< Label> **node `font` field to be set to the **< Font> **node.
-**Defining the role Attribute of a Node**
-
-```
-<Label text = "John Doe" >
-  <Font
-    id = "TypewriterFont"
-    role = "font"
-    uri = "pkg:/fonts/BohemianTypewriter.ttf"
-    size = "36" />
-</Label>
-
-```
-
-An instance of a node can be used in more than place in the scene, using a field attribute value that begins with `dictionary:`. For example, if the **< Label> **node is defined as above in an XML file, another **< Label> **node can be defined that uses the same **< Font> **node as follows:
-**Using dictionary to Set an Attribute Value**
-
-```
-<Label
-  text = "John Doe"
-  font = "dictionary:TypewriterFont" />
-
-```
-
-## Extending Built-In Node Classes
-Roku SceneGraph includes a wide variety of node classes that are built into the SceneGraph API. These built-in node classes are described in the [**SceneGraph XML Reference**](https://developer.roku.com/docs/developer-program/core-concepts/scenegraph-xml/overview.md).
-But Roku SceneGraph allows you to extend these built-in node classes with your own custom node classes, with unique fields, appearance, behaviors, and interfaces. The key to writing SceneGraph applications is to define your own custom node classes, then create and use them as needed for your application.
-For example, the starting point of any SceneGraph application is a custom node class extended from one of the built-in **Scene** node classes, such as [**Scene**](https://developer.roku.com/docs/references/scenegraph/scene.md) or [**OverhangPanelSetScene**](https://developer.roku.com/docs/references/scenegraph/sliding-panels-nodes/overhangpanelsetscene.md). These **Scene** node classes are _abstract_ node classes, you _must_ extend them in order to use them. So every SceneGraph application _must_ include an XML component file in the following format:
-
-```
-<?xml version="1.0" encoding="utf-8" ?>
-<component name = "MyApplicationScene" extends = "Scene" >
-
-customized_scene_definitions
-
-</component>
-
-```
-
-The built-in abstract **Scene** node is extended by setting the `name` and `extends` attributes of the [**< component>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/component.md) XML element. After this custom extended **Scene** node is defined in an XML component file in the `pkg:/components` directory, you can then start the application by creating the custom **Scene** node component in the `pkg:/source` /`main.brs` file using the **Scene** node component name as the `CreateScene()` argument for a BrightScript `roSGScreen` object:
-`scene = screen.CreateScene("MyApplicationScene")`
-Likewise, you define custom components for your entire application that are created and added to your SceneGraph node tree as needed. For example, you could add a custom scrollable row list component to your application by extending the built-in [**RowList**](https://developer.roku.com/docs/references/scenegraph/list-and-grid-nodes/rowlist.md) node class component in an XML component file:
-
-```
-<?xml version = "1.0" encoding = "utf-8" ?>
-
-<component name = "MyCustomRowList" extends = "RowList" >
-customized_rowlist_definitions
-</component>
-
-```
-
-Once this XML component file is created, you can now add the custom row list component to your **Scene** component, or any other SceneGraph component in your application. For example, the following adds the custom row list to the application **Scene** component using the `createChild()` function using BrightScript in a **< script>** element:
-
-```
-<?xml version = "1.0" encoding = "utf-8" ?>
-
-<component name = "MyApplicationScene" extends = "Scene" >
-
-    <script type="text/brightscript" >
-      <![CDATA[
-
-      sub init()
-        rowlist = m.top.createChild("MyCustomRowList")
-      end sub
-
-      ]]>
-    </script>
-
-</component>
-
-```
-
-Or you can add the custom component using XML markup in the [**< children>**](https://developer.roku.com/docs/references/scenegraph/xml-elements/children.md) element of the XML component file:
-
-```
-<?xml version = "1.0" encoding = "utf-8" ?>
-
-<component name = "MyApplicationScene" extends = "Scene" >
-  <children>
-
-    <MyCustomRowList/>
-  </children>
-</component>
-
-```
-
-In either case, you have added your custom component to the SceneGraph node tree as a child node of the Scene node, by specifying the component name from your custom XML component file.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

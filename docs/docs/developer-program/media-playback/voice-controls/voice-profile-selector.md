@@ -1,67 +1,29 @@
-# Selecting user profiles with Roku Voice
-Apps with a profile selection screen can audibly and visually prompt the viewer to select a user profile and then handle a voice request with the name or position of the selected profile.
-![roku815px - profile-selector](https://image.roku.com/ZHZscHItMTc2/profile-selector-800.jpg)
-## Updating the manifest
-To identify that your app supports a hands-free voice profile selection screen, add the following flag to the [manifest](https://developer.roku.com/docs/developer-program/getting-started/architecture/channel-manifest.md): `voice_action_launch_screen=1`.
-## Implementing profile selector APIs
-To implement voice support for a profile selection screen, integrate the following APIs:
-  * **Voice request trigger**. Upon launch, apps can call the [roAppManager.StartVoiceActionSelectionRequest()](https://developer.roku.com/docs/references/brightscript/interfaces/ifappmanager.md#startvoiceactionselectionrequest-as-void) function to trigger a voice request for the viewer to select a user profile on devices that are paired with a hands-free Roku Voice remote control, such as the Roku Voice Remote Pro.
-Before calling the **StartVoiceActionSelectionRequest()** function, developers can call the [roDeviceInfo.HasFeature("handsfree_voice")](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#hasfeaturefeature-as-string-as-boolean) function to check whether a Roku device is paired with a hands-free Roku remote control.
-
-```
-  appMgr = CreateObject("roAppManager")
-  deviceInfo = CreateObject("roDeviceInfo")
-  ' channel is launched and profile selection screen is displayed
-  if deviceInfo.HasFeature("handsfree_voice")
-      appMgr.StartVoiceActionSelectionRequest()
-  end if
-
-```
-
-  * **Profile selection via registered/matched text strings**. Apps can call the [roAppManager.SetVoiceActionStrings()](https://developer.roku.com/docs/references/brightscript/interfaces/ifappmanager.md#setvoiceactionstringsactions-as-object-as-void) function to register a list of text strings, such as user profile names, that can be matched to voice requests.
-
-```
-  appMgr = CreateObject("roAppManager")
-  profile1 = { text: "kids", link: "d46ge-i8Y5-192"}
-  profile2 = { text: "Jane", link: "2a2Nu-u1D4-555"}
-  profile3 = { text: "John", link: "6Nu70-N37x-901"}
-
-  actions = [profile1, profile2, profile3]
-
-  appMgr.SetVoiceActionStrings(actions)
-
-```
-
-When the name uttered by the user matches the registered text string, the matched text string is provided to the app via the [roInput voice command handler](https://developer.roku.com/docs/references/brightscript/interfaces/ifinput.md#eventresponseroassociativearray-aa-as-boolean). Specifically, if the **command** received by the handler is "action", the associative array returned by the [**roInputEvent.GetInfo()**](https://developer.roku.com/docs/references/brightscript/events/roinputevent.md#getinfo-as-object) method includes a **text** field that is set to the matched text string.
-
-```
-  function handleTransport(evt)
-      cmd = evt.command
-      ret = {status: "unhandled"}
-      if cmd = "action"
-          print "profile name uttered by user"
-          print evt.text ' prints "kids", "Jane", or "John"
-      end if
-      return ret
-  end function
-
-```
-
-  * **Profile selection via ordinal numbers**. The [roInput voice command handler](https://developer.roku.com/docs/references/brightscript/interfaces/ifinput.md#eventresponseroassociativearray-aa-as-boolean) also supports profile selection via ordinal numbers. For example, when a user says "first", "number one", "pick the first", "select the first", "choose the first", and so on to select a user profile within a row, the app will receive a value of "1".
-Specifically, if the **command** received by the handler is "select", the associative array returned by the [**roInputEvent.GetInfo()**](https://developer.roku.com/docs/references/brightscript/events/roinputevent.md#getinfo-as-object) method includes a **ordinal** field that is set to a numerical value corresponding to the ordinal number spoken by the user. Values may range between 1–6 (one-based indexing is used).
-
-```
-  function handleTransport(evt)
-      cmd = evt.command
-      ret = {status: "unhandled"}
-      if cmd = "select"
-          print "Voice ordinal event"
-          print evt.ordinal ' prints 1
-      end if
-      return ret
-  end function
-
-```
-
-## Sample app
-The [custom UI voice control sample (**Transport_Control_CustomUI**)](https://github.com/rokudev/transport-control) demonstrates how to add voice support to a profile selection screen.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

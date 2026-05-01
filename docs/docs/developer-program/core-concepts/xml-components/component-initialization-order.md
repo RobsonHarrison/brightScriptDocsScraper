@@ -1,16 +1,29 @@
-# Component initialization order
-Instances of components defined in an XML file follow a well-defined initialization order when they are created.
-  1. The [**< children>**](https://developer.roku.com/en-gb/docs/developer-program/core-concepts/xml-components/children_1608551.html) element nodes defined in XML markup are created, and their fields are set to their initial values, either to a default value, or to the value specified in the XML markup.
-  2. The **[<interface>](https://developer.roku.com/en-gb/docs/developer-program/core-concepts/xml-components/interface_1608549.html)** element fields of the XML component are created, and their initial values are set, either to a default value, or to the value specified by the `value` attribute.
-  3. The [**< script>**](https://developer.roku.com/en-gb/docs/developer-program/core-concepts/xml-components/script_1608550.html) element `init()` function is called, and all initializations contained in the function are performed.
-
-Note the following implications of this initialization order.
-## Initial XML Markup Node Field Values May Be Overridden
-The field values defined in XML markup in the **< children>** nodes may be overridden as many as two times, depending on the definitions of the **< interface>** element field attributes, and the initializations contained in the **< script>** element **`init()`**function.
-## Observer Functions
-Observer functions of fields that are set up in the **`init()`**function do not get called when those fields are initialized. This is because the initialization of interface fields, or of fields of the component**< children>** element nodes, is done before the **`init()`**function that sets up the observers is called. Thus, in some cases, it may be necessary to explicitly call the field observer functions in**`init()`**if they need to be executed for the initial field setting.
-Also note that field observer callback functions set up in **`init()`**cannot be guaranteed to have returned when the component is created using**`createObject()`**or**`createChild()`**. This means that a component object may not have been completely constructed immediately after those calls. For certain nodes that may rely on dynamically-downloaded content to construct the node, such as[**PosterGrid**](https://developer.roku.com/en-gb/docs/developer-program/core-concepts/xml-components/PosterGrid_1607203.html), subsequent object function calls may return an object reference to an unconstructed object.
-## Parenting and the Focus Chain
-For nodes that are defined in the **< children>** XML markup of the component file, the parent node is set after the node is created, and **`init()`**is called. This has implications for the focus chain (see[**Remote Control Events**](https://developer.roku.com/en-gb/docs/developer-program/core-concepts/xml-components/Remote-Control-Events_1607636.html)), which must end at a node derived from **[Scene](https://developer.roku.com/en-gb/docs/developer-program/core-concepts/xml-components/Scene_1607315.html)**. Until the newly-created node is parented to a node that is either derived from **Scene** , or parented to a node in a focus chain that ends on a node derived from **Scene** , you will not be able to set remote control focus on the node.
-## Program Action Fields
-Certain fields should not be set in XML markup of the SceneGraph nodes, specifically any control fields that initiate a program action, such as starting a video to play, or an animation. These fields should be set in BrightScript as part of scripting the program flow of the component.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

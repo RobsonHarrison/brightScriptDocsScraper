@@ -1,74 +1,29 @@
-# Roku Advertising Framework overview
-The Roku Advertising Framework (RAF) enables the seamless integration of video advertising into your apps. The RAF library, which is built directly into the Roku SDK, includes the following features that make it easy to provide a consistent ad experience across apps:
-  * Parsing of ads in [VAST2](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast-2-0/), [VAST3](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast-3-0/), [VMAP](https://www.iab.com/guidelines/digital-video-multiple-ad-playlist-vmap-1-0-1/), and FreeWheel's SmartXML formats (see the table [below](https://developer.roku.com/en-gb/docs/developer-program/advertising/roku-advertising-framework.md#supported-features-of-popular-ad-formats) for details).
-
-  * Built-in solution for displaying client-side (CSAI) video ads that works with Google Ad Manager (formerly known as DFP), FreeWheel, SpotX, and other 3rd-party servers.
-
-  * Playback control for server-stitched ads.
-
-  * Client-side handling of tracking events that is aligned with the IAB/MRC's [impression measurement guidelines](https://developer.roku.com/en-gb/docs/developer-program/advertising/%5Bhttps:/mediaratingcouncil.org/sites/default/files/Standards/Digital%20Video%20Served%20Impression%20Measurement%20Guidelines%20%28MMTF%20June%202018%29.pdf).
-
-  * Audience measurement via [Nielsen DAR](https://www.nielsen.com/hk/en/solutions/capabilities/digital-ad-ratings/)/[DCR](https://developer.roku.com/docs/developer-program/advertising/nielsen-dcr.md), [Comscore vCE](https://www.comscore.com/Products/Ratings-and-Planning/Campaign-Ratings), and other platforms.
-
-> Per [Roku's certification requirements](https://developer.roku.com/docs/developer-program/advertising/ad-requirements.md#ads-3-ad-tracking-requirements), all ad measurement beacons must be fired directly by RAF client-side (they may not be wrapped). This is required to apply the [Roku Advertising Watermark](https://developer.roku.com/docs/developer-program/advertising/ad-watermark.md) to the beacons.
-  * Interactive ads through Innovid, BrightLine, and Roku.
-
-  * Client-side solutions to minimize buffering between ads and content.
-
-  * Samples for implementing server-side ad insertion (SSAI) with Verizon Media Services, Adobe, Brightcove, Yospace, AWS Elemental MediaTailor servers, and Google Ad Manager Dynamic Ad Insertion (DAI).
-
-## Certification requirement
-Per [Roku's certification criteria](https://developer.roku.com/docs/developer-program/certification/certification.md#1-advertising), all apps that monetize advertising must integrate RAF to pass certification.
-## Getting started
-To get started with your RAF integration, do the following:
-  * If you don't have an ad server, contact adsupport@roku.com for recommendations or alternative ad serving solutions.
-
-  * Read [monetizing an app with video advertisements](https://developer.roku.com/docs/features/monetization/video-advertisements.md) for monetization options.
-
-  * Read the [certification requirements for ad-supported apps](https://developer.roku.com/docs/developer-program/certification/certification.md#1-advertising).
-
-  * Review the [RAF integration guide](https://developer.roku.com/docs/developer-program/advertising/integrating-roku-advertising-framework.md).
-
-## Supported features of popular ad formats
-| VAST 2.0 Feature  | Supported  |
-| --- | --- |
-| Linear Ads  | Yes  |
-| Wrapper and Inline Ads  | Yes  |
-| Tracking Events  | Yes  |
-| ClickThrough (interactive ads)  | Yes  |
-| Companion Ads  |  _apiFramework_ handled:
-  * "innovid"
-  * "brightline"
-  * "brightline_RSG"
-
- |
-| MediaFile type  |
-  * "video/mp4"
-  * "video/x-mp4"
-  * "video/mp4-h264"
-  * "application/x-mpegurl"
-  * "application/vnd.apple.mpegurl"
-  * "application/json"
-
- |
-| Extension elements  |
-  * DFP waterfall
-  * TrueX
-
- |
-| Non-Linear Ads  | No  |
-| VAST 3.0 Feature  | Supported  |
-| Ad pods via sequence attribute  | Yes  |
-| Extended error tracking  | Yes  |
-| VAST tracking macros  | Yes  |
-| Ad “buffet” selection  | Yes  |
-| Skippable linear ads  | No  |
-| OBA industry icon  | No  |
-| VMAP Feature  | Supported  |
-| Ad pods playlists  | Yes  |
-| Tracking events  | Yes  |
-| ‘repeatAfter’ AdBreak attribute  | No  |
-| Extension elements  | No  |
-## RAF video lesson
-You can learn how to implement RAF in order to display video ads in your app by watching the [Displaying video ads](https://developer.roku.com/videos/courses/rsg/video-ads.md) video lesson in Roku's [SceneGraph: Build a channel online video course](https://developer.roku.com/videos/courses/rsg/overview.md).
-This lesson describes how to implement RAF in order to seamlessly insert video ads into content. It highlights the different client and server-side ad insertion and stitching solutions provided by RAF, and explains how to get started with RAF in order to display video ads in your app.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](doc:hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](doc:overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](doc:legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

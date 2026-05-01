@@ -1,25 +1,29 @@
-# Enabling billing testing
-Developers can designate one public or beta app for "billing testing" to observe output from the SceneGraph ChannelStore node in the debug console when the app is sideloaded. The billing testing feature provides developers with visibility into the confirmations, error codes, and other transactional metadata related to purchases made with Roku Pay.
-When an app enabled for "billing testing" is sideloaded, calls to the ChannelStore node will use the product catalog associated with that app. Developers should therefore upload a package file that reflects the actual app being tested. This is because the product catalog of the app designated for "billing testing" is always returned regardless of the actual UI or behavior the package that is sideloaded.
-> Sideloaded "billing testing" apps make live calls to the ChannelStore node and thus generate actual billing transactions. Developers must therefore add themselves as Test Users to the "billing testing" app to avoid incurring any billing charges while testing the app.
-> To use an app for billing testing:
->   * The app must be the only one in the developer's account designated for billing testing.
->   * The developer account making purchases on the sideloaded app must be designated as a Test User.
->   * The Test User's Roku account must be linked to the Roku device on which the app is sideloaded.
->   * The app must be sideloaded on the Roku device.
->
-
-To enable billing testing on an app, follow these steps:
-  1. In the [Developer Dashboard](https://developer.roku.com/developer), click **Public apps** or **Beta apps** for whichever app type you want to use for billing testing. You can only use one public or beta app at a time for billing testing.
-
-  2. Confirm that no other app is currently being used for billing testing. An app designated for billing testing is a tagged with a "Billing Test" label and it is listed at the top.
-![roku815px - stop-billing-testing](https://image.roku.com/ZHZscHItMTc2/billing-testing-enabled-label.png)
-
-  3. If another app is being used for billing testing, click the shortcut menu for the app to the right, and then click **Stop using for billing testing**.
-![roku815px - stop-billing-testing](https://image.roku.com/ZHZscHItMTc2/billing-testing-stop-blilling-testing.png)
-
-  4. Click the shortcut menu for the app to be used for billing testing and then click **Use for billing testing**.
-![roku815px - stop-billing-testing](https://image.roku.com/ZHZscHItMTc2/billing-testing-enable.png)
-
-  5. The selected app is tagged with the "Billing Test" label and is ready to be used for testing.
-![roku815px - stop-billing-testing](https://image.roku.com/ZHZscHItMTc2/billing-testing-enable-label.png)
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)

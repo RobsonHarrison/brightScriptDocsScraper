@@ -1,69 +1,29 @@
-# Creating a content feed
-Every Roku app has a content feed. The content feed is a cloud-hosted file that typically contains hundreds to thousands of titles in a publisher's catalog and detailed metadata about each title such as its unique ID, name, description, artwork, and URL.
-The content metadata in the feed is used to transfer the video and audio content from your catalog to your Roku app. It tells your app where to find the movie, television show, or song to be played, and the title, description, artwork, and other information to be used when displaying it.
-The following example demonstrates the types of metadata included in the feed for a single content item:
-
-```
-{
-    "id": "dev-summit-21-keynote-welcome-address",
-    "title": "Keynote - Welcome address",
-    "shortDescription": "The Roku content team recaps the past year in streaming and highlights key industry trends for the upcoming year.",
-    "longDescription": "The Roku content team recaps the past year in streaming and highlights key industry trends for the upcoming year.",
-    "thumbnail": "https://my-roku-image.com/dev-summit-21-welcome.png",
-    "releaseDate": "2021-10-26",
-    "genres": [
-        "educational"
-    ],
-    "tags": [
-        "dev-summit-21"
-    ],
-    "content": {
-        "duration": 699,
-        "videos": [{
-            "videoType": "MP4",
-            "url": "https://my-roku-video.com/2-keynote-address.mp4",
-            "quality": "HD"
-        }],
-        "language": "en-us",
-        "rating": {
-            "rating": "G",
-            "ratingSource": "USA_PR"
-        },
-        "dateAdded": "2021-10-26T00:00:00Z"
-    }
-}
-
-```
-
-## Configuring the content feed
-To create the content feed, you first want to determine which metadata you want to surface to users. Consider which metadata items are the most important for users to find and select content in your app. You should also review the [Content Metadata documentation](https://developer.roku.com/docs/developer-program/getting-started/architecture/content-metadata.md) for the descriptive, playback, and DRM fields you might want to include. Use your analysis to create a template with the selected metadata fields.
-## Hosting the content feed
-When you are done creating the feed, you need to host it on your website, a content delivery network (CDN), online video platform (OVP), or other hosting solution. You can also [contact one of Roku's preferred feed creation partners](https://developer.roku.com/feed/partners) to create and host your feed.
-### Content Delivery Networks (CDNs)
-Content is typically hosted on a CDN, which is a group of servers located around the world. Using a CDN ensures that your content can be streamlined to many users at different locations at the same time without any bottlenecks. Apps can use any CDN that is able to stream content. The following list includes some of the CDNs that publishers have used to host content for their Roku apps:
-  * AdvergentCDN
-  * Akamai
-  * Amazon Web Services (AWS)
-  * BitGravity
-  * Boxcast
-  * Brightcove
-  * Comcast Technology Solutions
-  * EdgeCast
-  * Level 3
-  * Limelight Networks
-  * Scale Engine
-
-### Online Video Platforms (OVPs)
-Content may also be hosted in an OVP, which partner with CDNs to provide hosting, but also provide specialized, easy-to-use tools for managing video content. The following list includes some of the OVPs that publishers have used to host content for their Roku apps:
-  * Brightcove
-  * Kaltura
-  * Ooyala
-  * Vimeo Pro
-  * Wistia
-  * Zype
-
-## Using the content feed to link your catalog to your app
-You can use the content metadata in your feed to programmatically populate your app UI with the titles in your catalog. To do this, you create a [ContentNode](https://developer.roku.com/docs/references/scenegraph/control-nodes/contentnode.md), set its attributes to the metadata in your feed, and then add the ContentNode to the SceneGraph UI components in your app. For example, to populate a grid on your app's home page with your movie catalog, you would do the following:
-  * create a single root [ContentNode](https://developer.roku.com/docs/references/scenegraph/control-nodes/contentnode.md).
-  * iterate through the content feed to add the row title and then thumbnail image, title, description, and other descriptive attributes for each movie in the row to a series of child content nodes.
-  * Add the root content node to the grid.
+With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](https://developer.roku.com/dev/docs/getting-started#user-content-fn-1) and 100 million streaming households worldwide, Roku is at the forefront of the streaming revolution. The Roku OS is built specifically for streaming, which means developers can seamlessly build intuitive, high-performance streaming apps designed especially for the TV. If you have a video catalog ready for distribution, this document will help you get started building a Roku app.
+![roku600px - roku-dev-hero roku](https://image.roku.com/ZHZscHItMTc2/idk-hero.jpg)
+##
+Programming languages
+[](https://developer.roku.com/dev/docs/getting-started#programming-languages)
+Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
+##
+Tools
+[](https://developer.roku.com/dev/docs/getting-started#tools)
+Roku provides developers with a suite of tools to make developing an app fast and easy. This includes a layout editor to help design the app UI, resource monitoring and profiling tools to help improve app performance, and a test framework for automating UI tests.
+The Roku developer community also provides a number of popular tools that streamline Roku development, including the [BrightScript extension for the Visual Studio Code IDE](https://marketplace.visualstudio.com/items?itemName=celsoaf.brightscript). This IDE features direct client-side validation, interactive debug sessions, automatic code formatting, in-editor telnet log, symbol navigation, and many other features that make Roku development easier.
+[Explore the Roku developer tools](https://devtools.web.roku.com/)
+[Get the BrightScript VSCode extension](https://rokucommunity.github.io/vscode-brightscript-language/installation.html)
+##
+Resources
+[](https://developer.roku.com/dev/docs/getting-started#resources)
+The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
+[Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
+[Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
+##
+Terms for development tools and apps
+[](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+##
+Footnotes
+[](https://developer.roku.com/dev/docs/getting-started#footnote-label)
+  1. (Circana, LLC, Retail Tracking Service, US, CA, and MX, Smart TV by Software Service, Unit Sales, July - September 2025) [↩](https://developer.roku.com/dev/docs/getting-started#user-content-fnref-1)
