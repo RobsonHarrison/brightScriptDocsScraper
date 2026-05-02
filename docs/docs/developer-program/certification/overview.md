@@ -4,7 +4,7 @@ With the #1 selling smart TV streaming OS in the US, Canada, and Mexico [1](http
 Programming languages
 [](https://developer.roku.com/dev/docs/getting-started#programming-languages)
 Creating a Roku app involves two programming languages: SceneGraph and BrightScript. These languages are used together similarly to how HTML and JavaScript are used for designing Web pages. SceneGraph is Roku's proprietary object-oriented XML framework. It is used to design the app UI. BrightScript is Roku's scripting language that is used to define the app behavior.
-[Build your first Roku app](doc:hello-world)
+[Build your first Roku app](https://developer.roku.com/dev/docs/hello-world)
 ##
 Tools
 [](https://developer.roku.com/dev/docs/getting-started#tools)
@@ -16,13 +16,13 @@ The Roku developer community also provides a number of popular tools that stream
 Resources
 [](https://developer.roku.com/dev/docs/getting-started#resources)
 The journey from novice to guru may not be without challenges, but Roku is here to help you master app development. Resources to help get you started on your journey include an online video course that guides you on each step in the app development process, a vast library of sample apps that demonstrate how to build an app and integrate key features, up-to-date documentation, and a passionate, dedicated developer community that has built some of the best Roku development tools to help new Roku developers work in SceneGraph.
-[Start learning how to build Roku apps with SceneGraph](doc:overview)
+[Start learning how to build Roku apps with SceneGraph](https://developer.roku.com/dev/docs/overview)
 [Check out the sample apps in the Roku GitHub repository](https://github.com/rokudev/scenegraph-master-sample)
 [Visit the Roku Developer forum ](https://community.roku.com/t5/Roku-Developer-Program/bd-p/roku-developer-program)
 ##
 Terms for development tools and apps
 [](https://developer.roku.com/dev/docs/getting-started#terms-for-development-tools-and-apps)
-When publishing development tools and apps for the Roku platform, observe the [developer terms](doc:legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
+When publishing development tools and apps for the Roku platform, observe the [developer terms](https://developer.roku.com/dev/docs/legal#developer-terms) to ensure compliance with the specified legal responsibilities, best practices, and guidelines. The developer terms includes a link to the [Roku Trademark Guidelines](https://docs.roku.com/published/trademarkguidelines), which specify rules for using Roku Marks and Roku Design Marks that must be adhered to.
 ##
 Footnotes
 [](https://developer.roku.com/dev/docs/getting-started#footnote-label)
