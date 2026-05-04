@@ -7,38 +7,8 @@
       "found_on": null
     },
     {
-      "path": "docs/docs/developer-program/advertising/ad-requirements.md",
-      "url": "https://developer.roku.com/docs/developer-program/advertising/ad-requirements.md",
-      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
-    },
-    {
-      "path": "docs/docs/developer-program/certification/cert-tests/authenticated-cert-testing.md",
-      "url": "https://developer.roku.com/docs/developer-program/certification/cert-tests/authenticated-cert-testing.md",
-      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
-    },
-    {
-      "path": "docs/docs/developer-program/advertising/demand-api.md",
-      "url": "https://developer.roku.com/docs/developer-program/advertising/demand-api.md",
-      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
-    },
-    {
-      "path": "docs/docs/developer-program/advertising/csas.md",
-      "url": "https://developer.roku.com/docs/developer-program/advertising/csas.md",
-      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
-    },
-    {
-      "path": "docs/docs/developer-program/certification/certification.md",
-      "url": "https://developer.roku.com/docs/developer-program/certification/certification.md",
-      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
-    },
-    {
-      "path": "docs/docs/developer-program/certification/overview.md",
-      "url": "https://developer.roku.com/docs/developer-program/certification/overview.md",
-      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
-    },
-    {
-      "path": "docs/docs/developer-program/core-concepts/data-scoping.md",
-      "url": "https://developer.roku.com/docs/developer-program/core-concepts/data-scoping.md",
+      "path": "docs/docs/developer-program/core-concepts/controlling-screen-layout.md",
+      "url": "https://developer.roku.com/docs/developer-program/core-concepts/controlling-screen-layout.md",
       "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
     },
     {
@@ -47,13 +17,88 @@
       "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
     },
     {
+      "path": "docs/docs/developer-program/advertising/ad-requirements.md",
+      "url": "https://developer.roku.com/docs/developer-program/advertising/ad-requirements.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
       "path": "docs/docs/developer-program/core-concepts/event-loops.md",
       "url": "https://developer.roku.com/docs/developer-program/core-concepts/event-loops.md",
       "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
     },
     {
-      "path": "docs/docs/developer-program/design/general-tv-ui-philosophy.md",
-      "url": "https://developer.roku.com/docs/developer-program/design/general-tv-ui-philosophy.md",
+      "path": "docs/docs/developer-program/core-concepts/data-scoping.md",
+      "url": "https://developer.roku.com/docs/developer-program/core-concepts/data-scoping.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/core-concepts/handling-application-events.md",
+      "url": "https://developer.roku.com/docs/developer-program/core-concepts/handling-application-events.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/authentication/authentication-and-linking.md",
+      "url": "https://developer.roku.com/docs/developer-program/authentication/authentication-and-linking.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/certification/certification.md",
+      "url": "https://developer.roku.com/docs/developer-program/certification/certification.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/certification/cert-tests/authenticated-cert-testing.md",
+      "url": "https://developer.roku.com/docs/developer-program/certification/cert-tests/authenticated-cert-testing.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/advertising/ssai-adapters.md",
+      "url": "https://developer.roku.com/docs/developer-program/advertising/ssai-adapters.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/authentication/on-device-authentication.md",
+      "url": "https://developer.roku.com/docs/developer-program/authentication/on-device-authentication.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/advertising/csas.md",
+      "url": "https://developer.roku.com/docs/developer-program/advertising/csas.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/certification/cert-tests/certification-testing.md",
+      "url": "https://developer.roku.com/docs/developer-program/certification/cert-tests/certification-testing.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/debugging/capturing-and-decrypting-ssl-packets.md",
+      "url": "https://developer.roku.com/docs/developer-program/debugging/capturing-and-decrypting-ssl-packets.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/core-concepts/xml-components/creating-custom-components.md",
+      "url": "https://developer.roku.com/docs/developer-program/core-concepts/xml-components/creating-custom-components.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/core-concepts/xml-components/overview.md",
+      "url": "https://developer.roku.com/docs/developer-program/core-concepts/xml-components/overview.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/core-concepts/xml-components/defining-scenegraph-components.md",
+      "url": "https://developer.roku.com/docs/developer-program/core-concepts/xml-components/defining-scenegraph-components.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/core-concepts/transitioning-to-scenegraph.md",
+      "url": "https://developer.roku.com/docs/developer-program/core-concepts/transitioning-to-scenegraph.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/core-concepts/specifying-display-resolution.md",
+      "url": "https://developer.roku.com/docs/developer-program/core-concepts/specifying-display-resolution.md",
       "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
     },
     {
@@ -77,13 +122,18 @@
       "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
     },
     {
-      "path": "docs/docs/developer-program/dev-tools/scenegraph-schema.md",
-      "url": "https://developer.roku.com/docs/developer-program/dev-tools/scenegraph-schema.md",
+      "path": "docs/docs/developer-program/discovery/implementing-deep-linking.md",
+      "url": "https://developer.roku.com/docs/developer-program/discovery/implementing-deep-linking.md",
       "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
     },
     {
-      "path": "docs/docs/developer-program/dev-tools/static-analysis-tool/command-line-utility.md",
-      "url": "https://developer.roku.com/docs/developer-program/dev-tools/static-analysis-tool/command-line-utility.md",
+      "path": "docs/docs/developer-program/discovery/direct-to-play.md",
+      "url": "https://developer.roku.com/docs/developer-program/discovery/direct-to-play.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/dev-tools/tools-overview.md",
+      "url": "https://developer.roku.com/docs/developer-program/dev-tools/tools-overview.md",
       "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
     },
     {
@@ -97,11 +147,6 @@
       "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
     },
     {
-      "path": "docs/docs/developer-program/dev-tools/tools-overview.md",
-      "url": "https://developer.roku.com/docs/developer-program/dev-tools/tools-overview.md",
-      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
-    },
-    {
       "path": "docs/docs/developer-program/getting-started/roku-dev-prog.md",
       "url": "https://developer.roku.com/docs/developer-program/getting-started/roku-dev-prog.md",
       "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
@@ -110,8 +155,33 @@
       "path": "docs/docs/developer-program/media-playback/closed-caption.md",
       "url": "https://developer.roku.com/docs/developer-program/media-playback/closed-caption.md",
       "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/media-playback/voice-controls/transport-controls.md",
+      "url": "https://developer.roku.com/docs/developer-program/media-playback/voice-controls/transport-controls.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/performance-guide/data-management.md",
+      "url": "https://developer.roku.com/docs/developer-program/performance-guide/data-management.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/media-playback/voice-controls/voice-profile-selector.md",
+      "url": "https://developer.roku.com/docs/developer-program/media-playback/voice-controls/voice-profile-selector.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/media-playback/voice-controls/overview.md",
+      "url": "https://developer.roku.com/docs/developer-program/media-playback/voice-controls/overview.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
+    },
+    {
+      "path": "docs/docs/developer-program/media-playback/trick-mode/trick-mode.md",
+      "url": "https://developer.roku.com/docs/developer-program/media-playback/trick-mode/trick-mode.md",
+      "found_on": "https://developer.roku.com/en-gb/docs/developer-program/getting-started/roku-dev-prog.md"
     }
   ],
-  "unchanged": 129,
+  "unchanged": 115,
   "failed": []
 }
